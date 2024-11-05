@@ -44,8 +44,54 @@ function adjustMapViewToRoute(routeLayer) {
     map.fitBounds(routeLayer.getBounds());
 }
 
+function getBusGPS(nocCode, route) {
+    const url = `https://bustimes.org/vehicles.json?operator=${nocCode}`;
+
+    $.getJSON(url, data => {
+        // Filter data for the bus route
+        const filteredBuses = data.filter(bus => bus.service.line_name === route);
+
+        // get the longitude and latitude
+        const coordinates = filteredBuses.map(bus => ({
+            longitude: bus.coordinates[0],
+            latitude: bus.coordinates[1]
+        }));
+
+        drawBus(coordinates, map);
+    });
+}
+
+// Draws circles for each bus on the map
+function drawBus(coordinates, map) {
+    // Removes existing bus markers
+    if (map.busMarkers) {
+        map.busMarkers.forEach(marker => {
+            map.removeLayer(marker);
+        });
+    }
+
+    // Array of bus markers
+    map.busMarkers = [];
+
+    // Makes a circle for each bus
+    coordinates.forEach(coord => {
+        const { longitude, latitude } = coord;
+
+        // Bus marker
+        const circle = L.circle([latitude, longitude], {
+            color: 'red', 
+            fillColor: '#f03', 
+            fillOpacity: 0.5,
+            radius: 50 
+        }).addTo(map);
+
+        map.busMarkers.push(circle);
+    });
+}
+
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", function() {
     map = createMap();
     addRoute(encodedPolyline);
-});
+    getBusGPS("SBLB", "8A"); 
+}); 
