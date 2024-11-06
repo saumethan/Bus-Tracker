@@ -113,9 +113,39 @@ function drawBus(busData, map) {
             radius: 50 
         }).addTo(map);
 
-        // Adds information to the bus tool tip
-        circle.bindTooltip(`Route: ${route} <br> Destination: ${destination}`);
+        // Tooltip content
+        const toolTipContent = `
+            <div>
+                <strong>Route: ${route}</strong><br>
+                Destination: ${destination}<br>
+            </div>
+        `;
+
+        circle.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
+
+        // Makes the tooltip permanent when clicked on
+        circle.on('click', (event) => {
+            map.busMarkers.forEach(marker => {
+                marker.closeTooltip(); // Closes any open tooltips
+                marker.unbindTooltip();
+                marker.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
+            });
+            circle.bindTooltip(toolTipContent, { permanent: true, direction: 'top' }).openTooltip();
+
+            // Links to page when bus is clicked on
+            window.open("index.html");
+        });
+
         map.busMarkers.push(circle);
+    });
+
+    // Hide tooltip if clicking outside any marker
+    map.on('click', () => {
+        map.busMarkers.forEach(marker => {
+            marker.closeTooltip();
+            marker.unbindTooltip();
+            marker.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
+        });
     });
 }
 
