@@ -112,6 +112,8 @@ function drawBus(busData, map) {
             fillOpacity: 0.5,
             radius: 50 
         }).addTo(map);
+
+        // Adds information to the bus tool tip
         circle.bindTooltip(`Route: ${route} <br> Destination: ${destination}`);
         map.busMarkers.push(circle);
     });
