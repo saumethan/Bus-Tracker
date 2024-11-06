@@ -1,3 +1,9 @@
+/**
+ * @author Ethan Saum @saumethan272
+ * @version 1.0
+ * @description Bus Tracker
+ */
+
 // Variables
 let map;  
 let route; 
@@ -55,12 +61,14 @@ function getSpecificBusGPS(nocCode, route) {
         const filteredBuses = data.filter(bus => bus.service.line_name === route);
 
         // get the longitude and latitude
-        const coordinates = filteredBuses.map(bus => ({
+        const busData = filteredBuses.map(bus => ({
             longitude: bus.coordinates[0],
-            latitude: bus.coordinates[1]
+            latitude: bus.coordinates[1],
+            route: bus.service.line_name,
+            destination: bus.destination
         }));
 
-        drawBus(coordinates, map);
+        drawBus(busData, map);
     });
 }
 
@@ -70,17 +78,19 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
     
     $.getJSON(url, function(data) {
         // gets the longitude and latitude
-        const coordinates = data.map(bus => ({
+        const busData = data.map(bus => ({
             longitude: bus.coordinates[0],
-            latitude: bus.coordinates[1]
+            latitude: bus.coordinates[1],
+            route: bus.service.line_name,
+            destination: bus.destination
         }));
 
-        drawBus(coordinates, map);
+        drawBus(busData, map);
     });
 }
 
 // Draws circles for each bus on the map
-function drawBus(coordinates, map) {
+function drawBus(busData, map) {
     // Removes existing bus markers
     if (map.busMarkers) {
         map.busMarkers.forEach(marker => {
@@ -92,8 +102,8 @@ function drawBus(coordinates, map) {
     map.busMarkers = [];
 
     // Makes a circle for each bus
-    coordinates.forEach(coord => {
-        const { longitude, latitude } = coord;
+    busData.forEach(coord => {
+        const { longitude, latitude, route, destination } = coord;
 
         // Bus marker
         const circle = L.circle([latitude, longitude], {
@@ -102,7 +112,7 @@ function drawBus(coordinates, map) {
             fillOpacity: 0.5,
             radius: 50 
         }).addTo(map);
-
+        circle.bindTooltip(`Route: ${route} <br> Destination: ${destination}`);
         map.busMarkers.push(circle);
     });
 }
