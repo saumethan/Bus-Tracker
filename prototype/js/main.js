@@ -132,8 +132,15 @@ function drawBus(busData, map) {
             });
             circle.bindTooltip(toolTipContent, { permanent: true, direction: 'top' }).openTooltip();
 
-            // Links to page when bus is clicked on
-            window.open("index.html");
+            // Updates data when the bus is clicked on
+            document.getElementById("busRoute").textContent = "Route: " + route;
+            document.getElementById("busDestination").textContent = "Destination: " + destination;
+            
+            // Get the current time
+            const now = new Date();
+            const formattedTime = now.toLocaleTimeString(); // Format the time 
+            
+            document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
         });
 
         map.busMarkers.push(circle);
