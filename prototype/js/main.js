@@ -337,8 +337,6 @@ function drawStops(stopsData, map) {
     });
 }
 
-
-
 function updateViewportBounds() {
     // Gets the current bounds of the map
     let bounds = map.getBounds();
