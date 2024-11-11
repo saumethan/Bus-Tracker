@@ -139,6 +139,14 @@ function drawBus(busData, map) {
 
         // Makes the tooltip permanent when clicked on
         circle.on('click', (event) => {
+
+            // Sets the route to the clicked bus's route
+            gpsRoute = route;
+            viewAllBuses = false;
+
+            // Refresh the view 
+            refreshSpecificBusRoute();
+
             map.busMarkers.forEach(marker => {
                 marker.closeTooltip(); // Closes any open tooltips
                 marker.unbindTooltip();
@@ -167,6 +175,21 @@ function drawBus(busData, map) {
             marker.unbindTooltip();
         });
     });
+}
+
+// Function to update map with specific bus route
+function refreshSpecificBusRoute() {
+    // Clear existing markers and route
+    if (map.busMarkers) {
+        map.busMarkers.forEach(marker => map.removeLayer(marker));
+    }
+    if (route) {
+        map.removeLayer(route);
+    }
+
+    // Fetch and draw the selected route and bus data
+    addRoute(encodedPolyline);      // Assuming encodedPolyline is for the selected route
+    getSpecificBusGPS(nocCode, gpsRoute);
 }
 
 // Get the stops in the viewport
