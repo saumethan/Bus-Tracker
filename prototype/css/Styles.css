@@ -1,12 +1,15 @@
 main{
     padding-top: 30px;
 }
-
+body{
+    margin: 0;
+}
 
 #TopNav{
-    background-color: aquamarine;
+    background-color: white;
     width: 100%;
-    height: 100px
+    height: 100px;
+    box-shadow: 1px 2px 5px 2px rgb(0 0 0 / 0.8);    
 }
 #TopNav nav{
     float: right;
@@ -15,6 +18,15 @@ main{
 #TopNav a{
     padding-left: 10px;
     margin-right: 10px;
+    text-decoration: none;
+    text-emphasis: none;
+    display: inline-block;
+    color: black;
+    font-size: 3em;
+
+}
+#TopNav img{
+    padding: 10px;
 }
 
 
@@ -30,9 +42,9 @@ main{
 }
 
 #map {
-    margin-left: 50px;
     height: 60vh;
-    width: 70%;
+    max-width: 70%;
+    min-width: 67%;
     float: right;
     background-color: lightgray;
     border-radius: 15px;
@@ -40,7 +52,8 @@ main{
 
 #busData {
     height: 60vh;
-    width: 25%;
+    max-width: 25%;
+    min-width: 20%;
     float: left;
     padding-left: 20px;
     background-color: lightgray;
