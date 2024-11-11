@@ -116,36 +116,61 @@
 /* =-=-=-= MAIN =-=-=-= */
 
 main{
-    padding-top: 30px;
+    padding: 30px;
 }
+
 body{
     margin: 0;
 }
 
-#TopNav{
+/* =-=-=-= NAV =-=-=-= */
+
+nav {
     background-color: white;
     width: 100%;
     height: 100px;
-    box-shadow: 1px 2px 5px 2px rgb(0 0 0 / 0.8);    
-}
-#TopNav nav{
-    float: right;
+    box-shadow: 1px 1px 2px 1px rgba(94, 93, 93, 0.8);
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
 }
 
-#TopNav a{
-    padding-left: 10px;
-    margin-right: 10px;
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    display: flex; /* Arrange items in a row */
+    gap: 15px;
+}
+
+nav a {
+    padding-right: 50px;
     text-decoration: none;
-    text-emphasis: none;
     display: inline-block;
     color: black;
-    font-size: 3em;
-
-}
-#TopNav img{
-    padding: 10px;
+    font-size: 17.5px;
+    font-weight: 550;
+    transition: color 0.1s ease;
 }
 
+nav a:hover {
+    color: rgb(160, 158, 158);
+}
+
+nav img {
+    padding-left: 10px;
+    width: 80px; 
+    height: 80px; 
+}
+
+nav #title {
+    font-weight: 550;
+    font-size: 35px; 
+    margin-left: 0;
+    padding-right: 53%; 
+}
+
+
+/* =-=-=-= MAP =-=-=-= */
 
 .map-title {
     position: absolute;
@@ -159,18 +184,18 @@ body{
 }
 
 #map {
-    height: 60vh;
-    max-width: 70%;
-    min-width: 67%;
+    height: 750px;
+    max-width: 75%;
+    min-width: 75%;
     float: right;
     background-color: lightgray;
     border-radius: 15px;
 }
 
 #busData {
-    height: 60vh;
+    height: 750px;
     max-width: 25%;
-    min-width: 20%;
+    min-width: 22.5%;
     float: left;
     padding-left: 20px;
     background-color: lightgray;

@@ -18,27 +18,27 @@
 
     <title>BusTracker</title>
 </head>
+
 <body>
     <header>
-        <div id="TopNav">
-            <img src="BusTracker.png" alt="Logo" width="150px" height="80px">
-            <nav>
-                <ul>
-                    <a href="index.html">Live Map</a>
-                    <a href="PlanTrip.html">Plan Trip</a>
-                    <a href="Timetable.html">Timetable</a>
-                    <a href="Login.html">Login</a>
-                </ul>
-            </nav>
-        </div>
+        <nav>    
+            <img id="logo" src="images/logo.png" alt="Logo">
+            <h1 id="title">Bus Tracker</h1>
+            <ul>
+                <li><a href="index.html">Live Map</a></li>
+                <li><a href="PlanTrip.html">Plan Trip</a></li>
+                <li><a href="Timetable.html">Timetable</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         
         <div id="busData">
-            <h1>Bus Times</h1>
-            <h2 id="busRoute"></h2>
-            <h3 id="busDestination"></h3>
+            <h2>Bus Times</h2>
+            <h3 id="busRoute"></h3>
+            <h4 id="busDestination"></h4>
             <p id="busTimes"></p>
             <p id="refreshTime"></p>
         </div>
@@ -47,8 +47,9 @@
         <div id="map"></div>
     
     </main>
-    <footer>
 
+    <footer>
+        
     </footer>
 </body>
 </html>
