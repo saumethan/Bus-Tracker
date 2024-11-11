@@ -1,16 +1,17 @@
 /**
  * @author Ethan Saum @saumethan272
+ * @author Owen Meade @owenrgu
  * @version 1.0
  * @description Bus Tracker
  */
 
 // Variables
 let map;  
-let route; 
-let gpsRoute = "8A";
+let route = "X8";
 let nocCode = "SBLB";
-let encodedPolyline = "wotzIrpsLJ^jB~EPRBBVBdByAtBaC^w@Po@Lu@FkACcA_AqLKwB?iFAm@]oDu@_HIcAGaBB_ABkAHcAaDgBQCIFaC~CoEeQKq@I_AIqHDk@Jk@b@qAPgADkBJqJkKYYMHm@jAeEtH{GHMBUQy]}AB[BoNRKIEg@oA`AW@]AWUwBkCkC_D{@{@eAy@_@U[?Qn@QjCg@xD[rAYl@c@j@URc@T_@JsOfAgHU{ADqFBqAIk@YUFMHELU\\_@?YMQc@Gk@?g@Fi@PYXULWL}BPoAX_AjBkCPo@PyA@cAEcAeC{PaEgRyDsNK_@kXkr@sAqCqBmDoAgBcBuBaBeBgEaDmCqAcCy@ai@_JkD}@wCcAuB_AmGwDaGaFc[q[}AqAk@a@_CcAwB_@kCMuBHaBXoGbBaBPkA?qAUm@So@a@gA_Ai@q@k@}@g@cAu@yBoCoK{@cC]y@m@cAg@o@g@e@m@a@q@_@o@Qm@IaBGsGXgB?}BMg[qDgASgKaCyAc@_DoAaCyAoAcA}B_Cy@gA{AaCyAkCy@gAUQWCk@^MTk@b@c@Dm@E]Y_AcBYUI?}@l@e@|@Qb@Q~@Gf@E`BRzF?fAEbAk@hGCh@BjBf@nIHjFN`KOfDEt@g@~DQx@g@hBf@iBPy@f@_EDu@NgDYmRg@oICkBBi@j@iGDcA?gAS{FDaBFg@P_APc@d@}@J[HgA?g@Jc@PSLCf@cAd@sAvAyCZy@Lu@Fu@?cAG}@Mu@_@w@c@o@g@[m@YeAnDAt@^rAtL`X|BxDbAvA`AfAtBxBjAz@fBbA~@\\~P`ECx@gKaCyAc@_DoAaCyAoAcA}B_Cy@gA{AaC_EqHuTcg@kB}Cg@o@eAkAs@i@qAy@yAm@}AYyBEuBHqGt@sCTuBDsBImBU}A[eDkA_[sO}BaAmB_@_DQqBLuZtEQDq@sVE{@QcAy@sCgHmSaGqY}C|CaErD}At@|Au@VUhD}C|C}CsNat@K[Wo@_@c@wAq@Sb@YP{@PmFLUFUPkB|CWZk@`@_AZeBf@NvNlCtNFnAPHFX?ZHNPb@nBzIoB{IQc@IOOTQBIUC[BQFQHCGoAmCuNOwNQ?m@ToEtCs@^kC|@[Py@lAiFdLkAbBmArA}AbAgBt@}AToBDcBU_Bc@oBmAgAkA}BeDaAmBu@}Bi@wBaD_K}CyHsBgEyBsDqAsBcH{Im@kAc@cA]y@Mu@MgAMk@_@WO_@?k@Pm@TGPHFNVPPH^GXSXa@R_ABm@CaASw@]y@g@u@[Q_@Q{Eo@qBi@cG}@cHyAaFyAyLwEsKsFw@UsEyB]ImGoDkCeAcBWiCYcAC_@Fg@C}KyDmB_@aBKgACkDTgGx@mCt@wD~AsC`BcHlEuDtBiBp@kEpAgBb@gBTeE\\kB@yT[oA?gC^kBf@cBx@eExBeAb@_B^}AFcBKgASsAk@{@k@gA_AiFiFuAu@}A[u@Gc@?UPQXIb@MPM?o@}@Q_BIOUSaBeC_LuS{EwM[gAKw@CGgMcIIBKFE?QUQQqE}AWCaALe@Tg@^aAhB_AlAYPcAXmAT}HhAEB}@jAoM`X_A`DCLGTIHI?GA[@OA{QiEcBg@kIqGc@WoOaz@`EuEL]Bg@qAsHU][c@GM?c@FYPe@V]XSPc@Bc@c@kB";
+//let encodedPolyline = "wotzIrpsLJ^jB~EPRBBVBdByAtBaC^w@Po@Lu@FkACcA_AqLKwB?iFAm@]oDu@_HIcAGaBB_ABkAHcAaDgBQCIFaC~CoEeQKq@I_AIqHDk@Jk@b@qAPgADkBJqJkKYYMHm@jAeEtH{GHMBUQy]}AB[BoNRKIEg@oA`AW@]AWUwBkCkC_D{@{@eAy@_@U[?Qn@QjCg@xD[rAYl@c@j@URc@T_@JsOfAgHU{ADqFBqAIk@YUFMHELU\\_@?YMQc@Gk@?g@Fi@PYXULWL}BPoAX_AjBkCPo@PyA@cAEcAeC{PaEgRyDsNK_@kXkr@sAqCqBmDoAgBcBuBaBeBgEaDmCqAcCy@ai@_JkD}@wCcAuB_AmGwDaGaFc[q[}AqAk@a@_CcAwB_@kCMuBHaBXoGbBaBPkA?qAUm@So@a@gA_Ai@q@k@}@g@cAu@yBoCoK{@cC]y@m@cAg@o@g@e@m@a@q@_@o@Qm@IaBGsGXgB?}BMg[qDgASgKaCyAc@_DoAaCyAoAcA}B_Cy@gA{AaCyAkCy@gAUQWCk@^MTk@b@c@Dm@E]Y_AcBYUI?}@l@e@|@Qb@Q~@Gf@E`BRzF?fAEbAk@hGCh@BjBf@nIHjFN`KOfDEt@g@~DQx@g@hBf@iBPy@f@_EDu@NgDYmRg@oICkBBi@j@iGDcA?gAS{FDaBFg@P_APc@d@}@J[HgA?g@Jc@PSLCf@cAd@sAvAyCZy@Lu@Fu@?cAG}@Mu@_@w@c@o@g@[m@YeAnDAt@^rAtL`X|BxDbAvA`AfAtBxBjAz@fBbA~@\\~P`ECx@gKaCyAc@_DoAaCyAoAcA}B_Cy@gA{AaC_EqHuTcg@kB}Cg@o@eAkAs@i@qAy@yAm@}AYyBEuBHqGt@sCTuBDsBImBU}A[eDkA_[sO}BaAmB_@_DQqBLuZtEQDq@sVE{@QcAy@sCgHmSaGqY}C|CaErD}At@|Au@VUhD}C|C}CsNat@K[Wo@_@c@wAq@Sb@YP{@PmFLUFUPkB|CWZk@`@_AZeBf@NvNlCtNFnAPHFX?ZHNPb@nBzIoB{IQc@IOOTQBIUC[BQFQHCGoAmCuNOwNQ?m@ToEtCs@^kC|@[Py@lAiFdLkAbBmArA}AbAgBt@}AToBDcBU_Bc@oBmAgAkA}BeDaAmBu@}Bi@wBaD_K}CyHsBgEyBsDqAsBcH{Im@kAc@cA]y@Mu@MgAMk@_@WO_@?k@Pm@TGPHFNVPPH^GXSXa@R_ABm@CaASw@]y@g@u@[Q_@Q{Eo@qBi@cG}@cHyAaFyAyLwEsKsFw@UsEyB]ImGoDkCeAcBWiCYcAC_@Fg@C}KyDmB_@aBKgACkDTgGx@mCt@wD~AsC`BcHlEuDtBiBp@kEpAgBb@gBTeE\\kB@yT[oA?gC^kBf@cBx@eExBeAb@_B^}AFcBKgASsAk@{@k@gA_AiFiFuAu@}A[u@Gc@?UPQXIb@MPM?o@}@Q_BIOUSaBeC_LuS{EwM[gAKw@CGgMcIIBKFE?QUQQqE}AWCaALe@Tg@^aAhB_AlAYPcAXmAT}HhAEB}@jAoM`X_A`DCLGTIHI?GA[@OA{QiEcBg@kIqGc@WoOaz@`EuEL]Bg@qAsHU][c@GM?c@FYPe@V]XSPc@Bc@c@kB";
 let viewAllBuses = true;
+let radius1 = 50;
 
 // Initialize the map and set its location
 function createMap() {
@@ -28,24 +29,34 @@ function addTileLayer(mapInstance) {
 }
 
 // Adds a route to the map
-function addRoute(encodedPolyline) {
-    const latlngs = polyline.decode(encodedPolyline).map(coords => [coords[0], coords[1]]);
-    
-    // Remove existing route if any
-    if (route) {
-        map.removeLayer(route);
-    }
-    
-    // Adds the polyline to a layer on the map
-    route = L.polyline(latlngs, {
-        color: '#3498db', // Route color
-        weight: 4,
-        opacity: 0.8,
-    }).addTo(map);
+function addRoute(route) {
+    const url = `./local_api_files/${route}.json`;
 
-    // Fit the map to the route
-    adjustMapViewToRoute(route);
+    // Fetch JSON data
+    $.getJSON(url, data => {
+        // Get the encoded polyline
+        const encodedPolyline = data.map(bus => bus.shape); // Assuming 'shape' contains the polyline string
+
+        // Decode the polyline (ensure you have the polyline library loaded)
+        const latlngs = polyline.decode(encodedPolyline).map(coords => [coords[0], coords[1]]);
+        
+        // Remove existing route if any
+        if (route) {
+            map.removeLayer(route); // Remove previous route layer
+        }
+        
+        // Create and add the polyline to the map
+        route = L.polyline(latlngs, {
+            color: '#3498db', // Route color
+            weight: 4,
+            opacity: 0.8
+        }).addTo(map);
+
+        // Fit the map to the route (make sure this function exists)
+        adjustMapViewToRoute(route);
+    });
 }
+
 
 // Fit the map to the route
 function adjustMapViewToRoute(routeLayer) {
@@ -105,13 +116,29 @@ function drawBus(busData, map) {
     busData.forEach(coord => {
         const { longitude, latitude, route, destination } = coord;
 
+//Resize the bus as the user zooms in
+        map.on('zoom' , function(e){
+            if(e.target._zoom >=17){
+                 radius1 = 10;
+            }else{
+                 radius1 = 50;
+            }
+            circle.setRadius(radius1);       
+         })
+
+
+
         // Bus marker
         const circle = L.circle([latitude, longitude], {
             color: 'red', 
             fillColor: '#f03', 
             fillOpacity: 0.5,
-            radius: 50 
+            radius:radius1
+
         }).addTo(map);
+
+
+  
 
         // Tooltip content
         const toolTipContent = `
@@ -156,6 +183,83 @@ function drawBus(busData, map) {
     });
 }
 
+// Get the stops in the viewport
+function getStopsInViewport(yMax, xMax, yMin, xMin) {
+    const url = `https://bustimes.org/stops.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
+
+    $.getJSON(url, function(data) {
+        // parse the stop data into a better format
+        const stopsData = data.features.map(stop => ({
+            longitude: stop.geometry.coordinates[0],
+            latitude: stop.geometry.coordinates[1],
+            services: stop.properties.services,
+            id: stop.properties.url.split("/")[2],
+            name: stop.properties.name
+        }));
+
+        // plot all bus stops in the viewport
+        drawStops(stopsData, map);
+    });
+}
+
+// Draw stops on the map
+function drawStops(stopsData, map) {
+    // remove existing stop markers
+    if (map.stopMarkers) {
+        map.stopMarkers.forEach(marker => {
+            map.removeLayer(marker);
+        });
+    }
+
+    // plot a circle for each bus stop
+    map.stopMarkers = [];
+
+    stopsData.forEach(stop => {
+        const { longitude, latitude, route, destination } = coord;
+
+        // create marker
+        const circle = L.circle([latitude, longitude], {
+            color: 'blue', 
+            fillColor: '#f03', 
+            fillOpacity: 0.5,
+            radius: 50 
+        }).addTo(map);
+
+        // get services for this stop as a string
+        let stopServicesString = "";
+        stop.services.forEach(serviceName => {
+            stopServicesString += serviceName + ", ";
+        });
+
+        if (stopServicesString.length === 0) {
+            stopServicesString = "This stop is currently serving no buses";
+        } else {
+            stopServicesString = stopServicesString.substring(1, stopServicesString.length-1);
+        }
+
+        // bind tooltip
+        const toolTipContent = `
+            <div>
+                <strong>Stop: ${stop.name}</strong><br>
+                Services: ${stopServicesString}<br>
+            </div>
+        `;
+        circle.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
+
+        // makes the tooltip permanent when clicked on
+        circle.on("click", (event) => {
+            map.stopMarkers.forEach(marker => {
+                marker.closeTooltip(); // closes any open tooltips
+                marker.unbindTooltip();
+                marker.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
+            });
+            circle.bindTooltip(toolTipContent, { permanent: true, direction: 'top' }).openTooltip();
+        });
+
+        map.stopMarkers.push(circle);
+    });
+}
+
 function updateViewportBounds() {
     // Gets the current bounds of the map
     let bounds = map.getBounds();
@@ -169,17 +273,18 @@ function updateViewportBounds() {
     let maxY = northeast.lat;
 
     getAllBusGPS(maxY, maxX, minY, minX);
+    getStopsInViewport(maxY, maxX, minY, minX);
 }
 
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", function() {
     map = createMap();
 
-    if(viewAllBuses===true) {
+    if (viewAllBuses === true) {
         map.on('moveend', updateViewportBounds); 
         map.on('zoomend', updateViewportBounds);
     } else {
-        addRoute(encodedPolyline);
-        getSpecificBusGPS(nocCode, gpsRoute);
+        addRoute(route);
+        getSpecificBusGPS(nocCode, route);
     }
 }); 

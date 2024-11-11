@@ -1,3 +1,8 @@
+main{
+    padding-top: 30px;
+}
+
+
 #TopNav{
     background-color: aquamarine;
     width: 100%;
@@ -10,13 +15,18 @@
 #TopNav a{
     padding-left: 10px;
     margin-right: 10px;
+    text-decoration: none;
+    text-emphasis: none;
+    display: inline-block;
+    color: black;
+    font-size: 3em;
+
+}
+#TopNav img{
+    padding: 10px;
 }
 
-#map {
-    margin-left: 50px;
-    height: 60vh;
-    width: 95%;
-}
+
 .map-title {
     position: absolute;
     top: 20px;
@@ -28,6 +38,22 @@
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
-#busData {
-    height: 150px;
+#map {
+    height: 60vh;
+    max-width: 70%;
+    min-width: 67%;
+    float: right;
+    background-color: lightgray;
+    border-radius: 15px;
 }
+
+#busData {
+    height: 60vh;
+    max-width: 25%;
+    min-width: 20%;
+    float: left;
+    padding-left: 20px;
+    background-color: lightgray;
+    border-radius: 15px;
+}
+
