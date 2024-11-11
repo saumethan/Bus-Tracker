@@ -75,3 +75,24 @@ body{
 #LoginSection h1{
     padding-left: 40%;
 }
+
+.map-button {
+    background: #C9C6C2;
+    border-radius: 5px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.map-button button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 3px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.map-button button:hover {
+    background-color: #F4F4F4;
+}

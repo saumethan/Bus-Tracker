@@ -21,6 +21,42 @@ function createMap() {
     return mapInstance;
 }
 
+// Function to add a button to the map
+function addButtonToMap(mapInstance) {
+    const buttonControl = L.control({ position: 'topright' });
+
+    buttonControl.onAdd = function () {
+        // div element for button
+        const buttonDiv = L.DomUtil.create('div', 'map-button');
+        
+        //button HTML
+        buttonDiv.innerHTML = '<button id="resetButton" style="padding: 8px 16px; font-size: 14px;">Refresh</button>';
+
+        // Add event listener for the button
+        buttonDiv.addEventListener('click', () => {
+            // Reset to show all buses when the button is clicked
+            viewAllBuses = true;
+
+            if (route) {
+                map.removeLayer(route);
+                route = null;
+            }
+
+            if (map.busMarkers) {
+                map.busMarkers.forEach(marker => map.removeLayer(marker));
+            }
+
+            // Refresh viewport to load all buses
+            updateViewportBounds();
+        });
+
+        return buttonDiv;
+    };
+
+    buttonControl.addTo(mapInstance);
+}
+
+
 // Layer to style the map
 function addTileLayer(mapInstance) {
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
@@ -358,6 +394,7 @@ function updateViewportBounds() {
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", function() {
     map = createMap();
+    addButtonToMap(map); // Add the button to the map
     updateViewportBounds();
 
     if (viewAllBuses === true) {
@@ -365,7 +402,7 @@ document.addEventListener("DOMContentLoaded", function() {
         map.on('zoomend', updateViewportBounds);
     } 
 
-    // resize the buses as the user zooms in
+    // Resize the buses as the user zooms in
     map.on("zoom" , function (e) {
         currentZoom = e.target._zoom;
         if (currentZoom >= 17) {
@@ -381,5 +418,5 @@ document.addEventListener("DOMContentLoaded", function() {
                 marker.setRadius(radius);
             });
         }
-    })
-}); 
+    });
+});
