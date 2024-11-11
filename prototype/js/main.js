@@ -10,7 +10,6 @@ let map;
 let route; 
 let gpsRoute = "X8";
 let nocCode = "SBLB";
-let encodedPolyline = "wotzIrpsLJ^jB~EPRBBVBdByAtBaC^w@Po@Lu@FkACcA_AqLKwB?iFAm@]oDu@_HIcAGaBB_ABkAHcAaDgBQCIFaC~CoEeQKq@I_AIqHDk@Jk@b@qAPgADkBJqJkKYYMHm@jAeEtH{GHMBUQy]}AB[BoNRKIEg@oA`AW@]AWUwBkCkC_D{@{@eAy@_@U[?Qn@QjCg@xD[rAYl@c@j@URc@T_@JsOfAgHU{ADqFBqAIk@YUFMHELU\\_@?YMQc@Gk@?g@Fi@PYXULWL}BPoAX_AjBkCPo@PyA@cAEcAeC{PaEgRyDsNK_@kXkr@sAqCqBmDoAgBcBuBaBeBgEaDmCqAcCy@ai@_JkD}@wCcAuB_AmGwDaGaFc[q[}AqAk@a@_CcAwB_@kCMuBHaBXoGbBaBPkA?qAUm@So@a@gA_Ai@q@k@}@g@cAu@yBoCoK{@cC]y@m@cAg@o@g@e@m@a@q@_@o@Qm@IaBGsGXgB?}BMg[qDgASgKaCyAc@_DoAaCyAoAcA}B_Cy@gA{AaCyAkCy@gAUQWCk@^MTk@b@c@Dm@E]Y_AcBYUI?}@l@e@|@Qb@Q~@Gf@E`BRzF?fAEbAk@hGCh@BjBf@nIHjFN`KOfDEt@g@~DQx@g@hBf@iBPy@f@_EDu@NgDYmRg@oICkBBi@j@iGDcA?gAS{FDaBFg@P_APc@d@}@J[HgA?g@Jc@PSLCf@cAd@sAvAyCZy@Lu@Fu@?cAG}@Mu@_@w@c@o@g@[m@YeAnDAt@^rAtL`X|BxDbAvA`AfAtBxBjAz@fBbA~@\\~P`ECx@gKaCyAc@_DoAaCyAoAcA}B_Cy@gA{AaC_EqHuTcg@kB}Cg@o@eAkAs@i@qAy@yAm@}AYyBEuBHqGt@sCTuBDsBImBU}A[eDkA_[sO}BaAmB_@_DQqBLuZtEQDq@sVE{@QcAy@sCgHmSaGqY}C|CaErD}At@|Au@VUhD}C|C}CsNat@K[Wo@_@c@wAq@Sb@YP{@PmFLUFUPkB|CWZk@`@_AZeBf@NvNlCtNFnAPHFX?ZHNPb@nBzIoB{IQc@IOOTQBIUC[BQFQHCGoAmCuNOwNQ?m@ToEtCs@^kC|@[Py@lAiFdLkAbBmArA}AbAgBt@}AToBDcBU_Bc@oBmAgAkA}BeDaAmBu@}Bi@wBaD_K}CyHsBgEyBsDqAsBcH{Im@kAc@cA]y@Mu@MgAMk@_@WO_@?k@Pm@TGPHFNVPPH^GXSXa@R_ABm@CaASw@]y@g@u@[Q_@Q{Eo@qBi@cG}@cHyAaFyAyLwEsKsFw@UsEyB]ImGoDkCeAcBWiCYcAC_@Fg@C}KyDmB_@aBKgACkDTgGx@mCt@wD~AsC`BcHlEuDtBiBp@kEpAgBb@gBTeE\\kB@yT[oA?gC^kBf@cBx@eExBeAb@_B^}AFcBKgASsAk@{@k@gA_AiFiFuAu@}A[u@Gc@?UPQXIb@MPM?o@}@Q_BIOUSaBeC_LuS{EwM[gAKw@CGgMcIIBKFE?QUQQqE}AWCaALe@Tg@^aAhB_AlAYPcAXmAT}HhAEB}@jAoM`X_A`DCLGTIHI?GA[@OA{QiEcBg@kIqGc@WoOaz@`EuEL]Bg@qAsHU][c@GM?c@FYPe@V]XSPc@Bc@c@kB";
 let viewAllBuses = true;
 let radius = 50;
 let currentZoom = 13;
@@ -30,24 +29,84 @@ function addTileLayer(mapInstance) {
     }).addTo(mapInstance);
 }
 
-// Adds a route to the map
-function addRoute(encodedPolyline) {
-    const latlngs = polyline.decode(encodedPolyline).map(coords => [coords[0], coords[1]]);
+function addRoute(clickedLatitude, clickedLongitude) {
+    // request to get near routes
+    let busRoute = {
+        "url": `https://cors-anywhere.herokuapp.com/https://external.transitapp.com/v3/public/nearby_routes?lat=${clickedLatitude}&lon=${clickedLongitude}&max_distance=20`,
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+            "apiKey": "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74"
+        },
+    };
 
-    // Remove existing route if any
-    if (route) {
-        map.removeLayer(route);
-    }
+    $.ajax(busRoute)
+        .done(function (response) {
+            let targetRouteId = null;
 
-    // Adds the polyline to a layer on the map
-    route = L.polyline(latlngs, {
-        color: '#3498db', // Route color
-        weight: 4,
-        opacity: 0.8,
-    }).addTo(map);
+            // Log the response
+            console.log(response);
 
-    // Fit the map to the route
-    adjustMapViewToRoute(route);
+            for (const route of response.routes) {
+                const shortNameElements = route.compact_display_short_name.elements;
+
+                if (shortNameElements && shortNameElements.includes(gpsRoute)) {
+                    targetRouteId = route.global_route_id;
+                    break; // Exit the loop once route is found
+                }
+            }
+
+            // Proceed if route is found
+            if (targetRouteId) {
+                console.log("Found Route ID:", targetRouteId);
+                
+                let PolylineRoute = {
+                    "url": `https://cors-anywhere.herokuapp.com/https://external.transitapp.com/v3/public/route_details?global_route_id=` + targetRouteId,
+                    "method": "GET",
+                    "timeout": 0,
+                    "headers": {
+                        "apiKey": "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74"
+                    },
+                };
+
+                $.ajax(PolylineRoute)
+                    .done(function (response) {
+                        // Log response
+                        console.log(response);
+
+                        if (response.itineraries && response.itineraries.length > 0) {
+                            let shape = response.itineraries[0].shape; 
+                            
+                            const latlngs = polyline.decode(shape).map(coords => [coords[0], coords[1]]);
+
+                            // Remove the existing route
+                            if (typeof route !== 'undefined' && route) {
+                                map.removeLayer(route); 
+                            }
+
+                            // Add the new polyline to the map
+                            route = L.polyline(latlngs, {
+                                color: '#3498db', 
+                                weight: 4,
+                                opacity: 0.8,
+                            }).addTo(map);
+
+                            // Adjust the map to fit the route
+                            adjustMapViewToRoute(route);
+                        } else {
+                            console.log("No shape data found.");
+                        }
+                    })
+                    .fail(function (error) {
+                        console.error("Error fetching route details:", error);
+                    });
+            } else {
+                console.log("No route found.");
+            }
+        })
+        .fail(function (error) {
+            console.error("Error fetching or processing data:", error);
+        });
 }
 
 // Fit the map to the route
@@ -103,7 +162,6 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
     });
 }
 
-// Draws circles for each bus on the map
 function drawBus(busData, map) {
     // Removes existing bus markers
     if (map.busMarkers) {
@@ -128,7 +186,7 @@ function drawBus(busData, map) {
         }).addTo(map);
 
         // Tooltip content
-        const toolTipContent = `
+        const toolTipContent = ` 
             <div>
                 <strong>Route: ${route}</strong><br>
                 Destination: ${destination}<br>
@@ -139,29 +197,33 @@ function drawBus(busData, map) {
 
         // Makes the tooltip permanent when clicked on
         circle.on('click', (event) => {
+            // lat and lng of clicked bus
+            let clickedLatitude = event.latlng.lat;
+            let clickedLongitude = event.latlng.lng;
 
-            // Sets the route to the clicked bus's route
             gpsRoute = route;
             viewAllBuses = false;
 
-            // Refresh the view 
-            refreshSpecificBusRoute();
+            // Refresh the view with specific bus 
+            refreshSpecificBusRoute(clickedLatitude, clickedLongitude);
 
+            // Update markers and tooltips 
             map.busMarkers.forEach(marker => {
-                marker.closeTooltip(); // Closes any open tooltips
+                marker.closeTooltip(); // Closes open tooltips
                 marker.unbindTooltip();
                 marker.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
             });
+
+            // Makes the clicked bus's tooltip permanent
             circle.bindTooltip(toolTipContent, { permanent: true, direction: 'top' }).openTooltip();
 
-            // Updates data when the bus is clicked on
+            // Update HTML content for bus route and destination
             document.getElementById("busRoute").textContent = "Route: " + route;
             document.getElementById("busDestination").textContent = "Destination: " + destination;
 
-            // Get the current time
+            // Update the time the data was last refreshed
             const now = new Date();
             const formattedTime = now.toLocaleTimeString(); // Format the time 
-
             document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
         });
 
@@ -178,7 +240,7 @@ function drawBus(busData, map) {
 }
 
 // Function to update map with specific bus route
-function refreshSpecificBusRoute() {
+function refreshSpecificBusRoute(clickedLatitude, clickedLongitude) {
     // Clear existing markers and route
     if (map.busMarkers) {
         map.busMarkers.forEach(marker => map.removeLayer(marker));
@@ -188,7 +250,7 @@ function refreshSpecificBusRoute() {
     }
 
     // Fetch and draw the selected route and bus data
-    addRoute(encodedPolyline);      // Assuming encodedPolyline is for the selected route
+    addRoute(clickedLatitude, clickedLongitude); 
     getSpecificBusGPS(nocCode, gpsRoute);
 }
 
@@ -303,10 +365,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (viewAllBuses === true) {
         map.on('moveend', updateViewportBounds); 
         map.on('zoomend', updateViewportBounds);
-    } else {
-        addRoute(encodedPolyline);
-        getSpecificBusGPS(nocCode, gpsRoute);
-    }
+    } 
 
     // resize the buses as the user zooms in
     map.on("zoom" , function (e) {
@@ -324,5 +383,5 @@ document.addEventListener("DOMContentLoaded", function() {
                 marker.setRadius(radius);
             });
         }
-     })
+    })
 }); 
