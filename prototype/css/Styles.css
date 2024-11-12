@@ -133,17 +133,18 @@ nav {
     display: flex; 
     align-items: center; 
     justify-content: space-between; 
+    padding: 0 20px;  /* Add padding for spacing */
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
-    display: flex; /* Arrange items in a row */
-    gap: 15px;
+    display: flex; 
+    gap: 20px;  /* Space between menu items */
 }
 
 nav a {
-    padding-right: 50px;
+    padding-right: 20px; 
     text-decoration: none;
     display: inline-block;
     color: black;
@@ -157,8 +158,7 @@ nav a:hover {
 }
 
 nav img {
-    padding-left: 10px;
-    width: 80px; 
+    width: 80px;  /* Set fixed size for the logo */
     height: 80px; 
 }
 
@@ -166,9 +166,12 @@ nav #title {
     font-weight: 550;
     font-size: 35px; 
     margin-left: 0;
-    padding-right: 53%; 
+    text-align: center;
+    flex-grow: 1;  /* Title takes up remaining space */
+    flex-shrink: 0;  /* Prevent shrinking */
+    white-space: nowrap;  /* Prevent wrapping */
+    margin-left: 20px;  /* Optional: spacing between logo and title */
 }
-
 
 /* =-=-=-= MAP =-=-=-= */
 
@@ -207,6 +210,7 @@ nav #title {
     width: 100%;
     height: 800px;
 }
+
 #LoginSection{
     width: 60%;
     height: 500px;
