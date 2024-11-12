@@ -125,22 +125,23 @@ body{
 
 /* =-=-=-= NAV =-=-=-= */
 
+/* Ensure that nav stays in row format */
 nav {
-    background-color: white;
+    display: flex !important;  /* Force flexbox layout */
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     height: 100px;
     box-shadow: 1px 1px 2px 1px rgba(94, 93, 93, 0.8);
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    padding: 0 20px;  /* Add padding for spacing */
+    padding: 0 20px;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     display: flex; 
-    gap: 20px;  /* Space between menu items */
+    gap: 20px;
+    padding-right: 40px;
 }
 
 nav a {
@@ -153,25 +154,29 @@ nav a {
     transition: color 0.1s ease;
 }
 
+nav li#active a {
+    color: rgb(160, 158, 158);;  /* Change the color of the anchor tag when the parent li is active */
+}
+
 nav a:hover {
     color: rgb(160, 158, 158);
 }
 
 nav img {
-    width: 80px;  /* Set fixed size for the logo */
-    height: 80px; 
+    width: 80px;
+    height: 80px;
 }
 
 nav #title {
     font-weight: 550;
     font-size: 35px; 
     margin-left: 0;
-    text-align: center;
-    flex-grow: 1;  /* Title takes up remaining space */
-    flex-shrink: 0;  /* Prevent shrinking */
-    white-space: nowrap;  /* Prevent wrapping */
-    margin-left: 20px;  /* Optional: spacing between logo and title */
+    text-align: left; 
+    flex-grow: 1; 
+    flex-shrink: 0; 
+    white-space: nowrap;
 }
+
 
 /* =-=-=-= MAP =-=-=-= */
 
