@@ -23,14 +23,31 @@ function createMap() {
 
 // Function to add a button to the map
 function addButtonToMap(mapInstance) {
-    const buttonControl = L.control({ position: 'topright' });
+    // refresh buses 
+    const refreshButton = L.control({ position: 'topright' });
 
-    buttonControl.onAdd = function () {
-        // div element for button
+    refreshButton.onAdd = function () {
         const buttonDiv = L.DomUtil.create('div', 'map-button');
-        
-        //button HTML
-        buttonDiv.innerHTML = '<button id="resetButton" style="padding: 8px 16px; font-size: 14px;">Refresh</button>';
+        buttonDiv.innerHTML = '<button id="resetButton" style="padding: 8px 16px; font-size: 14px;"><i class="fa-solid fa-arrows-rotate"></i></button>';
+
+        // Add event listener for the button
+        buttonDiv.addEventListener('click', () => {
+
+            // Refresh viewport to load all buses
+            updateViewportBounds();
+        });
+
+        return buttonDiv;
+    };
+
+    refreshButton.addTo(mapInstance);
+
+    // Home button 
+    const homeButton = L.control({ position: 'topleft' });
+
+    homeButton.onAdd = function () {
+        const buttonDiv = L.DomUtil.create('div', 'map-button');
+        buttonDiv.innerHTML = '<button id="homeButton" style="padding: 8px 16px; font-size: 14px;"><i class="fa-solid fa-house"></i></button>';
 
         // Add event listener for the button
         buttonDiv.addEventListener('click', () => {
@@ -46,14 +63,14 @@ function addButtonToMap(mapInstance) {
                 map.busMarkers.forEach(marker => map.removeLayer(marker));
             }
 
+            map.setView([57.1497, -2.0943], 13);
+
             // Refresh viewport to load all buses
             updateViewportBounds();
         });
-
         return buttonDiv;
     };
-
-    buttonControl.addTo(mapInstance);
+    homeButton.addTo(mapInstance);
 }
 
 
@@ -98,7 +115,6 @@ function addRoute(id) {
         adjustMapViewToRoute(route);
     });
 }
-
 
 // Fit the map to the route
 function adjustMapViewToRoute(routeLayer) {
@@ -223,7 +239,6 @@ function drawBus(busData, map) {
     });
 }
 
-
 // Function to update map with specific bus route
 function refreshSpecificBusRoute(busId) { 
     if (map.busMarkers) {
@@ -266,6 +281,7 @@ function getStopsInViewport(yMax, xMax, yMin, xMin) {
         drawStops(stopsData, map);
     });
 }
+
 // Draw stops on the map
 function drawStops(stopsData, map) {
     // remove existing stop markers
@@ -335,6 +351,8 @@ function updateViewportBounds() {
 
     if (viewAllBuses === true) {
         getAllBusGPS(maxY, maxX, minY, minX);
+    } else {
+        getSpecificBusGPS(nocCode, gpsRoute);
     }
     getStopsInViewport(maxY, maxX, minY, minX);
 }
