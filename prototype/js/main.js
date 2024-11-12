@@ -65,85 +65,40 @@ function addTileLayer(mapInstance) {
     }).addTo(mapInstance);
 }
 
-function addRoute(clickedLatitude, clickedLongitude) {
-    // request to get near routes
-    let busRoute = {
-        "url": `https://cors-anywhere.herokuapp.com/https://external.transitapp.com/v3/public/nearby_routes?lat=${clickedLatitude}&lon=${clickedLongitude}&max_distance=20`,
-        "method": "GET",
-        "timeout": 0,
-        "headers": {
-            "apiKey": "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74"
-        },
-    };
+function addRoute(id) {
+    // URL to get the route data
+    const url = `https://bustimes.org/api/trips/${id}/?format=json`;
 
-    $.ajax(busRoute)
-        .done(function (response) {
-            let targetRouteId = null;
+    $.getJSON(url, data => {
+        // array for  coords
+        const routeCoords = [];
 
-            // Log the response
-            console.log(response);
-
-            for (const route of response.routes) {
-                const shortNameElements = route.compact_display_short_name.elements;
-
-                if (shortNameElements && shortNameElements.includes(gpsRoute)) {
-                    targetRouteId = route.global_route_id;
-                    break; // Exit the loop once route is found
-                }
+        // Extracts coordinates from  data
+        data.times.forEach(stop => {
+            if (stop.track) {
+                stop.track.forEach(coord => {
+                    routeCoords.push([coord[1], coord[0]]);
+                });
             }
-
-            // Proceed if route is found
-            if (targetRouteId) {
-                console.log("Found Route ID:", targetRouteId);
-                
-                let PolylineRoute = {
-                    "url": `https://cors-anywhere.herokuapp.com/https://external.transitapp.com/v3/public/route_details?global_route_id=` + targetRouteId,
-                    "method": "GET",
-                    "timeout": 0,
-                    "headers": {
-                        "apiKey": "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74"
-                    },
-                };
-
-                $.ajax(PolylineRoute)
-                    .done(function (response) {
-                        // Log response
-                        console.log(response);
-
-                        if (response.itineraries && response.itineraries.length > 0) {
-                            let shape = response.itineraries[0].shape; 
-                            
-                            const latlngs = polyline.decode(shape).map(coords => [coords[0], coords[1]]);
-
-                            // Remove the existing route
-                            if (typeof route !== 'undefined' && route) {
-                                map.removeLayer(route); 
-                            }
-
-                            // Add the new polyline to the map
-                            route = L.polyline(latlngs, {
-                                color: '#3498db', 
-                                weight: 4,
-                                opacity: 0.8,
-                            }).addTo(map);
-
-                            // Adjust the map to fit the route
-                            adjustMapViewToRoute(route);
-                        } else {
-                            console.log("No shape data found.");
-                        }
-                    })
-                    .fail(function (error) {
-                        console.error("Error fetching route details:", error);
-                    });
-            } else {
-                console.log("No route found.");
-            }
-        })
-        .fail(function (error) {
-            console.error("Error fetching or processing data:", error);
         });
+
+        // Remove the existing route if it exists
+        if (typeof route !== 'undefined' && route) {
+            map.removeLayer(route); 
+        }
+
+        // Add the new route to the map using Leaflet's polyline
+        route = L.polyline(routeCoords, {
+            color: '#3498db', 
+            weight: 4,
+            opacity: 0.8,
+        }).addTo(map);
+
+        // Adjust the map view to fit the new route
+        adjustMapViewToRoute(route);
+    });
 }
+
 
 // Fit the map to the route
 function adjustMapViewToRoute(routeLayer) {
@@ -191,7 +146,8 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
             longitude: bus.coordinates[0],
             latitude: bus.coordinates[1],
             route: bus.service.line_name,
-            destination: bus.destination
+            destination: bus.destination,
+            id: bus.trip_id
         }));
 
         drawBus(busData, map);
@@ -199,21 +155,19 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
 }
 
 function drawBus(busData, map) {
-    // Removes existing bus markers
+    // Remove existing bus markers
     if (map.busMarkers) {
         map.busMarkers.forEach(marker => {
             map.removeLayer(marker);
         });
     }
 
-    // Array of bus markers
     map.busMarkers = [];
 
-    // Makes a circle for each bus
+    // Draw each bus marker
     busData.forEach(coord => {
-        const { longitude, latitude, route, destination } = coord;
+        const { longitude, latitude, route, destination, id } = coord; // Ensure `id` is present
 
-        // Bus marker
         const circle = L.circle([latitude, longitude], {
             color: 'red', 
             fillColor: '#f03', 
@@ -221,7 +175,6 @@ function drawBus(busData, map) {
             radius: radius
         }).addTo(map);
 
-        // Tooltip content
         const toolTipContent = ` 
             <div>
                 <strong>Route: ${route}</strong><br>
@@ -231,42 +184,37 @@ function drawBus(busData, map) {
 
         circle.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
 
-        // Makes the tooltip permanent when clicked on
+        // Add click event listener to the bus marker
         circle.on('click', (event) => {
-            // lat and lng of clicked bus
-            let clickedLatitude = event.latlng.lat;
-            let clickedLongitude = event.latlng.lng;
-
             gpsRoute = route;
             viewAllBuses = false;
 
-            // Refresh the view with specific bus 
-            refreshSpecificBusRoute(clickedLatitude, clickedLongitude);
+            refreshSpecificBusRoute(id); 
 
-            // Update markers and tooltips 
+            // Reset tooltips on all markers
             map.busMarkers.forEach(marker => {
-                marker.closeTooltip(); // Closes open tooltips
+                marker.closeTooltip(); 
                 marker.unbindTooltip();
                 marker.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
             });
 
-            // Makes the clicked bus's tooltip permanent
+            // Make clicked bus's tooltip permanent
             circle.bindTooltip(toolTipContent, { permanent: true, direction: 'top' }).openTooltip();
 
-            // Update HTML content for bus route and destination
+            // Update the route and destination info
             document.getElementById("busRoute").textContent = "Route: " + route;
             document.getElementById("busDestination").textContent = "Destination: " + destination;
 
-            // Update the time the data was last refreshed
+            // Update the refresh time
             const now = new Date();
-            const formattedTime = now.toLocaleTimeString(); // Format the time 
+            const formattedTime = now.toLocaleTimeString(); 
             document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
         });
 
         map.busMarkers.push(circle);
     });
 
-    // Hide tooltip if clicking outside any marker
+    // Close tooltips when clicking elsewhere on the map
     map.on('click', () => {
         map.busMarkers.forEach(marker => {
             marker.closeTooltip();
@@ -275,9 +223,9 @@ function drawBus(busData, map) {
     });
 }
 
+
 // Function to update map with specific bus route
-function refreshSpecificBusRoute(clickedLatitude, clickedLongitude) {
-    // Clear existing markers and route
+function refreshSpecificBusRoute(busId) { 
     if (map.busMarkers) {
         map.busMarkers.forEach(marker => map.removeLayer(marker));
     }
@@ -286,7 +234,7 @@ function refreshSpecificBusRoute(clickedLatitude, clickedLongitude) {
     }
 
     // Fetch and draw the selected route and bus data
-    addRoute(clickedLatitude, clickedLongitude); 
+    addRoute(busId); 
     getSpecificBusGPS(nocCode, gpsRoute);
 }
 
