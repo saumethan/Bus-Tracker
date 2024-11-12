@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!-- css -->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/leaflet.css" />
+    
+        <!-- JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/vendor/leaflet.js"></script>
+        <script src="js/vendor/polyline.js"></script>
+        <script src="js/main.js"></script>
+    
+        <title>BusTracker</title>
+    </head>
 <body>
     <header>
-        <div id="TopNav">
-            <img src="BusTracker.png" alt="Logo" width="150" height="80px">
-            <nav>
-                <ul>
-                    <a href="index.html">Live Map</a>
-                    <a href="PlanTrip.html">Plan Trip</a>
-                    <a href="Timetable.html">Timetable</a>
-                    <a href="Login.html">Login</a>
-                </ul>
-            </nav>
-        </div>
+        <nav>    
+            <img id="logo" src="images/logo.png" alt="Logo">
+            <h1 id="title">Bus Tracker</h1>
+            <ul>
+                <li><a href="index.html">Live Map</a></li>
+                <li><a href="plan_trip.html">Plan Trip</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
