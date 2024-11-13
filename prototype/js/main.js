@@ -29,7 +29,7 @@ function addButtonToMap(mapInstance) {
 
     refreshButton.onAdd = function () {
         const buttonDiv = L.DomUtil.create('div', 'map-button');
-        buttonDiv.innerHTML = '<button id="resetButton" style="padding: 8px 16px; font-size: 14px;"><i class="fa-solid fa-arrows-rotate"></i></button>';
+        buttonDiv.innerHTML = '<button id="resetButton"><i class="fa-solid fa-arrows-rotate"></i></button>';
 
         // Add event listener for the button
         buttonDiv.addEventListener('click', () => {
@@ -48,7 +48,7 @@ function addButtonToMap(mapInstance) {
 
     homeButton.onAdd = function () {
         const buttonDiv = L.DomUtil.create('div', 'map-button');
-        buttonDiv.innerHTML = '<button id="homeButton" style="padding: 8px 16px; font-size: 14px;"><i class="fa-solid fa-house"></i></button>';
+        buttonDiv.innerHTML = '<button id="homeButton"><i class="fa-solid fa-house"></i></button>';
 
         // Add event listener for the button
         buttonDiv.addEventListener('click', () => {
@@ -78,7 +78,7 @@ function addButtonToMap(mapInstance) {
 
     locationButton.onAdd = function () {
         const buttonDiv = L.DomUtil.create('div', 'map-button');
-        buttonDiv.innerHTML = '<button id="locationButton" style="padding: 8px 16px; font-size: 14px;"><i class="fa-solid fa-location-crosshairs"></i></i></button>';
+        buttonDiv.innerHTML = '<button id="locationButton"><i class="fa-solid fa-location-crosshairs"></i></i></button>';
 
         // Add event listener for the button
         buttonDiv.addEventListener('click', () => {

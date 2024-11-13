@@ -257,6 +257,11 @@ nav #title {
     background-color: #F4F4F4;
 }
 
+#resetButton #homeButton #locationButton {
+    padding: 8px 16px; 
+    font-size: 14px;
+}
+
 .user-location-marker {
     width: 18px;
     height: 18px;
