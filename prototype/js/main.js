@@ -357,11 +357,43 @@ function updateViewportBounds() {
     getStopsInViewport(maxY, maxX, minY, minX);
 }
 
+function showUserLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            const userLat = position.coords.latitude;
+            const userLng = position.coords.longitude;
+
+            const userIcon = L.divIcon({
+                className: 'user-location-marker', 
+                iconSize: [18, 18],                
+            });
+
+            // Add the marker with the custom icon to the map
+            const userMarker = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
+
+            // Center map on user's location
+            map.setView([userLat, userLng], 13);
+
+            }, 
+        error => {
+            console.error("Geolocation error:", error);
+            alert("Unable to retrieve your location. (error 1)"); // error 1
+        });
+    } else {
+        alert("Unable to retrieve your location. (error 2)"); // error 2
+    }
+}
+
+
+
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", function() {
     map = createMap();
     addButtonToMap(map); // Add the button to the map
     updateViewportBounds();
+
+     // Call the function to show user's current location
+    showUserLocation();
 
     if (viewAllBuses === true) {
         map.on('moveend', updateViewportBounds); 
