@@ -120,17 +120,36 @@ main{
     min-height: 100%; 
     display: flex;
     flex-direction: column;
+    position: relative;
 }
-
-/* =-=-=-= BODY =-=-=-= */
 
 html, body {
     height: 100%;
     margin: 0;
+    margin: 0;
+    overflow-x: hidden; /* Hide horizontal overflow */
+    overflow-y: auto; /* Allow vertical overflow */
 }
 
 body{
     margin: 0;
+}
+
+/* =-=-=-= Easter Egg =-=-=-= */
+
+#easterEggContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 999;
+}
+
+#easterEggContainer img {
+    position: absolute;
+    transition: transform 0.3s ease;
 }
 
 /* =-=-=-= NAV =-=-=-= */
@@ -328,6 +347,11 @@ footer {
 footer p {
     font-size: 0.8rem;
     margin: 0; 
+}
+
+#footerLink {
+    text-decoration: none;
+    color: black;
 }
 
 /* Responsive layout for phonez */

@@ -9,3 +9,8 @@ This is a markdown file, generally the readme.md file in a repository tells any 
 - Ethan Saum (2304185) [@saumethan272](https://github.com/saumethan272)
 - Joshua Newton (2308183) [@JoshuaNewton-rgu](https://github.com/JoshuaNewton-rgu)
 - Xavier Flockton (2328017) [@XavierFlockton](https://github.com/XavierFlockton)
+
+# Easter Eggs
+
+1. On the map page click on the user icon then click Buses
+2. On any page Click on the footer text

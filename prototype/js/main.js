@@ -470,4 +470,40 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Initial call to set the inactivity timeout
     resetInactivityTimeout();
+    
+    easterEgg()
+
 });
+
+function easterEgg() {
+    document.getElementById("easterEggButton").addEventListener("click", function() {
+        const container = document.getElementById("easterEggContainer");
+        // Cremove existing images
+        container.innerHTML = ''; 
+    
+        // Number of images
+        const imageCount = 110;
+    
+        for (let i = 0; i < imageCount; i++) {
+            const img = document.createElement("img");
+            img.src = "images/BusTracker.png"; 
+    
+            // Generate random size, position, and rotation
+            const randomSize = Math.random() * 80 + 100; 
+            const randomX = Math.random() * 100; 
+            const randomY = Math.random() * 100; 
+            const randomRotation = Math.random() * 360; 
+    
+            // Apply styles
+            img.style.width = `${randomSize}px`;
+            img.style.height = `${randomSize}px`;
+            img.style.left = `${randomX}vw`;
+            img.style.top = `${randomY}vh`;
+            img.style.transform = `rotate(${randomRotation}deg)`;
+    
+            // Add to container
+            container.appendChild(img);
+        }
+    });
+}
+
