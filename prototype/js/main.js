@@ -36,6 +36,11 @@ function addButtonToMap(mapInstance) {
 
             // Refresh viewport to load all buses
             updateViewportBounds();
+
+            // Update the refresh time
+            const now = new Date();
+            const formattedTime = now.toLocaleTimeString(); 
+            document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
         });
 
         return buttonDiv;
@@ -68,6 +73,15 @@ function addButtonToMap(mapInstance) {
 
             // Refresh viewport to load all buses
             updateViewportBounds();
+
+            // Remove the route and destination info
+            document.getElementById("busRoute").textContent = "";
+            document.getElementById("busDestination").textContent = "";
+
+            // Remove the refresh time
+            const now = new Date();
+            const formattedTime = now.toLocaleTimeString(); 
+            document.getElementById("refreshTime").textContent = "";
         });
         return buttonDiv;
     };
@@ -87,6 +101,11 @@ function addButtonToMap(mapInstance) {
 
             // Refresh viewport to load all buses
             updateViewportBounds();
+
+            // Update the refresh time
+            const now = new Date();
+            const formattedTime = now.toLocaleTimeString(); 
+            document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
         });
         return buttonDiv;
     };
