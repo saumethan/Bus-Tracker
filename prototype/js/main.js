@@ -63,7 +63,7 @@ function addButtonToMap(mapInstance) {
                 map.busMarkers.forEach(marker => map.removeLayer(marker));
             }
 
-            map.setView([57.1497, -2.0943], 13);
+            showUserLocation();
 
             // Refresh viewport to load all buses
             updateViewportBounds();
@@ -71,6 +71,25 @@ function addButtonToMap(mapInstance) {
         return buttonDiv;
     };
     homeButton.addTo(mapInstance);
+
+    // Home button 
+    const locationButton = L.control({ position: 'topright' });
+
+    locationButton.onAdd = function () {
+        const buttonDiv = L.DomUtil.create('div', 'map-button');
+        buttonDiv.innerHTML = '<button id="locationButton" style="padding: 8px 16px; font-size: 14px;"><i class="fa-solid fa-location-crosshairs"></i></i></button>';
+
+        // Add event listener for the button
+        buttonDiv.addEventListener('click', () => {
+
+            showUserLocation();
+
+            // Refresh viewport to load all buses
+            updateViewportBounds();
+        });
+        return buttonDiv;
+    };
+    locationButton.addTo(mapInstance);
 }
 
 
