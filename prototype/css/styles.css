@@ -117,9 +117,17 @@
 
 main{
     padding: 30px;
+    min-height: 100%; 
+    display: flex;
+    flex-direction: column;
 }
 
 /* =-=-=-= BODY =-=-=-= */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
 body{
     margin: 0;
@@ -199,7 +207,6 @@ nav #title {
     padding-left: 10px;
 }
 
-
 /* =-=-=-= MAP =-=-=-= */
 
 .map-title {
@@ -215,7 +222,7 @@ nav #title {
 
 #map {
     position: relative; 
-    height: 750px;
+    height: 95vh;
     max-width: 75%;
     min-width: 75%;
     float: right;
@@ -226,7 +233,7 @@ nav #title {
 
 #busData {
     padding: 10px;
-    height: 750px;
+    height: 95vh;
     max-width: 25%;
     min-width: 22.5%;
     float: left;
@@ -306,6 +313,21 @@ nav #title {
     transform: translate(-50%, -50%);
 }
 
+/* Footer */
+
+footer {
+    background-color: #1f212c;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    height: 50px;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 0.8rem;
+    margin: 0; 
+}
 
 /* Responsive layout for phonez */
 @media (max-width: 992px) {
