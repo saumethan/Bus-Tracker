@@ -409,7 +409,7 @@ function resetInactivityTimeout() {
     if (inactivityTimeout) clearTimeout(inactivityTimeout);
     
     // Set a new timeout 
-    inactivityTimeout = setTimeout(updateViewportBounds, 30000);
+    inactivityTimeout = setTimeout(updateViewportBounds, 15000);
 }
 
 // Calls the initializeMap function when the HTML has loaded
@@ -445,7 +445,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     updateViewportBounds();
 
-    // updateViewportBounds after 30s of inactivity
+    // updateViewportBounds after 15s of inactivity
     map.on("move", resetInactivityTimeout);
     map.on("zoom", resetInactivityTimeout);
 
