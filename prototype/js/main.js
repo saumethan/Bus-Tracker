@@ -13,6 +13,7 @@ let nocCode = "SBLB";
 let viewAllBuses = true;
 let radius = 50;
 let currentZoom = 13;
+let inactivityTimeout;
 
 // Initialize the map and set its location
 function createMap() {
@@ -403,15 +404,20 @@ function showUserLocation() {
     }
 }
 
-
+function resetInactivityTimeout() {
+    // Clear the existing timeout
+    if (inactivityTimeout) clearTimeout(inactivityTimeout);
+    
+    // Set a new timeout 
+    inactivityTimeout = setTimeout(updateViewportBounds, 30000);
+}
 
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", function() {
     map = createMap();
     addButtonToMap(map); // Add the button to the map
-    updateViewportBounds();
 
-     // Call the function to show user's current location
+    // Call the function to show user's current location
     showUserLocation();
 
     if (viewAllBuses === true) {
@@ -436,4 +442,13 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
     });
+
+    updateViewportBounds();
+
+    // updateViewportBounds after 30s of inactivity
+    map.on("move", resetInactivityTimeout);
+    map.on("zoom", resetInactivityTimeout);
+
+    // Initial call to set the inactivity timeout
+    resetInactivityTimeout();
 });
