@@ -8,8 +8,6 @@ This is a markdown file, generally the readme.md file in a repository tells any 
 - Settings page (dark mode)
 - Plan trip page (trip planning api)
 - Timetables page
-- Remove duplicate location marker
-- Auto refresh current location
 - Show buses on route when clicked on (noc codes)
 - Split AddButtonToMap() function
 - Add route numbers onto the live buses 
