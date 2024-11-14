@@ -10,6 +10,8 @@ This is a markdown file, generally the readme.md file in a repository tells any 
 - Timetables page
 - Show buses on route when clicked on (noc codes)
 - Add bus route names onto markers
+- when you double click on route route disappears and nothing happens
+- fix the users loction 
 
 # Contributors
 
