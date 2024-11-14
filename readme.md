@@ -9,7 +9,7 @@ This is a markdown file, generally the readme.md file in a repository tells any 
 - Plan trip page (trip planning api)
 - Timetables page
 - Show buses on route when clicked on (noc codes)
-- Split AddButtonToMap() function
+- Add bus route names onto markers
 
 # Contributors
 
