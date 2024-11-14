@@ -12,7 +12,6 @@ This is a markdown file, generally the readme.md file in a repository tells any 
 - Auto refresh current location
 - Show buses on route when clicked on (noc codes)
 - Split AddButtonToMap() function
-- When location button is pressed zoom level should stay the same
 - Add route numbers onto the live buses 
 
 # Contributors
