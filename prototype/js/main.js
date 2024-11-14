@@ -106,19 +106,29 @@ function addLocationButtonToMap(mapInstance) {
 
         // event listener for the button
         buttonDiv.addEventListener('click', () => {
-            updateUserLocation(true); 
+            // Reset to show all buses when the button is clicked
+            viewAllBuses = true;
 
-            // Refresh viewport to load all buses
-            updateViewportBounds();
+            if (route) {
+                map.removeLayer(route);
+                route = null;
+            }
+
+            if (map.busMarkers) {
+                map.busMarkers.forEach(marker => map.removeLayer(marker));
+            }
+
+            getUserLocation(true);
+            map.setView([userLat, userLng]);
 
             // Refresh viewport to load all buses
             updateViewportBounds();
 
             // Update the refresh time if a specific bus route is showing 
             if (!viewAllBuses) {
-            const now = new Date();
-            const formattedTime = now.toLocaleTimeString(); 
-            document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
+                const now = new Date();
+                const formattedTime = now.toLocaleTimeString(); 
+                document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
             }
         });
         return buttonDiv;
