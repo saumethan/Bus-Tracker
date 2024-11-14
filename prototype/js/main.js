@@ -14,6 +14,7 @@ let viewAllBuses = true;
 let radius = 50;
 let currentZoom = 13;
 let inactivityTimeout;
+let userLocation;
 
 // Initialize the map and set its location
 function createMap() {
@@ -221,7 +222,7 @@ function drawBus(busData, map) {
 
     // Draw each bus marker
     busData.forEach(coord => {
-        const { longitude, latitude, route, destination, id } = coord; // Ensure `id` is present
+        const { longitude, latitude, route, destination, id } = coord; 
 
         const circle = L.circle([latitude, longitude], {
             color: 'red', 
@@ -403,24 +404,22 @@ function showUserLocation() {
             const userLng = position.coords.longitude;
 
             const userIcon = L.divIcon({
-                className: 'user-location-marker', 
+                className: "user-location-marker", 
                 iconSize: [18, 18],                
             });
 
+            // Remove the existing marker
+            if (userLocation) {
+                map.removeLayer(userLocation);
+            }
+
             // Add the marker with the custom icon to the map
-            const userMarker = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
+            userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
 
             // Center map on user's location
-            map.setView([userLat, userLng], 13);
-
-            }, 
-        error => {
-            console.error("Geolocation error:", error);
-            alert("Unable to retrieve your location. (error 1)"); // error 1
+            map.setView([userLat, userLng]);
         });
-    } else {
-        alert("Unable to retrieve your location. (error 2)"); // error 2
-    }
+    } 
 }
 
 function resetInactivityTimeout() {
