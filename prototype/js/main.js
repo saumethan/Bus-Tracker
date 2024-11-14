@@ -40,10 +40,12 @@ function addRefreshButtonToMap(mapInstance) {
             // Refresh viewport to load all buses
             updateViewportBounds();
 
-            // Update the refresh time
-            const now = new Date();
-            const formattedTime = now.toLocaleTimeString(); 
-            document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
+            // Update the refresh time if a specific bus route is showing 
+            if (!viewAllBuses) {
+                const now = new Date();
+                const formattedTime = now.toLocaleTimeString(); 
+                document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
+                }
         });
 
         return buttonDiv;
@@ -112,10 +114,12 @@ function addLocationButtonToMap(mapInstance) {
             // Refresh viewport to load all buses
             updateViewportBounds();
 
-            // Update the refresh time
+            // Update the refresh time if a specific bus route is showing 
+            if (!viewAllBuses) {
             const now = new Date();
             const formattedTime = now.toLocaleTimeString(); 
             document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
+            }
         });
         return buttonDiv;
     };
