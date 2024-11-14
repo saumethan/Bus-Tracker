@@ -466,6 +466,21 @@ function easterEgg() {
     });
 }
 
+// Calls showUserLocation when the users location moves
+// https://www.w3schools.com/html/html5_geolocation.asp
+if ("geolocation" in navigator) {
+    navigator.geolocation.watchPosition(
+        showUserLocation,
+        (error) => console.error(`Error watching location: ${error.message}`), 
+        {
+            enableHighAccuracy: true,
+            maximumAge: 10000,
+            timeout: 5000
+        }
+    );
+}
+
+
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", function() {
     map = createMap();
