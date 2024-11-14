@@ -3,6 +3,18 @@
 # CM2104 Group Project Repository
 This is a markdown file, generally the readme.md file in a repository tells any users what it is for. 
 
+#To Do
+- Login page
+- Settings page (dark mode)
+- Plan trip page (trip planning api)
+- Timetables page
+- Remove duplicate location marker
+- Auto refresh current location
+- Show buses on route when clicked on (noc codes)
+- Split AddButtonToMap() function
+- When location button is pressed zoom level should stay the same
+- Add route numbers onto the live buses 
+
 # Contributors
 
 - Owen Meade (2310873) [@owenrgu](https://github.com/owenrgu)
