@@ -12,6 +12,7 @@ This is a markdown file, generally the readme.md file in a repository tells any 
 - Add bus route names onto markers
 - when you double click on route route disappears and nothing happens
 - Auto updating user locations
+- When you click on a bus stop the tool tip for every bus spot shows the name of the clicked bus stop
 
 # Contributors
 
