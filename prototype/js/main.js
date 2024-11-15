@@ -107,7 +107,7 @@ function addLocationButtonToMap(mapInstance) {
         // event listener for the button
         buttonDiv.addEventListener('click', () => {
 
-            getUserLocation(true);
+            getUserLocation(false);
             map.setView([userLat, userLng]);
 
             // Refresh viewport to load all buses
@@ -428,9 +428,9 @@ function updateUserLocation(updateView) {
             // Add the new user marker
             userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
 
-            // If updateView is true, update the map's view to the new user location
-            if (updateView) {
-                map.setView([userLat, userLng], currentZoom); // Retain current zoom level
+            // If updateView is false, update the map's view to the new user location
+            if (!updateView) {
+                map.setView([userLat, userLng], currentZoom); 
             }
         } else {
             console.error("Invalid user location data.");
