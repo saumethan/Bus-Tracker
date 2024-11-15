@@ -72,9 +72,12 @@ function addHomeButtonToMap(mapInstance) {
                 route = null;
             }
 
-            if (map.busMarkers) {
-                map.busMarkers.forEach(marker => map.removeLayer(marker));
+            if (viewAllBuses == false) {
+                if (map.busMarkers) {
+                    map.busMarkers.forEach(marker => map.removeLayer(marker));
+                }
             }
+            
 
             getUserLocation(true);
             map.setView([userLat, userLng]);
