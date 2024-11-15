@@ -233,10 +233,9 @@ function drawBus(busData, map) {
     map.busMarkers = [];
 
     // Draw each bus marker
-    busData.forEach(coord => {
-        const { longitude, latitude, route, destination, id } = coord; 
+    busData.forEach(coord => { 
 
-        const circle = L.circle([latitude, longitude], {
+        const circle = L.circle([coord.latitude, coord.longitude], {
             color: 'red', 
             fillColor: '#f03', 
             fillOpacity: 0.5,
@@ -245,8 +244,8 @@ function drawBus(busData, map) {
 
         const toolTipContent = ` 
             <div>
-                <strong>Route: ${route}</strong><br>
-                Destination: ${destination}<br>
+                <strong>Route: ${coord.route}</strong><br>
+                Destination: ${coord.destination}<br>
             </div>
         `;
 
@@ -254,10 +253,10 @@ function drawBus(busData, map) {
 
         // Add click event listener to the bus marker
         circle.on('click', (event) => {
-            gpsRoute = route;
+            gpsRoute = coord.route;
             viewAllBuses = false;
 
-            refreshSpecificBusRoute(id); 
+            refreshSpecificBusRoute(coord.id); 
 
             // Reset tooltips on all markers
             map.busMarkers.forEach(marker => {
@@ -270,8 +269,8 @@ function drawBus(busData, map) {
             circle.bindTooltip(toolTipContent, { permanent: true, direction: 'top' }).openTooltip();
 
             // Update the route and destination info
-            document.getElementById("busRoute").textContent = "Route: " + route;
-            document.getElementById("busDestination").textContent = "Destination: " + destination;
+            document.getElementById("busRoute").textContent = "Route: " + coord.route;
+            document.getElementById("busDestination").textContent = "Destination: " + coord.destination;
 
             // Update the refresh time
             const now = new Date();
