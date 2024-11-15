@@ -234,7 +234,7 @@ function drawBus(busData, map) {
 
     // Draw each bus marker
     busData.forEach(coord => {
-        const { longitude, latitude, route, destination, id } = coord; // Ensure `id` is present
+        const { longitude, latitude, route, destination, id } = coord; 
 
         const circle = L.circle([latitude, longitude], {
             color: 'red', 
@@ -290,7 +290,6 @@ function drawBus(busData, map) {
         });
     });
 }
-
 
 // Function to update map with specific bus route
 function refreshSpecificBusRoute(busId) { 
@@ -379,7 +378,7 @@ function drawStops(stopsData, map) {
         // makes the tooltip permanent when clicked on
         circle.on("click", (event) => {
             map.stopMarkers.forEach(marker => {
-                marker.closeTooltip(); // closes any open tooltips
+                marker.closeTooltip();
                 marker.unbindTooltip();
                 marker.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
             });
