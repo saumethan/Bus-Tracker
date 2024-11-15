@@ -77,10 +77,8 @@ function addHomeButtonToMap(mapInstance) {
                     map.busMarkers.forEach(marker => map.removeLayer(marker));
                 }
             }
-            
 
-            getUserLocation(true);
-            map.setView([userLat, userLng]);
+            showUserLocation();
 
             // Refresh viewport to load all buses
             updateViewportBounds();
@@ -110,8 +108,7 @@ function addLocationButtonToMap(mapInstance) {
         // event listener for the button
         buttonDiv.addEventListener('click', () => {
 
-            getUserLocation(false);
-            map.setView([userLat, userLng]);
+            showUserLocation();
 
             // Refresh viewport to load all buses
             updateViewportBounds();
@@ -413,47 +410,38 @@ function updateViewportBounds() {
     getStopsInViewport(maxY, maxX, minY, minX);
 }
 
-function updateUserLocation(updateView) {
-    getUserLocation(() => {
-        // Check if location is valid before trying to update the map
-        if (userLat && userLng) {
-            // Custom user marker icon
+function showUserLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            const userLat = position.coords.latitude;
+            const userLng = position.coords.longitude;
+
             const userIcon = L.divIcon({
-                className: "user-location-marker",
-                iconSize: [18, 18],
+                className: 'user-location-marker', 
+                className: "user-location-marker", 
+                iconSize: [18, 18],                
             });
 
             // Remove the existing marker
             if (userLocation) {
                 map.removeLayer(userLocation);
             }
-
-            // Add the new user marker
+            // Add the marker with the custom icon to the map
+            const userMarker = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
             userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
 
-            // If updateView is false, update the map's view to the new user location
-            if (!updateView) {
-                map.setView([userLat, userLng], currentZoom); 
-            }
-        } else {
-            console.error("Invalid user location data.");
-        }
-    });
-}
-
-function getUserLocation(callback) {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-            userLat = position.coords.latitude;
-            userLng = position.coords.longitude;
-            if (callback) callback();  
-        }, (error) => {
-            console.error(`Error fetching geolocation: ${error.message}`);
-            if (callback) callback(); 
+            // Center map on user's location
+            map.setView([userLat, userLng], 13);
+            }, 
+        error => {
+            console.error("Geolocation error:", error);
+            alert("Unable to retrieve your location. (error 1)"); // error 1
+            map.setView([userLat, userLng]);
         });
+    } else {
+        alert("Unable to retrieve your location. (error 2)"); // error 2
     }
 }
-
 
 function resetInactivityTimeout() {
     // Clear the existing timeout
@@ -499,19 +487,6 @@ function easterEgg() {
     });
 }
 
-// Calls showUserLocation when the users location moves
-// https://www.w3schools.com/html/html5_geolocation.asp
-if ("geolocation" in navigator) {
-    navigator.geolocation.watchPosition(
-        updateUserLocation,
-        (error) => console.error(`Error watching location: ${error.message}`), 
-        {
-            enableHighAccuracy: true,
-            maximumAge: 10000,
-            timeout: 5000
-        }
-    );
-}
 
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", function() {
@@ -519,6 +494,9 @@ document.addEventListener("DOMContentLoaded", function() {
     addRefreshButtonToMap(map);
     addHomeButtonToMap(map);
     addLocationButtonToMap(map);
+
+    // Call the function to show user's current location
+    showUserLocation();
 
     if (viewAllBuses === true) {
         map.on('moveend', updateViewportBounds); 
