@@ -5,6 +5,9 @@
  * @description Bus Tracker
  */
 
+// Constants
+const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
+
 // Variables
 let map;  
 let route; 
@@ -14,6 +17,7 @@ let viewAllBuses = true;
 let radius = 50;
 let currentZoom = 13;
 let inactivityTimeout;
+let transitStopIds = {};
 
 // Initialize the map and set its location
 function createMap() {
@@ -121,7 +125,7 @@ function addTileLayer(mapInstance) {
     }).addTo(mapInstance);
 }
 
-function addRoute(id) {
+function drawRoute(id) {
     // URL to get the route data
     const url = `https://bustimes.org/api/trips/${id}/?format=json`;
 
@@ -288,12 +292,12 @@ function refreshSpecificBusRoute(busId) {
     }
 
     // Fetch and draw the selected route and bus data
-    addRoute(busId); 
+    drawRoute(busId); 
     getSpecificBusGPS(nocCode, gpsRoute);
 }
 
 // Get the stops in the viewport
-function getStopsInViewport(yMax, xMax, yMin, xMin) {
+function drawStopsInViewport(yMax, xMax, yMin, xMin) {
     // don't show stops when zoomed far out
     if (currentZoom < 15) {
         if (map.stopMarkers) {
@@ -312,7 +316,7 @@ function getStopsInViewport(yMax, xMax, yMin, xMin) {
             longitude: stop.geometry.coordinates[0],
             latitude: stop.geometry.coordinates[1],
             services: stop.properties.services,
-            id: stop.properties.url.split("/")[2],
+            bustimes_id: stop.properties.url.split("/")[2],
             name: stop.properties.name
         }));
 
@@ -364,12 +368,46 @@ function drawStops(stopsData, map) {
 
         // makes the tooltip permanent when clicked on
         circle.on("click", (event) => {
+            // stop stop tooltip
             map.stopMarkers.forEach(marker => {
                 marker.closeTooltip(); // closes any open tooltips
                 marker.unbindTooltip();
                 marker.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
             });
             circle.bindTooltip(toolTipContent, { permanent: true, direction: 'top' }).openTooltip();
+
+            // load scheduled buses for this stop
+            // find this stop id from cached data or request api
+            if (!transitStopIds[stop.bustimes_id]) {
+                $.ajax({
+                    type: "GET",
+                    url: `https://cors-anywhere.herokuapp.com/https://external.transitapp.com/v3/public/nearby_stops?lat=${stop.latitude}&lon=${stop.longitude}&max_distance=500)`,
+                    dataType: "json",
+                    headers: { "apiKey": TRANSIT_API_KEY },
+                    success: function (response) {
+                        // find the stop id that is used in transit app
+                        if (response.stops) {
+                            response.stops.forEach(s => {
+                                if (s.rt_stop_id === stop.bustimes_id) {
+                                    transitStopIds[stop.bustimes_id] = s.global_stop_id;
+                                }
+                            });
+                        }
+
+                        if (transitStopIds[stop.bustimes_id]) {
+                            // if the stop id was found, get the times for routes at this stop
+                            const url = `https://cors-anywhere.herokuapp.com/https://external.transitapp.com/v3/public/stop_departures?global_stop_id=${transitStopIds[stop.bustimes_id]}`;
+                            $.getJSON(url, data => {
+
+                            }); 
+
+                        } else {
+                            // no stop id was found, output error message
+                            console.log("Could not find any information about this stop.")
+                        }
+                    },
+                });
+            }
         });
 
         map.stopMarkers.push(circle);
@@ -393,7 +431,7 @@ function updateViewportBounds() {
     } else {
         getSpecificBusGPS(nocCode, gpsRoute);
     }
-    getStopsInViewport(maxY, maxX, minY, minX);
+    drawStopsInViewport(maxY, maxX, minY, minX);
 }
 
 function showUserLocation() {
@@ -476,7 +514,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function easterEgg() {
-    document.getElementById("easterEggButton").addEventListener("click", function() {
+    $("#easterEggButton").click(function () { 
         const container = document.getElementById("easterEggContainer");
         // Cremove existing images
         container.innerHTML = ''; 
