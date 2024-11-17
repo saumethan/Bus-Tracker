@@ -3,6 +3,17 @@
 # CM2104 Group Project Repository
 This is a markdown file, generally the readme.md file in a repository tells any users what it is for. 
 
+# To Do
+- Login page
+- Settings page (dark mode)
+- Plan trip page (trip planning api)
+- Timetables page
+- Show buses on route when clicked on (noc codes)
+- Add bus route names onto markers
+- when you double click on route route disappears and nothing happens
+- Auto updating user locations
+- When you click on a bus stop the tool tip for every bus spot shows the name of the clicked bus stop
+
 # Contributors
 
 - Owen Meade (2310873) [@owenrgu](https://github.com/owenrgu)

@@ -17,6 +17,9 @@ let viewAllBuses = true;
 let radius = 50;
 let currentZoom = 13;
 let inactivityTimeout;
+let userLocation;
+let userLat;
+let userLng;
 let transitStopIds = {};
 
 // Initialize the map and set its location
@@ -26,8 +29,8 @@ function createMap() {
     return mapInstance;
 }
 
-// Function to add a button to the map
-function addButtonToMap(mapInstance) {
+// Function to add refresh button to the map
+function addRefreshButtonToMap(mapInstance) {
     // refresh buses 
     const refreshButton = L.control({ position: 'topright' });
 
@@ -35,23 +38,27 @@ function addButtonToMap(mapInstance) {
         const buttonDiv = L.DomUtil.create('div', 'map-button');
         buttonDiv.innerHTML = '<button id="resetButton"><i class="fa-solid fa-arrows-rotate"></i></button>';
 
-        // Add event listener for the button
+        // event listener for the button
         buttonDiv.addEventListener('click', () => {
 
             // Refresh viewport to load all buses
             updateViewportBounds();
 
-            // Update the refresh time
-            const now = new Date();
-            const formattedTime = now.toLocaleTimeString(); 
-            document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
+            // Update the refresh time if a specific bus route is showing 
+            if (!viewAllBuses) {
+                const now = new Date();
+                const formattedTime = now.toLocaleTimeString(); 
+                document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
+                }
         });
 
         return buttonDiv;
     };
 
     refreshButton.addTo(mapInstance);
-
+}
+// Function to add home button to the map
+function addHomeButtonToMap(mapInstance) {
     // Home button 
     const homeButton = L.control({ position: 'topleft' });
 
@@ -59,7 +66,7 @@ function addButtonToMap(mapInstance) {
         const buttonDiv = L.DomUtil.create('div', 'map-button');
         buttonDiv.innerHTML = '<button id="homeButton"><i class="fa-solid fa-house"></i></button>';
 
-        // Add event listener for the button
+        // event listener for the button
         buttonDiv.addEventListener('click', () => {
             // Reset to show all buses when the button is clicked
             viewAllBuses = true;
@@ -69,8 +76,10 @@ function addButtonToMap(mapInstance) {
                 route = null;
             }
 
-            if (map.busMarkers) {
-                map.busMarkers.forEach(marker => map.removeLayer(marker));
+            if (viewAllBuses == false) {
+                if (map.busMarkers) {
+                    map.busMarkers.forEach(marker => map.removeLayer(marker));
+                }
             }
 
             showUserLocation();
@@ -90,15 +99,17 @@ function addButtonToMap(mapInstance) {
         return buttonDiv;
     };
     homeButton.addTo(mapInstance);
-
-    // Home button 
+}
+// Function to add location button to the map
+function addLocationButtonToMap(mapInstance) {
+    // Location button 
     const locationButton = L.control({ position: 'topright' });
 
     locationButton.onAdd = function () {
         const buttonDiv = L.DomUtil.create('div', 'map-button');
         buttonDiv.innerHTML = '<button id="locationButton"><i class="fa-solid fa-location-crosshairs"></i></i></button>';
 
-        // Add event listener for the button
+        // event listener for the button
         buttonDiv.addEventListener('click', () => {
 
             showUserLocation();
@@ -106,10 +117,12 @@ function addButtonToMap(mapInstance) {
             // Refresh viewport to load all buses
             updateViewportBounds();
 
-            // Update the refresh time
-            const now = new Date();
-            const formattedTime = now.toLocaleTimeString(); 
-            document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
+            // Update the refresh time if a specific bus route is showing 
+            if (!viewAllBuses) {
+                const now = new Date();
+                const formattedTime = now.toLocaleTimeString(); 
+                document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
+            }
         });
         return buttonDiv;
     };
@@ -224,10 +237,9 @@ function drawBus(busData, map) {
     map.busMarkers = [];
 
     // Draw each bus marker
-    busData.forEach(coord => {
-        const { longitude, latitude, route, destination, id } = coord; // Ensure `id` is present
+    busData.forEach(coord => { 
 
-        const circle = L.circle([latitude, longitude], {
+        const circle = L.circle([coord.latitude, coord.longitude], {
             color: 'red', 
             fillColor: '#f03', 
             fillOpacity: 0.5,
@@ -236,8 +248,8 @@ function drawBus(busData, map) {
 
         const toolTipContent = ` 
             <div>
-                <strong>Route: ${route}</strong><br>
-                Destination: ${destination}<br>
+                <strong>Route: ${coord.route}</strong><br>
+                Destination: ${coord.destination}<br>
             </div>
         `;
 
@@ -245,10 +257,10 @@ function drawBus(busData, map) {
 
         // Add click event listener to the bus marker
         circle.on('click', (event) => {
-            gpsRoute = route;
+            gpsRoute = coord.route;
             viewAllBuses = false;
 
-            refreshSpecificBusRoute(id); 
+            refreshSpecificBusRoute(coord.id); 
 
             // Reset tooltips on all markers
             map.busMarkers.forEach(marker => {
@@ -261,8 +273,8 @@ function drawBus(busData, map) {
             circle.bindTooltip(toolTipContent, { permanent: true, direction: 'top' }).openTooltip();
 
             // Update the route and destination info
-            document.getElementById("busRoute").textContent = "Route: " + route;
-            document.getElementById("busDestination").textContent = "Destination: " + destination;
+            document.getElementById("busRoute").textContent = "Route: " + coord.route;
+            document.getElementById("busDestination").textContent = "Destination: " + coord.destination;
 
             // Update the refresh time
             const now = new Date();
@@ -370,7 +382,7 @@ function drawStops(stopsData, map) {
         circle.on("click", (event) => {
             // stop stop tooltip
             map.stopMarkers.forEach(marker => {
-                marker.closeTooltip(); // closes any open tooltips
+                marker.closeTooltip();
                 marker.unbindTooltip();
                 marker.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
             });
@@ -442,19 +454,25 @@ function showUserLocation() {
 
             const userIcon = L.divIcon({
                 className: 'user-location-marker', 
+                className: "user-location-marker", 
                 iconSize: [18, 18],                
             });
 
+            // Remove the existing marker
+            if (userLocation) {
+                map.removeLayer(userLocation);
+            }
             // Add the marker with the custom icon to the map
             const userMarker = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
+            userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
 
             // Center map on user's location
             map.setView([userLat, userLng], 13);
-
             }, 
         error => {
             console.error("Geolocation error:", error);
             alert("Unable to retrieve your location. (error 1)"); // error 1
+            map.setView([userLat, userLng]);
         });
     } else {
         alert("Unable to retrieve your location. (error 2)"); // error 2
@@ -469,10 +487,49 @@ function resetInactivityTimeout() {
     inactivityTimeout = setTimeout(updateViewportBounds, 15000);
 }
 
+function easterEgg() {
+    document.getElementById("easterEggButton").addEventListener("click", function() {
+        const container = document.getElementById("easterEggContainer");
+        // Cremove existing images
+        container.innerHTML = ''; 
+    
+        // Number of images
+        const imageCount = 110;
+    
+        for (let i = 0; i < imageCount; i++) {
+            setTimeout(() => {
+                const img = document.createElement("img");
+                img.src = "images/BusTracker.png"; 
+        
+                // Generate random size, position, and rotation
+                const randomSize = Math.random() * 80 + 100; 
+                const randomX = Math.random() * 100; 
+                const randomY = Math.random() * 100; 
+                const randomRotation = Math.random() * 360; 
+        
+                // Apply styles
+                img.style.width = `${randomSize}px`;
+                img.style.height = `${randomSize}px`;
+                img.style.position = 'absolute';
+                img.style.left = `${randomX}vw`;
+                img.style.top = `${randomY}vh`;
+                img.style.transform = `rotate(${randomRotation}deg)`;
+        
+                // Add to container
+                container.appendChild(img);
+            }, i * 100); // Delay increases by 500ms for each iteration
+        }
+        
+    });
+}
+
+
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", function() {
     map = createMap();
-    addButtonToMap(map); // Add the button to the map
+    addRefreshButtonToMap(map);
+    addHomeButtonToMap(map);
+    addLocationButtonToMap(map);
 
     // Call the function to show user's current location
     showUserLocation();
