@@ -7,6 +7,7 @@
 
 // Constants
 const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
+const BUS_PROXY = `https://europe-west2-legendoj1-portfolio.cloudfunctions.net/busproxy/?apiKey=${TRANSIT_API_KEY}&url=`;
 
 // Variables
 let map;  
@@ -337,6 +338,44 @@ function drawStopsInViewport(yMax, xMax, yMin, xMin) {
     });
 }
 
+// Fetch stop ID from API or cached data
+async function fetchStopId(stop) {
+    if (!transitStopIds[stop.bustimes_id]) {
+        const response = await $.ajax({
+            type: "GET",
+            url: BUS_PROXY + `https://external.transitapp.com/v3/public/nearby_stops?lat=${stop.latitude}&lon=${stop.longitude}&max_distance=500`,
+            dataType: "json",
+            headers: { "apiKey": TRANSIT_API_KEY },
+        });
+
+        // find the stop id that is used in transit app
+        if (response && response.stops) {
+            response.stops.forEach(thisStop => {
+                if (thisStop.rt_stop_id === stop.bustimes_id) {
+                    transitStopIds[stop.bustimes_id] = thisStop.global_stop_id;
+                }
+            });
+        }
+    }
+
+    // return the fetched stop id
+    return transitStopIds[stop.bustimes_id];
+}
+
+// Load the bus times for a specific stop
+async function loadStopTimes(transitStopId) {
+    // make request to transit api
+    const response = await $.ajax({
+        type: "GET",
+        url: "url",
+        dataType: "json",
+    });
+
+    // delete existing stop times
+
+    // load times
+}
+
 // Draw stops on the map
 function drawStops(stopsData, map) {
     // remove existing stop markers
@@ -390,36 +429,13 @@ function drawStops(stopsData, map) {
 
             // load scheduled buses for this stop
             // find this stop id from cached data or request api
-            if (!transitStopIds[stop.bustimes_id]) {
-                $.ajax({
-                    type: "GET",
-                    url: `https://cors-anywhere.herokuapp.com/https://external.transitapp.com/v3/public/nearby_stops?lat=${stop.latitude}&lon=${stop.longitude}&max_distance=500)`,
-                    dataType: "json",
-                    headers: { "apiKey": TRANSIT_API_KEY },
-                    success: function (response) {
-                        // find the stop id that is used in transit app
-                        if (response.stops) {
-                            response.stops.forEach(s => {
-                                if (s.rt_stop_id === stop.bustimes_id) {
-                                    transitStopIds[stop.bustimes_id] = s.global_stop_id;
-                                }
-                            });
-                        }
-
-                        if (transitStopIds[stop.bustimes_id]) {
-                            // if the stop id was found, get the times for routes at this stop
-                            const url = `https://cors-anywhere.herokuapp.com/https://external.transitapp.com/v3/public/stop_departures?global_stop_id=${transitStopIds[stop.bustimes_id]}`;
-                            $.getJSON(url, data => {
-
-                            }); 
-
-                        } else {
-                            // no stop id was found, output error message
-                            console.log("Could not find any information about this stop.")
-                        }
-                    },
-                });
-            }
+            fetchStopId(stop).then((id) => {
+                if (id) {
+                    loadStopTimes(id);
+                } else {
+                    console.log("Could not find any information about this stop.")
+                }
+            });
         });
 
         map.stopMarkers.push(circle);
