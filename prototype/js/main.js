@@ -15,7 +15,7 @@ const LIVE_TIMES_KEY = "3918fe2ad7e84a6c8108b305612a8eb3";
 let map;  
 let route; 
 let gpsRoute = "X8";
-let nocCode;
+let nocCode = "SBLB";
 let viewAllBuses = true;
 let radius = 50;
 let currentZoom = 13;
@@ -27,7 +27,7 @@ let transitStopIds = {};
 
 // Initialize the map and set its location
 function createMap() {
-    const mapInstance = L.map("map").setView([57.1497, -2.0943], 13); // Aberdeen
+    const mapInstance = L.map('map').setView([57.1497, -2.0943], 13); // Aberdeen
     addTileLayer(mapInstance); 
     return mapInstance;
 }
@@ -35,14 +35,14 @@ function createMap() {
 // Function to add refresh button to the map
 function addRefreshButtonToMap(mapInstance) {
     // refresh buses 
-    const refreshButton = L.control({ position: "topright" });
+    const refreshButton = L.control({ position: 'topright' });
 
     refreshButton.onAdd = function () {
-        const buttonDiv = L.DomUtil.create("div", "map-button");
-        buttonDiv.innerHTML = "<button id=\"resetButton\"><i class=\"fa-solid fa-arrows-rotate\"></i></button>";
+        const buttonDiv = L.DomUtil.create('div', 'map-button');
+        buttonDiv.innerHTML = '<button id="resetButton"><i class="fa-solid fa-arrows-rotate"></i></button>';
 
         // event listener for the button
-        buttonDiv.addEventListener("click", () => {
+        buttonDiv.addEventListener('click', () => {
 
             // Refresh viewport to load all buses
             updateViewportBounds();
@@ -60,18 +60,17 @@ function addRefreshButtonToMap(mapInstance) {
 
     refreshButton.addTo(mapInstance);
 }
-
 // Function to add home button to the map
 function addHomeButtonToMap(mapInstance) {
     // Home button 
-    const homeButton = L.control({ position: "topleft" });
+    const homeButton = L.control({ position: 'topleft' });
 
     homeButton.onAdd = function () {
-        const buttonDiv = L.DomUtil.create("div", "map-button");
-        buttonDiv.innerHTML = "<button id=\"homeButton\"><i class=\"fa-solid fa-house\"></i></button>";
+        const buttonDiv = L.DomUtil.create('div', 'map-button');
+        buttonDiv.innerHTML = '<button id="homeButton"><i class="fa-solid fa-house"></i></button>';
 
         // event listener for the button
-        buttonDiv.addEventListener("click", () => {
+        buttonDiv.addEventListener('click', () => {
             // Reset to show all buses when the button is clicked
             viewAllBuses = true;
 
@@ -104,18 +103,17 @@ function addHomeButtonToMap(mapInstance) {
     };
     homeButton.addTo(mapInstance);
 }
-
 // Function to add location button to the map
 function addLocationButtonToMap(mapInstance) {
     // Location button 
-    const locationButton = L.control({ position: "topright" });
+    const locationButton = L.control({ position: 'topright' });
 
     locationButton.onAdd = function () {
-        const buttonDiv = L.DomUtil.create("div", "map-button");
-        buttonDiv.innerHTML = "<button id=\"locationButton\"><i class=\"fa-solid fa-location-crosshairs\"></i></i></button>";
+        const buttonDiv = L.DomUtil.create('div', 'map-button');
+        buttonDiv.innerHTML = '<button id="locationButton"><i class="fa-solid fa-location-crosshairs"></i></i></button>';
 
         // event listener for the button
-        buttonDiv.addEventListener("click", () => {
+        buttonDiv.addEventListener('click', () => {
 
             showUserLocation();
 
@@ -136,9 +134,9 @@ function addLocationButtonToMap(mapInstance) {
 
 // Layer to style the map
 function addTileLayer(mapInstance) {
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         maxZoom: 18,
-        attribution: "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"https://carto.com/attributions\">CARTO</a>"
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
     }).addTo(mapInstance);
 }
 
@@ -201,7 +199,6 @@ function getSpecificBusGPS(nocCode, route) {
     });
 }
 
-
 // Get the bus data for all bus routes in viewport 
 function getAllBusGPS(yMax, xMax, yMin, xMin) {
     // don't show buses when zoomed far out
@@ -222,7 +219,7 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
         const busData = data.map(bus => ({
             longitude: bus.coordinates[0],
             latitude: bus.coordinates[1],
-            route: bus.service.line_name,
+            route: bus.service ? bus.service.line_name : 'Unknown',
             destination: bus.destination,
             id: bus.trip_id
         }));
@@ -230,6 +227,7 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
         drawBus(busData, map);
     });
 }
+
 function drawBus(busData, map) {
     // Remove existing bus markers
     if (map.busMarkers) {
@@ -314,7 +312,7 @@ function refreshSpecificBusRoute(busId) {
 
 // Get the stops in the viewport
 function drawStopsInViewport(yMax, xMax, yMin, xMin) {
-    // don"t show stops when zoomed far out
+    // don't show stops when zoomed far out
     if (currentZoom < 15) {
         if (map.stopMarkers) {
             map.stopMarkers.forEach(marker => {
