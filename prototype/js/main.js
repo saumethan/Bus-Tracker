@@ -8,6 +8,8 @@
 // Constants
 const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
 const BUS_PROXY = `https://europe-west2-legendoj1-portfolio.cloudfunctions.net/busproxy/?apiKey=${TRANSIT_API_KEY}&url=`;
+const LIVE_TIMES_URL = "https://apim-public-trs.trapezegroupazure.co.uk/trs/lts/lts/v1/public/departures";
+const LIVE_TIMES_KEY = "3918fe2ad7e84a6c8108b305612a8eb3";
 
 // Variables
 let map;  
@@ -25,7 +27,7 @@ let transitStopIds = {};
 
 // Initialize the map and set its location
 function createMap() {
-    const mapInstance = L.map('map').setView([57.1497, -2.0943], 13); // Aberdeen
+    const mapInstance = L.map("map").setView([57.1497, -2.0943], 13); // Aberdeen
     addTileLayer(mapInstance); 
     return mapInstance;
 }
@@ -33,14 +35,14 @@ function createMap() {
 // Function to add refresh button to the map
 function addRefreshButtonToMap(mapInstance) {
     // refresh buses 
-    const refreshButton = L.control({ position: 'topright' });
+    const refreshButton = L.control({ position: "topright" });
 
     refreshButton.onAdd = function () {
-        const buttonDiv = L.DomUtil.create('div', 'map-button');
-        buttonDiv.innerHTML = '<button id="resetButton"><i class="fa-solid fa-arrows-rotate"></i></button>';
+        const buttonDiv = L.DomUtil.create("div", "map-button");
+        buttonDiv.innerHTML = "<button id=\"resetButton\"><i class=\"fa-solid fa-arrows-rotate\"></i></button>";
 
         // event listener for the button
-        buttonDiv.addEventListener('click', () => {
+        buttonDiv.addEventListener("click", () => {
 
             // Refresh viewport to load all buses
             updateViewportBounds();
@@ -58,17 +60,18 @@ function addRefreshButtonToMap(mapInstance) {
 
     refreshButton.addTo(mapInstance);
 }
+
 // Function to add home button to the map
 function addHomeButtonToMap(mapInstance) {
     // Home button 
-    const homeButton = L.control({ position: 'topleft' });
+    const homeButton = L.control({ position: "topleft" });
 
     homeButton.onAdd = function () {
-        const buttonDiv = L.DomUtil.create('div', 'map-button');
-        buttonDiv.innerHTML = '<button id="homeButton"><i class="fa-solid fa-house"></i></button>';
+        const buttonDiv = L.DomUtil.create("div", "map-button");
+        buttonDiv.innerHTML = "<button id=\"homeButton\"><i class=\"fa-solid fa-house\"></i></button>";
 
         // event listener for the button
-        buttonDiv.addEventListener('click', () => {
+        buttonDiv.addEventListener("click", () => {
             // Reset to show all buses when the button is clicked
             viewAllBuses = true;
 
@@ -101,17 +104,18 @@ function addHomeButtonToMap(mapInstance) {
     };
     homeButton.addTo(mapInstance);
 }
+
 // Function to add location button to the map
 function addLocationButtonToMap(mapInstance) {
     // Location button 
-    const locationButton = L.control({ position: 'topright' });
+    const locationButton = L.control({ position: "topright" });
 
     locationButton.onAdd = function () {
-        const buttonDiv = L.DomUtil.create('div', 'map-button');
-        buttonDiv.innerHTML = '<button id="locationButton"><i class="fa-solid fa-location-crosshairs"></i></i></button>';
+        const buttonDiv = L.DomUtil.create("div", "map-button");
+        buttonDiv.innerHTML = "<button id=\"locationButton\"><i class=\"fa-solid fa-location-crosshairs\"></i></i></button>";
 
         // event listener for the button
-        buttonDiv.addEventListener('click', () => {
+        buttonDiv.addEventListener("click", () => {
 
             showUserLocation();
 
@@ -132,9 +136,9 @@ function addLocationButtonToMap(mapInstance) {
 
 // Layer to style the map
 function addTileLayer(mapInstance) {
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
         maxZoom: 18,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        attribution: "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"https://carto.com/attributions\">CARTO</a>"
     }).addTo(mapInstance);
 }
 
@@ -156,13 +160,13 @@ function drawRoute(id) {
         });
 
         // Remove the existing route if it exists
-        if (typeof route !== 'undefined' && route) {
+        if (typeof route !== "undefined" && route) {
             map.removeLayer(route); 
         }
 
-        // Add the new route to the map using Leaflet's polyline
+        // Add the new route to the map using Leaflet"s polyline
         route = L.polyline(routeCoords, {
-            color: '#3498db', 
+            color: "#3498db", 
             weight: 4,
             opacity: 0.8,
         }).addTo(map);
@@ -199,7 +203,7 @@ function getSpecificBusGPS(nocCode, route) {
 
 // Get the bus data for all bus routes in viewport 
 function getAllBusGPS(yMax, xMax, yMin, xMin) {
-    // don't show buses when zoomed far out
+    // don"t show buses when zoomed far out
     if (currentZoom < 12) {
         if (map.busMarkers) {
             map.busMarkers.forEach(marker => {
@@ -240,8 +244,8 @@ function drawBus(busData, map) {
     busData.forEach(coord => { 
 
         const circle = L.circle([coord.latitude, coord.longitude], {
-            color: 'red', 
-            fillColor: '#f03', 
+            color: "red", 
+            fillColor: "#f03", 
             fillOpacity: 0.5,
             radius: radius
         }).addTo(map);
@@ -253,10 +257,10 @@ function drawBus(busData, map) {
             </div>
         `;
 
-        circle.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
+        circle.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
 
         // Add click event listener to the bus marker
-        circle.on('click', (event) => {
+        circle.on("click", (event) => {
             gpsRoute = coord.route;
             viewAllBuses = false;
 
@@ -266,11 +270,11 @@ function drawBus(busData, map) {
             map.busMarkers.forEach(marker => {
                 marker.closeTooltip(); 
                 marker.unbindTooltip();
-                marker.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
+                marker.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
             });
 
-            // Make clicked bus's tooltip permanent
-            circle.bindTooltip(toolTipContent, { permanent: true, direction: 'top' }).openTooltip();
+            // Make clicked bus"s tooltip permanent
+            circle.bindTooltip(toolTipContent, { permanent: true, direction: "top" }).openTooltip();
 
             // Update the route and destination info
             document.getElementById("busRoute").textContent = "Route: " + coord.route;
@@ -286,7 +290,7 @@ function drawBus(busData, map) {
     });
 
     // Close tooltips when clicking elsewhere on the map
-    map.on('click', () => {
+    map.on("click", () => {
         map.busMarkers.forEach(marker => {
             marker.closeTooltip();
             marker.unbindTooltip();
@@ -310,7 +314,7 @@ function refreshSpecificBusRoute(busId) {
 
 // Get the stops in the viewport
 function drawStopsInViewport(yMax, xMax, yMin, xMin) {
-    // don't show stops when zoomed far out
+    // don"t show stops when zoomed far out
     if (currentZoom < 15) {
         if (map.stopMarkers) {
             map.stopMarkers.forEach(marker => {
@@ -350,6 +354,7 @@ async function fetchStopId(stop) {
         // find the stop id that is used in transit app
         if (response && response.stops) {
             response.stops.forEach(thisStop => {
+                console.log(thisStop)
                 if (thisStop.rt_stop_id === stop.bustimes_id) {
                     transitStopIds[stop.bustimes_id] = thisStop.global_stop_id;
                 }
@@ -363,14 +368,19 @@ async function fetchStopId(stop) {
 
 // Load the bus times for a specific stop
 async function loadStopTimes(transitStopId) {
+    //if (transitStopId) return;
+
     // make request to transit api
     const response = await $.ajax({
         type: "GET",
-        url: "url",
+        url: BUS_PROXY + `https://external.transitapp.com/v3/public/stop_departures?global_stop_id=${transitStopId}`,
         dataType: "json",
     });
 
+    console.log(response);
+
     // delete existing stop times
+    
 
     // load times
 }
@@ -389,8 +399,8 @@ function drawStops(stopsData, map) {
     stopsData.forEach(stop => {
         // create marker
         const circle = L.circle([stop.latitude, stop.longitude], {
-            color: 'blue', 
-            fillColor: '#0362fc', 
+            color: "blue", 
+            fillColor: "#0362fc", 
             fillOpacity: 0.5,
             radius: radius
         }).addTo(map);
@@ -414,21 +424,20 @@ function drawStops(stopsData, map) {
                 Services: ${stopServicesString}<br>
             </div>
         `;
-        circle.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
+        circle.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
 
         // makes the tooltip permanent when clicked on
         circle.on("click", (event) => {
             // stop stop tooltip
             map.stopMarkers.forEach(marker => {
                 marker.closeTooltip();
-                marker.unbindTooltip();
-                marker.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
             });
-            circle.bindTooltip(toolTipContent, { permanent: true, direction: 'top' }).openTooltip();
+            circle.openTooltip();
 
             // load scheduled buses for this stop
             // find this stop id from cached data or request api
             fetchStopId(stop).then((id) => {
+                console.log(id);
                 if (id) {
                     loadStopTimes(id);
                 } else {
@@ -468,7 +477,6 @@ function showUserLocation() {
             const userLng = position.coords.longitude;
 
             const userIcon = L.divIcon({
-                className: 'user-location-marker', 
                 className: "user-location-marker", 
                 iconSize: [18, 18],                
             });
@@ -481,7 +489,7 @@ function showUserLocation() {
             const userMarker = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
             userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
 
-            // Center map on user's location
+            // Center map on user"s location
             map.setView([userLat, userLng], 13);
             }, 
         error => {
@@ -506,7 +514,7 @@ function easterEgg() {
     $("#easterEggButton").click(function () {
         const container = document.getElementById("easterEggContainer");
         // remove existing images
-        container.innerHTML = ''; 
+        container.innerHTML = ""; 
     
         // Number of images
         const imageCount = 110;
@@ -525,7 +533,7 @@ function easterEgg() {
                 // styles
                 img.style.width = `${randomSize}px`;
                 img.style.height = `${randomSize}px`;
-                img.style.position = 'absolute';
+                img.style.position = "absolute";
                 img.style.left = `${randomX}vw`;
                 img.style.top = `${randomY}vh`;
                 img.style.transform = `rotate(${randomRotation}deg)`;
@@ -550,8 +558,8 @@ document.addEventListener("DOMContentLoaded", function() {
     showUserLocation();
 
     if (viewAllBuses === true) {
-        map.on('moveend', updateViewportBounds); 
-        map.on('zoomend', updateViewportBounds);
+        map.on("moveend", updateViewportBounds); 
+        map.on("zoomend", updateViewportBounds);
     } 
 
     // Resize the buses as the user zooms in
