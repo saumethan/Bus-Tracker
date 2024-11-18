@@ -140,41 +140,76 @@ function addTileLayer(mapInstance) {
     }).addTo(mapInstance);
 }
 
-function drawRoute(id) {
-    // URL to get the route data
-    console.log("id = " + id);
-    const url = `https://bustimes.org/api/trips/${id}/?format=json`;
+function drawRoute(serviceId, tripId) {
+    // Initialize the busData object if it doesn't exist
+    if (typeof busData === 'undefined') {
+        busData = {};
+    }
 
-    $.getJSON(url, data => {
-        // Array for route coordinates
-        const routeCoords = [];
+    if (busData.tripId === undefined) {
+        const url = `https://bustimes.org/vehicles.json?service=${serviceId}`;
+        $.getJSON(url, function(data) {
+            const fetchedData = data.map(bus => ({
+                tripId: bus.trip_id,
+                noc: bus.vehicle.url.split('/')[2].split('-')[0].toUpperCase()
+            }));
 
-        // Extract coordinates from data
-        data.times.forEach(stop => {
-            if (stop.track) {
-                stop.track.forEach(coord => {
-                    routeCoords.push([coord[1], coord[0]]);
-                });
-            } else if (stop.stop && stop.stop.location) {
-                routeCoords.push([stop.stop.location[1], stop.stop.location[0]]);
+            // Ensure we log the first tripId correctly
+            if (fetchedData.length > 0) {
+                console.log("tripId = " + fetchedData[0].tripId);
+                busData.tripId = fetchedData[0].tripId; // Set the tripId for future use
             }
         });
+    } else {
+        console.log("tripId is already defined: " + busData.tripId);
+    }
 
-        // Remove the existing route
-        if (typeof route !== 'undefined' && route) {
-            map.removeLayer(route); 
-        }
+    // Ensure tripId is provided before making the second API call
+    if (tripId) {
+        const url = `https://bustimes.org/api/trips/${tripId}/?format=json`;
 
-        // Add the new route to the map
-        route = L.polyline(routeCoords, {
-            color: '#3498db', 
-            weight: 4,
-            opacity: 0.8,
-        }).addTo(map);
+        $.getJSON(url, data => {
+            // Array for route coordinates
+            const routeCoords = [];
 
-        // Adjust the map view to fit the route
-        adjustMapViewToRoute(route);
-    });
+            // Extract coordinates from data
+            data.times.forEach(stop => {
+                if (stop.track) {
+                    stop.track.forEach(coord => {
+                        routeCoords.push([coord[1], coord[0]]);
+                    });
+                } else if (stop.stop && stop.stop.location) {
+                    routeCoords.push([stop.stop.location[1], stop.stop.location[0]]);
+                }
+            });
+
+            // Remove the existing route if it exists
+            if (typeof route !== 'undefined' && route) {
+                map.removeLayer(route);
+            }
+
+            // Add the new route to the map
+            route = L.polyline(routeCoords, {
+                color: '#3498db',
+                weight: 4,
+                opacity: 0.8,
+            }).addTo(map);
+
+            // Adjust the map view to fit the route
+            adjustMapViewToRoute(route);
+        });
+    } else {
+        console.log("Invalid tripId provided.");
+    }
+}
+
+
+
+// Helper function to adjust the map view to the newly drawn route
+function adjustMapViewToRoute(route) {
+    if (route) {
+        map.fitBounds(route.getBounds());
+    }
 }
 
 
@@ -208,7 +243,7 @@ function getSpecificBusGPS(nocCode, route) {
 
 // Get the bus data for all bus routes in viewport 
 function getAllBusGPS(yMax, xMax, yMin, xMin) {
-    // don't show buses when zoomed far out
+    // Don't show buses when zoomed far out
     if (currentZoom < 12) {
         if (map.busMarkers) {
             map.busMarkers.forEach(marker => {
@@ -218,20 +253,20 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
         return;
     }
 
-    // get the bus GPS locations
+    // Get the bus GPS locations
     const url = `https://bustimes.org/vehicles.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
 
     $.getJSON(url, function(data) {
-        // gets the longitude and latitude
+        // Gets the longitude and latitude
         const busData = data.map(bus => ({
             longitude: bus.coordinates[0],
             latitude: bus.coordinates[1],
             route: bus.service ? bus.service.line_name : 'Unknown',
             destination: bus.destination,
-            id: bus.trip_id,
+            tripId: bus.trip_id,
+            serviceId: bus.service_id,
             noc: bus.vehicle.url.split('/')[2].split('-')[0].toUpperCase()
         }));
-
         drawBus(busData, map);
     }).fail(function() {
         console.error("Error fetching bus data.");
@@ -273,7 +308,7 @@ function drawBus(busData, map) {
             gpsRoute = coord.route;
             viewAllBuses = false;
 
-            refreshSpecificBusRoute(coord.id); 
+            refreshSpecificBusRoute(coord.serviceId, coord.tripId); 
 
             // Reset tooltips on all markers
             map.busMarkers.forEach(marker => {
@@ -308,7 +343,7 @@ function drawBus(busData, map) {
 }
 
 // Function to update map with specific bus route
-function refreshSpecificBusRoute(busId) { 
+function refreshSpecificBusRoute(serviceId, busId) { 
     if (map.busMarkers) {
         map.busMarkers.forEach(marker => map.removeLayer(marker));
     }
@@ -317,7 +352,7 @@ function refreshSpecificBusRoute(busId) {
     }
 
     // Fetch and draw the selected route and bus data
-    drawRoute(busId); 
+    drawRoute(serviceId, busId); 
     getSpecificBusGPS(nocCode, gpsRoute);
 }
 
