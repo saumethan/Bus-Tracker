@@ -383,22 +383,81 @@ async function fetchStopId(stop) {
 }
 
 // Load the bus times for a specific stop
-async function loadStopTimes(transitStopId) {
-    //if (transitStopId) return;
-
+async function loadStopTimes(stopId) {
     // make request to transit api
     const response = await $.ajax({
-        type: "GET",
-        url: BUS_PROXY + `https://external.transitapp.com/v3/public/stop_departures?global_stop_id=${transitStopId}`,
-        dataType: "json",
+        type: "POST",
+        url: LIVE_TIMES_URL,
+        contentType: "application/json",
+        data: JSON.stringify({
+            clientTimeZoneOffsetInMS: 0,
+            departureDate: new Date().toISOString(),
+            departureTime: new Date().toISOString(),
+            stopIds: [ stopId ],
+            stopType: "BUS_STOP",
+            requestTime: new Date().toISOString(),
+            departureOrArrival: "DEPARTURE",
+            refresh: false,
+            source: "WEB"
+        }),
+        headers: { "ocp-apim-subscription-key": LIVE_TIMES_KEY }
     });
 
-    console.log(response);
-
-    // delete existing stop times
-    
-
     // load times
+    if (response && response.status && response.status.success) {
+        const departures = response.stopDepartures;
+
+        // group by serviceNumber
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+        const grouped = departures.reduce((acc, bus) => {
+            if (!acc[bus.serviceNumber]) {
+                acc[bus.serviceNumber] = [];
+            }
+            acc[bus.serviceNumber].push(bus);
+            return acc;
+        }, {});
+
+        // sort each group by scheduledDeparture
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+        for (const service in grouped) {
+            grouped[service].sort((a, b) => 
+                new Date(a.scheduledDeparture) - new Date(b.scheduledDeparture)
+            );
+        }
+
+        // format the bus times into HTML
+        let htmlContent = "";
+        for (const service in grouped) {
+            htmlContent += `<div class="service-group">`;
+            
+            grouped[service].forEach(bus => {
+                let departureTime;
+                if (bus.realTimeDeparture) {
+                    departureTime = new Date(bus.realTimeDeparture).toLocaleTimeString();
+                } else {
+                    departureTime = new Date(bus.scheduledDeparture).toLocaleTimeString()
+                }
+
+            let destination = bus.destination;
+            if (bus.destination.length > 12) {
+                destination = bus.destination.substring(0, 12) + "...";
+            }
+
+            htmlContent += `
+                <div class="busTimeRecord">
+                    <h2>${service} <span id="destination">to ${destination}</span></h2>
+                    <p id="times">${new Date(bus.scheduledDeparture).toLocaleTimeString()} (Exp: ${new Date(bus.realTimeDeparture || departureTime).toLocaleTimeString()})<br><span>CANCELLED</span></p>
+                </div>
+            `;
+        
+            });
+
+            htmlContent += '</div>';
+        }
+
+        // Append to DOM
+        $("#busData").html(htmlContent);
+    }
 }
 
 // Draw stops on the map
@@ -452,14 +511,16 @@ function drawStops(stopsData, map) {
 
             // load scheduled buses for this stop
             // find this stop id from cached data or request api
-            fetchStopId(stop).then((id) => {
-                console.log(id);
-                if (id) {
-                    loadStopTimes(id);
-                } else {
-                    console.log("Could not find any information about this stop.")
-                }
-            });
+            // fetchStopId(stop).then((id) => {
+            //     console.log(id);
+            //     if (id) {
+            //         loadStopTimes(id);
+            //     } else {
+            //         console.log("Could not find any information about this stop.")
+            //     }
+            // });
+
+            loadStopTimes(stop.bustimes_id);
         });
 
         map.stopMarkers.push(circle);

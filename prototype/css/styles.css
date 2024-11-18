@@ -251,12 +251,11 @@ nav #title {
 }
 
 #busData {
-    padding: 10px;
+    padding: 10px 20px;
     height: 95vh;
     max-width: 25%;
     min-width: 22.5%;
     float: left;
-    padding-left: 20px;
     background-color: lightgray;
     border-radius: 15px;
 }
@@ -333,7 +332,6 @@ nav #title {
 }
 
 /* Footer */
-
 footer {
     background-color: white;
     color: rblack;
@@ -352,6 +350,24 @@ footer p {
 #footerLink {
     text-decoration: none;
     color: black;
+}
+
+/* Bus Times */
+.busTimeRecord {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.busTimeRecord #times {
+    text-align: right;
+}
+
+.busTimeRecord #destination {
+    font-size: 20px;
 }
 
 /* Responsive layout for phonez */
