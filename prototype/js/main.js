@@ -51,7 +51,8 @@ function addRefreshButtonToMap(mapInstance) {
             if (!viewAllBuses) {
                 const now = new Date();
                 const formattedTime = now.toLocaleTimeString(); 
-                document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
+                $("#refreshTime").text("Last updated: " + formattedTime);
+
                 }
         });
 
@@ -91,13 +92,15 @@ function addHomeButtonToMap(mapInstance) {
             updateViewportBounds();
 
             // Remove the route and destination info
-            document.getElementById("busRoute").textContent = "";
-            document.getElementById("busDestination").textContent = "";
+            $("#busRoute").text("");
+
+            $("#busDestination").text("");
 
             // Remove the refresh time
             const now = new Date();
             const formattedTime = now.toLocaleTimeString(); 
-            document.getElementById("refreshTime").textContent = "";
+            $("#refreshTime").text("Last updated: " + formattedTime);
+
         });
         return buttonDiv;
     };
@@ -124,7 +127,8 @@ function addLocationButtonToMap(mapInstance) {
             if (!viewAllBuses) {
                 const now = new Date();
                 const formattedTime = now.toLocaleTimeString(); 
-                document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
+                $("#refreshTime").text("Last updated: " + formattedTime);
+
             }
         });
         return buttonDiv;
@@ -203,15 +207,12 @@ function drawRoute(serviceId, tripId) {
     }
 }
 
-
-
 // Helper function to adjust the map view to the newly drawn route
 function adjustMapViewToRoute(route) {
     if (route) {
         map.fitBounds(route.getBounds());
     }
 }
-
 
 // Fit the map to the route
 function adjustMapViewToRoute(routeLayer) {
@@ -321,13 +322,14 @@ function drawBus(busData, map) {
             circle.bindTooltip(toolTipContent, { permanent: true, direction: 'top' }).openTooltip();
 
             // Update the route and destination info
-            document.getElementById("busRoute").textContent = "Route: " + coord.route;
-            document.getElementById("busDestination").textContent = "Destination: " + coord.destination;
+            $("#busRoute").text("Route: " + coord.route);
+            $("#busDestination").text("Destination: " + coord.destination);
 
             // Update the refresh time
             const now = new Date();
             const formattedTime = now.toLocaleTimeString(); 
-            document.getElementById("refreshTime").textContent = "Last updated: " + formattedTime;
+            $("#refreshTime").text("Last updated: " + formattedTime);
+
         });
 
         map.busMarkers.push(circle);
@@ -617,7 +619,7 @@ function resetInactivityTimeout() {
 
 function easterEgg() {
     $("#easterEggButton").click(function () {
-        const container = document.getElementById("easterEggContainer");
+        const container = $("#easterEggContainer");
         // remove existing images
         container.innerHTML = ""; 
     
