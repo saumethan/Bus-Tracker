@@ -144,7 +144,6 @@ function addTileLayer(mapInstance) {
 
 function drawRoute(id) {
     // URL to get the route data
-    console.log(id);
     const url = `https://bustimes.org/api/trips/${id}/?format=json`;
 
     $.getJSON(url, data => {
@@ -161,13 +160,13 @@ function drawRoute(id) {
         });
 
         // Remove the existing route if it exists
-        if (typeof route !== "undefined" && route) {
+        if (typeof route !== 'undefined' && route) {
             map.removeLayer(route); 
         }
 
-        // Add the new route to the map using Leaflet"s polyline
+        // Add the new route to the map using Leaflet's polyline
         route = L.polyline(routeCoords, {
-            color: "#3498db", 
+            color: '#3498db', 
             weight: 4,
             opacity: 0.8,
         }).addTo(map);
@@ -184,13 +183,10 @@ function adjustMapViewToRoute(routeLayer) {
 
 // Get the bus data for a specific bus route
 function getSpecificBusGPS(nocCode, route) {
-    console.log(nocCode);
     const url = `https://bustimes.org/vehicles.json?operator=${nocCode}`;
 
     $.getJSON(url, data => {
         // Filter data for the bus route
-        console.log(route);
-        
         const filteredBuses = data.filter(bus => bus.service.line_name === route);
 
         // get the longitude and latitude
@@ -201,16 +197,14 @@ function getSpecificBusGPS(nocCode, route) {
             destination: bus.destination
         }));
 
-        // Debug the bus data to ensure it's correct
-        console.log(busData);  // Make sure `busData` is structured properly
-
         drawBus(busData, map);
     });
 }
 
+
 // Get the bus data for all bus routes in viewport 
 function getAllBusGPS(yMax, xMax, yMin, xMin) {
-    // don"t show buses when zoomed far out
+    // don't show buses when zoomed far out
     if (currentZoom < 12) {
         if (map.busMarkers) {
             map.busMarkers.forEach(marker => {
@@ -224,25 +218,16 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
     const url = `https://bustimes.org/vehicles.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
 
     $.getJSON(url, function(data) {
-        if (!Array.isArray(data)) {
-            console.error("Unexpected data format:", data);
-            return;
-        }
-
-        // Process each bus
+        // gets the longitude and latitude
         const busData = data.map(bus => ({
             longitude: bus.coordinates[0],
             latitude: bus.coordinates[1],
-            route: bus.service?.line_name || 'Unknown',  
+            route: bus.service.line_name,
             destination: bus.destination,
-            id: bus.trip_id,
-            noc: bus.vehicle.url.split('/')[2].split('-')[0].toUpperCase()
+            id: bus.trip_id
         }));
 
-        // Draw buses on the map
         drawBus(busData, map);
-    }).fail(function() {
-        console.error("Error fetching bus data.");
     });
 }
 function drawBus(busData, map) {
