@@ -14,8 +14,8 @@ const LIVE_TIMES_KEY = "3918fe2ad7e84a6c8108b305612a8eb3";
 // Variables
 let map;  
 let route; 
-let gpsRoute = "X8";
-let nocCode = "SBLB";
+let gpsRoute;
+let nocCode;
 let viewAllBuses = true;
 let radius = 50;
 let currentZoom = 13;
@@ -142,37 +142,41 @@ function addTileLayer(mapInstance) {
 
 function drawRoute(id) {
     // URL to get the route data
+    console.log("id = " + id);
     const url = `https://bustimes.org/api/trips/${id}/?format=json`;
 
     $.getJSON(url, data => {
-        // array for  coords
+        // Array for route coordinates
         const routeCoords = [];
 
-        // Extracts coordinates from  data
+        // Extract coordinates from data
         data.times.forEach(stop => {
             if (stop.track) {
                 stop.track.forEach(coord => {
                     routeCoords.push([coord[1], coord[0]]);
                 });
+            } else if (stop.stop && stop.stop.location) {
+                routeCoords.push([stop.stop.location[1], stop.stop.location[0]]);
             }
         });
 
-        // Remove the existing route if it exists
+        // Remove the existing route
         if (typeof route !== 'undefined' && route) {
             map.removeLayer(route); 
         }
 
-        // Add the new route to the map using Leaflet's polyline
+        // Add the new route to the map
         route = L.polyline(routeCoords, {
             color: '#3498db', 
             weight: 4,
             opacity: 0.8,
         }).addTo(map);
 
-        // Adjust the map view to fit the new route
+        // Adjust the map view to fit the route
         adjustMapViewToRoute(route);
     });
 }
+
 
 // Fit the map to the route
 function adjustMapViewToRoute(routeLayer) {
@@ -181,11 +185,14 @@ function adjustMapViewToRoute(routeLayer) {
 
 // Get the bus data for a specific bus route
 function getSpecificBusGPS(nocCode, route) {
+    console.log(nocCode);
     const url = `https://bustimes.org/vehicles.json?operator=${nocCode}`;
 
     $.getJSON(url, data => {
         // Filter data for the bus route
-        const filteredBuses = data.filter(bus => bus.service.line_name === route);
+        console.log(route);
+        console.log("Data received:", data); 
+        const filteredBuses = data.filter(bus => bus.service && bus.service.line_name && bus.service.line_name === route);
 
         // get the longitude and latitude
         const busData = filteredBuses.map(bus => ({
@@ -194,7 +201,7 @@ function getSpecificBusGPS(nocCode, route) {
             route: bus.service.line_name,
             destination: bus.destination
         }));
-
+        console.log(busData);
         drawBus(busData, map);
     });
 }
@@ -221,10 +228,13 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
             latitude: bus.coordinates[1],
             route: bus.service ? bus.service.line_name : 'Unknown',
             destination: bus.destination,
-            id: bus.trip_id
+            id: bus.trip_id,
+            noc: bus.vehicle.url.split('/')[2].split('-')[0].toUpperCase()
         }));
 
         drawBus(busData, map);
+    }).fail(function() {
+        console.error("Error fetching bus data.");
     });
 }
 
@@ -259,6 +269,7 @@ function drawBus(busData, map) {
 
         // Add click event listener to the bus marker
         circle.on('click', (event) => {
+            nocCode = coord.noc;
             gpsRoute = coord.route;
             viewAllBuses = false;
 
