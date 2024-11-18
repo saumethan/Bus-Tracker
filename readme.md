@@ -13,6 +13,7 @@ This is a markdown file, generally the readme.md file in a repository tells any 
 - when you double click on route route disappears and nothing happens
 - Auto updating user locations
 - When you click on a bus stop the tool tip for every bus spot shows the name of the clicked bus stop
+- Figure out the operator issue when clicking on routes that are not SBLB
 
 # Contributors
 
