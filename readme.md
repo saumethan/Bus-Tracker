@@ -8,11 +8,10 @@ This is a markdown file, generally the readme.md file in a repository tells any 
 - Settings page (dark mode)
 - Plan trip page (trip planning api)
 - Timetables page
-- Show buses on route when clicked on (noc codes)
+- Show buses on route when clicked on (noc codes) (put not supported error)
 - Add bus route names onto markers
 - when you double click on route route disappears and nothing happens
 - Auto updating user locations
-- Figure out the operator issue when clicking on routes that are not SBLB
 
 # Contributors
 
