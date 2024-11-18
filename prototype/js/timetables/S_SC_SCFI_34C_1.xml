@@ -1,0 +1,5183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransXChange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreationDateTime="2024-10-07T13:04:47" ModificationDateTime="2024-10-07T13:04:47" Modification="new" RevisionNumber="1" FileName="P034-SPH--SCFI-ST-2024-05-13-241104_Perth_Timeplan_05_joinup-Transmill.xml" SchemaVersion="2.5" RegistrationDocument="true" xsi:schemaLocation="http://www.transxchange.org.uk/ http://www.transxchange.org.uk/schema/2.5/TransXChange_general.xsd" xmlns="http://www.transxchange.org.uk/">
+  <StopPoints>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801005</StopPointRef>
+      <CommonName>Mill Street</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801019</StopPointRef>
+      <CommonName>Bus Depot</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801142</StopPointRef>
+      <CommonName>Lawgrove Place</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801262</StopPointRef>
+      <CommonName>Leisure Pool</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801278</StopPointRef>
+      <CommonName>Scarth Road</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801280</StopPointRef>
+      <CommonName>Cross</CommonName>
+      <LocalityName>Stanley</LocalityName>
+      <LocalityQualifier>Stanley</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801281</StopPointRef>
+      <CommonName>Cross</CommonName>
+      <LocalityName>Stanley</LocalityName>
+      <LocalityQualifier>Stanley</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801341</StopPointRef>
+      <CommonName>War Memorial</CommonName>
+      <LocalityName>Spittalfield</LocalityName>
+      <LocalityQualifier>Spittalfield</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801342</StopPointRef>
+      <CommonName>Spittalfield</CommonName>
+      <LocalityName>Spittalfield</LocalityName>
+      <LocalityQualifier>Spittalfield</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801422</StopPointRef>
+      <CommonName>Luncarty House</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801474</StopPointRef>
+      <CommonName>Boatlands</CommonName>
+      <LocalityName>Caputh</LocalityName>
+      <LocalityQualifier>Caputh</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801729</StopPointRef>
+      <CommonName>Scarth Road</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801790</StopPointRef>
+      <CommonName>Church Hall</CommonName>
+      <LocalityName>Stanley</LocalityName>
+      <LocalityQualifier>Stanley</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801791</StopPointRef>
+      <CommonName>Church Hall</CommonName>
+      <LocalityName>Stanley</LocalityName>
+      <LocalityQualifier>Stanley</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801830</StopPointRef>
+      <CommonName>Tesco</CommonName>
+      <LocalityName>Hillyland</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801900</StopPointRef>
+      <CommonName>Lawgrove Place</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801946</StopPointRef>
+      <CommonName>Cluny Terrace</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801948</StopPointRef>
+      <CommonName>Cluny Terrace</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801962</StopPointRef>
+      <CommonName>Kingswell Terrace</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801963</StopPointRef>
+      <CommonName>Mercer Terrace</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801964</StopPointRef>
+      <CommonName>Mercer Terrace</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801965</StopPointRef>
+      <CommonName>Marlee Road</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801966</StopPointRef>
+      <CommonName>Marlee Road</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801967</StopPointRef>
+      <CommonName>Campsie Road</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801968</StopPointRef>
+      <CommonName>Campsie Road</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801969</StopPointRef>
+      <CommonName>Tweedsmuir Road</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801970</StopPointRef>
+      <CommonName>Kingswell Place</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801971</StopPointRef>
+      <CommonName>Kingswell Terrace</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801972</StopPointRef>
+      <CommonName>Goodlyburn Terrace</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801973</StopPointRef>
+      <CommonName>Rannoch Road</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801974</StopPointRef>
+      <CommonName>Rannoch Road</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801975</StopPointRef>
+      <CommonName>Rannoch Road</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801976</StopPointRef>
+      <CommonName>Hillcrest Avenue</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801977</StopPointRef>
+      <CommonName>Church Street</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801978</StopPointRef>
+      <CommonName>Wellshill Cemetery</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801979</StopPointRef>
+      <CommonName>Wellshill Cemetery</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801980</StopPointRef>
+      <CommonName>Longcauseway</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801991</StopPointRef>
+      <CommonName>Coach House Court</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802033</StopPointRef>
+      <CommonName>Hillcrest Avenue</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802038</StopPointRef>
+      <CommonName>Elibank Street</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802040</StopPointRef>
+      <CommonName>York Place</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802063</StopPointRef>
+      <CommonName>Tesco</CommonName>
+      <LocalityName>Hillyland</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802155</StopPointRef>
+      <CommonName>Denmarkfield</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802180</StopPointRef>
+      <CommonName>Gowrie Farm</CommonName>
+      <LocalityName>Stanley</LocalityName>
+      <LocalityQualifier>Stanley</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802198</StopPointRef>
+      <CommonName>Denmarkfield</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803192</StopPointRef>
+      <CommonName>Bankfoot road end</CommonName>
+      <LocalityName>Airntully</LocalityName>
+      <LocalityQualifier>Airntully</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803193</StopPointRef>
+      <CommonName>Bankfoot road end</CommonName>
+      <LocalityName>Airntully</LocalityName>
+      <LocalityQualifier>Airntully</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803251</StopPointRef>
+      <CommonName>NISA</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803526</StopPointRef>
+      <CommonName>Church Street</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803547</StopPointRef>
+      <CommonName>Primary School</CommonName>
+      <LocalityName>Murthly</LocalityName>
+      <LocalityQualifier>Murthly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803548</StopPointRef>
+      <CommonName>Primary School</CommonName>
+      <LocalityName>Murthly</LocalityName>
+      <LocalityQualifier>Murthly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803549</StopPointRef>
+      <CommonName>Village Hall</CommonName>
+      <LocalityName>Murthly</LocalityName>
+      <LocalityQualifier>Murthly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803550</StopPointRef>
+      <CommonName>Village Hall</CommonName>
+      <LocalityName>Murthly</LocalityName>
+      <LocalityQualifier>Murthly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803551</StopPointRef>
+      <CommonName>Druids Park</CommonName>
+      <LocalityName>Murthly</LocalityName>
+      <LocalityQualifier>Murthly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803552</StopPointRef>
+      <CommonName>Druids Park</CommonName>
+      <LocalityName>Murthly</LocalityName>
+      <LocalityQualifier>Murthly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803553</StopPointRef>
+      <CommonName>Broompark</CommonName>
+      <LocalityName>Murthly</LocalityName>
+      <LocalityQualifier>Murthly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803554</StopPointRef>
+      <CommonName>Broompark</CommonName>
+      <LocalityName>Murthly</LocalityName>
+      <LocalityQualifier>Murthly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803555</StopPointRef>
+      <CommonName>Bus Shelter</CommonName>
+      <LocalityName>Caputh</LocalityName>
+      <LocalityQualifier>Caputh</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803556</StopPointRef>
+      <CommonName>Bus Shelter</CommonName>
+      <LocalityName>Caputh</LocalityName>
+      <LocalityQualifier>Caputh</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803557</StopPointRef>
+      <CommonName>Glendelvine Primary School</CommonName>
+      <LocalityName>Caputh</LocalityName>
+      <LocalityQualifier>Caputh</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803558</StopPointRef>
+      <CommonName>Glendelvine Primary School</CommonName>
+      <LocalityName>Caputh</LocalityName>
+      <LocalityQualifier>Caputh</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803955</StopPointRef>
+      <CommonName>Murray Place</CommonName>
+      <LocalityName>Stanley</LocalityName>
+      <LocalityQualifier>Stanley</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803956</StopPointRef>
+      <CommonName>Russell Street</CommonName>
+      <LocalityName>Stanley</LocalityName>
+      <LocalityQualifier>Stanley</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803957</StopPointRef>
+      <CommonName>East Brougham Street</CommonName>
+      <LocalityName>Stanley</LocalityName>
+      <LocalityQualifier>Stanley</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803958</StopPointRef>
+      <CommonName>East Brougham Street</CommonName>
+      <LocalityName>Stanley</LocalityName>
+      <LocalityQualifier>Stanley</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803959</StopPointRef>
+      <CommonName>Kirkhill House</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803960</StopPointRef>
+      <CommonName>Marshall Way</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803961</StopPointRef>
+      <CommonName>Marshall Way</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803962</StopPointRef>
+      <CommonName>Hatton Place</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803963</StopPointRef>
+      <CommonName>Hatton Place</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804097</StopPointRef>
+      <CommonName>House No 159</CommonName>
+      <LocalityName>Stanley</LocalityName>
+      <LocalityQualifier>Stanley</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804105</StopPointRef>
+      <CommonName>Boatlands</CommonName>
+      <LocalityName>Caputh</LocalityName>
+      <LocalityQualifier>Caputh</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804143</StopPointRef>
+      <CommonName>Marshall Crescent</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804144</StopPointRef>
+      <CommonName>Marshall Crescent</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804165</StopPointRef>
+      <CommonName>Milton Road</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804166</StopPointRef>
+      <CommonName>Milton Road</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804167</StopPointRef>
+      <CommonName>Benchill View</CommonName>
+      <LocalityName>Stanley</LocalityName>
+      <LocalityQualifier>Stanley</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804168</StopPointRef>
+      <CommonName>Linn Road</CommonName>
+      <LocalityName>Stanley</LocalityName>
+      <LocalityQualifier>Stanley</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804169</StopPointRef>
+      <CommonName>Gowrie Farm</CommonName>
+      <LocalityName>Stanley</LocalityName>
+      <LocalityQualifier>Stanley</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804253</StopPointRef>
+      <CommonName>Bus Depot</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804272</StopPointRef>
+      <CommonName>Hatton Road</CommonName>
+      <LocalityName>Luncarty</LocalityName>
+      <LocalityQualifier>Luncarty</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804291</StopPointRef>
+      <CommonName>Ruthvenfield Place</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804318</StopPointRef>
+      <CommonName>Lynton Farm</CommonName>
+      <LocalityName>Stanley</LocalityName>
+      <LocalityQualifier>Stanley</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804319</StopPointRef>
+      <CommonName>Lynton Farm</CommonName>
+      <LocalityName>Stanley</LocalityName>
+      <LocalityQualifier>Stanley</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803382</StopPointRef>
+      <CommonName>Tweedsmuir Road</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803332</StopPointRef>
+      <CommonName>Bertha Park</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803337</StopPointRef>
+      <CommonName>Double Dykes</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803333</StopPointRef>
+      <CommonName>Double Dykes</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803329</StopPointRef>
+      <CommonName>Ruthvenfield Avenue</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803330</StopPointRef>
+      <CommonName>Ruthvenfield Avenue</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+  </StopPoints>
+  <RouteSections>
+    <RouteSection id="RS1">
+      <RouteLink id="RL1">
+        <From>
+          <StopPointRef>64801005</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802040</StopPointRef>
+        </To>
+        <Distance>586</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL2">
+        <From>
+          <StopPointRef>64802040</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802038</StopPointRef>
+        </To>
+        <Distance>197</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3">
+        <From>
+          <StopPointRef>64802038</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801262</StopPointRef>
+        </To>
+        <Distance>155</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL4">
+        <From>
+          <StopPointRef>64801262</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801991</StopPointRef>
+        </To>
+        <Distance>322</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL5">
+        <From>
+          <StopPointRef>64801991</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801979</StopPointRef>
+        </To>
+        <Distance>512</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL6">
+        <From>
+          <StopPointRef>64801979</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803526</StopPointRef>
+        </To>
+        <Distance>141</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL7">
+        <From>
+          <StopPointRef>64803526</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802033</StopPointRef>
+        </To>
+        <Distance>295</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL8">
+        <From>
+          <StopPointRef>64802033</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801975</StopPointRef>
+        </To>
+        <Distance>326</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL9">
+        <From>
+          <StopPointRef>64801975</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801973</StopPointRef>
+        </To>
+        <Distance>236</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL10">
+        <From>
+          <StopPointRef>64801973</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801972</StopPointRef>
+        </To>
+        <Distance>181</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL11">
+        <From>
+          <StopPointRef>64801972</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801962</StopPointRef>
+        </To>
+        <Distance>262</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL12">
+        <From>
+          <StopPointRef>64801962</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801964</StopPointRef>
+        </To>
+        <Distance>310</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL13">
+        <From>
+          <StopPointRef>64801964</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801966</StopPointRef>
+        </To>
+        <Distance>281</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL14">
+        <From>
+          <StopPointRef>64801966</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801968</StopPointRef>
+        </To>
+        <Distance>182</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL15">
+        <From>
+          <StopPointRef>64801968</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803382</StopPointRef>
+        </To>
+        <Distance>145</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL16">
+        <From>
+          <StopPointRef>64803382</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801948</StopPointRef>
+        </To>
+        <Distance>222</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL17">
+        <From>
+          <StopPointRef>64801948</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802063</StopPointRef>
+        </To>
+        <Distance>496</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL18">
+        <From>
+          <StopPointRef>64802063</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803332</StopPointRef>
+        </To>
+        <Distance>2489</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL19">
+        <From>
+          <StopPointRef>64803332</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803337</StopPointRef>
+        </To>
+        <Distance>1226</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL20">
+        <From>
+          <StopPointRef>64803337</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803329</StopPointRef>
+        </To>
+        <Distance>354</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL21">
+        <From>
+          <StopPointRef>64803329</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804291</StopPointRef>
+        </To>
+        <Distance>307</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL22">
+        <From>
+          <StopPointRef>64804291</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804253</StopPointRef>
+        </To>
+        <Distance>377</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL23">
+        <From>
+          <StopPointRef>64804253</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801900</StopPointRef>
+        </To>
+        <Distance>167</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL24">
+        <From>
+          <StopPointRef>64801900</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802155</StopPointRef>
+        </To>
+        <Distance>3020</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL25">
+        <From>
+          <StopPointRef>64802155</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803959</StopPointRef>
+        </To>
+        <Distance>628</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL26">
+        <From>
+          <StopPointRef>64803959</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801278</StopPointRef>
+        </To>
+        <Distance>374</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL27">
+        <From>
+          <StopPointRef>64801278</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803251</StopPointRef>
+        </To>
+        <Distance>408</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL28">
+        <From>
+          <StopPointRef>64803251</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804144</StopPointRef>
+        </To>
+        <Distance>279</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL29">
+        <From>
+          <StopPointRef>64804144</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803963</StopPointRef>
+        </To>
+        <Distance>269</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL30">
+        <From>
+          <StopPointRef>64803963</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804272</StopPointRef>
+        </To>
+        <Distance>318</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL31">
+        <From>
+          <StopPointRef>64804272</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801422</StopPointRef>
+        </To>
+        <Distance>394</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL32">
+        <From>
+          <StopPointRef>64801422</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803962</StopPointRef>
+        </To>
+        <Distance>216</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL33">
+        <From>
+          <StopPointRef>64803962</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804143</StopPointRef>
+        </To>
+        <Distance>249</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL34">
+        <From>
+          <StopPointRef>64804143</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803961</StopPointRef>
+        </To>
+        <Distance>448</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL35">
+        <From>
+          <StopPointRef>64803961</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804166</StopPointRef>
+        </To>
+        <Distance>126</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL36">
+        <From>
+          <StopPointRef>64804166</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802180</StopPointRef>
+        </To>
+        <Distance>1884</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL37">
+        <From>
+          <StopPointRef>64802180</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801280</StopPointRef>
+        </To>
+        <Distance>1794</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL38">
+        <From>
+          <StopPointRef>64801280</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803958</StopPointRef>
+        </To>
+        <Distance>286</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL39">
+        <From>
+          <StopPointRef>64803958</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801790</StopPointRef>
+        </To>
+        <Distance>250</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL40">
+        <From>
+          <StopPointRef>64801790</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804319</StopPointRef>
+        </To>
+        <Distance>801</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL41">
+        <From>
+          <StopPointRef>64804319</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803192</StopPointRef>
+        </To>
+        <Distance>2465</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL42">
+        <From>
+          <StopPointRef>64803192</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803547</StopPointRef>
+        </To>
+        <Distance>1019</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL43">
+        <From>
+          <StopPointRef>64803547</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803550</StopPointRef>
+        </To>
+        <Distance>1043</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL44">
+        <From>
+          <StopPointRef>64803550</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803552</StopPointRef>
+        </To>
+        <Distance>322</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL45">
+        <From>
+          <StopPointRef>64803552</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803554</StopPointRef>
+        </To>
+        <Distance>304</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL46">
+        <From>
+          <StopPointRef>64803554</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804105</StopPointRef>
+        </To>
+        <Distance>1081</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL47">
+        <From>
+          <StopPointRef>64804105</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803555</StopPointRef>
+        </To>
+        <Distance>309</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL48">
+        <From>
+          <StopPointRef>64803555</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803558</StopPointRef>
+        </To>
+        <Distance>1212</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL49">
+        <From>
+          <StopPointRef>64803558</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801342</StopPointRef>
+        </To>
+        <Distance>1089</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+    </RouteSection>
+    <RouteSection id="RS3">
+      <RouteLink id="RL94">
+        <From>
+          <StopPointRef>64803955</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804168</StopPointRef>
+        </To>
+        <Distance>251</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL95">
+        <From>
+          <StopPointRef>64804168</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803956</StopPointRef>
+        </To>
+        <Distance>173</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL96">
+        <From>
+          <StopPointRef>64803956</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804097</StopPointRef>
+        </To>
+        <Distance>166</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL97">
+        <From>
+          <StopPointRef>64804097</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801791</StopPointRef>
+        </To>
+        <Distance>194</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL98">
+        <From>
+          <StopPointRef>64801791</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803957</StopPointRef>
+        </To>
+        <Distance>257</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL99">
+        <From>
+          <StopPointRef>64803957</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801281</StopPointRef>
+        </To>
+        <Distance>256</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL100">
+        <From>
+          <StopPointRef>64801281</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804167</StopPointRef>
+        </To>
+        <Distance>259</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL101">
+        <From>
+          <StopPointRef>64804167</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804169</StopPointRef>
+        </To>
+        <Distance>1531</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL102">
+        <From>
+          <StopPointRef>64804169</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804165</StopPointRef>
+        </To>
+        <Distance>1834</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL103">
+        <From>
+          <StopPointRef>64804165</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803251</StopPointRef>
+        </To>
+        <Distance>358</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL104">
+        <From>
+          <StopPointRef>64803251</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804144</StopPointRef>
+        </To>
+        <Distance>279</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL105">
+        <From>
+          <StopPointRef>64804144</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803963</StopPointRef>
+        </To>
+        <Distance>269</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL106">
+        <From>
+          <StopPointRef>64803963</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804272</StopPointRef>
+        </To>
+        <Distance>318</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL107">
+        <From>
+          <StopPointRef>64804272</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801422</StopPointRef>
+        </To>
+        <Distance>395</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL108">
+        <From>
+          <StopPointRef>64801422</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803962</StopPointRef>
+        </To>
+        <Distance>216</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL109">
+        <From>
+          <StopPointRef>64803962</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804143</StopPointRef>
+        </To>
+        <Distance>249</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL110">
+        <From>
+          <StopPointRef>64804143</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803960</StopPointRef>
+        </To>
+        <Distance>399</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL111">
+        <From>
+          <StopPointRef>64803960</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801729</StopPointRef>
+        </To>
+        <Distance>284</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL112">
+        <From>
+          <StopPointRef>64801729</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802198</StopPointRef>
+        </To>
+        <Distance>1145</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL113">
+        <From>
+          <StopPointRef>64802198</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801142</StopPointRef>
+        </To>
+        <Distance>2978</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL114">
+        <From>
+          <StopPointRef>64801142</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801019</StopPointRef>
+        </To>
+        <Distance>245</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL115">
+        <From>
+          <StopPointRef>64801019</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803330</StopPointRef>
+        </To>
+        <Distance>595</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL116">
+        <From>
+          <StopPointRef>64803330</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803333</StopPointRef>
+        </To>
+        <Distance>358</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL117">
+        <From>
+          <StopPointRef>64803333</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803332</StopPointRef>
+        </To>
+        <Distance>1213</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL118">
+        <From>
+          <StopPointRef>64803332</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801830</StopPointRef>
+        </To>
+        <Distance>2597</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL119">
+        <From>
+          <StopPointRef>64801830</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801946</StopPointRef>
+        </To>
+        <Distance>537</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL120">
+        <From>
+          <StopPointRef>64801946</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801969</StopPointRef>
+        </To>
+        <Distance>101</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL121">
+        <From>
+          <StopPointRef>64801969</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801967</StopPointRef>
+        </To>
+        <Distance>311</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL122">
+        <From>
+          <StopPointRef>64801967</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801965</StopPointRef>
+        </To>
+        <Distance>153</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL123">
+        <From>
+          <StopPointRef>64801965</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801963</StopPointRef>
+        </To>
+        <Distance>349</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL124">
+        <From>
+          <StopPointRef>64801963</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801970</StopPointRef>
+        </To>
+        <Distance>334</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL125">
+        <From>
+          <StopPointRef>64801970</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801971</StopPointRef>
+        </To>
+        <Distance>155</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL126">
+        <From>
+          <StopPointRef>64801971</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801974</StopPointRef>
+        </To>
+        <Distance>292</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL127">
+        <From>
+          <StopPointRef>64801974</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801976</StopPointRef>
+        </To>
+        <Distance>328</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL128">
+        <From>
+          <StopPointRef>64801976</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801977</StopPointRef>
+        </To>
+        <Distance>282</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL129">
+        <From>
+          <StopPointRef>64801977</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801978</StopPointRef>
+        </To>
+        <Distance>136</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL130">
+        <From>
+          <StopPointRef>64801978</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801980</StopPointRef>
+        </To>
+        <Distance>604</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL131">
+        <From>
+          <StopPointRef>64801980</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801005</StopPointRef>
+        </To>
+        <Distance>677</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+    </RouteSection>
+    <RouteSection id="RS2">
+      <RouteLink id="RL50">
+        <From>
+          <StopPointRef>64801341</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803557</StopPointRef>
+        </To>
+        <Distance>997</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL51">
+        <From>
+          <StopPointRef>64803557</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803556</StopPointRef>
+        </To>
+        <Distance>1219</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL52">
+        <From>
+          <StopPointRef>64803556</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801474</StopPointRef>
+        </To>
+        <Distance>321</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL53">
+        <From>
+          <StopPointRef>64801474</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803553</StopPointRef>
+        </To>
+        <Distance>1088</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL54">
+        <From>
+          <StopPointRef>64803553</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803551</StopPointRef>
+        </To>
+        <Distance>300</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL55">
+        <From>
+          <StopPointRef>64803551</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803549</StopPointRef>
+        </To>
+        <Distance>329</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL56">
+        <From>
+          <StopPointRef>64803549</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803548</StopPointRef>
+        </To>
+        <Distance>1025</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL57">
+        <From>
+          <StopPointRef>64803548</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803193</StopPointRef>
+        </To>
+        <Distance>1019</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL58">
+        <From>
+          <StopPointRef>64803193</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804318</StopPointRef>
+        </To>
+        <Distance>2545</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL59">
+        <From>
+          <StopPointRef>64804318</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801791</StopPointRef>
+        </To>
+        <Distance>749</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL60">
+        <From>
+          <StopPointRef>64801791</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803957</StopPointRef>
+        </To>
+        <Distance>257</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL61">
+        <From>
+          <StopPointRef>64803957</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801281</StopPointRef>
+        </To>
+        <Distance>256</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL62">
+        <From>
+          <StopPointRef>64801281</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804167</StopPointRef>
+        </To>
+        <Distance>259</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL63">
+        <From>
+          <StopPointRef>64804167</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804169</StopPointRef>
+        </To>
+        <Distance>1531</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL64">
+        <From>
+          <StopPointRef>64804169</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804165</StopPointRef>
+        </To>
+        <Distance>1834</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL65">
+        <From>
+          <StopPointRef>64804165</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803251</StopPointRef>
+        </To>
+        <Distance>358</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL66">
+        <From>
+          <StopPointRef>64803251</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804144</StopPointRef>
+        </To>
+        <Distance>279</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL67">
+        <From>
+          <StopPointRef>64804144</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803963</StopPointRef>
+        </To>
+        <Distance>269</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL68">
+        <From>
+          <StopPointRef>64803963</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804272</StopPointRef>
+        </To>
+        <Distance>318</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL69">
+        <From>
+          <StopPointRef>64804272</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801422</StopPointRef>
+        </To>
+        <Distance>394</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL70">
+        <From>
+          <StopPointRef>64801422</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803962</StopPointRef>
+        </To>
+        <Distance>216</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL71">
+        <From>
+          <StopPointRef>64803962</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804143</StopPointRef>
+        </To>
+        <Distance>249</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL72">
+        <From>
+          <StopPointRef>64804143</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803960</StopPointRef>
+        </To>
+        <Distance>399</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL73">
+        <From>
+          <StopPointRef>64803960</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801729</StopPointRef>
+        </To>
+        <Distance>284</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL74">
+        <From>
+          <StopPointRef>64801729</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802198</StopPointRef>
+        </To>
+        <Distance>1145</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL75">
+        <From>
+          <StopPointRef>64802198</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801142</StopPointRef>
+        </To>
+        <Distance>2978</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL76">
+        <From>
+          <StopPointRef>64801142</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801019</StopPointRef>
+        </To>
+        <Distance>245</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL77">
+        <From>
+          <StopPointRef>64801019</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803330</StopPointRef>
+        </To>
+        <Distance>595</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL78">
+        <From>
+          <StopPointRef>64803330</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803333</StopPointRef>
+        </To>
+        <Distance>358</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL79">
+        <From>
+          <StopPointRef>64803333</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803332</StopPointRef>
+        </To>
+        <Distance>1213</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL80">
+        <From>
+          <StopPointRef>64803332</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801830</StopPointRef>
+        </To>
+        <Distance>2597</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL81">
+        <From>
+          <StopPointRef>64801830</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801946</StopPointRef>
+        </To>
+        <Distance>537</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL82">
+        <From>
+          <StopPointRef>64801946</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801969</StopPointRef>
+        </To>
+        <Distance>101</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL83">
+        <From>
+          <StopPointRef>64801969</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801967</StopPointRef>
+        </To>
+        <Distance>311</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL84">
+        <From>
+          <StopPointRef>64801967</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801965</StopPointRef>
+        </To>
+        <Distance>153</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL85">
+        <From>
+          <StopPointRef>64801965</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801963</StopPointRef>
+        </To>
+        <Distance>349</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL86">
+        <From>
+          <StopPointRef>64801963</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801970</StopPointRef>
+        </To>
+        <Distance>334</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL87">
+        <From>
+          <StopPointRef>64801970</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801971</StopPointRef>
+        </To>
+        <Distance>155</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL88">
+        <From>
+          <StopPointRef>64801971</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801974</StopPointRef>
+        </To>
+        <Distance>292</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL89">
+        <From>
+          <StopPointRef>64801974</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801976</StopPointRef>
+        </To>
+        <Distance>328</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL90">
+        <From>
+          <StopPointRef>64801976</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801977</StopPointRef>
+        </To>
+        <Distance>282</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL91">
+        <From>
+          <StopPointRef>64801977</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801978</StopPointRef>
+        </To>
+        <Distance>136</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL92">
+        <From>
+          <StopPointRef>64801978</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801980</StopPointRef>
+        </To>
+        <Distance>604</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL93">
+        <From>
+          <StopPointRef>64801980</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801005</StopPointRef>
+        </To>
+        <Distance>676</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+    </RouteSection>
+  </RouteSections>
+  <Routes>
+    <Route id="RT44">
+      <PrivateCode>P034_34C-44</PrivateCode>
+      <Description>Perth Mill Street E - Spittalfield Spittalfield</Description>
+      <RouteSectionRef>RS1</RouteSectionRef>
+    </Route>
+    <Route id="RT46">
+      <PrivateCode>P034_34C-46</PrivateCode>
+      <Description>Stanley Murray Place - Perth Mill Street E</Description>
+      <RouteSectionRef>RS3</RouteSectionRef>
+    </Route>
+    <Route id="RT45">
+      <PrivateCode>P034_34C-45</PrivateCode>
+      <Description>Spittalfield War Memorial - Perth Mill Street E</Description>
+      <RouteSectionRef>RS2</RouteSectionRef>
+    </Route>
+  </Routes>
+  <JourneyPatternSections>
+    <JourneyPatternSection id="JPS105">
+      <JourneyPatternTimingLink id="JPTL1212">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801005</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64802040</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL1</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1213">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64802040</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64802038</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL2</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1214">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64802038</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801262</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1215">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801262</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801991</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL4</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1216">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801991</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801979</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL5</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1217">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801979</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803526</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL6</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1218">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803526</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64802033</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL7</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1219">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64802033</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801975</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL8</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1220">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801975</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801973</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL9</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1221">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801973</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801972</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL10</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1222">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801972</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801962</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL11</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1223">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801962</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801964</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL12</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1224">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801964</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801966</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL13</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1225">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801966</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801968</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL14</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1226">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801968</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803382</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL15</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1227">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803382</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801948</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL16</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1228">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801948</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64802063</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL17</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1229">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64802063</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803332</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL18</RouteLinkRef>
+        <RunTime>PT6M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1230">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803332</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803337</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL19</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1231">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803337</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803329</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL20</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1232">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803329</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804291</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL21</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1233">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804291</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804253</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL22</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1234">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804253</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801900</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL23</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1235">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801900</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64802155</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL24</RouteLinkRef>
+        <RunTime>PT5M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1236">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64802155</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803959</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL25</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1237">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803959</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801278</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL26</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1238">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801278</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803251</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL27</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1239">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803251</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804144</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL28</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1240">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804144</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803963</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL29</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1241">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803963</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804272</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL30</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1242">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804272</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801422</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL31</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1243">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801422</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803962</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL32</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1244">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803962</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804143</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL33</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1245">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804143</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803961</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL34</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1246">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803961</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804166</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL35</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1247">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804166</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64802180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL36</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1248">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64802180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801280</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL37</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1249">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801280</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803958</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL38</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1250">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803958</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801790</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL39</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1251">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801790</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804319</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL40</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1252">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804319</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803192</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL41</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1253">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803192</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803547</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL42</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1254">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803547</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803550</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL43</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1255">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803550</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803552</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL44</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1256">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803552</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803554</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL45</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1257">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803554</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804105</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL46</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1258">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64804105</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803555</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL47</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1259">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803555</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803558</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL48</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1260">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64803558</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>setDown</Activity>
+          <DynamicDestinationDisplay>Spittalfield</DynamicDestinationDisplay>
+          <StopPointRef>64801342</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL49</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+    <JourneyPatternSection id="JPS106">
+      <JourneyPatternTimingLink id="JPTL1261">
+        <From>
+          <Activity>pickUp</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803955</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804168</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL94</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1262">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804168</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803956</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL95</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1263">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803956</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804097</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL96</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1264">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804097</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801791</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL97</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1265">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801791</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803957</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL98</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1266">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803957</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801281</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL99</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1267">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801281</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804167</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL100</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1268">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804167</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804169</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL101</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1269">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804169</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804165</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL102</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1270">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804165</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803251</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL103</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1271">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803251</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804144</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL104</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1272">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804144</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803963</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL105</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1273">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803963</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804272</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL106</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1274">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804272</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801422</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL107</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1275">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801422</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803962</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL108</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1276">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803962</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804143</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL109</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1277">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804143</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803960</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL110</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1278">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803960</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801729</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL111</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1279">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801729</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64802198</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL112</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1280">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64802198</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801142</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL113</RouteLinkRef>
+        <RunTime>PT5M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1281">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801142</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801019</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL114</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1282">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801019</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803330</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL115</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1283">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803330</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803333</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL116</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1284">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803333</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803332</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL117</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1285">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803332</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801830</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL118</RouteLinkRef>
+        <RunTime>PT6M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1286">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801830</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801946</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL119</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1287">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801946</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801969</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL120</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1288">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801969</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801967</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL121</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1289">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801967</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801965</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL122</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1290">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801965</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801963</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL123</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1291">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801963</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801970</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL124</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1292">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801970</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801971</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL125</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1293">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801971</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801974</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL126</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1294">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801974</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801976</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL127</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1295">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801976</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801977</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL128</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1296">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801977</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801978</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL129</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1297">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801978</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801980</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL130</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1298">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801980</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>setDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801005</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL131</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+    <JourneyPatternSection id="JPS107">
+      <JourneyPatternTimingLink id="JPTL1299">
+        <From>
+          <Activity>pickUp</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801341</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803557</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL50</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1300">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803557</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803556</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL51</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1301">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803556</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801474</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL52</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1302">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801474</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803553</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL53</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1303">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803553</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803551</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL54</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1304">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803551</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803549</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL55</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1305">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803549</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803548</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL56</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1306">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803548</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803193</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL57</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1307">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803193</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804318</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL58</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1308">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804318</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801791</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL59</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1309">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801791</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803957</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL60</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1310">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803957</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801281</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL61</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1311">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801281</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804167</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL62</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1312">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804167</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804169</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL63</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1313">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804169</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804165</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL64</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1314">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804165</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803251</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL65</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1315">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803251</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804144</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL66</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1316">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804144</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803963</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL67</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1317">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803963</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804272</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL68</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1318">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804272</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801422</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL69</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1319">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801422</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803962</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL70</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1320">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803962</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804143</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL71</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1321">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804143</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803960</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL72</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1322">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803960</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801729</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL73</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1323">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801729</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64802198</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL74</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1324">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64802198</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801142</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL75</RouteLinkRef>
+        <RunTime>PT5M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1325">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801142</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801019</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL76</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1326">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801019</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803330</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL77</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1327">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803330</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803333</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL78</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1328">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803333</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803332</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL79</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1329">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803332</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801830</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL80</RouteLinkRef>
+        <RunTime>PT6M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1330">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801830</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801946</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL81</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1331">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801946</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801969</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL82</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1332">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801969</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801967</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL83</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1333">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801967</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801965</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL84</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1334">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801965</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801963</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL85</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1335">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801963</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801970</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL86</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1336">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801970</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801971</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL87</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1337">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801971</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801974</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL88</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1338">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801974</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801976</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL89</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1339">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801976</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801977</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL90</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1340">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801977</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801978</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL91</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1341">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801978</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801980</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL92</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1342">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801980</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>setDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801005</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL93</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+    <JourneyPatternSection id="JPS108">
+      <JourneyPatternTimingLink id="JPTL1343">
+        <From>
+          <Activity>pickUp</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801341</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803557</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL50</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1344">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803557</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803556</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL51</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1345">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803556</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801474</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL52</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1346">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801474</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803553</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL53</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1347">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803553</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803551</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL54</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1348">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803551</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803549</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL55</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1349">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803549</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803548</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL56</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1350">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803548</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803193</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL57</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1351">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803193</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804318</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL58</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1352">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804318</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801791</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL59</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1353">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801791</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803957</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL60</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1354">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803957</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801281</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL61</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1355">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801281</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804167</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL62</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1356">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804167</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804169</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL63</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1357">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804169</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804165</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL64</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1358">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804165</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803251</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL65</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1359">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803251</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804144</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL66</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1360">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804144</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803963</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL67</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1361">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803963</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804272</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL68</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1362">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804272</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801422</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL69</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1363">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801422</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803962</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL70</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1364">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803962</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804143</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL71</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1365">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64804143</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803960</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL72</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1366">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803960</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801729</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL73</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1367">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801729</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64802198</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL74</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1368">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64802198</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801142</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL75</RouteLinkRef>
+        <RunTime>PT5M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1369">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801142</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801019</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL76</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1370">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801019</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803330</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL77</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1371">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803330</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803333</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL78</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1372">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803333</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803332</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL79</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1373">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64803332</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801830</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL80</RouteLinkRef>
+        <RunTime>PT6M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1374">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801830</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801946</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL81</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1375">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801946</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801969</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL82</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1376">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801969</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801967</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL83</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1377">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801967</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801965</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL84</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1378">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801965</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801963</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL85</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1379">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801963</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801970</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL86</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1380">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801970</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801971</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL87</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1381">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801971</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801974</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL88</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1382">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801974</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801976</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL89</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1383">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801976</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801977</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL90</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1384">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801977</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801978</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL91</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1385">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801978</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801980</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL92</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL1386">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801980</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>setDown</Activity>
+          <DynamicDestinationDisplay>Perth</DynamicDestinationDisplay>
+          <StopPointRef>64801005</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL93</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+  </JourneyPatternSections>
+  <Operators>
+    <Operator id="2">
+      <NationalOperatorCode>SCFI</NationalOperatorCode>
+      <OperatorCode>SCFI</OperatorCode>
+      <OperatorShortName>Stagecoach</OperatorShortName>
+      <OperatorNameOnLicence>Fife Scottish Omnibuses Ltd</OperatorNameOnLicence>
+      <TradingName>Stagecoach East Scotland</TradingName>
+      <LicenceNumber>PM0000004</LicenceNumber>
+      <LicenceClassification>standardInternational</LicenceClassification>
+    </Operator>
+  </Operators>
+  <Services>
+    <Service>
+      <ServiceCode>S_SC_SCFI_34C_1</ServiceCode>
+      <Lines>
+        <Line id="SL3">
+          <LineName>34C</LineName>
+        </Line>
+      </Lines>
+      <OperatingPeriod>
+        <StartDate>2024-11-04</StartDate>
+      </OperatingPeriod>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <MondayToSunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <RegisteredOperatorRef>2</RegisteredOperatorRef>
+      <StopRequirements>
+        <NoNewStopsRequired />
+      </StopRequirements>
+      <PublicUse>true</PublicUse>
+      <Description>Perth - Spittalfield or Aberfeldy</Description>
+      <StandardService>
+        <Origin>Perth</Origin>
+        <Destination>Spittalfield or Aberfeldy</Destination>
+        <JourneyPattern id="JP44">
+          <DestinationDisplay>Spittalfield Spittalfield</DestinationDisplay>
+          <Direction>outbound</Direction>
+          <RouteRef>RT44</RouteRef>
+          <JourneyPatternSectionRefs>JPS105</JourneyPatternSectionRefs>
+        </JourneyPattern>
+        <JourneyPattern id="JP45">
+          <DestinationDisplay>Perth Mill Street E</DestinationDisplay>
+          <Direction>inbound</Direction>
+          <RouteRef>RT46</RouteRef>
+          <JourneyPatternSectionRefs>JPS106</JourneyPatternSectionRefs>
+        </JourneyPattern>
+        <JourneyPattern id="JP46">
+          <DestinationDisplay>Perth Mill Street E</DestinationDisplay>
+          <Direction>inbound</Direction>
+          <RouteRef>RT45</RouteRef>
+          <JourneyPatternSectionRefs>JPS107</JourneyPatternSectionRefs>
+        </JourneyPattern>
+        <JourneyPattern id="JP47">
+          <DestinationDisplay>Perth Mill Street E</DestinationDisplay>
+          <Direction>inbound</Direction>
+          <RouteRef>RT45</RouteRef>
+          <JourneyPatternSectionRefs>JPS108</JourneyPatternSectionRefs>
+        </JourneyPattern>
+      </StandardService>
+    </Service>
+  </Services>
+  <VehicleJourneys>
+    <VehicleJourney SequenceNumber="138">
+      <PrivateCode>P034_34CSU:O:0:86:q31whqnqk</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ138</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_34C_1</ServiceRef>
+      <LineRef>SL3</LineRef>
+      <JourneyPatternRef>JP45</JourneyPatternRef>
+      <DepartureTime>08:50:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="140">
+      <PrivateCode>P034_34CSU:I:0:80:q31whqnqk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ140</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_34C_1</ServiceRef>
+      <LineRef>SL3</LineRef>
+      <JourneyPatternRef>JP44</JourneyPatternRef>
+      <DepartureTime>09:40:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="141">
+      <PrivateCode>P034_34CSU:O:0:87:q31whqnqk</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ141</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_34C_1</ServiceRef>
+      <LineRef>SL3</LineRef>
+      <JourneyPatternRef>JP46</JourneyPatternRef>
+      <DepartureTime>10:39:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="144">
+      <PrivateCode>P034_34CSU:I:0:81:q31whqnqk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ144</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_34C_1</ServiceRef>
+      <LineRef>SL3</LineRef>
+      <JourneyPatternRef>JP44</JourneyPatternRef>
+      <DepartureTime>11:40:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="145">
+      <PrivateCode>P034_34CSU:O:0:88:q31whqnqk</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ145</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_34C_1</ServiceRef>
+      <LineRef>SL3</LineRef>
+      <JourneyPatternRef>JP46</JourneyPatternRef>
+      <DepartureTime>12:39:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="148">
+      <PrivateCode>P034_34CSU:I:0:82:q31whqnqk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ148</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_34C_1</ServiceRef>
+      <LineRef>SL3</LineRef>
+      <JourneyPatternRef>JP44</JourneyPatternRef>
+      <DepartureTime>13:40:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="149">
+      <PrivateCode>P034_34CSU:O:0:89:q31whqnqk</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ149</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_34C_1</ServiceRef>
+      <LineRef>SL3</LineRef>
+      <JourneyPatternRef>JP46</JourneyPatternRef>
+      <DepartureTime>14:39:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="152">
+      <PrivateCode>P034_34CSU:I:0:83:q31whqnqk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ152</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_34C_1</ServiceRef>
+      <LineRef>SL3</LineRef>
+      <JourneyPatternRef>JP44</JourneyPatternRef>
+      <DepartureTime>15:40:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="153">
+      <PrivateCode>P034_34CSU:O:0:90:q31whqnqk</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ153</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_34C_1</ServiceRef>
+      <LineRef>SL3</LineRef>
+      <JourneyPatternRef>JP46</JourneyPatternRef>
+      <DepartureTime>16:39:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="156">
+      <PrivateCode>P034_34CSU:I:0:84:q31whqnqk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ156</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_34C_1</ServiceRef>
+      <LineRef>SL3</LineRef>
+      <JourneyPatternRef>JP44</JourneyPatternRef>
+      <DepartureTime>17:40:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="157">
+      <PrivateCode>P034_34CSU:O:0:91:q31whqnqk</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ157</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_34C_1</ServiceRef>
+      <LineRef>SL3</LineRef>
+      <JourneyPatternRef>JP47</JourneyPatternRef>
+      <DepartureTime>18:39:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="160">
+      <PrivateCode>P034_34CSU:I:0:85:q31whqnqk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ160</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_34C_1</ServiceRef>
+      <LineRef>SL3</LineRef>
+      <JourneyPatternRef>JP44</JourneyPatternRef>
+      <DepartureTime>19:40:00</DepartureTime>
+    </VehicleJourney>
+  </VehicleJourneys>
+</TransXChange>

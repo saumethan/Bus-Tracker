@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransXChange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreationDateTime="2023-08-01T13:38:29" ModificationDateTime="2023-08-01T13:38:29" Modification="new" RevisionNumber="1" FileName="FBE7-SIF--SCFI-ST-2023-08-14-Fife_Timeplan_1408-Transmill.xml" SchemaVersion="2.5" RegistrationDocument="true" xsi:schemaLocation="http://www.transxchange.org.uk/ http://www.transxchange.org.uk/schema/2.5/TransXChange_general.xsd" xmlns="http://www.transxchange.org.uk/">
+  <ServicedOrganisations>
+    <ServicedOrganisation>
+      <OrganisationCode>FiSch</OrganisationCode>
+      <Name>Fife Schooldays</Name>
+      <WorkingDays>
+        <DateRange>
+          <StartDate>2022-06-20</StartDate>
+          <EndDate>2022-06-30</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-08-17</StartDate>
+          <EndDate>2022-10-07</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-10-24</StartDate>
+          <EndDate>2022-11-17</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-11-21</StartDate>
+          <EndDate>2022-12-21</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-01-05</StartDate>
+          <EndDate>2023-02-14</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-02-20</StartDate>
+          <EndDate>2023-03-30</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-04-17</StartDate>
+          <EndDate>2023-04-28</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-02</StartDate>
+          <EndDate>2023-05-05</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-06-07</StartDate>
+          <EndDate>2023-06-30</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-09</StartDate>
+          <EndDate>2023-06-02</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-08-16</StartDate>
+          <EndDate>2023-10-06</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-10-23</StartDate>
+          <EndDate>2023-11-09</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-11-13</StartDate>
+          <EndDate>2023-12-20</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-01-04</StartDate>
+          <EndDate>2024-02-13</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-19</StartDate>
+          <EndDate>2024-03-28</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-04-15</StartDate>
+          <EndDate>2024-05-03</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-07</StartDate>
+          <EndDate>2024-05-08</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-10</StartDate>
+          <EndDate>2024-05-31</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-06-04</StartDate>
+          <EndDate>2024-06-28</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+      </WorkingDays>
+      <Holidays>
+        <DateRange>
+          <StartDate>2022-07-01</StartDate>
+          <EndDate>2022-08-16</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-10-10</StartDate>
+          <EndDate>2022-10-21</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-11-18</StartDate>
+          <EndDate>2022-11-18</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-12-22</StartDate>
+          <EndDate>2023-01-04</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-02-15</StartDate>
+          <EndDate>2023-02-17</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-03-31</StartDate>
+          <EndDate>2023-04-14</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-01</StartDate>
+          <EndDate>2023-05-01</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-06-05</StartDate>
+          <EndDate>2023-06-06</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-07-03</StartDate>
+          <EndDate>2023-08-15</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-08</StartDate>
+          <EndDate>2023-05-08</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-10-09</StartDate>
+          <EndDate>2023-10-20</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-11-10</StartDate>
+          <EndDate>2023-11-10</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-12-21</StartDate>
+          <EndDate>2024-01-03</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-14</StartDate>
+          <EndDate>2024-02-16</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-03-29</StartDate>
+          <EndDate>2024-04-12</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-06</StartDate>
+          <EndDate>2024-05-06</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-09</StartDate>
+          <EndDate>2024-05-09</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-06-03</StartDate>
+          <EndDate>2024-06-03</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-07-01</StartDate>
+          <EndDate>2024-08-20</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+      </Holidays>
+    </ServicedOrganisation>
+  </ServicedOrganisations>
+  <StopPoints>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0077</StopPointRef>
+      <CommonName>Old Perth Road</CommonName>
+      <LocalityName>Cowdenbeath</LocalityName>
+      <LocalityQualifier>Cowdenbeath</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0078</StopPointRef>
+      <CommonName>Old Perth Road</CommonName>
+      <LocalityName>Cowdenbeath</LocalityName>
+      <LocalityQualifier>Cowdenbeath</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0079</StopPointRef>
+      <CommonName>Gateside Industrial Estate</CommonName>
+      <LocalityName>Cowdenbeath</LocalityName>
+      <LocalityQualifier>Cowdenbeath</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0080</StopPointRef>
+      <CommonName>Gateside Industrial Estate</CommonName>
+      <LocalityName>Cowdenbeath</LocalityName>
+      <LocalityQualifier>Cowdenbeath</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0121</StopPointRef>
+      <CommonName>Swinton's Place</CommonName>
+      <LocalityName>Hill of Beath</LocalityName>
+      <LocalityQualifier>Hill of Beath</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0122</StopPointRef>
+      <CommonName>Swinton's Place</CommonName>
+      <LocalityName>Hill of Beath</LocalityName>
+      <LocalityQualifier>Hill of Beath</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0123</StopPointRef>
+      <CommonName>Concrete Works</CommonName>
+      <LocalityName>Hill of Beath</LocalityName>
+      <LocalityQualifier>Hill of Beath</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0124</StopPointRef>
+      <CommonName>Netherbeath Road</CommonName>
+      <LocalityName>Hill of Beath</LocalityName>
+      <LocalityQualifier>Hill of Beath</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0125</StopPointRef>
+      <CommonName>Netherbeath Road</CommonName>
+      <LocalityName>Hill of Beath</LocalityName>
+      <LocalityQualifier>Hill of Beath</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0126</StopPointRef>
+      <CommonName>Main Street</CommonName>
+      <LocalityName>Crossgates</LocalityName>
+      <LocalityQualifier>Crossgates</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0127</StopPointRef>
+      <CommonName>Main Street</CommonName>
+      <LocalityName>Crossgates</LocalityName>
+      <LocalityQualifier>Crossgates</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0128</StopPointRef>
+      <CommonName>Manse Road</CommonName>
+      <LocalityName>Crossgates</LocalityName>
+      <LocalityQualifier>Crossgates</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0129</StopPointRef>
+      <CommonName>Hillview Crescent</CommonName>
+      <LocalityName>Crossgates</LocalityName>
+      <LocalityQualifier>Crossgates</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0130</StopPointRef>
+      <CommonName>Lady Anne Court</CommonName>
+      <LocalityName>Crossgates</LocalityName>
+      <LocalityQualifier>Crossgates</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0131</StopPointRef>
+      <CommonName>Reid Avenue</CommonName>
+      <LocalityName>Crossgates</LocalityName>
+      <LocalityQualifier>Crossgates</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0132</StopPointRef>
+      <CommonName>Primary School</CommonName>
+      <LocalityName>Crossgates</LocalityName>
+      <LocalityQualifier>Crossgates</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0133</StopPointRef>
+      <CommonName>Primary School</CommonName>
+      <LocalityName>Crossgates</LocalityName>
+      <LocalityQualifier>Crossgates</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0715</StopPointRef>
+      <CommonName>Concrete Works</CommonName>
+      <LocalityName>Hill of Beath</LocalityName>
+      <LocalityQualifier>Hill of Beath</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D9781</StopPointRef>
+      <CommonName>Beath High School</CommonName>
+      <LocalityName>Cowdenbeath</LocalityName>
+      <LocalityQualifier>Cowdenbeath</LocalityQualifier>
+    </AnnotatedStopPointRef>
+  </StopPoints>
+  <RouteSections>
+    <RouteSection id="RS3">
+      <RouteLink id="RL27">
+        <From>
+          <StopPointRef>6500D9781</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0078</StopPointRef>
+        </To>
+        <Distance>438</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL28">
+        <From>
+          <StopPointRef>6500D0078</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0079</StopPointRef>
+        </To>
+        <Distance>177</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL29">
+        <From>
+          <StopPointRef>6500D0079</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0121</StopPointRef>
+        </To>
+        <Distance>1503</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL30">
+        <From>
+          <StopPointRef>6500D0121</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0123</StopPointRef>
+        </To>
+        <Distance>460</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL31">
+        <From>
+          <StopPointRef>6500D0123</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0124</StopPointRef>
+        </To>
+        <Distance>274</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL32">
+        <From>
+          <StopPointRef>6500D0124</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0126</StopPointRef>
+        </To>
+        <Distance>332</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL33">
+        <From>
+          <StopPointRef>6500D0126</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0128</StopPointRef>
+        </To>
+        <Distance>287</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL34">
+        <From>
+          <StopPointRef>6500D0128</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0132</StopPointRef>
+        </To>
+        <Distance>467</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL35">
+        <From>
+          <StopPointRef>6500D0132</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0131</StopPointRef>
+        </To>
+        <Distance>265</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+    </RouteSection>
+    <RouteSection id="RS4">
+      <RouteLink id="RL36">
+        <From>
+          <StopPointRef>6500D0130</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0133</StopPointRef>
+        </To>
+        <Distance>257</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL37">
+        <From>
+          <StopPointRef>6500D0133</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0129</StopPointRef>
+        </To>
+        <Distance>339</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL38">
+        <From>
+          <StopPointRef>6500D0129</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0127</StopPointRef>
+        </To>
+        <Distance>317</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL39">
+        <From>
+          <StopPointRef>6500D0127</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0125</StopPointRef>
+        </To>
+        <Distance>338</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL40">
+        <From>
+          <StopPointRef>6500D0125</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0715</StopPointRef>
+        </To>
+        <Distance>312</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL41">
+        <From>
+          <StopPointRef>6500D0715</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0122</StopPointRef>
+        </To>
+        <Distance>377</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL42">
+        <From>
+          <StopPointRef>6500D0122</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0080</StopPointRef>
+        </To>
+        <Distance>1577</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL43">
+        <From>
+          <StopPointRef>6500D0080</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0077</StopPointRef>
+        </To>
+        <Distance>147</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL44">
+        <From>
+          <StopPointRef>6500D0077</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D9781</StopPointRef>
+        </To>
+        <Distance>477</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+    </RouteSection>
+  </RouteSections>
+  <Routes>
+    <Route id="RT31">
+      <PrivateCode>FBE7_BE10-31</PrivateCode>
+      <Description>Cowdenbeath Beath High School - Crossgates Reid Avenue</Description>
+      <RouteSectionRef>RS3</RouteSectionRef>
+    </Route>
+    <Route id="RT32">
+      <PrivateCode>FBE7_BE10-32</PrivateCode>
+      <Description>Crossgates Lady Anne Court - Cowdenbeath Beath High School</Description>
+      <RouteSectionRef>RS4</RouteSectionRef>
+    </Route>
+  </Routes>
+  <JourneyPatternSections>
+    <JourneyPatternSection id="JPS31">
+      <JourneyPatternTimingLink id="JPTL27">
+        <From>
+          <WaitTime>PT15M0S</WaitTime>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D9781</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0078</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL27</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL28">
+        <From>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0078</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0079</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL28</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL29">
+        <From>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0079</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0121</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL29</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL30">
+        <From>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0121</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0123</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL30</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL31">
+        <From>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0123</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0124</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL31</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL32">
+        <From>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0124</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0126</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL32</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL33">
+        <From>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0126</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0128</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL33</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL34">
+        <From>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0128</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0132</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL34</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL35">
+        <From>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0132</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Crossgates</DynamicDestinationDisplay>
+          <StopPointRef>6500D0131</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL35</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+    <JourneyPatternSection id="JPS32">
+      <JourneyPatternTimingLink id="JPTL36">
+        <From>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0130</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0133</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL36</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL37">
+        <From>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0133</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0129</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL37</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL38">
+        <From>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0129</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0127</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL38</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL39">
+        <From>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0127</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0125</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL39</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL40">
+        <From>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0125</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0715</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL40</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL41">
+        <From>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0715</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0122</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL41</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL42">
+        <From>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0122</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0080</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL42</RouteLinkRef>
+        <RunTime>PT4M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL43">
+        <From>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0080</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0077</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL43</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL44">
+        <From>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0077</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Beath High</DynamicDestinationDisplay>
+          <StopPointRef>6500D9781</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL44</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+  </JourneyPatternSections>
+  <Operators>
+    <Operator id="1">
+      <NationalOperatorCode>SCFI</NationalOperatorCode>
+      <OperatorCode>SCFI</OperatorCode>
+      <OperatorShortName>Stagecoach</OperatorShortName>
+      <OperatorNameOnLicence>Fife Scottish Omnibuses Ltd</OperatorNameOnLicence>
+      <TradingName>Stagecoach East Scotland</TradingName>
+      <LicenceNumber>PM0000004</LicenceNumber>
+      <LicenceClassification>standardInternational</LicenceClassification>
+    </Operator>
+  </Operators>
+  <Services>
+    <Service>
+      <ServiceCode>S_SC_SCFI_BE10_1</ServiceCode>
+      <Lines>
+        <Line id="SL2">
+          <LineName>BE10</LineName>
+        </Line>
+      </Lines>
+      <OperatingPeriod>
+        <StartDate>2023-08-14</StartDate>
+      </OperatingPeriod>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <MondayToFriday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <GoodFriday />
+            <LateSummerBankHolidayNotScotland />
+            <EasterMonday />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <RegisteredOperatorRef>1</RegisteredOperatorRef>
+      <StopRequirements>
+        <NoNewStopsRequired />
+      </StopRequirements>
+      <PublicUse>true</PublicUse>
+      <Description>Halbeath or Mossmoran - Beath High School</Description>
+      <StandardService>
+        <Origin>Halbeath or Mossmoran</Origin>
+        <Destination>Beath High School</Destination>
+        <JourneyPattern id="JP3">
+          <DestinationDisplay>Crossgates Reid Avenue</DestinationDisplay>
+          <Direction>outbound</Direction>
+          <RouteRef>RT31</RouteRef>
+          <JourneyPatternSectionRefs>JPS31</JourneyPatternSectionRefs>
+        </JourneyPattern>
+        <JourneyPattern id="JP4">
+          <DestinationDisplay>Cowdenbeath Beath High School</DestinationDisplay>
+          <Direction>inbound</Direction>
+          <RouteRef>RT32</RouteRef>
+          <JourneyPatternSectionRefs>JPS32</JourneyPatternSectionRefs>
+        </JourneyPattern>
+      </StandardService>
+    </Service>
+  </Services>
+  <VehicleJourneys>
+    <VehicleJourney SequenceNumber="44">
+      <PrivateCode>FBE7_BE10MTWHF:O:0:24:wQ1eqgegsGk</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>FiSch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <GoodFriday />
+            <LateSummerBankHolidayNotScotland />
+            <EasterMonday />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ44</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_BE10_1</ServiceRef>
+      <LineRef>SL2</LineRef>
+      <JourneyPatternRef>JP4</JourneyPatternRef>
+      <DepartureTime>08:18:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="48">
+      <PrivateCode>FBE7_BE10MTWHF:I:0:23:wQ1eqgegsGk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>FiSch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <GoodFriday />
+            <LateSummerBankHolidayNotScotland />
+            <EasterMonday />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ48</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_BE10_1</ServiceRef>
+      <LineRef>SL2</LineRef>
+      <JourneyPatternRef>JP3</JourneyPatternRef>
+      <DepartureTime>15:15:00</DepartureTime>
+    </VehicleJourney>
+  </VehicleJourneys>
+</TransXChange>

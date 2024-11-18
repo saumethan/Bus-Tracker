@@ -1,0 +1,1961 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransXChange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreationDateTime="2024-04-17T10:07:12" ModificationDateTime="2024-04-17T10:07:12" Modification="new" RevisionNumber="1" FileName="P001-SPH--SCFI-Perth-2024-05-13-Perth_Timeplan_130524-Transmill.xml" SchemaVersion="2.5" RegistrationDocument="true" xsi:schemaLocation="http://www.transxchange.org.uk/ http://www.transxchange.org.uk/schema/2.5/TransXChange_general.xsd" xmlns="http://www.transxchange.org.uk/">
+  <StopPoints>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64800205</StopPointRef>
+      <CommonName>Rookery</CommonName>
+      <LocalityName>Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64800246</StopPointRef>
+      <CommonName>Stroma Court</CommonName>
+      <LocalityName>North Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801001</StopPointRef>
+      <CommonName>Mill Street</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801008</StopPointRef>
+      <CommonName>Royal Infirmary</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801014</StopPointRef>
+      <CommonName>Upper Rannoch Roundabout</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801017</StopPointRef>
+      <CommonName>Institute</CommonName>
+      <LocalityName>Tulloch</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801255</StopPointRef>
+      <CommonName>Viewfield Place</CommonName>
+      <LocalityName>Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801257</StopPointRef>
+      <CommonName>Langside Road</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801258</StopPointRef>
+      <CommonName>Western Avenue</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801262</StopPointRef>
+      <CommonName>Leisure Pool</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801901</StopPointRef>
+      <CommonName>McDiarmid Park</CommonName>
+      <LocalityName>Hillyland</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801906</StopPointRef>
+      <CommonName>Unity Terrace</CommonName>
+      <LocalityName>Hillyland</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801914</StopPointRef>
+      <CommonName>Fairfield</CommonName>
+      <LocalityName>Tulloch</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801916</StopPointRef>
+      <CommonName>Bruce Crescent</CommonName>
+      <LocalityName>Tulloch</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801918</StopPointRef>
+      <CommonName>Tulloch Terrace</CommonName>
+      <LocalityName>Tulloch</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801921</StopPointRef>
+      <CommonName>Primary School</CommonName>
+      <LocalityName>Tulloch</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801922</StopPointRef>
+      <CommonName>Sandeman Court</CommonName>
+      <LocalityName>Tulloch</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801924</StopPointRef>
+      <CommonName>Newton Place</CommonName>
+      <LocalityName>Tulloch</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801927</StopPointRef>
+      <CommonName>Pullar Terrace</CommonName>
+      <LocalityName>Tulloch</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801932</StopPointRef>
+      <CommonName>Garth Avenue</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801933</StopPointRef>
+      <CommonName>Milton Road</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801937</StopPointRef>
+      <CommonName>Strathtay Road</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801939</StopPointRef>
+      <CommonName>Fortingall Place</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801941</StopPointRef>
+      <CommonName>Primary School</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801943</StopPointRef>
+      <CommonName>Our Ladys Primary School</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801945</StopPointRef>
+      <CommonName>Struan Road</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801948</StopPointRef>
+      <CommonName>Cluny Terrace</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801957</StopPointRef>
+      <CommonName>Welcome Inn</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801959</StopPointRef>
+      <CommonName>Day Centre</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801961</StopPointRef>
+      <CommonName>Dunsinane Drive</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801983</StopPointRef>
+      <CommonName>Letham Road</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801985</StopPointRef>
+      <CommonName>Goodlyburn Place</CommonName>
+      <LocalityName>Letham</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802038</StopPointRef>
+      <CommonName>Elibank Street</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802040</StopPointRef>
+      <CommonName>York Place</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802061</StopPointRef>
+      <CommonName>South Methven Street</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802065</StopPointRef>
+      <CommonName>St Johns RC Church</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802067</StopPointRef>
+      <CommonName>Balhousie Avenue</CommonName>
+      <LocalityName>Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802069</StopPointRef>
+      <CommonName>Premier Store</CommonName>
+      <LocalityName>Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802072</StopPointRef>
+      <CommonName>Balhousie Street</CommonName>
+      <LocalityName>Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802078</StopPointRef>
+      <CommonName>Osprey Drive</CommonName>
+      <LocalityName>Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802081</StopPointRef>
+      <CommonName>Water Works</CommonName>
+      <LocalityName>North Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802083</StopPointRef>
+      <CommonName>Lewis Place</CommonName>
+      <LocalityName>North Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802085</StopPointRef>
+      <CommonName>Crammond Place</CommonName>
+      <LocalityName>North Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802087</StopPointRef>
+      <CommonName>Rona Court</CommonName>
+      <LocalityName>North Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802088</StopPointRef>
+      <CommonName>Brora Court</CommonName>
+      <LocalityName>North Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802200</StopPointRef>
+      <CommonName>Bute Drive</CommonName>
+      <LocalityName>North Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802202</StopPointRef>
+      <CommonName>Duncansby Way</CommonName>
+      <LocalityName>Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802204</StopPointRef>
+      <CommonName>ASDA</CommonName>
+      <LocalityName>Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803546</StopPointRef>
+      <CommonName>Newton House</CommonName>
+      <LocalityName>Tulloch</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804003</StopPointRef>
+      <CommonName>Rosslyn House</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+  </StopPoints>
+  <RouteSections>
+    <RouteSection id="RS9">
+      <RouteLink id="RL240">
+        <From>
+          <StopPointRef>64801001</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802061</StopPointRef>
+        </To>
+        <Distance>185</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL241">
+        <From>
+          <StopPointRef>64802061</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802040</StopPointRef>
+        </To>
+        <Distance>255</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL242">
+        <From>
+          <StopPointRef>64802040</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802038</StopPointRef>
+        </To>
+        <Distance>197</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL243">
+        <From>
+          <StopPointRef>64802038</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801262</StopPointRef>
+        </To>
+        <Distance>155</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL244">
+        <From>
+          <StopPointRef>64801262</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804003</StopPointRef>
+        </To>
+        <Distance>230</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL245">
+        <From>
+          <StopPointRef>64804003</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801258</StopPointRef>
+        </To>
+        <Distance>398</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL246">
+        <From>
+          <StopPointRef>64801258</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801008</StopPointRef>
+        </To>
+        <Distance>289</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL247">
+        <From>
+          <StopPointRef>64801008</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801985</StopPointRef>
+        </To>
+        <Distance>234</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL248">
+        <From>
+          <StopPointRef>64801985</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801983</StopPointRef>
+        </To>
+        <Distance>274</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL249">
+        <From>
+          <StopPointRef>64801983</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801961</StopPointRef>
+        </To>
+        <Distance>296</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL250">
+        <From>
+          <StopPointRef>64801961</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801959</StopPointRef>
+        </To>
+        <Distance>209</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL251">
+        <From>
+          <StopPointRef>64801959</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801957</StopPointRef>
+        </To>
+        <Distance>271</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL252">
+        <From>
+          <StopPointRef>64801957</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801014</StopPointRef>
+        </To>
+        <Distance>245</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL253">
+        <From>
+          <StopPointRef>64801014</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801948</StopPointRef>
+        </To>
+        <Distance>333</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL254">
+        <From>
+          <StopPointRef>64801948</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801945</StopPointRef>
+        </To>
+        <Distance>184</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL255">
+        <From>
+          <StopPointRef>64801945</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801943</StopPointRef>
+        </To>
+        <Distance>235</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL256">
+        <From>
+          <StopPointRef>64801943</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801941</StopPointRef>
+        </To>
+        <Distance>254</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL257">
+        <From>
+          <StopPointRef>64801941</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801939</StopPointRef>
+        </To>
+        <Distance>321</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL258">
+        <From>
+          <StopPointRef>64801939</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801937</StopPointRef>
+        </To>
+        <Distance>193</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL259">
+        <From>
+          <StopPointRef>64801937</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801932</StopPointRef>
+        </To>
+        <Distance>157</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL260">
+        <From>
+          <StopPointRef>64801932</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801933</StopPointRef>
+        </To>
+        <Distance>88</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL261">
+        <From>
+          <StopPointRef>64801933</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801257</StopPointRef>
+        </To>
+        <Distance>226</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL262">
+        <From>
+          <StopPointRef>64801257</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801901</StopPointRef>
+        </To>
+        <Distance>266</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL263">
+        <From>
+          <StopPointRef>64801901</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801017</StopPointRef>
+        </To>
+        <Distance>476</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL264">
+        <From>
+          <StopPointRef>64801017</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801927</StopPointRef>
+        </To>
+        <Distance>255</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL265">
+        <From>
+          <StopPointRef>64801927</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803546</StopPointRef>
+        </To>
+        <Distance>239</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL266">
+        <From>
+          <StopPointRef>64803546</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801924</StopPointRef>
+        </To>
+        <Distance>244</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL267">
+        <From>
+          <StopPointRef>64801924</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801922</StopPointRef>
+        </To>
+        <Distance>358</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL268">
+        <From>
+          <StopPointRef>64801922</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801921</StopPointRef>
+        </To>
+        <Distance>237</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL269">
+        <From>
+          <StopPointRef>64801921</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801918</StopPointRef>
+        </To>
+        <Distance>246</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL270">
+        <From>
+          <StopPointRef>64801918</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801916</StopPointRef>
+        </To>
+        <Distance>419</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL271">
+        <From>
+          <StopPointRef>64801916</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801914</StopPointRef>
+        </To>
+        <Distance>246</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL272">
+        <From>
+          <StopPointRef>64801914</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801906</StopPointRef>
+        </To>
+        <Distance>299</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL273">
+        <From>
+          <StopPointRef>64801906</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801255</StopPointRef>
+        </To>
+        <Distance>459</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL274">
+        <From>
+          <StopPointRef>64801255</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802204</StopPointRef>
+        </To>
+        <Distance>289</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL275">
+        <From>
+          <StopPointRef>64802204</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802202</StopPointRef>
+        </To>
+        <Distance>440</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL276">
+        <From>
+          <StopPointRef>64802202</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802200</StopPointRef>
+        </To>
+        <Distance>663</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL277">
+        <From>
+          <StopPointRef>64802200</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802088</StopPointRef>
+        </To>
+        <Distance>644</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL278">
+        <From>
+          <StopPointRef>64802088</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802087</StopPointRef>
+        </To>
+        <Distance>327</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL279">
+        <From>
+          <StopPointRef>64802087</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64800246</StopPointRef>
+        </To>
+        <Distance>308</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL280">
+        <From>
+          <StopPointRef>64800246</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802085</StopPointRef>
+        </To>
+        <Distance>99</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL281">
+        <From>
+          <StopPointRef>64802085</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802083</StopPointRef>
+        </To>
+        <Distance>295</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL282">
+        <From>
+          <StopPointRef>64802083</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802081</StopPointRef>
+        </To>
+        <Distance>326</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL283">
+        <From>
+          <StopPointRef>64802081</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802078</StopPointRef>
+        </To>
+        <Distance>266</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL284">
+        <From>
+          <StopPointRef>64802078</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64800205</StopPointRef>
+        </To>
+        <Distance>135</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL285">
+        <From>
+          <StopPointRef>64800205</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802072</StopPointRef>
+        </To>
+        <Distance>269</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL286">
+        <From>
+          <StopPointRef>64802072</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802069</StopPointRef>
+        </To>
+        <Distance>290</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL287">
+        <From>
+          <StopPointRef>64802069</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802067</StopPointRef>
+        </To>
+        <Distance>298</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL288">
+        <From>
+          <StopPointRef>64802067</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802065</StopPointRef>
+        </To>
+        <Distance>370</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL289">
+        <From>
+          <StopPointRef>64802065</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801001</StopPointRef>
+        </To>
+        <Distance>495</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+    </RouteSection>
+  </RouteSections>
+  <Routes>
+    <Route id="RT70">
+      <PrivateCode>P001_1A-70</PrivateCode>
+      <Description>Perth Mill Street A - Perth Mill Street A</Description>
+      <RouteSectionRef>RS9</RouteSectionRef>
+    </Route>
+  </Routes>
+  <JourneyPatternSections>
+    <JourneyPatternSection id="JPS91">
+      <JourneyPatternTimingLink id="JPTL263">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801001</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64802061</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL240</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL264">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64802061</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64802040</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL241</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL265">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64802040</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64802038</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL242</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL266">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64802038</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801262</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL243</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL267">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801262</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64804003</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL244</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL268">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64804003</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801258</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL245</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL269">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801258</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801008</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL246</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL270">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801008</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801985</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL247</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL271">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801985</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801983</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL248</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL272">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801983</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801961</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL249</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL273">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801961</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801959</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL250</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL274">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801959</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801957</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL251</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL275">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801957</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801014</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL252</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL276">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801014</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801948</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL253</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL277">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801948</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801945</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL254</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL278">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801945</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801943</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL255</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL279">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801943</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801941</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL256</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL280">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801941</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801939</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL257</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL281">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801939</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801937</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL258</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL282">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801937</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801932</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL259</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL283">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801932</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801933</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL260</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL284">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801933</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801257</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL261</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL285">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801257</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801901</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL262</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL286">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801901</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801017</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL263</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL287">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801017</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801927</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL264</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL288">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801927</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64803546</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL265</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL289">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64803546</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801924</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL266</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL290">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801924</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801922</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL267</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL291">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801922</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801921</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL268</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL292">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801921</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801918</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL269</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL293">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801918</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801916</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL270</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL294">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801916</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801914</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL271</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL295">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801914</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801906</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL272</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL296">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801906</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801255</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL273</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL297">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64801255</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64802204</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL274</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL298">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64802204</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64802202</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL275</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL299">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64802202</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64802200</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL276</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL300">
+        <From>
+          <DynamicDestinationDisplay>North Muirton</DynamicDestinationDisplay>
+          <StopPointRef>64802200</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802088</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL277</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL301">
+        <From>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802088</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802087</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL278</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL302">
+        <From>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802087</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64800246</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL279</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL303">
+        <From>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64800246</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802085</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL280</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL304">
+        <From>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802085</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802083</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL281</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL305">
+        <From>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802083</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802081</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL282</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL306">
+        <From>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802081</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802078</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL283</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL307">
+        <From>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802078</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64800205</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL284</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL308">
+        <From>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64800205</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802072</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL285</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL309">
+        <From>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802072</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802069</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL286</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL310">
+        <From>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802069</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802067</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL287</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL311">
+        <From>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802067</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802065</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL288</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL312">
+        <From>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64802065</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Mill Street</DynamicDestinationDisplay>
+          <StopPointRef>64801001</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL289</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+  </JourneyPatternSections>
+  <Operators>
+    <Operator id="2">
+      <NationalOperatorCode>SCFI</NationalOperatorCode>
+      <OperatorCode>SCFI</OperatorCode>
+      <OperatorShortName>Stagecoach</OperatorShortName>
+      <OperatorNameOnLicence>Fife Scottish Omnibuses Ltd</OperatorNameOnLicence>
+      <TradingName>Stagecoach East Scotland</TradingName>
+      <LicenceNumber>PM0000004</LicenceNumber>
+      <LicenceClassification>standardInternational</LicenceClassification>
+    </Operator>
+  </Operators>
+  <Services>
+    <Service>
+      <ServiceCode>S_SC_SCFI_1A_2</ServiceCode>
+      <Lines>
+        <Line id="SL4">
+          <LineName>1A</LineName>
+        </Line>
+      </Lines>
+      <OperatingPeriod>
+        <StartDate>2024-05-13</StartDate>
+      </OperatingPeriod>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <MondayToSunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <RegisteredOperatorRef>2</RegisteredOperatorRef>
+      <StopRequirements>
+        <NoNewStopsRequired />
+      </StopRequirements>
+      <PublicUse>true</PublicUse>
+      <Description>Perth - Letham &amp; Tulloch</Description>
+      <StandardService>
+        <Origin>Perth</Origin>
+        <Destination>Letham &amp; Tulloch</Destination>
+        <JourneyPattern id="JP16">
+          <DestinationDisplay>Perth Mill Street A</DestinationDisplay>
+          <Direction>outbound</Direction>
+          <RouteRef>RT70</RouteRef>
+          <JourneyPatternSectionRefs>JPS91</JourneyPatternSectionRefs>
+        </JourneyPattern>
+      </StandardService>
+    </Service>
+  </Services>
+  <VehicleJourneys>
+    <VehicleJourney SequenceNumber="792">
+      <PrivateCode>P001_1AMTWHF:I:0:1607:eyokuf7vh</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <GoodFriday />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <NewYearsDayHoliday />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <BoxingDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ792</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_1A_2</ServiceRef>
+      <LineRef>SL4</LineRef>
+      <JourneyPatternRef>JP16</JourneyPatternRef>
+      <DepartureTime>18:20:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="795">
+      <PrivateCode>P001_1AMTWHF:I:0:1608:eyokuf7vh</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <GoodFriday />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <NewYearsDayHoliday />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <BoxingDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ795</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_1A_2</ServiceRef>
+      <LineRef>SL4</LineRef>
+      <JourneyPatternRef>JP16</JourneyPatternRef>
+      <DepartureTime>19:20:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="797">
+      <PrivateCode>P001_1AMTWHF:I:0:1609:eyokuf7vh</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <GoodFriday />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <NewYearsDayHoliday />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <BoxingDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ797</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_1A_2</ServiceRef>
+      <LineRef>SL4</LineRef>
+      <JourneyPatternRef>JP16</JourneyPatternRef>
+      <DepartureTime>20:20:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="799">
+      <PrivateCode>P001_1AMTWHF:I:0:1610:eyokuf7vh</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <GoodFriday />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <NewYearsDayHoliday />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <BoxingDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ799</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_1A_2</ServiceRef>
+      <LineRef>SL4</LineRef>
+      <JourneyPatternRef>JP16</JourneyPatternRef>
+      <DepartureTime>21:20:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="801">
+      <PrivateCode>P001_1AMTWHF:I:0:1611:eyokuf7vh</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <GoodFriday />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <NewYearsDayHoliday />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <BoxingDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ801</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_1A_2</ServiceRef>
+      <LineRef>SL4</LineRef>
+      <JourneyPatternRef>JP16</JourneyPatternRef>
+      <DepartureTime>22:20:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="866">
+      <PrivateCode>P001_1ASA:I:0:1616:5az4kdm45</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Saturday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ866</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_1A_2</ServiceRef>
+      <LineRef>SL4</LineRef>
+      <JourneyPatternRef>JP16</JourneyPatternRef>
+      <DepartureTime>22:20:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="868">
+      <PrivateCode>P1_1ASASU:I:0:1612:5az4kdm45-q31whqnqk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Saturday />
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ868</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_1A_2</ServiceRef>
+      <LineRef>SL4</LineRef>
+      <JourneyPatternRef>JP16</JourneyPatternRef>
+      <DepartureTime>18:20:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="870">
+      <PrivateCode>P1_1ASASU:I:0:1613:5az4kdm45-q31whqnqk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Saturday />
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ870</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_1A_2</ServiceRef>
+      <LineRef>SL4</LineRef>
+      <JourneyPatternRef>JP16</JourneyPatternRef>
+      <DepartureTime>19:20:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="872">
+      <PrivateCode>P1_1ASASU:I:0:1614:5az4kdm45-q31whqnqk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Saturday />
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ872</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_1A_2</ServiceRef>
+      <LineRef>SL4</LineRef>
+      <JourneyPatternRef>JP16</JourneyPatternRef>
+      <DepartureTime>20:20:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="874">
+      <PrivateCode>P1_1ASASU:I:0:1615:5az4kdm45-q31whqnqk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Saturday />
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ874</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_1A_2</ServiceRef>
+      <LineRef>SL4</LineRef>
+      <JourneyPatternRef>JP16</JourneyPatternRef>
+      <DepartureTime>21:20:00</DepartureTime>
+    </VehicleJourney>
+  </VehicleJourneys>
+</TransXChange>

@@ -1,0 +1,2034 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransXChange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreationDateTime="2023-10-04T13:19:09" ModificationDateTime="2023-10-04T13:19:09" Modification="new" RevisionNumber="1" FileName="FIK3-SIF--SCFI-ST-2023-08-14-Fife_Timeplan_1408_2310-Transmill.xml" SchemaVersion="2.5" RegistrationDocument="true" xsi:schemaLocation="http://www.transxchange.org.uk/ http://www.transxchange.org.uk/schema/2.5/TransXChange_general.xsd" xmlns="http://www.transxchange.org.uk/">
+  <ServicedOrganisations>
+    <ServicedOrganisation>
+      <OrganisationCode>FiSch</OrganisationCode>
+      <Name>Fife Schooldays</Name>
+      <WorkingDays>
+        <DateRange>
+          <StartDate>2022-06-20</StartDate>
+          <EndDate>2022-06-30</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-08-17</StartDate>
+          <EndDate>2022-10-07</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-10-24</StartDate>
+          <EndDate>2022-11-17</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-11-21</StartDate>
+          <EndDate>2022-12-21</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-01-05</StartDate>
+          <EndDate>2023-02-14</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-02-20</StartDate>
+          <EndDate>2023-03-30</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-04-17</StartDate>
+          <EndDate>2023-04-28</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-02</StartDate>
+          <EndDate>2023-05-05</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-06-07</StartDate>
+          <EndDate>2023-06-30</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-09</StartDate>
+          <EndDate>2023-06-02</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-08-16</StartDate>
+          <EndDate>2023-10-06</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-10-23</StartDate>
+          <EndDate>2023-11-09</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-11-13</StartDate>
+          <EndDate>2023-12-20</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-01-04</StartDate>
+          <EndDate>2024-02-13</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-19</StartDate>
+          <EndDate>2024-03-28</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-04-15</StartDate>
+          <EndDate>2024-05-03</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-07</StartDate>
+          <EndDate>2024-05-08</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-10</StartDate>
+          <EndDate>2024-05-31</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-06-04</StartDate>
+          <EndDate>2024-06-28</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+      </WorkingDays>
+      <Holidays>
+        <DateRange>
+          <StartDate>2022-07-01</StartDate>
+          <EndDate>2022-08-16</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-10-10</StartDate>
+          <EndDate>2022-10-21</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-11-18</StartDate>
+          <EndDate>2022-11-18</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-12-22</StartDate>
+          <EndDate>2023-01-04</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-02-15</StartDate>
+          <EndDate>2023-02-17</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-03-31</StartDate>
+          <EndDate>2023-04-14</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-01</StartDate>
+          <EndDate>2023-05-01</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-06-05</StartDate>
+          <EndDate>2023-06-06</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-07-03</StartDate>
+          <EndDate>2023-08-15</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-08</StartDate>
+          <EndDate>2023-05-08</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-10-09</StartDate>
+          <EndDate>2023-10-20</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-11-10</StartDate>
+          <EndDate>2023-11-10</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-12-21</StartDate>
+          <EndDate>2024-01-03</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-14</StartDate>
+          <EndDate>2024-02-16</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-03-29</StartDate>
+          <EndDate>2024-04-12</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-06</StartDate>
+          <EndDate>2024-05-06</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-09</StartDate>
+          <EndDate>2024-05-09</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-06-03</StartDate>
+          <EndDate>2024-06-03</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-07-01</StartDate>
+          <EndDate>2024-08-20</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+      </Holidays>
+    </ServicedOrganisation>
+  </ServicedOrganisations>
+  <StopPoints>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0156</StopPointRef>
+      <CommonName>Dalgety Church Yard</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0157</StopPointRef>
+      <CommonName>Dalgety Church Yard</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0158</StopPointRef>
+      <CommonName>East Access Ridge Way</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0159</StopPointRef>
+      <CommonName>East Access Ridge Way</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0160</StopPointRef>
+      <CommonName>Moray Way North Roundabout</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0161</StopPointRef>
+      <CommonName>Moray Way North Roundabout</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0162</StopPointRef>
+      <CommonName>Dalgety House View</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0163</StopPointRef>
+      <CommonName>Pentland Rise</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0164</StopPointRef>
+      <CommonName>Pentland Rise</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0166</StopPointRef>
+      <CommonName>Markfield Road</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0172</StopPointRef>
+      <CommonName>The Inches</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0174</StopPointRef>
+      <CommonName>The Bridges</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0176</StopPointRef>
+      <CommonName>Oxcars Drive</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0178</StopPointRef>
+      <CommonName>Markfield Road</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0179</StopPointRef>
+      <CommonName>Couston Drive</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0180</StopPointRef>
+      <CommonName>Forth Crescent</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0181</StopPointRef>
+      <CommonName>Meadowfield</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0182</StopPointRef>
+      <CommonName>Meadowfield</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0184</StopPointRef>
+      <CommonName>Shopping Centre</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0185</StopPointRef>
+      <CommonName>Lade Braes</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0701</StopPointRef>
+      <CommonName>Bypass</CommonName>
+      <LocalityName>Hillend</LocalityName>
+      <LocalityQualifier>Hillend</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0702</StopPointRef>
+      <CommonName>Bypass</CommonName>
+      <LocalityName>Hillend</LocalityName>
+      <LocalityQualifier>Hillend</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0730</StopPointRef>
+      <CommonName>Rosebery View</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0731</StopPointRef>
+      <CommonName>Lumsdaine Drive</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0763</StopPointRef>
+      <CommonName>Hopetoun View</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0768</StopPointRef>
+      <CommonName>Forth Reach</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0790</StopPointRef>
+      <CommonName>Oxcars Drive</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0794</StopPointRef>
+      <CommonName>Parish Church</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0795</StopPointRef>
+      <CommonName>Parklands Crescent</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0796</StopPointRef>
+      <CommonName>Parklands Crescent</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0911</StopPointRef>
+      <CommonName>Forth Reach</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0912</StopPointRef>
+      <CommonName>Wayfarers Drive</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0913</StopPointRef>
+      <CommonName>Wayfarers Drive</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0914</StopPointRef>
+      <CommonName>St David's Business Park</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0915</StopPointRef>
+      <CommonName>St David's Business Park</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0928</StopPointRef>
+      <CommonName>Rosebery View</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0929</StopPointRef>
+      <CommonName>The Bridges</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0930</StopPointRef>
+      <CommonName>Lumsdaine Drive</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0931</StopPointRef>
+      <CommonName>The Inches</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D1153</StopPointRef>
+      <CommonName>Lade Braes</CommonName>
+      <LocalityName>Dalgety Bay</LocalityName>
+      <LocalityQualifier>Dalgety Bay</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D1179</StopPointRef>
+      <CommonName>The Avenue</CommonName>
+      <LocalityName>Inverkeithing</LocalityName>
+      <LocalityQualifier>Inverkeithing</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D1180</StopPointRef>
+      <CommonName>The Avenue</CommonName>
+      <LocalityName>Inverkeithing</LocalityName>
+      <LocalityQualifier>Inverkeithing</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D9175</StopPointRef>
+      <CommonName>High School</CommonName>
+      <LocalityName>Inverkeithing</LocalityName>
+      <LocalityQualifier>Inverkeithing</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D1212</StopPointRef>
+      <CommonName>Curlew Way</CommonName>
+      <LocalityName>Inverkeithing</LocalityName>
+      <LocalityQualifier>Inverkeithing</LocalityQualifier>
+    </AnnotatedStopPointRef>
+  </StopPoints>
+  <RouteSections>
+    <RouteSection id="RS4">
+      <RouteLink id="RL65">
+        <From>
+          <StopPointRef>6500D0156</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0159</StopPointRef>
+        </To>
+        <Distance>194</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL66">
+        <From>
+          <StopPointRef>6500D0159</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0160</StopPointRef>
+        </To>
+        <Distance>419</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL67">
+        <From>
+          <StopPointRef>6500D0160</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0162</StopPointRef>
+        </To>
+        <Distance>246</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL68">
+        <From>
+          <StopPointRef>6500D0162</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0164</StopPointRef>
+        </To>
+        <Distance>361</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL69">
+        <From>
+          <StopPointRef>6500D0164</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0166</StopPointRef>
+        </To>
+        <Distance>334</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL70">
+        <From>
+          <StopPointRef>6500D0166</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0179</StopPointRef>
+        </To>
+        <Distance>219</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL71">
+        <From>
+          <StopPointRef>6500D0179</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0181</StopPointRef>
+        </To>
+        <Distance>220</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL72">
+        <From>
+          <StopPointRef>6500D0181</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0794</StopPointRef>
+        </To>
+        <Distance>204</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL73">
+        <From>
+          <StopPointRef>6500D0794</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0185</StopPointRef>
+        </To>
+        <Distance>149</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL74">
+        <From>
+          <StopPointRef>6500D0185</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0790</StopPointRef>
+        </To>
+        <Distance>613</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL75">
+        <From>
+          <StopPointRef>6500D0790</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0931</StopPointRef>
+        </To>
+        <Distance>204</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL76">
+        <From>
+          <StopPointRef>6500D0931</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0930</StopPointRef>
+        </To>
+        <Distance>226</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL77">
+        <From>
+          <StopPointRef>6500D0930</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0929</StopPointRef>
+        </To>
+        <Distance>366</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL78">
+        <From>
+          <StopPointRef>6500D0929</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0928</StopPointRef>
+        </To>
+        <Distance>352</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL79">
+        <From>
+          <StopPointRef>6500D0928</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0911</StopPointRef>
+        </To>
+        <Distance>312</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL80">
+        <From>
+          <StopPointRef>6500D0911</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0912</StopPointRef>
+        </To>
+        <Distance>431</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL81">
+        <From>
+          <StopPointRef>6500D0912</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0796</StopPointRef>
+        </To>
+        <Distance>233</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL82">
+        <From>
+          <StopPointRef>6500D0796</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0914</StopPointRef>
+        </To>
+        <Distance>372</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL83">
+        <From>
+          <StopPointRef>6500D0914</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0701</StopPointRef>
+        </To>
+        <Distance>543</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL84">
+        <From>
+          <StopPointRef>6500D0701</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D1179</StopPointRef>
+        </To>
+        <Distance>768</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL85">
+        <From>
+          <StopPointRef>6500D1179</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D1212</StopPointRef>
+        </To>
+        <Distance>208</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL86">
+        <From>
+          <StopPointRef>6500D1212</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D9175</StopPointRef>
+        </To>
+        <Distance>314</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+    </RouteSection>
+    <RouteSection id="RS3">
+      <RouteLink id="RL44">
+        <From>
+          <StopPointRef>6500D9175</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D1180</StopPointRef>
+        </To>
+        <Distance>203</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL45">
+        <From>
+          <StopPointRef>6500D1180</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0702</StopPointRef>
+        </To>
+        <Distance>893</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL46">
+        <From>
+          <StopPointRef>6500D0702</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0915</StopPointRef>
+        </To>
+        <Distance>493</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL47">
+        <From>
+          <StopPointRef>6500D0915</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0795</StopPointRef>
+        </To>
+        <Distance>249</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL48">
+        <From>
+          <StopPointRef>6500D0795</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0913</StopPointRef>
+        </To>
+        <Distance>276</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL49">
+        <From>
+          <StopPointRef>6500D0913</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0768</StopPointRef>
+        </To>
+        <Distance>394</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL50">
+        <From>
+          <StopPointRef>6500D0768</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0730</StopPointRef>
+        </To>
+        <Distance>485</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL51">
+        <From>
+          <StopPointRef>6500D0730</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0174</StopPointRef>
+        </To>
+        <Distance>276</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL52">
+        <From>
+          <StopPointRef>6500D0174</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0731</StopPointRef>
+        </To>
+        <Distance>319</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL53">
+        <From>
+          <StopPointRef>6500D0731</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0172</StopPointRef>
+        </To>
+        <Distance>312</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL54">
+        <From>
+          <StopPointRef>6500D0172</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0176</StopPointRef>
+        </To>
+        <Distance>254</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL55">
+        <From>
+          <StopPointRef>6500D0176</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D1153</StopPointRef>
+        </To>
+        <Distance>389</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL56">
+        <From>
+          <StopPointRef>6500D1153</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0184</StopPointRef>
+        </To>
+        <Distance>134</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL57">
+        <From>
+          <StopPointRef>6500D0184</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0182</StopPointRef>
+        </To>
+        <Distance>398</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL58">
+        <From>
+          <StopPointRef>6500D0182</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0180</StopPointRef>
+        </To>
+        <Distance>129</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL59">
+        <From>
+          <StopPointRef>6500D0180</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0178</StopPointRef>
+        </To>
+        <Distance>251</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL60">
+        <From>
+          <StopPointRef>6500D0178</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0763</StopPointRef>
+        </To>
+        <Distance>173</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL61">
+        <From>
+          <StopPointRef>6500D0763</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0163</StopPointRef>
+        </To>
+        <Distance>305</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL62">
+        <From>
+          <StopPointRef>6500D0163</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0161</StopPointRef>
+        </To>
+        <Distance>416</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL63">
+        <From>
+          <StopPointRef>6500D0161</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0158</StopPointRef>
+        </To>
+        <Distance>419</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL64">
+        <From>
+          <StopPointRef>6500D0158</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0157</StopPointRef>
+        </To>
+        <Distance>205</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+    </RouteSection>
+  </RouteSections>
+  <Routes>
+    <Route id="RT6">
+      <PrivateCode>FIK3_IK6-6</PrivateCode>
+      <Description>Dalgety Bay Dalgety Church Yard - Inverkeithing High School</Description>
+      <RouteSectionRef>RS4</RouteSectionRef>
+    </Route>
+    <Route id="RT5">
+      <PrivateCode>FIK3_IK6-5</PrivateCode>
+      <Description>Inverkeithing High School - Dalgety Bay Dalgety Church Yard</Description>
+      <RouteSectionRef>RS3</RouteSectionRef>
+    </Route>
+  </Routes>
+  <JourneyPatternSections>
+    <JourneyPatternSection id="JPS4">
+      <JourneyPatternTimingLink id="JPTL23">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0156</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0159</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL65</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL24">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0159</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0160</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL66</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL25">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0160</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0162</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL67</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL26">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0162</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0164</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL68</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL27">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0164</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0166</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL69</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL28">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0166</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0179</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL70</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL29">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0179</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0181</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL71</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL30">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0181</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0794</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL72</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL31">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0794</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0185</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL73</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL32">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0185</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0790</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL74</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL33">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0790</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0931</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL75</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL34">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0931</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0930</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL76</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL35">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0930</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0929</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL77</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL36">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0929</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0928</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL78</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL37">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0928</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0911</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL79</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL38">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0911</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0912</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL80</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL39">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0912</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0796</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL81</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL40">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0796</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0914</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL82</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL41">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0914</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0701</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL83</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL42">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D0701</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D1179</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL84</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL43">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D1179</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D1212</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL85</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL44">
+        <From>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D1212</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Inverkeithing High</DynamicDestinationDisplay>
+          <StopPointRef>6500D9175</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL86</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+    <JourneyPatternSection id="JPS8">
+      <JourneyPatternTimingLink id="JPTL107">
+        <From>
+          <WaitTime>PT2M0S</WaitTime>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D9175</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D1180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL44</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL108">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D1180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0702</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL45</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL109">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0702</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0915</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL46</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL110">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0915</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0795</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL47</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL111">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0795</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0913</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL48</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL112">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0913</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0768</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL49</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL113">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0768</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0730</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL50</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL114">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0730</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0174</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL51</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL115">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0174</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0731</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL52</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL116">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0731</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0172</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL53</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL117">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0172</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0176</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL54</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL118">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0176</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D1153</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL55</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL119">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D1153</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0184</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL56</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL120">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0184</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0182</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL57</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL121">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0182</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL58</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL122">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0178</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL59</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL123">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0178</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0763</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL60</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL124">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0763</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0163</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL61</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL125">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0163</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0161</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL62</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL126">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0161</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0158</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL63</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL127">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0158</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0157</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL64</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+    <JourneyPatternSection id="JPS11">
+      <JourneyPatternTimingLink id="JPTL167">
+        <From>
+          <WaitTime>PT12M0S</WaitTime>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D9175</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D1180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL44</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL168">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D1180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0702</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL45</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL169">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0702</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0915</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL46</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL170">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0915</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0795</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL47</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL171">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0795</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0913</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL48</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL172">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0913</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0768</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL49</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL173">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0768</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0730</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL50</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL174">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0730</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0174</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL51</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL175">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0174</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0731</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL52</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL176">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0731</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0172</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL53</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL177">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0172</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0176</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL54</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL178">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0176</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D1153</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL55</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL179">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D1153</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0184</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL56</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL180">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0184</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0182</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL57</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL181">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0182</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL58</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL182">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0178</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL59</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL183">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0178</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0763</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL60</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL184">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0763</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0163</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL61</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL185">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0163</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0161</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL62</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL186">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0161</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0158</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL63</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL187">
+        <From>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0158</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dalgety Bay</DynamicDestinationDisplay>
+          <StopPointRef>6500D0157</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL64</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+  </JourneyPatternSections>
+  <Operators>
+    <Operator id="1">
+      <NationalOperatorCode>SCFI</NationalOperatorCode>
+      <OperatorCode>SCFI</OperatorCode>
+      <OperatorShortName>Stagecoach</OperatorShortName>
+      <OperatorNameOnLicence>Fife Scottish Omnibuses Ltd</OperatorNameOnLicence>
+      <TradingName>Stagecoach East Scotland</TradingName>
+      <LicenceNumber>PM0000004</LicenceNumber>
+      <LicenceClassification>standardInternational</LicenceClassification>
+    </Operator>
+  </Operators>
+  <Services>
+    <Service>
+      <ServiceCode>S_SC_SCFI_IK6_1</ServiceCode>
+      <Lines>
+        <Line id="SL2">
+          <LineName>IK6</LineName>
+        </Line>
+      </Lines>
+      <OperatingPeriod>
+        <StartDate>2023-10-23</StartDate>
+      </OperatingPeriod>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <MondayToFriday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <RegisteredOperatorRef>1</RegisteredOperatorRef>
+      <StopRequirements>
+        <NoNewStopsRequired />
+      </StopRequirements>
+      <PublicUse>true</PublicUse>
+      <Description>Inverkeithing High School - Fordell Gardens or Dalgety Bay</Description>
+      <StandardService>
+        <Origin>Inverkeithing High School</Origin>
+        <Destination>Fordell Gardens or Dalgety Bay</Destination>
+        <JourneyPattern id="JP3">
+          <DestinationDisplay>Inverkeithing High School</DestinationDisplay>
+          <Direction>inbound</Direction>
+          <RouteRef>RT6</RouteRef>
+          <JourneyPatternSectionRefs>JPS4</JourneyPatternSectionRefs>
+        </JourneyPattern>
+        <JourneyPattern id="JP4">
+          <DestinationDisplay>Dalgety Bay Dalgety Church Yard</DestinationDisplay>
+          <Direction>outbound</Direction>
+          <RouteRef>RT5</RouteRef>
+          <JourneyPatternSectionRefs>JPS8</JourneyPatternSectionRefs>
+        </JourneyPattern>
+        <JourneyPattern id="JP5">
+          <DestinationDisplay>Dalgety Bay Dalgety Church Yard</DestinationDisplay>
+          <Direction>outbound</Direction>
+          <RouteRef>RT5</RouteRef>
+          <JourneyPatternSectionRefs>JPS11</JourneyPatternSectionRefs>
+        </JourneyPattern>
+      </StandardService>
+    </Service>
+  </Services>
+  <VehicleJourneys>
+    <VehicleJourney SequenceNumber="4">
+      <PrivateCode>FIK3_IK6MTWHF:O:0:20:wQ1eqgegsGk</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>FiSch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <GoodFriday />
+            <LateSummerBankHolidayNotScotland />
+            <EasterMonday />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ4</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_IK6_1</ServiceRef>
+      <LineRef>SL2</LineRef>
+      <JourneyPatternRef>JP3</JourneyPatternRef>
+      <DepartureTime>08:05:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="8">
+      <PrivateCode>FIK3_IK6MW:I:0:19:v2ntfoba4</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Wednesday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>FiSch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ8</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_IK6_1</ServiceRef>
+      <LineRef>SL2</LineRef>
+      <JourneyPatternRef>JP5</JourneyPatternRef>
+      <DepartureTime>15:20:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="12">
+      <PrivateCode>FIK3_IK6THF:I:0:18:nu2cpzdob</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Tuesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>FiSch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ12</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_IK6_1</ServiceRef>
+      <LineRef>SL2</LineRef>
+      <JourneyPatternRef>JP4</JourneyPatternRef>
+      <DepartureTime>15:20:00</DepartureTime>
+    </VehicleJourney>
+  </VehicleJourneys>
+</TransXChange>

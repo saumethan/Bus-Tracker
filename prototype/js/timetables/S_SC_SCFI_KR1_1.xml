@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransXChange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreationDateTime="2023-08-01T13:38:29" ModificationDateTime="2023-08-01T13:38:29" Modification="new" RevisionNumber="1" FileName="FKR1-SIF--SCFI-ST-2023-08-14-Fife_Timeplan_1408-Transmill.xml" SchemaVersion="2.5" RegistrationDocument="true" xsi:schemaLocation="http://www.transxchange.org.uk/ http://www.transxchange.org.uk/schema/2.5/TransXChange_general.xsd" xmlns="http://www.transxchange.org.uk/">
+  <ServicedOrganisations>
+    <ServicedOrganisation>
+      <OrganisationCode>FiSch</OrganisationCode>
+      <Name>Fife Schooldays</Name>
+      <WorkingDays>
+        <DateRange>
+          <StartDate>2022-06-20</StartDate>
+          <EndDate>2022-06-30</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-08-17</StartDate>
+          <EndDate>2022-10-07</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-10-24</StartDate>
+          <EndDate>2022-11-17</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-11-21</StartDate>
+          <EndDate>2022-12-21</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-01-05</StartDate>
+          <EndDate>2023-02-14</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-02-20</StartDate>
+          <EndDate>2023-03-30</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-04-17</StartDate>
+          <EndDate>2023-04-28</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-02</StartDate>
+          <EndDate>2023-05-05</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-06-07</StartDate>
+          <EndDate>2023-06-30</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-09</StartDate>
+          <EndDate>2023-06-02</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-08-16</StartDate>
+          <EndDate>2023-10-06</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-10-23</StartDate>
+          <EndDate>2023-11-09</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-11-13</StartDate>
+          <EndDate>2023-12-20</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-01-04</StartDate>
+          <EndDate>2024-02-13</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-19</StartDate>
+          <EndDate>2024-03-28</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-04-15</StartDate>
+          <EndDate>2024-05-03</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-07</StartDate>
+          <EndDate>2024-05-08</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-10</StartDate>
+          <EndDate>2024-05-31</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-06-04</StartDate>
+          <EndDate>2024-06-28</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+      </WorkingDays>
+      <Holidays>
+        <DateRange>
+          <StartDate>2022-07-01</StartDate>
+          <EndDate>2022-08-16</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-10-10</StartDate>
+          <EndDate>2022-10-21</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-11-18</StartDate>
+          <EndDate>2022-11-18</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-12-22</StartDate>
+          <EndDate>2023-01-04</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-02-15</StartDate>
+          <EndDate>2023-02-17</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-03-31</StartDate>
+          <EndDate>2023-04-14</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-01</StartDate>
+          <EndDate>2023-05-01</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-06-05</StartDate>
+          <EndDate>2023-06-06</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-07-03</StartDate>
+          <EndDate>2023-08-15</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-08</StartDate>
+          <EndDate>2023-05-08</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-10-09</StartDate>
+          <EndDate>2023-10-20</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-11-10</StartDate>
+          <EndDate>2023-11-10</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-12-21</StartDate>
+          <EndDate>2024-01-03</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-14</StartDate>
+          <EndDate>2024-02-16</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-03-29</StartDate>
+          <EndDate>2024-04-12</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-06</StartDate>
+          <EndDate>2024-05-06</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-09</StartDate>
+          <EndDate>2024-05-09</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-06-03</StartDate>
+          <EndDate>2024-06-03</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-07-01</StartDate>
+          <EndDate>2024-08-20</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+      </Holidays>
+    </ServicedOrganisation>
+  </ServicedOrganisations>
+  <StopPoints>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0262</StopPointRef>
+      <CommonName>Castle Road</CommonName>
+      <LocalityName>Rosyth</LocalityName>
+      <LocalityQualifier>Rosyth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0264</StopPointRef>
+      <CommonName>Rannoch Road</CommonName>
+      <LocalityName>Rosyth</LocalityName>
+      <LocalityQualifier>Rosyth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0265</StopPointRef>
+      <CommonName>Rannoch Road</CommonName>
+      <LocalityName>Rosyth</LocalityName>
+      <LocalityQualifier>Rosyth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0266</StopPointRef>
+      <CommonName>St Peter's &amp; St Paul's Church</CommonName>
+      <LocalityName>Rosyth</LocalityName>
+      <LocalityQualifier>Rosyth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0746</StopPointRef>
+      <CommonName>Hilton Road</CommonName>
+      <LocalityName>Rosyth</LocalityName>
+      <LocalityQualifier>Rosyth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0748</StopPointRef>
+      <CommonName>Castle Road</CommonName>
+      <LocalityName>Rosyth</LocalityName>
+      <LocalityQualifier>Rosyth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0773</StopPointRef>
+      <CommonName>Albert Street</CommonName>
+      <LocalityName>Camdean</LocalityName>
+      <LocalityQualifier>Rosyth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0774</StopPointRef>
+      <CommonName>Albert Street</CommonName>
+      <LocalityName>Camdean</LocalityName>
+      <LocalityQualifier>Rosyth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D0775</StopPointRef>
+      <CommonName>Camdean Primary School</CommonName>
+      <LocalityName>Camdean</LocalityName>
+      <LocalityQualifier>Rosyth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D1081</StopPointRef>
+      <CommonName>St Peter's &amp; St Paul's Church</CommonName>
+      <LocalityName>Rosyth</LocalityName>
+      <LocalityQualifier>Rosyth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D1082</StopPointRef>
+      <CommonName>Fire Station</CommonName>
+      <LocalityName>Rosyth</LocalityName>
+      <LocalityQualifier>Rosyth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D1100</StopPointRef>
+      <CommonName>King's Road Primary School</CommonName>
+      <LocalityName>Camdean</LocalityName>
+      <LocalityQualifier>Rosyth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500D9285</StopPointRef>
+      <CommonName>Hilton Rd</CommonName>
+      <LocalityName>Rosyth</LocalityName>
+      <LocalityQualifier>Rosyth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+  </StopPoints>
+  <RouteSections>
+    <RouteSection id="RS1">
+      <RouteLink id="RL1">
+        <From>
+          <StopPointRef>6500D1100</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0262</StopPointRef>
+        </To>
+        <Distance>196</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL2">
+        <From>
+          <StopPointRef>6500D0262</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D1082</StopPointRef>
+        </To>
+        <Distance>340</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3">
+        <From>
+          <StopPointRef>6500D1082</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0265</StopPointRef>
+        </To>
+        <Distance>218</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL4">
+        <From>
+          <StopPointRef>6500D0265</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D1081</StopPointRef>
+        </To>
+        <Distance>310</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL5">
+        <From>
+          <StopPointRef>6500D1081</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D9285</StopPointRef>
+        </To>
+        <Distance>503</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL6">
+        <From>
+          <StopPointRef>6500D9285</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0746</StopPointRef>
+        </To>
+        <Distance>207</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+    </RouteSection>
+    <RouteSection id="RS2">
+      <RouteLink id="RL7">
+        <From>
+          <StopPointRef>6500D0746</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0266</StopPointRef>
+        </To>
+        <Distance>304</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL8">
+        <From>
+          <StopPointRef>6500D0266</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0264</StopPointRef>
+        </To>
+        <Distance>322</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL9">
+        <From>
+          <StopPointRef>6500D0264</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0748</StopPointRef>
+        </To>
+        <Distance>621</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL10">
+        <From>
+          <StopPointRef>6500D0748</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0775</StopPointRef>
+        </To>
+        <Distance>291</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL11">
+        <From>
+          <StopPointRef>6500D0775</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0773</StopPointRef>
+        </To>
+        <Distance>220</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL12">
+        <From>
+          <StopPointRef>6500D0773</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D0774</StopPointRef>
+        </To>
+        <Distance>559</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL13">
+        <From>
+          <StopPointRef>6500D0774</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500D1100</StopPointRef>
+        </To>
+        <Distance>239</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+    </RouteSection>
+  </RouteSections>
+  <Routes>
+    <Route id="RT133">
+      <PrivateCode>FKR1-133</PrivateCode>
+      <Description>Camdean King's Road Primary School - Rosyth Hilton Road</Description>
+      <RouteSectionRef>RS1</RouteSectionRef>
+    </Route>
+    <Route id="RT134">
+      <PrivateCode>FKR1-134</PrivateCode>
+      <Description>Rosyth Hilton Road - Camdean King's Road Primary School</Description>
+      <RouteSectionRef>RS2</RouteSectionRef>
+    </Route>
+  </Routes>
+  <JourneyPatternSections>
+    <JourneyPatternSection id="JPS135">
+      <JourneyPatternTimingLink id="JPTL1">
+        <From>
+          <WaitTime>PT10M0S</WaitTime>
+          <DynamicDestinationDisplay>Hilton Road</DynamicDestinationDisplay>
+          <StopPointRef>6500D1100</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Hilton Road</DynamicDestinationDisplay>
+          <StopPointRef>6500D0262</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL1</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL2">
+        <From>
+          <DynamicDestinationDisplay>Hilton Road</DynamicDestinationDisplay>
+          <StopPointRef>6500D0262</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Hilton Road</DynamicDestinationDisplay>
+          <StopPointRef>6500D1082</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL2</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3">
+        <From>
+          <DynamicDestinationDisplay>Hilton Road</DynamicDestinationDisplay>
+          <StopPointRef>6500D1082</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Hilton Road</DynamicDestinationDisplay>
+          <StopPointRef>6500D0265</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4">
+        <From>
+          <DynamicDestinationDisplay>Hilton Road</DynamicDestinationDisplay>
+          <StopPointRef>6500D0265</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Hilton Road</DynamicDestinationDisplay>
+          <StopPointRef>6500D1081</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL4</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5">
+        <From>
+          <DynamicDestinationDisplay>Hilton Road</DynamicDestinationDisplay>
+          <StopPointRef>6500D1081</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Hilton Road</DynamicDestinationDisplay>
+          <StopPointRef>6500D9285</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL5</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL6">
+        <From>
+          <DynamicDestinationDisplay>Hilton Road</DynamicDestinationDisplay>
+          <StopPointRef>6500D9285</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Hilton Road</DynamicDestinationDisplay>
+          <StopPointRef>6500D0746</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL6</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+    <JourneyPatternSection id="JPS136">
+      <JourneyPatternTimingLink id="JPTL7">
+        <From>
+          <DynamicDestinationDisplay>Kings Road Primary</DynamicDestinationDisplay>
+          <StopPointRef>6500D0746</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Kings Road Primary</DynamicDestinationDisplay>
+          <StopPointRef>6500D0266</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL7</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL8">
+        <From>
+          <DynamicDestinationDisplay>Kings Road Primary</DynamicDestinationDisplay>
+          <StopPointRef>6500D0266</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Kings Road Primary</DynamicDestinationDisplay>
+          <StopPointRef>6500D0264</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL8</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL9">
+        <From>
+          <DynamicDestinationDisplay>Kings Road Primary</DynamicDestinationDisplay>
+          <StopPointRef>6500D0264</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Kings Road Primary</DynamicDestinationDisplay>
+          <StopPointRef>6500D0748</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL9</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL10">
+        <From>
+          <DynamicDestinationDisplay>Kings Road Primary</DynamicDestinationDisplay>
+          <StopPointRef>6500D0748</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Kings Road Primary</DynamicDestinationDisplay>
+          <StopPointRef>6500D0775</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL10</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL11">
+        <From>
+          <DynamicDestinationDisplay>Kings Road Primary</DynamicDestinationDisplay>
+          <StopPointRef>6500D0775</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Kings Road Primary</DynamicDestinationDisplay>
+          <StopPointRef>6500D0773</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL11</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL12">
+        <From>
+          <DynamicDestinationDisplay>Kings Road Primary</DynamicDestinationDisplay>
+          <StopPointRef>6500D0773</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Kings Road Primary</DynamicDestinationDisplay>
+          <StopPointRef>6500D0774</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL12</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL13">
+        <From>
+          <DynamicDestinationDisplay>Kings Road Primary</DynamicDestinationDisplay>
+          <StopPointRef>6500D0774</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Kings Road Primary</DynamicDestinationDisplay>
+          <StopPointRef>6500D1100</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL13</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+  </JourneyPatternSections>
+  <Operators>
+    <Operator id="1">
+      <NationalOperatorCode>SCFI</NationalOperatorCode>
+      <OperatorCode>SCFI</OperatorCode>
+      <OperatorShortName>Stagecoach</OperatorShortName>
+      <OperatorNameOnLicence>Fife Scottish Omnibuses Ltd</OperatorNameOnLicence>
+      <TradingName>Stagecoach East Scotland</TradingName>
+      <LicenceNumber>PM0000004</LicenceNumber>
+      <LicenceClassification>standardInternational</LicenceClassification>
+    </Operator>
+  </Operators>
+  <Services>
+    <Service>
+      <ServiceCode>S_SC_SCFI_KR1_1</ServiceCode>
+      <Lines>
+        <Line id="SL1">
+          <LineName>KR1</LineName>
+        </Line>
+      </Lines>
+      <OperatingPeriod>
+        <StartDate>2023-08-14</StartDate>
+      </OperatingPeriod>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <MondayToFriday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <GoodFriday />
+            <LateSummerBankHolidayNotScotland />
+            <EasterMonday />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <RegisteredOperatorRef>1</RegisteredOperatorRef>
+      <StopRequirements>
+        <NoNewStopsRequired />
+      </StopRequirements>
+      <PublicUse>true</PublicUse>
+      <Description>Rosyth, Hilton Road - Kings Road Primary School</Description>
+      <StandardService>
+        <Origin>Rosyth, Hilton Road</Origin>
+        <Destination>Kings Road Primary School</Destination>
+        <JourneyPattern id="JP1">
+          <DestinationDisplay>Rosyth Hilton Road</DestinationDisplay>
+          <Direction>outbound</Direction>
+          <RouteRef>RT133</RouteRef>
+          <JourneyPatternSectionRefs>JPS135</JourneyPatternSectionRefs>
+        </JourneyPattern>
+        <JourneyPattern id="JP2">
+          <DestinationDisplay>Camdean King's Road Primary School</DestinationDisplay>
+          <Direction>inbound</Direction>
+          <RouteRef>RT134</RouteRef>
+          <JourneyPatternSectionRefs>JPS136</JourneyPatternSectionRefs>
+        </JourneyPattern>
+      </StandardService>
+    </Service>
+  </Services>
+  <VehicleJourneys>
+    <VehicleJourney SequenceNumber="185">
+      <PrivateCode>FKR1MTWHF:O:0:184:wQ1eqgegsGk</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>FiSch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <GoodFriday />
+            <LateSummerBankHolidayNotScotland />
+            <EasterMonday />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ185</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_KR1_1</ServiceRef>
+      <LineRef>SL1</LineRef>
+      <JourneyPatternRef>JP2</JourneyPatternRef>
+      <DepartureTime>08:45:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="186">
+      <PrivateCode>FKR1MTWHF:I:0:183:wQ1eqgegsGk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>FiSch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <GoodFriday />
+            <LateSummerBankHolidayNotScotland />
+            <EasterMonday />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ186</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_KR1_1</ServiceRef>
+      <LineRef>SL1</LineRef>
+      <JourneyPatternRef>JP1</JourneyPatternRef>
+      <DepartureTime>15:10:00</DepartureTime>
+    </VehicleJourney>
+  </VehicleJourneys>
+</TransXChange>

@@ -1,0 +1,1949 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransXChange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreationDateTime="2024-08-06T09:08:06" ModificationDateTime="2024-08-06T09:08:06" Modification="new" RevisionNumber="1" FileName="231-BB--SBLB-SCHI-19thAug-2024-08-19-Aberdeen_19th_August_2024-Transmill.xml" SchemaVersion="2.5" RegistrationDocument="true" xsi:schemaLocation="http://www.transxchange.org.uk/ http://www.transxchange.org.uk/schema/2.5/TransXChange_general.xsd" xmlns="http://www.transxchange.org.uk/">
+  <ServicedOrganisations>
+    <ServicedOrganisation>
+      <OrganisationCode>ABD_ASch</OrganisationCode>
+      <Name>Aberdeenshire Schooldays only</Name>
+      <WorkingDays>
+        <DateRange>
+          <StartDate>2024-08-19</StartDate>
+          <EndDate>2024-10-11</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-10-28</StartDate>
+          <EndDate>2024-12-20</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-01-06</StartDate>
+          <EndDate>2025-02-07</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-02-11</StartDate>
+          <EndDate>2025-03-28</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-04-14</StartDate>
+          <EndDate>2025-04-17</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-04-21</StartDate>
+          <EndDate>2025-05-02</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-05-06</StartDate>
+          <EndDate>2025-07-04</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+      </WorkingDays>
+      <Holidays>
+        <DateRange>
+          <StartDate>2024-10-14</StartDate>
+          <EndDate>2024-10-25</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-12-23</StartDate>
+          <EndDate>2025-01-03</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-02-10</StartDate>
+          <EndDate>2025-02-10</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-03-31</StartDate>
+          <EndDate>2025-04-11</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-04-18</StartDate>
+          <EndDate>2025-04-18</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-05-05</StartDate>
+          <EndDate>2025-05-05</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+      </Holidays>
+    </ServicedOrganisation>
+  </ServicedOrganisations>
+  <StopPoints>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630030461</StopPointRef>
+      <CommonName>Gartly Community Hall</CommonName>
+      <LocalityName>Bridgend</LocalityName>
+      <LocalityQualifier>Huntly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630030471</StopPointRef>
+      <CommonName>Road End</CommonName>
+      <LocalityName>Gartly</LocalityName>
+      <LocalityQualifier>Gartly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630030472</StopPointRef>
+      <CommonName>Road End</CommonName>
+      <LocalityName>Gartly</LocalityName>
+      <LocalityQualifier>Gartly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630030481</StopPointRef>
+      <CommonName>Bogs of Noth</CommonName>
+      <LocalityName>Gartly</LocalityName>
+      <LocalityQualifier>Gartly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630030981</StopPointRef>
+      <CommonName>The Square</CommonName>
+      <LocalityName>Huntly</LocalityName>
+      <LocalityQualifier>Huntly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630030991</StopPointRef>
+      <CommonName>Nelson Street</CommonName>
+      <LocalityName>Huntly</LocalityName>
+      <LocalityQualifier>Huntly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630031021</StopPointRef>
+      <CommonName>Market Street</CommonName>
+      <LocalityName>Huntly</LocalityName>
+      <LocalityQualifier>Huntly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630031022</StopPointRef>
+      <CommonName>Market Street</CommonName>
+      <LocalityName>Huntly</LocalityName>
+      <LocalityQualifier>Huntly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630032041</StopPointRef>
+      <CommonName>Kingsford Road</CommonName>
+      <LocalityName>Alford</LocalityName>
+      <LocalityQualifier>Alford</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630032042</StopPointRef>
+      <CommonName>Kingsford Road</CommonName>
+      <LocalityName>Alford</LocalityName>
+      <LocalityQualifier>Alford</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630032051</StopPointRef>
+      <CommonName>Bank Brae</CommonName>
+      <LocalityName>Alford</LocalityName>
+      <LocalityQualifier>Alford</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630032052</StopPointRef>
+      <CommonName>Bank Brae</CommonName>
+      <LocalityName>Alford</LocalityName>
+      <LocalityQualifier>Alford</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630032061</StopPointRef>
+      <CommonName>David McLean Drive</CommonName>
+      <LocalityName>Alford</LocalityName>
+      <LocalityQualifier>Alford</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630032062</StopPointRef>
+      <CommonName>David McLean Drive</CommonName>
+      <LocalityName>Alford</LocalityName>
+      <LocalityQualifier>Alford</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630032071</StopPointRef>
+      <CommonName>The Square</CommonName>
+      <LocalityName>Lumsden</LocalityName>
+      <LocalityQualifier>Lumsden</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630032081</StopPointRef>
+      <CommonName>The Square</CommonName>
+      <LocalityName>Rhynie</LocalityName>
+      <LocalityQualifier>Rhynie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630032091</StopPointRef>
+      <CommonName>The Square</CommonName>
+      <LocalityName>Lumsden</LocalityName>
+      <LocalityQualifier>Lumsden</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630034031</StopPointRef>
+      <CommonName>Bramcote Terrace</CommonName>
+      <LocalityName>Lumsden</LocalityName>
+      <LocalityQualifier>Lumsden</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630045441</StopPointRef>
+      <CommonName>Steven Road</CommonName>
+      <LocalityName>Huntly</LocalityName>
+      <LocalityQualifier>Huntly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630045442</StopPointRef>
+      <CommonName>Steven Road</CommonName>
+      <LocalityName>Huntly</LocalityName>
+      <LocalityQualifier>Huntly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630045781</StopPointRef>
+      <CommonName>MacKay Court</CommonName>
+      <LocalityName>Rhynie</LocalityName>
+      <LocalityQualifier>Rhynie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630045782</StopPointRef>
+      <CommonName>MacKay Court</CommonName>
+      <LocalityName>Rhynie</LocalityName>
+      <LocalityQualifier>Rhynie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630060801</StopPointRef>
+      <CommonName>Craig Road</CommonName>
+      <LocalityName>Lumsden</LocalityName>
+      <LocalityQualifier>Lumsden</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630060811</StopPointRef>
+      <CommonName>Smithston Rd End</CommonName>
+      <LocalityName>Kennethmont</LocalityName>
+      <LocalityQualifier>Kennethmont</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630060812</StopPointRef>
+      <CommonName>Smithston Rd End</CommonName>
+      <LocalityName>Kennethmont</LocalityName>
+      <LocalityQualifier>Kennethmont</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630060831</StopPointRef>
+      <CommonName>The Square</CommonName>
+      <LocalityName>Rhynie</LocalityName>
+      <LocalityQualifier>Rhynie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630061811</StopPointRef>
+      <CommonName>Newton of Auchindoir</CommonName>
+      <LocalityName>Lumsden</LocalityName>
+      <LocalityQualifier>Lumsden</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630063131</StopPointRef>
+      <CommonName>Old Mart</CommonName>
+      <LocalityName>Alford</LocalityName>
+      <LocalityQualifier>Alford</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630063241</StopPointRef>
+      <CommonName>Old Military Road</CommonName>
+      <LocalityName>Bridge of Alford</LocalityName>
+      <LocalityQualifier>Alford</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630063242</StopPointRef>
+      <CommonName>Old Military Road</CommonName>
+      <LocalityName>Bridge of Alford</LocalityName>
+      <LocalityQualifier>Alford</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630064761</StopPointRef>
+      <CommonName>Gordon Schools</CommonName>
+      <LocalityName>Huntly</LocalityName>
+      <LocalityQualifier>Huntly</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630066121</StopPointRef>
+      <CommonName>Donlogie</CommonName>
+      <LocalityName>Mossat</LocalityName>
+      <LocalityQualifier>Lumsden</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630066134</StopPointRef>
+      <CommonName>Bears Den</CommonName>
+      <LocalityName>Rhynie</LocalityName>
+      <LocalityQualifier>Rhynie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630066175</StopPointRef>
+      <CommonName>Toll Croft</CommonName>
+      <LocalityName>Alford</LocalityName>
+      <LocalityQualifier>Alford</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630066180</StopPointRef>
+      <CommonName>Whitefield</CommonName>
+      <LocalityName>Alford</LocalityName>
+      <LocalityQualifier>Alford</LocalityQualifier>
+    </AnnotatedStopPointRef>
+  </StopPoints>
+  <RouteSections>
+    <RouteSection id="RS1">
+      <RouteLink id="RL1">
+        <From>
+          <StopPointRef>630064761</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630030981</StopPointRef>
+        </To>
+        <Distance>443</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL2">
+        <From>
+          <StopPointRef>630030981</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630030991</StopPointRef>
+        </To>
+        <Distance>142</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3">
+        <From>
+          <StopPointRef>630030991</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630031021</StopPointRef>
+        </To>
+        <Distance>395</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL4">
+        <From>
+          <StopPointRef>630031021</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630045441</StopPointRef>
+        </To>
+        <Distance>284</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL5">
+        <From>
+          <StopPointRef>630045441</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630030472</StopPointRef>
+        </To>
+        <Distance>7669</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL6">
+        <From>
+          <StopPointRef>630030472</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630030481</StopPointRef>
+        </To>
+        <Distance>852</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL7">
+        <From>
+          <StopPointRef>630030481</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630060812</StopPointRef>
+        </To>
+        <Distance>2094</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL8">
+        <From>
+          <StopPointRef>630060812</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630045782</StopPointRef>
+        </To>
+        <Distance>2894</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL9">
+        <From>
+          <StopPointRef>630045782</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630060831</StopPointRef>
+        </To>
+        <Distance>242</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL10">
+        <From>
+          <StopPointRef>630060831</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630061811</StopPointRef>
+        </To>
+        <Distance>2905</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL11">
+        <From>
+          <StopPointRef>630061811</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630032071</StopPointRef>
+        </To>
+        <Distance>3131</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL12">
+        <From>
+          <StopPointRef>630032071</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630066121</StopPointRef>
+        </To>
+        <Distance>5743</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL13">
+        <From>
+          <StopPointRef>630066121</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630066180</StopPointRef>
+        </To>
+        <Distance>4954</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL14">
+        <From>
+          <StopPointRef>630066180</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630063242</StopPointRef>
+        </To>
+        <Distance>1462</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL15">
+        <From>
+          <StopPointRef>630063242</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630066175</StopPointRef>
+        </To>
+        <Distance>959</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL16">
+        <From>
+          <StopPointRef>630066175</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630032062</StopPointRef>
+        </To>
+        <Distance>1093</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL17">
+        <From>
+          <StopPointRef>630032062</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630032051</StopPointRef>
+        </To>
+        <Distance>322</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL18">
+        <From>
+          <StopPointRef>630032051</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630032041</StopPointRef>
+        </To>
+        <Distance>234</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+    </RouteSection>
+    <RouteSection id="RS2">
+      <RouteLink id="RL19">
+        <From>
+          <StopPointRef>630030981</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630030991</StopPointRef>
+        </To>
+        <Distance>142</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL20">
+        <From>
+          <StopPointRef>630030991</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630031021</StopPointRef>
+        </To>
+        <Distance>395</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL21">
+        <From>
+          <StopPointRef>630031021</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630045441</StopPointRef>
+        </To>
+        <Distance>284</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL22">
+        <From>
+          <StopPointRef>630045441</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630030472</StopPointRef>
+        </To>
+        <Distance>7669</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL23">
+        <From>
+          <StopPointRef>630030472</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630030481</StopPointRef>
+        </To>
+        <Distance>852</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL24">
+        <From>
+          <StopPointRef>630030481</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630060812</StopPointRef>
+        </To>
+        <Distance>2094</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL25">
+        <From>
+          <StopPointRef>630060812</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630045782</StopPointRef>
+        </To>
+        <Distance>2894</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL26">
+        <From>
+          <StopPointRef>630045782</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630060831</StopPointRef>
+        </To>
+        <Distance>242</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL27">
+        <From>
+          <StopPointRef>630060831</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630061811</StopPointRef>
+        </To>
+        <Distance>2905</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL28">
+        <From>
+          <StopPointRef>630061811</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630032071</StopPointRef>
+        </To>
+        <Distance>3131</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL29">
+        <From>
+          <StopPointRef>630032071</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630066121</StopPointRef>
+        </To>
+        <Distance>5743</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL30">
+        <From>
+          <StopPointRef>630066121</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630066180</StopPointRef>
+        </To>
+        <Distance>4954</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL31">
+        <From>
+          <StopPointRef>630066180</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630063242</StopPointRef>
+        </To>
+        <Distance>1462</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL32">
+        <From>
+          <StopPointRef>630063242</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630066175</StopPointRef>
+        </To>
+        <Distance>959</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL33">
+        <From>
+          <StopPointRef>630066175</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630032062</StopPointRef>
+        </To>
+        <Distance>1093</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL34">
+        <From>
+          <StopPointRef>630032062</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630032051</StopPointRef>
+        </To>
+        <Distance>322</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL35">
+        <From>
+          <StopPointRef>630032051</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630032041</StopPointRef>
+        </To>
+        <Distance>234</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+    </RouteSection>
+    <RouteSection id="RS3">
+      <RouteLink id="RL36">
+        <From>
+          <StopPointRef>630032042</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630032052</StopPointRef>
+        </To>
+        <Distance>260</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL37">
+        <From>
+          <StopPointRef>630032052</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630032061</StopPointRef>
+        </To>
+        <Distance>413</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL38">
+        <From>
+          <StopPointRef>630032061</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630063131</StopPointRef>
+        </To>
+        <Distance>120</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL39">
+        <From>
+          <StopPointRef>630063131</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630063241</StopPointRef>
+        </To>
+        <Distance>1802</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL40">
+        <From>
+          <StopPointRef>630063241</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630032091</StopPointRef>
+        </To>
+        <Distance>12040</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL41">
+        <From>
+          <StopPointRef>630032091</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630034031</StopPointRef>
+        </To>
+        <Distance>170</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL42">
+        <From>
+          <StopPointRef>630034031</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630060801</StopPointRef>
+        </To>
+        <Distance>2817</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL43">
+        <From>
+          <StopPointRef>630060801</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630066134</StopPointRef>
+        </To>
+        <Distance>831</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL44">
+        <From>
+          <StopPointRef>630066134</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630032081</StopPointRef>
+        </To>
+        <Distance>2312</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL45">
+        <From>
+          <StopPointRef>630032081</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630045781</StopPointRef>
+        </To>
+        <Distance>162</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL46">
+        <From>
+          <StopPointRef>630045781</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630060811</StopPointRef>
+        </To>
+        <Distance>2961</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL47">
+        <From>
+          <StopPointRef>630060811</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630030471</StopPointRef>
+        </To>
+        <Distance>2948</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL48">
+        <From>
+          <StopPointRef>630030471</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630030461</StopPointRef>
+        </To>
+        <Distance>3784</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL49">
+        <From>
+          <StopPointRef>630030461</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630045442</StopPointRef>
+        </To>
+        <Distance>3887</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL50">
+        <From>
+          <StopPointRef>630045442</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630031022</StopPointRef>
+        </To>
+        <Distance>207</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL51">
+        <From>
+          <StopPointRef>630031022</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630030981</StopPointRef>
+        </To>
+        <Distance>622</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL52">
+        <From>
+          <StopPointRef>630030981</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630064761</StopPointRef>
+        </To>
+        <Distance>630</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+    </RouteSection>
+  </RouteSections>
+  <Routes>
+    <Route id="RT5">
+      <PrivateCode>231-5</PrivateCode>
+      <Description>Huntly Gordon Schools - Alford Kingsford Road</Description>
+      <RouteSectionRef>RS1</RouteSectionRef>
+    </Route>
+    <Route id="RT6">
+      <PrivateCode>231-6</PrivateCode>
+      <Description>Huntly Square - Alford Kingsford Road</Description>
+      <RouteSectionRef>RS2</RouteSectionRef>
+    </Route>
+    <Route id="RT7">
+      <PrivateCode>231-7</PrivateCode>
+      <Description>Alford Kingsford Road - Huntly Gordon Schools</Description>
+      <RouteSectionRef>RS3</RouteSectionRef>
+    </Route>
+  </Routes>
+  <JourneyPatternSections>
+    <JourneyPatternSection id="JPS6">
+      <JourneyPatternTimingLink id="JPTL1">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630030981</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630030991</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL19</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL2">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630030991</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630031021</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL20</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630031021</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630045441</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL21</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630045441</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630030472</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL22</RouteLinkRef>
+        <RunTime>PT10M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630030472</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630030481</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL23</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL6">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630030481</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630060812</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL24</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL7">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630060812</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630045782</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL25</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL8">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630045782</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630060831</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL26</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL9">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630060831</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630061811</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL27</RouteLinkRef>
+        <RunTime>PT5M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL10">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630061811</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630032071</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL28</RouteLinkRef>
+        <RunTime>PT5M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL11">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630032071</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630066121</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL29</RouteLinkRef>
+        <RunTime>PT7M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL12">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630066121</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630066180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL30</RouteLinkRef>
+        <RunTime>PT5M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL13">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630066180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630063242</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL31</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL14">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630063242</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630066175</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL32</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL15">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630066175</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630032062</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL33</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL16">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630032062</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630032051</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL34</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL17">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630032051</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630032041</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL35</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+    <JourneyPatternSection id="JPS7">
+      <JourneyPatternTimingLink id="JPTL18">
+        <From>
+          <Activity>pickUp</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630064761</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630030981</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL1</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL19">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630030981</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630030991</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL2</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL20">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630030991</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630031021</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL21">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630031021</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630045441</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL4</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL22">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630045441</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630030472</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL5</RouteLinkRef>
+        <RunTime>PT10M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL23">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630030472</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630030481</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL6</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL24">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630030481</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630060812</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL7</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL25">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630060812</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630045782</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL8</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL26">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630045782</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630060831</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL9</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL27">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630060831</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630061811</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL10</RouteLinkRef>
+        <RunTime>PT5M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL28">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630061811</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630032071</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL11</RouteLinkRef>
+        <RunTime>PT5M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL29">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630032071</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630066121</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL12</RouteLinkRef>
+        <RunTime>PT7M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL30">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630066121</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630066180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL13</RouteLinkRef>
+        <RunTime>PT5M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL31">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630066180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630063242</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL14</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL32">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630063242</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630066175</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL15</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL33">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630066175</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630032062</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL16</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL34">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630032062</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630032051</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL17</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL35">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630032051</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Alford</DynamicDestinationDisplay>
+          <StopPointRef>630032041</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL18</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+    <JourneyPatternSection id="JPS8">
+      <JourneyPatternTimingLink id="JPTL36">
+        <From>
+          <Activity>pickUp</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630032042</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630032052</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL36</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL37">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630032052</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630032061</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL37</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL38">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630032061</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630063131</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL38</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL39">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630063131</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630063241</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL39</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL40">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630063241</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630032091</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL40</RouteLinkRef>
+        <RunTime>PT13M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL41">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630032091</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630034031</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL41</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL42">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630034031</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630060801</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL42</RouteLinkRef>
+        <RunTime>PT6M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL43">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630060801</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630066134</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL43</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL44">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630066134</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630032081</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL44</RouteLinkRef>
+        <RunTime>PT5M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL45">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630032081</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630045781</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL45</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL46">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630045781</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630060811</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL46</RouteLinkRef>
+        <RunTime>PT4M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL47">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630060811</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630030471</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL47</RouteLinkRef>
+        <RunTime>PT4M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL48">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630030471</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630030461</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL48</RouteLinkRef>
+        <RunTime>PT4M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL49">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630030461</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630045442</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL49</RouteLinkRef>
+        <RunTime>PT6M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL50">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630045442</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630031022</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL50</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL51">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630031022</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630030981</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL51</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL52">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630030981</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>setDown</Activity>
+          <DynamicDestinationDisplay>The Gordon Schools</DynamicDestinationDisplay>
+          <StopPointRef>630064761</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL52</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+  </JourneyPatternSections>
+  <Operators>
+    <Operator id="1">
+      <NationalOperatorCode>SBLB</NationalOperatorCode>
+      <OperatorCode>SBLB</OperatorCode>
+      <OperatorShortName>Stagecoach</OperatorShortName>
+      <OperatorNameOnLicence>Bluebird Buses Ltd</OperatorNameOnLicence>
+      <TradingName>Stagecoach Bluebird</TradingName>
+      <LicenceNumber>PM0000005</LicenceNumber>
+      <LicenceClassification>standardInternational</LicenceClassification>
+    </Operator>
+  </Operators>
+  <Services>
+    <Service>
+      <ServiceCode>S_SC_SBLB_231_1</ServiceCode>
+      <Lines>
+        <Line id="SL1">
+          <LineName>231</LineName>
+        </Line>
+      </Lines>
+      <OperatingPeriod>
+        <StartDate>2024-08-19</StartDate>
+      </OperatingPeriod>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <MondayToFriday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <RegisteredOperatorRef>1</RegisteredOperatorRef>
+      <StopRequirements>
+        <NoNewStopsRequired />
+      </StopRequirements>
+      <PublicUse>true</PublicUse>
+      <Description>Alford - Huntly</Description>
+      <StandardService>
+        <Origin>Alford</Origin>
+        <Destination>Huntly</Destination>
+        <JourneyPattern id="JP1">
+          <DestinationDisplay>Alford Kingsford Road</DestinationDisplay>
+          <Direction>outbound</Direction>
+          <RouteRef>RT6</RouteRef>
+          <JourneyPatternSectionRefs>JPS6</JourneyPatternSectionRefs>
+        </JourneyPattern>
+        <JourneyPattern id="JP2">
+          <DestinationDisplay>Alford Kingsford Road</DestinationDisplay>
+          <Direction>outbound</Direction>
+          <RouteRef>RT5</RouteRef>
+          <JourneyPatternSectionRefs>JPS7</JourneyPatternSectionRefs>
+        </JourneyPattern>
+        <JourneyPattern id="JP3">
+          <DestinationDisplay>Huntly Gordon Schools</DestinationDisplay>
+          <Direction>inbound</Direction>
+          <RouteRef>RT7</RouteRef>
+          <JourneyPatternSectionRefs>JPS8</JourneyPatternSectionRefs>
+        </JourneyPattern>
+      </StandardService>
+    </Service>
+  </Services>
+  <VehicleJourneys>
+    <VehicleJourney SequenceNumber="25">
+      <PrivateCode>231MTWHF:O:0:15:q_1JZh4xzcM</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>ABD_ASch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ25</VehicleJourneyCode>
+      <ServiceRef>S_SC_SBLB_231_1</ServiceRef>
+      <LineRef>SL1</LineRef>
+      <JourneyPatternRef>JP3</JourneyPatternRef>
+      <DepartureTime>07:50:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="26">
+      <PrivateCode>231MTWHF:I:0:14:q_1JZh4xzcM</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>ABD_ASch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ26</VehicleJourneyCode>
+      <ServiceRef>S_SC_SBLB_231_1</ServiceRef>
+      <LineRef>SL1</LineRef>
+      <JourneyPatternRef>JP1</JourneyPatternRef>
+      <DepartureTime>08:50:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="27">
+      <PrivateCode>231MTWHF:O:0:16:q_1JZh4xzcM</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>ABD_ASch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ27</VehicleJourneyCode>
+      <ServiceRef>S_SC_SBLB_231_1</ServiceRef>
+      <LineRef>SL1</LineRef>
+      <JourneyPatternRef>JP3</JourneyPatternRef>
+      <DepartureTime>14:47:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="28">
+      <PrivateCode>231MTWHF:I:0:13:q_1JZh4xzcM</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>ABD_ASch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ28</VehicleJourneyCode>
+      <ServiceRef>S_SC_SBLB_231_1</ServiceRef>
+      <LineRef>SL1</LineRef>
+      <JourneyPatternRef>JP2</JourneyPatternRef>
+      <DepartureTime>15:52:00</DepartureTime>
+    </VehicleJourney>
+  </VehicleJourneys>
+</TransXChange>

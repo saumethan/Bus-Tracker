@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransXChange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreationDateTime="2024-10-07T13:02:44" ModificationDateTime="2024-10-07T13:02:44" Modification="new" RevisionNumber="1" FileName="P011-SPH--SCFI-ST-2024-05-13-241104_Perth_Timeplan_05-Transmill.xml" SchemaVersion="2.5" RegistrationDocument="true" xsi:schemaLocation="http://www.transxchange.org.uk/ http://www.transxchange.org.uk/schema/2.5/TransXChange_general.xsd" xmlns="http://www.transxchange.org.uk/">
+  <StopPoints>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801013</StopPointRef>
+      <CommonName>South Street</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801233</StopPointRef>
+      <CommonName>Potterhill Gardens</CommonName>
+      <LocalityName>Bridgend</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802048</StopPointRef>
+      <CommonName>Lochie Brae</CommonName>
+      <LocalityName>Bridgend</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803093</StopPointRef>
+      <CommonName>The Hub</CommonName>
+      <LocalityName>Kinnoull</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803094</StopPointRef>
+      <CommonName>Rohallion</CommonName>
+      <LocalityName>Kinnoull</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804199</StopPointRef>
+      <CommonName>High Street</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804200</StopPointRef>
+      <CommonName>George Street</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804231</StopPointRef>
+      <CommonName>Kinnoull Street</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803390</StopPointRef>
+      <CommonName>Lochie Brae</CommonName>
+      <LocalityName>Bridgend</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+  </StopPoints>
+  <RouteSections>
+    <RouteSection id="RS9">
+      <RouteLink id="RL162">
+        <From>
+          <StopPointRef>64801013</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804199</StopPointRef>
+        </To>
+        <Distance>566</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL163">
+        <From>
+          <StopPointRef>64804199</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804200</StopPointRef>
+        </To>
+        <Distance>153</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL164">
+        <From>
+          <StopPointRef>64804200</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803390</StopPointRef>
+        </To>
+        <Distance>438</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL165">
+        <From>
+          <StopPointRef>64803390</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803093</StopPointRef>
+        </To>
+        <Distance>749</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL166">
+        <From>
+          <StopPointRef>64803093</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803094</StopPointRef>
+        </To>
+        <Distance>143</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL167">
+        <From>
+          <StopPointRef>64803094</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801233</StopPointRef>
+        </To>
+        <Distance>659</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL168">
+        <From>
+          <StopPointRef>64801233</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802048</StopPointRef>
+        </To>
+        <Distance>230</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL169">
+        <From>
+          <StopPointRef>64802048</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804199</StopPointRef>
+        </To>
+        <Distance>626</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL170">
+        <From>
+          <StopPointRef>64804199</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804200</StopPointRef>
+        </To>
+        <Distance>153</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL171">
+        <From>
+          <StopPointRef>64804200</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804231</StopPointRef>
+        </To>
+        <Distance>430</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+    </RouteSection>
+  </RouteSections>
+  <Routes>
+    <Route id="RT21">
+      <PrivateCode>P011_11A-21</PrivateCode>
+      <Description>Perth South Street O - Perth Kinnoull Street H</Description>
+      <RouteSectionRef>RS9</RouteSectionRef>
+    </Route>
+  </Routes>
+  <JourneyPatternSections>
+    <JourneyPatternSection id="JPS32">
+      <JourneyPatternTimingLink id="JPTL158">
+        <From>
+          <Activity>pickUp</Activity>
+          <DynamicDestinationDisplay>Murray Royal Hospital</DynamicDestinationDisplay>
+          <StopPointRef>64801013</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Murray Royal Hospital</DynamicDestinationDisplay>
+          <StopPointRef>64804199</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL162</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL159">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Murray Royal Hospital</DynamicDestinationDisplay>
+          <StopPointRef>64804199</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Murray Royal Hospital</DynamicDestinationDisplay>
+          <StopPointRef>64804200</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL163</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL160">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Murray Royal Hospital</DynamicDestinationDisplay>
+          <StopPointRef>64804200</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Murray Royal Hospital</DynamicDestinationDisplay>
+          <StopPointRef>64803390</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL164</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL161">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Murray Royal Hospital</DynamicDestinationDisplay>
+          <StopPointRef>64803390</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>City Centre</DynamicDestinationDisplay>
+          <StopPointRef>64803093</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL165</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL162">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>City Centre</DynamicDestinationDisplay>
+          <StopPointRef>64803093</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>City Centre</DynamicDestinationDisplay>
+          <StopPointRef>64803094</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL166</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL163">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>City Centre</DynamicDestinationDisplay>
+          <StopPointRef>64803094</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>City Centre</DynamicDestinationDisplay>
+          <StopPointRef>64801233</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL167</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL164">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>City Centre</DynamicDestinationDisplay>
+          <StopPointRef>64801233</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>City Centre</DynamicDestinationDisplay>
+          <StopPointRef>64802048</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL168</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL165">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>City Centre</DynamicDestinationDisplay>
+          <StopPointRef>64802048</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>City Centre</DynamicDestinationDisplay>
+          <StopPointRef>64804199</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL169</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL166">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>City Centre</DynamicDestinationDisplay>
+          <StopPointRef>64804199</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>City Centre</DynamicDestinationDisplay>
+          <StopPointRef>64804200</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL170</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL167">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>City Centre</DynamicDestinationDisplay>
+          <StopPointRef>64804200</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>setDown</Activity>
+          <DynamicDestinationDisplay>City Centre</DynamicDestinationDisplay>
+          <StopPointRef>64804231</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL171</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+  </JourneyPatternSections>
+  <Operators>
+    <Operator id="2">
+      <NationalOperatorCode>SCFI</NationalOperatorCode>
+      <OperatorCode>SCFI</OperatorCode>
+      <OperatorShortName>Stagecoach</OperatorShortName>
+      <OperatorNameOnLicence>Fife Scottish Omnibuses Ltd</OperatorNameOnLicence>
+      <TradingName>Stagecoach East Scotland</TradingName>
+      <LicenceNumber>PM0000004</LicenceNumber>
+      <LicenceClassification>standardInternational</LicenceClassification>
+    </Operator>
+  </Operators>
+  <Services>
+    <Service>
+      <ServiceCode>S_SC_SCFI_11A_1</ServiceCode>
+      <Lines>
+        <Line id="SL2">
+          <LineName>11A</LineName>
+        </Line>
+      </Lines>
+      <OperatingPeriod>
+        <StartDate>2024-11-04</StartDate>
+      </OperatingPeriod>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <MondayToSaturday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <RegisteredOperatorRef>2</RegisteredOperatorRef>
+      <StopRequirements>
+        <NoNewStopsRequired />
+      </StopRequirements>
+      <PublicUse>true</PublicUse>
+      <Description>Perth - Kinnoull Hill</Description>
+      <StandardService>
+        <Origin>Perth</Origin>
+        <Destination>Kinnoull Hill</Destination>
+        <JourneyPattern id="JP10">
+          <DestinationDisplay>Perth Kinnoull Street H</DestinationDisplay>
+          <Direction>outbound</Direction>
+          <RouteRef>RT21</RouteRef>
+          <JourneyPatternSectionRefs>JPS32</JourneyPatternSectionRefs>
+        </JourneyPattern>
+      </StandardService>
+    </Service>
+  </Services>
+  <VehicleJourneys>
+    <VehicleJourney SequenceNumber="70">
+      <PrivateCode>P011_11ASU:I:0:332:q31whqnqk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ70</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_11A_1</ServiceRef>
+      <LineRef>SL2</LineRef>
+      <JourneyPatternRef>JP10</JourneyPatternRef>
+      <DepartureTime>11:30:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="71">
+      <PrivateCode>P011_11ASU:I:0:333:q31whqnqk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ71</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_11A_1</ServiceRef>
+      <LineRef>SL2</LineRef>
+      <JourneyPatternRef>JP10</JourneyPatternRef>
+      <DepartureTime>13:30:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="72">
+      <PrivateCode>P011_11ASU:I:0:334:q31whqnqk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ72</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_11A_1</ServiceRef>
+      <LineRef>SL2</LineRef>
+      <JourneyPatternRef>JP10</JourneyPatternRef>
+      <DepartureTime>15:30:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="73">
+      <PrivateCode>P011_11ASU:I:0:335:q31whqnqk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Sunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ73</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_11A_1</ServiceRef>
+      <LineRef>SL2</LineRef>
+      <JourneyPatternRef>JP10</JourneyPatternRef>
+      <DepartureTime>17:30:00</DepartureTime>
+    </VehicleJourney>
+  </VehicleJourneys>
+</TransXChange>

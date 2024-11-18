@@ -1,0 +1,4523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransXChange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreationDateTime="2024-10-07T13:04:47" ModificationDateTime="2024-10-07T13:04:47" Modification="new" RevisionNumber="1" FileName="P057P-SPH--SCFI-ST-2024-05-13-241104_Perth_Timeplan_05_joinup-Transmill.xml" SchemaVersion="2.5" RegistrationDocument="true" xsi:schemaLocation="http://www.transxchange.org.uk/ http://www.transxchange.org.uk/schema/2.5/TransXChange_general.xsd" xmlns="http://www.transxchange.org.uk/">
+  <ServicedOrganisations>
+    <ServicedOrganisation>
+      <OrganisationCode>PKSch</OrganisationCode>
+      <Name>P&amp;K Schooldays</Name>
+      <WorkingDays>
+        <DateRange>
+          <StartDate>2022-06-20</StartDate>
+          <EndDate>2022-06-30</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-08-17</StartDate>
+          <EndDate>2022-10-07</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-10-24</StartDate>
+          <EndDate>2022-11-09</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-11-14</StartDate>
+          <EndDate>2022-12-22</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-01-09</StartDate>
+          <EndDate>2023-02-14</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-02-20</StartDate>
+          <EndDate>2023-03-31</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-04-17</StartDate>
+          <EndDate>2023-04-28</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-02</StartDate>
+          <EndDate>2023-05-05</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-09</StartDate>
+          <EndDate>2023-06-29</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-08-16</StartDate>
+          <EndDate>2023-10-06</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-10-23</StartDate>
+          <EndDate>2023-11-09</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-11-13</StartDate>
+          <EndDate>2023-12-22</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-01-08</StartDate>
+          <EndDate>2024-02-13</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-19</StartDate>
+          <EndDate>2024-03-28</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-04-16</StartDate>
+          <EndDate>2024-05-03</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-07</StartDate>
+          <EndDate>2024-06-27</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-08-14</StartDate>
+          <EndDate>2024-10-04</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-10-21</StartDate>
+          <EndDate>2024-11-14</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-11-18</StartDate>
+          <EndDate>2024-12-20</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-01-06</StartDate>
+          <EndDate>2025-02-11</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-02-17</StartDate>
+          <EndDate>2025-04-04</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-04-23</StartDate>
+          <EndDate>2025-05-02</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-05-06</StartDate>
+          <EndDate>2025-06-26</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+      </WorkingDays>
+      <Holidays>
+        <DateRange>
+          <StartDate>2022-07-01</StartDate>
+          <EndDate>2022-08-16</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-10-10</StartDate>
+          <EndDate>2022-10-21</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-11-10</StartDate>
+          <EndDate>2022-11-11</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-12-23</StartDate>
+          <EndDate>2023-01-06</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-02-15</StartDate>
+          <EndDate>2023-02-17</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-04-03</StartDate>
+          <EndDate>2023-04-14</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-01</StartDate>
+          <EndDate>2023-05-01</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-06-30</StartDate>
+          <EndDate>2023-08-15</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-08</StartDate>
+          <EndDate>2023-05-08</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-10-09</StartDate>
+          <EndDate>2023-10-20</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-11-10</StartDate>
+          <EndDate>2023-11-10</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-12-25</StartDate>
+          <EndDate>2024-01-05</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-14</StartDate>
+          <EndDate>2024-02-16</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-03-29</StartDate>
+          <EndDate>2024-04-15</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-06</StartDate>
+          <EndDate>2024-05-06</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-06-28</StartDate>
+          <EndDate>2024-08-13</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-10-07</StartDate>
+          <EndDate>2024-10-18</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-11-15</StartDate>
+          <EndDate>2024-11-15</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-12-23</StartDate>
+          <EndDate>2025-01-03</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-02-12</StartDate>
+          <EndDate>2025-02-14</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-04-07</StartDate>
+          <EndDate>2025-04-22</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-05-05</StartDate>
+          <EndDate>2025-05-05</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-06-27</StartDate>
+          <EndDate>2025-08-15</EndDate>
+          <Description>P&amp;K Schooldays</Description>
+        </DateRange>
+      </Holidays>
+    </ServicedOrganisation>
+    <ServicedOrganisation>
+      <OrganisationCode>UHIP</OrganisationCode>
+      <Name>UHI Perth</Name>
+      <WorkingDays>
+        <DateRange>
+          <StartDate>2022-09-05</StartDate>
+          <EndDate>2022-10-07</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-10-24</StartDate>
+          <EndDate>2022-11-09</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-11-11</StartDate>
+          <EndDate>2022-12-22</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-01-09</StartDate>
+          <EndDate>2023-02-14</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-02-16</StartDate>
+          <EndDate>2023-03-31</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-04-17</StartDate>
+          <EndDate>2023-06-02</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-09-04</StartDate>
+          <EndDate>2023-10-06</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-10-23</StartDate>
+          <EndDate>2023-11-09</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-11-13</StartDate>
+          <EndDate>2023-12-22</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-01-08</StartDate>
+          <EndDate>2024-02-13</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-19</StartDate>
+          <EndDate>2024-03-29</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-04-15</StartDate>
+          <EndDate>2024-05-31</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-09-02</StartDate>
+          <EndDate>2024-10-04</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-10-21</StartDate>
+          <EndDate>2024-11-14</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-11-18</StartDate>
+          <EndDate>2024-12-20</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-01-06</StartDate>
+          <EndDate>2025-02-11</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-02-17</StartDate>
+          <EndDate>2025-04-04</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-04-21</StartDate>
+          <EndDate>2025-05-30</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+      </WorkingDays>
+      <Holidays>
+        <DateRange>
+          <StartDate>2022-10-10</StartDate>
+          <EndDate>2022-10-21</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-11-10</StartDate>
+          <EndDate>2022-11-10</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-12-23</StartDate>
+          <EndDate>2023-01-06</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-02-15</StartDate>
+          <EndDate>2023-02-15</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-04-03</StartDate>
+          <EndDate>2023-04-14</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-06-05</StartDate>
+          <EndDate>2023-09-01</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-10-09</StartDate>
+          <EndDate>2023-10-20</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-11-10</StartDate>
+          <EndDate>2023-11-10</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-12-25</StartDate>
+          <EndDate>2024-01-05</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-14</StartDate>
+          <EndDate>2024-02-16</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-04-01</StartDate>
+          <EndDate>2024-04-12</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-06-03</StartDate>
+          <EndDate>2024-08-30</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-10-07</StartDate>
+          <EndDate>2024-10-18</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-11-15</StartDate>
+          <EndDate>2024-11-15</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-12-23</StartDate>
+          <EndDate>2025-01-03</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-02-12</StartDate>
+          <EndDate>2025-02-14</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-04-07</StartDate>
+          <EndDate>2025-04-18</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-06-02</StartDate>
+          <EndDate>2025-08-29</EndDate>
+          <Description>UHI Perth</Description>
+        </DateRange>
+      </Holidays>
+    </ServicedOrganisation>
+  </ServicedOrganisations>
+  <StopPoints>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801004</StopPointRef>
+      <CommonName>Mill Street</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801019</StopPointRef>
+      <CommonName>Bus Depot</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801020</StopPointRef>
+      <CommonName>Inveralmond Close</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801035</StopPointRef>
+      <CommonName>Glenshee Drive</CommonName>
+      <LocalityName>Rattray</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801036</StopPointRef>
+      <CommonName>Wellmeadow</CommonName>
+      <LocalityName>Blairgowrie</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801039</StopPointRef>
+      <CommonName>Rosemount Gardens</CommonName>
+      <LocalityName>Rosemount</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801040</StopPointRef>
+      <CommonName>Rosemount Gardens</CommonName>
+      <LocalityName>Rosemount</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801041</StopPointRef>
+      <CommonName>George Square</CommonName>
+      <LocalityName>Coupar Angus</LocalityName>
+      <LocalityQualifier>Coupar Angus</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801042</StopPointRef>
+      <CommonName>Post Office</CommonName>
+      <LocalityName>Burrelton</LocalityName>
+      <LocalityQualifier>Burrelton</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801043</StopPointRef>
+      <CommonName>Post Office</CommonName>
+      <LocalityName>Burrelton</LocalityName>
+      <LocalityQualifier>Burrelton</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801045</StopPointRef>
+      <CommonName>George Square</CommonName>
+      <LocalityName>Coupar Angus</LocalityName>
+      <LocalityQualifier>Coupar Angus</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801047</StopPointRef>
+      <CommonName>Burnside Road</CommonName>
+      <LocalityName>Balbeggie</LocalityName>
+      <LocalityQualifier>Balbeggie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801048</StopPointRef>
+      <CommonName>Burnside Road</CommonName>
+      <LocalityName>Balbeggie</LocalityName>
+      <LocalityQualifier>Balbeggie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801049</StopPointRef>
+      <CommonName>Mansfield Road</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801050</StopPointRef>
+      <CommonName>Mansfield Road</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801051</StopPointRef>
+      <CommonName>Kinnoull Street</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801053</StopPointRef>
+      <CommonName>College</CommonName>
+      <LocalityName>Hillyland</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801054</StopPointRef>
+      <CommonName>College</CommonName>
+      <LocalityName>Hillyland</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801156</StopPointRef>
+      <CommonName>Bridgend Court</CommonName>
+      <LocalityName>Bridgend</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801157</StopPointRef>
+      <CommonName>Bridgend Court</CommonName>
+      <LocalityName>Bridgend</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801254</StopPointRef>
+      <CommonName>Viewfield Place</CommonName>
+      <LocalityName>Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801255</StopPointRef>
+      <CommonName>Viewfield Place</CommonName>
+      <LocalityName>Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801537</StopPointRef>
+      <CommonName>Newmill Road End</CommonName>
+      <LocalityName>Burrelton</LocalityName>
+      <LocalityQualifier>Burrelton</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801538</StopPointRef>
+      <CommonName>Newmill Road End</CommonName>
+      <LocalityName>Burrelton</LocalityName>
+      <LocalityQualifier>Burrelton</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801539</StopPointRef>
+      <CommonName>Springfield Road End</CommonName>
+      <LocalityName>Burrelton</LocalityName>
+      <LocalityQualifier>Burrelton</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801540</StopPointRef>
+      <CommonName>Springfield Road End</CommonName>
+      <LocalityName>Burrelton</LocalityName>
+      <LocalityQualifier>Burrelton</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801541</StopPointRef>
+      <CommonName>Dunsinnan Estate Road End</CommonName>
+      <LocalityName>Balbeggie</LocalityName>
+      <LocalityQualifier>Balbeggie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801542</StopPointRef>
+      <CommonName>Dunsinnan Estate Road End</CommonName>
+      <LocalityName>Balbeggie</LocalityName>
+      <LocalityQualifier>Balbeggie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801545</StopPointRef>
+      <CommonName>Church</CommonName>
+      <LocalityName>Balbeggie</LocalityName>
+      <LocalityQualifier>Balbeggie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801546</StopPointRef>
+      <CommonName>Church</CommonName>
+      <LocalityName>Balbeggie</LocalityName>
+      <LocalityQualifier>Balbeggie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801553</StopPointRef>
+      <CommonName>Highfield Road</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801554</StopPointRef>
+      <CommonName>Highfield Road</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801571</StopPointRef>
+      <CommonName>Charlotte Street</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801905</StopPointRef>
+      <CommonName>Unity Terrace</CommonName>
+      <LocalityName>Hillyland</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801906</StopPointRef>
+      <CommonName>Unity Terrace</CommonName>
+      <LocalityName>Hillyland</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801907</StopPointRef>
+      <CommonName>Royal Bank of Scotland</CommonName>
+      <LocalityName>Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801908</StopPointRef>
+      <CommonName>Royal Bank of Scotland</CommonName>
+      <LocalityName>Muirton</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801909</StopPointRef>
+      <CommonName>Retail Park</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64801910</StopPointRef>
+      <CommonName>Barrack Street</CommonName>
+      <LocalityName>Perth</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802049</StopPointRef>
+      <CommonName>Strathmore Street</CommonName>
+      <LocalityName>Bridgend</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802124</StopPointRef>
+      <CommonName>Comleybank</CommonName>
+      <LocalityName>Gannochy</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802125</StopPointRef>
+      <CommonName>Comleybank</CommonName>
+      <LocalityName>Gannochy</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802126</StopPointRef>
+      <CommonName>Fitzroy Terrace</CommonName>
+      <LocalityName>Gannochy</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802127</StopPointRef>
+      <CommonName>Fitzroy Terrace</CommonName>
+      <LocalityName>Gannochy</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802128</StopPointRef>
+      <CommonName>Whinniemuir Cottages</CommonName>
+      <LocalityName>Gannochy</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802129</StopPointRef>
+      <CommonName>Whinniemuir Cottages</CommonName>
+      <LocalityName>Gannochy</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802130</StopPointRef>
+      <CommonName>Murrayshall Road End</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802131</StopPointRef>
+      <CommonName>Murrayshall Road End</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802132</StopPointRef>
+      <CommonName>Cemetery</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802133</StopPointRef>
+      <CommonName>Cemetery</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802134</StopPointRef>
+      <CommonName>Strathmore Street</CommonName>
+      <LocalityName>Bridgend</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802135</StopPointRef>
+      <CommonName>Bonhard Road</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802136</StopPointRef>
+      <CommonName>Bonhard Road</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802181</StopPointRef>
+      <CommonName>House No 159</CommonName>
+      <LocalityName>Rattray</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802331</StopPointRef>
+      <CommonName>Murray Road</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802332</StopPointRef>
+      <CommonName>Murray Road</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802333</StopPointRef>
+      <CommonName>Perth Airport</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802334</StopPointRef>
+      <CommonName>Perth Airport</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802335</StopPointRef>
+      <CommonName>Pitroddie Road End</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802336</StopPointRef>
+      <CommonName>Pitroddie Road End</CommonName>
+      <LocalityName>Scone</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802337</StopPointRef>
+      <CommonName>Laurieston</CommonName>
+      <LocalityName>Balbeggie</LocalityName>
+      <LocalityQualifier>Balbeggie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802338</StopPointRef>
+      <CommonName>Laurieston</CommonName>
+      <LocalityName>Balbeggie</LocalityName>
+      <LocalityQualifier>Balbeggie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802339</StopPointRef>
+      <CommonName>Rosefield</CommonName>
+      <LocalityName>Balbeggie</LocalityName>
+      <LocalityQualifier>Balbeggie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802340</StopPointRef>
+      <CommonName>Rosefield</CommonName>
+      <LocalityName>Balbeggie</LocalityName>
+      <LocalityQualifier>Balbeggie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802344</StopPointRef>
+      <CommonName>Gray Park</CommonName>
+      <LocalityName>Burrelton</LocalityName>
+      <LocalityQualifier>Burrelton</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802345</StopPointRef>
+      <CommonName>Gray Park</CommonName>
+      <LocalityName>Burrelton</LocalityName>
+      <LocalityQualifier>Burrelton</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802346</StopPointRef>
+      <CommonName>Hall Crescent</CommonName>
+      <LocalityName>Woodside</LocalityName>
+      <LocalityQualifier>Woodside</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802347</StopPointRef>
+      <CommonName>Station Road</CommonName>
+      <LocalityName>Woodside</LocalityName>
+      <LocalityQualifier>Woodside</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802462</StopPointRef>
+      <CommonName>Bank Of Scotland</CommonName>
+      <LocalityName>Coupar Angus</LocalityName>
+      <LocalityQualifier>Coupar Angus</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802463</StopPointRef>
+      <CommonName>Library</CommonName>
+      <LocalityName>Coupar Angus</LocalityName>
+      <LocalityQualifier>Coupar Angus</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64802478</StopPointRef>
+      <CommonName>Sidlaw Road</CommonName>
+      <LocalityName>Rattray</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803124</StopPointRef>
+      <CommonName>Mains of Keithick Farm</CommonName>
+      <LocalityName>Burrelton</LocalityName>
+      <LocalityQualifier>Burrelton</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803125</StopPointRef>
+      <CommonName>Mains of Keithick Farm</CommonName>
+      <LocalityName>Burrelton</LocalityName>
+      <LocalityQualifier>Burrelton</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803490</StopPointRef>
+      <CommonName>Wellmeadow</CommonName>
+      <LocalityName>Blairgowrie</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803493</StopPointRef>
+      <CommonName>Wellmeadow</CommonName>
+      <LocalityName>Blairgowrie</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803563</StopPointRef>
+      <CommonName>Bendochy Crossroads</CommonName>
+      <LocalityName>Coupar Angus</LocalityName>
+      <LocalityQualifier>Coupar Angus</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803564</StopPointRef>
+      <CommonName>Bendochy Crossroads</CommonName>
+      <LocalityName>Coupar Angus</LocalityName>
+      <LocalityQualifier>Coupar Angus</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803565</StopPointRef>
+      <CommonName>Cherrybank</CommonName>
+      <LocalityName>Woodside</LocalityName>
+      <LocalityQualifier>Woodside</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803566</StopPointRef>
+      <CommonName>Cherrybank</CommonName>
+      <LocalityName>Woodside</LocalityName>
+      <LocalityQualifier>Woodside</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803567</StopPointRef>
+      <CommonName>Inn</CommonName>
+      <LocalityName>Woodside</LocalityName>
+      <LocalityQualifier>Woodside</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803569</StopPointRef>
+      <CommonName>Hawthorn Cottage</CommonName>
+      <LocalityName>Woodside</LocalityName>
+      <LocalityQualifier>Woodside</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803966</StopPointRef>
+      <CommonName>Glenisla Court</CommonName>
+      <LocalityName>Rattray</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803967</StopPointRef>
+      <CommonName>Glendevon Court</CommonName>
+      <LocalityName>Rattray</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803968</StopPointRef>
+      <CommonName>Play Park</CommonName>
+      <LocalityName>Rattray</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803970</StopPointRef>
+      <CommonName>Ferguson Park Road</CommonName>
+      <LocalityName>Rattray</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803971</StopPointRef>
+      <CommonName>Park</CommonName>
+      <LocalityName>Rattray</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803972</StopPointRef>
+      <CommonName>Park</CommonName>
+      <LocalityName>Rattray</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804035</StopPointRef>
+      <CommonName>Butterybank Road</CommonName>
+      <LocalityName>Coupar Angus</LocalityName>
+      <LocalityQualifier>Coupar Angus</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804036</StopPointRef>
+      <CommonName>Butterybank Road</CommonName>
+      <LocalityName>Coupar Angus</LocalityName>
+      <LocalityQualifier>Coupar Angus</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804037</StopPointRef>
+      <CommonName>Factory</CommonName>
+      <LocalityName>Coupar Angus</LocalityName>
+      <LocalityQualifier>Coupar Angus</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804038</StopPointRef>
+      <CommonName>Factory</CommonName>
+      <LocalityName>Coupar Angus</LocalityName>
+      <LocalityQualifier>Coupar Angus</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804039</StopPointRef>
+      <CommonName>Balmoral Road</CommonName>
+      <LocalityName>Rattray</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804118</StopPointRef>
+      <CommonName>Emma Street</CommonName>
+      <LocalityName>Blairgowrie</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804119</StopPointRef>
+      <CommonName>Emma Street</CommonName>
+      <LocalityName>Blairgowrie</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804120</StopPointRef>
+      <CommonName>Manor Gardens</CommonName>
+      <LocalityName>Blairgowrie</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804121</StopPointRef>
+      <CommonName>Manor Gardens</CommonName>
+      <LocalityName>Blairgowrie</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804122</StopPointRef>
+      <CommonName>Douglas Road</CommonName>
+      <LocalityName>Blairgowrie</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804123</StopPointRef>
+      <CommonName>Douglas Road</CommonName>
+      <LocalityName>Blairgowrie</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804124</StopPointRef>
+      <CommonName>Moyness Park Drive</CommonName>
+      <LocalityName>Blairgowrie</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804125</StopPointRef>
+      <CommonName>Moyness Park Drive</CommonName>
+      <LocalityName>Blairgowrie</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804126</StopPointRef>
+      <CommonName>Woodlands Park</CommonName>
+      <LocalityName>Blairgowrie</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804127</StopPointRef>
+      <CommonName>Woodlands Park</CommonName>
+      <LocalityName>Blairgowrie</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804128</StopPointRef>
+      <CommonName>Littleblair Drive</CommonName>
+      <LocalityName>Rosemount</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804129</StopPointRef>
+      <CommonName>Littleblair Drive</CommonName>
+      <LocalityName>Rosemount</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804130</StopPointRef>
+      <CommonName>Golf Course Road</CommonName>
+      <LocalityName>Rosemount</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804131</StopPointRef>
+      <CommonName>Golf Course Road</CommonName>
+      <LocalityName>Rosemount</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804132</StopPointRef>
+      <CommonName>Myreriggs Road</CommonName>
+      <LocalityName>Rosemount</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804133</StopPointRef>
+      <CommonName>Myreriggs Road</CommonName>
+      <LocalityName>Rosemount</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804234</StopPointRef>
+      <CommonName>Bogside Road</CommonName>
+      <LocalityName>Coupar Angus</LocalityName>
+      <LocalityQualifier>Coupar Angus</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804235</StopPointRef>
+      <CommonName>Bogside Road</CommonName>
+      <LocalityName>Coupar Angus</LocalityName>
+      <LocalityQualifier>Coupar Angus</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804236</StopPointRef>
+      <CommonName>George Place</CommonName>
+      <LocalityName>Coupar Angus</LocalityName>
+      <LocalityQualifier>Coupar Angus</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804260</StopPointRef>
+      <CommonName>Fishers</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804266</StopPointRef>
+      <CommonName>Inveralmond Road</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804290</StopPointRef>
+      <CommonName>Inveralmond Grove</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64804645</StopPointRef>
+      <CommonName>Tesco</CommonName>
+      <LocalityName>Blairgowrie</LocalityName>
+      <LocalityQualifier>Blairgowrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803387</StopPointRef>
+      <CommonName>Redstone Crossroads</CommonName>
+      <LocalityName>Saucher</LocalityName>
+      <LocalityQualifier>Saucher</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803388</StopPointRef>
+      <CommonName>Redstone Crossroads</CommonName>
+      <LocalityName>Saucher</LocalityName>
+      <LocalityQualifier>Saucher</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803385</StopPointRef>
+      <CommonName>Kinrossie road end</CommonName>
+      <LocalityName>Kinrossie</LocalityName>
+      <LocalityQualifier>Kinrossie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803386</StopPointRef>
+      <CommonName>Kinrossie road end</CommonName>
+      <LocalityName>Kinrossie</LocalityName>
+      <LocalityQualifier>Kinrossie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803369</StopPointRef>
+      <CommonName>Rashiehall</CommonName>
+      <LocalityName>Balbeggie</LocalityName>
+      <LocalityQualifier>Balbeggie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803368</StopPointRef>
+      <CommonName>Rashiehall</CommonName>
+      <LocalityName>Balbeggie</LocalityName>
+      <LocalityQualifier>Balbeggie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803332</StopPointRef>
+      <CommonName>Bertha Park</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803333</StopPointRef>
+      <CommonName>Double Dykes</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>64803330</StopPointRef>
+      <CommonName>Ruthvenfield Avenue</CommonName>
+      <LocalityName>Inveralmond</LocalityName>
+      <LocalityQualifier>Perth</LocalityQualifier>
+    </AnnotatedStopPointRef>
+  </StopPoints>
+  <RouteSections>
+    <RouteSection id="RS43">
+      <RouteLink id="RL3276">
+        <From>
+          <StopPointRef>64801019</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801020</StopPointRef>
+        </To>
+        <Distance>212</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3277">
+        <From>
+          <StopPointRef>64801020</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804290</StopPointRef>
+        </To>
+        <Distance>216</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3278">
+        <From>
+          <StopPointRef>64804290</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804266</StopPointRef>
+        </To>
+        <Distance>284</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3279">
+        <From>
+          <StopPointRef>64804266</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804260</StopPointRef>
+        </To>
+        <Distance>272</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3280">
+        <From>
+          <StopPointRef>64804260</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803330</StopPointRef>
+        </To>
+        <Distance>170</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3281">
+        <From>
+          <StopPointRef>64803330</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803333</StopPointRef>
+        </To>
+        <Distance>358</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3282">
+        <From>
+          <StopPointRef>64803333</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803332</StopPointRef>
+        </To>
+        <Distance>1220</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3283">
+        <From>
+          <StopPointRef>64803332</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801054</StopPointRef>
+        </To>
+        <Distance>3208</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3284">
+        <From>
+          <StopPointRef>64801054</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801906</StopPointRef>
+        </To>
+        <Distance>602</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3285">
+        <From>
+          <StopPointRef>64801906</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801255</StopPointRef>
+        </To>
+        <Distance>459</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3286">
+        <From>
+          <StopPointRef>64801255</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801908</StopPointRef>
+        </To>
+        <Distance>417</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3287">
+        <From>
+          <StopPointRef>64801908</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801909</StopPointRef>
+        </To>
+        <Distance>143</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3288">
+        <From>
+          <StopPointRef>64801909</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801157</StopPointRef>
+        </To>
+        <Distance>1165</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3289">
+        <From>
+          <StopPointRef>64801157</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802134</StopPointRef>
+        </To>
+        <Distance>376</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3290">
+        <From>
+          <StopPointRef>64802134</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802125</StopPointRef>
+        </To>
+        <Distance>248</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3291">
+        <From>
+          <StopPointRef>64802125</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802127</StopPointRef>
+        </To>
+        <Distance>262</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3292">
+        <From>
+          <StopPointRef>64802127</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802128</StopPointRef>
+        </To>
+        <Distance>319</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3293">
+        <From>
+          <StopPointRef>64802128</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802130</StopPointRef>
+        </To>
+        <Distance>376</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3294">
+        <From>
+          <StopPointRef>64802130</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802132</StopPointRef>
+        </To>
+        <Distance>446</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3295">
+        <From>
+          <StopPointRef>64802132</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802136</StopPointRef>
+        </To>
+        <Distance>300</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3296">
+        <From>
+          <StopPointRef>64802136</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801050</StopPointRef>
+        </To>
+        <Distance>362</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3297">
+        <From>
+          <StopPointRef>64801050</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802332</StopPointRef>
+        </To>
+        <Distance>528</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3298">
+        <From>
+          <StopPointRef>64802332</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801554</StopPointRef>
+        </To>
+        <Distance>167</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3299">
+        <From>
+          <StopPointRef>64801554</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802334</StopPointRef>
+        </To>
+        <Distance>1764</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3300">
+        <From>
+          <StopPointRef>64802334</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802336</StopPointRef>
+        </To>
+        <Distance>642</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3301">
+        <From>
+          <StopPointRef>64802336</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801546</StopPointRef>
+        </To>
+        <Distance>1769</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3302">
+        <From>
+          <StopPointRef>64801546</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802338</StopPointRef>
+        </To>
+        <Distance>197</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3303">
+        <From>
+          <StopPointRef>64802338</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801048</StopPointRef>
+        </To>
+        <Distance>200</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3304">
+        <From>
+          <StopPointRef>64801048</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803368</StopPointRef>
+        </To>
+        <Distance>849</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3305">
+        <From>
+          <StopPointRef>64803368</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802340</StopPointRef>
+        </To>
+        <Distance>771</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3306">
+        <From>
+          <StopPointRef>64802340</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801542</StopPointRef>
+        </To>
+        <Distance>533</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3307">
+        <From>
+          <StopPointRef>64801542</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803386</StopPointRef>
+        </To>
+        <Distance>935</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3308">
+        <From>
+          <StopPointRef>64803386</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803388</StopPointRef>
+        </To>
+        <Distance>1854</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3309">
+        <From>
+          <StopPointRef>64803388</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801540</StopPointRef>
+        </To>
+        <Distance>1440</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3310">
+        <From>
+          <StopPointRef>64801540</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801538</StopPointRef>
+        </To>
+        <Distance>545</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3311">
+        <From>
+          <StopPointRef>64801538</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802345</StopPointRef>
+        </To>
+        <Distance>863</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3312">
+        <From>
+          <StopPointRef>64802345</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801043</StopPointRef>
+        </To>
+        <Distance>177</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3313">
+        <From>
+          <StopPointRef>64801043</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802347</StopPointRef>
+        </To>
+        <Distance>471</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3314">
+        <From>
+          <StopPointRef>64802347</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803567</StopPointRef>
+        </To>
+        <Distance>263</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3315">
+        <From>
+          <StopPointRef>64803567</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803565</StopPointRef>
+        </To>
+        <Distance>202</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3316">
+        <From>
+          <StopPointRef>64803565</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803124</StopPointRef>
+        </To>
+        <Distance>1047</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3317">
+        <From>
+          <StopPointRef>64803124</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804037</StopPointRef>
+        </To>
+        <Distance>1456</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3318">
+        <From>
+          <StopPointRef>64804037</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804236</StopPointRef>
+        </To>
+        <Distance>119</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3319">
+        <From>
+          <StopPointRef>64804236</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801041</StopPointRef>
+        </To>
+        <Distance>164</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3320">
+        <From>
+          <StopPointRef>64801041</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802463</StopPointRef>
+        </To>
+        <Distance>254</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3321">
+        <From>
+          <StopPointRef>64802463</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804234</StopPointRef>
+        </To>
+        <Distance>285</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3322">
+        <From>
+          <StopPointRef>64804234</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804035</StopPointRef>
+        </To>
+        <Distance>658</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3323">
+        <From>
+          <StopPointRef>64804035</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803563</StopPointRef>
+        </To>
+        <Distance>1166</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3324">
+        <From>
+          <StopPointRef>64803563</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804132</StopPointRef>
+        </To>
+        <Distance>1312</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3325">
+        <From>
+          <StopPointRef>64804132</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804131</StopPointRef>
+        </To>
+        <Distance>1523</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3326">
+        <From>
+          <StopPointRef>64804131</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801040</StopPointRef>
+        </To>
+        <Distance>302</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3327">
+        <From>
+          <StopPointRef>64801040</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804128</StopPointRef>
+        </To>
+        <Distance>201</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3328">
+        <From>
+          <StopPointRef>64804128</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804126</StopPointRef>
+        </To>
+        <Distance>282</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3329">
+        <From>
+          <StopPointRef>64804126</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804124</StopPointRef>
+        </To>
+        <Distance>168</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3330">
+        <From>
+          <StopPointRef>64804124</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804122</StopPointRef>
+        </To>
+        <Distance>296</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3331">
+        <From>
+          <StopPointRef>64804122</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804121</StopPointRef>
+        </To>
+        <Distance>225</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3332">
+        <From>
+          <StopPointRef>64804121</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804118</StopPointRef>
+        </To>
+        <Distance>442</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3333">
+        <From>
+          <StopPointRef>64804118</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803493</StopPointRef>
+        </To>
+        <Distance>347</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3334">
+        <From>
+          <StopPointRef>64803493</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801036</StopPointRef>
+        </To>
+        <Distance>14</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3335">
+        <From>
+          <StopPointRef>64801036</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804039</StopPointRef>
+        </To>
+        <Distance>404</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3336">
+        <From>
+          <StopPointRef>64804039</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802478</StopPointRef>
+        </To>
+        <Distance>192</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3337">
+        <From>
+          <StopPointRef>64802478</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803971</StopPointRef>
+        </To>
+        <Distance>226</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3338">
+        <From>
+          <StopPointRef>64803971</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801035</StopPointRef>
+        </To>
+        <Distance>156</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3339">
+        <From>
+          <StopPointRef>64801035</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803966</StopPointRef>
+        </To>
+        <Distance>182</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3340">
+        <From>
+          <StopPointRef>64803966</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803967</StopPointRef>
+        </To>
+        <Distance>199</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3341">
+        <From>
+          <StopPointRef>64803967</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802181</StopPointRef>
+        </To>
+        <Distance>167</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3342">
+        <From>
+          <StopPointRef>64802181</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803968</StopPointRef>
+        </To>
+        <Distance>175</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3343">
+        <From>
+          <StopPointRef>64803968</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803970</StopPointRef>
+        </To>
+        <Distance>297</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3344">
+        <From>
+          <StopPointRef>64803970</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803972</StopPointRef>
+        </To>
+        <Distance>196</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+    </RouteSection>
+    <RouteSection id="RS42">
+      <RouteLink id="RL3223">
+        <From>
+          <StopPointRef>64803490</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804645</StopPointRef>
+        </To>
+        <Distance>162</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3224">
+        <From>
+          <StopPointRef>64804645</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804119</StopPointRef>
+        </To>
+        <Distance>274</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3225">
+        <From>
+          <StopPointRef>64804119</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804120</StopPointRef>
+        </To>
+        <Distance>411</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3226">
+        <From>
+          <StopPointRef>64804120</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804123</StopPointRef>
+        </To>
+        <Distance>320</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3227">
+        <From>
+          <StopPointRef>64804123</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804125</StopPointRef>
+        </To>
+        <Distance>288</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3228">
+        <From>
+          <StopPointRef>64804125</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804127</StopPointRef>
+        </To>
+        <Distance>176</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3229">
+        <From>
+          <StopPointRef>64804127</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804129</StopPointRef>
+        </To>
+        <Distance>248</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3230">
+        <From>
+          <StopPointRef>64804129</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801039</StopPointRef>
+        </To>
+        <Distance>265</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3231">
+        <From>
+          <StopPointRef>64801039</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804130</StopPointRef>
+        </To>
+        <Distance>299</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3232">
+        <From>
+          <StopPointRef>64804130</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804133</StopPointRef>
+        </To>
+        <Distance>1534</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3233">
+        <From>
+          <StopPointRef>64804133</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803564</StopPointRef>
+        </To>
+        <Distance>1326</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3234">
+        <From>
+          <StopPointRef>64803564</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804036</StopPointRef>
+        </To>
+        <Distance>1245</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3235">
+        <From>
+          <StopPointRef>64804036</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804235</StopPointRef>
+        </To>
+        <Distance>667</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3236">
+        <From>
+          <StopPointRef>64804235</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802462</StopPointRef>
+        </To>
+        <Distance>417</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3237">
+        <From>
+          <StopPointRef>64802462</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801045</StopPointRef>
+        </To>
+        <Distance>134</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3238">
+        <From>
+          <StopPointRef>64801045</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64804038</StopPointRef>
+        </To>
+        <Distance>238</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3239">
+        <From>
+          <StopPointRef>64804038</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803125</StopPointRef>
+        </To>
+        <Distance>1474</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3240">
+        <From>
+          <StopPointRef>64803125</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803566</StopPointRef>
+        </To>
+        <Distance>1056</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3241">
+        <From>
+          <StopPointRef>64803566</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803569</StopPointRef>
+        </To>
+        <Distance>597</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3242">
+        <From>
+          <StopPointRef>64803569</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802346</StopPointRef>
+        </To>
+        <Distance>250</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3243">
+        <From>
+          <StopPointRef>64802346</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801042</StopPointRef>
+        </To>
+        <Distance>367</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3244">
+        <From>
+          <StopPointRef>64801042</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802344</StopPointRef>
+        </To>
+        <Distance>259</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3245">
+        <From>
+          <StopPointRef>64802344</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801537</StopPointRef>
+        </To>
+        <Distance>840</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3246">
+        <From>
+          <StopPointRef>64801537</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801539</StopPointRef>
+        </To>
+        <Distance>518</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3247">
+        <From>
+          <StopPointRef>64801539</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803387</StopPointRef>
+        </To>
+        <Distance>1463</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3248">
+        <From>
+          <StopPointRef>64803387</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803385</StopPointRef>
+        </To>
+        <Distance>1874</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3249">
+        <From>
+          <StopPointRef>64803385</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801541</StopPointRef>
+        </To>
+        <Distance>938</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3250">
+        <From>
+          <StopPointRef>64801541</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802339</StopPointRef>
+        </To>
+        <Distance>534</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3251">
+        <From>
+          <StopPointRef>64802339</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64803369</StopPointRef>
+        </To>
+        <Distance>786</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3252">
+        <From>
+          <StopPointRef>64803369</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801047</StopPointRef>
+        </To>
+        <Distance>941</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3253">
+        <From>
+          <StopPointRef>64801047</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802337</StopPointRef>
+        </To>
+        <Distance>132</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3254">
+        <From>
+          <StopPointRef>64802337</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801545</StopPointRef>
+        </To>
+        <Distance>264</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3255">
+        <From>
+          <StopPointRef>64801545</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802335</StopPointRef>
+        </To>
+        <Distance>1769</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3256">
+        <From>
+          <StopPointRef>64802335</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802333</StopPointRef>
+        </To>
+        <Distance>618</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3257">
+        <From>
+          <StopPointRef>64802333</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801553</StopPointRef>
+        </To>
+        <Distance>1693</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3258">
+        <From>
+          <StopPointRef>64801553</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802331</StopPointRef>
+        </To>
+        <Distance>305</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3259">
+        <From>
+          <StopPointRef>64802331</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801049</StopPointRef>
+        </To>
+        <Distance>546</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3260">
+        <From>
+          <StopPointRef>64801049</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802135</StopPointRef>
+        </To>
+        <Distance>322</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3261">
+        <From>
+          <StopPointRef>64802135</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802133</StopPointRef>
+        </To>
+        <Distance>295</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3262">
+        <From>
+          <StopPointRef>64802133</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802131</StopPointRef>
+        </To>
+        <Distance>444</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3263">
+        <From>
+          <StopPointRef>64802131</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802129</StopPointRef>
+        </To>
+        <Distance>403</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3264">
+        <From>
+          <StopPointRef>64802129</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802126</StopPointRef>
+        </To>
+        <Distance>352</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3265">
+        <From>
+          <StopPointRef>64802126</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802124</StopPointRef>
+        </To>
+        <Distance>272</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3266">
+        <From>
+          <StopPointRef>64802124</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64802049</StopPointRef>
+        </To>
+        <Distance>298</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3267">
+        <From>
+          <StopPointRef>64802049</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801156</StopPointRef>
+        </To>
+        <Distance>207</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3268">
+        <From>
+          <StopPointRef>64801156</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801571</StopPointRef>
+        </To>
+        <Distance>638</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3269">
+        <From>
+          <StopPointRef>64801571</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801051</StopPointRef>
+        </To>
+        <Distance>311</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3270">
+        <From>
+          <StopPointRef>64801051</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801004</StopPointRef>
+        </To>
+        <Distance>151</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3271">
+        <From>
+          <StopPointRef>64801004</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801910</StopPointRef>
+        </To>
+        <Distance>492</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3272">
+        <From>
+          <StopPointRef>64801910</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801907</StopPointRef>
+        </To>
+        <Distance>416</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3273">
+        <From>
+          <StopPointRef>64801907</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801254</StopPointRef>
+        </To>
+        <Distance>295</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3274">
+        <From>
+          <StopPointRef>64801254</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801905</StopPointRef>
+        </To>
+        <Distance>476</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3275">
+        <From>
+          <StopPointRef>64801905</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>64801053</StopPointRef>
+        </To>
+        <Distance>453</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+    </RouteSection>
+  </RouteSections>
+  <Routes>
+    <Route id="RT43">
+      <PrivateCode>P057_57U-43</PrivateCode>
+      <Description>Inveralmond Bus Depot - Rattray Park</Description>
+      <RouteSectionRef>RS43</RouteSectionRef>
+    </Route>
+    <Route id="RT42">
+      <PrivateCode>P057_57U-42</PrivateCode>
+      <Description>Blairgowrie Wellmeadow C - Hillyland College</Description>
+      <RouteSectionRef>RS42</RouteSectionRef>
+    </Route>
+  </Routes>
+  <JourneyPatternSections>
+    <JourneyPatternSection id="JPS39">
+      <JourneyPatternTimingLink id="JPTL3019">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <StopPointRef>64801019</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <StopPointRef>64801020</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3276</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3020">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <StopPointRef>64801020</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <StopPointRef>64804290</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3277</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3021">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <StopPointRef>64804290</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <StopPointRef>64804266</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3278</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3022">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <StopPointRef>64804266</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <StopPointRef>64804260</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3279</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3023">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <StopPointRef>64804260</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <StopPointRef>64803330</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3280</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3024">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <StopPointRef>64803330</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <StopPointRef>64803333</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3281</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3025">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <StopPointRef>64803333</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <StopPointRef>64803332</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3282</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3026">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <StopPointRef>64803332</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUp</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801054</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3283</RouteLinkRef>
+        <RunTime>PT13M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3027">
+        <From>
+          <Activity>pickUp</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801054</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801906</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3284</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3028">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801906</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801255</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3285</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3029">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801255</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801908</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3286</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3030">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801908</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801909</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3287</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3031">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801909</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801157</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3288</RouteLinkRef>
+        <RunTime>PT4M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3032">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801157</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802134</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3289</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3033">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802134</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802125</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3290</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3034">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802125</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802127</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3291</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3035">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802127</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802128</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3292</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3036">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802128</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802130</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3293</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3037">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802130</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802132</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3294</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3038">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802132</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802136</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3295</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3039">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802136</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801050</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3296</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3040">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801050</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802332</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3297</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3041">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802332</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801554</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3298</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3042">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801554</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802334</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3299</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3043">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802334</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802336</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3300</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3044">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802336</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801546</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3301</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3045">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801546</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802338</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3302</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3046">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802338</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801048</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3303</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3047">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801048</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803368</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3304</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3048">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803368</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802340</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3305</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3049">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802340</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801542</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3306</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3050">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801542</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803386</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3307</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3051">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803386</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803388</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3308</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3052">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803388</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801540</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3309</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3053">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801540</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801538</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3310</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3054">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801538</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802345</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3311</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3055">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802345</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801043</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3312</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3056">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801043</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802347</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3313</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3057">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802347</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803567</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3314</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3058">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803567</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803565</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3315</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3059">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803565</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803124</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3316</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3060">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803124</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804037</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3317</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3061">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804037</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804236</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3318</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3062">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804236</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801041</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3319</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3063">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801041</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802463</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3320</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3064">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802463</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804234</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3321</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3065">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804234</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804035</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3322</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3066">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804035</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803563</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3323</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3067">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803563</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804132</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3324</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3068">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804132</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804131</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3325</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3069">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804131</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801040</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3326</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3070">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801040</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804128</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3327</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3071">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804128</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804126</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3328</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3072">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804126</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804124</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3329</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3073">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804124</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804122</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3330</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3074">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804122</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804121</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3331</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3075">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804121</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804118</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3332</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3076">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804118</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>setDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803493</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3333</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3077">
+        <From>
+          <Activity>setDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803493</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUp</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801036</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3334</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3078">
+        <From>
+          <Activity>pickUp</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801036</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804039</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3335</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3079">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64804039</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802478</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3336</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3080">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802478</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803971</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3337</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3081">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803971</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801035</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3338</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3082">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64801035</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803966</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3339</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3083">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803966</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803967</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3340</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3084">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803967</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802181</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3341</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3085">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64802181</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803968</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3342</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3086">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803968</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803970</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3343</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3087">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803970</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>setDown</Activity>
+          <DynamicDestinationDisplay>Blairgowrie</DynamicDestinationDisplay>
+          <StopPointRef>64803972</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3344</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+    <JourneyPatternSection id="JPS68">
+      <JourneyPatternTimingLink id="JPTL5238">
+        <From>
+          <Activity>pickUp</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64803490</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804645</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3223</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5239">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804645</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804119</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3224</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5240">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804119</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804120</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3225</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5241">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804120</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804123</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3226</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5242">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804123</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804125</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3227</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5243">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804125</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804127</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3228</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5244">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804127</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804129</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3229</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5245">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804129</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801039</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3230</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5246">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801039</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804130</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3231</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5247">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804130</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804133</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3232</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5248">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804133</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64803564</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3233</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5249">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64803564</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804036</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3234</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5250">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804036</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804235</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3235</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5251">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804235</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802462</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3236</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5252">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802462</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801045</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3237</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5253">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801045</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804038</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3238</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5254">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64804038</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64803125</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3239</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5255">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64803125</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64803566</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3240</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5256">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64803566</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64803569</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3241</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5257">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64803569</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802346</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3242</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5258">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802346</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801042</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3243</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5259">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801042</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802344</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3244</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5260">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802344</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801537</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3245</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5261">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801537</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801539</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3246</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5262">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801539</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64803387</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3247</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5263">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64803387</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64803385</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3248</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5264">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64803385</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801541</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3249</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5265">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801541</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802339</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3250</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5266">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802339</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64803369</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3251</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5267">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64803369</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801047</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3252</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5268">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801047</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802337</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3253</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5269">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802337</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801545</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3254</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5270">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801545</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802335</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3255</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5271">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802335</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802333</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3256</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5272">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802333</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801553</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3257</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5273">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801553</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802331</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3258</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5274">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802331</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801049</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3259</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5275">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801049</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802135</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3260</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5276">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802135</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802133</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3261</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5277">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802133</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802131</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3262</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5278">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802131</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802129</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3263</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5279">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802129</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802126</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3264</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5280">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802126</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802124</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3265</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5281">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802124</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802049</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3266</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5282">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64802049</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801156</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3267</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5283">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801156</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801571</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3268</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5284">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801571</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801051</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3269</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5285">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801051</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801004</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3270</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5286">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801004</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801910</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3271</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5287">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801910</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801907</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3272</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5288">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801907</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801254</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3273</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5289">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801254</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801905</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3274</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5290">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801905</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>setDown</Activity>
+          <DynamicDestinationDisplay>Perth College</DynamicDestinationDisplay>
+          <StopPointRef>64801053</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3275</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+  </JourneyPatternSections>
+  <Operators>
+    <Operator id="2">
+      <NationalOperatorCode>SCFI</NationalOperatorCode>
+      <OperatorCode>SCFI</OperatorCode>
+      <OperatorShortName>Stagecoach</OperatorShortName>
+      <OperatorNameOnLicence>Fife Scottish Omnibuses Ltd</OperatorNameOnLicence>
+      <TradingName>Stagecoach East Scotland</TradingName>
+      <LicenceNumber>PM0000004</LicenceNumber>
+      <LicenceClassification>standardInternational</LicenceClassification>
+    </Operator>
+  </Operators>
+  <Services>
+    <Service>
+      <ServiceCode>S_SC_SCFI_57U_1</ServiceCode>
+      <Lines>
+        <Line id="SL3">
+          <LineName>57U</LineName>
+        </Line>
+      </Lines>
+      <OperatingPeriod>
+        <StartDate>2024-11-04</StartDate>
+      </OperatingPeriod>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <MondayToSunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <RegisteredOperatorRef>2</RegisteredOperatorRef>
+      <StopRequirements>
+        <NoNewStopsRequired />
+      </StopRequirements>
+      <PublicUse>true</PublicUse>
+      <Description>Dundee - Perth bus station</Description>
+      <StandardService>
+        <Origin>Dundee</Origin>
+        <Destination>Perth bus station</Destination>
+        <JourneyPattern id="JP67">
+          <DestinationDisplay>Rattray Park</DestinationDisplay>
+          <Direction>inbound</Direction>
+          <RouteRef>RT43</RouteRef>
+          <JourneyPatternSectionRefs>JPS39</JourneyPatternSectionRefs>
+        </JourneyPattern>
+        <JourneyPattern id="JP68">
+          <DestinationDisplay>Hillyland College</DestinationDisplay>
+          <Direction>outbound</Direction>
+          <RouteRef>RT42</RouteRef>
+          <JourneyPatternSectionRefs>JPS68</JourneyPatternSectionRefs>
+        </JourneyPattern>
+      </StandardService>
+    </Service>
+  </Services>
+  <VehicleJourneys>
+    <VehicleJourney SequenceNumber="36">
+      <PrivateCode>P057_57UMTWHF:I:0:242:5qae5inbb</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>UHIP</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ36</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_57U_1</ServiceRef>
+      <LineRef>SL3</LineRef>
+      <JourneyPatternRef>JP68</JourneyPatternRef>
+      <DepartureTime>07:41:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="72">
+      <PrivateCode>P057_57UMTWHF:O:0:243:85r9ca124</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>PKSch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ72</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_57U_1</ServiceRef>
+      <LineRef>SL3</LineRef>
+      <JourneyPatternRef>JP67</JourneyPatternRef>
+      <DepartureTime>16:15:00</DepartureTime>
+    </VehicleJourney>
+  </VehicleJourneys>
+</TransXChange>

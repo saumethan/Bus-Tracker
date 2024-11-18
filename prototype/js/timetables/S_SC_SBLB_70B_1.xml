@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransXChange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreationDateTime="2024-08-06T09:08:06" ModificationDateTime="2024-08-06T09:08:06" Modification="new" RevisionNumber="1" FileName="70ABC-BB--SBLB-SCHI-19thAug-2024-08-19-Aberdeen_19th_August_202-Transmill.xml" SchemaVersion="2.5" RegistrationDocument="true" xsi:schemaLocation="http://www.transxchange.org.uk/ http://www.transxchange.org.uk/schema/2.5/TransXChange_general.xsd" xmlns="http://www.transxchange.org.uk/">
+  <ServicedOrganisations>
+    <ServicedOrganisation>
+      <OrganisationCode>ABD_ASch</OrganisationCode>
+      <Name>Aberdeenshire Schooldays only</Name>
+      <WorkingDays>
+        <DateRange>
+          <StartDate>2024-08-19</StartDate>
+          <EndDate>2024-10-11</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-10-28</StartDate>
+          <EndDate>2024-12-20</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-01-06</StartDate>
+          <EndDate>2025-02-07</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-02-11</StartDate>
+          <EndDate>2025-03-28</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-04-14</StartDate>
+          <EndDate>2025-04-17</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-04-21</StartDate>
+          <EndDate>2025-05-02</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-05-06</StartDate>
+          <EndDate>2025-07-04</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+      </WorkingDays>
+      <Holidays>
+        <DateRange>
+          <StartDate>2024-10-14</StartDate>
+          <EndDate>2024-10-25</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-12-23</StartDate>
+          <EndDate>2025-01-03</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-02-10</StartDate>
+          <EndDate>2025-02-10</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-03-31</StartDate>
+          <EndDate>2025-04-11</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-04-18</StartDate>
+          <EndDate>2025-04-18</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-05-05</StartDate>
+          <EndDate>2025-05-05</EndDate>
+          <Description>Aberdeenshire Schooldays only</Description>
+        </DateRange>
+      </Holidays>
+    </ServicedOrganisation>
+  </ServicedOrganisations>
+  <StopPoints>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630040651</StopPointRef>
+      <CommonName>Sub Station</CommonName>
+      <LocalityName>Newtonhill</LocalityName>
+      <LocalityQualifier>Newtonhill</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630040671</StopPointRef>
+      <CommonName>Park Place</CommonName>
+      <LocalityName>Newtonhill</LocalityName>
+      <LocalityQualifier>Newtonhill</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630040672</StopPointRef>
+      <CommonName>Park Place</CommonName>
+      <LocalityName>Newtonhill</LocalityName>
+      <LocalityQualifier>Newtonhill</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630042442</StopPointRef>
+      <CommonName>Broomfield Park</CommonName>
+      <LocalityName>Portlethen</LocalityName>
+      <LocalityQualifier>Portlethen</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630042462</StopPointRef>
+      <CommonName>Shopping Centre</CommonName>
+      <LocalityName>Portlethen</LocalityName>
+      <LocalityQualifier>Portlethen</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630042472</StopPointRef>
+      <CommonName>Rowanbank Road</CommonName>
+      <LocalityName>Portlethen</LocalityName>
+      <LocalityQualifier>Portlethen</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630042531</StopPointRef>
+      <CommonName>Glebe Court</CommonName>
+      <LocalityName>Portlethen</LocalityName>
+      <LocalityQualifier>Portlethen</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630042541</StopPointRef>
+      <CommonName>The Square</CommonName>
+      <LocalityName>Portlethen</LocalityName>
+      <LocalityQualifier>Portlethen</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630042552</StopPointRef>
+      <CommonName>Bruntland Place</CommonName>
+      <LocalityName>Portlethen</LocalityName>
+      <LocalityQualifier>Portlethen</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630042561</StopPointRef>
+      <CommonName>Oak Drive</CommonName>
+      <LocalityName>Portlethen</LocalityName>
+      <LocalityQualifier>Portlethen</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630042571</StopPointRef>
+      <CommonName>Academy</CommonName>
+      <LocalityName>Portlethen</LocalityName>
+      <LocalityQualifier>Portlethen</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630042573</StopPointRef>
+      <CommonName>Whinpark Circle</CommonName>
+      <LocalityName>Portlethen</LocalityName>
+      <LocalityQualifier>Portlethen</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>630045021</StopPointRef>
+      <CommonName>Cairnhill Road</CommonName>
+      <LocalityName>Newtonhill</LocalityName>
+      <LocalityQualifier>Newtonhill</LocalityQualifier>
+    </AnnotatedStopPointRef>
+  </StopPoints>
+  <RouteSections>
+    <RouteSection id="RS3">
+      <RouteLink id="RL15">
+        <From>
+          <StopPointRef>630040672</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630045021</StopPointRef>
+        </To>
+        <Distance>439</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL16">
+        <From>
+          <StopPointRef>630045021</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630042462</StopPointRef>
+        </To>
+        <Distance>5231</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL17">
+        <From>
+          <StopPointRef>630042462</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630042472</StopPointRef>
+        </To>
+        <Distance>211</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL18">
+        <From>
+          <StopPointRef>630042472</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630042531</StopPointRef>
+        </To>
+        <Distance>237</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL19">
+        <From>
+          <StopPointRef>630042531</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630042541</StopPointRef>
+        </To>
+        <Distance>357</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL20">
+        <From>
+          <StopPointRef>630042541</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630042552</StopPointRef>
+        </To>
+        <Distance>227</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL21">
+        <From>
+          <StopPointRef>630042552</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630042561</StopPointRef>
+        </To>
+        <Distance>256</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL22">
+        <From>
+          <StopPointRef>630042561</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630042571</StopPointRef>
+        </To>
+        <Distance>281</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+    </RouteSection>
+    <RouteSection id="RS4">
+      <RouteLink id="RL23">
+        <From>
+          <StopPointRef>630042571</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630042573</StopPointRef>
+        </To>
+        <Distance>260</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL24">
+        <From>
+          <StopPointRef>630042573</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630042442</StopPointRef>
+        </To>
+        <Distance>254</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL25">
+        <From>
+          <StopPointRef>630042442</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630040651</StopPointRef>
+        </To>
+        <Distance>4123</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL26">
+        <From>
+          <StopPointRef>630040651</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>630040671</StopPointRef>
+        </To>
+        <Distance>433</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+    </RouteSection>
+  </RouteSections>
+  <Routes>
+    <Route id="RT81">
+      <PrivateCode>70B-81</PrivateCode>
+      <Description>Newtonhill Park Place - Portlethen Academy</Description>
+      <RouteSectionRef>RS3</RouteSectionRef>
+    </Route>
+    <Route id="RT82">
+      <PrivateCode>70B-82</PrivateCode>
+      <Description>Portlethen Academy - Newtonhill Park Place</Description>
+      <RouteSectionRef>RS4</RouteSectionRef>
+    </Route>
+  </Routes>
+  <JourneyPatternSections>
+    <JourneyPatternSection id="JPS314">
+      <JourneyPatternTimingLink id="JPTL15">
+        <From>
+          <Activity>pickUp</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630040672</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630045021</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL15</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL16">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630045021</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630042462</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL16</RouteLinkRef>
+        <RunTime>PT11M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL17">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630042462</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630042472</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL17</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL18">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630042472</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630042531</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL18</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL19">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630042531</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630042541</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL19</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL20">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630042541</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630042552</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL20</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL21">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630042552</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630042561</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL21</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL22">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630042561</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>setDown</Activity>
+          <DynamicDestinationDisplay>Portlethen Academy</DynamicDestinationDisplay>
+          <StopPointRef>630042571</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL22</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+    <JourneyPatternSection id="JPS315">
+      <JourneyPatternTimingLink id="JPTL23">
+        <From>
+          <WaitTime>PT10M0S</WaitTime>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Newtonhill</DynamicDestinationDisplay>
+          <StopPointRef>630042571</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Newtonhill</DynamicDestinationDisplay>
+          <StopPointRef>630042573</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL23</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL24">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Newtonhill</DynamicDestinationDisplay>
+          <StopPointRef>630042573</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Newtonhill</DynamicDestinationDisplay>
+          <StopPointRef>630042442</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL24</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL25">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Newtonhill</DynamicDestinationDisplay>
+          <StopPointRef>630042442</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Newtonhill</DynamicDestinationDisplay>
+          <StopPointRef>630040651</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL25</RouteLinkRef>
+        <RunTime>PT12M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL26">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Newtonhill</DynamicDestinationDisplay>
+          <StopPointRef>630040651</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>setDown</Activity>
+          <DynamicDestinationDisplay>Newtonhill</DynamicDestinationDisplay>
+          <StopPointRef>630040671</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL26</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+  </JourneyPatternSections>
+  <Operators>
+    <Operator id="1">
+      <NationalOperatorCode>SBLB</NationalOperatorCode>
+      <OperatorCode>SBLB</OperatorCode>
+      <OperatorShortName>Stagecoach</OperatorShortName>
+      <OperatorNameOnLicence>Bluebird Buses Ltd</OperatorNameOnLicence>
+      <TradingName>Stagecoach Bluebird</TradingName>
+      <LicenceNumber>PM0000005</LicenceNumber>
+      <LicenceClassification>standardInternational</LicenceClassification>
+    </Operator>
+  </Operators>
+  <Services>
+    <Service>
+      <ServiceCode>S_SC_SBLB_70B_1</ServiceCode>
+      <Lines>
+        <Line id="SL2">
+          <LineName>70B</LineName>
+        </Line>
+      </Lines>
+      <OperatingPeriod>
+        <StartDate>2023-09-25</StartDate>
+      </OperatingPeriod>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <MondayToFriday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <RegisteredOperatorRef>1</RegisteredOperatorRef>
+      <StopRequirements>
+        <NoNewStopsRequired />
+      </StopRequirements>
+      <PublicUse>true</PublicUse>
+      <Description>Newtonhill - Portlethen Academy</Description>
+      <StandardService>
+        <Origin>Newtonhill</Origin>
+        <Destination>Portlethen Academy</Destination>
+        <JourneyPattern id="JP3">
+          <DestinationDisplay>Portlethen Academy</DestinationDisplay>
+          <Direction>outbound</Direction>
+          <RouteRef>RT81</RouteRef>
+          <JourneyPatternSectionRefs>JPS314</JourneyPatternSectionRefs>
+        </JourneyPattern>
+        <JourneyPattern id="JP4">
+          <DestinationDisplay>Newtonhill Park Place</DestinationDisplay>
+          <Direction>inbound</Direction>
+          <RouteRef>RT82</RouteRef>
+          <JourneyPatternSectionRefs>JPS315</JourneyPatternSectionRefs>
+        </JourneyPattern>
+      </StandardService>
+    </Service>
+  </Services>
+  <VehicleJourneys>
+    <VehicleJourney SequenceNumber="1334">
+      <PrivateCode>70BMTWHF:I:0:1503:q_1JZh4xzcM</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>ABD_ASch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ1334</VehicleJourneyCode>
+      <ServiceRef>S_SC_SBLB_70B_1</ServiceRef>
+      <LineRef>SL2</LineRef>
+      <JourneyPatternRef>JP3</JourneyPatternRef>
+      <DepartureTime>08:20:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="1335">
+      <PrivateCode>70BMTWHF:O:0:1504:q_1JZh4xzcM</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>ABD_ASch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ1335</VehicleJourneyCode>
+      <ServiceRef>S_SC_SBLB_70B_1</ServiceRef>
+      <LineRef>SL2</LineRef>
+      <JourneyPatternRef>JP4</JourneyPatternRef>
+      <DepartureTime>15:25:00</DepartureTime>
+    </VehicleJourney>
+  </VehicleJourneys>
+</TransXChange>
