@@ -244,8 +244,8 @@ function drawBus(busData, map) {
     busData.forEach(coord => { 
 
         const circle = L.circle([coord.latitude, coord.longitude], {
-            color: "red", 
-            fillColor: "#f03", 
+            color: 'red', 
+            fillColor: '#f03', 
             fillOpacity: 0.5,
             radius: radius
         }).addTo(map);
@@ -257,12 +257,11 @@ function drawBus(busData, map) {
             </div>
         `;
 
-        circle.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
+        circle.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
 
         // Add click event listener to the bus marker
-        circle.on("click", (event) => {
+        circle.on('click', (event) => {
             gpsRoute = coord.route;
-            nocCode = coord.noc;
             viewAllBuses = false;
 
             refreshSpecificBusRoute(coord.id); 
@@ -271,11 +270,11 @@ function drawBus(busData, map) {
             map.busMarkers.forEach(marker => {
                 marker.closeTooltip(); 
                 marker.unbindTooltip();
-                marker.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
+                marker.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
             });
 
-            // Make clicked bus"s tooltip permanent
-            circle.bindTooltip(toolTipContent, { permanent: true, direction: "top" }).openTooltip();
+            // Make clicked bus's tooltip permanent
+            circle.bindTooltip(toolTipContent, { permanent: true, direction: 'top' }).openTooltip();
 
             // Update the route and destination info
             document.getElementById("busRoute").textContent = "Route: " + coord.route;
@@ -291,7 +290,7 @@ function drawBus(busData, map) {
     });
 
     // Close tooltips when clicking elsewhere on the map
-    map.on("click", () => {
+    map.on('click', () => {
         map.busMarkers.forEach(marker => {
             marker.closeTooltip();
             marker.unbindTooltip();
