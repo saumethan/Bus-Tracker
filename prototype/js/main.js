@@ -130,7 +130,6 @@ function addLocationButtonToMap(mapInstance) {
     locationButton.addTo(mapInstance);
 }
 
-
 // Layer to style the map
 function addTileLayer(mapInstance) {
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
