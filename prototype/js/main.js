@@ -97,9 +97,7 @@ function addHomeButtonToMap(mapInstance) {
             $("#busDestination").text("");
 
             // Remove the refresh time
-            const now = new Date();
-            const formattedTime = now.toLocaleTimeString(); 
-            $("#refreshTime").text("Last updated: " + formattedTime);
+            $("#refreshTime").text("");
 
         });
         return buttonDiv;
