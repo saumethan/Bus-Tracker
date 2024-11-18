@@ -1,0 +1,1366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransXChange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreationDateTime="2024-03-27T09:43:17" ModificationDateTime="2024-03-27T09:43:17" Modification="new" RevisionNumber="1" FileName="S3-SWB--STWS-WSAY-2024-03-25-2405_Ard_Ayr_KK_COMBINED-Transmill.xml" SchemaVersion="2.5" RegistrationDocument="true" xsi:schemaLocation="http://www.transxchange.org.uk/ http://www.transxchange.org.uk/schema/2.5/TransXChange_general.xsd" xmlns="http://www.transxchange.org.uk/">
+  <ServicedOrganisations>
+    <ServicedOrganisation>
+      <OrganisationCode>Sch</OrganisationCode>
+      <Name>South Ayrshire</Name>
+      <WorkingDays>
+        <DateRange>
+          <StartDate>2024-01-08</StartDate>
+          <EndDate>2024-02-09</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-14</StartDate>
+          <EndDate>2024-03-28</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-04-15</StartDate>
+          <EndDate>2024-05-01</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-03</StartDate>
+          <EndDate>2024-05-05</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-28</StartDate>
+          <EndDate>2024-06-28</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-08-20</StartDate>
+          <EndDate>2024-09-19</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-09-24</StartDate>
+          <EndDate>2024-10-11</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-10-22</StartDate>
+          <EndDate>2024-12-20</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-01-06</StartDate>
+          <EndDate>2025-02-07</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+      </WorkingDays>
+      <Holidays>
+        <DateRange>
+          <StartDate>2023-12-24</StartDate>
+          <EndDate>2024-01-07</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-12</StartDate>
+          <EndDate>2024-02-13</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-03-29</StartDate>
+          <EndDate>2024-04-12</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-02</StartDate>
+          <EndDate>2024-05-02</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-06</StartDate>
+          <EndDate>2024-05-06</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-24</StartDate>
+          <EndDate>2024-05-27</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-07-01</StartDate>
+          <EndDate>2024-08-19</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-09-20</StartDate>
+          <EndDate>2024-09-23</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-10-14</StartDate>
+          <EndDate>2024-10-21</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-12-23</StartDate>
+          <EndDate>2025-01-03</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-02-10</StartDate>
+          <EndDate>2025-02-11</EndDate>
+          <Description>South Ayrshire</Description>
+        </DateRange>
+      </Holidays>
+    </ServicedOrganisation>
+  </ServicedOrganisations>
+  <StopPoints>
+    <AnnotatedStopPointRef>
+      <StopPointRef>61901074</StopPointRef>
+      <CommonName>Thornyflat Road</CommonName>
+      <LocalityName>Dalmilling</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>61901080</StopPointRef>
+      <CommonName>Craigie House</CommonName>
+      <LocalityName>Ayr</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190131</StopPointRef>
+      <CommonName>Churchill Crescent</CommonName>
+      <LocalityName>Ayr</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190132</StopPointRef>
+      <CommonName>Robertson Crescent</CommonName>
+      <LocalityName>Ayr</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190133</StopPointRef>
+      <CommonName>Dunlop Terrace</CommonName>
+      <LocalityName>Ayr</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190139</StopPointRef>
+      <CommonName>Thorneyflat Street</CommonName>
+      <LocalityName>Dalmilling</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190140</StopPointRef>
+      <CommonName>Thornyflat Road</CommonName>
+      <LocalityName>Dalmilling</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190141</StopPointRef>
+      <CommonName>Thorneyflat Drive</CommonName>
+      <LocalityName>Dalmilling</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190143</StopPointRef>
+      <CommonName>Dalmilling Drive</CommonName>
+      <LocalityName>Dalmilling</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190168</StopPointRef>
+      <CommonName>Low Road</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190169</StopPointRef>
+      <CommonName>James Brown Avenue</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190170</StopPointRef>
+      <CommonName>Glenmuir Place</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190171</StopPointRef>
+      <CommonName>Braeside</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190172</StopPointRef>
+      <CommonName>Braeside</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190173</StopPointRef>
+      <CommonName>Thomson Street</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190174</StopPointRef>
+      <CommonName>Sloan Street</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190175</StopPointRef>
+      <CommonName>Cowan Crescent</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190178</StopPointRef>
+      <CommonName>Mclean Street</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190179</StopPointRef>
+      <CommonName>McLean Street</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190180</StopPointRef>
+      <CommonName>Ferguson Street</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190540</StopPointRef>
+      <CommonName>Harthall</CommonName>
+      <LocalityName>Dalmilling</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190571</StopPointRef>
+      <CommonName>Low Road</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190575</StopPointRef>
+      <CommonName>James Brown Avenue</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190590</StopPointRef>
+      <CommonName>Churchill Crescent</CommonName>
+      <LocalityName>Ayr</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190644</StopPointRef>
+      <CommonName>Robertson Crescent</CommonName>
+      <LocalityName>Ayr</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190679</StopPointRef>
+      <CommonName>Thomson Street</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190798</StopPointRef>
+      <CommonName>Glenmuir Place</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190803</StopPointRef>
+      <CommonName>Churchill Crescent</CommonName>
+      <LocalityName>Ayr</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190804</StopPointRef>
+      <CommonName>Craigie Way</CommonName>
+      <LocalityName>Ayr</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190837</StopPointRef>
+      <CommonName>Sloan Street</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190839</StopPointRef>
+      <CommonName>Gould Street</CommonName>
+      <LocalityName>Whitletts</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190917</StopPointRef>
+      <CommonName>Dunlop Terrace</CommonName>
+      <LocalityName>Ayr</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190984</StopPointRef>
+      <CommonName>Mainholm Crescent</CommonName>
+      <LocalityName>Dalmilling</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6190985</StopPointRef>
+      <CommonName>Mainholm Crescent</CommonName>
+      <LocalityName>Dalmilling</LocalityName>
+      <LocalityQualifier>Ayr</LocalityQualifier>
+    </AnnotatedStopPointRef>
+  </StopPoints>
+  <RouteSections>
+    <RouteSection id="RS1">
+      <RouteLink id="RL1">
+        <From>
+          <StopPointRef>6190179</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190180</StopPointRef>
+        </To>
+        <Distance>139</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL2">
+        <From>
+          <StopPointRef>6190180</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190175</StopPointRef>
+        </To>
+        <Distance>211</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3">
+        <From>
+          <StopPointRef>6190175</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190174</StopPointRef>
+        </To>
+        <Distance>179</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL4">
+        <From>
+          <StopPointRef>6190174</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190173</StopPointRef>
+        </To>
+        <Distance>211</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL5">
+        <From>
+          <StopPointRef>6190173</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190172</StopPointRef>
+        </To>
+        <Distance>230</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL6">
+        <From>
+          <StopPointRef>6190172</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190170</StopPointRef>
+        </To>
+        <Distance>196</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL7">
+        <From>
+          <StopPointRef>6190170</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190575</StopPointRef>
+        </To>
+        <Distance>153</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL8">
+        <From>
+          <StopPointRef>6190575</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190571</StopPointRef>
+        </To>
+        <Distance>273</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL9">
+        <From>
+          <StopPointRef>6190571</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190139</StopPointRef>
+        </To>
+        <Distance>364</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL10">
+        <From>
+          <StopPointRef>6190139</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190140</StopPointRef>
+        </To>
+        <Distance>257</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL11">
+        <From>
+          <StopPointRef>6190140</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190141</StopPointRef>
+        </To>
+        <Distance>178</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL12">
+        <From>
+          <StopPointRef>6190141</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190540</StopPointRef>
+        </To>
+        <Distance>237</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL13">
+        <From>
+          <StopPointRef>6190540</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190143</StopPointRef>
+        </To>
+        <Distance>290</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL14">
+        <From>
+          <StopPointRef>6190143</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190984</StopPointRef>
+        </To>
+        <Distance>368</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL15">
+        <From>
+          <StopPointRef>6190984</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190133</StopPointRef>
+        </To>
+        <Distance>403</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL16">
+        <From>
+          <StopPointRef>6190133</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190132</StopPointRef>
+        </To>
+        <Distance>238</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL17">
+        <From>
+          <StopPointRef>6190132</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190131</StopPointRef>
+        </To>
+        <Distance>307</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL18">
+        <From>
+          <StopPointRef>6190131</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190804</StopPointRef>
+        </To>
+        <Distance>147</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL19">
+        <From>
+          <StopPointRef>6190804</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>61901080</StopPointRef>
+        </To>
+        <Distance>811</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+    </RouteSection>
+    <RouteSection id="RS2">
+      <RouteLink id="RL20">
+        <From>
+          <StopPointRef>61901080</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190803</StopPointRef>
+        </To>
+        <Distance>813</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL21">
+        <From>
+          <StopPointRef>6190803</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190590</StopPointRef>
+        </To>
+        <Distance>187</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL22">
+        <From>
+          <StopPointRef>6190590</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190644</StopPointRef>
+        </To>
+        <Distance>217</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL23">
+        <From>
+          <StopPointRef>6190644</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190917</StopPointRef>
+        </To>
+        <Distance>304</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL24">
+        <From>
+          <StopPointRef>6190917</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190985</StopPointRef>
+        </To>
+        <Distance>399</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL25">
+        <From>
+          <StopPointRef>6190985</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>61901074</StopPointRef>
+        </To>
+        <Distance>1059</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL26">
+        <From>
+          <StopPointRef>61901074</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190168</StopPointRef>
+        </To>
+        <Distance>601</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL27">
+        <From>
+          <StopPointRef>6190168</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190169</StopPointRef>
+        </To>
+        <Distance>297</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL28">
+        <From>
+          <StopPointRef>6190169</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190798</StopPointRef>
+        </To>
+        <Distance>123</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL29">
+        <From>
+          <StopPointRef>6190798</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190171</StopPointRef>
+        </To>
+        <Distance>176</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL30">
+        <From>
+          <StopPointRef>6190171</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190679</StopPointRef>
+        </To>
+        <Distance>255</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL31">
+        <From>
+          <StopPointRef>6190679</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190837</StopPointRef>
+        </To>
+        <Distance>233</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL32">
+        <From>
+          <StopPointRef>6190837</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190839</StopPointRef>
+        </To>
+        <Distance>347</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL33">
+        <From>
+          <StopPointRef>6190839</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6190178</StopPointRef>
+        </To>
+        <Distance>216</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+    </RouteSection>
+  </RouteSections>
+  <Routes>
+    <Route id="RT71">
+      <PrivateCode>S3-71</PrivateCode>
+      <Description>Whitletts McLean Street - Ayr Craigie House</Description>
+      <RouteSectionRef>RS1</RouteSectionRef>
+    </Route>
+    <Route id="RT72">
+      <PrivateCode>S3-72</PrivateCode>
+      <Description>Ayr Craigie House - Whitletts Mclean Street</Description>
+      <RouteSectionRef>RS2</RouteSectionRef>
+    </Route>
+  </Routes>
+  <JourneyPatternSections>
+    <JourneyPatternSection id="JPS91">
+      <JourneyPatternTimingLink id="JPTL1">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190179</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL1</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL2">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190180</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190175</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL2</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190175</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190174</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190174</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190173</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL4</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190173</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190172</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL5</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL6">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190172</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190170</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL6</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL7">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190170</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190575</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL7</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL8">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190575</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190571</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL8</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL9">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190571</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190139</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL9</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL10">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190139</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190140</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL10</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL11">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190140</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190141</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL11</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL12">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190141</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190540</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL12</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL13">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190540</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190143</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL13</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL14">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190143</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190984</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL14</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL15">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190984</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190133</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL15</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL16">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190133</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190132</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL16</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL17">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190132</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190131</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL17</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL18">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190131</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190804</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL18</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL19">
+        <From>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>6190804</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Ayr Academy</DynamicDestinationDisplay>
+          <StopPointRef>61901080</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL19</RouteLinkRef>
+        <RunTime>PT4M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+    <JourneyPatternSection id="JPS92">
+      <JourneyPatternTimingLink id="JPTL20">
+        <From>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>61901080</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190803</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL20</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL21">
+        <From>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190803</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190590</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL21</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL22">
+        <From>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190590</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190644</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL22</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL23">
+        <From>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190644</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190917</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL23</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL24">
+        <From>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190917</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190985</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL24</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL25">
+        <From>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190985</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>61901074</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL25</RouteLinkRef>
+        <RunTime>PT4M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL26">
+        <From>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>61901074</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190168</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL26</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL27">
+        <From>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190168</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190169</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL27</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL28">
+        <From>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190169</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190798</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL28</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL29">
+        <From>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190798</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190171</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL29</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL30">
+        <From>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190171</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190679</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL30</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL31">
+        <From>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190679</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190837</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL31</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL32">
+        <From>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190837</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190839</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL32</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL33">
+        <From>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190839</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Whitletts</DynamicDestinationDisplay>
+          <StopPointRef>6190178</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL33</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+  </JourneyPatternSections>
+  <Operators>
+    <Operator id="1">
+      <NationalOperatorCode>STWS</NationalOperatorCode>
+      <OperatorCode>STWS</OperatorCode>
+      <OperatorShortName>Stagecoach</OperatorShortName>
+      <OperatorNameOnLicence>Western Buses Ltd</OperatorNameOnLicence>
+      <TradingName>Stagecoach West Scotland</TradingName>
+      <LicenceNumber>PM0000008</LicenceNumber>
+      <LicenceClassification>standardNational</LicenceClassification>
+    </Operator>
+  </Operators>
+  <Services>
+    <Service>
+      <ServiceCode>S_SC_STWS_S3_1</ServiceCode>
+      <Lines>
+        <Line id="SL1">
+          <LineName>S3</LineName>
+        </Line>
+      </Lines>
+      <OperatingPeriod>
+        <StartDate>2022-11-07</StartDate>
+      </OperatingPeriod>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <MondayToFriday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <RegisteredOperatorRef>1</RegisteredOperatorRef>
+      <StopRequirements>
+        <NoNewStopsRequired />
+      </StopRequirements>
+      <PublicUse>true</PublicUse>
+      <Description>Whitletts - Craigie</Description>
+      <StandardService>
+        <Origin>Whitletts</Origin>
+        <Destination>Craigie</Destination>
+        <JourneyPattern id="JP1">
+          <DestinationDisplay>Ayr Craigie House</DestinationDisplay>
+          <Direction>outbound</Direction>
+          <RouteRef>RT71</RouteRef>
+          <JourneyPatternSectionRefs>JPS91</JourneyPatternSectionRefs>
+        </JourneyPattern>
+        <JourneyPattern id="JP2">
+          <DestinationDisplay>Whitletts Mclean Street</DestinationDisplay>
+          <Direction>inbound</Direction>
+          <RouteRef>RT72</RouteRef>
+          <JourneyPatternSectionRefs>JPS92</JourneyPatternSectionRefs>
+        </JourneyPattern>
+      </StandardService>
+    </Service>
+  </Services>
+  <VehicleJourneys>
+    <VehicleJourney SequenceNumber="820">
+      <PrivateCode>S3MT:O:0:434:lU4nYysR1c0</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>Sch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <SpecialDaysOperation>
+          <DaysOfNonOperation>
+            <DateRange>
+              <StartDate>2024-04-01</StartDate>
+              <EndDate>2024-04-01</EndDate>
+            </DateRange>
+          </DaysOfNonOperation>
+        </SpecialDaysOperation>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ820</VehicleJourneyCode>
+      <ServiceRef>S_SC_STWS_S3_1</ServiceRef>
+      <LineRef>SL1</LineRef>
+      <JourneyPatternRef>JP2</JourneyPatternRef>
+      <DepartureTime>15:50:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="821">
+      <PrivateCode>S3MTWHF:I:0:432:UAtVOTcjUlM</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>Sch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <SpecialDaysOperation>
+          <DaysOfNonOperation>
+            <DateRange>
+              <StartDate>2024-04-01</StartDate>
+              <EndDate>2024-04-01</EndDate>
+            </DateRange>
+          </DaysOfNonOperation>
+        </SpecialDaysOperation>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ821</VehicleJourneyCode>
+      <ServiceRef>S_SC_STWS_S3_1</ServiceRef>
+      <LineRef>SL1</LineRef>
+      <JourneyPatternRef>JP1</JourneyPatternRef>
+      <DepartureTime>08:15:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="822">
+      <PrivateCode>S3WHF:O:0:433:HyPHffoD2No</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>Sch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ822</VehicleJourneyCode>
+      <ServiceRef>S_SC_STWS_S3_1</ServiceRef>
+      <LineRef>SL1</LineRef>
+      <JourneyPatternRef>JP2</JourneyPatternRef>
+      <DepartureTime>15:00:00</DepartureTime>
+    </VehicleJourney>
+  </VehicleJourneys>
+</TransXChange>

@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransXChange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreationDateTime="2024-08-02T13:04:10" ModificationDateTime="2024-08-02T13:04:10" Modification="new" RevisionNumber="1" FileName="FGW1-SIF--SCFI-ST-2023-08-14-Fife_Timeplan_09_1408_1908-Transmill.xml" SchemaVersion="2.5" RegistrationDocument="true" xsi:schemaLocation="http://www.transxchange.org.uk/ http://www.transxchange.org.uk/schema/2.5/TransXChange_general.xsd" xmlns="http://www.transxchange.org.uk/">
+  <ServicedOrganisations>
+    <ServicedOrganisation>
+      <OrganisationCode>FiSch</OrganisationCode>
+      <Name>Fife Schooldays</Name>
+      <WorkingDays>
+        <DateRange>
+          <StartDate>2022-06-20</StartDate>
+          <EndDate>2022-06-30</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-08-17</StartDate>
+          <EndDate>2022-10-07</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-10-24</StartDate>
+          <EndDate>2022-11-17</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-11-21</StartDate>
+          <EndDate>2022-12-21</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-01-05</StartDate>
+          <EndDate>2023-02-14</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-02-20</StartDate>
+          <EndDate>2023-03-30</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-04-17</StartDate>
+          <EndDate>2023-04-28</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-02</StartDate>
+          <EndDate>2023-05-05</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-06-07</StartDate>
+          <EndDate>2023-06-30</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-09</StartDate>
+          <EndDate>2023-06-02</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-08-16</StartDate>
+          <EndDate>2023-10-06</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-10-23</StartDate>
+          <EndDate>2023-11-09</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-11-13</StartDate>
+          <EndDate>2023-12-20</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-01-04</StartDate>
+          <EndDate>2024-02-13</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-19</StartDate>
+          <EndDate>2024-03-28</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-04-15</StartDate>
+          <EndDate>2024-05-03</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-07</StartDate>
+          <EndDate>2024-05-08</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-10</StartDate>
+          <EndDate>2024-05-31</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-06-04</StartDate>
+          <EndDate>2024-06-28</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-08-21</StartDate>
+          <EndDate>2024-10-04</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-10-21</StartDate>
+          <EndDate>2024-11-14</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-11-18</StartDate>
+          <EndDate>2024-12-20</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-01-06</StartDate>
+          <EndDate>2025-02-11</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-02-17</StartDate>
+          <EndDate>2025-04-04</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-04-21</StartDate>
+          <EndDate>2025-05-02</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-05-06</StartDate>
+          <EndDate>2025-05-30</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-06-04</StartDate>
+          <EndDate>2025-07-03</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+      </WorkingDays>
+      <Holidays>
+        <DateRange>
+          <StartDate>2022-07-01</StartDate>
+          <EndDate>2022-08-16</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-10-10</StartDate>
+          <EndDate>2022-10-21</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-11-18</StartDate>
+          <EndDate>2022-11-18</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-12-22</StartDate>
+          <EndDate>2023-01-04</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-02-15</StartDate>
+          <EndDate>2023-02-17</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-03-31</StartDate>
+          <EndDate>2023-04-14</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-01</StartDate>
+          <EndDate>2023-05-01</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-06-05</StartDate>
+          <EndDate>2023-06-06</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-07-03</StartDate>
+          <EndDate>2023-08-15</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-08</StartDate>
+          <EndDate>2023-05-08</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-10-09</StartDate>
+          <EndDate>2023-10-20</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-11-10</StartDate>
+          <EndDate>2023-11-10</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-12-21</StartDate>
+          <EndDate>2024-01-03</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-14</StartDate>
+          <EndDate>2024-02-16</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-03-29</StartDate>
+          <EndDate>2024-04-12</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-06</StartDate>
+          <EndDate>2024-05-06</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-09</StartDate>
+          <EndDate>2024-05-09</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-06-03</StartDate>
+          <EndDate>2024-06-03</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-07-01</StartDate>
+          <EndDate>2024-08-20</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-10-07</StartDate>
+          <EndDate>2024-10-18</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-11-15</StartDate>
+          <EndDate>2024-11-15</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-12-23</StartDate>
+          <EndDate>2025-01-03</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-02-12</StartDate>
+          <EndDate>2025-02-14</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-04-07</StartDate>
+          <EndDate>2025-04-18</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-05-05</StartDate>
+          <EndDate>2025-05-05</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-06-02</StartDate>
+          <EndDate>2025-06-03</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-07-04</StartDate>
+          <EndDate>2025-08-15</EndDate>
+          <Description>Fife Schooldays</Description>
+        </DateRange>
+      </Holidays>
+    </ServicedOrganisation>
+  </ServicedOrganisations>
+  <StopPoints>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500K0647</StopPointRef>
+      <CommonName>Alwyn Green</CommonName>
+      <LocalityName>Collydean</LocalityName>
+      <LocalityQualifier>Glenrothes</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500K0648</StopPointRef>
+      <CommonName>Heather Court</CommonName>
+      <LocalityName>Collydean</LocalityName>
+      <LocalityQualifier>Glenrothes</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500K0650</StopPointRef>
+      <CommonName>Piper Drive</CommonName>
+      <LocalityName>Collydean</LocalityName>
+      <LocalityQualifier>Glenrothes</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500K0654</StopPointRef>
+      <CommonName>Ballingall Drive</CommonName>
+      <LocalityName>Balgeddie</LocalityName>
+      <LocalityQualifier>Glenrothes</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500K0972</StopPointRef>
+      <CommonName>Wilmington Drive</CommonName>
+      <LocalityName>Collydean</LocalityName>
+      <LocalityQualifier>Glenrothes</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500K0982</StopPointRef>
+      <CommonName>Rockfield Gardens</CommonName>
+      <LocalityName>Collydean</LocalityName>
+      <LocalityQualifier>Glenrothes</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500K9087</StopPointRef>
+      <CommonName>Guthrie Court</CommonName>
+      <LocalityName>Pitcairn</LocalityName>
+      <LocalityQualifier>Glenrothes</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6500K9523</StopPointRef>
+      <CommonName>Glenwood High School</CommonName>
+      <LocalityName>Macedonia</LocalityName>
+      <LocalityQualifier>Glenrothes</LocalityQualifier>
+    </AnnotatedStopPointRef>
+  </StopPoints>
+  <RouteSections>
+    <RouteSection id="RS1">
+      <RouteLink id="RL1">
+        <From>
+          <StopPointRef>6500K9523</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500K9087</StopPointRef>
+        </To>
+        <Distance>4628</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL2">
+        <From>
+          <StopPointRef>6500K9087</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500K0972</StopPointRef>
+        </To>
+        <Distance>716</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3">
+        <From>
+          <StopPointRef>6500K0972</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500K0982</StopPointRef>
+        </To>
+        <Distance>394</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL4">
+        <From>
+          <StopPointRef>6500K0982</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500K0647</StopPointRef>
+        </To>
+        <Distance>260</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL5">
+        <From>
+          <StopPointRef>6500K0647</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500K0648</StopPointRef>
+        </To>
+        <Distance>233</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL6">
+        <From>
+          <StopPointRef>6500K0648</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500K0650</StopPointRef>
+        </To>
+        <Distance>386</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+    </RouteSection>
+    <RouteSection id="RS2">
+      <RouteLink id="RL7">
+        <From>
+          <StopPointRef>6500K9087</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500K0972</StopPointRef>
+        </To>
+        <Distance>716</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL8">
+        <From>
+          <StopPointRef>6500K0972</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500K0982</StopPointRef>
+        </To>
+        <Distance>394</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL9">
+        <From>
+          <StopPointRef>6500K0982</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500K0647</StopPointRef>
+        </To>
+        <Distance>260</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL10">
+        <From>
+          <StopPointRef>6500K0647</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500K0648</StopPointRef>
+        </To>
+        <Distance>234</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL11">
+        <From>
+          <StopPointRef>6500K0648</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500K0650</StopPointRef>
+        </To>
+        <Distance>386</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL12">
+        <From>
+          <StopPointRef>6500K0650</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500K0654</StopPointRef>
+        </To>
+        <Distance>492</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL13">
+        <From>
+          <StopPointRef>6500K0654</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6500K9523</StopPointRef>
+        </To>
+        <Distance>3250</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+    </RouteSection>
+  </RouteSections>
+  <Routes>
+    <Route id="RT1">
+      <PrivateCode>FGW1_GW1-1</PrivateCode>
+      <Description>Macedonia Glenwood High School - Collydean Piper Drive</Description>
+      <RouteSectionRef>RS1</RouteSectionRef>
+    </Route>
+    <Route id="RT2">
+      <PrivateCode>FGW1_GW1-2</PrivateCode>
+      <Description>Pitcairn Guthrie Court - Macedonia Glenwood High School</Description>
+      <RouteSectionRef>RS2</RouteSectionRef>
+    </Route>
+  </Routes>
+  <JourneyPatternSections>
+    <JourneyPatternSection id="JPS1">
+      <JourneyPatternTimingLink id="JPTL1">
+        <From>
+          <WaitTime>PT15M0S</WaitTime>
+          <Activity>pickUp</Activity>
+          <DynamicDestinationDisplay>Collydean</DynamicDestinationDisplay>
+          <StopPointRef>6500K9523</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Collydean</DynamicDestinationDisplay>
+          <StopPointRef>6500K9087</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL1</RouteLinkRef>
+        <RunTime>PT10M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL2">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Collydean</DynamicDestinationDisplay>
+          <StopPointRef>6500K9087</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Collydean</DynamicDestinationDisplay>
+          <StopPointRef>6500K0972</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL2</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Collydean</DynamicDestinationDisplay>
+          <StopPointRef>6500K0972</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Collydean</DynamicDestinationDisplay>
+          <StopPointRef>6500K0982</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Collydean</DynamicDestinationDisplay>
+          <StopPointRef>6500K0982</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Collydean</DynamicDestinationDisplay>
+          <StopPointRef>6500K0647</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL4</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Collydean</DynamicDestinationDisplay>
+          <StopPointRef>6500K0647</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Collydean</DynamicDestinationDisplay>
+          <StopPointRef>6500K0648</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL5</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL6">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Collydean</DynamicDestinationDisplay>
+          <StopPointRef>6500K0648</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>setDown</Activity>
+          <DynamicDestinationDisplay>Collydean</DynamicDestinationDisplay>
+          <StopPointRef>6500K0650</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL6</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+    <JourneyPatternSection id="JPS6">
+      <JourneyPatternTimingLink id="JPTL41">
+        <From>
+          <Activity>pickUp</Activity>
+          <DynamicDestinationDisplay>Glenwood HS</DynamicDestinationDisplay>
+          <StopPointRef>6500K9087</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Glenwood HS</DynamicDestinationDisplay>
+          <StopPointRef>6500K0972</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL7</RouteLinkRef>
+        <RunTime>PT5M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL42">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Glenwood HS</DynamicDestinationDisplay>
+          <StopPointRef>6500K0972</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Glenwood HS</DynamicDestinationDisplay>
+          <StopPointRef>6500K0982</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL8</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL43">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Glenwood HS</DynamicDestinationDisplay>
+          <StopPointRef>6500K0982</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Glenwood HS</DynamicDestinationDisplay>
+          <StopPointRef>6500K0647</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL9</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL44">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Glenwood HS</DynamicDestinationDisplay>
+          <StopPointRef>6500K0647</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Glenwood HS</DynamicDestinationDisplay>
+          <StopPointRef>6500K0648</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL10</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL45">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Glenwood HS</DynamicDestinationDisplay>
+          <StopPointRef>6500K0648</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Glenwood HS</DynamicDestinationDisplay>
+          <StopPointRef>6500K0650</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL11</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL46">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Glenwood HS</DynamicDestinationDisplay>
+          <StopPointRef>6500K0650</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Glenwood HS</DynamicDestinationDisplay>
+          <StopPointRef>6500K0654</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL12</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL47">
+        <From>
+          <Activity>pickUpAndSetDown</Activity>
+          <DynamicDestinationDisplay>Glenwood HS</DynamicDestinationDisplay>
+          <StopPointRef>6500K0654</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <Activity>setDown</Activity>
+          <DynamicDestinationDisplay>Glenwood HS</DynamicDestinationDisplay>
+          <StopPointRef>6500K9523</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL13</RouteLinkRef>
+        <RunTime>PT10M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+  </JourneyPatternSections>
+  <Operators>
+    <Operator id="1">
+      <NationalOperatorCode>SCFI</NationalOperatorCode>
+      <OperatorCode>SCFI</OperatorCode>
+      <OperatorShortName>Stagecoach</OperatorShortName>
+      <OperatorNameOnLicence>Fife Scottish Omnibuses Ltd</OperatorNameOnLicence>
+      <TradingName>Stagecoach East Scotland</TradingName>
+      <LicenceNumber>PM0000004</LicenceNumber>
+      <LicenceClassification>standardInternational</LicenceClassification>
+    </Operator>
+  </Operators>
+  <Services>
+    <Service>
+      <ServiceCode>S_SC_SCFI_GW1_1</ServiceCode>
+      <Lines>
+        <Line id="SL1">
+          <LineName>GW1</LineName>
+        </Line>
+      </Lines>
+      <OperatingPeriod>
+        <StartDate>2024-08-19</StartDate>
+      </OperatingPeriod>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <MondayToFriday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <RegisteredOperatorRef>1</RegisteredOperatorRef>
+      <StopRequirements>
+        <NoNewStopsRequired />
+      </StopRequirements>
+      <PublicUse>true</PublicUse>
+      <Description>Glenwood High School - Whinnyknowe</Description>
+      <StandardService>
+        <Origin>Glenwood High School</Origin>
+        <Destination>Whinnyknowe</Destination>
+        <JourneyPattern id="JP1">
+          <DestinationDisplay>Collydean Piper Drive</DestinationDisplay>
+          <Direction>outbound</Direction>
+          <RouteRef>RT1</RouteRef>
+          <JourneyPatternSectionRefs>JPS1</JourneyPatternSectionRefs>
+        </JourneyPattern>
+        <JourneyPattern id="JP2">
+          <DestinationDisplay>Macedonia Glenwood High School</DestinationDisplay>
+          <Direction>inbound</Direction>
+          <RouteRef>RT2</RouteRef>
+          <JourneyPatternSectionRefs>JPS6</JourneyPatternSectionRefs>
+        </JourneyPattern>
+      </StandardService>
+    </Service>
+  </Services>
+  <VehicleJourneys>
+    <VehicleJourney SequenceNumber="1">
+      <PrivateCode>FGW1_GW1MT:I:0:2:on6ajbzd7</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>FiSch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+            <EasterMonday />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ1</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_GW1_1</ServiceRef>
+      <LineRef>SL1</LineRef>
+      <JourneyPatternRef>JP1</JourneyPatternRef>
+      <DepartureTime>15:20:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="6">
+      <PrivateCode>FGW1_GW1MTWHF:O:0:3:wQ1eqgegsGk</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>FiSch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+            <EasterMonday />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ6</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_GW1_1</ServiceRef>
+      <LineRef>SL1</LineRef>
+      <JourneyPatternRef>JP2</JourneyPatternRef>
+      <DepartureTime>08:15:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="9">
+      <PrivateCode>FGW1_GW1WHF:I:0:1:i9hv5xl7g</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>FiSch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ9</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_GW1_1</ServiceRef>
+      <LineRef>SL1</LineRef>
+      <JourneyPatternRef>JP1</JourneyPatternRef>
+      <DepartureTime>14:30:00</DepartureTime>
+    </VehicleJourney>
+  </VehicleJourneys>
+</TransXChange>

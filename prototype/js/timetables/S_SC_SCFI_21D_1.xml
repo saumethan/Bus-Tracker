@@ -1,0 +1,2683 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransXChange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreationDateTime="2024-04-17T09:55:46" ModificationDateTime="2024-04-17T09:55:46" Modification="new" RevisionNumber="1" FileName="S020-STY--SCFI-Angus-2024-05-13-Angus_Timeplan_1305-Transmill.xml" SchemaVersion="2.5" RegistrationDocument="true" xsi:schemaLocation="http://www.transxchange.org.uk/ http://www.transxchange.org.uk/schema/2.5/TransXChange_general.xsd" xmlns="http://www.transxchange.org.uk/">
+  <ServicedOrganisations>
+    <ServicedOrganisation>
+      <OrganisationCode>DAC</OrganisationCode>
+      <Name>Dundee and Angus College</Name>
+      <WorkingDays>
+        <DateRange>
+          <StartDate>2022-08-29</StartDate>
+          <EndDate>2022-10-07</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-10-17</StartDate>
+          <EndDate>2022-12-23</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-01-09</StartDate>
+          <EndDate>2023-02-09</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-02-13</StartDate>
+          <EndDate>2023-03-31</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-04-17</StartDate>
+          <EndDate>2023-04-28</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-02</StartDate>
+          <EndDate>2023-05-19</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-08-28</StartDate>
+          <EndDate>2023-10-06</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-10-16</StartDate>
+          <EndDate>2023-12-22</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-01-08</StartDate>
+          <EndDate>2024-02-15</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-19</StartDate>
+          <EndDate>2024-03-29</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-04-15</StartDate>
+          <EndDate>2024-05-03</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-07</StartDate>
+          <EndDate>2024-05-17</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-08-26</StartDate>
+          <EndDate>2024-10-04</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-10-14</StartDate>
+          <EndDate>2024-12-20</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-01-13</StartDate>
+          <EndDate>2025-02-12</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-02-17</StartDate>
+          <EndDate>2025-04-04</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-04-21</StartDate>
+          <EndDate>2025-05-02</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-05-06</StartDate>
+          <EndDate>2025-05-16</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+      </WorkingDays>
+      <Holidays>
+        <DateRange>
+          <StartDate>2022-08-01</StartDate>
+          <EndDate>2022-08-26</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-10-10</StartDate>
+          <EndDate>2022-10-14</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2022-12-26</StartDate>
+          <EndDate>2023-01-06</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-02-10</StartDate>
+          <EndDate>2023-02-10</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-04-03</StartDate>
+          <EndDate>2023-04-14</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-01</StartDate>
+          <EndDate>2023-05-01</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-05-22</StartDate>
+          <EndDate>2023-08-25</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-10-09</StartDate>
+          <EndDate>2023-10-13</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2023-12-25</StartDate>
+          <EndDate>2024-01-05</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-16</StartDate>
+          <EndDate>2024-02-16</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-04-01</StartDate>
+          <EndDate>2024-04-12</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-06</StartDate>
+          <EndDate>2024-05-06</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-20</StartDate>
+          <EndDate>2024-08-23</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-10-07</StartDate>
+          <EndDate>2024-10-11</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-12-23</StartDate>
+          <EndDate>2025-01-10</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-02-13</StartDate>
+          <EndDate>2025-02-14</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-04-07</StartDate>
+          <EndDate>2025-04-18</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-05-05</StartDate>
+          <EndDate>2025-05-05</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-05-19</StartDate>
+          <EndDate>2025-08-15</EndDate>
+          <Description>Dundee and Angus College</Description>
+        </DateRange>
+      </Holidays>
+    </ServicedOrganisation>
+  </ServicedOrganisations>
+  <StopPoints>
+    <AnnotatedStopPointRef>
+      <StopPointRef>640012242</StopPointRef>
+      <CommonName>Seagate Bus Station</CommonName>
+      <LocalityName>Dundee City Centre</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>640012262</StopPointRef>
+      <CommonName>Mctaggart Centre</CommonName>
+      <LocalityName>Kirkton</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400A02</StopPointRef>
+      <CommonName>Forum Centre</CommonName>
+      <LocalityName>Dundee City Centre</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400A102</StopPointRef>
+      <CommonName>Kingsway College</CommonName>
+      <LocalityName>Fairmuir</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400A127</StopPointRef>
+      <CommonName>Waterstones</CommonName>
+      <LocalityName>Dundee City Centre</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400L0002</StopPointRef>
+      <CommonName>Trottick Mains</CommonName>
+      <LocalityName>Claverhouse</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400L00040</StopPointRef>
+      <CommonName>Bus Station</CommonName>
+      <LocalityName>Dundee City Centre</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1149</StopPointRef>
+      <CommonName>Trottick Mains</CommonName>
+      <LocalityName>Claverhouse</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1169</StopPointRef>
+      <CommonName>Murraygate</CommonName>
+      <LocalityName>Dundee City Centre</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1196</StopPointRef>
+      <CommonName>North Isla Street</CommonName>
+      <LocalityName>Stobswell</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1198</StopPointRef>
+      <CommonName>Dens Park</CommonName>
+      <LocalityName>Stobswell</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1200</StopPointRef>
+      <CommonName>Sibbald Street</CommonName>
+      <LocalityName>Stobswell</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1388</StopPointRef>
+      <CommonName>Balgray Street</CommonName>
+      <LocalityName>Fairmuir</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1389</StopPointRef>
+      <CommonName>Claverhouse Road</CommonName>
+      <LocalityName>Kirkton</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1390</StopPointRef>
+      <CommonName>Downie Park</CommonName>
+      <LocalityName>Fairmuir</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1391</StopPointRef>
+      <CommonName>Kingsway College</CommonName>
+      <LocalityName>Fairmuir</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1392</StopPointRef>
+      <CommonName>Fairfield Street</CommonName>
+      <LocalityName>Fairmuir</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1393</StopPointRef>
+      <CommonName>Park Road</CommonName>
+      <LocalityName>Fairmuir</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1394</StopPointRef>
+      <CommonName>Claverhouse Road</CommonName>
+      <LocalityName>Kirkton</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1395</StopPointRef>
+      <CommonName>Downie Park</CommonName>
+      <LocalityName>Fairmuir</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1396</StopPointRef>
+      <CommonName>Park Road</CommonName>
+      <LocalityName>Fairmuir</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1441</StopPointRef>
+      <CommonName>Marryat Street</CommonName>
+      <LocalityName>Fairmuir</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1501</StopPointRef>
+      <CommonName>Nelson Street</CommonName>
+      <LocalityName>Hilltown</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1651</StopPointRef>
+      <CommonName>Gillburn Circle</CommonName>
+      <LocalityName>Kirkton</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1652</StopPointRef>
+      <CommonName>Beauly Avenue</CommonName>
+      <LocalityName>Kirkton</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1662</StopPointRef>
+      <CommonName>Wellgate Steps</CommonName>
+      <LocalityName>Dundee City Centre</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1679</StopPointRef>
+      <CommonName>Cowan Street</CommonName>
+      <LocalityName>Hilltown</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1706</StopPointRef>
+      <CommonName>Mill O Mains</CommonName>
+      <LocalityName>Claverhouse</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1734</StopPointRef>
+      <CommonName>Victoria Street</CommonName>
+      <LocalityName>Hilltown</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1785</StopPointRef>
+      <CommonName>Sibbald Street</CommonName>
+      <LocalityName>Stobswell</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1807</StopPointRef>
+      <CommonName>Dens Park</CommonName>
+      <LocalityName>Stobswell</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1829</StopPointRef>
+      <CommonName>Eriskay Drive</CommonName>
+      <LocalityName>Claverhouse</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT1900</StopPointRef>
+      <CommonName>Fintry Drive</CommonName>
+      <LocalityName>Claverhouse</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400PT62</StopPointRef>
+      <CommonName>Alexander Street</CommonName>
+      <LocalityName>Stobswell</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400S255</StopPointRef>
+      <CommonName>Hebrides Drive</CommonName>
+      <LocalityName>Claverhouse</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400S271</StopPointRef>
+      <CommonName>Forfar Road</CommonName>
+      <LocalityName>Claverhouse</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400S507</StopPointRef>
+      <CommonName>Wellgate</CommonName>
+      <LocalityName>Dundee City Centre</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400S518</StopPointRef>
+      <CommonName>West Lyon Street</CommonName>
+      <LocalityName>Hilltown</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400S54</StopPointRef>
+      <CommonName>McTaggart Centre</CommonName>
+      <LocalityName>Kirkton</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6400S55</StopPointRef>
+      <CommonName>Fleming Gardens</CommonName>
+      <LocalityName>Fairmuir</LocalityName>
+      <LocalityQualifier>Dundee</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM1100</StopPointRef>
+      <CommonName>Lochlands Junction</CommonName>
+      <LocalityName>Forfar</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM1101</StopPointRef>
+      <CommonName>Lochlands Junction</CommonName>
+      <LocalityName>Forfar</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM2205</StopPointRef>
+      <CommonName>Emmock Flyover</CommonName>
+      <LocalityName>South Powrie</LocalityName>
+      <LocalityQualifier>South Powrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM2206</StopPointRef>
+      <CommonName>Emmock Flyover</CommonName>
+      <LocalityName>South Powrie</LocalityName>
+      <LocalityQualifier>South Powrie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM960</StopPointRef>
+      <CommonName>West Sunnyside</CommonName>
+      <LocalityName>Forfar</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM523</StopPointRef>
+      <CommonName>Lentlands Road</CommonName>
+      <LocalityName>Gallowshade</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM553</StopPointRef>
+      <CommonName>Old Guide Dog Centre</CommonName>
+      <LocalityName>Gallowshade</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM555</StopPointRef>
+      <CommonName>Westfield Loan</CommonName>
+      <LocalityName>Westfield</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM1384</StopPointRef>
+      <CommonName>Seat Car Showroom</CommonName>
+      <LocalityName>Gallowshade</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM526</StopPointRef>
+      <CommonName>Lentlands Road</CommonName>
+      <LocalityName>Gallowshade</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM959</StopPointRef>
+      <CommonName>Old Guide Dog Centre</CommonName>
+      <LocalityName>Gallowshade</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM554</StopPointRef>
+      <CommonName>Westfield Loan</CommonName>
+      <LocalityName>Westfield</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM331</StopPointRef>
+      <CommonName>St John's Church</CommonName>
+      <LocalityName>Forfar</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM241</StopPointRef>
+      <CommonName>Royal Bank of Scotland</CommonName>
+      <LocalityName>Forfar</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>649017956</StopPointRef>
+      <CommonName>Halkerton Farm Road End</CommonName>
+      <LocalityName>Forfar</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>649017958</StopPointRef>
+      <CommonName>Halkerton Farm Road End</CommonName>
+      <LocalityName>Forfar</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM253</StopPointRef>
+      <CommonName>Council Offices</CommonName>
+      <LocalityName>Forfar</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM796</StopPointRef>
+      <CommonName>Police Station</CommonName>
+      <LocalityName>Forfar</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM134</StopPointRef>
+      <CommonName>The Cross</CommonName>
+      <LocalityName>Forfar</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM510</StopPointRef>
+      <CommonName>Police Station</CommonName>
+      <LocalityName>Forfar</LocalityName>
+      <LocalityQualifier>Forfar</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM448</StopPointRef>
+      <CommonName>Gateside Village</CommonName>
+      <LocalityName>Gateside</LocalityName>
+      <LocalityQualifier>Gateside</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM200</StopPointRef>
+      <CommonName>Gateside Village</CommonName>
+      <LocalityName>Gateside</LocalityName>
+      <LocalityQualifier>Gateside</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM1143</StopPointRef>
+      <CommonName>Happas Road End</CommonName>
+      <LocalityName>Happas</LocalityName>
+      <LocalityQualifier>Happas</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM1142</StopPointRef>
+      <CommonName>Happas Road End</CommonName>
+      <LocalityName>Happas</LocalityName>
+      <LocalityQualifier>Happas</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM645</StopPointRef>
+      <CommonName>Inveraldie Village</CommonName>
+      <LocalityName>Inveraldie</LocalityName>
+      <LocalityQualifier>Inveraldie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM646</StopPointRef>
+      <CommonName>Inveraldie Village</CommonName>
+      <LocalityName>Inveraldie</LocalityName>
+      <LocalityQualifier>Inveraldie</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM201</StopPointRef>
+      <CommonName>Kinnettles Road End</CommonName>
+      <LocalityName>Kinnettles</LocalityName>
+      <LocalityQualifier>Kinnettles</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM347</StopPointRef>
+      <CommonName>Kinnettles Road End</CommonName>
+      <LocalityName>Kinnettles</LocalityName>
+      <LocalityQualifier>Kinnettles</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM1146</StopPointRef>
+      <CommonName>AM Philip</CommonName>
+      <LocalityName>Muiryfaulds</LocalityName>
+      <LocalityQualifier>Muiryfaulds</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM1147</StopPointRef>
+      <CommonName>AM Philip</CommonName>
+      <LocalityName>Muiryfaulds</LocalityName>
+      <LocalityQualifier>Muiryfaulds</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM1120</StopPointRef>
+      <CommonName>Shielhill Road End</CommonName>
+      <LocalityName>Shielhill</LocalityName>
+      <LocalityQualifier>Shielhill</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM1124</StopPointRef>
+      <CommonName>Shielhill Road End</CommonName>
+      <LocalityName>Shielhill</LocalityName>
+      <LocalityQualifier>Shielhill</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM1145</StopPointRef>
+      <CommonName>Tarbrax Road End</CommonName>
+      <LocalityName>Tarbrax</LocalityName>
+      <LocalityQualifier>Tarbrax</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM1144</StopPointRef>
+      <CommonName>Tarbrax Road End</CommonName>
+      <LocalityName>Tarbrax</LocalityName>
+      <LocalityQualifier>Tarbrax</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM19752</StopPointRef>
+      <CommonName>Balmuir</CommonName>
+      <LocalityName>Tealing</LocalityName>
+      <LocalityQualifier>Tealing</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM647</StopPointRef>
+      <CommonName>Tealing Road End</CommonName>
+      <LocalityName>Tealing</LocalityName>
+      <LocalityQualifier>Tealing</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM1122</StopPointRef>
+      <CommonName>Tinkletap Farm</CommonName>
+      <LocalityName>Todhills</LocalityName>
+      <LocalityQualifier>Todhills</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6490IM1121</StopPointRef>
+      <CommonName>Tinkletap Farm</CommonName>
+      <LocalityName>Todhills</LocalityName>
+      <LocalityQualifier>Todhills</LocalityQualifier>
+    </AnnotatedStopPointRef>
+  </StopPoints>
+  <RouteSections>
+    <RouteSection id="RS16">
+      <RouteLink id="RL739">
+        <From>
+          <StopPointRef>640012242</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400A02</StopPointRef>
+        </To>
+        <Distance>434</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL740">
+        <From>
+          <StopPointRef>6400A02</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400S507</StopPointRef>
+        </To>
+        <Distance>544</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL741">
+        <From>
+          <StopPointRef>6400S507</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1501</StopPointRef>
+        </To>
+        <Distance>268</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL742">
+        <From>
+          <StopPointRef>6400PT1501</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400S518</StopPointRef>
+        </To>
+        <Distance>341</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL743">
+        <From>
+          <StopPointRef>6400S518</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT62</StopPointRef>
+        </To>
+        <Distance>225</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL744">
+        <From>
+          <StopPointRef>6400PT62</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1200</StopPointRef>
+        </To>
+        <Distance>372</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL745">
+        <From>
+          <StopPointRef>6400PT1200</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1198</StopPointRef>
+        </To>
+        <Distance>366</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL746">
+        <From>
+          <StopPointRef>6400PT1198</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1441</StopPointRef>
+        </To>
+        <Distance>333</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL747">
+        <From>
+          <StopPointRef>6400PT1441</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1392</StopPointRef>
+        </To>
+        <Distance>410</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL748">
+        <From>
+          <StopPointRef>6400PT1392</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1393</StopPointRef>
+        </To>
+        <Distance>178</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL749">
+        <From>
+          <StopPointRef>6400PT1393</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1395</StopPointRef>
+        </To>
+        <Distance>196</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL750">
+        <From>
+          <StopPointRef>6400PT1395</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1391</StopPointRef>
+        </To>
+        <Distance>220</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL751">
+        <From>
+          <StopPointRef>6400PT1391</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>640012262</StopPointRef>
+        </To>
+        <Distance>251</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL752">
+        <From>
+          <StopPointRef>640012262</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1651</StopPointRef>
+        </To>
+        <Distance>216</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL753">
+        <From>
+          <StopPointRef>6400PT1651</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1652</StopPointRef>
+        </To>
+        <Distance>214</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL754">
+        <From>
+          <StopPointRef>6400PT1652</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1394</StopPointRef>
+        </To>
+        <Distance>89</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL755">
+        <From>
+          <StopPointRef>6400PT1394</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400L0002</StopPointRef>
+        </To>
+        <Distance>405</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL756">
+        <From>
+          <StopPointRef>6400L0002</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1829</StopPointRef>
+        </To>
+        <Distance>1185</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL757">
+        <From>
+          <StopPointRef>6400PT1829</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400S255</StopPointRef>
+        </To>
+        <Distance>483</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL758">
+        <From>
+          <StopPointRef>6400S255</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM2206</StopPointRef>
+        </To>
+        <Distance>1775</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL759">
+        <From>
+          <StopPointRef>6490IM2206</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM1124</StopPointRef>
+        </To>
+        <Distance>1483</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL760">
+        <From>
+          <StopPointRef>6490IM1124</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM645</StopPointRef>
+        </To>
+        <Distance>425</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL761">
+        <From>
+          <StopPointRef>6490IM645</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM647</StopPointRef>
+        </To>
+        <Distance>1134</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL762">
+        <From>
+          <StopPointRef>6490IM647</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM1122</StopPointRef>
+        </To>
+        <Distance>1293</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL763">
+        <From>
+          <StopPointRef>6490IM1122</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM1143</StopPointRef>
+        </To>
+        <Distance>1718</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL764">
+        <From>
+          <StopPointRef>6490IM1143</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM1144</StopPointRef>
+        </To>
+        <Distance>1086</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL765">
+        <From>
+          <StopPointRef>6490IM1144</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM1146</StopPointRef>
+        </To>
+        <Distance>1305</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL766">
+        <From>
+          <StopPointRef>6490IM1146</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM448</StopPointRef>
+        </To>
+        <Distance>1401</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL767">
+        <From>
+          <StopPointRef>6490IM448</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM201</StopPointRef>
+        </To>
+        <Distance>1571</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL768">
+        <From>
+          <StopPointRef>6490IM201</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM1101</StopPointRef>
+        </To>
+        <Distance>2214</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL769">
+        <From>
+          <StopPointRef>6490IM1101</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>649017956</StopPointRef>
+        </To>
+        <Distance>954</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL770">
+        <From>
+          <StopPointRef>649017956</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM555</StopPointRef>
+        </To>
+        <Distance>909</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL771">
+        <From>
+          <StopPointRef>6490IM555</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM959</StopPointRef>
+        </To>
+        <Distance>318</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL772">
+        <From>
+          <StopPointRef>6490IM959</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM523</StopPointRef>
+        </To>
+        <Distance>190</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL773">
+        <From>
+          <StopPointRef>6490IM523</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM960</StopPointRef>
+        </To>
+        <Distance>461</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL774">
+        <From>
+          <StopPointRef>6490IM960</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM796</StopPointRef>
+        </To>
+        <Distance>344</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL775">
+        <From>
+          <StopPointRef>6490IM796</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM134</StopPointRef>
+        </To>
+        <Distance>205</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL776">
+        <From>
+          <StopPointRef>6490IM134</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM241</StopPointRef>
+        </To>
+        <Distance>203</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+    </RouteSection>
+    <RouteSection id="RS17">
+      <RouteLink id="RL777">
+        <From>
+          <StopPointRef>6490IM331</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM253</StopPointRef>
+        </To>
+        <Distance>197</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL778">
+        <From>
+          <StopPointRef>6490IM253</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM510</StopPointRef>
+        </To>
+        <Distance>291</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL779">
+        <From>
+          <StopPointRef>6490IM510</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM526</StopPointRef>
+        </To>
+        <Distance>575</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL780">
+        <From>
+          <StopPointRef>6490IM526</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM1384</StopPointRef>
+        </To>
+        <Distance>284</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL781">
+        <From>
+          <StopPointRef>6490IM1384</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM553</StopPointRef>
+        </To>
+        <Distance>129</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL782">
+        <From>
+          <StopPointRef>6490IM553</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM554</StopPointRef>
+        </To>
+        <Distance>346</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL783">
+        <From>
+          <StopPointRef>6490IM554</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>649017958</StopPointRef>
+        </To>
+        <Distance>832</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL784">
+        <From>
+          <StopPointRef>649017958</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM1100</StopPointRef>
+        </To>
+        <Distance>964</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL785">
+        <From>
+          <StopPointRef>6490IM1100</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM347</StopPointRef>
+        </To>
+        <Distance>1683</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL786">
+        <From>
+          <StopPointRef>6490IM347</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM200</StopPointRef>
+        </To>
+        <Distance>1888</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL787">
+        <From>
+          <StopPointRef>6490IM200</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM1147</StopPointRef>
+        </To>
+        <Distance>1259</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL788">
+        <From>
+          <StopPointRef>6490IM1147</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM1145</StopPointRef>
+        </To>
+        <Distance>1220</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL789">
+        <From>
+          <StopPointRef>6490IM1145</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM1142</StopPointRef>
+        </To>
+        <Distance>1117</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL790">
+        <From>
+          <StopPointRef>6490IM1142</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM1121</StopPointRef>
+        </To>
+        <Distance>2050</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL791">
+        <From>
+          <StopPointRef>6490IM1121</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM19752</StopPointRef>
+        </To>
+        <Distance>1473</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL792">
+        <From>
+          <StopPointRef>6490IM19752</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM646</StopPointRef>
+        </To>
+        <Distance>654</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL793">
+        <From>
+          <StopPointRef>6490IM646</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM1120</StopPointRef>
+        </To>
+        <Distance>444</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL794">
+        <From>
+          <StopPointRef>6490IM1120</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6490IM2205</StopPointRef>
+        </To>
+        <Distance>1522</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL795">
+        <From>
+          <StopPointRef>6490IM2205</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1900</StopPointRef>
+        </To>
+        <Distance>1419</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL796">
+        <From>
+          <StopPointRef>6400PT1900</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1706</StopPointRef>
+        </To>
+        <Distance>367</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL797">
+        <From>
+          <StopPointRef>6400PT1706</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400S271</StopPointRef>
+        </To>
+        <Distance>372</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL798">
+        <From>
+          <StopPointRef>6400S271</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1149</StopPointRef>
+        </To>
+        <Distance>1334</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL799">
+        <From>
+          <StopPointRef>6400PT1149</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1389</StopPointRef>
+        </To>
+        <Distance>185</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL800">
+        <From>
+          <StopPointRef>6400PT1389</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400S54</StopPointRef>
+        </To>
+        <Distance>543</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL801">
+        <From>
+          <StopPointRef>6400S54</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400A102</StopPointRef>
+        </To>
+        <Distance>277</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL802">
+        <From>
+          <StopPointRef>6400A102</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1390</StopPointRef>
+        </To>
+        <Distance>226</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL803">
+        <From>
+          <StopPointRef>6400PT1390</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1396</StopPointRef>
+        </To>
+        <Distance>136</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL804">
+        <From>
+          <StopPointRef>6400PT1396</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1388</StopPointRef>
+        </To>
+        <Distance>258</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL805">
+        <From>
+          <StopPointRef>6400PT1388</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400S55</StopPointRef>
+        </To>
+        <Distance>307</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL806">
+        <From>
+          <StopPointRef>6400S55</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1807</StopPointRef>
+        </To>
+        <Distance>353</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL807">
+        <From>
+          <StopPointRef>6400PT1807</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1196</StopPointRef>
+        </To>
+        <Distance>240</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL808">
+        <From>
+          <StopPointRef>6400PT1196</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1785</StopPointRef>
+        </To>
+        <Distance>195</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL809">
+        <From>
+          <StopPointRef>6400PT1785</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1679</StopPointRef>
+        </To>
+        <Distance>462</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL810">
+        <From>
+          <StopPointRef>6400PT1679</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1734</StopPointRef>
+        </To>
+        <Distance>177</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL811">
+        <From>
+          <StopPointRef>6400PT1734</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1662</StopPointRef>
+        </To>
+        <Distance>514</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL812">
+        <From>
+          <StopPointRef>6400PT1662</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400PT1169</StopPointRef>
+        </To>
+        <Distance>446</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL813">
+        <From>
+          <StopPointRef>6400PT1169</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400A127</StopPointRef>
+        </To>
+        <Distance>188</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL814">
+        <From>
+          <StopPointRef>6400A127</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6400L00040</StopPointRef>
+        </To>
+        <Distance>409</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+    </RouteSection>
+  </RouteSections>
+  <Routes>
+    <Route id="RT16">
+      <PrivateCode>S020_21D-16</PrivateCode>
+      <Description>Dundee City Centre Seagate Bus Station 1 - Forfar Royal Bank of Scotland</Description>
+      <RouteSectionRef>RS16</RouteSectionRef>
+    </Route>
+    <Route id="RT17">
+      <PrivateCode>S020_21D-17</PrivateCode>
+      <Description>Forfar St John's Church - Dundee City Centre Bus Station</Description>
+      <RouteSectionRef>RS17</RouteSectionRef>
+    </Route>
+  </Routes>
+  <JourneyPatternSections>
+    <JourneyPatternSection id="JPS85">
+      <JourneyPatternTimingLink id="JPTL4368">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>640012242</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400A02</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL739</RouteLinkRef>
+        <RunTime>PT4M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4369">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400A02</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400S507</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL740</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4370">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400S507</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1501</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL741</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4371">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1501</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400S518</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL742</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4372">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400S518</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT62</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL743</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4373">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT62</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1200</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL744</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4374">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1200</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1198</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL745</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4375">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1198</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1441</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL746</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4376">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1441</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1392</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL747</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4377">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1392</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1393</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL748</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4378">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1393</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1395</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL749</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4379">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1395</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1391</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL750</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4380">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1391</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>640012262</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL751</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4381">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>640012262</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1651</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL752</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4382">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1651</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1652</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL753</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4383">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1652</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1394</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL754</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4384">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1394</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400L0002</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL755</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4385">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400L0002</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1829</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL756</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4386">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1829</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400S255</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL757</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4387">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6400S255</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM2206</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL758</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4388">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM2206</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1124</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL759</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4389">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1124</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM645</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL760</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4390">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM645</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM647</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL761</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4391">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM647</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1122</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL762</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4392">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1122</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1143</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL763</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4393">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1143</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1144</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL764</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4394">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1144</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1146</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL765</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4395">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1146</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM448</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL766</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4396">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM448</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM201</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL767</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4397">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM201</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1101</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL768</RouteLinkRef>
+        <RunTime>PT4M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4398">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1101</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>649017956</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL769</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4399">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>649017956</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM555</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL770</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4400">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM555</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM959</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL771</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4401">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM959</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM523</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL772</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4402">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM523</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM960</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL773</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4403">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM960</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM796</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL774</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4404">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM796</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM134</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL775</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4405">
+        <From>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM134</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Stracathro</DynamicDestinationDisplay>
+          <StopPointRef>6490IM241</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL776</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+    <JourneyPatternSection id="JPS86">
+      <JourneyPatternTimingLink id="JPTL4406">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM331</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM253</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL777</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4407">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM253</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM510</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL778</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4408">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM510</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM526</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL779</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4409">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM526</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1384</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL780</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4410">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1384</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM553</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL781</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4411">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM553</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM554</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL782</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4412">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM554</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>649017958</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL783</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4413">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>649017958</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1100</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL784</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4414">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1100</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM347</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL785</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4415">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM347</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM200</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL786</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4416">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM200</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1147</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL787</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4417">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1147</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1145</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL788</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4418">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1145</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1142</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL789</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4419">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1142</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1121</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL790</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4420">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1121</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM19752</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL791</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4421">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM19752</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM646</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL792</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4422">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM646</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1120</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL793</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4423">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM1120</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM2205</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL794</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4424">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6490IM2205</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1900</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL795</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4425">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1900</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1706</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL796</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4426">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1706</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400S271</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL797</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4427">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400S271</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1149</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL798</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4428">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1149</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1389</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL799</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4429">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1389</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400S54</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL800</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4430">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400S54</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400A102</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL801</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4431">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400A102</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1390</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL802</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4432">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1390</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1396</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL803</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4433">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1396</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1388</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL804</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4434">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1388</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400S55</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL805</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4435">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400S55</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1807</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL806</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4436">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1807</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1196</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL807</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4437">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1196</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1785</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL808</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4438">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1785</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1679</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL809</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4439">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1679</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1734</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL810</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4440">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1734</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1662</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL811</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4441">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1662</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1169</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL812</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4442">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400PT1169</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400A127</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </To>
+        <RouteLinkRef>RL813</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4443">
+        <From>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400A127</StopPointRef>
+          <TimingStatus>OTH</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Dundee</DynamicDestinationDisplay>
+          <StopPointRef>6400L00040</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL814</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+  </JourneyPatternSections>
+  <Operators>
+    <Operator id="3">
+      <NationalOperatorCode>SCFI</NationalOperatorCode>
+      <OperatorCode>SCFI</OperatorCode>
+      <OperatorShortName>Stagecoach</OperatorShortName>
+      <OperatorNameOnLicence>Fife Scottish Omnibuses Ltd</OperatorNameOnLicence>
+      <TradingName>Stagecoach East Scotland</TradingName>
+      <LicenceNumber>PM0000004</LicenceNumber>
+      <LicenceClassification>standardInternational</LicenceClassification>
+    </Operator>
+  </Operators>
+  <Services>
+    <Service>
+      <ServiceCode>S_SC_SCFI_21D_1</ServiceCode>
+      <Lines>
+        <Line id="SL5">
+          <LineName>21D</LineName>
+        </Line>
+      </Lines>
+      <OperatingPeriod>
+        <StartDate>2024-05-13</StartDate>
+      </OperatingPeriod>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <MondayToSunday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <RegisteredOperatorRef>3</RegisteredOperatorRef>
+      <StopRequirements>
+        <NoNewStopsRequired />
+      </StopRequirements>
+      <PublicUse>true</PublicUse>
+      <Description>Dundee - Kirriemuir or Stracathro</Description>
+      <StandardService>
+        <Origin>Dundee</Origin>
+        <Destination>Kirriemuir or Stracathro</Destination>
+        <JourneyPattern id="JP87">
+          <DestinationDisplay>Forfar Royal Bank of Scotland</DestinationDisplay>
+          <Direction>outbound</Direction>
+          <RouteRef>RT16</RouteRef>
+          <JourneyPatternSectionRefs>JPS85</JourneyPatternSectionRefs>
+        </JourneyPattern>
+        <JourneyPattern id="JP88">
+          <DestinationDisplay>Dundee City Centre Bus Station</DestinationDisplay>
+          <Direction>inbound</Direction>
+          <RouteRef>RT17</RouteRef>
+          <JourneyPatternSectionRefs>JPS86</JourneyPatternSectionRefs>
+        </JourneyPattern>
+      </StandardService>
+    </Service>
+  </Services>
+  <VehicleJourneys>
+    <VehicleJourney SequenceNumber="60">
+      <PrivateCode>S020_21DMTWHF:O:0:49:_KNVnmD4idk</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>DAC</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <GoodFriday />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ60</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_21D_1</ServiceRef>
+      <LineRef>SL5</LineRef>
+      <JourneyPatternRef>JP88</JourneyPatternRef>
+      <DepartureTime>08:05:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="94">
+      <PrivateCode>S020_21DMTWHF:I:0:48:_KNVnmD4idk</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>DAC</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <GoodFriday />
+            <LateSummerBankHolidayNotScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ94</VehicleJourneyCode>
+      <ServiceRef>S_SC_SCFI_21D_1</ServiceRef>
+      <LineRef>SL5</LineRef>
+      <JourneyPatternRef>JP87</JourneyPatternRef>
+      <DepartureTime>16:00:00</DepartureTime>
+    </VehicleJourney>
+  </VehicleJourneys>
+</TransXChange>

@@ -1,0 +1,1635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransXChange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreationDateTime="2024-03-27T09:43:17" ModificationDateTime="2024-03-27T09:43:17" Modification="new" RevisionNumber="1" FileName="30-SWB--STWS-WSAY-2024-03-25-2405_Ard_Ayr_KK_COMBINED-Transmill.xml" SchemaVersion="2.5" RegistrationDocument="true" xsi:schemaLocation="http://www.transxchange.org.uk/ http://www.transxchange.org.uk/schema/2.5/TransXChange_general.xsd" xmlns="http://www.transxchange.org.uk/">
+  <ServicedOrganisations>
+    <ServicedOrganisation>
+      <OrganisationCode>KK_Sch</OrganisationCode>
+      <Name>North Ayrshire</Name>
+      <WorkingDays>
+        <DateRange>
+          <StartDate>2024-01-08</StartDate>
+          <EndDate>2024-02-08</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-14</StartDate>
+          <EndDate>2024-03-28</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-04-15</StartDate>
+          <EndDate>2024-05-03</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-07</StartDate>
+          <EndDate>2024-05-23</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-28</StartDate>
+          <EndDate>2024-06-28</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-08-20</StartDate>
+          <EndDate>2024-09-20</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-09-24</StartDate>
+          <EndDate>2024-10-11</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-10-21</StartDate>
+          <EndDate>2024-11-22</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-11-27</StartDate>
+          <EndDate>2024-12-20</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-01-06</StartDate>
+          <EndDate>2025-02-14</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+      </WorkingDays>
+      <Holidays>
+        <DateRange>
+          <StartDate>2023-12-25</StartDate>
+          <EndDate>2024-01-05</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-02-09</StartDate>
+          <EndDate>2024-02-13</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-03-29</StartDate>
+          <EndDate>2024-04-12</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-06</StartDate>
+          <EndDate>2024-05-06</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-05-24</StartDate>
+          <EndDate>2024-05-27</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-07-01</StartDate>
+          <EndDate>2024-08-19</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-09-23</StartDate>
+          <EndDate>2024-09-23</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-10-14</StartDate>
+          <EndDate>2024-10-18</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-11-25</StartDate>
+          <EndDate>2024-11-26</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2024-12-23</StartDate>
+          <EndDate>2025-01-03</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+        <DateRange>
+          <StartDate>2025-01-17</StartDate>
+          <EndDate>2025-02-18</EndDate>
+          <Description>North Ayrshire</Description>
+        </DateRange>
+      </Holidays>
+    </ServicedOrganisation>
+  </ServicedOrganisations>
+  <StopPoints>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170100</StopPointRef>
+      <CommonName>Burns Crescent</CommonName>
+      <LocalityName>Girdle Toll</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>61701008</StopPointRef>
+      <CommonName>West Bowhouse Head</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170101</StopPointRef>
+      <CommonName>Stane Castle</CommonName>
+      <LocalityName>Girdle Toll</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170102</StopPointRef>
+      <CommonName>Stane Castle</CommonName>
+      <LocalityName>Girdle Toll</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>61701113</StopPointRef>
+      <CommonName>Greenwood Academy</CommonName>
+      <LocalityName>Dreghorn</LocalityName>
+      <LocalityQualifier>Dreghorn</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170118</StopPointRef>
+      <CommonName>South Newmoor Ind Estate</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170119</StopPointRef>
+      <CommonName>South Newmoor Ind Estate</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170151</StopPointRef>
+      <CommonName>Golffields Road</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170152</StopPointRef>
+      <CommonName>Sillars Meadow</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170176</StopPointRef>
+      <CommonName>Bridgegate</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170178</StopPointRef>
+      <CommonName>Court House</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170180</StopPointRef>
+      <CommonName>Kirk Vennel</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170181</StopPointRef>
+      <CommonName>Broomlands Drive</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170182</StopPointRef>
+      <CommonName>East Road</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170183</StopPointRef>
+      <CommonName>Mill Road</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170188</StopPointRef>
+      <CommonName>Clark Drive</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170189</StopPointRef>
+      <CommonName>Clark Drive</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170190</StopPointRef>
+      <CommonName>Stanecastle Roundabout</CommonName>
+      <LocalityName>Stanecastle</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170191</StopPointRef>
+      <CommonName>Stanecastle Roundabout</CommonName>
+      <LocalityName>Stanecastle</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170192</StopPointRef>
+      <CommonName>Galt Avenue</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170193</StopPointRef>
+      <CommonName>Galt Avenue</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170194</StopPointRef>
+      <CommonName>Ballot Road</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170195</StopPointRef>
+      <CommonName>Ballot Road</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170581</StopPointRef>
+      <CommonName>West Bowhouse Road</CommonName>
+      <LocalityName>Girdle Toll</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170701</StopPointRef>
+      <CommonName>Broughton Green</CommonName>
+      <LocalityName>Perceton</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170702</StopPointRef>
+      <CommonName>Strathmore Park</CommonName>
+      <LocalityName>Perceton</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170703</StopPointRef>
+      <CommonName>Berryhill Avenue</CommonName>
+      <LocalityName>Perceton</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170704</StopPointRef>
+      <CommonName>Berryhill Avenue</CommonName>
+      <LocalityName>Perceton</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170840</StopPointRef>
+      <CommonName>Lawthorn Farm Pub</CommonName>
+      <LocalityName>Perceton</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170862</StopPointRef>
+      <CommonName>East Road</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170863</StopPointRef>
+      <CommonName>Bowhouse Way</CommonName>
+      <LocalityName>Perceton</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170864</StopPointRef>
+      <CommonName>Bowhouse Way</CommonName>
+      <LocalityName>Perceton</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170877</StopPointRef>
+      <CommonName>Quarry Road</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170890</StopPointRef>
+      <CommonName>Perceton Roundabout</CommonName>
+      <LocalityName>Perceton</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170922</StopPointRef>
+      <CommonName>Long Drive</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>6170923</StopPointRef>
+      <CommonName>Long Drive</CommonName>
+      <LocalityName>Irvine</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>617094</StopPointRef>
+      <CommonName>Perceton Roundabout</CommonName>
+      <LocalityName>Perceton</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>617095</StopPointRef>
+      <CommonName>Ladyha Court</CommonName>
+      <LocalityName>Girdle Toll</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>617096</StopPointRef>
+      <CommonName>Bowhouse Way</CommonName>
+      <LocalityName>Girdle Toll</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>617097</StopPointRef>
+      <CommonName>West Bowhouse Head</CommonName>
+      <LocalityName>Girdle Toll</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>617098</StopPointRef>
+      <CommonName>West Bowhose Head</CommonName>
+      <LocalityName>Girdle Toll</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+    <AnnotatedStopPointRef>
+      <StopPointRef>617099</StopPointRef>
+      <CommonName>Burns Crescent</CommonName>
+      <LocalityName>Girdle Toll</LocalityName>
+      <LocalityQualifier>Irvine</LocalityQualifier>
+    </AnnotatedStopPointRef>
+  </StopPoints>
+  <RouteSections>
+    <RouteSection id="RS2">
+      <RouteLink id="RL22">
+        <From>
+          <StopPointRef>61701113</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170922</StopPointRef>
+        </To>
+        <Distance>507</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL23">
+        <From>
+          <StopPointRef>6170922</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170118</StopPointRef>
+        </To>
+        <Distance>636</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL24">
+        <From>
+          <StopPointRef>6170118</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170151</StopPointRef>
+        </To>
+        <Distance>771</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL25">
+        <From>
+          <StopPointRef>6170151</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170182</StopPointRef>
+        </To>
+        <Distance>231</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL26">
+        <From>
+          <StopPointRef>6170182</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170180</StopPointRef>
+        </To>
+        <Distance>195</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL27">
+        <From>
+          <StopPointRef>6170180</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170176</StopPointRef>
+        </To>
+        <Distance>295</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL28">
+        <From>
+          <StopPointRef>6170176</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170862</StopPointRef>
+        </To>
+        <Distance>83</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL29">
+        <From>
+          <StopPointRef>6170862</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170194</StopPointRef>
+        </To>
+        <Distance>487</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL30">
+        <From>
+          <StopPointRef>6170194</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170192</StopPointRef>
+        </To>
+        <Distance>232</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL31">
+        <From>
+          <StopPointRef>6170192</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170188</StopPointRef>
+        </To>
+        <Distance>490</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL32">
+        <From>
+          <StopPointRef>6170188</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170191</StopPointRef>
+        </To>
+        <Distance>367</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL33">
+        <From>
+          <StopPointRef>6170191</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170101</StopPointRef>
+        </To>
+        <Distance>527</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL34">
+        <From>
+          <StopPointRef>6170101</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170100</StopPointRef>
+        </To>
+        <Distance>177</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL35">
+        <From>
+          <StopPointRef>6170100</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>61701008</StopPointRef>
+        </To>
+        <Distance>209</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL36">
+        <From>
+          <StopPointRef>61701008</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>617097</StopPointRef>
+        </To>
+        <Distance>292</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL37">
+        <From>
+          <StopPointRef>617097</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>617095</StopPointRef>
+        </To>
+        <Distance>357</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL38">
+        <From>
+          <StopPointRef>617095</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170864</StopPointRef>
+        </To>
+        <Distance>188</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL39">
+        <From>
+          <StopPointRef>6170864</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170890</StopPointRef>
+        </To>
+        <Distance>157</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL40">
+        <From>
+          <StopPointRef>6170890</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170704</StopPointRef>
+        </To>
+        <Distance>204</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL41">
+        <From>
+          <StopPointRef>6170704</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170840</StopPointRef>
+        </To>
+        <Distance>242</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL42">
+        <From>
+          <StopPointRef>6170840</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170702</StopPointRef>
+        </To>
+        <Distance>355</Distance>
+        <Direction>inbound</Direction>
+      </RouteLink>
+    </RouteSection>
+    <RouteSection id="RS1">
+      <RouteLink id="RL1">
+        <From>
+          <StopPointRef>6170702</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170701</StopPointRef>
+        </To>
+        <Distance>159</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL2">
+        <From>
+          <StopPointRef>6170701</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170703</StopPointRef>
+        </To>
+        <Distance>106</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL3">
+        <From>
+          <StopPointRef>6170703</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>617094</StopPointRef>
+        </To>
+        <Distance>326</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL4">
+        <From>
+          <StopPointRef>617094</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170863</StopPointRef>
+        </To>
+        <Distance>172</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL5">
+        <From>
+          <StopPointRef>6170863</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>617096</StopPointRef>
+        </To>
+        <Distance>254</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL6">
+        <From>
+          <StopPointRef>617096</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>617098</StopPointRef>
+        </To>
+        <Distance>282</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL7">
+        <From>
+          <StopPointRef>617098</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170581</StopPointRef>
+        </To>
+        <Distance>270</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL8">
+        <From>
+          <StopPointRef>6170581</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>617099</StopPointRef>
+        </To>
+        <Distance>208</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL9">
+        <From>
+          <StopPointRef>617099</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170102</StopPointRef>
+        </To>
+        <Distance>202</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL10">
+        <From>
+          <StopPointRef>6170102</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170190</StopPointRef>
+        </To>
+        <Distance>603</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL11">
+        <From>
+          <StopPointRef>6170190</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170189</StopPointRef>
+        </To>
+        <Distance>355</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL12">
+        <From>
+          <StopPointRef>6170189</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170193</StopPointRef>
+        </To>
+        <Distance>483</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL13">
+        <From>
+          <StopPointRef>6170193</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170195</StopPointRef>
+        </To>
+        <Distance>264</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL14">
+        <From>
+          <StopPointRef>6170195</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170877</StopPointRef>
+        </To>
+        <Distance>733</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL15">
+        <From>
+          <StopPointRef>6170877</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170178</StopPointRef>
+        </To>
+        <Distance>381</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL16">
+        <From>
+          <StopPointRef>6170178</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170181</StopPointRef>
+        </To>
+        <Distance>79</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL17">
+        <From>
+          <StopPointRef>6170181</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170183</StopPointRef>
+        </To>
+        <Distance>443</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL18">
+        <From>
+          <StopPointRef>6170183</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170152</StopPointRef>
+        </To>
+        <Distance>318</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL19">
+        <From>
+          <StopPointRef>6170152</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170119</StopPointRef>
+        </To>
+        <Distance>646</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL20">
+        <From>
+          <StopPointRef>6170119</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>6170923</StopPointRef>
+        </To>
+        <Distance>691</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+      <RouteLink id="RL21">
+        <From>
+          <StopPointRef>6170923</StopPointRef>
+        </From>
+        <To>
+          <StopPointRef>61701113</StopPointRef>
+        </To>
+        <Distance>492</Distance>
+        <Direction>outbound</Direction>
+      </RouteLink>
+    </RouteSection>
+  </RouteSections>
+  <Routes>
+    <Route id="RT131">
+      <PrivateCode>30_30A-131</PrivateCode>
+      <Description>Dreghorn Greenwood Academy - Perceton Strathmore Park</Description>
+      <RouteSectionRef>RS2</RouteSectionRef>
+    </Route>
+    <Route id="RT130">
+      <PrivateCode>30_30A-130</PrivateCode>
+      <Description>Perceton Strathmore Park - Dreghorn Greenwood Academy</Description>
+      <RouteSectionRef>RS1</RouteSectionRef>
+    </Route>
+  </Routes>
+  <JourneyPatternSections>
+    <JourneyPatternSection id="JPS222">
+      <JourneyPatternTimingLink id="JPTL1">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>61701113</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170922</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL22</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL2">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170922</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170118</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL23</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL3">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170118</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170151</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL24</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL4">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170151</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170182</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL25</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL5">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170182</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170180</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL26</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL6">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170180</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170176</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL27</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL7">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170176</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170862</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL28</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL8">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170862</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170194</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL29</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL9">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170194</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170192</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL30</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL10">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170192</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170188</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL31</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL11">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170188</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170191</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL32</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL12">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170191</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170101</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL33</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL13">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170101</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170100</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL34</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL14">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170100</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>61701008</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL35</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL15">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>61701008</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>617097</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL36</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL16">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>617097</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>617095</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL37</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL17">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>617095</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170864</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL38</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL18">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170864</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170890</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL39</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL19">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170890</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170704</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL40</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL20">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170704</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170840</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL41</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL21">
+        <From>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170840</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Perceton</DynamicDestinationDisplay>
+          <StopPointRef>6170702</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL42</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+    <JourneyPatternSection id="JPS224">
+      <JourneyPatternTimingLink id="JPTL41">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170702</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170701</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL1</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL42">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170701</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170703</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL2</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL43">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170703</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>617094</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL3</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL44">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>617094</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170863</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL4</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL45">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170863</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>617096</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL5</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL46">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>617096</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>617098</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL6</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL47">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>617098</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170581</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL7</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL48">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170581</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>617099</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL8</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL49">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>617099</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170102</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL9</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL50">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170102</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170190</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL10</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL51">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170190</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170189</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL11</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL52">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170189</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170193</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL12</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL53">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170193</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170195</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL13</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL54">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170195</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170877</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL14</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL55">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170877</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170178</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL15</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL56">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170178</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170181</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL16</RouteLinkRef>
+        <RunTime>PT0M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL57">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170181</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170183</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL17</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL58">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170183</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170152</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL18</RouteLinkRef>
+        <RunTime>PT1M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL59">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170152</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170119</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL19</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL60">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170119</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170923</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL20</RouteLinkRef>
+        <RunTime>PT3M0S</RunTime>
+      </JourneyPatternTimingLink>
+      <JourneyPatternTimingLink id="JPTL61">
+        <From>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>6170923</StopPointRef>
+          <TimingStatus>TIP</TimingStatus>
+        </From>
+        <To>
+          <DynamicDestinationDisplay>Greenwood Academy</DynamicDestinationDisplay>
+          <StopPointRef>61701113</StopPointRef>
+          <TimingStatus>PTP</TimingStatus>
+        </To>
+        <RouteLinkRef>RL21</RouteLinkRef>
+        <RunTime>PT2M0S</RunTime>
+      </JourneyPatternTimingLink>
+    </JourneyPatternSection>
+  </JourneyPatternSections>
+  <Operators>
+    <Operator id="1">
+      <NationalOperatorCode>STWS</NationalOperatorCode>
+      <OperatorCode>STWS</OperatorCode>
+      <OperatorShortName>Stagecoach</OperatorShortName>
+      <OperatorNameOnLicence>Western Buses Ltd</OperatorNameOnLicence>
+      <TradingName>Stagecoach West Scotland</TradingName>
+      <LicenceNumber>PM0000008</LicenceNumber>
+      <LicenceClassification>standardNational</LicenceClassification>
+    </Operator>
+  </Operators>
+  <Services>
+    <Service>
+      <ServiceCode>S_SC_STWS_30A_1</ServiceCode>
+      <Lines>
+        <Line id="SL1">
+          <LineName>30A</LineName>
+        </Line>
+      </Lines>
+      <OperatingPeriod>
+        <StartDate>2022-06-23</StartDate>
+      </OperatingPeriod>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <MondayToFriday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <RegisteredOperatorRef>1</RegisteredOperatorRef>
+      <StopRequirements>
+        <NoNewStopsRequired />
+      </StopRequirements>
+      <PublicUse>true</PublicUse>
+      <Description>Montgomery Park, Irvine - Irvine Cross / Greenwood Academy</Description>
+      <StandardService>
+        <Origin>Montgomery Park, Irvine</Origin>
+        <Destination>Irvine Cross / Greenwood Academy</Destination>
+        <JourneyPattern id="JP1">
+          <DestinationDisplay>Perceton Strathmore Park</DestinationDisplay>
+          <Direction>inbound</Direction>
+          <RouteRef>RT131</RouteRef>
+          <JourneyPatternSectionRefs>JPS222</JourneyPatternSectionRefs>
+        </JourneyPattern>
+        <JourneyPattern id="JP2">
+          <DestinationDisplay>Dreghorn Greenwood Academy</DestinationDisplay>
+          <Direction>outbound</Direction>
+          <RouteRef>RT130</RouteRef>
+          <JourneyPatternSectionRefs>JPS224</JourneyPatternSectionRefs>
+        </JourneyPattern>
+      </StandardService>
+    </Service>
+  </Services>
+  <VehicleJourneys>
+    <VehicleJourney SequenceNumber="2077">
+      <PrivateCode>30_30AMT:O:0:1885:pazuqsrws</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>KK_Sch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <SpecialDaysOperation>
+          <DaysOfNonOperation>
+            <DateRange>
+              <StartDate>2024-04-01</StartDate>
+              <EndDate>2024-04-01</EndDate>
+            </DateRange>
+          </DaysOfNonOperation>
+        </SpecialDaysOperation>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ2077</VehicleJourneyCode>
+      <ServiceRef>S_SC_STWS_30A_1</ServiceRef>
+      <LineRef>SL1</LineRef>
+      <JourneyPatternRef>JP1</JourneyPatternRef>
+      <DepartureTime>15:45:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="2081">
+      <PrivateCode>30_30AMTWHF:I:0:1884:r6g1nc5jj</PrivateCode>
+      <Direction>outbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Monday />
+            <Tuesday />
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>KK_Sch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <SpecialDaysOperation>
+          <DaysOfNonOperation>
+            <DateRange>
+              <StartDate>2024-04-01</StartDate>
+              <EndDate>2024-04-01</EndDate>
+            </DateRange>
+          </DaysOfNonOperation>
+        </SpecialDaysOperation>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ2081</VehicleJourneyCode>
+      <ServiceRef>S_SC_STWS_30A_1</ServiceRef>
+      <LineRef>SL1</LineRef>
+      <JourneyPatternRef>JP2</JourneyPatternRef>
+      <DepartureTime>08:15:00</DepartureTime>
+    </VehicleJourney>
+    <VehicleJourney SequenceNumber="2083">
+      <PrivateCode>30_30AWHF:O:0:1886:xrgftg5j5</PrivateCode>
+      <Direction>inbound</Direction>
+      <OperatingProfile>
+        <RegularDayType>
+          <DaysOfWeek>
+            <Wednesday />
+            <Thursday />
+            <Friday />
+          </DaysOfWeek>
+        </RegularDayType>
+        <ServicedOrganisationDayType>
+          <DaysOfOperation>
+            <WorkingDays>
+              <ServicedOrganisationRef>KK_Sch</ServicedOrganisationRef>
+            </WorkingDays>
+          </DaysOfOperation>
+        </ServicedOrganisationDayType>
+        <BankHolidayOperation>
+          <DaysOfOperation>
+            <LateSummerBankHolidayNotScotland />
+          </DaysOfOperation>
+          <DaysOfNonOperation>
+            <ChristmasDay />
+            <BoxingDay />
+            <GoodFriday />
+            <NewYearsDay />
+            <Jan2ndScotland />
+            <MayDay />
+            <EasterMonday />
+            <SpringBank />
+            <AugustBankHolidayScotland />
+            <ChristmasDayHoliday />
+            <BoxingDayHoliday />
+            <NewYearsDayHoliday />
+            <ChristmasEve />
+            <NewYearsEve />
+          </DaysOfNonOperation>
+        </BankHolidayOperation>
+      </OperatingProfile>
+      <VehicleJourneyCode>VJ2083</VehicleJourneyCode>
+      <ServiceRef>S_SC_STWS_30A_1</ServiceRef>
+      <LineRef>SL1</LineRef>
+      <JourneyPatternRef>JP1</JourneyPatternRef>
+      <DepartureTime>14:55:00</DepartureTime>
+    </VehicleJourney>
+  </VehicleJourneys>
+</TransXChange>
