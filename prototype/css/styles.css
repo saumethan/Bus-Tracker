@@ -3,6 +3,8 @@
 /* =-=-=-= FONTS =-=-=-= */
 * {
     font-family: "Poppins", sans-serif;
+    scrollbar-color: #888 transparent;
+    scrollbar-width: thin;
 }
 
 .poppins-thin {
@@ -258,6 +260,8 @@ nav #title {
     float: left;
     background-color: lightgray;
     border-radius: 15px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #BackgroundMap{
@@ -368,6 +372,16 @@ footer p {
 
 .busTimeRecord #destination {
     font-size: 20px;
+}
+
+/* Scroll bar */
+::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
 }
 
 /* Responsive layout for phonez */

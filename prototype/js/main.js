@@ -1,13 +1,12 @@
 /**
  * @author Ethan Saum @saumethan272
  * @author Owen Meade @owenrgu
- * @version 1.0
- * @description Bus Tracker
+ * @description All functionality relating to the bus map, including plotting of stops + GPS tracking of buses.
  */
 
 // Constants
-const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
-const BUS_PROXY = `https://europe-west2-legendoj1-portfolio.cloudfunctions.net/busproxy/?apiKey=${TRANSIT_API_KEY}&url=`;
+//const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
+//const BUS_PROXY = `https://europe-west2-legendoj1-portfolio.cloudfunctions.net/busproxy/?apiKey=${TRANSIT_API_KEY}&url=`;
 const LIVE_TIMES_URL = "https://apim-public-trs.trapezegroupazure.co.uk/trs/lts/lts/v1/public/departures";
 const LIVE_TIMES_KEY = "3918fe2ad7e84a6c8108b305612a8eb3";
 
@@ -412,6 +411,9 @@ async function fetchStopId(stop) {
 
 // Load the bus times for a specific stop
 async function loadStopTimes(stopId) {
+    // clear old bus times html
+    $("#busData").html("<h3>Loading bus stop times...</h3>");
+
     // make request to transit api
     const response = await $.ajax({
         type: "POST",
@@ -435,55 +437,63 @@ async function loadStopTimes(stopId) {
     if (response && response.status && response.status.success) {
         const departures = response.stopDepartures;
 
-        // group by serviceNumber
-        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
-        const grouped = departures.reduce((acc, bus) => {
-            if (!acc[bus.serviceNumber]) {
-                acc[bus.serviceNumber] = [];
-            }
-            acc[bus.serviceNumber].push(bus);
-            return acc;
-        }, {});
-
-        // sort each group by scheduledDeparture
+        // sort departures by scheduledDeparture
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
-        for (const service in grouped) {
-            grouped[service].sort((a, b) => 
-                new Date(a.scheduledDeparture) - new Date(b.scheduledDeparture)
-            );
-        }
+        departures.sort((a, b) => 
+            new Date(a.scheduledDeparture) - new Date(b.scheduledDeparture)
+        );
 
         // format the bus times into HTML
         let htmlContent = "";
-        for (const service in grouped) {
-            htmlContent += `<div class="service-group">`;
-            
-            grouped[service].forEach(bus => {
-                let departureTime;
-                if (bus.realTimeDeparture) {
-                    departureTime = new Date(bus.realTimeDeparture).toLocaleTimeString();
-                } else {
-                    departureTime = new Date(bus.scheduledDeparture).toLocaleTimeString()
-                }
+        for (let i = 0; i < 20; i++) {
+            // get bus at index
+            const bus = departures[i];
+            if (!bus) break;
 
+            // get departure times
+            let scheduledDeparture = new Date(bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+            let realTimeDeparture = new Date(bus.realTimeDeparture || bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+            
+            // fixes glitch with the API output where some buses appear twice
+            let scheduledDepartureLong = new Date(bus.scheduledDeparture).toLocaleTimeString()
+            if (!scheduledDepartureLong.endsWith("00")) return;
+
+            // get bus status
+            let busStatus = "";
+            let statusColor = "black";
+            if (bus.cancelled) {
+                busStatus = "CANCELLED";
+                statusColor = "red";
+            } else if (scheduledDeparture === realTimeDeparture) {
+                busStatus = "ON TIME";
+                statusColor = "green";
+            } else {
+                busStatus = "DELAYED";
+                statusColor = "orange";
+            }
+
+            // get destination and shorten where too long
             let destination = bus.destination;
             if (bus.destination.length > 12) {
                 destination = bus.destination.substring(0, 12) + "...";
             }
 
+            // format time string for expected times
+            let timeString = `${scheduledDeparture}`
+            if (scheduledDeparture !== realTimeDeparture) {
+                timeString += ` (Exp: ${realTimeDeparture})`
+            }
+
+            // add to html
             htmlContent += `
                 <div class="busTimeRecord">
-                    <h2>${service} <span id="destination">to ${destination}</span></h2>
-                    <p id="times">${new Date(bus.scheduledDeparture).toLocaleTimeString()} (Exp: ${new Date(bus.realTimeDeparture || departureTime).toLocaleTimeString()})<br><span>CANCELLED</span></p>
+                    <h2>${bus.serviceNumber} <span id="destination">to ${destination}</span></h2>
+                    <p id="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
                 </div>
             `;
-        
-            });
-
-            htmlContent += '</div>';
         }
 
-        // Append to DOM
+        // append html to DOM
         $("#busData").html(htmlContent);
     }
 }
