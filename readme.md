@@ -23,5 +23,5 @@ This is a markdown file, generally the readme.md file in a repository tells any 
 
 # Easter Eggs
 
-1. On the map page click on the user icon then click Buses (Doesn't work on mobile)
+1. On the map page click on the user icon then click Buses 
 2. On any page Click on the footer text
