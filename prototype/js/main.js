@@ -457,9 +457,11 @@ async function loadStopTimes(stopId) {
             let realTimeDeparture = new Date(bus.realTimeDeparture || bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
             
             // fixes glitch with the API output where some buses appear twice
-            let scheduledDepartureLong = new Date(bus.scheduledDeparture).toLocaleTimeString()
-            if (!scheduledDepartureLong.endsWith("00")) continue;
-
+            if (bus.operator.operatorName.includes("Stagecoach")) {
+                let scheduledDepartureLong = new Date(bus.scheduledDeparture).toLocaleTimeString()
+                if (!scheduledDepartureLong.endsWith("00")) continue;
+            }
+            
             // get bus status
             let busStatus = "ON TIME";
             let statusColor = "green";
