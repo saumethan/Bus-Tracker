@@ -386,9 +386,14 @@ footer p {
 
 /* Responsive layout for phonez */
 @media (max-width: 992px) {
+    body {
+        overflow: hidden;
+    }
+
     main {
         padding: 0;
     }
+    
     #busData, #map {
         width: 100%;         
         float: none;
@@ -415,6 +420,12 @@ footer p {
     nav img {
         width: 50px;
         height: 50px;
+    }
+
+    footer {
+        visibility: hidden;
+        display: none;
+        height: 0;
     }
 
 }

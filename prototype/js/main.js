@@ -272,6 +272,7 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
 }
 
 function drawBus(busData, map) {
+    let htmlContent = "";
     // Remove existing bus markers
     if (map.busMarkers) {
         map.busMarkers.forEach(marker => {
@@ -318,17 +319,21 @@ function drawBus(busData, map) {
             // Make clicked bus's tooltip permanent
             circle.bindTooltip(toolTipContent, { permanent: true, direction: 'top' }).openTooltip();
 
-            // Update the route and destination info
-            $("#busRoute").text("Route: " + coord.route);
-            $("#busDestination").text("Destination: " + coord.destination);
-
             // Update the refresh time
             const now = new Date();
             const formattedTime = now.toLocaleTimeString(); 
-            $("#refreshTime").text("Last updated: " + formattedTime);
 
+            htmlContent += `
+                <div class="busTimeRecord">
+                    <h2 id="busRoute">${coord.route} </h2>
+                    <h4 id="busDestination">${coord.destination}</h4>
+                    <p id="refreshTime">${formattedTime}</p>
+                </div>
+            `;
+            
+            // append html to DOM
+            $("#busData").html(htmlContent);
         });
-
         map.busMarkers.push(circle);
     });
 
