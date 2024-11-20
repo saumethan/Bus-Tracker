@@ -90,13 +90,10 @@ function addHomeButtonToMap(mapInstance) {
             // Refresh viewport to load all buses
             updateViewportBounds();
 
-            // Remove the route and destination info
-            $("#busRoute").text("");
-
-            $("#busDestination").text("");
-
-            // Remove the refresh time
-            $("#refreshTime").text("");
+            
+            
+            // append html to DOM
+            $("#busData").html("");
 
         });
         return buttonDiv;
