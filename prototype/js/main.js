@@ -461,7 +461,7 @@ async function loadStopTimes(stopId) {
             
             // fixes glitch with the API output where some buses appear twice
             let scheduledDepartureLong = new Date(bus.scheduledDeparture).toLocaleTimeString()
-            if (!scheduledDepartureLong.endsWith("00")) return;
+            if (!scheduledDepartureLong.endsWith("00")) continue;
 
             // get bus status
             let busStatus = "";
