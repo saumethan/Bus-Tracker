@@ -459,17 +459,20 @@ async function loadStopTimes(stopId) {
             if (!scheduledDepartureLong.endsWith("00")) continue;
 
             // get bus status
-            let busStatus = "";
-            let statusColor = "black";
+            let busStatus = "ON TIME";
+            let statusColor = "green";
             if (bus.cancelled) {
+                // bus is cancelled
                 busStatus = "CANCELLED";
                 statusColor = "red";
-            } else if (scheduledDeparture === realTimeDeparture) {
-                busStatus = "ON TIME";
-                statusColor = "green";
-            } else {
+            } else if (scheduledDeparture < realTimeDeparture) {
+                // real time is after scheduled time so bus is delayed
                 busStatus = "DELAYED";
                 statusColor = "orange";
+            } else if (!bus.realTimeDeparture) {
+                // bus does not have a real time departure, so we cannot reliably predict that it is on time
+                busStatus = "SCHEDULED";
+                statusColor = "black";
             }
 
             // get destination and shorten where too long
