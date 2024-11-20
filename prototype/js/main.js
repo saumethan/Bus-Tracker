@@ -322,10 +322,8 @@ function drawBus(busData, map) {
 
             htmlContent += `
                 <div class="busTimeRecord">
-                    <h2 id="busRoute">${coord.route} </h2>
-                    <h4 id="busDestination">${coord.destination}</h4>
-                    <p id="refreshTime">${formattedTime}</p>
-                </div>
+                    <h2>${coord.route} <span id="destination">to ${coord.destination}</span></h2>
+                </div
             `;
             
             // append html to DOM
