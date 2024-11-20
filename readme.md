@@ -12,7 +12,6 @@ This is a markdown file, generally the readme.md file in a repository tells any 
 - Add bus route names onto markers
 - when you double click on route route disappears and nothing happens
 - Auto updating user locations
-- when bus is early it shows as delayed not early 
 
 # Contributors
 
