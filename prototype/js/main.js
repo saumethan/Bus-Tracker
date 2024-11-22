@@ -455,6 +455,7 @@ async function loadStopTimes(stopId) {
             let realTimeDeparture = new Date(bus.realTimeDeparture || bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
             
             // fixes glitch with the API output where some buses appear twice
+            if (!bus.operator || !bus.operator.operatorName) continue;
             if (bus.operator.operatorName.includes("Stagecoach")) {
                 let scheduledDepartureLong = new Date(bus.scheduledDeparture).toLocaleTimeString()
                 if (!scheduledDepartureLong.endsWith("00")) continue;
@@ -492,8 +493,8 @@ async function loadStopTimes(stopId) {
             // add to html
             htmlContent += `
                 <div class="busTimeRecord">
-                    <h2>${bus.serviceNumber} <span id="destination">to ${destination}</span></h2>
-                    <p id="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
+                    <h2>${bus.serviceNumber} <span class="destination">to ${destination}</span></h2>
+                    <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
                 </div>
             `;
         }
