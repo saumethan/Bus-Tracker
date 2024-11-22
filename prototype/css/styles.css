@@ -361,12 +361,12 @@ footer p {
     margin: 0;
 }
 
-.busTimeRecord #times {
+.busTimeRecord .times {
     text-align: right;
 }
 
-.busTimeRecord #destination {
-    font-size: 20px;
+.busTimeRecord .destination {
+    font-size: 18px;
 }
 
 /* Scroll bar */
