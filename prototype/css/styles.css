@@ -268,12 +268,22 @@ nav #title {
 #LoginSection{
     width: 60%;
     height: 500px;
-    background-color: gray;
+    background-color: #94b6ff81;
+    border-radius: 20px;
     margin: auto;
+    margin-top: 2%;
 }
 
-#LoginSection h1{
-    padding-left: 40%;
+#LoginSection h1,form{
+    margin-top: 5%;
+    max-width: fit-content;
+    margin-inline:auto ;
+}
+
+#LoginSection input{
+    margin-top: 2%;
+    width: 500px;
+    height: 50px;
 }
 
 .map-button {
