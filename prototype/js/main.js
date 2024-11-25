@@ -23,6 +23,8 @@ let userLocation;
 let userLat;
 let userLng;
 let transitStopIds = {};
+let htmlContent = "";
+let busRouteNotFound = false;
 
 // Initialize the map and set its location
 function createMap() {
@@ -74,6 +76,8 @@ function addHomeButtonToMap(mapInstance) {
             // Reset to show all buses when the button is clicked
             viewAllBuses = true;
 
+            busRouteNotFound = false;
+
             if (route) {
                 map.removeLayer(route);
                 route = null;
@@ -85,7 +89,6 @@ function addHomeButtonToMap(mapInstance) {
                 }
             }
 
-            showUserLocation();
 
             // Refresh viewport to load all buses
             updateViewportBounds();
@@ -169,6 +172,7 @@ function drawRoute(serviceId, tripId) {
         $.getJSON(url, data => {
             // Array for route coordinates
             const routeCoords = [];
+            busRouteNotFound = false;
 
             // Extract coordinates from data
             data.times.forEach(stop => {
@@ -195,9 +199,12 @@ function drawRoute(serviceId, tripId) {
 
             // Adjust the map view to fit the route
             adjustMapViewToRoute(route);
+            
         });
     } else {
         console.log("Invalid tripId provided.");
+
+        busRouteNotFound = true;
     }
 }
 
@@ -222,15 +229,6 @@ function getSpecificBusGPS(nocCode, route) {
         // Filter data for the bus route
         if (route === null) {
             console.log(route);
-
-            htmlContent += `
-                <div class="busTimeRecord">
-                    <h2>Bus route not found</h2>
-                </div
-            `;
-            
-            // append html to DOM
-            $("#busData").html(htmlContent);
 
         }
         const filteredBuses = data.filter(bus => bus.service && bus.service.line_name && bus.service.line_name === route);
@@ -280,7 +278,6 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
 }
 
 function drawBus(busData, map) {
-    let htmlContent = "";
     // Remove existing bus markers
     if (map.busMarkers) {
         map.busMarkers.forEach(marker => {
@@ -331,11 +328,15 @@ function drawBus(busData, map) {
             const now = new Date();
             const formattedTime = now.toLocaleTimeString(); 
 
+            htmlContent="";
             htmlContent += `
                 <div class="busTimeRecord">
                     <h2>${coord.route} <span id="destination">to ${coord.destination}</span></h2>
                 </div
             `;
+            if (busRouteNotFound === true) {
+                htmlContent += `<h2>Bus route not found</h2>`
+            }
             
             // append html to DOM
             $("#busData").html(htmlContent);
@@ -455,7 +456,6 @@ async function loadStopTimes(stopId) {
         );
 
         // format the bus times into HTML
-        let htmlContent = "";
         for (let i = 0; i < 20; i++) {
             // get bus at index
             const bus = departures[i];
@@ -501,6 +501,7 @@ async function loadStopTimes(stopId) {
                 timeString += ` (Exp: ${realTimeDeparture})`
             }
 
+            htmlContent="";
             // add to html
             htmlContent += `
                 <div class="busTimeRecord">
