@@ -4,8 +4,7 @@
 This is a markdown file, generally the readme.md file in a repository tells any users what it is for. 
 
 # To Do
-- Login page
-- Timetables page
+- Timetables page XF
 - Show buses on route when clicked on (noc codes) (put not supported error)
 - Add bus route names onto markers
 - when you double click on route route disappears and nothing happens
