@@ -252,16 +252,19 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
     const url = `https://bustimes.org/vehicles.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
 
     $.getJSON(url, function(data) {
-        // Gets the longitude and latitude
-        const busData = data.map(bus => ({
-            longitude: bus.coordinates[0],
-            latitude: bus.coordinates[1],
-            route: bus.service ? bus.service.line_name : 'Unknown',
-            destination: bus.destination,
-            tripId: bus.trip_id,
-            serviceId: bus.service_id,
-            noc: bus.vehicle.url.split('/')[2].split('-')[0].toUpperCase()
-        }));
+        const busData = [];
+        data.forEach(bus => {
+            if (!bus.service || !bus.service.line_name) return;
+            busData.push({
+                longitude: bus.coordinates[0],
+                latitude: bus.coordinates[1],
+                route: bus.service.line_name,
+                destination: bus.destination,
+                tripId: bus.trip_id,
+                serviceId: bus.service_id,
+                noc: bus.vehicle.url.split("/")[2].split("-")[0].toUpperCase()
+            });
+        })
         drawBus(busData, map);
     }).fail(function() {
         console.error("Error fetching bus data.");
