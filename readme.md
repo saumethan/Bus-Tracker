@@ -5,8 +5,6 @@ This is a markdown file, generally the readme.md file in a repository tells any 
 
 # To Do
 - Login page
-- Settings page (dark mode)
-- Plan trip page (trip planning api)
 - Timetables page
 - Show buses on route when clicked on (noc codes) (put not supported error)
 - Add bus route names onto markers
