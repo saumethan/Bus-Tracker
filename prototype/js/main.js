@@ -23,6 +23,8 @@ let userLocation;
 let userLat;
 let userLng;
 let transitStopIds = {};
+let htmlContent = "";
+let busRouteNotFound = false;
 
 // Initialize the map and set its location
 function createMap() {
@@ -74,6 +76,8 @@ function addHomeButtonToMap(mapInstance) {
             // Reset to show all buses when the button is clicked
             viewAllBuses = true;
 
+            busRouteNotFound = false;
+
             if (route) {
                 map.removeLayer(route);
                 route = null;
@@ -85,7 +89,6 @@ function addHomeButtonToMap(mapInstance) {
                 }
             }
 
-            showUserLocation();
 
             // Refresh viewport to load all buses
             updateViewportBounds();
@@ -154,12 +157,9 @@ function drawRoute(serviceId, tripId) {
 
             // Ensure we log the first tripId correctly
             if (fetchedData.length > 0) {
-                console.log("tripId = " + fetchedData[0].tripId);
-                busData.tripId = fetchedData[0].tripId; // Set the tripId for future use
+                busData.tripId = fetchedData[0].tripId; 
             }
         });
-    } else {
-        console.log("tripId is already defined: " + busData.tripId);
     }
 
     // Ensure tripId is provided before making the second API call
@@ -169,6 +169,7 @@ function drawRoute(serviceId, tripId) {
         $.getJSON(url, data => {
             // Array for route coordinates
             const routeCoords = [];
+            busRouteNotFound = false;
 
             // Extract coordinates from data
             data.times.forEach(stop => {
@@ -195,9 +196,10 @@ function drawRoute(serviceId, tripId) {
 
             // Adjust the map view to fit the route
             adjustMapViewToRoute(route);
+            
         });
     } else {
-        console.log("Invalid tripId provided.");
+        busRouteNotFound = true;
     }
 }
 
@@ -215,13 +217,10 @@ function adjustMapViewToRoute(routeLayer) {
 
 // Get the bus data for a specific bus route
 function getSpecificBusGPS(nocCode, route) {
-    console.log(nocCode);
     const url = `https://bustimes.org/vehicles.json?operator=${nocCode}`;
 
     $.getJSON(url, data => {
         // Filter data for the bus route
-        console.log(route);
-        console.log("Data received:", data); 
         const filteredBuses = data.filter(bus => bus.service && bus.service.line_name && bus.service.line_name === route);
 
         // get the longitude and latitude
@@ -231,7 +230,6 @@ function getSpecificBusGPS(nocCode, route) {
             route: bus.service.line_name,
             destination: bus.destination
         }));
-        console.log(busData);
         drawBus(busData, map);
     });
 }
@@ -252,16 +250,19 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
     const url = `https://bustimes.org/vehicles.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
 
     $.getJSON(url, function(data) {
-        // Gets the longitude and latitude
-        const busData = data.map(bus => ({
-            longitude: bus.coordinates[0],
-            latitude: bus.coordinates[1],
-            route: bus.service ? bus.service.line_name : 'Unknown',
-            destination: bus.destination,
-            tripId: bus.trip_id,
-            serviceId: bus.service_id,
-            noc: bus.vehicle.url.split('/')[2].split('-')[0].toUpperCase()
-        }));
+        const busData = [];
+        data.forEach(bus => {
+            if (!bus.service || !bus.service.line_name) return;
+            busData.push({
+                longitude: bus.coordinates[0],
+                latitude: bus.coordinates[1],
+                route: bus.service.line_name,
+                destination: bus.destination,
+                tripId: bus.trip_id,
+                serviceId: bus.service_id,
+                noc: bus.vehicle.url.split("/")[2].split("-")[0].toUpperCase()
+            });
+        })
         drawBus(busData, map);
     }).fail(function() {
         console.error("Error fetching bus data.");
@@ -269,7 +270,6 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
 }
 
 function drawBus(busData, map) {
-    let htmlContent = "";
     // Remove existing bus markers
     if (map.busMarkers) {
         map.busMarkers.forEach(marker => {
@@ -320,11 +320,15 @@ function drawBus(busData, map) {
             const now = new Date();
             const formattedTime = now.toLocaleTimeString(); 
 
+            htmlContent="";
             htmlContent += `
                 <div class="busTimeRecord">
                     <h2>${coord.route} <span id="destination">to ${coord.destination}</span></h2>
                 </div
             `;
+            if (busRouteNotFound === true) {
+                htmlContent += `<h2>Bus route not found</h2>`
+            }
             
             // append html to DOM
             $("#busData").html(htmlContent);
@@ -397,7 +401,6 @@ async function fetchStopId(stop) {
         // find the stop id that is used in transit app
         if (response && response.stops) {
             response.stops.forEach(thisStop => {
-                console.log(thisStop)
                 if (thisStop.rt_stop_id === stop.bustimes_id) {
                     transitStopIds[stop.bustimes_id] = thisStop.global_stop_id;
                 }
@@ -444,12 +447,11 @@ async function loadStopTimes(stopId) {
                 new Date(a.scheduledDeparture) - new Date(b.scheduledDeparture)
             );
 
-            // format the bus times into HTML
-            let htmlContent = "";
-            for (let i = 0; i < 20; i++) {
-                // get bus at index
-                const bus = departures[i];
-                if (!bus) break;
+        // format the bus times into HTML
+        for (let i = 0; i < 20; i++) {
+            // get bus at index
+            const bus = departures[i];
+            if (!bus) break;
 
                 // get departure times
                 let scheduledDeparture = new Date(bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
@@ -491,14 +493,15 @@ async function loadStopTimes(stopId) {
                     timeString += ` (Exp: ${realTimeDeparture})`
                 }
 
-                // add to html
-                htmlContent += `
-                    <div class="busTimeRecord">
-                        <h2>${bus.serviceNumber} <span class="destination">to ${destination}</span></h2>
-                        <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
-                    </div>
-                `;
-            }
+            htmlContent="";
+            // add to html
+            htmlContent += `
+                <div class="busTimeRecord">
+                    <h2>${bus.serviceNumber} <span class="destination">to ${destination}</span></h2>
+                    <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
+                </div>
+            `;
+        }
 
             // append html to DOM
             $("#busData").html(htmlContent);
@@ -526,7 +529,7 @@ function drawStops(stopsData, map) {
     stopsData.forEach(stop => {
         // create marker
         const circle = L.circle([stop.latitude, stop.longitude], {
-            color: "blue", 
+            color: "#0362fc", 
             fillColor: "#0362fc", 
             fillOpacity: 0.5,
             radius: radius
@@ -558,20 +561,10 @@ function drawStops(stopsData, map) {
             // stop stop tooltip
             map.stopMarkers.forEach(marker => {
                 marker.closeTooltip();
+                marker.setStyle({ fillColor: "#0362fc", color: "#0362fc" });
             });
+            circle.setStyle({ fillColor: "#ff9100", color: "#ff9100" });
             circle.openTooltip();
-
-            // load scheduled buses for this stop
-            // find this stop id from cached data or request api
-            // fetchStopId(stop).then((id) => {
-            //     console.log(id);
-            //     if (id) {
-            //         loadStopTimes(id);
-            //     } else {
-            //         console.log("Could not find any information about this stop.")
-            //     }
-            // });
-
             loadStopTimes(stop.bustimes_id);
         });
 
@@ -642,38 +635,41 @@ function resetInactivityTimeout() {
 function easterEgg() {
     $("#easterEggButton").click(function () {
         const container = $("#easterEggContainer");
-        // remove existing images
-        container.innerHTML = ""; 
-    
+        // Clear the container using jQuery
+        container.empty(); 
+
         // Number of images
         const imageCount = 110;
-    
+
         for (let i = 0; i < imageCount; i++) {
             setTimeout(() => {
-                const img = document.createElement("img");
-                img.src = "images/BusTracker.png"; 
-        
-                // random size, position, and rotation
-                const randomSize = Math.random() * 80 + 100; 
-                const randomX = Math.random() * 100; 
-                const randomY = Math.random() * 100; 
-                const randomRotation = Math.random() * 360; 
-        
-                // styles
-                img.style.width = `${randomSize}px`;
-                img.style.height = `${randomSize}px`;
-                img.style.position = "absolute";
-                img.style.left = `${randomX}vw`;
-                img.style.top = `${randomY}vh`;
-                img.style.transform = `rotate(${randomRotation}deg)`;
-        
-                // Add to container
-                container.appendChild(img);
-            }, i * 100); 
+                const img = $("<img>");  
+                img.attr("src", "images/BusTracker.png");  
+
+                // Random size, position, and rotation
+                const randomSize = Math.random() * 80 + 100;
+                const randomX = Math.random() * 100;
+                const randomY = Math.random() * 100;
+                const randomRotation = Math.random() * 360;
+
+                // Set styles 
+                img.css({
+                    width: `${randomSize}px`,
+                    height: `${randomSize}px`,
+                    position: "absolute",
+                    left: `${randomX}vw`,
+                    top: `${randomY}vh`,
+                    transform: `rotate(${randomRotation}deg)`
+                });
+
+                // Add to the container 
+                container.append(img);
+            }, i * 100);
         }
-        
+
     });
 }
+
 
 
 // Calls the initializeMap function when the HTML has loaded
