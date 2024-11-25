@@ -448,52 +448,52 @@ async function loadStopTimes(stopId) {
             );
 
         // format the bus times into HTML
+        htmlContent="";
         for (let i = 0; i < 20; i++) {
             // get bus at index
             const bus = departures[i];
             if (!bus) break;
 
-                // get departure times
-                let scheduledDeparture = new Date(bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-                let realTimeDeparture = new Date(bus.realTimeDeparture || bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-                
-                // fixes glitch with the API output where some buses appear twice
-                if (!bus.operator || !bus.operator.operatorName) continue;
-                if (bus.operator.operatorName.includes("Stagecoach")) {
-                    let scheduledDepartureLong = new Date(bus.scheduledDeparture).toLocaleTimeString()
-                    if (!scheduledDepartureLong.endsWith("00")) continue;
-                }
-                
-                // get bus status
-                let busStatus = "ON TIME";
-                let statusColor = "green";
-                if (bus.cancelled) {
-                    // bus is cancelled
-                    busStatus = "CANCELLED";
-                    statusColor = "red";
-                } else if (scheduledDeparture < realTimeDeparture) {
-                    // real time is after scheduled time so bus is delayed
-                    busStatus = "DELAYED";
-                    statusColor = "orange";
-                } else if (!bus.realTimeDeparture) {
-                    // bus does not have a real time departure, so we cannot reliably predict that it is on time
-                    busStatus = "SCHEDULED";
-                    statusColor = "black";
-                }
+            // get departure times
+            let scheduledDeparture = new Date(bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+            let realTimeDeparture = new Date(bus.realTimeDeparture || bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+            
+            // fixes glitch with the API output where some buses appear twice
+            if (!bus.operator || !bus.operator.operatorName) continue;
+            if (bus.operator.operatorName.includes("Stagecoach")) {
+                let scheduledDepartureLong = new Date(bus.scheduledDeparture).toLocaleTimeString()
+                if (!scheduledDepartureLong.endsWith("00")) continue;
+            }
+            
+            // get bus status
+            let busStatus = "ON TIME";
+            let statusColor = "green";
+            if (bus.cancelled) {
+                // bus is cancelled
+                busStatus = "CANCELLED";
+                statusColor = "red";
+            } else if (scheduledDeparture < realTimeDeparture) {
+                // real time is after scheduled time so bus is delayed
+                busStatus = "DELAYED";
+                statusColor = "orange";
+            } else if (!bus.realTimeDeparture) {
+                // bus does not have a real time departure, so we cannot reliably predict that it is on time
+                busStatus = "SCHEDULED";
+                statusColor = "black";
+            }
 
-                // get destination and shorten where too long
-                let destination = bus.destination;
-                if (bus.destination.length > 18) {
-                    destination = bus.destination.substring(0, 18) + "...";
-                }
+            // get destination and shorten where too long
+            let destination = bus.destination;
+            if (bus.destination.length > 18) {
+                destination = bus.destination.substring(0, 18) + "...";
+            }
 
-                // format time string for expected times
-                let timeString = `${scheduledDeparture}`
-                if (scheduledDeparture !== realTimeDeparture) {
-                    timeString += ` (Exp: ${realTimeDeparture})`
-                }
+            // format time string for expected times
+            let timeString = `${scheduledDeparture}`
+            if (scheduledDeparture !== realTimeDeparture) {
+                timeString += ` (Exp: ${realTimeDeparture})`
+            }
 
-            htmlContent="";
             // add to html
             htmlContent += `
                 <div class="busTimeRecord">
