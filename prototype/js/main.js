@@ -415,92 +415,100 @@ async function loadStopTimes(stopId) {
     $("#busData").html("<h3>Loading bus stop times...</h3>");
 
     // make request to transit api
-    const response = await $.ajax({
-        type: "POST",
-        url: LIVE_TIMES_URL,
-        contentType: "application/json",
-        data: JSON.stringify({
-            clientTimeZoneOffsetInMS: 0,
-            departureDate: new Date().toISOString(),
-            departureTime: new Date().toISOString(),
-            stopIds: [ stopId ],
-            stopType: "BUS_STOP",
-            requestTime: new Date().toISOString(),
-            departureOrArrival: "DEPARTURE",
-            refresh: false,
-            source: "WEB"
-        }),
-        headers: { "ocp-apim-subscription-key": LIVE_TIMES_KEY }
-    });
+    try {
+        const response = await $.ajax({
+            type: "POST",
+            url: LIVE_TIMES_URL,
+            contentType: "application/json",
+            data: JSON.stringify({
+                clientTimeZoneOffsetInMS: 0,
+                departureDate: new Date().toISOString(),
+                departureTime: new Date().toISOString(),
+                stopIds: [ stopId ],
+                stopType: "BUS_STOP",
+                requestTime: new Date().toISOString(),
+                departureOrArrival: "DEPARTURE",
+                refresh: false,
+                source: "WEB"
+            }),
+            headers: { "ocp-apim-subscription-key": LIVE_TIMES_KEY }
+        });
 
-    // load times
-    if (response && response.status && response.status.success) {
-        const departures = response.stopDepartures;
+        // load times
+        if (response && response.status && response.status.success) {
+            const departures = response.stopDepartures;
 
-        // sort departures by scheduledDeparture
-        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
-        departures.sort((a, b) => 
-            new Date(a.scheduledDeparture) - new Date(b.scheduledDeparture)
-        );
+            // sort departures by scheduledDeparture
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+            departures.sort((a, b) => 
+                new Date(a.scheduledDeparture) - new Date(b.scheduledDeparture)
+            );
 
-        // format the bus times into HTML
-        let htmlContent = "";
-        for (let i = 0; i < 20; i++) {
-            // get bus at index
-            const bus = departures[i];
-            if (!bus) break;
+            // format the bus times into HTML
+            let htmlContent = "";
+            for (let i = 0; i < 20; i++) {
+                // get bus at index
+                const bus = departures[i];
+                if (!bus) break;
 
-            // get departure times
-            let scheduledDeparture = new Date(bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-            let realTimeDeparture = new Date(bus.realTimeDeparture || bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-            
-            // fixes glitch with the API output where some buses appear twice
-            if (!bus.operator || !bus.operator.operatorName) continue;
-            if (bus.operator.operatorName.includes("Stagecoach")) {
-                let scheduledDepartureLong = new Date(bus.scheduledDeparture).toLocaleTimeString()
-                if (!scheduledDepartureLong.endsWith("00")) continue;
+                // get departure times
+                let scheduledDeparture = new Date(bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+                let realTimeDeparture = new Date(bus.realTimeDeparture || bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+                
+                // fixes glitch with the API output where some buses appear twice
+                if (!bus.operator || !bus.operator.operatorName) continue;
+                if (bus.operator.operatorName.includes("Stagecoach")) {
+                    let scheduledDepartureLong = new Date(bus.scheduledDeparture).toLocaleTimeString()
+                    if (!scheduledDepartureLong.endsWith("00")) continue;
+                }
+                
+                // get bus status
+                let busStatus = "ON TIME";
+                let statusColor = "green";
+                if (bus.cancelled) {
+                    // bus is cancelled
+                    busStatus = "CANCELLED";
+                    statusColor = "red";
+                } else if (scheduledDeparture < realTimeDeparture) {
+                    // real time is after scheduled time so bus is delayed
+                    busStatus = "DELAYED";
+                    statusColor = "orange";
+                } else if (!bus.realTimeDeparture) {
+                    // bus does not have a real time departure, so we cannot reliably predict that it is on time
+                    busStatus = "SCHEDULED";
+                    statusColor = "black";
+                }
+
+                // get destination and shorten where too long
+                let destination = bus.destination;
+                if (bus.destination.length > 18) {
+                    destination = bus.destination.substring(0, 18) + "...";
+                }
+
+                // format time string for expected times
+                let timeString = `${scheduledDeparture}`
+                if (scheduledDeparture !== realTimeDeparture) {
+                    timeString += ` (Exp: ${realTimeDeparture})`
+                }
+
+                // add to html
+                htmlContent += `
+                    <div class="busTimeRecord">
+                        <h2>${bus.serviceNumber} <span class="destination">to ${destination}</span></h2>
+                        <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
+                    </div>
+                `;
             }
-            
-            // get bus status
-            let busStatus = "ON TIME";
-            let statusColor = "green";
-            if (bus.cancelled) {
-                // bus is cancelled
-                busStatus = "CANCELLED";
-                statusColor = "red";
-            } else if (scheduledDeparture < realTimeDeparture) {
-                // real time is after scheduled time so bus is delayed
-                busStatus = "DELAYED";
-                statusColor = "orange";
-            } else if (!bus.realTimeDeparture) {
-                // bus does not have a real time departure, so we cannot reliably predict that it is on time
-                busStatus = "SCHEDULED";
-                statusColor = "black";
-            }
 
-            // get destination and shorten where too long
-            let destination = bus.destination;
-            if (bus.destination.length > 12) {
-                destination = bus.destination.substring(0, 12) + "...";
-            }
-
-            // format time string for expected times
-            let timeString = `${scheduledDeparture}`
-            if (scheduledDeparture !== realTimeDeparture) {
-                timeString += ` (Exp: ${realTimeDeparture})`
-            }
-
-            // add to html
-            htmlContent += `
-                <div class="busTimeRecord">
-                    <h2>${bus.serviceNumber} <span class="destination">to ${destination}</span></h2>
-                    <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
-                </div>
-            `;
+            // append html to DOM
+            $("#busData").html(htmlContent);
+        } else {
+            // handle error with API response
+            $("#busData").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
         }
-
-        // append html to DOM
-        $("#busData").html(htmlContent);
+    } catch (err) {
+        // handle error
+        $("#busData").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
     }
 }
 
