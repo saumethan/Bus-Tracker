@@ -157,12 +157,9 @@ function drawRoute(serviceId, tripId) {
 
             // Ensure we log the first tripId correctly
             if (fetchedData.length > 0) {
-                console.log("tripId = " + fetchedData[0].tripId);
-                busData.tripId = fetchedData[0].tripId; // Set the tripId for future use
+                busData.tripId = fetchedData[0].tripId; 
             }
         });
-    } else {
-        console.log("tripId is already defined: " + busData.tripId);
     }
 
     // Ensure tripId is provided before making the second API call
@@ -202,8 +199,6 @@ function drawRoute(serviceId, tripId) {
             
         });
     } else {
-        console.log("Invalid tripId provided.");
-
         busRouteNotFound = true;
     }
 }
@@ -222,15 +217,10 @@ function adjustMapViewToRoute(routeLayer) {
 
 // Get the bus data for a specific bus route
 function getSpecificBusGPS(nocCode, route) {
-    console.log(nocCode);
     const url = `https://bustimes.org/vehicles.json?operator=${nocCode}`;
 
     $.getJSON(url, data => {
         // Filter data for the bus route
-        if (route === null) {
-            console.log(route);
-
-        }
         const filteredBuses = data.filter(bus => bus.service && bus.service.line_name && bus.service.line_name === route);
 
         // get the longitude and latitude
@@ -240,7 +230,6 @@ function getSpecificBusGPS(nocCode, route) {
             route: bus.service.line_name,
             destination: bus.destination
         }));
-        console.log(busData);
         drawBus(busData, map);
     });
 }
@@ -412,7 +401,6 @@ async function fetchStopId(stop) {
         // find the stop id that is used in transit app
         if (response && response.stops) {
             response.stops.forEach(thisStop => {
-                console.log(thisStop)
                 if (thisStop.rt_stop_id === stop.bustimes_id) {
                     transitStopIds[stop.bustimes_id] = thisStop.global_stop_id;
                 }
