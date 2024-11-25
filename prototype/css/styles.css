@@ -416,6 +416,10 @@ footer p {
     background: #888;
     border-radius: 4px;
 }
+.pdf{
+    width: 100%;
+    height: 1000px;
+}
 
 /* Responsive layout for phonez */
 @media (max-width: 992px) {
@@ -465,5 +469,6 @@ footer p {
         width: 80vw;
         height: 35vh;
     }
+
 }
 

@@ -72,7 +72,7 @@
     <main>
 
         <label for="service">Select Bus company:</label>
-        <select id="service">
+        <select class="form-select form-select-lg mb-3" id="service">
             <option value="https://www.firstbus.co.uk/api/timetables/pdf">First bus</option>
 
         </select>
@@ -80,18 +80,18 @@
 
 
         <label for="area">Select area:</label>
-        <select id="area">
+        <select class="form-select form-select-lg mb-3" id="area">
             <option value="17">Aberdeen</option>
             <option value="18">potter</option>
             <option value="19">Glasgow</option>
 
         </select>
     
-        <label for="route">Enter your bus service number:</label>
-        <input type="text" id="route" placeholder="Enter your bus route number">
+        <label for="route">Bus service number:</label>
+        <input class="form-control form-control-lg" type="text" id="route" placeholder="Enter your bus route number">
 
     
-        <button onclick="generateLink()">Generate Timetable Link</button>
+        <button class="btn btn-primary btn-lg" onclick="generateLink()">Open Timetable</button>
     
 
 

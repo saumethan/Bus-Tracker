@@ -10,6 +10,6 @@ function generateLink() {
 
     var pdfContainer = document.getElementById("pdfContainer");
     pdfContainer.innerHTML = `
-        <iframe src="${finalURL}" title="Bus Timetable PDF"></iframe>
+        <iframe class = "pdf" src="${finalURL}" title="Bus Timetable PDF"></iframe>
     `;
 }
