@@ -529,7 +529,7 @@ function drawStops(stopsData, map) {
     stopsData.forEach(stop => {
         // create marker
         const circle = L.circle([stop.latitude, stop.longitude], {
-            color: "blue", 
+            color: "#0362fc", 
             fillColor: "#0362fc", 
             fillOpacity: 0.5,
             radius: radius
@@ -561,20 +561,10 @@ function drawStops(stopsData, map) {
             // stop stop tooltip
             map.stopMarkers.forEach(marker => {
                 marker.closeTooltip();
+                marker.setStyle({ fillColor: "#0362fc", color: "#0362fc" });
             });
+            circle.setStyle({ fillColor: "#ff9100", color: "#ff9100" });
             circle.openTooltip();
-
-            // load scheduled buses for this stop
-            // find this stop id from cached data or request api
-            // fetchStopId(stop).then((id) => {
-            //     console.log(id);
-            //     if (id) {
-            //         loadStopTimes(id);
-            //     } else {
-            //         console.log("Could not find any information about this stop.")
-            //     }
-            // });
-
             loadStopTimes(stop.bustimes_id);
         });
 
