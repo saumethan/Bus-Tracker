@@ -259,32 +259,54 @@ nav #title {
     overflow-x: hidden;
 }
 
-#BackgroundMap{
-    z-index: -2;
-    width: 100%;
-    height: 800px;
-}
-
 #LoginSection{
     width: 60%;
     height: 500px;
     background-color: #94b6ff81;
     border-radius: 20px;
     margin: auto;
-    margin-top: 2%;
+   
 }
 
 #LoginSection h1,form{
-    margin-top: 5%;
+    
     max-width: fit-content;
     margin-inline:auto ;
 }
-
+#LoginSection form{
+    margin-top: 5%;
+}
 #LoginSection input{
     margin-top: 2%;
     width: 500px;
     height: 50px;
 }
+
+/*Settings CSS*/
+#Settings{
+    width:fit-content ;
+    height: 600px;
+    background-color: #94b6ff81;
+    margin: auto;
+    border-radius: 20px;
+    font-size: 1.5rem;
+}
+#Settings h1, h2{
+    max-width: fit-content;
+    margin-inline: auto;
+}
+#Settings .row {
+    align-items: center;
+    max-width: fit-content;
+    padding-inline: auto;
+}
+#Options,#Selections{
+    padding-top: 5%;
+    width: fit-content;
+    
+}
+
+
 
 .map-button {
     background: #C9C6C2;
