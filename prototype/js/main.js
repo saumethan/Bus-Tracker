@@ -220,8 +220,19 @@ function getSpecificBusGPS(nocCode, route) {
 
     $.getJSON(url, data => {
         // Filter data for the bus route
-        console.log(route);
-        console.log("Data received:", data); 
+        if (route === null) {
+            console.log(route);
+
+            htmlContent += `
+                <div class="busTimeRecord">
+                    <h2>Bus route not found</h2>
+                </div
+            `;
+            
+            // append html to DOM
+            $("#busData").html(htmlContent);
+
+        }
         const filteredBuses = data.filter(bus => bus.service && bus.service.line_name && bus.service.line_name === route);
 
         // get the longitude and latitude
@@ -634,38 +645,41 @@ function resetInactivityTimeout() {
 function easterEgg() {
     $("#easterEggButton").click(function () {
         const container = $("#easterEggContainer");
-        // remove existing images
-        container.innerHTML = ""; 
-    
+        // Clear the container using jQuery
+        container.empty(); 
+
         // Number of images
         const imageCount = 110;
-    
+
         for (let i = 0; i < imageCount; i++) {
             setTimeout(() => {
-                const img = document.createElement("img");
-                img.src = "images/BusTracker.png"; 
-        
-                // random size, position, and rotation
-                const randomSize = Math.random() * 80 + 100; 
-                const randomX = Math.random() * 100; 
-                const randomY = Math.random() * 100; 
-                const randomRotation = Math.random() * 360; 
-        
-                // styles
-                img.style.width = `${randomSize}px`;
-                img.style.height = `${randomSize}px`;
-                img.style.position = "absolute";
-                img.style.left = `${randomX}vw`;
-                img.style.top = `${randomY}vh`;
-                img.style.transform = `rotate(${randomRotation}deg)`;
-        
-                // Add to container
-                container.appendChild(img);
-            }, i * 100); 
+                const img = $("<img>");  
+                img.attr("src", "images/BusTracker.png");  
+
+                // Random size, position, and rotation
+                const randomSize = Math.random() * 80 + 100;
+                const randomX = Math.random() * 100;
+                const randomY = Math.random() * 100;
+                const randomRotation = Math.random() * 360;
+
+                // Set styles 
+                img.css({
+                    width: `${randomSize}px`,
+                    height: `${randomSize}px`,
+                    position: "absolute",
+                    left: `${randomX}vw`,
+                    top: `${randomY}vh`,
+                    transform: `rotate(${randomRotation}deg)`
+                });
+
+                // Add to the container 
+                container.append(img);
+            }, i * 100);
         }
-        
+
     });
 }
+
 
 
 // Calls the initializeMap function when the HTML has loaded
