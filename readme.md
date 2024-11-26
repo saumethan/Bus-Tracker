@@ -9,6 +9,8 @@ This is a markdown file, generally the readme.md file in a repository tells any 
 - Add bus route names onto markers
 - when you double click on route route disappears and nothing happens
 - Auto updating user locations
+- mobile resizable div https://codepen.io/richa_dixit/pen/RwQRPyE
+- search bar
 
 # Contributors
 
