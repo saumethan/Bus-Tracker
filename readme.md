@@ -11,6 +11,9 @@ This is a markdown file, generally the readme.md file in a repository tells any 
 - Auto updating user locations
 - mobile resizable div https://codepen.io/richa_dixit/pen/RwQRPyE
 - search bar
+- timetables don't work on mobile
+- CSS for timetables 
+- CSS for settings page
 
 # Contributors
 
