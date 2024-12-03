@@ -14,6 +14,8 @@ This is a markdown file, generally the readme.md file in a repository tells any 
 - timetables don't work on mobile
 - CSS for timetables 
 - CSS for settings page
+- Pull website on Codio
+- Comments
 
 # Contributors
 
