@@ -40,7 +40,7 @@ function addRefreshButtonToMap(mapInstance) {
 
     refreshButton.onAdd = function () {
         const buttonDiv = L.DomUtil.create('div', 'map-button');
-        buttonDiv.innerHTML = '<button id="resetButton"><i class="fa-solid fa-arrows-rotate"></i></button>';
+        buttonDiv.innerHTML = '<button id="reset-button"><i class="fa-solid fa-arrows-rotate"></i></button>';
 
         // event listener for the button
         buttonDiv.addEventListener('click', () => {
@@ -69,7 +69,7 @@ function addHomeButtonToMap(mapInstance) {
 
     homeButton.onAdd = function () {
         const buttonDiv = L.DomUtil.create('div', 'map-button');
-        buttonDiv.innerHTML = '<button id="homeButton"><i class="fa-solid fa-house"></i></button>';
+        buttonDiv.innerHTML = '<button id="home-button"><i class="fa-solid fa-house"></i></button>';
 
         // event listener for the button
         buttonDiv.addEventListener('click', () => {
@@ -96,7 +96,7 @@ function addHomeButtonToMap(mapInstance) {
             
             
             // append html to DOM
-            $("#busData").html("");
+            $("#bus-data").html("");
 
         });
         return buttonDiv;
@@ -110,7 +110,7 @@ function addLocationButtonToMap(mapInstance) {
 
     locationButton.onAdd = function () {
         const buttonDiv = L.DomUtil.create('div', 'map-button');
-        buttonDiv.innerHTML = '<button id="locationButton"><i class="fa-solid fa-location-crosshairs"></i></i></button>';
+        buttonDiv.innerHTML = '<button id="location-button"><i class="fa-solid fa-location-crosshairs"></i></i></button>';
 
         // event listener for the button
         buttonDiv.addEventListener('click', () => {
@@ -322,7 +322,7 @@ function drawBus(busData, map) {
 
             htmlContent="";
             htmlContent += `
-                <div class="busTimeRecord">
+                <div class="bus-time-record">
                     <h2>${coord.route} <span id="destination">to ${coord.destination}</span></h2>
                 </div
             `;
@@ -331,7 +331,7 @@ function drawBus(busData, map) {
             }
             
             // append html to DOM
-            $("#busData").html(htmlContent);
+            $("#bus-data").html(htmlContent);
         });
         map.busMarkers.push(circle);
     });
@@ -415,7 +415,7 @@ async function fetchStopId(stop) {
 // Load the bus times for a specific stop
 async function loadStopTimes(stopId) {
     // clear old bus times html
-    $("#busData").html("<h3>Loading bus stop times...</h3>");
+    $("#bus-data").html("<h3>Loading bus stop times...</h3>");
 
     // make request to transit api
     try {
@@ -496,7 +496,7 @@ async function loadStopTimes(stopId) {
 
             // add to html
             htmlContent += `
-                <div class="busTimeRecord">
+                <div class="bus-time-record">
                     <h2>${bus.serviceNumber} <span class="destination">to ${destination}</span></h2>
                     <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
                 </div>
@@ -504,14 +504,14 @@ async function loadStopTimes(stopId) {
         }
 
             // append html to DOM
-            $("#busData").html(htmlContent);
+            $("#bus-data").html(htmlContent);
         } else {
             // handle error with API response
-            $("#busData").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
+            $("#bus-data").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
         }
     } catch (err) {
         // handle error
-        $("#busData").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
+        $("#bus-data").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
     }
 }
 
