@@ -4,16 +4,14 @@
 This is a markdown file, generally the readme.md file in a repository tells any users what it is for. 
 
 # To Do
-- when you double click on route route disappears and nothing happens
-- timetables don't work on mobile
 - CSS for timetables 
-- CSS for settings page
-- Pull website on Codio
 - Comments
+- Pull website on Codio
 
 - Auto updating user locations
 - Add bus route names onto markers
 - search bar
+- when you double click on route route disappears and nothing happens
 - mobile resizable div https://codepen.io/richa_dixit/pen/RwQRPyE
 
 # Contributors
