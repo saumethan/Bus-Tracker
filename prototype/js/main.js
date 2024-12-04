@@ -283,7 +283,7 @@ function drawBus(busData, map) {
     busData.forEach(coord => { 
         const icon = L.icon({
             iconUrl: "./images/BusTracker.png", 
-            iconSize: [50, 25],  
+            iconSize: [44.5, 25],  
         });
     
         const circle = L.marker([coord.latitude, coord.longitude], {icon: icon}).addTo(map);
@@ -560,7 +560,7 @@ function drawStops(stopsData, map) {
             // stop stop tooltip
             map.stopMarkers.forEach(marker => {
                 marker.closeTooltip();
-                marker.setStyle({ fillColor: "#0362fc", color: "#0362fc" });
+                marker.setStyle({ fillColor: "red", color: "red" });
             });
             circle.setStyle({ fillColor: "#ff9100", color: "#ff9100" });
             circle.openTooltip();
