@@ -59,11 +59,3 @@ Explore some "extra features" in our website 😜
 - Click on your user profile ---> buses (only shows on the Map page)
 - Click the footer text to access our secret page
 
-
-## To Do
-
-Things we need to do...
-
-- CSS for timetables 
-- Comments
-- Pull website on Codio
