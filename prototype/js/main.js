@@ -33,16 +33,16 @@ function createMap() {
     return mapInstance;
 }
 
-// Function to add refresh button to the map
+// ------------------ Function to add refresh button to the map ------------------
 function addRefreshButtonToMap(mapInstance) {
-    // refresh buses 
+    // Refresh buses 
     const refreshButton = L.control({ position: 'topright' });
 
     refreshButton.onAdd = function () {
         const buttonDiv = L.DomUtil.create('div', 'map-button');
-        buttonDiv.innerHTML = '<button id="resetButton"><i class="fa-solid fa-arrows-rotate"></i></button>';
+        buttonDiv.innerHTML = '<button id="reset-button"><i class="fa-solid fa-arrows-rotate"></i></button>';
 
-        // event listener for the button
+        // Event listener for the button
         buttonDiv.addEventListener('click', () => {
 
             // Refresh viewport to load all buses
@@ -60,18 +60,20 @@ function addRefreshButtonToMap(mapInstance) {
         return buttonDiv;
     };
 
+    // Add to map
     refreshButton.addTo(mapInstance);
 }
-// Function to add home button to the map
+
+// ------------------ Function to add home button to the map ------------------
 function addHomeButtonToMap(mapInstance) {
     // Home button 
     const homeButton = L.control({ position: 'topleft' });
 
     homeButton.onAdd = function () {
         const buttonDiv = L.DomUtil.create('div', 'map-button');
-        buttonDiv.innerHTML = '<button id="homeButton"><i class="fa-solid fa-house"></i></button>';
+        buttonDiv.innerHTML = '<button id="home-button"><i class="fa-solid fa-house"></i></button>';
 
-        // event listener for the button
+        // Event listener for the button
         buttonDiv.addEventListener('click', () => {
             // Reset to show all buses when the button is clicked
             viewAllBuses = true;
@@ -89,30 +91,30 @@ function addHomeButtonToMap(mapInstance) {
                 }
             }
 
-
             // Refresh viewport to load all buses
             updateViewportBounds();
-
-            
-            
+    
             // append html to DOM
-            $("#busData").html("");
+            $("#bus-data").html("");
 
         });
         return buttonDiv;
     };
+
+    // Add to map
     homeButton.addTo(mapInstance);
 }
-// Function to add location button to the map
+
+// ------------------ Function to add location button to the map ------------------
 function addLocationButtonToMap(mapInstance) {
     // Location button 
     const locationButton = L.control({ position: 'topright' });
 
     locationButton.onAdd = function () {
         const buttonDiv = L.DomUtil.create('div', 'map-button');
-        buttonDiv.innerHTML = '<button id="locationButton"><i class="fa-solid fa-location-crosshairs"></i></i></button>';
+        buttonDiv.innerHTML = '<button id="location-button"><i class="fa-solid fa-location-crosshairs"></i></i></button>';
 
-        // event listener for the button
+        // Event listener for the button
         buttonDiv.addEventListener('click', () => {
 
             showUserLocation();
@@ -130,10 +132,12 @@ function addLocationButtonToMap(mapInstance) {
         });
         return buttonDiv;
     };
+
+    // Add to map
     locationButton.addTo(mapInstance);
 }
 
-// Layer to style the map
+// ------------------ Function to layer to style the map ------------------
 function addTileLayer(mapInstance) {
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         maxZoom: 18,
@@ -141,8 +145,9 @@ function addTileLayer(mapInstance) {
     }).addTo(mapInstance);
 }
 
+// ------------------ Function to draw the bus route ------------------
 function drawRoute(serviceId, tripId) {
-    // Initialize the busData object if it doesn't exist
+    // Initialise the busData object if it doesn't exist
     if (typeof busData === 'undefined') {
         busData = {};
     }
@@ -203,19 +208,19 @@ function drawRoute(serviceId, tripId) {
     }
 }
 
-// Helper function to adjust the map view to the newly drawn route
+// ------------------ Helper function to adjust the map view to the newly drawn route ------------------
 function adjustMapViewToRoute(route) {
     if (route) {
         map.fitBounds(route.getBounds());
     }
 }
 
-// Fit the map to the route
+// ------------------ Function to fit the map to the route ------------------
 function adjustMapViewToRoute(routeLayer) {
     map.fitBounds(routeLayer.getBounds());
 }
 
-// Get the bus data for a specific bus route
+// ------------------ Function to get the bus data for a specific bus route ------------------ 
 function getSpecificBusGPS(nocCode, route) {
     const url = `https://bustimes.org/vehicles.json?operator=${nocCode}`;
 
@@ -234,7 +239,7 @@ function getSpecificBusGPS(nocCode, route) {
     });
 }
 
-// Get the bus data for all bus routes in viewport 
+// ------------------ Function to get the bus data for all bus routes in viewport ------------------
 function getAllBusGPS(yMax, xMax, yMin, xMin) {
     // Don't show buses when zoomed far out
     if (currentZoom < 12) {
@@ -263,12 +268,14 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
                 noc: bus.vehicle.url.split("/")[2].split("-")[0].toUpperCase()
             });
         })
+        // Calls draw bus function
         drawBus(busData, map);
     }).fail(function() {
         console.error("Error fetching bus data.");
     });
 }
 
+// ------------------ Function to draw the buses ------------------
 function drawBus(busData, map) {
     // Remove existing bus markers
     if (map.busMarkers) {
@@ -281,13 +288,12 @@ function drawBus(busData, map) {
 
     // Draw each bus marker
     busData.forEach(coord => { 
-
-        const circle = L.circle([coord.latitude, coord.longitude], {
-            color: 'red', 
-            fillColor: '#f03', 
-            fillOpacity: 0.5,
-            radius: radius
-        }).addTo(map);
+        const icon = L.icon({
+            iconUrl: "./images/BusTracker.png", 
+            iconSize: [44.5, 25],  
+        });
+    
+        const circle = L.marker([coord.latitude, coord.longitude], {icon: icon}).addTo(map);
 
         const toolTipContent = ` 
             <div>
@@ -322,7 +328,7 @@ function drawBus(busData, map) {
 
             htmlContent="";
             htmlContent += `
-                <div class="busTimeRecord">
+                <div class="bus-time-record">
                     <h2>${coord.route} <span id="destination">to ${coord.destination}</span></h2>
                 </div
             `;
@@ -331,7 +337,7 @@ function drawBus(busData, map) {
             }
             
             // append html to DOM
-            $("#busData").html(htmlContent);
+            $("#bus-data").html(htmlContent);
         });
         map.busMarkers.push(circle);
     });
@@ -345,7 +351,7 @@ function drawBus(busData, map) {
     });
 }
 
-// Function to update map with specific bus route
+// ------------------ Function to update map with specific bus route ------------------
 function refreshSpecificBusRoute(serviceId, busId) { 
     if (map.busMarkers) {
         map.busMarkers.forEach(marker => map.removeLayer(marker));
@@ -359,7 +365,7 @@ function refreshSpecificBusRoute(serviceId, busId) {
     getSpecificBusGPS(nocCode, gpsRoute);
 }
 
-// Get the stops in the viewport
+// ------------------ Function to draw the stops in the viewport ------------------
 function drawStopsInViewport(yMax, xMax, yMin, xMin) {
     // don't show stops when zoomed far out
     if (currentZoom < 15) {
@@ -371,7 +377,7 @@ function drawStopsInViewport(yMax, xMax, yMin, xMin) {
         return;
     }
 
-    // get nearby stops
+    // Get nearby stops
     const url = `https://bustimes.org/stops.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
     $.getJSON(url, function(data) {
         // parse the stop data into a better format
@@ -388,7 +394,7 @@ function drawStopsInViewport(yMax, xMax, yMin, xMin) {
     });
 }
 
-// Fetch stop ID from API or cached data
+// ------------------ Function to fetch stop ID from API or cached data ------------------
 async function fetchStopId(stop) {
     if (!transitStopIds[stop.bustimes_id]) {
         const response = await $.ajax({
@@ -398,7 +404,7 @@ async function fetchStopId(stop) {
             headers: { "apiKey": TRANSIT_API_KEY },
         });
 
-        // find the stop id that is used in transit app
+        // Find the stop id that is used in transit app
         if (response && response.stops) {
             response.stops.forEach(thisStop => {
                 if (thisStop.rt_stop_id === stop.bustimes_id) {
@@ -408,16 +414,16 @@ async function fetchStopId(stop) {
         }
     }
 
-    // return the fetched stop id
+    // Return the fetched stop id
     return transitStopIds[stop.bustimes_id];
 }
 
-// Load the bus times for a specific stop
+// ------------------ Function to load the bus times for a specific stop ------------------ 
 async function loadStopTimes(stopId) {
     // clear old bus times html
-    $("#busData").html("<h3>Loading bus stop times...</h3>");
+    $("#bus-data").html("<h3>Loading bus stop times...</h3>");
 
-    // make request to transit api
+    // Make request to api
     try {
         const response = await $.ajax({
             type: "POST",
@@ -437,85 +443,85 @@ async function loadStopTimes(stopId) {
             headers: { "ocp-apim-subscription-key": LIVE_TIMES_KEY }
         });
 
-        // load times
+        // Load times
         if (response && response.status && response.status.success) {
             const departures = response.stopDepartures;
 
-            // sort departures by scheduledDeparture
+            // Sort departures by scheduled departure
             // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
             departures.sort((a, b) => 
                 new Date(a.scheduledDeparture) - new Date(b.scheduledDeparture)
             );
 
-        // format the bus times into HTML
-        htmlContent="";
-        for (let i = 0; i < 20; i++) {
-            // get bus at index
-            const bus = departures[i];
-            if (!bus) break;
+            // Format the bus times into HTML
+            htmlContent="";
+            for (let i = 0; i < 20; i++) {
+                // get bus at index
+                const bus = departures[i];
+                if (!bus) break;
 
-            // get departure times
-            let scheduledDeparture = new Date(bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-            let realTimeDeparture = new Date(bus.realTimeDeparture || bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-            
-            // fixes glitch with the API output where some buses appear twice
-            if (!bus.operator || !bus.operator.operatorName) continue;
-            if (bus.operator.operatorName.includes("Stagecoach")) {
-                let scheduledDepartureLong = new Date(bus.scheduledDeparture).toLocaleTimeString()
-                if (!scheduledDepartureLong.endsWith("00")) continue;
+                // Get departure times
+                let scheduledDeparture = new Date(bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+                let realTimeDeparture = new Date(bus.realTimeDeparture || bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+                
+                // fixes glitch with the API output where some buses appear twice
+                if (!bus.operator || !bus.operator.operatorName) continue;
+                if (bus.operator.operatorName.includes("Stagecoach")) {
+                    let scheduledDepartureLong = new Date(bus.scheduledDeparture).toLocaleTimeString()
+                    if (!scheduledDepartureLong.endsWith("00")) continue;
+                }
+                
+                // Get bus status
+                let busStatus = "ON TIME";
+                let statusColor = "green";
+                if (bus.cancelled) {
+                    // Bus is cancelled
+                    busStatus = "CANCELLED";
+                    statusColor = "red";
+                } else if (scheduledDeparture < realTimeDeparture) {
+                    // Real time is after scheduled time so bus is delayed
+                    busStatus = "DELAYED";
+                    statusColor = "orange";
+                } else if (!bus.realTimeDeparture) {
+                    // Bus does not have a real time departure, so we cannot reliably predict that it is on time
+                    busStatus = "SCHEDULED";
+                    statusColor = "black";
+                }
+
+                // Get destination and shorten where too long
+                let destination = bus.destination;
+                if (bus.destination.length > 18) {
+                    destination = bus.destination.substring(0, 18) + "...";
+                }
+
+                // Format time string for expected times
+                let timeString = `${scheduledDeparture}`
+                if (scheduledDeparture !== realTimeDeparture) {
+                    timeString += ` (Exp: ${realTimeDeparture})`
+                }
+
+                // Add to html
+                htmlContent += `
+                    <div class="bus-time-record">
+                        <h2>${bus.serviceNumber} <span class="destination">to ${destination}</span></h2>
+                        <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
+                    </div>
+                `;
             }
-            
-            // get bus status
-            let busStatus = "ON TIME";
-            let statusColor = "green";
-            if (bus.cancelled) {
-                // bus is cancelled
-                busStatus = "CANCELLED";
-                statusColor = "red";
-            } else if (scheduledDeparture < realTimeDeparture) {
-                // real time is after scheduled time so bus is delayed
-                busStatus = "DELAYED";
-                statusColor = "orange";
-            } else if (!bus.realTimeDeparture) {
-                // bus does not have a real time departure, so we cannot reliably predict that it is on time
-                busStatus = "SCHEDULED";
-                statusColor = "black";
-            }
 
-            // get destination and shorten where too long
-            let destination = bus.destination;
-            if (bus.destination.length > 18) {
-                destination = bus.destination.substring(0, 18) + "...";
-            }
-
-            // format time string for expected times
-            let timeString = `${scheduledDeparture}`
-            if (scheduledDeparture !== realTimeDeparture) {
-                timeString += ` (Exp: ${realTimeDeparture})`
-            }
-
-            // add to html
-            htmlContent += `
-                <div class="busTimeRecord">
-                    <h2>${bus.serviceNumber} <span class="destination">to ${destination}</span></h2>
-                    <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
-                </div>
-            `;
-        }
-
-            // append html to DOM
-            $("#busData").html(htmlContent);
+            // Append html to DOM
+            $("#bus-data").html(htmlContent);
         } else {
-            // handle error with API response
-            $("#busData").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
+            // Handle error with API response
+            $("#bus-data").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
         }
     } catch (err) {
         // handle error
-        $("#busData").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
+        $("#bus-data").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
     }
 }
 
-// Draw stops on the map
+// ------------------ Function to draw stops on the map ------------------
 function drawStops(stopsData, map) {
     // remove existing stop markers
     if (map.stopMarkers) {
@@ -524,18 +530,18 @@ function drawStops(stopsData, map) {
         });
     }
 
-    // plot a circle for each bus stop
+    // Plot a circle for each bus stop
     map.stopMarkers = [];
     stopsData.forEach(stop => {
         // create marker
         const circle = L.circle([stop.latitude, stop.longitude], {
-            color: "#0362fc", 
-            fillColor: "#0362fc", 
+            color: "red", 
+            fillColor: "red", 
             fillOpacity: 0.5,
             radius: radius
         }).addTo(map);
 
-        // get services for this stop as a string
+        // Get services for this stop as a string
         let stopServicesString = "";
         stop.services.forEach(serviceName => {
             stopServicesString += serviceName + ", ";
@@ -547,7 +553,7 @@ function drawStops(stopsData, map) {
             stopServicesString = stopServicesString.substring(0, stopServicesString.length-2);
         }
 
-        // bind tooltip
+        // Bind tooltip
         const toolTipContent = `
             <div>
                 <strong>Stop: ${stop.name}</strong><br>
@@ -556,12 +562,12 @@ function drawStops(stopsData, map) {
         `;
         circle.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
 
-        // makes the tooltip permanent when clicked on
+        // Makes the tooltip permanent when clicked on
         circle.on("click", (event) => {
-            // stop stop tooltip
+            // Stop stop tooltip
             map.stopMarkers.forEach(marker => {
                 marker.closeTooltip();
-                marker.setStyle({ fillColor: "#0362fc", color: "#0362fc" });
+                marker.setStyle({ fillColor: "red", color: "red" });
             });
             circle.setStyle({ fillColor: "#ff9100", color: "#ff9100" });
             circle.openTooltip();
@@ -572,6 +578,7 @@ function drawStops(stopsData, map) {
     });
 }
 
+// ------------------ Function to update the map viewport ------------------
 function updateViewportBounds() {
     // Gets the current bounds of the map
     let bounds = map.getBounds();
@@ -592,6 +599,7 @@ function updateViewportBounds() {
     drawStopsInViewport(maxY, maxX, minY, minX);
 }
 
+// ------------------ Function to show the users location ------------------
 function showUserLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -616,14 +624,12 @@ function showUserLocation() {
             }, 
         error => {
             console.error("Geolocation error:", error);
-            alert("Unable to retrieve your location. (error 1)"); // error 1
             map.setView([userLat, userLng]);
         });
-    } else {
-        alert("Unable to retrieve your location. (error 2)"); // error 2
-    }
+    } 
 }
 
+// ------------------ Function to reset inactivity timeout ------------------
 function resetInactivityTimeout() {
     // Clear the existing timeout
     if (inactivityTimeout) clearTimeout(inactivityTimeout);
@@ -632,6 +638,7 @@ function resetInactivityTimeout() {
     inactivityTimeout = setTimeout(updateViewportBounds, 15000);
 }
 
+// ------------------ Function for easteregg ------------------
 function easterEgg() {
     $("#easterEggButton").click(function () {
         const container = $("#easterEggContainer");
@@ -666,11 +673,8 @@ function easterEgg() {
                 container.append(img);
             }, i * 100);
         }
-
     });
 }
-
-
 
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", function() {
@@ -698,16 +702,16 @@ document.addEventListener("DOMContentLoaded", function() {
             radius = 50;
         }
 
-        if (map.busMarkers) {
-            map.busMarkers.forEach(marker => {
-                marker.setRadius(radius);
-            });
-        }
+        // if (map.busMarkers) {
+        //     map.busMarkers.forEach(marker => {
+        //         marker.setRadius(radius);
+        //     });
+        // }
     });
 
     updateViewportBounds();
 
-    // updateViewportBounds after 15s of inactivity
+    // UpdateViewportBounds after 15s of inactivity
     map.on("move", resetInactivityTimeout);
     map.on("zoom", resetInactivityTimeout);
 
@@ -715,5 +719,4 @@ document.addEventListener("DOMContentLoaded", function() {
     resetInactivityTimeout();
     
     easterEgg()
-
 });

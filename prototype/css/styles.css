@@ -8,7 +8,6 @@
 }
 
 /* =-=-=-= MAIN =-=-=-= */
-
 main{
     min-height: 90vh; 
     display: flex;
@@ -28,8 +27,7 @@ body{
     margin: 0;
 }
 
-/* =-=-=-= Easter Egg =-=-=-= */
-
+/* =-=-=-= EASTER EGG =-=-=-= */
 #easterEggContainer {
     position: absolute;
     top: 0;
@@ -45,8 +43,12 @@ body{
     transition: transform 0.3s ease;
 }
 
-/* =-=-=-= NAV =-=-=-= */
+#easterEggButton {
+    font-weight: 400;
+    font-size: 17.5px;
+}
 
+/* =-=-=-= NAVIGATION BAR =-=-=-= */
 nav {
     display: flex !important;  
     align-items: center;
@@ -119,7 +121,6 @@ nav #title {
 }
 
 /* =-=-=-= MAP =-=-=-= */
-
 .map-title {
     position: absolute;
     top: 20px;
@@ -140,7 +141,7 @@ nav #title {
     z-index: 1;
 }
 
-#busData {
+#bus-data {
     padding: 20px;
     height: 90vh;
     width: 25%;
@@ -148,12 +149,6 @@ nav #title {
     background-color: lightgray;
     overflow-y: scroll;
     overflow-x: hidden;
-}
-
-#BackgroundMap{
-    z-index: -2;
-    width: 100%;
-    height: 800px;
 }
 
 #login-section {
@@ -232,7 +227,7 @@ nav #title {
     background-color: #F4F4F4;
 }
 
-#resetButton #homeButton #locationButton {
+#reset-button #home-button #location-button {
     padding: 8px 16px; 
     font-size: 14px;
     z-index: 5;
@@ -259,7 +254,7 @@ nav #title {
     transform: translate(-50%, -50%);
 }
 
-/* Footer */
+/* =-=-=-= FOOTER =-=-=-= */
 footer {
     background-color: white;
     color: rblack;
@@ -275,13 +270,13 @@ footer p {
     margin: 0; 
 }
 
-#footerLink {
+#footer-link {
     text-decoration: none;
     color: black;
 }
 
-/* Bus Times */
-.busTimeRecord {
+/* =-=-=-= BUS TIMES PANEL =-=-=-= */
+.bus-time-record {
     width: 100%;
     justify-content: space-between;
     display: flex;
@@ -290,29 +285,32 @@ footer p {
     margin: 0;
 }
 
-.busTimeRecord .times {
+.bus-time-record .times {
     text-align: right;
 }
 
-.busTimeRecord .destination {
+.bus-time-record .destination {
     font-size: 18px;
 }
 
-/* Scroll bar */
+/* =-=-=-= SCROLL BAR FOR BUS TIMES PANEL =-=-=-= */
 ::-webkit-scrollbar {
     width: 8px;
     background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 4px;
 }
-.pdf{
+
+/* =-=-=-= TIMETABLES PAGE =-=-=-= */
+.pdf {
     width: 100%;
     height: 1000px;
 }
 
-/* Responsive layout for phonez */
+/* =-=-=-= RESPONSIVE PHONES =-=-=-= */
 @media (max-width: 992px) {
     body {
         overflow: hidden;
@@ -322,14 +320,14 @@ footer p {
         padding: 0;
     }
 
-    #busData, #map {
+    #bus-data, #map {
         width: 100%;         
         float: none;
         max-width: 100%;    
         margin: 0 auto;     
     }
 
-    #busData {
+    #bus-data {
         margin-top: 0;
         height: 40vh;
         margin-bottom: 0;
