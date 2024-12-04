@@ -281,13 +281,12 @@ function drawBus(busData, map) {
 
     // Draw each bus marker
     busData.forEach(coord => { 
-
-        const circle = L.circle([coord.latitude, coord.longitude], {
-            color: 'red', 
-            fillColor: '#f03', 
-            fillOpacity: 0.5,
-            radius: radius
-        }).addTo(map);
+        const icon = L.icon({
+            iconUrl: "./images/BusTracker.png", 
+            iconSize: [50, 25],  
+        });
+    
+        const circle = L.marker([coord.latitude, coord.longitude], {icon: icon}).addTo(map);
 
         const toolTipContent = ` 
             <div>
@@ -529,8 +528,8 @@ function drawStops(stopsData, map) {
     stopsData.forEach(stop => {
         // create marker
         const circle = L.circle([stop.latitude, stop.longitude], {
-            color: "#0362fc", 
-            fillColor: "#0362fc", 
+            color: "red", 
+            fillColor: "red", 
             fillOpacity: 0.5,
             radius: radius
         }).addTo(map);
@@ -698,11 +697,11 @@ document.addEventListener("DOMContentLoaded", function() {
             radius = 50;
         }
 
-        if (map.busMarkers) {
-            map.busMarkers.forEach(marker => {
-                marker.setRadius(radius);
-            });
-        }
+        // if (map.busMarkers) {
+        //     map.busMarkers.forEach(marker => {
+        //         marker.setRadius(radius);
+        //     });
+        // }
     });
 
     updateViewportBounds();
