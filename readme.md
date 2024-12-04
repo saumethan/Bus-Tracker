@@ -4,18 +4,17 @@
 This is a markdown file, generally the readme.md file in a repository tells any users what it is for. 
 
 # To Do
-- Timetables page XF
-- Show buses on route when clicked on (noc codes) (put not supported error)
-- Add bus route names onto markers
 - when you double click on route route disappears and nothing happens
-- Auto updating user locations
-- mobile resizable div https://codepen.io/richa_dixit/pen/RwQRPyE
-- search bar
 - timetables don't work on mobile
 - CSS for timetables 
 - CSS for settings page
 - Pull website on Codio
 - Comments
+
+- Auto updating user locations
+- Add bus route names onto markers
+- search bar
+- mobile resizable div https://codepen.io/richa_dixit/pen/RwQRPyE
 
 # Contributors
 
