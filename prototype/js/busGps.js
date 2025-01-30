@@ -19,21 +19,21 @@ function getSpecificBusGPS(nocCode, route) {
             route: bus.service.line_name,
             destination: bus.destination
         }));
-        drawBus(busData, map);
+        return busData;
     });
 }
 
 // ------------------ Function to get the bus data for all bus routes in viewport ------------------
 function getAllBusGPS(yMax, xMax, yMin, xMin) {
     // Don't show buses when zoomed far out
-    if (currentZoom < 12) {
-        if (map.busMarkers) {
-            map.busMarkers.forEach(marker => {
-                map.removeLayer(marker);
-            });
-        }
-        return;
-    }
+    // if (currentZoom < 12) {
+    //     if (map.busMarkers) {
+    //         map.busMarkers.forEach(marker => {
+    //             map.removeLayer(marker);
+    //         });
+    //     }
+    //     return;
+    // }
 
     // Get the bus GPS locations
     const url = `https://bustimes.org/vehicles.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
@@ -53,7 +53,7 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
             });
         })
         // Calls draw bus function
-        drawBus(busData, map);
+        return busData;
     }).fail(function() {
         console.error("Error fetching bus data.");
     });
@@ -94,7 +94,7 @@ function drawBus(busData, map) {
             gpsRoute = coord.route;
             viewAllBuses = false;
 
-            refreshSpecificBusRoute(coord.serviceId, coord.tripId); 
+            drawBus(coord.serviceId, coord.tripId); 
 
             // Reset tooltips on all markers
             map.busMarkers.forEach(marker => {
@@ -134,3 +134,6 @@ function drawBus(busData, map) {
         });
     });
 }
+
+// Export functions
+export { fetchStopsInViewport, fetchStopId, loadStopTimes, drawStops };

@@ -6,6 +6,14 @@
 
 // ------------------ Function to draw the bus route ------------------
 function drawRoute(serviceId, tripId) {
+    
+    if (map.busMarkers) {
+        map.busMarkers.forEach(marker => map.removeLayer(marker));
+    }
+    if (route) {
+        map.removeLayer(route);
+    }
+
     // Initialise the busData object if it doesn't exist
     if (typeof busData === 'undefined') {
         busData = {};
@@ -74,16 +82,3 @@ function adjustMapViewToRoute(route) {
     }
 }
 
-// ------------------ Function to update map with specific bus route ------------------
-function refreshSpecificBusRoute(serviceId, busId) { 
-    if (map.busMarkers) {
-        map.busMarkers.forEach(marker => map.removeLayer(marker));
-    }
-    if (route) {
-        map.removeLayer(route);
-    }
-
-    // Fetch and draw the selected route and bus data
-    drawRoute(serviceId, busId); 
-    getSpecificBusGPS(nocCode, gpsRoute);
-}
