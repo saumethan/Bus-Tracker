@@ -114,7 +114,8 @@ async function loadStopTimes(stopId) {
             );
 
             // format the bus times into HTML
-            htmlContent="";
+            let htmlContent = "";
+            
             for (let i = 0; i < 20; i++) {
                 // get bus at index
                 const bus = departures[i];
@@ -176,6 +177,7 @@ async function loadStopTimes(stopId) {
             $("#bus-data").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
         }
     } catch (err) {
+        console.log(err);
         // handle error
         $("#bus-data").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
     }
@@ -186,7 +188,7 @@ async function loadStopTimes(stopId) {
  * Expects stopsData from `fetchStopsInViewport()` to be passed, as well as the map object,
  * so should be called from within the `map.js` file.
  */
-function drawStops(stopsData, map) {
+async function drawStops(stopsData, map) {
     // remove existing stop markers
     if (map.stopMarkers) {
         map.stopMarkers.forEach(marker => {
@@ -203,7 +205,7 @@ function drawStops(stopsData, map) {
             color: "red", 
             fillColor: "red", 
             fillOpacity: 0.5,
-            radius: radius
+            radius: map.stopCircleRadius
         }).addTo(map);
 
         // get services for this stop as a string

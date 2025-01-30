@@ -4,11 +4,8 @@
  * @description All functionality relating to the bus map, including plotting of stops + GPS tracking of buses.
  */
 
-// Constants
-//const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
-//const BUS_PROXY = `https://europe-west2-legendoj1-portfolio.cloudfunctions.net/busproxy/?apiKey=${TRANSIT_API_KEY}&url=`;
-const LIVE_TIMES_URL = "https://apim-public-trs.trapezegroupazure.co.uk/trs/lts/lts/v1/public/departures";
-const LIVE_TIMES_KEY = "3918fe2ad7e84a6c8108b305612a8eb3";
+// Modules
+import { fetchStopsInViewport, drawStops } from "./stops.js";
 
 // Variables
 let map;  
@@ -16,13 +13,10 @@ let route;
 let gpsRoute;
 let nocCode;
 let viewAllBuses = true;
-let radius = 50;
 let inactivityTimeout;
 let userLocation;
 let userLat;
 let userLng;
-let transitStopIds = {};
-let htmlContent = "";
 let busRouteNotFound = false;
 
 // Initialize the map and set its location
@@ -45,7 +39,7 @@ function addRefreshButtonToMap(mapInstance) {
         buttonDiv.addEventListener('click', () => {
 
             // Refresh viewport to load all buses
-            updateViewportBounds();
+            updateBuses();
 
             // Update the refresh time if a specific bus route is showing 
             if (!viewAllBuses) {
@@ -61,6 +55,10 @@ function addRefreshButtonToMap(mapInstance) {
 
     // Add to map
     refreshButton.addTo(mapInstance);
+}
+
+function updateBuses() {
+
 }
 
 // ------------------ Function to add home button to the map ------------------
@@ -89,9 +87,6 @@ function addHomeButtonToMap(mapInstance) {
                     map.busMarkers.forEach(marker => map.removeLayer(marker));
                 }
             }
-
-            // Refresh viewport to load all buses
-            updateViewportBounds();
     
             // append html to DOM
             $("#bus-data").html("");
@@ -117,9 +112,6 @@ function addLocationButtonToMap(mapInstance) {
         buttonDiv.addEventListener('click', () => {
 
             showUserLocation();
-
-            // Refresh viewport to load all buses
-            updateViewportBounds();
 
             // Update the refresh time if a specific bus route is showing 
             if (!viewAllBuses) {
@@ -152,18 +144,19 @@ function adjustMapViewToRoute(route) {
 }
 
 // ------------------ Function to update the map viewport ------------------
-function updateViewportBounds() {
-    
+function getViewportBounds() {
     // Gets the current bounds of the map
-    let bounds = map.getBounds();
-    let southwest = bounds.getSouthWest();
-    let northeast = bounds.getNorthEast(); 
+    var bounds = map.getBounds();
+    var southwest = bounds.getSouthWest();
+    var northeast = bounds.getNorthEast(); 
 
     // Extracts coordinates
-    let minX = southwest.lng;
-    let minY = southwest.lat;
-    let maxX = northeast.lng;
-    let maxY = northeast.lat;
+    var minX = southwest.lng;
+    var minY = southwest.lat;
+    var maxX = northeast.lng;
+    var maxY = northeast.lat;
+    
+    return { minX, minY, maxX, maxY };
 }
 
 // ------------------ Function to show the users location ------------------
@@ -202,7 +195,7 @@ function resetInactivityTimeout() {
     // Clear the existing timeout
     if (inactivityTimeout) clearTimeout(inactivityTimeout);
     // Set a new timeout 
-    inactivityTimeout = setTimeout(updateViewportBounds, 15000);
+    inactivityTimeout = setTimeout(updateBuses, 15000);
 }
 
 // ------------------ Function for easteregg ------------------
@@ -248,6 +241,9 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Creates map
     map = createMap();
+    map.stopCircleRadius = 50;
+    map.currentZoom = 13;
+
     // Adds buttons
     addRefreshButtonToMap(map);
     addHomeButtonToMap(map);
@@ -260,15 +256,25 @@ document.addEventListener("DOMContentLoaded", function() {
     map.on("zoom" , function (e) {
         map.currentZoom = e.target._zoom;
         if (map.currentZoom >= 17) {
-            radius = 10;
+            map.stopCircleRadius = 10;
         } else if (map.currentZoom >= 13) {
-            radius = 20;
+            map.stopCircleRadius = 20;
         } else {
-            radius = 50;
+            map.stopCircleRadius = 50;
         }
     });
 
-    // UpdateViewportBounds after 15s of inactivity
-    map.on("move", resetInactivityTimeout);
-    map.on("zoom", resetInactivityTimeout);
+    // Update stops and buses when the map is moved/zoomed
+    async function onMapMoved() {
+        resetInactivityTimeout();
+
+        // update stops that are drawn based on the stops in the viewport
+        var { minX, minY, maxX, maxY } = getViewportBounds();
+        var stopsInViewport = await fetchStopsInViewport(maxY, maxX, minY, minX);
+        drawStops(stopsInViewport, map);
+
+        updateBuses();
+    }
+    map.on("move", onMapMoved);
+    map.on("zoom", onMapMoved);
 });
