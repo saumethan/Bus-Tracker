@@ -17,7 +17,6 @@ let gpsRoute;
 let nocCode;
 let viewAllBuses = true;
 let radius = 50;
-let currentZoom = 13;
 let inactivityTimeout;
 let userLocation;
 let userLat;
@@ -154,6 +153,7 @@ function adjustMapViewToRoute(route) {
 
 // ------------------ Function to update the map viewport ------------------
 function updateViewportBounds() {
+    
     // Gets the current bounds of the map
     let bounds = map.getBounds();
     let southwest = bounds.getSouthWest();
@@ -181,6 +181,7 @@ function showUserLocation() {
             // Remove the existing marker
             if (userLocation) {
                 map.removeLayer(userLocation);
+                userLocation = null;
             }
             // Add the marker with the custom icon to the map
             const userMarker = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
@@ -200,7 +201,6 @@ function showUserLocation() {
 function resetInactivityTimeout() {
     // Clear the existing timeout
     if (inactivityTimeout) clearTimeout(inactivityTimeout);
-    
     // Set a new timeout 
     inactivityTimeout = setTimeout(updateViewportBounds, 15000);
 }
@@ -245,7 +245,7 @@ function easterEgg() {
 
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", function() {
-
+    
     // Creates map
     map = createMap();
     // Adds buttons
@@ -253,18 +253,15 @@ document.addEventListener("DOMContentLoaded", function() {
     addHomeButtonToMap(map);
     addLocationButtonToMap(map);
 
-
-    if (viewAllBuses === true) {
-        map.on("moveend", updateViewportBounds); 
-        map.on("zoomend", updateViewportBounds);
-    } 
+    showUserLocation()
+    resetInactivityTimeout();
 
     // Resize the buses as the user zooms in
     map.on("zoom" , function (e) {
-        currentZoom = e.target._zoom;
-        if (currentZoom >= 17) {
+        map.currentZoom = e.target._zoom;
+        if (map.currentZoom >= 17) {
             radius = 10;
-        } else if (currentZoom >= 13) {
+        } else if (map.currentZoom >= 13) {
             radius = 20;
         } else {
             radius = 50;
