@@ -6,6 +6,7 @@
 
 // Modules
 import { fetchStopsInViewport, drawStops } from "./stops.js";
+import { getAllBusGPS, drawBus } from "./busGps.js";
 
 // Variables
 let map;  
@@ -57,8 +58,10 @@ function addRefreshButtonToMap(mapInstance) {
     refreshButton.addTo(mapInstance);
 }
 
-function updateBuses() {
-
+async function updateBuses() {
+    var { minX, minY, maxX, maxY } = getViewportBounds();
+    var busData = await getAllBusGPS(maxY, maxX, minY, minX)
+    drawBus(busData, map);
 }
 
 // ------------------ Function to add home button to the map ------------------
@@ -268,13 +271,15 @@ document.addEventListener("DOMContentLoaded", function() {
     async function onMapMoved() {
         resetInactivityTimeout();
 
-        // update stops that are drawn based on the stops in the viewport
-        var { minX, minY, maxX, maxY } = getViewportBounds();
-        var stopsInViewport = await fetchStopsInViewport(maxY, maxX, minY, minX);
-        drawStops(stopsInViewport, map);
+        if (map.currentZoom >= 15) {
+            // update stops that are drawn based on the stops in the viewport
+            var { minX, minY, maxX, maxY } = getViewportBounds();
+            var stopsInViewport = await fetchStopsInViewport(maxY, maxX, minY, minX);
+            drawStops(stopsInViewport, map);
 
-        updateBuses();
+            updateBuses();
+        }
     }
-    map.on("move", onMapMoved);
-    map.on("zoom", onMapMoved);
+    map.on("moveend", onMapMoved);
+    map.on("zoomend", onMapMoved);
 });

@@ -15,7 +15,7 @@ function drawRoute(serviceId, tripId) {
     }
 
     // Initialise the busData object if it doesn't exist
-    if (typeof busData === 'undefined') {
+    if (typeof busData === "undefined") {
         busData = {};
     }
 

@@ -24,7 +24,7 @@ function getSpecificBusGPS(nocCode, route) {
 }
 
 // ------------------ Function to get the bus data for all bus routes in viewport ------------------
-function getAllBusGPS(yMax, xMax, yMin, xMin) {
+async function getAllBusGPS(yMax, xMax, yMin, xMin) {
     // Don't show buses when zoomed far out
     // if (currentZoom < 12) {
     //     if (map.busMarkers) {
@@ -38,9 +38,15 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
     // Get the bus GPS locations
     const url = `https://bustimes.org/vehicles.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
 
-    $.getJSON(url, function(data) {
+    const response = await $.ajax({
+        type: "GET",
+        url: url,
+        contentType: "application/json"
+    });
+
+    if (response) {
         const busData = [];
-        data.forEach(bus => {
+        response.forEach(bus => {
             if (!bus.service || !bus.service.line_name) return;
             busData.push({
                 longitude: bus.coordinates[0],
@@ -52,16 +58,37 @@ function getAllBusGPS(yMax, xMax, yMin, xMin) {
                 noc: bus.vehicle.url.split("/")[2].split("-")[0].toUpperCase()
             });
         })
-        // Calls draw bus function
-        return busData;
-    }).fail(function() {
+        return busData
+    } else {
         console.error("Error fetching bus data.");
-    });
+    }
+
+//     $.getJSON(url, function(data) {
+//         const busData = [];
+//         data.forEach(bus => {
+//             if (!bus.service || !bus.service.line_name) return;
+//             busData.push({
+//                 longitude: bus.coordinates[0],
+//                 latitude: bus.coordinates[1],
+//                 route: bus.service.line_name,
+//                 destination: bus.destination,
+//                 tripId: bus.trip_id,
+//                 serviceId: bus.service_id,
+//                 noc: bus.vehicle.url.split("/")[2].split("-")[0].toUpperCase()
+//             });
+//         })
+//         // Returns the bus data
+//         return busData;
+//     }).fail(function() {
+//         console.error("Error fetching bus data.");
+//     });
 }
 
 // ------------------ Function to draw the buses ------------------
 function drawBus(busData, map) {
-    // Remove existing bus markers
+
+    console.log(busData);
+        // Remove existing bus markers
     if (map.busMarkers) {
         map.busMarkers.forEach(marker => {
             map.removeLayer(marker);
@@ -136,4 +163,4 @@ function drawBus(busData, map) {
 }
 
 // Export functions
-export { fetchStopsInViewport, fetchStopId, loadStopTimes, drawStops };
+export { getAllBusGPS, drawBus };
