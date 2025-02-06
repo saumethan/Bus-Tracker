@@ -37,10 +37,14 @@ function addRefreshButtonToMap(mapInstance) {
         buttonDiv.innerHTML = '<button id="reset-button"><i class="fa-solid fa-arrows-rotate"></i></button>';
 
         // Event listener for the button
-        buttonDiv.addEventListener('click', () => {
+        buttonDiv.addEventListener('click', async () => {
 
             // Refresh viewport to load all buses
-            updateBuses();
+            if (map.currentZoom >= 12) {
+                var { minX, minY, maxX, maxY } = getViewportBounds();
+                var busData = await getAllBusGPS(maxY, maxX, minY, minX)
+                drawBus(busData, map);
+            }
 
             // Update the refresh time if a specific bus route is showing 
             if (!viewAllBuses) {
@@ -271,15 +275,25 @@ document.addEventListener("DOMContentLoaded", function() {
     async function onMapMoved() {
         resetInactivityTimeout();
 
+        var { minX, minY, maxX, maxY } = getViewportBounds();
+
+        // handle stop displays
         if (map.currentZoom >= 15) {
-            // update stops that are drawn based on the stops in the viewport
-            var { minX, minY, maxX, maxY } = getViewportBounds();
             var stopsInViewport = await fetchStopsInViewport(maxY, maxX, minY, minX);
             drawStops(stopsInViewport, map);
-
-            updateBuses();
+        } else {
+            drawStops(null, map); // hide the stops
+        }
+        
+        // buses stop displays
+        if (map.currentZoom >= 12) {
+            var busData = await getAllBusGPS(maxY, maxX, minY, minX)
+            drawBus(busData, map);
+        } else {
+            drawBus(null, map);
         }
     }
+
     map.on("moveend", onMapMoved);
     map.on("zoomend", onMapMoved);
 });
