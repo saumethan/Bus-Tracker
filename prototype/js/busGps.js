@@ -95,6 +95,10 @@ function drawBus(busData, map) {
         });
     }
 
+    if (busData === null) {
+        return;
+    }
+    
     map.busMarkers = [];
 
     // Draw each bus marker
