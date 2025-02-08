@@ -10,15 +10,12 @@ import { getAllBusGPS, drawBus } from "./busGps.js";
 
 // Variables
 let map;  
-let route; 
-let gpsRoute;
-let nocCode;
-let viewAllBuses = true;
 let inactivityTimeout;
 let userLocation;
 let userLat;
 let userLng;
-let busRouteNotFound = false;
+let viewAllBuses = true;
+let busData;
 
 // Initialize the map and set its location
 function createMap() {
@@ -42,7 +39,7 @@ function addRefreshButtonToMap(mapInstance) {
             // Refresh viewport to load all buses
             if (map.currentZoom >= 12) {
                 var { minX, minY, maxX, maxY } = getViewportBounds();
-                var busData = await getAllBusGPS(maxY, maxX, minY, minX)
+                busData = await getAllBusGPS(maxY, maxX, minY, minX)
                 drawBus(busData, map);
             }
 
@@ -64,7 +61,7 @@ function addRefreshButtonToMap(mapInstance) {
 
 async function updateBuses() {
     var { minX, minY, maxX, maxY } = getViewportBounds();
-    var busData = await getAllBusGPS(maxY, maxX, minY, minX)
+    busData = await getAllBusGPS(maxY, maxX, minY, minX)
     drawBus(busData, map);
 }
 
@@ -205,6 +202,14 @@ function resetInactivityTimeout() {
     inactivityTimeout = setTimeout(updateBuses, 15000);
 }
 
+function setViewAllBuses(value) {
+    viewAllBuses = value;
+}
+
+function getBusData() {
+    return busData;
+}
+
 // ------------------ Function for easteregg ------------------
 function easterEgg() {
     $("#easterEggButton").click(function () {
@@ -287,7 +292,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // buses stop displays
         if (map.currentZoom >= 12) {
-            var busData = await getAllBusGPS(maxY, maxX, minY, minX)
+            busData = await getAllBusGPS(maxY, maxX, minY, minX)
             drawBus(busData, map);
         } else {
             drawBus(null, map);
@@ -297,3 +302,7 @@ document.addEventListener("DOMContentLoaded", function() {
     map.on("moveend", onMapMoved);
     map.on("zoomend", onMapMoved);
 });
+
+
+// Export
+export { setViewAllBuses, getBusData };

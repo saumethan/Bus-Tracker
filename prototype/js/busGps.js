@@ -1,8 +1,15 @@
 /**
  * @author Ethan Saum @saumethan272
  * @author Owen Meade @owenrgu
- * @description All functionality relating to the bus map, including plotting of stops + GPS tracking of buses.
+ * @description All functionality relating to the bus GPS tracking on the map
  */
+
+// Modules
+import { setViewAllBuses } from "./map.js";
+import { getBusRoute, drawBusRoute } from "./busRoute.js";
+
+let gpsRoute;
+let nocCode;
 
 // ------------------ Function to get the bus data for a specific bus route ------------------ 
 function getSpecificBusGPS(nocCode, route) {
@@ -62,26 +69,6 @@ async function getAllBusGPS(yMax, xMax, yMin, xMin) {
     } else {
         console.error("Error fetching bus data.");
     }
-
-//     $.getJSON(url, function(data) {
-//         const busData = [];
-//         data.forEach(bus => {
-//             if (!bus.service || !bus.service.line_name) return;
-//             busData.push({
-//                 longitude: bus.coordinates[0],
-//                 latitude: bus.coordinates[1],
-//                 route: bus.service.line_name,
-//                 destination: bus.destination,
-//                 tripId: bus.trip_id,
-//                 serviceId: bus.service_id,
-//                 noc: bus.vehicle.url.split("/")[2].split("-")[0].toUpperCase()
-//             });
-//         })
-//         // Returns the bus data
-//         return busData;
-//     }).fail(function() {
-//         console.error("Error fetching bus data.");
-//     });
 }
 
 // ------------------ Function to draw the buses ------------------
@@ -123,9 +110,9 @@ function drawBus(busData, map) {
         circle.on('click', (event) => {
             nocCode = coord.noc;
             gpsRoute = coord.route;
-            viewAllBuses = false;
+            setViewAllBuses(false);
 
-            drawBus(coord.serviceId, coord.tripId); 
+            showSpecificBusRoute(coord.serviceId, coord.tripId, map); 
 
             // Reset tooltips on all markers
             map.busMarkers.forEach(marker => {
@@ -133,26 +120,6 @@ function drawBus(busData, map) {
                 marker.unbindTooltip();
                 marker.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
             });
-
-            // Make clicked bus's tooltip permanent
-            circle.bindTooltip(toolTipContent, { permanent: true, direction: 'top' }).openTooltip();
-
-            // Update the refresh time
-            const now = new Date();
-            const formattedTime = now.toLocaleTimeString(); 
-
-            htmlContent="";
-            htmlContent += `
-                <div class="bus-time-record">
-                    <h2>${coord.route} <span id="destination">to ${coord.destination}</span></h2>
-                </div
-            `;
-            if (busRouteNotFound === true) {
-                htmlContent += `<h2>Bus route not found</h2>`
-            }
-            
-            // append html to DOM
-            $("#bus-data").html(htmlContent);
         });
         map.busMarkers.push(circle);
     });
@@ -164,6 +131,18 @@ function drawBus(busData, map) {
             marker.unbindTooltip();
         });
     });
+}
+
+// ------------------ Function to update map with specific bus route ------------------
+async function showSpecificBusRoute(serviceId, busId, map) { 
+    if (map.busMarkers) {
+        map.busMarkers.forEach(marker => map.removeLayer(marker));
+    }
+
+    // Fetch and draw the selected route and bus data
+    var route = await getBusRoute(serviceId, busId);
+    drawBusRoute(route, map);
+    getSpecificBusGPS(nocCode, gpsRoute);
 }
 
 // Export functions
