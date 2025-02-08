@@ -13,21 +13,34 @@ let nocCode;
 
 // ------------------ Function to get the bus data for a specific bus route ------------------ 
 async function getSpecificBusGPS(nocCode, route) {
+    console.log("code is " + nocCode);
     const url = `https://bustimes.org/vehicles.json?operator=${nocCode}`;
 
-    $.getJSON(url, data => {
-        // Filter data for the bus route
-        const filteredBuses = data.filter(bus => bus.service && bus.service.line_name && bus.service.line_name === route);
-
-        // get the longitude and latitude
-        const busData = filteredBuses.map(bus => ({
-            longitude: bus.coordinates[0],
-            latitude: bus.coordinates[1],
-            route: bus.service.line_name,
-            destination: bus.destination
-        }));
-        return busData;
+    const response = await $.ajax({
+        type: "GET",
+        url: url,
+        contentType: "application/json"
     });
+
+    if (response) {
+        const busData = response.filter(bus => bus.service && bus.service.line_name && bus.service.line_name === route);
+        response.forEach(bus => {
+            if (!bus.service || !bus.service.line_name) return;
+            busData.push({
+                longitude: bus.coordinates[0],
+                latitude: bus.coordinates[1],
+                route: bus.service.line_name,
+                destination: bus.destination,
+                tripId: bus.trip_id,
+                serviceId: bus.service_id,
+                noc: bus.vehicle.url.split("/")[2].split("-")[0].toUpperCase()
+            });
+        })
+        console.log(busData);
+        return busData
+    } else {
+        console.error("Error fetching bus data.");
+    }
 }
 
 // ------------------ Function to get the bus data for all bus routes in viewport ------------------
@@ -55,6 +68,7 @@ async function getAllBusGPS(yMax, xMax, yMin, xMin) {
                 noc: bus.vehicle.url.split("/")[2].split("-")[0].toUpperCase()
             });
         })
+        console.log(busData);
         return busData
     } else {
         console.error("Error fetching bus data.");

@@ -201,10 +201,13 @@ function resetInactivityTimeout() {
 }
 
 async function setViewAllBuses(value) {
+    
     viewAllBuses = value;
-    if(viewAllBuses === false) {
-        const busData = await get(maxY, maxX, minY, minX);
+    const { minX, minY, maxX, maxY } = getViewportBounds();
 
+    if(viewAllBuses === false) {
+        const busData = await getSpecificBusGPS(maxY, maxX, minY, minX);
+        drawBus(busData, map);
     }
 }
 
@@ -284,21 +287,30 @@ document.addEventListener("DOMContentLoaded", function() {
         resetInactivityTimeout();
 
         const { minX, minY, maxX, maxY } = getViewportBounds();
-
-        // handle stop displays
-        if (map.currentZoom >= 15) {
+        if(viewAllBuses) {
+            // handle stop displays
+            if (map.currentZoom >= 15) {
+                const stopsInViewport = await fetchStopsInViewport(maxY, maxX, minY, minX);
+                drawStops(stopsInViewport, map);
+            } else {
+                drawStops(null, map); // hide the stops
+            }
+            
+            // buses stop displays
+            if (map.currentZoom >= 12) {
+                const busData = await getAllBusGPS(maxY, maxX, minY, minX)
+                drawBus(busData, map);
+            } else {
+                drawBus(null, map);
+            }
+        } else {
+            // EDIT TO DRAW STOPS FOR THE SELECTED ROUTE
             const stopsInViewport = await fetchStopsInViewport(maxY, maxX, minY, minX);
             drawStops(stopsInViewport, map);
-        } else {
-            drawStops(null, map); // hide the stops
-        }
-        
-        // buses stop displays
-        if (map.currentZoom >= 12) {
-            const busData = await getAllBusGPS(maxY, maxX, minY, minX)
+
+            // Redraws the buses for a specific route
+            const busData = await getSpecificBusGPS(maxY, maxX, minY, minX)
             drawBus(busData, map);
-        } else {
-            drawBus(null, map);
         }
     }
 
