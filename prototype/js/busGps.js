@@ -5,14 +5,14 @@
  */
 
 // Modules
-import { setViewAllBuses } from "./map.js";
+import { setViewAllBuses, getViewAllBuses } from "./map.js";
 import { getBusRoute, drawBusRoute } from "./busRoute.js";
 
 let gpsRoute;
 let nocCode;
 
 // ------------------ Function to get the bus data for a specific bus route ------------------ 
-function getSpecificBusGPS(nocCode, route) {
+async function getSpecificBusGPS(nocCode, route) {
     const url = `https://bustimes.org/vehicles.json?operator=${nocCode}`;
 
     $.getJSON(url, data => {
@@ -32,17 +32,7 @@ function getSpecificBusGPS(nocCode, route) {
 
 // ------------------ Function to get the bus data for all bus routes in viewport ------------------
 async function getAllBusGPS(yMax, xMax, yMin, xMin) {
-    // Don't show buses when zoomed far out
-    // if (currentZoom < 12) {
-    //     if (map.busMarkers) {
-    //         map.busMarkers.forEach(marker => {
-    //             map.removeLayer(marker);
-    //         });
-    //     }
-    //     return;
-    // }
 
-    // Get the bus GPS locations
     const url = `https://bustimes.org/vehicles.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
 
     const response = await $.ajax({
@@ -146,4 +136,4 @@ async function showSpecificBusRoute(serviceId, busId, map) {
 }
 
 // Export functions
-export { getAllBusGPS, drawBus };
+export { getAllBusGPS, getSpecificBusGPS, drawBus };

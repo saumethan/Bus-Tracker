@@ -6,7 +6,7 @@
 
 // Modules
 import { fetchStopsInViewport, drawStops } from "./stops.js";
-import { getAllBusGPS, drawBus } from "./busGps.js";
+import { getAllBusGPS, getSpecificBusGPS, drawBus } from "./busGps.js";
 
 // Variables
 let map;  
@@ -15,7 +15,6 @@ let userLocation;
 let userLat;
 let userLng;
 let viewAllBuses = true;
-let busData;
 
 // Initialize the map and set its location
 function createMap() {
@@ -35,11 +34,10 @@ function addRefreshButtonToMap(mapInstance) {
 
         // Event listener for the button
         buttonDiv.addEventListener('click', async () => {
-
             // Refresh viewport to load all buses
             if (map.currentZoom >= 12) {
                 var { minX, minY, maxX, maxY } = getViewportBounds();
-                busData = await getAllBusGPS(maxY, maxX, minY, minX)
+                var busData = await getAllBusGPS(maxY, maxX, minY, minX)
                 drawBus(busData, map);
             }
 
@@ -60,8 +58,8 @@ function addRefreshButtonToMap(mapInstance) {
 }
 
 async function updateBuses() {
-    var { minX, minY, maxX, maxY } = getViewportBounds();
-    busData = await getAllBusGPS(maxY, maxX, minY, minX)
+    const { minX, minY, maxX, maxY } = getViewportBounds();
+    const busData = await getAllBusGPS(maxY, maxX, minY, minX)
     drawBus(busData, map);
 }
 
@@ -202,13 +200,18 @@ function resetInactivityTimeout() {
     inactivityTimeout = setTimeout(updateBuses, 15000);
 }
 
-function setViewAllBuses(value) {
+async function setViewAllBuses(value) {
     viewAllBuses = value;
+    if(viewAllBuses === false) {
+        const busData = await get(maxY, maxX, minY, minX);
+
+    }
 }
 
-function getBusData() {
-    return busData;
+function getViewAllBuses() {
+    return viewAllBuses;
 }
+
 
 // ------------------ Function for easteregg ------------------
 function easterEgg() {
@@ -280,11 +283,11 @@ document.addEventListener("DOMContentLoaded", function() {
     async function onMapMoved() {
         resetInactivityTimeout();
 
-        var { minX, minY, maxX, maxY } = getViewportBounds();
+        const { minX, minY, maxX, maxY } = getViewportBounds();
 
         // handle stop displays
         if (map.currentZoom >= 15) {
-            var stopsInViewport = await fetchStopsInViewport(maxY, maxX, minY, minX);
+            const stopsInViewport = await fetchStopsInViewport(maxY, maxX, minY, minX);
             drawStops(stopsInViewport, map);
         } else {
             drawStops(null, map); // hide the stops
@@ -292,7 +295,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // buses stop displays
         if (map.currentZoom >= 12) {
-            busData = await getAllBusGPS(maxY, maxX, minY, minX)
+            const busData = await getAllBusGPS(maxY, maxX, minY, minX)
             drawBus(busData, map);
         } else {
             drawBus(null, map);
@@ -305,4 +308,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // Export
-export { setViewAllBuses, getBusData };
+export { setViewAllBuses, getViewAllBuses };

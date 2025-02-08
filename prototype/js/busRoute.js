@@ -4,11 +4,9 @@
  * @description All functionality relating to the bus route on the map
  */
 
-import { getBusData } from "./map.js";
-
 let route; 
 let busRouteNotFound = false;
-let busData = getBusData;
+let busData;
 
 
 // ------------------ Function to get the bus route ------------------
