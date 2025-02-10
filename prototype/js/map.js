@@ -6,7 +6,7 @@
 
 // Modules
 import { fetchStopsInViewport, drawStops } from "./stops.js";
-import { getAllBusGPS, getSpecificBusGPS, drawBus } from "./busGps.js";
+import { getAllBusGPS, getSpecificBusGPS, drawBus, getNocCode, getGpsRoute } from "./busGps.js";
 
 // Variables
 let map;  
@@ -58,9 +58,14 @@ function addRefreshButtonToMap(mapInstance) {
 }
 
 async function updateBuses() {
-    const { minX, minY, maxX, maxY } = getViewportBounds();
-    const busData = await getAllBusGPS(maxY, maxX, minY, minX)
-    drawBus(busData, map);
+    if(viewAllBuses) {
+        const { minX, minY, maxX, maxY } = getViewportBounds();
+        const busData = await getAllBusGPS(maxY, maxX, minY, minX);
+        drawBus(busData, map);
+    } else {
+        const busData = await getSpecificBusGPS(getNocCode(), getGpsRoute());
+        drawBus(busData, map);
+    }
 }
 
 // ------------------ Function to add home button to the map ------------------
@@ -77,11 +82,8 @@ function addHomeButtonToMap(mapInstance) {
             // Reset to show all buses when the button is clicked
             viewAllBuses = true;
 
-            busRouteNotFound = false;
-
-            if (route) {
+            if (getRoute()) {
                 map.removeLayer(route);
-                route = null;
             }
 
             if (viewAllBuses == false) {
@@ -206,8 +208,6 @@ async function setViewAllBuses(value) {
     const { minX, minY, maxX, maxY } = getViewportBounds();
 
     if(viewAllBuses === false) {
-        const busData = await getSpecificBusGPS(maxY, maxX, minY, minX);
-        drawBus(busData, map);
     }
 }
 
@@ -305,12 +305,15 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         } else {
             // EDIT TO DRAW STOPS FOR THE SELECTED ROUTE
-            const stopsInViewport = await fetchStopsInViewport(maxY, maxX, minY, minX);
-            drawStops(stopsInViewport, map);
+            if (map.currentZoom >= 15) {
+                const stopsInViewport = await fetchStopsInViewport(maxY, maxX, minY, minX);
+                drawStops(stopsInViewport, map);
+            } else {
+                drawStops(null, map); // hide the stops
+            }
 
             // Redraws the buses for a specific route
-            const busData = await getSpecificBusGPS(maxY, maxX, minY, minX)
-            drawBus(busData, map);
+            updateBuses();
         }
     }
 

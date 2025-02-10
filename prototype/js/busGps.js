@@ -23,21 +23,27 @@ async function getSpecificBusGPS(nocCode, route) {
     });
 
     if (response) {
-        const busData = response.filter(bus => bus.service && bus.service.line_name && bus.service.line_name === route);
+        const busData = [];
         response.forEach(bus => {
-            if (!bus.service || !bus.service.line_name) return;
+            // Validate route match first
+            if (!bus.service?.line_name || bus.service.line_name !== route) return;
+            
+            // Validate coordinates
+            if (!bus.coordinates || !Array.isArray(bus.coordinates)) return;
+            const [longitude, latitude] = bus.coordinates;
+
             busData.push({
-                longitude: bus.coordinates[0],
-                latitude: bus.coordinates[1],
+                longitude: longitude,
+                latitude: latitude,
                 route: bus.service.line_name,
                 destination: bus.destination,
                 tripId: bus.trip_id,
                 serviceId: bus.service_id,
                 noc: bus.vehicle.url.split("/")[2].split("-")[0].toUpperCase()
             });
-        })
+        });
         console.log(busData);
-        return busData
+        return busData;
     } else {
         console.error("Error fetching bus data.");
     }
@@ -57,10 +63,14 @@ async function getAllBusGPS(yMax, xMax, yMin, xMin) {
     if (response) {
         const busData = [];
         response.forEach(bus => {
-            if (!bus.service || !bus.service.line_name) return;
+            if (!bus.coordinates || !Array.isArray(bus.coordinates)) return;
+            const [longitude, latitude] = bus.coordinates;
+            console.log(bus.coordinates);
+            // Validate coordinate ranges
+            if (Math.abs(latitude) > 90 || Math.abs(longitude) > 180) return;
             busData.push({
-                longitude: bus.coordinates[0],
-                latitude: bus.coordinates[1],
+                longitude: longitude,
+                latitude: latitude,
                 route: bus.service.line_name,
                 destination: bus.destination,
                 tripId: bus.trip_id,
@@ -99,6 +109,7 @@ function drawBus(busData, map) {
             iconSize: [44.5, 25],  
         });
     
+        console.log(coord.latitude);
         const circle = L.marker([coord.latitude, coord.longitude], {icon: icon}).addTo(map);
 
         const toolTipContent = ` 
@@ -111,12 +122,13 @@ function drawBus(busData, map) {
         circle.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
 
         // Add click event listener to the bus marker
-        circle.on('click', (event) => {
+        circle.on('click', async (event) => {
             nocCode = coord.noc;
+            console.log("noc code is 1" + nocCode)
             gpsRoute = coord.route;
             setViewAllBuses(false);
 
-            showSpecificBusRoute(coord.serviceId, coord.tripId, map); 
+            await showSpecificBusRoute(coord.serviceId, coord.tripId, map);
 
             // Reset tooltips on all markers
             map.busMarkers.forEach(marker => {
@@ -139,15 +151,27 @@ function drawBus(busData, map) {
 
 // ------------------ Function to update map with specific bus route ------------------
 async function showSpecificBusRoute(serviceId, busId, map) { 
+    // Clear existing bus markers
     if (map.busMarkers) {
         map.busMarkers.forEach(marker => map.removeLayer(marker));
     }
 
-    // Fetch and draw the selected route and bus data
-    var route = await getBusRoute(serviceId, busId);
-    drawBusRoute(route, map);
-    getSpecificBusGPS(nocCode, gpsRoute);
+    // Fetch and draw route
+    const routeCoords = await getBusRoute(serviceId, busId);
+    drawBusRoute(routeCoords, map);
+
+    // Fetch and draw buses with matching NOC and route
+    const specificBusData = await getSpecificBusGPS(nocCode, gpsRoute);
+    drawBus(specificBusData, map);
+}
+
+function getNocCode() {
+    return nocCode;
+}
+
+function getGpsRoute() {
+    return gpsRoute;
 }
 
 // Export functions
-export { getAllBusGPS, getSpecificBusGPS, drawBus };
+export { getAllBusGPS, getSpecificBusGPS, drawBus, getGpsRoute, getNocCode };
