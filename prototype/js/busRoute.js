@@ -95,7 +95,7 @@ function drawBusRoute(routeCoords, map) {
         opacity: 0.8,
     }).addTo(map);
 
-    adjustMapViewToRoute(route);
+    adjustMapViewToRoute(route, map);
 
     // Update the refresh time
     const now = new Date();
@@ -117,9 +117,9 @@ function drawBusRoute(routeCoords, map) {
 
 
 // ------------------ Helper function to adjust the map view to the newly drawn route ------------------
-function adjustMapViewToRoute(route) {
+function adjustMapViewToRoute(route, map) {
     if (route) {
-        // map.fitBounds(route.getBounds());
+        map.fitBounds(route.getBounds());
     }
 }
 
