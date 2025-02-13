@@ -73,10 +73,7 @@ function drawBusRoute(routeCoords, map) {
         return;
     }
 
-    // // Remove previous bus route
-    // if (route) {
-    //     map.removeLayer(route);
-    // }
+    removeRoute(map);
 
     // Ensure routeCoords is an array and has valid coordinates
     if (!Array.isArray(routeCoords) || routeCoords.length === 0) {
