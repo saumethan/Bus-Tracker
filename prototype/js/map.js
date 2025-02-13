@@ -174,7 +174,7 @@ function resetInactivityTimeout() {
     // Clear the existing timeout
     if (inactivityTimeout) clearTimeout(inactivityTimeout);
     // Set a new timeout 
-    inactivityTimeout = setTimeout(updateBuses, 15000);
+    inactivityTimeout = setTimeout(updateBuses, 10000);
 }
 
 async function setViewAllBuses(value) {
