@@ -12,7 +12,7 @@ import { getAllBusGPS, getSpecificBusGPS, drawBus, getNocCode, getGpsRoute } fro
 // Variables
 let map;  
 let inactivityTimeout;
-let userLocation;
+let userLocation = null;
 let userLat;
 let userLng;
 let viewAllBuses = true;
@@ -151,20 +151,20 @@ function showUserLocation() {
                 className: "user-location-marker", 
                 iconSize: [18, 18],                
             });
-            // Remove the existing marker
+
+            // Remove the existing marker if it exists
             if (userLocation) {
                 map.removeLayer(userLocation);
-                userLocation = null;
             }
-            // Add the marker with the custom icon to the map
-            const userMarker = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
+
+            // Add the new marker with the custom icon
             userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
-            // Center map on user"s location
+
+            // Center map on user's location
             map.setView([userLat, userLng], 13);
-            }, 
+        }, 
         error => {
             console.error("Geolocation error:", error);
-            map.setView([userLat, userLng]);
         });
     } 
 }
