@@ -4,6 +4,7 @@
 
 - ADD IN STOP LAT AND LON when a bus is clicked on in the stops
 - When a bus route is shown the stops for that route should also be shown when zoomed out
+- some buses dont have NOC code so to show specific bus route I'll have to filter through all buses
 
 # CM2104 Group Project Repository
 
