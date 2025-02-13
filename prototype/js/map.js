@@ -25,7 +25,7 @@ function createMap() {
 }
 
 // ------------------ Function to add refresh button to the map ------------------
-function addRefreshButtonToMap(mapInstance) {
+function addRefreshButtonToMap() {
     // Refresh buses 
     const refreshButton = L.control({ position: 'topright' });
 
@@ -55,7 +55,7 @@ function addRefreshButtonToMap(mapInstance) {
     };
 
     // Add to map
-    refreshButton.addTo(mapInstance);
+    refreshButton.addTo(map);
 }
 
 async function updateBuses() {
@@ -70,7 +70,7 @@ async function updateBuses() {
 }
 
 // ------------------ Function to add home button to the map ------------------
-function addHomeButtonToMap(mapInstance) {
+function addHomeButtonToMap() {
     // Home button 
     const homeButton = L.control({ position: 'topleft' });
 
@@ -82,14 +82,11 @@ function addHomeButtonToMap(mapInstance) {
         buttonDiv.addEventListener('click', () => {
             // Reset to show all buses when the button is clicked
             viewAllBuses = true;
-
             removeRoute(map);
+            
+            updateBuses();
 
-            if (viewAllBuses == false) {
-                if (map.busMarkers) {
-                    map.busMarkers.forEach(marker => map.removeLayer(marker));
-                }
-            }
+            showUserLocation(); 
     
             // append html to DOM
             $("#bus-data").html("");
@@ -99,11 +96,11 @@ function addHomeButtonToMap(mapInstance) {
     };
 
     // Add to map
-    homeButton.addTo(mapInstance);
+    homeButton.addTo(map);
 }
 
 // ------------------ Function to add location button to the map ------------------
-function addLocationButtonToMap(mapInstance) {
+function addLocationButtonToMap() {
     // Location button 
     const locationButton = L.control({ position: 'topright' });
 
@@ -128,7 +125,7 @@ function addLocationButtonToMap(mapInstance) {
     };
 
     // Add to map
-    locationButton.addTo(mapInstance);
+    locationButton.addTo(map);
 }
 
 // ------------------ Function to layer to style the map ------------------
@@ -163,34 +160,40 @@ function getViewportBounds() {
 }
 
 // ------------------ Function to show the users location ------------------
-function showUserLocation() {
+function getUserlocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
             const userLat = position.coords.latitude;
             const userLng = position.coords.longitude;
-
-            const userIcon = L.divIcon({
-                className: "user-location-marker", 
-                iconSize: [18, 18],                
-            });
-
-            // Remove the existing marker
-            if (userLocation) {
-                map.removeLayer(userLocation);
-                userLocation = null;
-            }
-            // Add the marker with the custom icon to the map
-            const userMarker = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
-            userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
-
-            // Center map on user"s location
-            map.setView([userLat, userLng], 13);
-            }, 
-        error => {
+            return { userLat, userLng };
+        },error => {
             console.error("Geolocation error:", error);
             map.setView([userLat, userLng]);
         });
-    } 
+    }
+}
+function showUserLocation() {
+
+    const { userLat, userLng } = getUserlocation;
+
+    if(userLat && userLng) {
+        const userIcon = L.divIcon({
+            className: "user-location-marker", 
+            iconSize: [18, 18],                
+        });
+    
+        // Remove the existing marker
+        if (userLocation) {
+            map.removeLayer(userLocation);
+            userLocation = null;
+        }
+        // Add the marker with the custom icon to the map
+        const userMarker = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
+        userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
+    
+        // Center map on user"s location
+        map.setView([userLat, userLng], 13);
+    }
 }
 
 // ------------------ Function to reset inactivity timeout ------------------

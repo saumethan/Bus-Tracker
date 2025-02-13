@@ -21,7 +21,6 @@ async function getBusRoute(serviceId, tripId) {
     try {
         // First API call: Fetch tripId if it's undefined
         if (!tripId) {
-            console.log("Fetching trip ID...");
             const url1 = `https://bustimes.org/vehicles.json?service=${serviceId}`;
             const response1 = await fetch(url1);
             const data1 = await response1.json();
@@ -37,7 +36,6 @@ async function getBusRoute(serviceId, tripId) {
         }
 
         // Second API call: Fetch route details using tripId
-        console.log(`Fetching route data for tripId: ${tripId}`);
         const url2 = `https://bustimes.org/api/trips/${tripId}/?format=json`;
         const response2 = await fetch(url2);
         const data2 = await response2.json();
@@ -60,8 +58,6 @@ async function getBusRoute(serviceId, tripId) {
                 routeCoords.push([stop.stop.location[1], stop.stop.location[0]]);
             }
         });
-
-        console.log("Route coordinates fetched:", routeCoords);
         return routeCoords;
         
     } catch (error) {
