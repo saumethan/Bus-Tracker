@@ -66,7 +66,6 @@ async function getBusRoute(serviceId, tripId) {
     }
 }
 
-
 function drawBusRoute(routeCoords, map) {
     if (!map) {
         console.error("Map is not initialized!");
