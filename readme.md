@@ -2,7 +2,7 @@
 
 # TODO List
 
-- When the buses auto update due to timeout all the buses in the uk show up
+- ADD IN STOP LAT AND LON when a bus is clicked on in the stops
 
 # CM2104 Group Project Repository
 
