@@ -3,6 +3,7 @@
 # TODO List
 
 - ADD IN STOP LAT AND LON when a bus is clicked on in the stops
+- When a bus route is shown the stops for that route should also be shown when zoomed out
 
 # CM2104 Group Project Repository
 
