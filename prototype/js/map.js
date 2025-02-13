@@ -316,12 +316,13 @@ document.addEventListener("DOMContentLoaded", function() {
 function searchRoute(event) {
     event.preventDefault(); 
 
+    let searchInput = document.getElementById('routeSearch');
     let route = document.getElementById('routeSearch').value; 
 
     // Remove spaces and convert to uppercase
     route = route.replace(/\s+/g, '').toUpperCase();
 
-    console.log("Searching for route:", route);
+    searchInput.value = "";
 
     const busData = getClickedBus(route, null, userLat, userLng, map);
 }
