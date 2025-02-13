@@ -5,9 +5,9 @@
  */
 
 // Modules
+import { getAllBusGPS, getSpecificBusGPS, getClickedBus, drawBus, getNocCode, getGpsRoute } from "./busGps.js";
 import { fetchStopsInViewport, drawStops } from "./stops.js";
 import { removeRoute } from "./busRoute.js";
-import { getAllBusGPS, getSpecificBusGPS, getClickedBus, drawBus, getNocCode, getGpsRoute } from "./busGps.js";
 
 // Variables
 let map;  
