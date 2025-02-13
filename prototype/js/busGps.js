@@ -203,8 +203,8 @@ async function showSpecificBusRoute(serviceId, busId, map) {
     }
 
     // Fetch and draw route
-    const routeCoords = await getBusRoute(serviceId, busId);
-    drawBusRoute(routeCoords, map);
+    const { routeCoords, routeNumber, destination } = await getBusRoute(serviceId, busId);
+    drawBusRoute(routeCoords, routeNumber, destination, map);
 
     // Fetch and draw buses with matching NOC and route
     const specificBusData = await getSpecificBusGPS(nocCode, gpsRoute);

@@ -12,61 +12,72 @@ let busData;
 // ------------------ Function to get the bus route ------------------
 async function getBusRoute(serviceId, tripId) {
     let routeCoords = [];
+    let routeNumber = "";
+    let destination = "";
 
-    // Check if busData is initialized
     if (typeof busData === "undefined") {
         busData = {};
     }
 
     try {
-        // First API call: Fetch tripId if it's undefined
+        // Fetch tripId if it's undefined
         if (!tripId) {
             const url1 = `https://bustimes.org/vehicles.json?service=${serviceId}`;
             const response1 = await fetch(url1);
             const data1 = await response1.json();
 
             if (data1.length > 0) {
-                tripId = data1[0].trip_id; // Assign the first tripId found
+                tripId = data1[0].trip_id;
                 busData.tripId = tripId; 
             } else {
                 console.error("No trip ID found for service:", serviceId);
                 busRouteNotFound = true;
-                return [];
+                return { routeCoords: [], routeNumber: "", destination: "" };
             }
         }
 
-        // Second API call: Fetch route details using tripId
+        // Fetch route details
         const url2 = `https://bustimes.org/api/trips/${tripId}/?format=json`;
         const response2 = await fetch(url2);
-        const data2 = await response2.json();
+        const data = await response2.json();
 
-        if (!data2.times || data2.times.length === 0) {
+        if (!data.times || data.times.length === 0) {
             console.error("No route data found for trip ID:", tripId);
             busRouteNotFound = true;
-            return [];
+            return { routeCoords: [], routeNumber: "", destination: "" };
         }
 
         busRouteNotFound = false;
 
-        // Extract route coordinates
-        data2.times.forEach(stop => {
+        // Extract route number
+        routeNumber = data.service.line_name || "Unknown Route";
+
+        // Extract route coordinates and destination
+        data.times.forEach((stop, index) => {
             if (stop.track) {
                 stop.track.forEach(coord => {
-                    routeCoords.push([coord[1], coord[0]]);
+                    routeCoords.push([coord[1], coord[0]]); // Reverse order to [lat, lon]
                 });
-            } else if (stop.stop && stop.stop.location) {
+            } 
+            if (stop.stop && stop.stop.location) {
                 routeCoords.push([stop.stop.location[1], stop.stop.location[0]]);
             }
+
+            // Set last stop as the destination
+            if (index === data.times.length - 1) {
+                destination = stop.stop.name;
+            }
         });
-        return routeCoords;
-        
+
+        return { routeCoords, routeNumber, destination };
+
     } catch (error) {
         console.error("Error fetching bus route:", error);
-        return [];
+        return { routeCoords: [], routeNumber: "", destination: "" };
     }
 }
 
-function drawBusRoute(routeCoords, map) {
+function drawBusRoute(routeCoords, routeNumber, destination, map) {
     if (!map) {
         console.error("Map is not initialized!");
         return;
@@ -94,11 +105,11 @@ function drawBusRoute(routeCoords, map) {
     const formattedTime = now.toLocaleTimeString(); 
 
     var htmlContent="";
-    // htmlContent += `
-    //     <div class="bus-time-record">
-    //         <h2>${coord.route} <span id="destination">to ${coord.destination}</span></h2>
-    //     </div
-    // `;
+    htmlContent += `
+        <div class="bus-time-record">
+            <h2>${routeNumber} <span id="destination">to ${destination}</span></h2>
+        </div
+    `;
     if (busRouteNotFound === true) {
         htmlContent += `<h2>Bus route not found</h2>`
     }
