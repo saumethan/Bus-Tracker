@@ -7,7 +7,7 @@
 // Modules
 import { fetchStopsInViewport, drawStops } from "./stops.js";
 import { removeRoute } from "./busRoute.js";
-import { getAllBusGPS, getSpecificBusGPS, drawBus, getNocCode, getGpsRoute } from "./busGps.js";
+import { getAllBusGPS, getSpecificBusGPS, getClickedBus, drawBus, getNocCode, getGpsRoute } from "./busGps.js";
 
 // Variables
 let map;  
@@ -150,8 +150,8 @@ function getViewportBounds() {
 function showUserLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
-            const userLat = position.coords.latitude;
-            const userLng = position.coords.longitude;
+            userLat = position.coords.latitude;
+            userLng = position.coords.longitude;
             const userIcon = L.divIcon({
                 className: "user-location-marker", 
                 iconSize: [18, 18],                
@@ -309,7 +309,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     map.on("moveend", onMapMoved);
     map.on("zoomend", onMapMoved);
+
+    document.getElementById('searchForm').addEventListener('submit', searchRoute);
 });
+
+function searchRoute(event) {
+    event.preventDefault(); 
+
+    let route = document.getElementById('routeSearch').value; 
+
+    // Remove spaces and convert to uppercase
+    route = route.replace(/\s+/g, '').toUpperCase();
+
+    console.log("Searching for route:", route);
+
+    const busData = getClickedBus(route, null, userLat, userLng, map);
+}
 
 
 // Export
