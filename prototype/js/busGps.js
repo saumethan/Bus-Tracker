@@ -81,6 +81,55 @@ async function getAllBusGPS(yMax, xMax, yMin, xMin) {
     }
 }
 
+async function getClickedBus(serviceNumber, destination, lat, lon, map) {
+    console.log("Bus Service Number:", serviceNumber);
+    console.log("Bus destination:", destination);
+    console.log("Latitude:", lat);
+    console.log("Longitude:", lon);
+
+    // Calculate bounds (adjust the bounds based on the clicked coordinates)
+    const bounds = calculateBounds(lat, lon, 50);
+    const busData = await getAllBusGPS(bounds.yMax, bounds.xMax, bounds.yMin, bounds.xMin);
+
+    console.log(busData);
+
+    let filteredBuses = [];
+
+    // Loop through bus data and filter buses based on route and destination
+    busData.forEach(bus => {
+        // Match bus route with serviceNumber and destination
+        if (bus.route === serviceNumber ) {
+            filteredBuses.push(bus);
+        }
+    });
+
+    console.log("Filtered Buses:", filteredBuses);
+    console.log(filteredBuses[0]?.noc);
+    
+    setViewAllBuses(false, filteredBuses[0]?.noc, serviceNumber);
+
+    drawBus(filteredBuses, map);
+}
+
+function calculateBounds(lat, lon, zoom) {
+    const LATITUDE_DIFFERENCE = 0.0025;
+    const LONGITUDE_DIFFERENCE = 0.0035; 
+
+    let yMax = lat + (LATITUDE_DIFFERENCE * zoom);
+    let yMin = lat - (LATITUDE_DIFFERENCE * zoom);
+    let xMax = lon + (LONGITUDE_DIFFERENCE * zoom);
+    let xMin = lon - (LONGITUDE_DIFFERENCE * zoom);
+
+    if (yMax > 90) yMax = 90;
+    if (yMin < -90) yMin = -90;
+    if (xMax > 180) xMax = 180;
+    if (xMin < -180) xMin = -180;
+
+    return {
+        yMax, xMax, yMin, xMin
+    };
+}
+
 // ------------------ Function to draw the buses ------------------
 function drawBus(busData, map) {
     // Remove existing bus markers
@@ -166,4 +215,4 @@ function getGpsRoute() {
 }
 
 // Export functions
-export { getAllBusGPS, getSpecificBusGPS, drawBus, getGpsRoute, getNocCode };
+export { getAllBusGPS, getSpecificBusGPS, drawBus, getGpsRoute, getNocCode, getClickedBus };

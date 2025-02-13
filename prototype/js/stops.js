@@ -5,6 +5,9 @@
  * @description A module handling stop information, including fetching from relevant APIs and drawing stops on a map
  */
 
+
+import { getClickedBus } from "./busGps.js";
+
 // Constants
 const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
 const BUS_PROXY = `https://europe-west2-legendoj1-portfolio.cloudfunctions.net/busproxy/?apiKey=${TRANSIT_API_KEY}&url=`;
@@ -79,7 +82,7 @@ async function fetchStopId(stop) {
  * Note that this is using a key from Traveline map which we should probably
  * change to a different API in future.
  */
-async function loadStopTimes(stopId) {
+async function loadStopTimes(stopId, map) {
     // clear old bus times html
     $("#bus-data").html("<h3>Loading bus stop times...</h3>");
 
@@ -163,16 +166,29 @@ async function loadStopTimes(stopId) {
 
                 // add to html
                 htmlContent += `
-                    <div class="bus-time-record">
-                        <h2>${bus.serviceNumber} <span class="destination">to ${destination}</span></h2>
-                        <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
-                    </div>
-                `;
-            }
+                <div class="bus-time-record">
+                    <h2 class="number">${bus.serviceNumber} <span class="destination">to ${destination}</span></h2>
+                    <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
+                </div>
+            `;
+        }
 
-            // append html to DOM
-            $("#bus-data").html(htmlContent);
-        } else {
+        // Append the generated HTML to the DOM
+        $("#bus-data").html(htmlContent);
+
+        document.querySelectorAll('h2.number').forEach((element) => {
+            element.addEventListener('click', () => {
+                const serviceNumber = element.textContent.trim().split(' ')[0];
+                const destination = element.querySelector('.destination').textContent.trim().substring(3);
+
+                // ADD IN STOP LAT AND LON
+                const lat = 57.066008; 
+                const lon = -2.132168; 
+
+                getClickedBus(serviceNumber, destination, lat, lon, map);
+            });
+        });
+    } else {
             // handle error with API response
             $("#bus-data").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
         }
@@ -239,12 +255,13 @@ async function drawStops(stopsData, map) {
             circle.setStyle({ fillColor: "#ff9100", color: "#ff9100" });
             circle.openTooltip();
 
-            loadStopTimes(stop.bustimes_id);
+            loadStopTimes(stop.bustimes_id, map);
         });
 
         map.stopMarkers.push(circle);
     });
 }
+
 
 // Export functions
 export { fetchStopsInViewport, fetchStopId, loadStopTimes, drawStops };

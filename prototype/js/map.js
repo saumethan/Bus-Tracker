@@ -16,6 +16,8 @@ let userLocation = null;
 let userLat;
 let userLng;
 let viewAllBuses = true;
+let noc = null;
+let route = null;
 
 // Initialize the map and set its location
 function createMap() {
@@ -69,6 +71,9 @@ function addHomeButtonToMap() {
             updateBuses();
 
             showUserLocation(); 
+
+            noc = null;
+            route = null;
     
             // append html to DOM
             $("#bus-data").html("");
@@ -177,13 +182,10 @@ function resetInactivityTimeout() {
     inactivityTimeout = setTimeout(updateBuses, 10000);
 }
 
-async function setViewAllBuses(value) {
-    
+async function setViewAllBuses(value, nocCode, selectedRoute) {
+    noc = nocCode;
+    route = selectedRoute;
     viewAllBuses = value;
-    const { minX, minY, maxX, maxY } = getViewportBounds();
-
-    if(viewAllBuses === false) {
-    }
 }
 
 function getViewAllBuses() {
@@ -194,6 +196,9 @@ async function updateBuses() {
     if(viewAllBuses) {
         const { minX, minY, maxX, maxY } = getViewportBounds();
         const busData = await getAllBusGPS(maxY, maxX, minY, minX);
+        drawBus(busData, map);
+    } else if (noc && route) {
+        const busData = await getSpecificBusGPS(noc, route);
         drawBus(busData, map);
     } else {
         const busData = await getSpecificBusGPS(getNocCode(), getGpsRoute());
