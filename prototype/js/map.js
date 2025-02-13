@@ -36,37 +36,19 @@ function addRefreshButtonToMap() {
         // Event listener for the button
         buttonDiv.addEventListener('click', async () => {
             // Refresh viewport to load all buses
-            if (map.currentZoom >= 12) {
-                var { minX, minY, maxX, maxY } = getViewportBounds();
-                var busData = await getAllBusGPS(maxY, maxX, minY, minX)
-                drawBus(busData, map);
-            }
-
-            // Update the refresh time if a specific bus route is showing 
-            if (!viewAllBuses) {
+            if (map.currentZoom >= 12 && viewAllBuses) {
+                updateBuses();
+            } else if (!viewAllBuses) {
+                updateBuses();
                 const now = new Date();
                 const formattedTime = now.toLocaleTimeString(); 
                 $("#refreshTime").text("Last updated: " + formattedTime);
-
-                }
+            }
         });
-
         return buttonDiv;
     };
-
     // Add to map
     refreshButton.addTo(map);
-}
-
-async function updateBuses() {
-    if(viewAllBuses) {
-        const { minX, minY, maxX, maxY } = getViewportBounds();
-        const busData = await getAllBusGPS(maxY, maxX, minY, minX);
-        drawBus(busData, map);
-    } else {
-        const busData = await getSpecificBusGPS(getNocCode(), getGpsRoute());
-        drawBus(busData, map);
-    }
 }
 
 // ------------------ Function to add home button to the map ------------------
@@ -160,40 +142,31 @@ function getViewportBounds() {
 }
 
 // ------------------ Function to show the users location ------------------
-function getUserlocation() {
+function showUserLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
             const userLat = position.coords.latitude;
             const userLng = position.coords.longitude;
-            return { userLat, userLng };
-        },error => {
+            const userIcon = L.divIcon({
+                className: "user-location-marker", 
+                iconSize: [18, 18],                
+            });
+            // Remove the existing marker
+            if (userLocation) {
+                map.removeLayer(userLocation);
+                userLocation = null;
+            }
+            // Add the marker with the custom icon to the map
+            const userMarker = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
+            userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
+            // Center map on user"s location
+            map.setView([userLat, userLng], 13);
+            }, 
+        error => {
             console.error("Geolocation error:", error);
             map.setView([userLat, userLng]);
         });
-    }
-}
-function showUserLocation() {
-
-    const { userLat, userLng } = getUserlocation;
-
-    if(userLat && userLng) {
-        const userIcon = L.divIcon({
-            className: "user-location-marker", 
-            iconSize: [18, 18],                
-        });
-    
-        // Remove the existing marker
-        if (userLocation) {
-            map.removeLayer(userLocation);
-            userLocation = null;
-        }
-        // Add the marker with the custom icon to the map
-        const userMarker = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
-        userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
-    
-        // Center map on user"s location
-        map.setView([userLat, userLng], 13);
-    }
+    } 
 }
 
 // ------------------ Function to reset inactivity timeout ------------------
@@ -217,6 +190,16 @@ function getViewAllBuses() {
     return viewAllBuses;
 }
 
+async function updateBuses() {
+    if(viewAllBuses) {
+        const { minX, minY, maxX, maxY } = getViewportBounds();
+        const busData = await getAllBusGPS(maxY, maxX, minY, minX);
+        drawBus(busData, map);
+    } else {
+        const busData = await getSpecificBusGPS(getNocCode(), getGpsRoute());
+        drawBus(busData, map);
+    }
+}
 
 // ------------------ Function for easteregg ------------------
 function easterEgg() {
