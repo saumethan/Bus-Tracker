@@ -110,6 +110,8 @@ async function getClickedBus(serviceNumber, destination, lat, lon, map) {
         setViewAllBuses(false, filteredBuses[0]?.noc, serviceNumber);
 
         drawBus(filteredBuses, map);
+
+        await showSpecificBusRoute(filteredBuses[0]?.serviceId, filteredBuses[0]?.tripId, map);
     }
     
 }
