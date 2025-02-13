@@ -105,10 +105,13 @@ async function getClickedBus(serviceNumber, destination, lat, lon, map) {
 
     console.log("Filtered Buses:", filteredBuses);
     console.log(filteredBuses[0]?.noc);
-    
-    setViewAllBuses(false, filteredBuses[0]?.noc, serviceNumber);
 
-    drawBus(filteredBuses, map);
+    if(filteredBuses[0]?.noc) {
+        setViewAllBuses(false, filteredBuses[0]?.noc, serviceNumber);
+
+        drawBus(filteredBuses, map);
+    }
+    
 }
 
 function calculateBounds(lat, lon, zoom) {
