@@ -6,6 +6,7 @@
 
 // Modules
 import { fetchStopsInViewport, drawStops } from "./stops.js";
+import { removeRoute } from "./busRoute.js";
 import { getAllBusGPS, getSpecificBusGPS, drawBus, getNocCode, getGpsRoute } from "./busGps.js";
 
 // Variables
@@ -82,9 +83,7 @@ function addHomeButtonToMap(mapInstance) {
             // Reset to show all buses when the button is clicked
             viewAllBuses = true;
 
-            if (getRoute()) {
-                map.removeLayer(route);
-            }
+            removeRoute(map);
 
             if (viewAllBuses == false) {
                 if (map.busMarkers) {

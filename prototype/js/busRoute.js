@@ -123,5 +123,12 @@ function adjustMapViewToRoute(route, map) {
     }
 }
 
-export { getBusRoute, drawBusRoute };
+function removeRoute(map) {
+    if (route) {
+        map.removeLayer(route);
+        route = null;
+    }
+}
+
+export { getBusRoute, drawBusRoute, removeRoute };
 
