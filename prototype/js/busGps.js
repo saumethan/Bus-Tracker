@@ -112,11 +112,19 @@ async function findBus(serviceNumber, destination, lat, lon, map) {
     console.log(filteredBuses[0]?.noc);
 
     if(filteredBuses[0]?.noc) {
+        try {
         setViewAllBuses(false, filteredBuses[0]?.noc, serviceNumber);
-
         drawBus(filteredBuses, map);
-
         await showSpecificBusRoute(filteredBuses[0]?.serviceId, filteredBuses[0]?.tripId, serviceNumber, map);
+
+        } catch {
+            console.log("Finish me")
+            // const { minX, minY, maxX, maxY } = getViewportBounds();
+            // const allBuses = await getAllBusGPS(maxY, maxX, minY, minX);
+                        
+            // let filteredBuses = getFilteredBuses(allBuses, getRouteNumber());
+            // drawBus(filteredBuses, map);
+        }
     }
     
 }
