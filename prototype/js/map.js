@@ -5,7 +5,7 @@
  */
 
 // Modules
-import { getAllBusGPS, getSpecificBusGPS, getClickedBus, drawBus, getNocCode, getGpsRoute } from "./busGps.js";
+import { getAllBusGPS, getSpecificBusGPS, findBus, drawBus, getNocCode, getRouteNumber, getFilteredBuses } from "./busGps.js";
 import { fetchStopsInViewport, drawStops } from "./stops.js";
 import { removeRoute } from "./busRoute.js";
 
@@ -70,7 +70,7 @@ function addHomeButtonToMap() {
             
             updateBuses();
 
-            showUserLocation(); 
+            // showUserLocation(); 
 
             noc = null;
             route = null;
@@ -198,11 +198,33 @@ async function updateBuses() {
         const busData = await getAllBusGPS(maxY, maxX, minY, minX);
         drawBus(busData, map);
     } else if (noc && route) {
-        const busData = await getSpecificBusGPS(noc, route);
-        drawBus(busData, map);
+        console.log("1")
+        try {
+            console.log("2")
+            const busData = await getSpecificBusGPS(noc, route);
+            drawBus(busData, map);
+        } catch {
+            console.log("3")
+            const { minX, minY, maxX, maxY } = getViewportBounds();
+            const allBuses = await getAllBusGPS(maxY, maxX, minY, minX);
+    
+            let filteredBuses = getFilteredBuses(allBuses, route);
+            drawBus(filteredBuses, map);
+        }
     } else {
-        const busData = await getSpecificBusGPS(getNocCode(), getGpsRoute());
-        drawBus(busData, map);
+        console.log("4")
+        try {
+            console.log("5")
+            const busData = await getSpecificBusGPS(getNocCode(), getRouteNumber());
+            drawBus(busData, map);
+        } catch {
+            console.log("6")
+            const { minX, minY, maxX, maxY } = getViewportBounds();
+            const allBuses = await getAllBusGPS(maxY, maxX, minY, minX);
+            
+            let filteredBuses = getFilteredBuses(allBuses, getRouteNumber());
+            drawBus(filteredBuses, map);
+        }
     }
 }
 
@@ -324,9 +346,9 @@ function searchRoute(event) {
 
     searchInput.value = "";
 
-    const busData = getClickedBus(route, null, userLat, userLng, map);
+    const busData = findBus(route, null, userLat, userLng, map);
 }
 
 
 // Export
-export { setViewAllBuses, getViewAllBuses };
+export { setViewAllBuses, getViewAllBuses, getViewportBounds };
