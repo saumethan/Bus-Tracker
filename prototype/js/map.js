@@ -68,7 +68,9 @@ function addHomeButtonToMap() {
             viewAllBuses = true;
             removeRoute(map);
             
-            updateBuses();
+            if (map.currentZoom >= 15) {
+                updateBuses();
+            }
 
             // showUserLocation(); 
 
