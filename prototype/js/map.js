@@ -200,13 +200,10 @@ async function updateBuses() {
         const busData = await getAllBusGPS(maxY, maxX, minY, minX);
         drawBus(busData, map);
     } else if (noc && route) {
-        console.log("1")
         try {
-            console.log("2")
             const busData = await getSpecificBusGPS(noc, route);
             drawBus(busData, map);
         } catch {
-            console.log("3")
             const { minX, minY, maxX, maxY } = getViewportBounds();
             const allBuses = await getAllBusGPS(maxY, maxX, minY, minX);
     
@@ -214,13 +211,10 @@ async function updateBuses() {
             drawBus(filteredBuses, map);
         }
     } else {
-        console.log("4")
         try {
-            console.log("5")
             const busData = await getSpecificBusGPS(getNocCode(), getRouteNumber());
             drawBus(busData, map);
         } catch {
-            console.log("6")
             const { minX, minY, maxX, maxY } = getViewportBounds();
             const allBuses = await getAllBusGPS(maxY, maxX, minY, minX);
             
