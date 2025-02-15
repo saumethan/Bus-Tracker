@@ -27,8 +27,12 @@ body{
     margin: 0;
 }
 
+aside {
+    width: 25%;
+}
+
 .search-container {
-    margin: 10px;
+    width: 100%;
 }
 
 input[type=text] {
@@ -41,7 +45,7 @@ input[type=text] {
 .search-container button {
     padding: 6px 10px;
     margin-top: 8px;
-    margin-right: 16px;
+    margin-bottom: 8px;
     background: #ddd;
     font-size: 17px;
     border: none;
@@ -168,8 +172,8 @@ nav #title {
 
 #bus-data {
     padding: 20px;
+    width: 100%;
     height: 90vh;
-    width: 25%;
     float: left;
     background-color: lightgray;
     overflow-y: scroll;
@@ -337,12 +341,17 @@ footer p {
 
 /* =-=-=-= RESPONSIVE PHONES =-=-=-= */
 @media (max-width: 992px) {
+    
     body {
         overflow: hidden;
     }
 
     main {
         padding: 0;
+    }
+
+    aside {
+        width: 100%;
     }
 
     #bus-data, #map {
