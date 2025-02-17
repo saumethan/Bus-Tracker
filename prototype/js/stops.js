@@ -185,7 +185,7 @@ async function loadStopTimes(stopId, map) {
                 const lat = 57.066008; 
                 const lon = -2.132168; 
 
-                getClickedBus(serviceNumber, destination, lat, lon, map);
+                findBus(serviceNumber, destination, lat, lon, map);
             });
         });
     } else {
