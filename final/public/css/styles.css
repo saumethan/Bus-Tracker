@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* =-=-=-= FONTS =-=-=-= */
+* {
+    font-family: "Poppins", sans-serif;
+    scrollbar-color: #888 transparent;
+    scrollbar-width: thin;
+}
+
+/* =-=-=-= MAIN =-=-=-= */
+main{
+    min-height: 90vh; 
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    margin: 0;
+    overflow-x: hidden; 
+    overflow-y: auto; 
+}
+
+body{
+    margin: 0;
+}
+
+aside {
+    width: 25%;
+}
+
+.search-container {
+    width: 100%;
+}
+
+input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+}
+
+.search-container button {
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;  
+}
+
+.search-container button:hover {
+    background: #ccc;
+}
+
+/* =-=-=-= EASTER EGG =-=-=-= */
+#easterEggContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 999;
+}
+
+#easterEggContainer img {
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+#easterEggButton {
+    font-weight: 400;
+    font-size: 17.5px;
+}
+
+/* =-=-=-= NAVIGATION BAR =-=-=-= */
+nav {
+    display: flex !important;  
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    box-shadow: 1px 1px 2px 1px rgba(94, 93, 93, 0.8);
+    padding: 0 10px;
+}
+
+.navbar {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600; 
+    font-size: 17.5px;
+    position: sticky; 
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+}
+
+.navbar-collapse {
+    background-color: white;
+    z-index: 1050;  
+}
+
+.navbar-nav {
+    padding: 1rem; 
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    display: flex; 
+    gap: 20px;
+    padding-right: 10px;
+}
+
+nav a {
+    padding-right: 20px; 
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    font-size: 17.5px;
+    font-weight: 550;
+    transition: color 0.1s ease;
+}
+
+nav li#active a {
+    color: rgb(160, 158, 158);;  
+}
+
+nav a:hover {
+    color: rgb(160, 158, 158);
+}
+
+nav img {
+    width: 80px;
+    height: 80px;
+}
+
+nav #title {
+    font-weight: 550;
+    font-size: 35px; 
+    margin-left: 0;
+    text-align: left; 
+    flex-grow: 1; 
+    flex-shrink: 0; 
+    white-space: nowrap;
+    padding-left: 10px;
+}
+
+/* =-=-=-= MAP =-=-=-= */
+.map-title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+#map {
+    position: relative; 
+    height: 90vh;
+    width: 75%;
+    float: right;
+    background-color: lightgray;
+    z-index: 1;
+}
+
+#bus-data {
+    padding: 20px;
+    width: 100%;
+    height: 90vh;
+    float: left;
+    background-color: lightgray;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#login-section {
+    width: 40vw;
+    height: 35vh;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: auto;
+    box-shadow: 0px 4px 4px 0px rgba(37, 36, 36, 0.8);
+    margin: auto;
+    padding-top: 3vh;
+}
+
+#login-container {
+    padding-top: 20vh;
+}
+
+#login-section h1 {
+    text-align: center;
+}
+
+#login-section form {
+    margin: auto;
+    width: 70%;
+}
+
+#login-section input {
+    padding-left: 10px;
+    width: 100%;
+    height: 5vh;
+    margin-top: 2vh;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+#login-button {
+    transition-duration: 0.4s;
+    width: 100%;
+    height: 5vh;
+    margin-top: 2vh;
+    border-radius: 5px;
+    border-width: 0px;
+    color: black;
+    background-color: rgb(216, 216, 216) ;
+}
+
+#login-button:hover {
+    background-color: rgb(73, 73, 73);
+    color: white;
+}
+
+.map-button {
+    background: #C9C6C2;
+    border-radius: 5px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.map-button button {
+    position: relative;
+    width: 30px; 
+    height: 30px; 
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 3px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px; 
+    display: flex;                  
+    align-items: center;            
+    justify-content: center;
+}
+
+.map-button button:hover {
+    background-color: #F4F4F4;
+}
+
+#reset-button #home-button #location-button {
+    padding: 8px 16px; 
+    font-size: 14px;
+    z-index: 5;
+}
+
+.user-location-marker {
+    width: 18px;
+    height: 18px;
+    background-color: #4285f4; 
+    border: 2px solid white;  
+    border-radius: 50%;        
+    box-shadow: 0 0 18px rgba(66, 133, 244, 0.6); 
+    position: relative;
+}
+
+.user-location-marker::after {
+    content: "";
+    width: 6px;
+    height: 6px; 
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* =-=-=-= FOOTER =-=-=-= */
+footer {
+    background-color: white;
+    color: rblack;
+    text-align: center;
+    padding: 10px 0;
+    height: 50px;
+    margin-top: auto;
+    box-shadow: 4px 1px 4px 1px rgba(37, 36, 36, 0.8);
+}
+
+footer p {
+    font-size: 0.8rem;
+    margin: 0; 
+}
+
+#footer-link {
+    text-decoration: none;
+    color: black;
+}
+
+/* =-=-=-= BUS TIMES PANEL =-=-=-= */
+.bus-time-record {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.bus-time-record .times {
+    text-align: right;
+}
+
+.bus-time-record .destination {
+    font-size: 18px;
+}
+
+/* =-=-=-= SCROLL BAR FOR BUS TIMES PANEL =-=-=-= */
+::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+/* =-=-=-= TIMETABLES PAGE =-=-=-= */
+.pdf {
+    width: 100%;
+    height: 1000px;
+}
+
+/* =-=-=-= RESPONSIVE PHONES =-=-=-= */
+@media (max-width: 992px) {
+    
+    body {
+        overflow: hidden;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    #bus-data, #map {
+        width: 100%;         
+        float: none;
+        max-width: 100%;    
+        margin: 0 auto;     
+    }
+
+    #bus-data {
+        margin-top: 0;
+        height: 40vh;
+        margin-bottom: 0;
+        border-radius: 0;
+    }
+
+    #map {
+        height: 60vh;
+        border-radius: 0;
+    }
+
+    header nav{
+        height: 80px;
+    }
+
+    nav img {
+        width: 50px;
+        height: 50px;
+    }
+
+    footer {
+        visibility: hidden;
+        display: none;
+        height: 0;
+    }
+
+    #login-section {
+        width: 80vw;
+        height: 35vh;
+    }
+
+}
+
