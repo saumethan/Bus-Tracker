@@ -262,9 +262,37 @@ function easterEgg() {
     });
 }
 
+// Function to get URL parameters
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
+
 // Calls the initializeMap function when the HTML has loaded
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", async function() {
     
+    const busRoute = getUrlParameter('bus');
+    if (busRoute) {
+        console.log(`Bus route detected in URL: ${busRoute}`);
+        
+        // Get current map bounds
+        const bounds = getViewportBounds();
+        const allBuses = await getAllBusGPS(bounds.maxY, bounds.maxX, bounds.minY, bounds.minX);
+        
+        // Filter for buses matching the route in URL
+        const filteredBuses = getFilteredBuses(allBuses, busRoute);
+        
+        if (filteredBuses.length > 0) {
+            const bus = filteredBuses[0];
+            // Select the first matching bus
+            setViewAllBuses(false, bus.noc, bus.route);
+            drawBus(filteredBuses, map);
+            await showSpecificBusRoute(bus.serviceId, bus.tripId, bus.route, map);
+        }
+    }
     // Creates map
     map = createMap();
     map.stopCircleRadius = 50;
