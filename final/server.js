@@ -10,6 +10,15 @@ app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
     res.render('pages/index');
 });
+app.get('/login', function(req, res) {
+    res.render('pages/login');
+});
+app.get('/settings', function(req, res) {
+    res.render('pages/settings');
+});
+app.get('/timetable', function(req, res) {
+    res.render('pages/timetables');
+});
 
 app.listen(8080);
 console.log('8080 is the magic port');
