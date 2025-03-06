@@ -68,37 +68,21 @@
         </nav>
     </header>
 
-    <main>
-
-        <!-- Bus route map -->
-        <div id="map"></div>
-        
-        <aside>
-            <div class="search-container">
-                <form id="searchForm">
-                    <input type="text" placeholder="Route" name="search" id="routeSearch">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
-            
-    
-            <div id="bus-data">
-    
-                
-    
-                <!--
-                <div class="bus-time-record">
-                    <h2>X8 <span id="destination">to Stonehaven</span></h2>
-                    <p id="times">00:00 (Exp: 00:01)<br><span>CANCELLED</span></p>
+    <main class="container-fluid">
+        <div class="row">
+            <!-- Map -->
+            <div id="map" class="col-md-9 col-12"></div>
+            <!-- Sidebar / Bus Data -->
+            <aside class="col-md-3 col-12 bg-light p-3">
+                <div class="search-container mb-3">
+                    <form id="searchForm" class="d-flex">
+                        <input type="text" class="form-control me-2" placeholder="Route" name="search" id="routeSearch">
+                        <button type="submit" class="btn btn-outline-secondary"><i class="fa fa-search"></i></button>
+                    </form>
                 </div>
-                -->
-            </div>
-        </aside>
-        
-        
-        <!-- Easter Egg -->
-        <div id="easterEggContainer"></div>
-    
+                <div id="bus-data" class="overflow-auto"></div>
+            </aside>
+        </div>
     </main>
 
     <footer>
