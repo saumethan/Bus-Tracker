@@ -17,7 +17,7 @@ app.get('/settings', function(req, res) {
     res.render('pages/settings');
 });
 app.get('/timetable', function(req, res) {
-    res.render('pages/timetables');
+    res.render('pages/timetable');
 });
 
 app.listen(8080);
