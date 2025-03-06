@@ -8,6 +8,7 @@
 import { getAllBusGPS, getSpecificBusGPS, findBus, drawBus, getNocCode, getRouteNumber, getFilteredBuses } from "./busGps.js";
 import { fetchStopsInViewport, drawStops } from "./stops.js";
 import { removeRoute } from "./busRoute.js";
+import { MongoParseError } from "mongodb-legacy";
 
 // Variables
 let map;  
@@ -274,15 +275,15 @@ function getUrlParameter(name) {
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", async function() {
 
-    const busRoute = getUrlParameter('bus');
-    if (busRoute) {
-        console.log(`Bus route detected in URL: ${busRoute}`);
+    const routeNumber = getUrlParameter('bus');
+    if (routeNumber) {
+        console.log(`Bus route detected in URL: ${routeNumber}`);
         
         // Get current map bounds
         const allBuses = await getAllBusGPS(57.271618718194446, -1.5930175781250002, 56.63961624999757, -2.753448486328125); 
         
-        // Filter for buses matching the route in URL
-        const filteredBuses = getFilteredBuses(allBuses, busRoute);
+
+        const busData = findBus(routeNumber, null, userLat, userLng, map);
         
         if (filteredBuses.length > 0) {
             const bus = filteredBuses[0];
@@ -361,8 +362,8 @@ document.addEventListener("DOMContentLoaded", async function() {
 function searchRoute(event) {
     event.preventDefault(); 
 
-    let searchInput = document.getElementById('routeSearch');
-    let route = document.getElementById('routeSearch').value; 
+    let searchInput = document.getElementById("routeSearch");
+    let route = document.getElementById("routeSearch").value; 
 
     // Remove spaces and convert to uppercase
     route = route.replace(/\s+/g, '').toUpperCase();
@@ -370,6 +371,7 @@ function searchRoute(event) {
     searchInput.value = "";
 
     const busData = findBus(route, null, userLat, userLng, map);
+    drawBus(busData, map);
 }
 
 
