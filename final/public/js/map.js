@@ -307,7 +307,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         const allBuses = await getAllBusGPS(57.271618718194446, -1.5930175781250002, 56.63961624999757, -2.753448486328125); 
         
 
-        const busData = findBus(routeNumber, null, userLat, userLng, map);
+        const busData = findBus(routeNumber.toUpperCase(), null, userLat, userLng, map);
         
         drawBus(busData, map);
     }
