@@ -63,16 +63,34 @@ function addHomeButtonToMap() {
         buttonDiv.innerHTML = "<button id='home-button'><i class='fa-solid fa-house'></i></button>";
 
         // Event listener for the button
-        buttonDiv.addEventListener("click", () => {
+        buttonDiv.addEventListener("click", async () => {
+            
             // Reset to show all buses when the button is clicked
-            window.location.href = "/";
+            await showUserLocation();
+            const { minX, minY, maxX, maxY } = getViewportBounds();
+            const busData = await getAllBusGPS(maxY, maxX, minY, minX);
+            drawBus(busData, map);
+            removeRoute(map);
+
+            // Clear bus data container
+            $("#bus-data").html("");
+
+            // Set flag to indicate all buses are shown
+            viewAllBuses = true;
+
+            // Remove all URL parameters
+            // Update URL without refreshing page
+            const newUrl = window.location.origin;
+            window.history.pushState({ path: newUrl }, "", newUrl);
         });
+
         return buttonDiv;
     };
 
     // Add to map
     homeButton.addTo(map);
 }
+
 
 // ------------------ Function to add location button to the map ------------------
 function addLocationButtonToMap() {
@@ -278,7 +296,6 @@ async function handlePopState(event) {
         // append html to DOM
         $("#bus-data").html(htmlContent);
         viewAllBuses = true;
-        console.log(viewAllBuses)
     } else {
         // If there is a bus parameter, show that specific bus
         findBus(busRoute.toUpperCase(), null, userLat, userLng, map);
