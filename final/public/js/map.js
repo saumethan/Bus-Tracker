@@ -273,14 +273,13 @@ function getUrlParameter(name) {
 
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", async function() {
-    
+
     const busRoute = getUrlParameter('bus');
     if (busRoute) {
         console.log(`Bus route detected in URL: ${busRoute}`);
         
         // Get current map bounds
-        const bounds = getViewportBounds();
-        const allBuses = await getAllBusGPS(bounds.maxY, bounds.maxX, bounds.minY, bounds.minX);
+        const allBuses = await getAllBusGPS(57.271618718194446, -1.5930175781250002, 56.63961624999757, -2.753448486328125); 
         
         // Filter for buses matching the route in URL
         const filteredBuses = getFilteredBuses(allBuses, busRoute);
