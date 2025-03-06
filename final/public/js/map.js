@@ -291,6 +291,10 @@ document.addEventListener("DOMContentLoaded", async function() {
     const routeNumber = getUrlParameter('bus');
     if (routeNumber) {
         console.log(`Bus route detected in URL: ${routeNumber}`);
+        
+        // Get current map bounds
+        const allBuses = await getAllBusGPS(57.271618718194446, -1.5930175781250002, 56.63961624999757, -2.753448486328125); 
+        
 
         const busData = findBus(routeNumber.toUpperCase(), null, userLat, userLng, map);
         
