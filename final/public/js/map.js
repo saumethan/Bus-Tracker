@@ -171,8 +171,10 @@ async function showUserLocation() {
 function resetInactivityTimeout() {
     // Clear the existing timeout
     if (inactivityTimeout) clearTimeout(inactivityTimeout);
-    // Set a new timeout 
-    inactivityTimeout = setTimeout(updateBuses, 10000);
+    // Set a new timeout
+    if (map.zoom >= 12) {
+        inactivityTimeout = setTimeout(updateBuses, 10000);
+    }
 }
 
 async function setViewAllBuses(value, nocCode, selectedRoute) {
@@ -272,6 +274,11 @@ async function handlePopState(event) {
         const busData = await getAllBusGPS(maxY, maxX, minY, minX);
         drawBus(busData, map);
         removeRoute(map);
+        let htmlContent = "";
+        // append html to DOM
+        $("#bus-data").html(htmlContent);
+        viewAllBuses = true;
+        console.log(viewAllBuses)
     } else {
         // If there is a bus parameter, show that specific bus
         findBus(busRoute.toUpperCase(), null, userLat, userLng, map);

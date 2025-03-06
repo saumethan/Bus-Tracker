@@ -158,8 +158,6 @@ function updateURLWithRoute(route) {
 // ------------------ Function to draw the buses ------------------
 function drawBus(busData, map) {
 
-    map.busMarkers = [];
-
     // Remove existing bus markers
     if (map.busMarkers) {
         map.busMarkers.forEach(marker => {
@@ -170,7 +168,8 @@ function drawBus(busData, map) {
     if (busData === null) {
         return;
     }
-    
+
+    map.busMarkers = [];
 
     // Draw each bus marker
     busData.forEach(coord => { 
