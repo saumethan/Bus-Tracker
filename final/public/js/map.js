@@ -149,7 +149,7 @@ function getViewportBounds() {
 }
 
 // ------------------ Function to show the users location ------------------
-function showUserLocation() {
+async function showUserLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
             userLat = position.coords.latitude;
@@ -274,18 +274,6 @@ function getUrlParameter(name) {
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", async function() {
 
-    const routeNumber = getUrlParameter('bus');
-    if (routeNumber) {
-        console.log(`Bus route detected in URL: ${routeNumber}`);
-        
-        // Get current map bounds
-        const allBuses = await getAllBusGPS(57.271618718194446, -1.5930175781250002, 56.63961624999757, -2.753448486328125); 
-        
-
-        const busData = findBus(routeNumber, null, userLat, userLng, map);
-        
-        drawBus(busData, map);
-    }
     // Creates map
     map = createMap();
     map.stopCircleRadius = 50;
@@ -296,7 +284,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     addHomeButtonToMap(map);
     addLocationButtonToMap(map);
 
-    showUserLocation()
+    await showUserLocation()
     resetInactivityTimeout();
 
     // Resize the buses as the user zooms in
@@ -310,6 +298,19 @@ document.addEventListener("DOMContentLoaded", async function() {
             map.stopCircleRadius = 50;
         }
     });
+
+    const routeNumber = getUrlParameter('bus');
+    if (routeNumber) {
+        console.log(`Bus route detected in URL: ${routeNumber}`);
+        
+        // Get current map bounds
+        const allBuses = await getAllBusGPS(57.271618718194446, -1.5930175781250002, 56.63961624999757, -2.753448486328125); 
+        
+
+        const busData = findBus(routeNumber, null, userLat, userLng, map);
+        
+        drawBus(busData, map);
+    }
 
     // Update stops and buses when the map is moved/zoomed
     async function onMapMoved() {
