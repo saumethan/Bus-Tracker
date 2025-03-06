@@ -65,20 +65,10 @@ function addHomeButtonToMap() {
         // Event listener for the button
         buttonDiv.addEventListener('click', () => {
             // Reset to show all buses when the button is clicked
-            viewAllBuses = true;
-            removeRoute(map);
             
-            if (map.currentZoom >= 15) {
-                updateBuses();
-            }
-
-            // showUserLocation(); 
-
-            noc = null;
-            route = null;
-    
-            // append html to DOM
-            $("#bus-data").html("");
+            const newUrl = window.location.pathname 
+            console.log(newUrl);
+            window.history.pushState({ path: newUrl }, '', newUrl);
 
         });
         return buttonDiv;
