@@ -1,1 +1,36 @@
 <!-- views/pages/timetable.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head") %>
+</head>
+
+<body>
+    <header>
+        <%- include("../partials/header") %>
+    </header>
+    <!-- Forms for selecting bus route -->
+    <main class="p-4">
+        <label for="service">Select Bus company:</label>
+        <select class="form-select form-select-lg mb-3" id="service" onchange="setOperator()">
+            <option value="https://www.firstbus.co.uk/api/timetables/pdf">First bus</option>
+            <option value="https://www.stagecoachbus.com/timetables">StageCoach</option>
+        </select>
+    
+        <!-- div for selecting bus route for first-->
+        <div id="selection">
+
+        </div>
+        
+        <!-- div for the first bus timetable pdf viewer -->
+        <div id="pdfContainer">
+
+        </div>
+    </main>
+
+    <footer>
+        <%- include("../partials/footer") %>
+    </footer>
+
+</body>
+</html>
