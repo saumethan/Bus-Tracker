@@ -8,7 +8,6 @@
 import { getAllBusGPS, getSpecificBusGPS, findBus, drawBus, getNocCode, getRouteNumber, getFilteredBuses } from "./busGps.js";
 import { fetchStopsInViewport, drawStops } from "./stops.js";
 import { removeRoute } from "./busRoute.js";
-import { MongoParseError } from "mongodb-legacy";
 
 // Variables
 let map;  
