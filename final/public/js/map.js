@@ -139,30 +139,37 @@ function getViewportBounds() {
 
 // ------------------ Function to show the users location ------------------
 async function showUserLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-            userLat = position.coords.latitude;
-            userLng = position.coords.longitude;
-            const userIcon = L.divIcon({
-                className: "user-location-marker", 
-                iconSize: [18, 18],                
+    return new Promise((resolve, reject) => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                userLat = position.coords.latitude;
+                userLng = position.coords.longitude;
+                const userIcon = L.divIcon({
+                    className: "user-location-marker", 
+                    iconSize: [18, 18],                
+                });
+
+                // Remove the existing marker if it exists
+                if (userLocation) {
+                    map.removeLayer(userLocation);
+                }
+
+                // Add the new marker with the custom icon
+                userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
+
+                // Center map on user's location
+                map.setView([userLat, userLng], 13);
+                
+                resolve(); // Resolve the promise when location is determined
+            }, 
+            error => {
+                console.error("Geolocation error:", error);
+                reject(error); // Reject if there's an error
             });
-
-            // Remove the existing marker if it exists
-            if (userLocation) {
-                map.removeLayer(userLocation);
-            }
-
-            // Add the new marker with the custom icon
-            userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
-
-            // Center map on user's location
-            map.setView([userLat, userLng], 13);
-        }, 
-        error => {
-            console.error("Geolocation error:", error);
-        });
-    } 
+        } else {
+            reject(new Error("Geolocation not supported"));
+        }
+    });
 }
 
 // ------------------ Function to reset inactivity timeout ------------------
@@ -288,17 +295,14 @@ document.addEventListener("DOMContentLoaded", async function() {
         }
     });
 
-    const routeNumber = getUrlParameter('bus');
+    const routeNumber = getUrlParameter("bus");
     if (routeNumber) {
         console.log(`Bus route detected in URL: ${routeNumber}`);
         
         // Get current map bounds
-        const allBuses = await getAllBusGPS(57.271618718194446, -1.5930175781250002, 56.63961624999757, -2.753448486328125); 
+        //const allBuses = await getAllBusGPS(57.271618718194446, -1.5930175781250002, 56.63961624999757, -2.753448486328125); 
         
-
-        const busData = findBus(routeNumber.toUpperCase(), null, userLat, userLng, map);
-        
-        drawBus(busData, map);
+        await findBus(routeNumber.toUpperCase(), null, userLat, userLng, map);
     }
 
     // Update stops and buses when the map is moved/zoomed
@@ -353,8 +357,7 @@ function searchRoute(event) {
 
     searchInput.value = "";
 
-    const busData = findBus(route, null, userLat, userLng, map);
-    drawBus(busData, map);
+    findBus(route, null, userLat, userLng, map);
 }
 
 
