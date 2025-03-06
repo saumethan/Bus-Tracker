@@ -152,7 +152,7 @@ function calculateBounds(lat, lon, zoom) {
 function updateURLWithRoute(route) {
     // Update URL without refreshing page
     const newUrl = window.location.origin + window.location.pathname + `?bus=${route}`;
-    window.history.pushState({ path: newUrl }, '', newUrl);
+    window.history.pushState({ path: newUrl }, "", newUrl);
 }
 
 // ------------------ Function to draw the buses ------------------
@@ -188,10 +188,10 @@ function drawBus(busData, map) {
             </div>
         `;
 
-        circle.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
+        circle.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
 
         // Add click event listener to the bus marker
-        circle.on('click', async (event) => {
+        circle.on("click", async (event) => {
             nocCode = coord.noc;
             routeNumber = coord.route;
             setViewAllBuses(false);
@@ -205,14 +205,14 @@ function drawBus(busData, map) {
             map.busMarkers.forEach(marker => {
                 marker.closeTooltip(); 
                 marker.unbindTooltip();
-                marker.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
+                marker.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
             });
         });
         map.busMarkers.push(circle);
     });
 
     // Close tooltips when clicking elsewhere on the map
-    map.on('click', () => {
+    map.on("click", () => {
         map.busMarkers.forEach(marker => {
             marker.closeTooltip();
             marker.unbindTooltip();

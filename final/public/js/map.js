@@ -21,7 +21,7 @@ let route = null;
 
 // Initialize the map and set its location
 function createMap() {
-    const mapInstance = L.map('map').setView([57.1497, -2.0943], 13); // Aberdeen
+    const mapInstance = L.map("map").setView([57.1497, -2.0943], 13); // Aberdeen
     addTileLayer(mapInstance); 
     return mapInstance;
 }
@@ -29,14 +29,14 @@ function createMap() {
 // ------------------ Function to add refresh button to the map ------------------
 function addRefreshButtonToMap() {
     // Refresh buses 
-    const refreshButton = L.control({ position: 'topright' });
+    const refreshButton = L.control({ position: "topright" });
 
     refreshButton.onAdd = function () {
-        const buttonDiv = L.DomUtil.create('div', 'map-button');
-        buttonDiv.innerHTML = '<button id="reset-button"><i class="fa-solid fa-arrows-rotate"></i></button>';
+        const buttonDiv = L.DomUtil.create("div", "map-button");
+        buttonDiv.innerHTML = "<button id='reset-button'><i class='fa-solid fa-arrows-rotate'></i></button>";
 
         // Event listener for the button
-        buttonDiv.addEventListener('click', async () => {
+        buttonDiv.addEventListener("click", async () => {
             // Refresh viewport to load all buses
             if (map.currentZoom >= 12 && viewAllBuses) {
                 updateBuses();
@@ -56,14 +56,14 @@ function addRefreshButtonToMap() {
 // ------------------ Function to add home button to the map ------------------
 function addHomeButtonToMap() {
     // Home button 
-    const homeButton = L.control({ position: 'topleft' });
+    const homeButton = L.control({ position: "topleft" });
 
     homeButton.onAdd = function () {
-        const buttonDiv = L.DomUtil.create('div', 'map-button');
-        buttonDiv.innerHTML = '<button id="home-button"><i class="fa-solid fa-house"></i></button>';
+        const buttonDiv = L.DomUtil.create("div", "map-button");
+        buttonDiv.innerHTML = "<button id='home-button'><i class='fa-solid fa-house'></i></button>";
 
         // Event listener for the button
-        buttonDiv.addEventListener('click', () => {
+        buttonDiv.addEventListener("click", () => {
             // Reset to show all buses when the button is clicked
             window.location.href = "/";
         });
@@ -77,14 +77,14 @@ function addHomeButtonToMap() {
 // ------------------ Function to add location button to the map ------------------
 function addLocationButtonToMap() {
     // Location button 
-    const locationButton = L.control({ position: 'topright' });
+    const locationButton = L.control({ position: "topright" });
 
     locationButton.onAdd = function () {
-        const buttonDiv = L.DomUtil.create('div', 'map-button');
-        buttonDiv.innerHTML = '<button id="location-button"><i class="fa-solid fa-location-crosshairs"></i></i></button>';
+        const buttonDiv = L.DomUtil.create("div", "map-button");
+        buttonDiv.innerHTML = "<button id='location-button'><i class='fa-solid fa-location-crosshairs'></i></i></button>";
 
         // Event listener for the button
-        buttonDiv.addEventListener('click', () => {
+        buttonDiv.addEventListener("click", () => {
             showUserLocation();
 
             // Update the refresh time if a specific bus route is showing 
@@ -103,9 +103,9 @@ function addLocationButtonToMap() {
 
 // ------------------ Function to layer to style the map ------------------
 function addTileLayer(mapInstance) {
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
         maxZoom: 18,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        attribution: "&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors &copy; <a href='https://carto.com/attributions'>CARTO</a>"
     }).addTo(mapInstance);
 }
 
@@ -152,14 +152,14 @@ async function showUserLocation() {
                 // Add the new marker with the custom icon
                 userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
 
-                // Center map on user's location
+                // Center map on user"s location
                 map.setView([userLat, userLng], 13);
                 
                 resolve(); // Resolve the promise when location is determined
             }, 
             error => {
                 console.error("Geolocation error:", error);
-                reject(error); // Reject if there's an error
+                reject(error); // Reject if there"s an error
             });
         } else {
             reject(new Error("Geolocation not supported"));
@@ -255,10 +255,10 @@ function easterEgg() {
 
 // Function to get URL parameters
 function getUrlParameter(name) {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
     var results = regex.exec(location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
 // Function to handle URL changes (browser back/forward)
@@ -307,7 +307,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     });
 
     // Add event listener for browser back/forward buttons
-    window.addEventListener('popstate', handlePopState);
+    window.addEventListener("popstate", handlePopState);
 
     const routeNumber = getUrlParameter("bus");
     if (routeNumber) {
@@ -353,7 +353,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     map.on("moveend", onMapMoved);
     map.on("zoomend", onMapMoved);
 
-    document.getElementById('searchForm').addEventListener('submit', searchRoute);
+    document.getElementById("searchForm").addEventListener("submit", searchRoute);
 });
 
 function searchRoute(event) {
@@ -363,11 +363,11 @@ function searchRoute(event) {
     let route = document.getElementById("routeSearch").value; 
 
     // Remove spaces and convert to uppercase
-    route = route.replace(/\s+/g, '').toUpperCase();
+    route = route.replace(/\s+/g, "").toUpperCase();
 
     // Update URL without refreshing page
     const newUrl = window.location.origin + window.location.pathname + `?bus=${route}`;
-    window.history.pushState({ path: newUrl }, '', newUrl);
+    window.history.pushState({ path: newUrl }, "", newUrl);
 
     searchInput.value = "";
 

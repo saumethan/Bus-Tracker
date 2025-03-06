@@ -20,7 +20,7 @@ async function getBusRoute(serviceId, tripId) {
     }
 
     try {
-        // Fetch tripId if it's undefined
+        // Fetch tripId if it"s undefined
         if (!tripId) {
             const url1 = `https://bustimes.org/vehicles.json?service=${serviceId}`;
             const response1 = await fetch(url1);
@@ -93,7 +93,7 @@ function drawBusRoute(routeCoords, routeNumber, destination, map) {
 
     // Create and add a new polyline
     route = L.polyline(routeCoords, {
-        color: '#3498db',
+        color: "#3498db",
         weight: 4,
         opacity: 0.8,
     }).addTo(map);
