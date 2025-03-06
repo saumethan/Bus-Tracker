@@ -284,13 +284,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
         const busData = findBus(routeNumber, null, userLat, userLng, map);
         
-        if (filteredBuses.length > 0) {
-            const bus = filteredBuses[0];
-            // Select the first matching bus
-            setViewAllBuses(false, bus.noc, bus.route);
-            drawBus(filteredBuses, map);
-            await showSpecificBusRoute(bus.serviceId, bus.tripId, bus.route, map);
-        }
+        drawBus(busData, map);
     }
     // Creates map
     map = createMap();
