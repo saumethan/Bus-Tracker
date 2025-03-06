@@ -66,9 +66,8 @@ function addHomeButtonToMap() {
         buttonDiv.addEventListener('click', () => {
             // Reset to show all buses when the button is clicked
             
-            const newUrl = window.location.pathname 
-            console.log(newUrl);
-            window.history.pushState({ path: newUrl }, '', newUrl);
+            window.location.href = "/";
+
 
         });
         return buttonDiv;
