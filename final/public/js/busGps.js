@@ -79,8 +79,8 @@ async function getAllBusGPS(yMax, xMax, yMin, xMin) {
                 serviceId: bus.service_id,
                 noc: bus.vehicle.url.split("/")[2].split("-")[0].toUpperCase()
             });
-        })
-        return busData
+        });
+        return busData;
     } else {
         console.error("Error fetching bus data.");
     }
@@ -148,8 +148,18 @@ function calculateBounds(lat, lon, zoom) {
     };
 }
 
+// Function to update URL without reloading the page
+function updateURLWithRoute(route) {
+    // Update URL without refreshing page
+    const newUrl = window.location.origin + window.location.pathname + `?bus=${route}`;
+    window.history.pushState({ path: newUrl }, "", newUrl);
+}
+
 // ------------------ Function to draw the buses ------------------
 function drawBus(busData, map) {
+
+    map.busMarkers = [];
+
     // Remove existing bus markers
     if (map.busMarkers) {
         map.busMarkers.forEach(marker => {
@@ -161,7 +171,6 @@ function drawBus(busData, map) {
         return;
     }
     
-    map.busMarkers = [];
 
     // Draw each bus marker
     busData.forEach(coord => { 
@@ -179,13 +188,16 @@ function drawBus(busData, map) {
             </div>
         `;
 
-        circle.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
+        circle.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
 
         // Add click event listener to the bus marker
-        circle.on('click', async (event) => {
+        circle.on("click", async (event) => {
             nocCode = coord.noc;
             routeNumber = coord.route;
             setViewAllBuses(false);
+            
+            // Update URL to reflect the selected bus route
+            updateURLWithRoute(coord.route);
 
             await showSpecificBusRoute(coord.serviceId, coord.tripId, coord.route, map);
 
@@ -193,14 +205,14 @@ function drawBus(busData, map) {
             map.busMarkers.forEach(marker => {
                 marker.closeTooltip(); 
                 marker.unbindTooltip();
-                marker.bindTooltip(toolTipContent, { permanent: false, direction: 'top' });
+                marker.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
             });
         });
         map.busMarkers.push(circle);
     });
 
     // Close tooltips when clicking elsewhere on the map
-    map.on('click', () => {
+    map.on("click", () => {
         map.busMarkers.forEach(marker => {
             marker.closeTooltip();
             marker.unbindTooltip();
@@ -210,7 +222,6 @@ function drawBus(busData, map) {
 
 // ------------------ Function to update map with specific bus route ------------------
 async function showSpecificBusRoute(serviceId, busId, busNumber, map) { 
-    console.log(serviceId, busId)
     // Clear existing bus markers
     if (map.busMarkers) {
         map.busMarkers.forEach(marker => map.removeLayer(marker));
