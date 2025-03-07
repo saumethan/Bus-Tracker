@@ -66,7 +66,18 @@ function addHomeButtonToMap() {
         buttonDiv.addEventListener("click", async () => {
             
             // Reset to show all buses when the button is clicked
-            await showUserLocation();
+            try {
+                const locationFound = await showUserLocation();
+                if (!locationFound) {
+                    console.log("Proceeding without user location");
+                    userLat = 57.14912368784818;
+                    userLng = -2.0980214518088967;
+                }
+            } catch (error) {
+                console.error("Failed to get user location:", error);
+                userLat = 57.14912368784818;
+                userLng = -2.0980214518088967;
+            }
             const { minX, minY, maxX, maxY } = getViewportBounds();
             const busData = await getAllBusGPS(maxY, maxX, minY, minX);
             drawBus(busData, map);
