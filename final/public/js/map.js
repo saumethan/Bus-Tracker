@@ -8,6 +8,7 @@
 import { getAllBusGPS, getSpecificBusGPS, findBus, drawBus, getNocCode, getRouteNumber, getFilteredBuses } from "./busGps.js";
 import { fetchStopsInViewport, drawStops } from "./stops.js";
 import { removeRoute } from "./busRoute.js";
+import { showNotification } from "./helper.js";
 
 // Variables
 let map;  
@@ -72,11 +73,13 @@ function addHomeButtonToMap() {
                     console.log("Proceeding without user location");
                     userLat = 57.14912368784818;
                     userLng = -2.0980214518088967;
+                    showNotification("Location not Found", "warning")
                 }
             } catch (error) {
                 console.error("Failed to get user location:", error);
                 userLat = 57.14912368784818;
                 userLng = -2.0980214518088967;
+                showNotification("Location not Found", "warning")
             }
             const { minX, minY, maxX, maxY } = getViewportBounds();
             const busData = await getAllBusGPS(maxY, maxX, minY, minX);
@@ -113,8 +116,15 @@ function addLocationButtonToMap() {
         buttonDiv.innerHTML = "<button id='location-button'><i class='fa-solid fa-location-crosshairs'></i></i></button>";
 
         // Event listener for the button
-        buttonDiv.addEventListener("click", () => {
-            showUserLocation();
+        buttonDiv.addEventListener("click", async () => {
+            try {
+                const locationFound = await showUserLocation();
+                if (!locationFound) {
+                    showNotification("Location not Found", "warning")
+                }
+            } catch (error) {
+                showNotification("Location not Found", "warning")
+            }
 
             // Update the refresh time if a specific bus route is showing 
             if (!viewAllBuses) {
@@ -353,12 +363,12 @@ document.addEventListener("DOMContentLoaded", async function() {
     try {
         const locationFound = await showUserLocation();
         if (!locationFound) {
-            console.log("Proceeding without user location");
+            showNotification("Location not Found", "warning")
             userLat = 57.14912368784818;
             userLng = -2.0980214518088967;
         }
     } catch (error) {
-        console.error("Failed to get user location:", error);
+        showNotification("Location not Found", "warning")
         userLat = 57.14912368784818;
         userLng = -2.0980214518088967;
     }

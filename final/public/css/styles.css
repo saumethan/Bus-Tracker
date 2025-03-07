@@ -295,6 +295,39 @@ footer p {
     height: 1000px;
 }
 
+/* =-=-=-= Notification popups =-=-=-= */
+#notification-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+}
+
+.notification {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.notification-warning {
+    background-color: #fcf8e3;
+    border-left: 4px solid #f0ad4e;
+}
+
+.notification-error {
+    background-color: #f2dede;
+    border-left: 4px solid #d9534f;
+}
+
+.notification-info {
+    background-color: #d9edf7;
+    border-left: 4px solid #5bc0de;
+}
+
+
 /* =-=-=-= RESPONSIVE PHONES =-=-=-= */
 @media (max-width: 992px) {
     

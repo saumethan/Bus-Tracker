@@ -49,6 +49,7 @@ async function getSpecificBusGPS(nocCode, route) {
         }
     } else {
         console.log("no noc code");
+        showNotification("Error fetching bus noc code", "error")
     }
 }
 

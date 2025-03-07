@@ -4,12 +4,15 @@
  * @description All functionality relating to the bus route on the map
  */
 
+import { showNotification } from "./helper.js"; // Import notification function
+
 let route; 
 let busRouteNotFound = false;
 let busData;
 
 
 // ------------------ Function to get the bus route ------------------
+
 async function getBusRoute(serviceId, tripId) {
     let routeCoords = [];
     let routeNumber = "";
@@ -20,62 +23,85 @@ async function getBusRoute(serviceId, tripId) {
     }
 
     try {
-        // Fetch tripId if it"s undefined
+        // Fetch tripId if it's undefined
         if (!tripId) {
             const url1 = `https://bustimes.org/vehicles.json?service=${serviceId}`;
             const response1 = await fetch(url1);
+
+            if (!response1.ok) {
+                showNotification("Failed to fetch route", "error");
+                throw new Error(`Failed to fetch tripId: ${response1.status} ${response1.statusText}`);
+            }
+
             const data1 = await response1.json();
 
-            if (data1.length > 0) {
-                tripId = data1[0].trip_id;
-                busData.tripId = tripId; 
-            } else {
-                console.error("No trip ID found for service:", serviceId);
-                busRouteNotFound = true;
-                return { routeCoords: [], routeNumber: "", destination: "" };
+            if (!data1 || data1.length === 0 || !data1[0].trip_id) {
+                showNotification("No route found", "error");
+                return { error: "No trip ID found", routeCoords: [], routeNumber: "", destination: "" };
             }
+
+            tripId = data1[0].trip_id;
+            busData.tripId = tripId;
+        }
+
+        // Ensure tripId is valid
+        if (!tripId) {
+            showNotification("Invalid route received.", "error");
+            return { error: "Invalid trip ID", routeCoords: [], routeNumber: "", destination: "" };
         }
 
         // Fetch route details
         const url2 = `https://bustimes.org/api/trips/${tripId}/?format=json`;
         const response2 = await fetch(url2);
+
+        if (!response2.ok) {
+            showNotification("Failed to fetch route", "error");
+            throw new Error(`Failed to fetch route data: ${response2.status} ${response2.statusText}`);
+        }
+
         const data = await response2.json();
 
         if (!data.times || data.times.length === 0) {
-            console.error("No route data found for trip ID:", tripId);
-            busRouteNotFound = true;
-            return { routeCoords: [], routeNumber: "", destination: "" };
+            showNotification("No route found", "error");
+            return { error: "No route data found", routeCoords: [], routeNumber: "", destination: "" };
         }
 
-        busRouteNotFound = false;
-
         // Extract route number
-        routeNumber = data.service.line_name || "Unknown Route";
+        routeNumber = data.service?.line_name || "Unknown Route";
 
         // Extract route coordinates and destination
         data.times.forEach((stop, index) => {
-            if (stop.track) {
+            if (stop.track && Array.isArray(stop.track)) {
                 stop.track.forEach(coord => {
-                    routeCoords.push([coord[1], coord[0]]); // Reverse order to [lat, lon]
+                    if (Array.isArray(coord) && coord.length === 2) {
+                        routeCoords.push([coord[1], coord[0]]); // Reverse order to [lat, lon]
+                    }
                 });
-            } 
-            if (stop.stop && stop.stop.location) {
+            }
+            if (stop.stop?.location && Array.isArray(stop.stop.location) && stop.stop.location.length === 2) {
                 routeCoords.push([stop.stop.location[1], stop.stop.location[0]]);
             }
 
             // Set last stop as the destination
             if (index === data.times.length - 1) {
-                destination = stop.stop.name;
+                destination = stop.stop?.name || "Unknown Destination";
             }
         });
+
+        // Validate route coordinates
+        if (routeCoords.length === 0) {
+            showNotification("Invalid route coordinates for route", "warning");
+            return { error: "Invalid route coordinates", routeCoords: [], routeNumber, destination };
+        }
 
         return { routeCoords, routeNumber, destination };
 
     } catch (error) {
-        console.error("Error fetching bus route:", error);
-        return { routeCoords: [], routeNumber: "", destination: "" };
+        console.error("Error fetching bus route:", error.message);
+        showNotification("Error fetching bus route", "error");
     }
 }
+
 
 function drawBusRoute(routeCoords, routeNumber, destination, map) {
     if (!map) {
