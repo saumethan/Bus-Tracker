@@ -153,33 +153,58 @@ function getViewportBounds() {
 // ------------------ Function to show the users location ------------------
 async function showUserLocation() {
     return new Promise((resolve, reject) => {
+        // Variable to track if the geolocation request has completed
+        let geolocationComplete = false;
+        
+        // Set a timeout of 10 seconds
+        const timeoutId = setTimeout(() => {
+            if (!geolocationComplete) {
+                console.log("Geolocation request timed out after 10 seconds");
+                resolve(false); // Resolve with false to indicate timeout
+            }
+        }, 10000); // 10 seconds
+        
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(position => {
-                userLat = position.coords.latitude;
-                userLng = position.coords.longitude;
-                const userIcon = L.divIcon({
-                    className: "user-location-marker", 
-                    iconSize: [18, 18],                
-                });
-
-                // Remove the existing marker if it exists
-                if (userLocation) {
-                    map.removeLayer(userLocation);
-                }
-
-                // Add the new marker with the custom icon
-                userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
-
-                // Center map on user"s location
-                map.setView([userLat, userLng], 13);
-                
-                resolve(); // Resolve the promise when location is determined
-            }, 
-            error => {
-                console.error("Geolocation error:", error);
-                reject(error); // Reject if there"s an error
-            });
+            navigator.geolocation.getCurrentPosition(
+                position => {
+                    // Clear the timeout since we got a successful response
+                    clearTimeout(timeoutId);
+                    geolocationComplete = true;
+                    
+                    userLat = position.coords.latitude;
+                    userLng = position.coords.longitude;
+                    const userIcon = L.divIcon({
+                        className: "user-location-marker",
+                        iconSize: [18, 18],
+                    });
+                    
+                    // Remove the existing marker if it exists
+                    if (userLocation) {
+                        map.removeLayer(userLocation);
+                    }
+                    
+                    // Add the new marker with the custom icon
+                    userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
+                    
+                    // Center map on user's location
+                    map.setView([userLat, userLng], 13);
+                    
+                    resolve(true); // Resolve with true to indicate success
+                },
+                error => {
+                    // Clear the timeout since we got an error response
+                    clearTimeout(timeoutId);
+                    geolocationComplete = true;
+                    
+                    console.error("Geolocation error:", error);
+                    reject(error);
+                },
+                // You can also set timeout in the geolocation options, but we're handling it separately
+                { maximumAge: 60000, timeout: 10000, enableHighAccuracy: true }
+            );
         } else {
+            // Clear the timeout 
+            clearTimeout(timeoutId);
             reject(new Error("Geolocation not supported"));
         }
     });
@@ -314,7 +339,18 @@ document.addEventListener("DOMContentLoaded", async function() {
     addHomeButtonToMap(map);
     addLocationButtonToMap(map);
 
-    await showUserLocation();
+    try {
+        const locationFound = await showUserLocation();
+        if (!locationFound) {
+            console.log("Proceeding without user location");
+            userLat = 57.14912368784818;
+            userLng = -2.0980214518088967;
+        }
+    } catch (error) {
+        console.error("Failed to get user location:", error);
+        userLat = 57.14912368784818;
+        userLng = -2.0980214518088967;
+    }
     resetInactivityTimeout();
     updateBuses();
 
