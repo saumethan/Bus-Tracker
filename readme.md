@@ -1,11 +1,5 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=15957512&assignment_repo_type=AssignmentRepo)
 
-# TODO List
-
-- ADD IN STOP LAT AND LON when a bus is clicked on in the stops
-- When a bus route is shown the stops for that route should also be shown when zoomed out
-- some buses dont have NOC code so to show specific bus route I'll have to filter through all buses
-
 # CM2104 Group Project Repository
 
 An easy to use bus tracker website for buses in the UK. Tailored specifically to visualise buses within Scotland + Aberdeen.
@@ -19,7 +13,7 @@ An easy to use bus tracker website for buses in the UK. Tailored specifically to
 
 ## Live Preview
 
-View our live site here: https://cm2104-dynamicwebdevelopment.github.io/cm2104-2425-groupproject-gooey-penguins/prototype/index.html
+View our live site here: https://bustracker.duckdns.org
 
 ## Site Instructions
 
