@@ -1,36 +1,45 @@
 // server.js
 // load the things we need
-var express = require('express');
-var app = express();
+const express = require("express");
+const app = express();
+const axios = require("axios");
+
 app.use(express.static("public"));
 
+// Import API routes 
+const apiRoutes = require("./routes/apiRoutes");
+
 // set the view engine to ejs
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
 // use res.render to load up an ejs view file
-// index page 
-app.get('/', function(req, res) {
+
+// SERVER ENDPOINT: index page 
+app.get("/", function(req, res) {
     // Pass any query parameters to the view
     const busRoute = req.query.bus || null;
-    res.render('pages/index', {
+    res.render("pages/index", {
         busRoute: busRoute
     });
 });
 
-// Handle direct bus route URLs
-app.get('/bus/:route', function(req, res) {
-    const busRoute = req.params.route;
-    res.redirect(`/?bus=${busRoute}`);
-});
-app.get('/login', function(req, res) {
-    res.render('pages/login');
-});
-app.get('/settings', function(req, res) {
-    res.render('pages/settings');
-});
-app.get('/timetable', function(req, res) {
-    res.render('pages/timetable');
+// SERVER ENDPOINT: login page
+app.get("/login", function(req, res) {
+    res.render("pages/login");
 });
 
+// SERVER ENDPOINT: settings page
+app.get("/settings", function(req, res) {
+    res.render("pages/settings");
+});
+
+// SERVER ENDPOINT: timetable page
+app.get("/timetable", function(req, res) {
+    res.render("pages/timetable");
+});
+
+// Use the API routes (from apiRoutes.js)
+app.use("/api", apiRoutes);
+
 app.listen(8080);
-console.log('8080 is the magic port');
+console.log("8080 is the magic port");

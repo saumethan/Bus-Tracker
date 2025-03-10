@@ -13,43 +13,19 @@ let nocCode;
 
 // ------------------ Function to get the bus data for a specific bus route ------------------ 
 async function getSpecificBusGPS(nocCode, route) {
-    if (nocCode) {
-
-        const url = `https://bustimes.org/vehicles.json?operator=${nocCode}`;
-
-        const response = await $.ajax({
-            type: "GET",
-            url: url,
-            contentType: "application/json"
-        });
-    
-        if (response) {
-            const busData = [];
-            response.forEach(bus => {
-                // Validate route match first
-                if (!bus.service?.line_name || bus.service.line_name !== route) return;
-                
-                // Validate coordinates
-                if (!bus.coordinates || !Array.isArray(bus.coordinates)) return;
-                const [longitude, latitude] = bus.coordinates;
-    
-                busData.push({
-                    longitude: longitude,
-                    latitude: latitude,
-                    route: bus.service.line_name,
-                    destination: bus.destination,
-                    tripId: bus.trip_id,
-                    serviceId: bus.service_id,
-                    noc: bus.vehicle.url.split("/")[2].split("-")[0].toUpperCase()
-                });
-            });
-            return busData;
-        } else {
-            console.error("Error fetching bus data.");
-        }
-    } else {
+    if (!nocCode) {
         console.log("no noc code");
-        showNotification("Error fetching bus noc code", "error")
+        showNotification("Error fetching bus noc code", "error");
+        return;
+    }
+
+    try {
+        // Call our server endpoint 
+        const response = await $.get(`/api/buses/${nocCode}/${route}`);
+        return response;
+    } catch (error) {
+        console.error("Error fetching bus data:", error);
+        showNotification("Error fetching bus data", "error");
     }
 }
 
