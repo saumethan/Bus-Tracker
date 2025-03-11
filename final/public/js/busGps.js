@@ -7,6 +7,7 @@
 // Modules
 import { setViewAllBuses, getViewAllBuses, getViewportBounds } from "./map.js";
 import { getBusRoute, drawBusRoute } from "./busRoute.js";
+import { showNotification } from "./helper.js"; // Import notification function
 
 let routeNumber;
 let nocCode;
@@ -31,35 +32,13 @@ async function getSpecificBusGPS(nocCode, route) {
 
 // ------------------ Function to get the bus data for all bus routes in viewport ------------------
 async function getAllBusGPS(yMax, xMax, yMin, xMin) {
-
-    const url = `https://bustimes.org/vehicles.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
-
-    const response = await $.ajax({
-        type: "GET",
-        url: url,
-        contentType: "application/json"
-    });
-
-    if (response) {
-        const busData = [];
-        response.forEach(bus => {
-            if (!bus.coordinates || !Array.isArray(bus.coordinates)) return;
-            const [longitude, latitude] = bus.coordinates;
-            // Validate coordinate ranges
-            if (Math.abs(latitude) > 90 || Math.abs(longitude) > 180) return;
-            busData.push({
-                longitude: longitude,
-                latitude: latitude,
-                route: bus.service.line_name,
-                destination: bus.destination,
-                tripId: bus.trip_id,
-                serviceId: bus.service_id,
-                noc: bus.vehicle.url.split("/")[2].split("-")[0].toUpperCase()
-            });
-        });
-        return busData;
-    } else {
-        console.error("Error fetching bus data.");
+    try {
+        // Call our server endpoint 
+        const response = await $.get(`/api/buses?yMax=${yMax}&xMax=${xMax}&yMin=${yMin}&xMin=${xMin}`);
+        return response;
+    } catch (error) {
+        console.error("Error fetching bus data:", error);
+        showNotification("Error fetching bus data", "error");
     }
 }
 

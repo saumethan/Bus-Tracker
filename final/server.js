@@ -38,6 +38,7 @@ app.get("/timetable", function(req, res) {
     res.render("pages/timetable");
 });
 
+
 // Use the API routes (from apiRoutes.js)
 app.use("/api", apiRoutes);
 
