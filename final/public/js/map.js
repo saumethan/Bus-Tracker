@@ -344,7 +344,7 @@ async function handlePopState(event) {
         viewAllBuses = true;
     } else {
         // If there is a bus parameter, show that specific bus
-        findBus(busRoute.toUpperCase(), null, userLat, userLng, map);
+        findBus(busRoute.toUpperCase(), userLat, userLng, map);
     }
 }
 
@@ -393,7 +393,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     const routeNumber = getUrlParameter("bus");
     if (routeNumber) {
         console.log(`Bus route detected in URL: ${routeNumber}`);
-        await findBus(routeNumber.toUpperCase(), null, userLat, userLng, map);
+        await findBus(routeNumber.toUpperCase(), userLat, userLng, map);
     }
 
     // Update stops and buses when the map is moved/zoomed
@@ -452,7 +452,7 @@ function searchRoute(event) {
 
     searchInput.value = "";
 
-    findBus(route, null, userLat, userLng, map);
+    findBus(route, userLat, userLng, map);
 }
 
 // Export
