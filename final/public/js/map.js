@@ -19,6 +19,13 @@ let userLng;
 let viewAllBuses = true;
 let noc = null;
 let route = null;
+let busUpdateInProgress = false;
+let ignoreNextMoveEnd = false;
+let ignoreNextZoomEnd = false;
+
+// Constants for zoom levels
+const MIN_BUS_ZOOM = 12;
+const MIN_STOP_ZOOM = 15;
 
 // Initialize the map and set its location
 function createMap() {
@@ -38,14 +45,11 @@ function addRefreshButtonToMap() {
 
         // Event listener for the button
         buttonDiv.addEventListener("click", async () => {
-            // Refresh viewport to load all buses
-            if (map.currentZoom >= 12 && viewAllBuses) {
-                updateBuses();
-            } else if (!viewAllBuses) {
-                updateBuses();
-                const now = new Date();
-                const formattedTime = now.toLocaleTimeString(); 
-                $("#refreshTime").text("Last updated: " + formattedTime);
+            updateBusesAndStops();
+
+            // Update timestamp if viewing specific route
+            if (!viewAllBuses) {
+                updateRefreshTime();
             }
         });
         return buttonDiv;
@@ -65,36 +69,33 @@ function addHomeButtonToMap() {
 
         // Event listener for the button
         buttonDiv.addEventListener("click", async () => {
-            
             // Reset to show all buses when the button is clicked
             try {
                 const locationFound = await showUserLocation();
                 if (!locationFound) {
                     console.log("Proceeding without user location");
-                    userLat = 57.14912368784818;
-                    userLng = -2.0980214518088967;
-                    showNotification("Location not Found", "warning")
+                    setDefaultUserLocation();
+                    showNotification("Location not Found", "warning");
                 }
             } catch (error) {
                 console.error("Failed to get user location:", error);
-                userLat = 57.14912368784818;
-                userLng = -2.0980214518088967;
-                showNotification("Location not Found", "warning")
+                setDefaultUserLocation();
+                showNotification("Location not Found", "warning");
             }
-            const { minX, minY, maxX, maxY } = getViewportBounds();
-            const busData = await getAllBusGPS(maxY, maxX, minY, minX);
-            drawBus(busData, map);
+            
+            // Set flag to indicate all buses are shown
+            setViewAllBuses(true);
+            
+            // Update the UI
             removeRoute(map);
-
+            updateBusesAndStops();
+            
             // Clear bus data container
             $("#bus-data").html("");
 
-            // Set flag to indicate all buses are shown
-            viewAllBuses = true;
-
             // Remove all URL parameters
             // Update URL without refreshing page
-            const newUrl = window.location.origin;
+            const newUrl = window.location.origin + window.location.pathname;
             window.history.pushState({ path: newUrl }, "", newUrl);
         });
 
@@ -104,7 +105,6 @@ function addHomeButtonToMap() {
     // Add to map
     homeButton.addTo(map);
 }
-
 
 // ------------------ Function to add location button to the map ------------------
 function addLocationButtonToMap() {
@@ -125,13 +125,6 @@ function addLocationButtonToMap() {
             } catch (error) {
                 showNotification("Location not Found", "warning")
             }
-
-            // Update the refresh time if a specific bus route is showing 
-            if (!viewAllBuses) {
-                const now = new Date();
-                const formattedTime = now.toLocaleTimeString(); 
-                $("#refreshTime").text("Last updated: " + formattedTime);
-            }
         });
         return buttonDiv;
     };
@@ -151,6 +144,9 @@ function addTileLayer(mapInstance) {
 // ------------------ Helper function to adjust the map view to the newly drawn route ------------------
 function adjustMapViewToRoute(route) {
     if (route) {
+        // Set flags to ignore the next moveend and zoomend events
+        ignoreNextMoveEnd = true;
+        ignoreNextZoomEnd = true;
         map.fitBounds(route.getBounds());
     }
 }
@@ -169,6 +165,12 @@ function getViewportBounds() {
     const maxY = northeast.lat;
     
     return { minX, minY, maxX, maxY };
+}
+
+// ------------------ Function to set default user location ------------------
+function setDefaultUserLocation() {
+    userLat = 57.14912368784818;
+    userLng = -2.0980214518088967;
 }
 
 // ------------------ Function to show the users location ------------------
@@ -220,7 +222,6 @@ async function showUserLocation() {
                     console.error("Geolocation error:", error);
                     reject(error);
                 },
-                // You can also set timeout in the geolocation options, but we're handling it separately
                 { maximumAge: 60000, timeout: 10000, enableHighAccuracy: true }
             );
         } else {
@@ -235,51 +236,231 @@ async function showUserLocation() {
 function resetInactivityTimeout() {
     // Clear the existing timeout
     if (inactivityTimeout) clearTimeout(inactivityTimeout);
-    // Set a new timeout
-    if (map.zoom >= 12) {
-        inactivityTimeout = setTimeout(updateBuses, 10000);
+    
+    // Set a new timeout only if zoom level is appropriate
+    if (map.currentZoom >= MIN_BUS_ZOOM) {
+        inactivityTimeout = setTimeout(updateBusesAndStops, 10000);
     }
 }
 
-async function setViewAllBuses(value, nocCode, selectedRoute) {
-    noc = nocCode;
-    route = selectedRoute;
+// ------------------ Function to set view all buses flag ------------------
+function setViewAllBuses(value, nocCode, selectedRoute) {
     viewAllBuses = value;
+    noc = nocCode || null;
+    route = selectedRoute || null;
 }
 
+// ------------------ Function to get view all buses flag ------------------
 function getViewAllBuses() {
     return viewAllBuses;
 }
 
+
+// ------------------ Function to update buses based on current state ------------------
 async function updateBuses() {
-    if(viewAllBuses) {
-        const { minX, minY, maxX, maxY } = getViewportBounds();
-        const busData = await getAllBusGPS(maxY, maxX, minY, minX);
-        drawBus(busData, map);
-    } else if (noc && route) {
-        try {
-            const busData = await getSpecificBusGPS(noc, route);
-            drawBus(busData, map);
-        } catch {
-            const { minX, minY, maxX, maxY } = getViewportBounds();
-            const allBuses = await getAllBusGPS(maxY, maxX, minY, minX);
+    // Prevent multiple simultaneous updates
+    if (busUpdateInProgress) return;
+    busUpdateInProgress = true;
     
-            let filteredBuses = getFilteredBuses(allBuses, route);
-            drawBus(filteredBuses, map);
+    try {
+        // Only check zoom level if viewing all buses
+        if (viewAllBuses && map.currentZoom < MIN_BUS_ZOOM) {
+            // Clear buses if zoom level is too low and we're viewing all buses
+            drawBus(null, map);
+            busUpdateInProgress = false;
+            return;
         }
-    } else {
-        try {
-            const busData = await getSpecificBusGPS(getNocCode(), getRouteNumber());
+
+        const { minX, minY, maxX, maxY } = getViewportBounds();
+
+        if (viewAllBuses) {
+            // Show all buses in viewport
+            const busData = await getAllBusGPS(maxY, maxX, minY, minX);
             drawBus(busData, map);
-        } catch {
-            const { minX, minY, maxX, maxY } = getViewportBounds();
-            const allBuses = await getAllBusGPS(maxY, maxX, minY, minX);
-            
-            let filteredBuses = getFilteredBuses(allBuses, getRouteNumber());
-            drawBus(filteredBuses, map);
+        } else if (noc && route) {
+            // Try to get buses for specific route and operator
+            try {
+                const busData = await getSpecificBusGPS(noc, route);
+                drawBus(busData, map);
+            } catch (error) {
+                // Fallback to filtering all buses
+                console.log("Falling back to filtered buses:", error);
+                const allBuses = await getAllBusGPS(maxY, maxX, minY, minX);
+                const filteredBuses = getFilteredBuses(allBuses, route);
+                drawBus(filteredBuses, map);
+            }
+        } else if (getNocCode() && getRouteNumber()) {
+            // Use stored noc and route from busGps.js
+            try {
+                const busData = await getSpecificBusGPS(getNocCode(), getRouteNumber());
+                drawBus(busData, map);
+            } catch (error) {
+                // Fallback to filtering all buses
+                console.log("Falling back to filtered buses:", error);
+                const allBuses = await getAllBusGPS(maxY, maxX, minY, minX);
+                const filteredBuses = getFilteredBuses(allBuses, getRouteNumber());
+                drawBus(filteredBuses, map);
+            }
+        }
+    } catch (error) {
+        console.error("Error updating buses:", error);
+        showNotification("Error updating buses", "error");
+    } finally {
+        busUpdateInProgress = false;
+    }
+}
+
+// ------------------ Function to update stops based on current state ------------------
+async function updateStops() {
+    // Check zoom level first
+    if (map.currentZoom < MIN_STOP_ZOOM) {
+        // Clear stops if zoom level is too low
+        drawStops(null, map);
+        return;
+    }
+    
+    const { minX, minY, maxX, maxY } = getViewportBounds();
+    
+    try {
+        const stopsInViewport = await fetchStopsInViewport(maxY, maxX, minY, minX);
+        drawStops(stopsInViewport, map);
+    } catch (error) {
+        console.error("Error updating stops:", error);
+        showNotification("Error updating stops", "error");
+        drawStops(null, map);
+    }
+}
+
+// ------------------ Function to update both buses and stops ------------------
+async function updateBusesAndStops() {
+    await updateBuses();
+    await updateStops();
+}
+
+// ------------------ Function to get URL parameters ------------------
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+    var results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+// ------------------ Function to handle URL changes (browser back/forward) ------------------
+async function handlePopState(event) {
+    // Check if the URL has a bus parameter
+    const busRoute = getUrlParameter("bus");
+    
+    // If no bus parameter, reset to show all buses
+    if (!busRoute) {
+        setViewAllBuses(true);
+        removeRoute(map);
+        $("#bus-data").html("");
+        updateBusesAndStops();
+    } else {
+        // Only proceed if zoom level is appropriate
+        if (map.currentZoom >= MIN_BUS_ZOOM) {
+            // If there is a bus parameter, show that specific bus
+            findBus(busRoute.toUpperCase(), userLat, userLng);
+        } else {
+            showNotification("Please zoom in to view buses", "info");
         }
     }
 }
+
+function searchRoute(event) {
+    event.preventDefault(); 
+
+    // Check zoom level first
+    if (map.currentZoom < MIN_BUS_ZOOM) {
+        showNotification("Please zoom in to view buses", "info");
+        return;
+    }
+
+    let searchInput = document.getElementById("routeSearch");
+    let route = searchInput.value; 
+
+    // Remove spaces and convert to uppercase
+    route = route.replace(/\s+/g, "").toUpperCase();
+
+    // Update URL without refreshing page
+    const newUrl = window.location.origin + window.location.pathname + `?bus=${route}`;
+    window.history.pushState({ path: newUrl }, "", newUrl);
+
+    searchInput.value = "";
+
+    findBus(route, userLat, userLng, map);
+}
+
+// Calls the initializeMap function when the HTML has loaded
+document.addEventListener("DOMContentLoaded", async function() {
+    // Creates map
+    map = createMap();
+    map.stopCircleRadius = 50;
+    map.currentZoom = 13;
+
+    // Adds buttons
+    addRefreshButtonToMap(map);
+    addHomeButtonToMap(map);
+    addLocationButtonToMap(map);
+
+    try {
+        const locationFound = await showUserLocation();
+        if (!locationFound) {
+            showNotification("Location not Found", "warning");
+            setDefaultUserLocation();
+        }
+    } catch (error) {
+        showNotification("Location not Found", "warning");
+        setDefaultUserLocation();
+    }
+
+    resetInactivityTimeout();
+
+    // Initial update of buses and stops
+    updateBusesAndStops();
+
+    // Resize the buses as the user zooms in
+    map.on("zoom" , function (e) {
+        map.currentZoom = e.target._zoom;
+        if (map.currentZoom >= 17) {
+            map.stopCircleRadius = 10;
+        } else if (map.currentZoom >= 13) {
+            map.stopCircleRadius = 20;
+        } else {
+            map.stopCircleRadius = 50;
+        }
+    });
+
+    // Add event listener for browser back/forward buttons
+    window.addEventListener("popstate", handlePopState);
+
+    const routeNumber = getUrlParameter("bus");
+    if (routeNumber) {
+        console.log(`Bus route detected in URL: ${routeNumber}`);
+        await findBus(routeNumber.toUpperCase(), userLat, userLng, map);
+    }
+
+    // Handle map movement events
+    map.on("moveend", function() {
+        if (ignoreNextMoveEnd) {
+            ignoreNextMoveEnd = false;
+            return;
+        }
+        resetInactivityTimeout();
+        updateBusesAndStops();
+    });
+    
+    map.on("zoomend", function() {
+        if (ignoreNextZoomEnd) {
+            ignoreNextZoomEnd = false;
+            return;
+        }
+        resetInactivityTimeout();
+        updateBusesAndStops();
+    });
+
+    document.getElementById("searchForm").addEventListener("submit", searchRoute);
+});
 
 // ------------------ Function for easteregg ------------------
 function easterEgg() {
@@ -319,141 +500,5 @@ function easterEgg() {
     });
 }
 
-// Function to get URL parameters
-function getUrlParameter(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
-    var results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-// Function to handle URL changes (browser back/forward)
-async function handlePopState(event) {
-    // Check if the URL has a bus parameter
-    const busRoute = getUrlParameter("bus");
-    
-    // If no bus parameter, reset to show all buses
-    if (!busRoute) {
-        const { minX, minY, maxX, maxY } = getViewportBounds();
-        const busData = await getAllBusGPS(maxY, maxX, minY, minX);
-        drawBus(busData, map);
-        removeRoute(map);
-        let htmlContent = "";
-        // append html to DOM
-        $("#bus-data").html(htmlContent);
-        viewAllBuses = true;
-    } else {
-        // If there is a bus parameter, show that specific bus
-        findBus(busRoute.toUpperCase(), userLat, userLng, map);
-    }
-}
-
-// Calls the initializeMap function when the HTML has loaded
-document.addEventListener("DOMContentLoaded", async function() {
-    // Creates map
-    map = createMap();
-    map.stopCircleRadius = 50;
-    map.currentZoom = 13;
-
-    // Adds buttons
-    addRefreshButtonToMap(map);
-    addHomeButtonToMap(map);
-    addLocationButtonToMap(map);
-
-    try {
-        const locationFound = await showUserLocation();
-        if (!locationFound) {
-            showNotification("Location not Found", "warning")
-            userLat = 57.14912368784818;
-            userLng = -2.0980214518088967;
-        }
-    } catch (error) {
-        showNotification("Location not Found", "warning")
-        userLat = 57.14912368784818;
-        userLng = -2.0980214518088967;
-    }
-    resetInactivityTimeout();
-    updateBuses();
-
-    // Resize the buses as the user zooms in
-    map.on("zoom" , function (e) {
-        map.currentZoom = e.target._zoom;
-        if (map.currentZoom >= 17) {
-            map.stopCircleRadius = 10;
-        } else if (map.currentZoom >= 13) {
-            map.stopCircleRadius = 20;
-        } else {
-            map.stopCircleRadius = 50;
-        }
-    });
-
-    // Add event listener for browser back/forward buttons
-    window.addEventListener("popstate", handlePopState);
-
-    const routeNumber = getUrlParameter("bus");
-    if (routeNumber) {
-        console.log(`Bus route detected in URL: ${routeNumber}`);
-        await findBus(routeNumber.toUpperCase(), userLat, userLng, map);
-    }
-
-    // Update stops and buses when the map is moved/zoomed
-    async function onMapMoved() {
-        resetInactivityTimeout();
-
-        const { minX, minY, maxX, maxY } = getViewportBounds();
-        if(viewAllBuses) {
-            // handle stop displays
-            if (map.currentZoom >= 15) {
-                const stopsInViewport = await fetchStopsInViewport(maxY, maxX, minY, minX);
-                drawStops(stopsInViewport, map);
-            } else {
-                drawStops(null, map); // hide the stops
-            }
-            
-            // buses stop displays
-            if (map.currentZoom >= 12) {
-                const busData = await getAllBusGPS(maxY, maxX, minY, minX)
-                drawBus(busData, map);
-            } else {
-                drawBus(null, map);
-            }
-        } else {
-            // EDIT TO DRAW STOPS FOR THE SELECTED ROUTE
-            if (map.currentZoom >= 15) {
-                const stopsInViewport = await fetchStopsInViewport(maxY, maxX, minY, minX);
-                drawStops(stopsInViewport, map);
-            } else {
-                drawStops(null, map); // hide the stops
-            }
-
-            // Redraws the buses for a specific route
-            updateBuses();
-        }
-    }
-
-    map.on("moveend", onMapMoved);
-    map.on("zoomend", onMapMoved);
-
-    document.getElementById("searchForm").addEventListener("submit", searchRoute);
-});
-
-function searchRoute(event) {
-    event.preventDefault(); 
-
-    let searchInput = document.getElementById("routeSearch");
-    let route = document.getElementById("routeSearch").value; 
-
-    // Remove spaces and convert to uppercase
-    route = route.replace(/\s+/g, "").toUpperCase();
-
-    // Update URL without refreshing page
-    const newUrl = window.location.origin + window.location.pathname + `?bus=${route}`;
-    window.history.pushState({ path: newUrl }, "", newUrl);
-
-    searchInput.value = "";
-
-    findBus(route, userLat, userLng, map);
-}
-
 // Export
-export { setViewAllBuses, getViewAllBuses, getViewportBounds };
+export { setViewAllBuses, getViewAllBuses, getViewportBounds, adjustMapViewToRoute };

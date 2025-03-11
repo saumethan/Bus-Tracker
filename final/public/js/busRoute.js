@@ -5,6 +5,7 @@
  */
 
 import { showNotification } from "./helper.js"; // Import notification function
+import { adjustMapViewToRoute } from "./map.js";
 
 let route; 
 let busRouteNotFound = false;
@@ -63,14 +64,7 @@ function drawBusRoute(routeCoords, routeNumber, destination, map) {
     
     // append html to DOM
     $("#bus-data").html(htmlContent);
-}
-
-
-// ------------------ Helper function to adjust the map view to the newly drawn route ------------------
-function adjustMapViewToRoute(route, map) {
-    if (route) {
-        map.fitBounds(route.getBounds());
-    }
+    return route;
 }
 
 function removeRoute(map) {
