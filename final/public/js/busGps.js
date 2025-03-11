@@ -16,7 +16,7 @@ let nocCode;
 async function getSpecificBusGPS(nocCode, route) {
     if (!nocCode) {
         console.log("no noc code");
-        showNotification("Error fetching bus noc code", "error");
+        showNotification("Error 1 fetching bus noc code", "error");
         return;
     }
 
@@ -27,25 +27,19 @@ async function getSpecificBusGPS(nocCode, route) {
         // Check if response is empty or invalid
         if (!response || (Array.isArray(response) && response.length === 0)) {
             console.log("Empty response from specific bus API");
-            // Get viewport bounds for finding buses
-            const { minX, minY, maxX, maxY } = getViewportBounds();
-            // Call findBus with the route number and current map center
-            const center = map.getCenter();
-            await findBus(route, center.lat, center.lng, map);
-            return [];
+            const allBuses = await getAllBusGPS(maxY, maxX, minY, minX) || [];
+            let filteredBuses = getFilteredBuses(allBuses, busNumber);
+            return filteredBuses;
         }
         
         return response;
     } catch (error) {
         console.error("Error fetching specific bus data:", error);
-        showNotification("Error fetching specific bus data", "warning");
+        showNotification("Error 2 fetching specific bus data", "warning");
         
-        // Get viewport bounds for finding buses
-        const { minX, minY, maxX, maxY } = getViewportBounds();
-        // Call findBus with the route number and current map center
-        const center = map.getCenter();
-        await findBus(route, center.lat, center.lng, map);
-        return [];
+        const allBuses = await getAllBusGPS(maxY, maxX, minY, minX) || [];
+        let filteredBuses = getFilteredBuses(allBuses, busNumber);
+        return ;
     }
 }
 
@@ -57,7 +51,7 @@ async function getAllBusGPS(yMax, xMax, yMin, xMin) {
         return response || [];
     } catch (error) {
         console.error("Error fetching bus data:", error);
-        showNotification("Error fetching bus data", "error");
+        showNotification("Error  3fetching bus data", "error");
         return [];
     }
 }
@@ -218,7 +212,7 @@ async function showSpecificBusRoute(serviceId, busId, busNumber, map) {
         }
     } catch (error) {
         console.error("Error fetching bus route:", error);
-        showNotification("Error fetching bus route", "error");
+        showNotification("Error 4fetching bus route", "error");
     }
 
     // Get the viewport bounds for potential fallback
@@ -247,13 +241,11 @@ async function showSpecificBusRoute(serviceId, busId, busNumber, map) {
         console.log("Falling back to all buses in viewport:", error);
         // Fallback to showing all buses in viewport
         try {
-            
-        console.log("1.7")
+            console.log("1.7")
             const allBuses = await getAllBusGPS(maxY, maxX, minY, minX) || [];
             let filteredBuses = getFilteredBuses(allBuses, busNumber);
             drawBus(filteredBuses, map);
         } catch (fallbackError) {
-            
             console.log("1.8")
             console.error("Error in fallback bus display:", fallbackError);
             showNotification("Could not display buses at this time", "error");
