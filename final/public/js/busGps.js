@@ -42,67 +42,38 @@ async function getAllBusGPS(yMax, xMax, yMin, xMin) {
     }
 }
 
-async function findBus(serviceNumber, destination, lat, lon, map) {
+async function findBus(serviceNumber, lat, lon, map) {
     console.log("Bus Service Number:", serviceNumber);
-    console.log("Bus destination:", destination);
     console.log("Latitude:", lat);
     console.log("Longitude:", lon);
 
-    // Calculate bounds (adjust the bounds based on the clicked coordinates)
-    const bounds = calculateBounds(lat, lon, 50);
-    const busData = await getAllBusGPS(bounds.yMax, bounds.xMax, bounds.yMin, bounds.xMin);
+    try {
+        // Call the new API endpoint
+        const response = await $.get(`/api/buses/${serviceNumber}?lat=${lat}&lon=${lon}&radius=50`);
+        const busData = response;
 
-    console.log(busData);
+        console.log("Fetched Bus Data:", busData);
 
-    let filteredBuses = [];
-
-    // Loop through bus data and filter buses based on route and destination
-    busData.forEach(bus => {
-        // Match bus route with serviceNumber and destination
-        if (bus.route === serviceNumber ) {
-            filteredBuses.push(bus);
+        if (busData.length === 0) {
+            console.log("No buses found for this service.");
+            return;
         }
-    });
 
-    console.log("Filtered Buses:", filteredBuses);
-    console.log(filteredBuses[0]?.noc);
+        let filteredBuses = busData.filter(bus => bus.route === serviceNumber);
 
-    if(filteredBuses[0]?.noc) {
-        try {
-        setViewAllBuses(false, filteredBuses[0]?.noc, serviceNumber);
-        drawBus(filteredBuses, map);
-        await showSpecificBusRoute(filteredBuses[0]?.serviceId, filteredBuses[0]?.tripId, serviceNumber, map);
+        console.log("Filtered Buses:", filteredBuses);
+        console.log("NOC:", filteredBuses[0]?.noc);
 
-        } catch {
-            console.log("Finish me")
-            // const { minX, minY, maxX, maxY } = getViewportBounds();
-            // const allBuses = await getAllBusGPS(maxY, maxX, minY, minX);
-                        
-            // let filteredBuses = getFilteredBuses(allBuses, getRouteNumber());
-            // drawBus(filteredBuses, map);
+        if (filteredBuses[0]?.noc) {
+            setViewAllBuses(false, filteredBuses[0].noc, serviceNumber);
+            drawBus(filteredBuses, map);
+            await showSpecificBusRoute(filteredBuses[0].serviceId, filteredBuses[0].tripId, serviceNumber, map);
         }
+    } catch (error) {
+        console.error("Error finding bus:", error);
     }
-    
 }
 
-function calculateBounds(lat, lon, zoom) {
-    const LATITUDE_DIFFERENCE = 0.0025;
-    const LONGITUDE_DIFFERENCE = 0.0035; 
-
-    let yMax = lat + (LATITUDE_DIFFERENCE * zoom);
-    let yMin = lat - (LATITUDE_DIFFERENCE * zoom);
-    let xMax = lon + (LONGITUDE_DIFFERENCE * zoom);
-    let xMin = lon - (LONGITUDE_DIFFERENCE * zoom);
-
-    if (yMax > 90) yMax = 90;
-    if (yMin < -90) yMin = -90;
-    if (xMax > 180) xMax = 180;
-    if (xMin < -180) xMin = -180;
-
-    return {
-        yMax, xMax, yMin, xMin
-    };
-}
 
 // Function to update URL without reloading the page
 function updateURLWithRoute(route) {
