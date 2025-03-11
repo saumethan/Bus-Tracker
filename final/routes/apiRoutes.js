@@ -42,7 +42,7 @@ router.get("/buses", async (req, res) => {
     }
 });
 
-// SERVER ENDPOINT: Get specific bus route data
+// SERVER ENDPOINT: Get specific bus GPS data
 router.get("/buses/:noc/:route", async (req, res) => {
     try {
         const { noc, route } = req.params;
@@ -82,7 +82,7 @@ router.get("/buses/:noc/:route", async (req, res) => {
     }
 });
 
-// SERVER ENDPOINT: Get specific bus route data
+// SERVER ENDPOINT: Search and get specific bus GPS data 
 router.get("/buses/:route", async (req, res) => {
     try {
         const { route } = req.params;
@@ -138,6 +138,73 @@ router.get("/buses/:route", async (req, res) => {
     } catch (error) {
         console.error("Error finding buses:", error);
         res.status(500).json({ error: "Failed to find buses" });
+    }
+});
+
+// SERVER ENDPOINT: Get bus route data
+router.get("/routes", async (req, res) => {
+    let { serviceId, tripId } = req.query;
+    let routeCoords = [];
+    let routeNumber = "";
+    let destination = "";
+
+    try {
+        // Fetch tripId if it's undefined
+        if (!tripId) {
+            const url1 = `https://bustimes.org/vehicles.json?service=${serviceId}`;
+            const response1 = await axios.get(url1);
+
+            if (!response1.data || response1.data.length === 0 || !response1.data[0].trip_id) {
+                return res.status(404).json({ error: "No trip ID found" });
+            }
+
+            tripId = response1.data[0].trip_id;
+        }
+
+        // Ensure tripId is valid
+        if (!tripId) {
+            return res.status(400).json({ error: "Invalid trip ID" });
+        }
+
+        // Fetch route details
+        const url2 = `https://bustimes.org/api/trips/${tripId}/?format=json`;
+        const response2 = await axios.get(url2);
+
+        if (!response2.data.times || response2.data.times.length === 0) {
+            return res.status(404).json({ error: "No route data found" });
+        }
+
+        // Extract route number
+        routeNumber = response2.data.service?.line_name || "Unknown Route";
+
+        // Extract route coordinates and destination
+        response2.data.times.forEach((stop, index) => {
+            if (stop.track && Array.isArray(stop.track)) {
+                stop.track.forEach(coord => {
+                    if (Array.isArray(coord) && coord.length === 2) {
+                        routeCoords.push([coord[1], coord[0]]); // Reverse order to [lat, lon]
+                    }
+                });
+            }
+            if (stop.stop?.location && Array.isArray(stop.stop.location) && stop.stop.location.length === 2) {
+                routeCoords.push([stop.stop.location[1], stop.stop.location[0]]);
+            }
+
+            // Set last stop as the destination
+            if (index === response2.data.times.length - 1) {
+                destination = stop.stop?.name || "Unknown Destination";
+            }
+        });
+
+        // Validate route coordinates
+        if (routeCoords.length === 0) {
+            return res.status(400).json({ error: "Invalid route coordinates", routeCoords: [], routeNumber, destination });
+        }
+
+        res.json({ routeCoords, routeNumber, destination });
+    } catch (error) {
+        console.error("Error fetching bus route:", error.message);
+        res.status(500).json({ error: "Error fetching bus route" });
     }
 });
 

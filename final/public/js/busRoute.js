@@ -14,94 +14,15 @@ let busData;
 // ------------------ Function to get the bus route ------------------
 
 async function getBusRoute(serviceId, tripId) {
-    let routeCoords = [];
-    let routeNumber = "";
-    let destination = "";
-
-    if (typeof busData === "undefined") {
-        busData = {};
-    }
-
     try {
-        // Fetch tripId if it's undefined
-        if (!tripId) {
-            const url1 = `https://bustimes.org/vehicles.json?service=${serviceId}`;
-            const response1 = await fetch(url1);
-
-            if (!response1.ok) {
-                showNotification("Failed to fetch route", "error");
-                throw new Error(`Failed to fetch tripId: ${response1.status} ${response1.statusText}`);
-            }
-
-            const data1 = await response1.json();
-
-            if (!data1 || data1.length === 0 || !data1[0].trip_id) {
-                showNotification("No route found", "error");
-                return { error: "No trip ID found", routeCoords: [], routeNumber: "", destination: "" };
-            }
-
-            tripId = data1[0].trip_id;
-            busData.tripId = tripId;
-        }
-
-        // Ensure tripId is valid
-        if (!tripId) {
-            showNotification("Invalid route received.", "error");
-            return { error: "Invalid trip ID", routeCoords: [], routeNumber: "", destination: "" };
-        }
-
-        // Fetch route details
-        const url2 = `https://bustimes.org/api/trips/${tripId}/?format=json`;
-        const response2 = await fetch(url2);
-
-        if (!response2.ok) {
-            showNotification("Failed to fetch route", "error");
-            throw new Error(`Failed to fetch route data: ${response2.status} ${response2.statusText}`);
-        }
-
-        const data = await response2.json();
-
-        if (!data.times || data.times.length === 0) {
-            showNotification("No route found", "error");
-            return { error: "No route data found", routeCoords: [], routeNumber: "", destination: "" };
-        }
-
-        // Extract route number
-        routeNumber = data.service?.line_name || "Unknown Route";
-
-        // Extract route coordinates and destination
-        data.times.forEach((stop, index) => {
-            if (stop.track && Array.isArray(stop.track)) {
-                stop.track.forEach(coord => {
-                    if (Array.isArray(coord) && coord.length === 2) {
-                        routeCoords.push([coord[1], coord[0]]); // Reverse order to [lat, lon]
-                    }
-                });
-            }
-            if (stop.stop?.location && Array.isArray(stop.stop.location) && stop.stop.location.length === 2) {
-                routeCoords.push([stop.stop.location[1], stop.stop.location[0]]);
-            }
-
-            // Set last stop as the destination
-            if (index === data.times.length - 1) {
-                destination = stop.stop?.name || "Unknown Destination";
-            }
-        });
-
-        // Validate route coordinates
-        if (routeCoords.length === 0) {
-            showNotification("Invalid route coordinates for route", "warning");
-            return { error: "Invalid route coordinates", routeCoords: [], routeNumber, destination };
-        }
-
-        return { routeCoords, routeNumber, destination };
-
+        // Call our server endpoint 
+        const response = await $.get(`/api/routes/?serviceId=${serviceId}&tripId=${tripId}`);
+        return response;
     } catch (error) {
-        console.error("Error fetching bus route:", error.message);
-        showNotification("Error fetching bus route", "error");
+        console.error("Error fetching bus route data:", error);
+        showNotification("Error fetching bus route data", "error");
     }
 }
-
 
 function drawBusRoute(routeCoords, routeNumber, destination, map) {
     if (!map) {
