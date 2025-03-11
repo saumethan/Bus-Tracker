@@ -370,12 +370,6 @@ async function handlePopState(event) {
 function searchRoute(event) {
     event.preventDefault(); 
 
-    // Check zoom level first
-    if (map.currentZoom < MIN_BUS_ZOOM) {
-        showNotification("Please zoom in to view buses", "info");
-        return;
-    }
-
     let searchInput = document.getElementById("routeSearch");
     let route = searchInput.value; 
 
