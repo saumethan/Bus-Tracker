@@ -158,15 +158,15 @@ function adjustMapViewToRoute(route) {
 // ------------------ Function to update the map viewport ------------------
 function getViewportBounds() {
     // Gets the current bounds of the map
-    var bounds = map.getBounds();
-    var southwest = bounds.getSouthWest();
-    var northeast = bounds.getNorthEast(); 
+    const bounds = map.getBounds();
+    const southwest = bounds.getSouthWest();
+    const northeast = bounds.getNorthEast(); 
 
     // Extracts coordinates
-    var minX = southwest.lng;
-    var minY = southwest.lat;
-    var maxX = northeast.lng;
-    var maxY = northeast.lat;
+    const minX = southwest.lng;
+    const minY = southwest.lat;
+    const maxX = northeast.lng;
+    const maxY = northeast.lat;
     
     return { minX, minY, maxX, maxY };
 }
