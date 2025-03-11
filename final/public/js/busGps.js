@@ -17,17 +17,19 @@ async function getSpecificBusGPS(nocCode, route) {
     if (!nocCode) {
         console.log("no noc code");
         showNotification("Error fetching bus noc code", "error");
-        return [];
+        return;
     }
 
     try {
         // Call our server endpoint 
         const response = await $.get(`/api/buses/${nocCode}/${route}`);
-        return response || [];
+        return response;
     } catch (error) {
-        console.error("Error fetching bus data:", error);
-        showNotification("Error fetching bus data", "error");
-        return [];
+        // console.error("Error fetching bus data:", error);
+        // showNotification("Error fetching bus data", "error");
+        const allBuses = await getAllBusGPS(maxY, maxX, minY, minX) || [];
+        let filteredBuses = getFilteredBuses(allBuses, busNumber);
+        return filteredBuses;
     }
 }
 
@@ -138,6 +140,10 @@ function drawBus(busData, map) {
             // Update URL to reflect the selected bus route
             updateURLWithRoute(coord.route);
 
+            console.log(coord.serviceId)
+            console.log(coord.tripId)
+            console.log(coord.route)
+
             // Only try to show specific route if we have serviceId and tripId
             if (coord.serviceId && coord.tripId) {
                 await showSpecificBusRoute(coord.serviceId, coord.tripId, coord.route, map);
@@ -204,24 +210,35 @@ async function showSpecificBusRoute(serviceId, busId, busNumber, map) {
 
     // Fetch and draw buses with matching NOC and route
     try {
+        console.log("1.1")
         if (nocCode && routeNumber) {
+            console.log("1.2")
             const specificBusData = await getSpecificBusGPS(nocCode, routeNumber);
             if (specificBusData && specificBusData.length > 0) {
+                console.log("1.3")
                 drawBus(specificBusData, map);
             } else {
+                console.log("1.4")
                 throw new Error("No specific bus data found");
             }
         } else {
+            console.log("1.5")
             throw new Error("Missing nocCode or routeNumber");
         }
     } catch (error) {
+        
+        console.log("1.6")
         console.log("Falling back to all buses in viewport:", error);
         // Fallback to showing all buses in viewport
         try {
+            
+        console.log("1.7")
             const allBuses = await getAllBusGPS(maxY, maxX, minY, minX) || [];
             let filteredBuses = getFilteredBuses(allBuses, busNumber);
             drawBus(filteredBuses, map);
         } catch (fallbackError) {
+            
+            console.log("1.8")
             console.error("Error in fallback bus display:", fallbackError);
             showNotification("Could not display buses at this time", "error");
         }
