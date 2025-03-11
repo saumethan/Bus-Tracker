@@ -23,13 +23,29 @@ async function getSpecificBusGPS(nocCode, route) {
     try {
         // Call our server endpoint 
         const response = await $.get(`/api/buses/${nocCode}/${route}`);
+        
+        // Check if response is empty or invalid
+        if (!response || (Array.isArray(response) && response.length === 0)) {
+            console.log("Empty response from specific bus API");
+            // Get viewport bounds for finding buses
+            const { minX, minY, maxX, maxY } = getViewportBounds();
+            // Call findBus with the route number and current map center
+            const center = map.getCenter();
+            await findBus(route, center.lat, center.lng, map);
+            return [];
+        }
+        
         return response;
     } catch (error) {
-        // console.error("Error fetching bus data:", error);
-        // showNotification("Error fetching bus data", "error");
-        const allBuses = await getAllBusGPS(maxY, maxX, minY, minX) || [];
-        let filteredBuses = getFilteredBuses(allBuses, busNumber);
-        return filteredBuses;
+        console.error("Error fetching specific bus data:", error);
+        showNotification("Error fetching specific bus data", "warning");
+        
+        // Get viewport bounds for finding buses
+        const { minX, minY, maxX, maxY } = getViewportBounds();
+        // Call findBus with the route number and current map center
+        const center = map.getCenter();
+        await findBus(route, center.lat, center.lng, map);
+        return [];
     }
 }
 
