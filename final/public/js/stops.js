@@ -179,7 +179,7 @@ async function loadStopTimes(stopId, map) {
         document.querySelectorAll('h2.number').forEach((element) => {
             element.addEventListener('click', () => {
                 const serviceNumber = element.textContent.trim().split(' ')[0];
-                const destination = element.querySelector('.destination').textContent.trim().substring(3);
+                //const destination = element.querySelector('.destination').textContent.trim().substring(3);
 
                 // ADD IN STOP LAT AND LON
                 const lat = 57.066008; 
