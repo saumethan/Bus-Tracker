@@ -38,6 +38,10 @@ app.get("/timetable", function(req, res) {
     res.render("pages/timetable");
 });
 
+// 404 page
+app.use(function(req, res, next) {
+    res.status(404).render("pages/404"); 
+});
 
 // Use the API routes (from apiRoutes.js)
 app.use("/api", apiRoutes);
