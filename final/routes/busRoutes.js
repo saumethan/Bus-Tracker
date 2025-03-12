@@ -3,7 +3,7 @@ const axios = require("axios");
 const router = express.Router();
 
 // SERVER ENDPOINT: Get all buses in viewport
-router.get("/buses", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         const { yMax, xMax, yMin, xMin } = req.query;
 
@@ -43,7 +43,7 @@ router.get("/buses", async (req, res) => {
 });
 
 // SERVER ENDPOINT: Get specific bus GPS data
-router.get("/buses/:noc/:route", async (req, res) => {
+router.get("/:noc/:route", async (req, res) => {
     try {
         const { noc, route } = req.params;
 
@@ -83,7 +83,7 @@ router.get("/buses/:noc/:route", async (req, res) => {
 });
 
 // SERVER ENDPOINT: Search and get specific bus GPS data 
-router.get("/buses/:route", async (req, res) => {
+router.get("/find/:route", async (req, res) => {
     try {
         const { route } = req.params;
         const { lat, lon, radius = 50 } = req.query;
