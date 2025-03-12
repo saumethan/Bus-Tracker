@@ -11,8 +11,6 @@ import { findBus } from "./busGps.js";
 // Constants
 const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
 const BUS_PROXY = `https://europe-west2-legendoj1-portfolio.cloudfunctions.net/busproxy/?apiKey=${TRANSIT_API_KEY}&url=`;
-const LIVE_TIMES_URL = "https://apim-public-trs.trapezegroupazure.co.uk/trs/lts/lts/v1/public/departures";
-const LIVE_TIMES_KEY = "3918fe2ad7e84a6c8108b305612a8eb3";
 
 // Variables
 let transitStopIds = {};
@@ -25,23 +23,15 @@ async function fetchStopsInViewport(yMax, xMax, yMin, xMin) {
     // get nearby stops
     const response = await $.ajax({
         type: "GET",
-        url: `https://bustimes.org/stops.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`,
+        url: `/api/stops?yMax=${yMax}&xMax=${xMax}&yMin=${yMin}&xMin=${xMin}`,
         dataType: "json",
     });
 
     if (response) {
-        // parse the stop data into a better format
-        const stopsData = response.features.map(stop => ({
-            longitude: stop.geometry.coordinates[0],
-            latitude: stop.geometry.coordinates[1],
-            services: stop.properties.services,
-            bustimes_id: stop.properties.url.split("/")[2],
-            name: stop.properties.name
-        }));
-        return stopsData;
+        return response;
+    } else {
+        return []; // return an empty array if there was no respones
     }
-
-    return []; // return an empty array if there was no respones
 }
 
 /**
@@ -76,7 +66,7 @@ async function fetchStopId(stop) {
 }
 
 /**
- * Outputs the live times for a given stpo in the bus-data window on the
+ * Outputs the live times for a given stop in the bus-data window on the
  * left of the sceen.
  * 
  * Note that this is using a key from Traveline map which we should probably
@@ -89,21 +79,9 @@ async function loadStopTimes(stopId, map) {
     // make request to api
     try {
         const response = await $.ajax({
-            type: "POST",
-            url: LIVE_TIMES_URL,
-            contentType: "application/json",
-            data: JSON.stringify({
-                clientTimeZoneOffsetInMS: 0,
-                departureDate: new Date().toISOString(),
-                departureTime: new Date().toISOString(),
-                stopIds: [ stopId ],
-                stopType: "BUS_STOP",
-                requestTime: new Date().toISOString(),
-                departureOrArrival: "DEPARTURE",
-                refresh: false,
-                source: "WEB"
-            }),
-            headers: { "ocp-apim-subscription-key": LIVE_TIMES_KEY }
+            type: "GET",
+            url: `/api/stops/times?stopId=${stopId}`,
+            dataType: "json",
         });
 
         // load times
