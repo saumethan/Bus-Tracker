@@ -8,7 +8,7 @@ app.use(express.static("public"));
 
 // Import API routes 
 const busRoutes = require("./routes/busRoutes");
-const stopRoutes = require("./routes/stopRoutes");
+const stopRoutes = require("./routes/stopRoutesApi");
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
