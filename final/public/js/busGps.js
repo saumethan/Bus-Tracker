@@ -63,7 +63,7 @@ async function findBus(serviceNumber, lat, lon, map) {
 
     try {
         // Call the new API endpoint
-        const response = await $.get(`/api/buses/${serviceNumber}?lat=${lat}&lon=${lon}&radius=50`);
+        const response = await $.get(`/api/buses/find/${serviceNumber}?lat=${lat}&lon=${lon}&radius=50`);
         const busData = response || [];
 
         console.log("Fetched Bus Data:", busData);

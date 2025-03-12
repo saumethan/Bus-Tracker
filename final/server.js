@@ -7,7 +7,7 @@ const axios = require("axios");
 app.use(express.static("public"));
 
 // Import API routes 
-const apiRoutes = require("./routes/apiRoutes");
+const busRoutes = require("./routes/busRoutes");
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
@@ -39,7 +39,7 @@ app.get("/timetable", function(req, res) {
 });
 
 // Use the API routes (from apiRoutes.js)
-app.use("/api", apiRoutes);
+app.use("/api/buses", busRoutes);
 
 // 404 page
 app.use(function(req, res, next) {
