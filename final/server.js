@@ -40,7 +40,8 @@ app.get("/timetable", function(req, res) {
 });
 
 // Use the API routes (from apiRoutes.js)
-app.use("/api", apiRoutes);
+app.use("/api/buses", busRoutes);
+app.use("/api/stops", stopRoutes);
 
 // 404 page
 app.use(function(req, res, next) {
