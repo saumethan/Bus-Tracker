@@ -7,7 +7,7 @@ const axios = require("axios");
 app.use(express.static("public"));
 
 // Import API routes 
-const busRoutes = require("./routes/busRoutes");
+const busRoutes = require("./routes/busRoutesApi");
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
