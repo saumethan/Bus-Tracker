@@ -144,9 +144,6 @@ function addTileLayer(mapInstance) {
 // ------------------ Helper function to adjust the map view to the newly drawn route ------------------
 function adjustMapViewToRoute(route) {
     if (route) {
-        // Set flags to ignore the next moveend and zoomend events
-        ignoreNextMoveEnd = true;
-        ignoreNextZoomEnd = true;
         map.fitBounds(route.getBounds());
     }
 }
