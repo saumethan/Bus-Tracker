@@ -114,7 +114,6 @@ function drawBus(busData, map) {
     // Check if busData is valid
     if (!busData || busData.length === 0) {
         console.log("No bus data available to display");
-        showNotification("No buses currently found in this area", "info");
         return;
     }
 
