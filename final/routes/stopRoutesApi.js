@@ -70,7 +70,7 @@ router.get("/times", async (req, res) => {
             return res.json(response.data);
         }
     } catch (e) {
-        console.error(`Failed to fetch live times for stop ${req.query.stopId}:`, e);
+        console.error(`Failed to fetch live times for stop ${req.query.stopId}:`, e.message);
         return res.status(500).json({ "error": e.message });
     }
 });
