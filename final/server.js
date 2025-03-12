@@ -38,13 +38,20 @@ app.get("/timetable", function(req, res) {
     res.render("pages/timetable");
 });
 
-// 404 page
-app.use(function(req, res, next) {
-    res.status(404).render("pages/404"); 
-});
-
 // Use the API routes (from apiRoutes.js)
 app.use("/api", apiRoutes);
+
+// 404 page
+app.use(function(req, res, next) {
+    // Check if the route is an API route
+    if (req.originalUrl.startsWith("/api")) {
+        // Return a 404 JSON response for API routes
+        return res.status(404).json({ error: "API endpoint not found" });
+    }
+
+    // Render 404 page for other routes
+    res.status(404).render("pages/404");
+});
 
 app.listen(8080);
 console.log("8080 is the magic port");
