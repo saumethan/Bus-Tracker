@@ -63,7 +63,7 @@ async function findBus(serviceNumber, lat, lon, map) {
 
     try {
         // Call the new API endpoint
-        const response = await $.get(`/api/buses/${serviceNumber}?lat=${lat}&lon=${lon}&radius=50`);
+        const response = await $.get(`/api/buses/find/${serviceNumber}?lat=${lat}&lon=${lon}&radius=50`);
         const busData = response || [];
 
         console.log("Fetched Bus Data:", busData);
@@ -114,7 +114,6 @@ function drawBus(busData, map) {
     // Check if busData is valid
     if (!busData || busData.length === 0) {
         console.log("No bus data available to display");
-        showNotification("No buses currently found in this area", "info");
         return;
     }
 

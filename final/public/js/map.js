@@ -264,6 +264,7 @@ async function updateBuses() {
         if (viewAllBuses && map.currentZoom < MIN_BUS_ZOOM) {
             // Clear buses if zoom level is too low and we're viewing all buses
             drawBus(null, map);
+            showNotification("Zoom in to view buses", "info");
             busUpdateInProgress = false;
             return;
         }
