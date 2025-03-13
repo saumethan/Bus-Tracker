@@ -131,7 +131,7 @@ app.post('/createAccount', function(req,res){
         return res.status(500).send("Database connection error")
     }
 
-    await db.collection("users").insertOne({
+    db.collection("users").insertOne({
         email: req.body.userEmail,
         password: req.body.userPass
     });
