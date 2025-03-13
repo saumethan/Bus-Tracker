@@ -25,25 +25,25 @@ router.get("/get", async (req, res) => {
     ctx.fillRect(0, 0, 150, 120);
     
     try {
-        let logoPath;
+        let logoUrl;
         
-        // find which logo to use based on NOC code
+        // determine which logo to use based on NOC code
         if (noc.toLowerCase().startsWith("s")) {
-            // stagecoach (starts with S)
-            logoPath = path.join(__dirname, ".../public/images/logos/stagecoach.png");
+            // stagecoach
+            logoUrl = "https://i.ibb.co/YZVqQvy/stagecoach.png";
         } else if (noc.toLowerCase().startsWith("f")) {
-            // first bus (starts with F)
-            logoPath = path.join(__dirname, ".../public/images/logos/first-bus.png");
+            // first bus
+            logoUrl = "https://i.ibb.co/F8HvCZD/firstbus.png";
         } else if (noc.toLowerCase() === "embr") {
             // ember
-            logoPath = path.join(__dirname, ".../public/images/logos/ember.png");
+            logoUrl = "https://i.ibb.co/GCXHx7h/ember.png";
         } else {
-            // generic logo for other buses
-            logoPath = path.join(__dirname, ".../public/images/logos/bus.png");
+            // generic logo
+            logoUrl = "https://i.ibb.co/kG3vbKC/generic.png";
         }
         
         // load and draw the logo
-        const logo = await loadImage(logoPath);
+        const logo = await loadImage(logoUrl);
         
         // calculate dimensions to fit logo in the top portion of canvas
         const logoWidth = 50;
