@@ -96,16 +96,6 @@ app.use(bodyParser.urlencoded({
 
 
 
-var db
-//Connect the user to the database
-connectDB();
-async function connectDB(){
-    await client.connect()
-    console.log("Connected to the server");
-    db = client.db(dbName)
-    app.listen(8080)
-    console.log("Listening for connections on port 8080")
-}
 
 //User creating account 
 app.post('/createAccount', function(req,res){
