@@ -43,26 +43,40 @@ app.set("view engine", "ejs");
 
 // SERVER ENDPOINT: index page 
 app.get("/", function(req, res) {
+    const userAgent = req.headers['user-agent'];
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
     // Pass any query parameters to the view
     const busRoute = req.query.bus || null;
     res.render("pages/index", {
-        busRoute: busRoute
+        isMobile: isMobile, 
     });
 });
 
 // SERVER ENDPOINT: login page
 app.get("/login", function(req, res) {
-    res.render("pages/login");
+    const userAgent = req.headers['user-agent'];
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+    res.render("pages/login", {
+        isMobile: isMobile
+    });
 });
 
 // SERVER ENDPOINT: settings page
 app.get("/settings", function(req, res) {
-    res.render("pages/settings");
+    const userAgent = req.headers['user-agent'];
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+    res.render("pages/settings", {
+        isMobile: isMobile
+    });
 });
 
 // SERVER ENDPOINT: timetable page
 app.get("/timetable", function(req, res) {
-    res.render("pages/timetable");
+    const userAgent = req.headers['user-agent'];
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+    res.render("pages/timetable", {
+        isMobile: isMobile
+    });
 });
 
 // Use the API routes (from apiRoutes.js)

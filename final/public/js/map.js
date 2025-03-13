@@ -40,7 +40,7 @@ function addRefreshButtonToMap() {
     const refreshButton = L.control({ position: "topright" });
 
     refreshButton.onAdd = function () {
-        const buttonDiv = L.DomUtil.create("div", "map-button");
+        const buttonDiv = L.DomUtil.create("div", "map-button-reset");
         buttonDiv.innerHTML = "<button id='reset-button'><i class='fa-solid fa-arrows-rotate'></i></button>";
 
         // Event listener for the button

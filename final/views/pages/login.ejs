@@ -7,7 +7,11 @@
 
 <body>
     <header>
-        <%- include("../partials/header") %>
+        <% if (isMobile) { %>
+            <%- include('../partials/headerMobile') %>
+        <% } else { %>
+            <%- include('../partials/headerDesktop') %>
+        <% } %>
     </header>
     <main>
         <div id="login-container">
