@@ -51,14 +51,14 @@ router.get("/get", async (req, res) => {
     // NOC can be null because the API sometimes returns that
     const noc = req.query.noc || "";
     const busName = req.query.routeName;
-    const bearing = 140; //req.query.bearing ? parseFloat(req.query.bearing) : 0;
+    const bearing = 0; //req.query.bearing ? parseFloat(req.query.bearing) : 0;
 
     if (!busName) {
         return res.status(400).json({ error: "Bus name is required" });
     }
     
     // create canvas
-    const canvas = createCanvas(80, 80);
+    const canvas = createCanvas(80, 120);
     const ctx = canvas.getContext("2d");
     
     // set white background
@@ -66,50 +66,51 @@ router.get("/get", async (req, res) => {
     //ctx.fillRect(0, 0, 100, 100);
     
     try {
-        // load the indicator image
-        const indicator = await loadImage("https://i.ibb.co/WvfpbW23/indicator.png");
-        const bearingRad = bearing * Math.PI / 180;
-        const logoX = (canvas.width - logoWidth) / 2;
-        ctx.rotate(bearingRad);
-
-        ctx.drawImage(indicator, logoX, 50, 50, 50);
-
-
-        let logoUrl;
-        
         // determine which logo to use based on NOC code
+        let logoUrl;
+        let indicatorImage;
         if (noc.toLowerCase().startsWith("s")) {
             // stagecoach
             logoUrl = "https://i.ibb.co/XZCZYykk/stagecoach.png";
+            indicatorImage = "https://i.ibb.co/V0Ss20LL/indicator-stagecoach.png";
         } else if (noc.toLowerCase().startsWith("f")) {
             // first bus
-            logoUrl = "https://i.ibb.co/3L8y49z/first-bus.png";
+            logoUrl = "https://i.ibb.co/4RB57BHV/first-bus.png";
+            indicatorImage = "https://i.ibb.co/3P3qYM5/indicator-first.png";
         } else if (noc.toLowerCase() === "embr") {
             // ember
             logoUrl = "https://i.ibb.co/d08My2kN/ember.png";
+            indicatorImage = "https://i.ibb.co/RpBX5Cb1/indicator-ember.png";
         } else {
             // generic logo
-            logoUrl = "https://i.ibb.co/JjHbjbFx/bus.png";
+            logoUrl = "https://i.ibb.co/Q31hvPSL/bus.png";
+            indicatorImage = "https://i.ibb.co/jPBpFBXJ/indicator.png";
         }
         
-        // load and draw the logo       
-        const logo = await loadImage(logoUrl).catch(error => {
-            console.error("Failed to load image:", error);
-            throw new Error("Failed to load image from i.ibb");
-        });
+        // load the logo and indicator images
+        const indicator = await loadImage(indicatorImage);
+        const logo = await loadImage(logoUrl);
 
-        // calculate dimensions to fit logo in the top portion of canvas
-        const logoWidth = 50;
-        const logoHeight = 50;
-        const logoY = 20;
+        // draw the indicator centered and rotated towards the bearing
+        ctx.save();
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.rotate(bearing * Math.PI / 180); // rotate in radians towards bearing
+        ctx.drawImage(indicator, -40, -40, 80, 80);
+        ctx.restore(); // restore previous state to draw logo without rotation
         
+        // draw the logo in center of image
+        const logoWidth = 45;
+        const logoHeight = 45;
+        const logoX = (canvas.width - logoWidth) / 2;
+        const logoY = (canvas.height - logoHeight) / 2;
+
         ctx.drawImage(logo, logoX, logoY, logoWidth, logoHeight);
         
         // add bus name below the logo in black text
         ctx.fillStyle = "#000000";
-        ctx.font = "bold 28px Arial";
+        ctx.font = "bold 24px Arial";
         ctx.textAlign = "center";
-        ctx.fillText(busName, canvas.width / 2, 93);
+        ctx.fillText(busName, canvas.width / 2, 115);
 
         // send image as response
         res.setHeader("Content-Type", "image/png");
