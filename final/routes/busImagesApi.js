@@ -2,7 +2,6 @@
 const express = require("express");
 const router = express.Router();
 const { createCanvas, loadImage } = require("canvas");
-const path = require("path");
 
 // Functions
 // Draw direction triangle based on bearing
