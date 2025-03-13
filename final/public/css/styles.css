@@ -278,6 +278,22 @@ footer p {
     font-size: 18px;
 }
 
+button.btn-link.number {
+    background: none; 
+    border: none;    
+    color: #FF9800;   
+    font-size: 18px;  
+    cursor: pointer; 
+    padding: 0;      
+    text-decoration: none; 
+    margin-right: 10px; 
+}
+
+button.btn-link.number:hover {
+    color: #ffab2c;  
+    text-decoration: none; 
+}
+
 /* =-=-=-= SCROLL BAR FOR BUS TIMES PANEL =-=-=-= */
 ::-webkit-scrollbar {
     width: 8px;
