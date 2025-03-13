@@ -6,6 +6,18 @@ const url = 'mongodb://127.0.0.1:27017'
 const client = new MongoClient(url)
 const dbName = 'User_Profiles'
 
+//Connect the user to the database
+async function connectDB() {
+    try{
+        await client.connect()
+        db = client.db(dbName)
+        console.log("Connected to the database")
+    }catch(error){
+        console.error("Database connection failed",error)
+    }
+}
+connectDB()
+
 
 const bodyParser = require('body-parser')
 const express = require("express");
@@ -71,7 +83,7 @@ app.use(function(req, res, next) {
 // web scraper
 
 (async () => {
-    const url = 'https://www.example.com';
+    const url = 'https://bustimes.org/services/57466/timetable?date=2025-03-15';
     const response = await fetch(url);
   
     const $ = cheerio.load(await response.text());
@@ -110,12 +122,26 @@ app.use(bodyParser.urlencoded({
 
 
 //User creating account 
-app.post('/createAccount', function(req,res){
-    db.collection(User_Profiles).insertOne(req.body, function(err,result){
-        if(err) throw err
+app.post('/login', function(req,res){
+    console.log("Username : "+ req.body.userEmail)
+    console.log("Password : "+ req.body.userPass)
+
+    if(!db){
+        console.error("Database not connected")
+        return res.status(500).send("Database connection error")
+    }
+
+    db.collection("users").insertOne({
+        email: req.body.userEmail,
+        password: req.body.userPass
+    });
+
+    dbName.collection(User_Profiles).insertOne(req.body, function(err, results){
+        if(err) throw err;
         console.log("Saved to database")
         res.redirect('/')
     })
+
 })
 
 
