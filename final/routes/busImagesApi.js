@@ -9,7 +9,7 @@ const path = require("path");
 router.get("/get", async (req, res) => {  
     // make sure a bus name is passed
     // NOC can be null because the API sometimes returns that
-    const noc = req.query.noc;
+    const noc = req.query.noc || "";
     const busName = req.query.routeName;
 
     if (!busName) {
@@ -17,12 +17,12 @@ router.get("/get", async (req, res) => {
     }
     
     // create canvas
-    const canvas = createCanvas(150, 120);
+    const canvas = createCanvas(80, 80);
     const ctx = canvas.getContext("2d");
     
     // set white background
     ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, 150, 120);
+    ctx.fillRect(0, 0, 100, 100);
     
     try {
         let logoUrl;
@@ -30,16 +30,16 @@ router.get("/get", async (req, res) => {
         // determine which logo to use based on NOC code
         if (noc.toLowerCase().startsWith("s")) {
             // stagecoach
-            logoUrl = "https://i.ibb.co/YZVqQvy/stagecoach.png";
+            logoUrl = "https://i.ibb.co/XZCZYykk/stagecoach.png";
         } else if (noc.toLowerCase().startsWith("f")) {
             // first bus
-            logoUrl = "https://i.ibb.co/F8HvCZD/firstbus.png";
+            logoUrl = "https://i.ibb.co/3L8y49z/first-bus.png";
         } else if (noc.toLowerCase() === "embr") {
             // ember
-            logoUrl = "https://i.ibb.co/GCXHx7h/ember.png";
+            logoUrl = "https://i.ibb.co/d08My2kN/ember.png";
         } else {
             // generic logo
-            logoUrl = "https://i.ibb.co/kG3vbKC/generic.png";
+            logoUrl = "https://i.ibb.co/JjHbjbFx/bus.png";
         }
         
         // load and draw the logo       
@@ -52,7 +52,7 @@ router.get("/get", async (req, res) => {
         const logoWidth = 50;
         const logoHeight = 50;
         const logoX = (canvas.width - logoWidth) / 2;
-        const logoY = 20;
+        const logoY = 1;
         
         ctx.drawImage(logo, logoX, logoY, logoWidth, logoHeight);
         
@@ -60,7 +60,7 @@ router.get("/get", async (req, res) => {
         ctx.fillStyle = "#000000";
         ctx.font = "bold 28px Arial";
         ctx.textAlign = "center";
-        ctx.fillText(busName, canvas.width / 2, 95);
+        ctx.fillText(busName, canvas.width / 2, 73);
         
         // Send image as response
         res.setHeader("Content-Type", "image/png");
