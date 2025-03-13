@@ -42,9 +42,12 @@ router.get("/get", async (req, res) => {
             logoUrl = "https://i.ibb.co/kG3vbKC/generic.png";
         }
         
-        // load and draw the logo
-        const logo = await loadImage(logoUrl);
-        
+        // load and draw the logo       
+        const logo = await loadImage(logoUrl).catch(error => {
+            console.error("Failed to load image:", error);
+            throw new Error("Failed to load image from i.ibb");
+        });
+
         // calculate dimensions to fit logo in the top portion of canvas
         const logoWidth = 50;
         const logoHeight = 50;
