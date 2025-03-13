@@ -9,7 +9,7 @@ const path = require("path");
 router.get("/get", async (req, res) => {  
     // make sure a bus name is passed
     // NOC can be null because the API sometimes returns that
-    const noc = req.query.noc;
+    const noc = req.query.noc || "";
     const busName = req.query.routeName;
 
     if (!busName) {
@@ -17,39 +17,42 @@ router.get("/get", async (req, res) => {
     }
     
     // create canvas
-    const canvas = createCanvas(150, 120);
+    const canvas = createCanvas(80, 80);
     const ctx = canvas.getContext("2d");
     
     // set white background
     ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, 150, 120);
+    ctx.fillRect(0, 0, 100, 100);
     
     try {
-        let logoPath;
+        let logoUrl;
         
-        // find which logo to use based on NOC code
+        // determine which logo to use based on NOC code
         if (noc.toLowerCase().startsWith("s")) {
-            // stagecoach (starts with S)
-            logoPath = path.join(__dirname, ".../public/images/logos/stagecoach.png");
+            // stagecoach
+            logoUrl = "https://i.ibb.co/XZCZYykk/stagecoach.png";
         } else if (noc.toLowerCase().startsWith("f")) {
-            // first bus (starts with F)
-            logoPath = path.join(__dirname, ".../public/images/logos/first-bus.png");
+            // first bus
+            logoUrl = "https://i.ibb.co/3L8y49z/first-bus.png";
         } else if (noc.toLowerCase() === "embr") {
             // ember
-            logoPath = path.join(__dirname, ".../public/images/logos/ember.png");
+            logoUrl = "https://i.ibb.co/d08My2kN/ember.png";
         } else {
-            // generic logo for other buses
-            logoPath = path.join(__dirname, ".../public/images/logos/bus.png");
+            // generic logo
+            logoUrl = "https://i.ibb.co/JjHbjbFx/bus.png";
         }
         
-        // load and draw the logo
-        const logo = await loadImage(logoPath);
-        
+        // load and draw the logo       
+        const logo = await loadImage(logoUrl).catch(error => {
+            console.error("Failed to load image:", error);
+            throw new Error("Failed to load image from i.ibb");
+        });
+
         // calculate dimensions to fit logo in the top portion of canvas
         const logoWidth = 50;
         const logoHeight = 50;
         const logoX = (canvas.width - logoWidth) / 2;
-        const logoY = 20;
+        const logoY = 1;
         
         ctx.drawImage(logo, logoX, logoY, logoWidth, logoHeight);
         
@@ -57,7 +60,7 @@ router.get("/get", async (req, res) => {
         ctx.fillStyle = "#000000";
         ctx.font = "bold 28px Arial";
         ctx.textAlign = "center";
-        ctx.fillText(busName, canvas.width / 2, 95);
+        ctx.fillText(busName, canvas.width / 2, 73);
         
         // Send image as response
         res.setHeader("Content-Type", "image/png");
