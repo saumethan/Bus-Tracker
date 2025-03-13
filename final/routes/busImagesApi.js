@@ -3,46 +3,6 @@ const express = require("express");
 const router = express.Router();
 const { createCanvas, loadImage } = require("canvas");
 
-// Functions
-// Draw direction triangle based on bearing
-function drawDirectionIndicator(ctx, bearing, centerX, centerY, radius) {
-    // Convert bearing to radians (bearing is clockwise from north)
-    const radians = (bearing - 90) * Math.PI / 180;
-    
-    // Calculate the tip of the triangle at the edge of the radius
-    const pointX = centerX + radius * Math.cos(radians);
-    const pointY = centerY + radius * Math.sin(radians);
-    
-    // Calculate the two other points of the equilateral triangle
-    // The angles for the two base points are 120 degrees apart from the tip angle
-    const baseAngle1 = radians + Math.PI * 2 / 3;  // 120 degrees clockwise
-    const baseAngle2 = radians - Math.PI * 2 / 3;  // 120 degrees counterclockwise
-    
-    // Set the same distance (e.g., 15px) for the base of the triangle
-    const baseLength = 15;
-
-    // Calculate the two base points using the base angle and baseLength
-    const base1X = centerX + baseLength * Math.cos(baseAngle1);
-    const base1Y = centerY + baseLength * Math.sin(baseAngle1);
-    const base2X = centerX + baseLength * Math.cos(baseAngle2);
-    const base2Y = centerY + baseLength * Math.sin(baseAngle2);
-    
-    // Draw the equilateral triangle
-    ctx.beginPath();
-    ctx.moveTo(pointX, pointY); // tip of the triangle
-    ctx.lineTo(base1X, base1Y); // first base point
-    ctx.lineTo(base2X, base2Y); // second base point
-    ctx.closePath();
-    
-    // Set triangle style
-    ctx.fillStyle = "rgba(255, 0, 0, 0.4)"; // Semi-transparent red
-    ctx.fill();
-    ctx.strokeStyle = "#ff0000";  // Outline color
-    ctx.lineWidth = 1.5;  // Stroke width
-    ctx.stroke();
-}
-
-
 // Routes
 // Get a bus image
 router.get("/get", async (req, res) => {  
