@@ -6,6 +6,18 @@ const url = 'mongodb://127.0.0.1:27017'
 const client = new MongoClient(url)
 const dbName = 'User_Profiles'
 
+//Connect the user to the database
+async function connectDB() {
+    try{
+        await client.connect()
+        db = client.db(dbName)
+        console.log("Connected to the database")
+    }catch(error){
+        console.error("Database connection failed",error)
+    }
+}
+connectDB()
+
 
 const bodyParser = require('body-parser')
 const express = require("express");
@@ -113,6 +125,16 @@ app.use(bodyParser.urlencoded({
 app.post('/createAccount', function(req,res){
     console.log("Username : "+ req.body.userEmail)
     console.log("Password : "+ req.body.userPass)
+
+    if(!db){
+        console.error("Database not connected")
+        return res.status(500).send("Database connection error")
+    }
+
+    await db.collection("users").insertOne({
+        email: req.body.userEmail,
+        password: req.body.userPass
+    });
 
     dbName.collection(User_Profiles).insertOne(req.body, function(err, results){
         if(err) throw err;
