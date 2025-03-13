@@ -51,7 +51,7 @@ router.get("/get", async (req, res) => {
     // NOC can be null because the API sometimes returns that
     const noc = req.query.noc || "";
     const busName = req.query.routeName;
-    const bearing = 0; //req.query.bearing ? parseFloat(req.query.bearing) : 0;
+    const bearing = req.query.bearing ? parseFloat(req.query.bearing) : 0;
 
     if (!busName) {
         return res.status(400).json({ error: "Bus name is required" });
