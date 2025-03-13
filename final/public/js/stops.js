@@ -72,7 +72,7 @@ async function fetchStopId(stop) {
  * Note that this is using a key from Traveline map which we should probably
  * change to a different API in future.
  */
-async function loadStopTimes(stopId, map) {
+async function loadStopTimes(stopId, latitude, longitude, map) {
     // clear old bus times html
     $("#bus-data").html("<h3>Loading bus stop times...</h3>");
 
@@ -162,11 +162,8 @@ async function loadStopTimes(stopId, map) {
                 const serviceNumber = element.textContent.trim().split(' ')[0];
                 //const destination = element.querySelector('.destination').textContent.trim().substring(3);
 
-                // ADD IN STOP LAT AND LON
-                const lat = 57.066008; 
-                const lon = -2.132168; 
-
-                findBus(serviceNumber, lat, lon, map);
+                console.log(latitude, longitude)
+                findBus(serviceNumber, latitude, longitude, map);
             });
         });
     } else {
@@ -236,7 +233,7 @@ async function drawStops(stopsData, map) {
             circle.setStyle({ fillColor: "#ff9100", color: "#ff9100" });
             circle.openTooltip();
 
-            loadStopTimes(stop.bustimes_id, map);
+            loadStopTimes(stop.bustimes_id, stop.latitude, stop.longitude, map);
         });
 
         map.stopMarkers.push(circle);
