@@ -76,7 +76,7 @@ const url = 'mongodb://127.0.0.1:27017'
 const client = new MongoClient(url)
 const dbName = 'User_Profiles'
 
-const session = require('express-session')
+//const session = require('express-session')
 const bodyParser = require('body-parser')
 
 
