@@ -381,20 +381,7 @@ button.btn-link.number:hover {
 
     /* Index Page CSS */
     .index-page {
-        body {
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-        }
         
-        main {
-            padding: 0;
-            margin: 0;
-        }
-        
-        aside {
-            width: 100%;
-        }
         
         #map {
             height: 75vh;
@@ -443,6 +430,10 @@ button.btn-link.number:hover {
         .navbar .container-fluid {
             justify-content: flex-end;
         }
+
+        .navbar-brand {
+            padding: 0;
+        }
         
         .navbar-toggler {
             background: #C9C6C2 !important;
@@ -490,11 +481,6 @@ button.btn-link.number:hover {
 
         .leaflet-top .map-button-reset {
             margin-top: 55px !important; 
-        }
-
-        .leaflet-top {
-            padding-left: 12px;
-            padding-right: 12px;
         }
         
         footer {
