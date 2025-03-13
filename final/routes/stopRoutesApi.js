@@ -34,7 +34,7 @@ router.get("/", async (req, res) => {
         }
     } catch (e) {
         console.error("Failed to fetch or parse stops data:", e.message);
-        return res.status(501).json({ "error": e.message })
+        return res.status(500).json({ "error": e.message })
     }
 });
 
