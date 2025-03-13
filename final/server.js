@@ -3,6 +3,7 @@
 const express = require("express");
 const app = express();
 const axios = require("axios");
+const cheerio = require('cheerio');
 
 app.use(express.static("public"));
 
@@ -54,6 +55,17 @@ app.use(function(req, res, next) {
     // Render 404 page for other routes
     res.status(404).render("pages/404");
 });
+
+// web scraper
+
+(async () => {
+    const url = 'https://www.example.com';
+    const response = await fetch(url);
+  
+    const $ = cheerio.load(await response.text());
+    console.log($.html());
+  
+  })();
 
 
 
