@@ -13,9 +13,9 @@
         <div id="login-container">
             <div id="login-section">
                 <h1>Login</h1>
-                <form action="/createAccount" method="POST">
-                    <input type="email" placeholder="Email"><br>
-                    <input type="password" placeholder="Password"><br>
+                <form action="/login" method="POST">
+                    <input type="email" placeholder="Email" name="userEmail" required><br>
+                    <input type="password" placeholder="Password" name="userPass" required><br>
                     <a href="#"><button id="login-button" type="submit">Submit</button></a>
                 </form>
             </div>

@@ -1,15 +1,39 @@
 // server.js
 // load the things we need
+
+const MongoClient = require('mongodb-legacy').MongoClient
+const url = 'mongodb://127.0.0.1:27017'
+const client = new MongoClient(url)
+const dbName = 'User_Profiles'
+
+//Connect the user to the database
+async function connectDB() {
+    try{
+        await client.connect()
+        db = client.db(dbName)
+        console.log("Connected to the database")
+    }catch(error){
+        console.error("Database connection failed",error)
+    }
+}
+connectDB()
+
+
+const bodyParser = require('body-parser')
 const express = require("express");
+const session = require('express-session')
 const app = express();
 const axios = require("axios");
+const cheerio = require('cheerio');
 
 app.use(express.static("public"));
+
+
+
 
 // Import API routes 
 const busRoutes = require("./routes/busRoutesApi");
 const stopRoutes = require("./routes/stopRoutesApi");
-const busImageRoutes = require("./routes/busImagesApi");
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
@@ -43,7 +67,6 @@ app.get("/timetable", function(req, res) {
 // Use the API routes (from apiRoutes.js)
 app.use("/api/buses", busRoutes);
 app.use("/api/stops", stopRoutes);
-app.use("/api/busimages", busImageRoutes);
 
 // 404 page
 app.use(function(req, res, next) {
@@ -57,5 +80,75 @@ app.use(function(req, res, next) {
     res.status(404).render("pages/404");
 });
 
-app.listen(8081);
+
+=======
+// web scraper
+
+(async () => {
+    const url = 'https://bustimes.org/services/57466/timetable?date=2025-03-15';
+    const response = await fetch(url);
+  
+    const $ = cheerio.load(await response.text());
+    console.log($.html());
+  
+  })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Login Page Code-=-=-=-=-=-=-=-=-=-=-=-=--=\\
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
+
+
+
+
+app.use(session({secret : 'example'}))
+app.use(express.static('public'))
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
+
+
+
+
+//User creating account 
+app.post('/login', function(req,res){
+    console.log("Username : "+ req.body.userEmail)
+    console.log("Password : "+ req.body.userPass)
+
+    if(!db){
+        console.error("Database not connected")
+        return res.status(500).send("Database connection error")
+    }
+
+    db.collection("users").insertOne({
+        email: req.body.userEmail,
+        password: req.body.userPass
+    });
+
+    dbName.collection(User_Profiles).insertOne(req.body, function(err, results){
+        if(err) throw err;
+        console.log("Saved to database")
+        res.redirect('/')
+    })
+
+})
+
+
+
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
+app.listen(8080);
 console.log("8080 is the magic port");
