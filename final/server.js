@@ -1,11 +1,23 @@
 // server.js
 // load the things we need
+
+const MongoClient = require('mongodb-legacy').MongoClient
+const url = 'mongodb://127.0.0.1:27017'
+const client = new MongoClient(url)
+const dbName = 'User_Profiles'
+
+
+const bodyParser = require('body-parser')
 const express = require("express");
+const session = require('express-session')
 const app = express();
 const axios = require("axios");
 const cheerio = require('cheerio');
 
 app.use(express.static("public"));
+
+
+
 
 // Import API routes 
 const busRoutes = require("./routes/busRoutesApi");
@@ -83,13 +95,7 @@ app.use(function(req, res, next) {
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Login Page Code-=-=-=-=-=-=-=-=-=-=-=-=--=\\
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
-const MongoClient = require('mongodb-legacy').MongoClient
-const url = 'mongodb://127.0.0.1:27017'
-const client = new MongoClient(url)
-const dbName = 'User_Profiles'
 
-//const session = require('express-session')
-const bodyParser = require('body-parser')
 
 
 
@@ -102,16 +108,6 @@ app.use(bodyParser.urlencoded({
 
 
 
-var db
-//Connect the user to the database
-connectDB();
-async function connectDB(){
-    await client.connect()
-    console.log("Connected to the server");
-    db = client.db(dbName)
-    app.listen(8080)
-    console.log("Listening for connections on port 8080")
-}
 
 //User creating account 
 app.post('/createAccount', function(req,res){
