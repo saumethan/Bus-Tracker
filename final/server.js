@@ -1,10 +1,22 @@
 // server.js
 // load the things we need
+
+const MongoClient = require('mongodb-legacy').MongoClient
+const url = 'mongodb://127.0.0.1:27017'
+const client = new MongoClient(url)
+const dbName = 'User_Profiles'
+
+
+const bodyParser = require('body-parser')
 const express = require("express");
+const session = require('express-session')
 const app = express();
 const axios = require("axios");
 
 app.use(express.static("public"));
+
+
+
 
 // Import API routes 
 const busRoutes = require("./routes/busRoutesApi");
@@ -71,13 +83,7 @@ app.use(function(req, res, next) {
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Login Page Code-=-=-=-=-=-=-=-=-=-=-=-=--=\\
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
-const MongoClient = require('mongodb-legacy').MongoClient
-const url = 'mongodb://127.0.0.1:27017'
-const client = new MongoClient(url)
-const dbName = 'User_Profiles'
 
-//const session = require('express-session')
-const bodyParser = require('body-parser')
 
 
 
