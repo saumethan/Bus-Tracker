@@ -98,7 +98,7 @@ async function findBus(serviceNumber, lat, lon, map) {
 }
 
 // ------------------ Function to draw the buses ------------------
-function drawBus(busData, map) {
+async function drawBus(busData, map) {
     // Initialise busMarkers if it doesn't exist
     if (!map.busMarkers) {
         map.busMarkers = [];
@@ -119,17 +119,18 @@ function drawBus(busData, map) {
     }
 
     // Draw each bus marker
-    busData.forEach(coord => { 
+    busData.forEach(async coord => { 
         // Make sure we have valid coordinates
         if (!coord.latitude || !coord.longitude) {
             return;
         }
         
+        // create icon by fetching API endpoint that returns image
         const icon = L.icon({
-            iconUrl: "./images/BusTracker.png", 
-            iconSize: [44.5, 25],  
+            iconUrl: `/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}&bearing=${coord.bearing}`, 
+            iconSize: [40, 60], 
         });
-    
+
         const circle = L.marker([coord.latitude, coord.longitude], {icon: icon}).addTo(map);
 
         const toolTipContent = ` 
