@@ -148,7 +148,7 @@ function adjustMapViewToRoute(route) {
     }
 }
 
-// ------------------ Function to update the map viewport ------------------
+// ------------------ Function to get the map viewport bounds ------------------
 function getViewportBounds() {
     // Gets the current bounds of the map
     const bounds = map.getBounds();
@@ -163,6 +163,22 @@ function getViewportBounds() {
     
     return { minX, minY, maxX, maxY };
 }
+
+// ------------------ Function to get the map coordinates ------------------
+function getCenterCoordinates() {
+    const center = map.getCenter(); // Returns a LatLng object in Leaflet
+    if (center) {
+        const lat = center.lat;  // Access lat directly
+        const lng = center.lng;  // Access lng directly
+        console.log('Latitude:', lat);
+        console.log('Longitude:', lng);
+        const centerCoords = { lat, lng };
+        return centerCoords;
+    } else {
+        console.error('Map center is undefined');
+    }
+}
+
 
 // ------------------ Function to set default user location ------------------
 function setDefaultUserLocation() {
@@ -379,8 +395,10 @@ function searchRoute(event) {
     window.history.pushState({ path: newUrl }, "", newUrl);
 
     searchInput.value = "";
-
-    findBus(route, userLat, userLng, map);
+    const { lat, lng } = getCenterCoordinates();
+    console.log(lat)
+    console.log(lng)
+    findBus(route, lat, lng, map);
 }
 
 // Calls the initializeMap function when the HTML has loaded
