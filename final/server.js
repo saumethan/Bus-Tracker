@@ -3,14 +3,12 @@
 const express = require("express");
 const app = express();
 const axios = require("axios");
-const cheerio = require('cheerio')
 
 app.use(express.static("public"));
 
 // Import API routes 
 const busRoutes = require("./routes/busRoutesApi");
 const stopRoutes = require("./routes/stopRoutesApi");
-const busImageRoutes = require("./routes/busImagesApi");
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
@@ -44,7 +42,6 @@ app.get("/timetable", function(req, res) {
 // Use the API routes (from apiRoutes.js)
 app.use("/api/buses", busRoutes);
 app.use("/api/stops", stopRoutes);
-app.use("/api/busimages", busImageRoutes);
 
 // 404 page
 app.use(function(req, res, next) {
@@ -58,15 +55,64 @@ app.use(function(req, res, next) {
     res.status(404).render("pages/404");
 });
 
-//web scraper
-(async () => {
-    const url = 'https://www.example.com';
-    const response = await fetch(url);
-  
-    const $ = cheerio.load(await response.text());
-    console.log($.html());
-  
-  })();
 
+
+
+
+
+
+
+
+
+
+
+
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Login Page Code-=-=-=-=-=-=-=-=-=-=-=-=--=\\
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
+const MongoClient = require('mongodb-legacy').MongoClient
+const url = 'mongodb://127.0.0.1:27017'
+const client = new MongoClient(url)
+const dbName = 'User_Profiles'
+
+const session = require('express-session')
+const bodyParser = require('body-parser')
+
+
+
+app.use(session({secret : 'example'}))
+app.use(express.static('public'))
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
+
+
+
+var db
+//Connect the user to the database
+connectDB();
+async function connectDB(){
+    await client.connect()
+    console.log("Connected to the server");
+    db = client.db(dbName)
+    app.listen(8080)
+    console.log("Listening for connections on port 8080")
+}
+
+//User creating account 
+app.post('/createAccount', function(req,res){
+    db.collection(User_Profiles).insertOne(req.body, function(err,result){
+        if(err) throw err
+        console.log("Saved to database")
+        res.redirect('/')
+    })
+})
+
+
+
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 app.listen(8080);
 console.log("8080 is the magic port");

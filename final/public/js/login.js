@@ -1,7 +1,7 @@
-const MongoClient = reqire('mongodb-legacy').MongoClient;
+const MongoClient = require('mongodb-legacy').MongoClient;
 const url = 'mongodb://127.0.0.1:27017';
 const client = new MongoClient(url);
-const dbName = login_Details;
+const dbName = "login_Details";
 
 const express = require('express')
 const app = express()
