@@ -127,8 +127,8 @@ async function drawBus(busData, map) {
         
         // create icon by fetching API endpoint that returns image
         const icon = L.icon({
-            iconUrl: `/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}`, 
-            iconSize: [70, 70], 
+            iconUrl: `/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}&bearing=${coord.bearing}`, 
+            iconSize: [40, 60], 
         });
 
         const circle = L.marker([coord.latitude, coord.longitude], {icon: icon}).addTo(map);
