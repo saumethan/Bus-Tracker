@@ -122,7 +122,7 @@ app.use(bodyParser.urlencoded({
 
 
 //User creating account 
-app.post('/createAccount', function(req,res){
+app.post('/login', function(req,res){
     console.log("Username : "+ req.body.userEmail)
     console.log("Password : "+ req.body.userPass)
 
