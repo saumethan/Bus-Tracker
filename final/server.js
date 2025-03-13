@@ -111,11 +111,15 @@ app.use(bodyParser.urlencoded({
 
 //User creating account 
 app.post('/createAccount', function(req,res){
-    db.collection(User_Profiles).insertOne(req.body, function(err,result){
-        if(err) throw err
+    console.log("Username : "+ req.body.userEmail)
+    console.log("Password : "+ req.body.userPass)
+
+    dbName.collection(User_Profiles).insertOne(req.body, function(err, results){
+        if(err) throw err;
         console.log("Saved to database")
         res.redirect('/')
     })
+
 })
 
 
