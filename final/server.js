@@ -71,7 +71,7 @@ app.use(function(req, res, next) {
 // web scraper
 
 (async () => {
-    const url = 'https://www.example.com';
+    const url = 'https://bustimes.org/services/57466/timetable?date=2025-03-15';
     const response = await fetch(url);
   
     const $ = cheerio.load(await response.text());
