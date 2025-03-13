@@ -37,6 +37,9 @@ router.get("/", async (req, res) => {
         
         res.json(busData);
     } catch (error) {
+        if(error.status === 404){
+            return res.status(200);
+        }
         console.error("Error fetching bus data:", error);
         res.status(500).json({ error: "Failed to fetch bus data" });
     }
