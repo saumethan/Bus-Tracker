@@ -145,7 +145,10 @@ async function loadStopTimes(stopId, map) {
                 // add to html
                 htmlContent += `
                 <div class="bus-time-record">
-                    <h2 class="number">${bus.serviceNumber} <span class="destination">to ${destination}</span></h2>
+                    <h2>
+                        <button type="button" class="btn-link number">${bus.serviceNumber}</button>
+                        <span class="destination">to ${destination}</span>
+                    </h2>
                     <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
                 </div>
             `;
@@ -154,7 +157,7 @@ async function loadStopTimes(stopId, map) {
         // Append the generated HTML to the DOM
         $("#bus-data").html(htmlContent);
 
-        document.querySelectorAll('h2.number').forEach((element) => {
+        document.querySelectorAll('button.number').forEach((element) => {
             element.addEventListener('click', () => {
                 const serviceNumber = element.textContent.trim().split(' ')[0];
                 //const destination = element.querySelector('.destination').textContent.trim().substring(3);

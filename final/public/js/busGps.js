@@ -70,6 +70,7 @@ async function findBus(serviceNumber, lat, lon, map) {
 
         if (busData.length === 0) {
             console.log("No buses found for this service.");
+            showNotification("No live buses found for this route", "info")
             return;
         }
 
