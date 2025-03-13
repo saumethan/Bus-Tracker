@@ -26,6 +26,7 @@ router.get("/", async (req, res) => {
                 busData.push({
                     longitude: longitude,
                     latitude: latitude,
+                    heading: bus.heading,
                     route: bus.service?.line_name,
                     destination: bus.destination,
                     tripId: bus.trip_id,
@@ -89,6 +90,7 @@ router.get("/find/:route", async (req, res) => {
             .map(bus => ({
                 longitude: bus.coordinates[0],
                 latitude: bus.coordinates[1],
+                heading: bus.heading,
                 route: bus.service.line_name,
                 destination: bus.destination,
                 tripId: bus.trip_id,
@@ -127,6 +129,7 @@ router.get("/:noc/:route", async (req, res) => {
                 busData.push({
                     longitude: longitude,
                     latitude: latitude,
+                    heading: bus.heading,
                     route: bus.service.line_name,
                     destination: bus.destination,
                     tripId: bus.trip_id,
