@@ -342,7 +342,7 @@ button.btn-link.number:hover {
 
 
 /* =-=-=-= RESPONSIVE PHONES =-=-=-= */
-@media (max-width: 992px) and (hover: none) and (pointer: coarse){
+@media (max-width: 652px) {
     body {
         overflow: hidden;
     }
@@ -496,7 +496,7 @@ button.btn-link.number:hover {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 652px) {
     #map {
         height: 90vh;
     }
