@@ -5,8 +5,8 @@
  */
 
 // Modules
-import { setViewAllBuses, getViewAllBuses, getViewportBounds } from "./map.js";
-import { getBusRoute, drawBusRoute } from "./busRoute.js";
+import { setViewAllBuses, getViewAllBuses, getViewportBounds, updateBusesAndStops } from "./map.js";
+import { getBusRoute, drawBusRoute, removeRoute } from "./busRoute.js";
 import { showNotification } from "./helper.js"; // Import notification function
 
 let routeNumber;
@@ -23,12 +23,14 @@ async function getSpecificBusGPS(nocCode, route) {
     try {
         // Call our server endpoint 
         const response = await $.get(`/api/buses/${nocCode}/${route}`);
-        
+
+        const { minX, minY, maxX, maxY } = getViewportBounds();
+
         // Check if response is empty or invalid
         if (!response || (Array.isArray(response) && response.length === 0)) {
             console.log("Empty response from specific bus API");
             const allBuses = await getAllBusGPS(maxY, maxX, minY, minX) || [];
-            let filteredBuses = getFilteredBuses(allBuses, busNumber);
+            let filteredBuses = getFilteredBuses(allBuses, route);
             return filteredBuses;
         }
         
@@ -38,8 +40,8 @@ async function getSpecificBusGPS(nocCode, route) {
         showNotification("Error 2 fetching specific bus data", "warning");
         
         const allBuses = await getAllBusGPS(maxY, maxX, minY, minX) || [];
-        let filteredBuses = getFilteredBuses(allBuses, busNumber);
-        return ;
+        let filteredBuses = getFilteredBuses(allBuses, route);
+        return filteredBuses;
     }
 }
 
@@ -71,6 +73,14 @@ async function findBus(serviceNumber, lat, lon, map) {
         if (busData.length === 0) {
             console.log("No buses found for this service.");
             showNotification("No live buses found for this route", "info")
+            // Remove all URL parameters
+            // Update URL without refreshing page
+            const newUrl = window.location.origin + window.location.pathname;
+            window.history.pushState({ path: newUrl }, "", newUrl);
+
+            setViewAllBuses(true);
+            removeRoute(map);
+            updateBusesAndStops();
             return;
         }
 
