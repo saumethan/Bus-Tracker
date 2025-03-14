@@ -29,7 +29,7 @@ const MIN_STOP_ZOOM = 15;
 
 // Initialize the map and set its location
 function createMap() {
-    const mapInstance = L.map("map").setView([57.1497, -2.0943], 13); // Aberdeen
+    const mapInstance = L.map("map", { doubleClickZoom: true }).setView([57.1497, -2.0943], 13); // Aberdeen
     addTileLayer(mapInstance); 
     return mapInstance;
 }
