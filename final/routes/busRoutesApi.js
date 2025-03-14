@@ -149,41 +149,48 @@ router.get("/:noc/:route", async (req, res) => {
 // SERVER ENDPOINT: Get bus route data
 router.get("/routes", async (req, res) => {
     let { serviceId, tripId } = req.query;
-    let routeCoords = [];
-    let routeNumber = "";
-    let destination = "";
-
+    
     try {
-        // Fetch tripId if it's undefined
-        if (!tripId) {
-            const url1 = `https://bustimes.org/vehicles.json?service=${serviceId}`;
-            const response1 = await axios.get(url1);
-
-            if (!response1.data || response1.data.length === 0 || !response1.data[0].trip_id) {
-                return res.status(404).json({ error: "No trip ID found" });
+        // If tripId is not provided, try to fetch it from serviceId
+        if (!tripId && serviceId) {
+            try {
+                const url1 = `https://bustimes.org/vehicles.json?service=${serviceId}`;
+                const response1 = await axios.get(url1);
+                
+                // Check if we got valid data with a trip_id
+                if (response1.data && response1.data.length > 0 && response1.data[0].trip_id) {
+                    tripId = response1.data[0].trip_id;
+                } else {
+                    // No trip ID found - respond with nothing as requested
+                    return res.status(200).json({});
+                }
+            } catch (error) {
+                console.error("Error fetching trip ID:", error.message);
+                return res.status(200).json({}); // Respond with nothing on error
             }
-
-            tripId = response1.data[0].trip_id;
         }
 
-        // Ensure tripId is valid
+        // If we still don't have a tripId, respond with nothing
         if (!tripId) {
-            return res.status(400).json({ error: "Invalid trip ID" });
+            return res.status(200).json({});
         }
 
-        // Fetch route details
+        // We have a tripId, now fetch route details
         const url2 = `https://bustimes.org/api/trips/${tripId}/?format=json`;
         const response2 = await axios.get(url2);
-
+        
+        let routeCoords = [];
+        let routeNumber = response2.data.service?.line_name || "Unknown Route";
+        let destination = "";
+        
+        // Check if we have times data
         if (!response2.data.times || response2.data.times.length === 0) {
-            return res.status(404).json({ error: "No route data found" });
+            return res.status(200).json({}); // Respond with nothing if no route data
         }
-
-        // Extract route number
-        routeNumber = response2.data.service?.line_name || "Unknown Route";
-
+        
         // Extract route coordinates and destination
         response2.data.times.forEach((stop, index) => {
+            // Process track coordinates
             if (stop.track && Array.isArray(stop.track)) {
                 stop.track.forEach(coord => {
                     if (Array.isArray(coord) && coord.length === 2) {
@@ -191,27 +198,30 @@ router.get("/routes", async (req, res) => {
                     }
                 });
             }
+            
+            // Add stop location to coordinates
             if (stop.stop?.location && Array.isArray(stop.stop.location) && stop.stop.location.length === 2) {
                 routeCoords.push([stop.stop.location[1], stop.stop.location[0]]);
             }
-
+            
             // Set last stop as the destination
             if (index === response2.data.times.length - 1) {
                 destination = stop.stop?.name || "Unknown Destination";
             }
         });
-
-        // Validate route coordinates
+        
+        // Check if we have valid coordinates
         if (routeCoords.length === 0) {
-            return res.status(400).json({ error: "Invalid route coordinates", routeCoords: [], routeNumber, destination });
+            return res.status(200).json({}); // Respond with nothing if no valid coordinates
         }
-
-        res.json({ routeCoords, routeNumber, destination });
+        
+        // Return the route data
+        return res.json({ routeCoords, routeNumber, destination });
+        
     } catch (error) {
         console.error("Error fetching bus route:", error.message);
-        res.status(500).json({ error: "Error fetching bus route" });
+        return res.status(200).json({}); // Respond with nothing on any error
     }
 });
-
 
 module.exports = router;
