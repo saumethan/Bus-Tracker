@@ -36,13 +36,13 @@ router.get("/", async (req, res) => {
             });
         }
         
-        res.json(busData);
+        return res.json(busData);
     } catch (error) {
-        if(error.status === 404){
-            return res.status(200);
+        if(error.response && error.response.status === 404){
+            return res.json([]);
         }
         console.error("Error fetching bus data:", error);
-        res.status(500).json({ error: "Failed to fetch bus data" });
+        return res.status(500).json({ error: "Failed to fetch bus data" });
     }
 });
 
