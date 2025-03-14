@@ -30,6 +30,7 @@ const MIN_STOP_ZOOM = 15;
 // Initialize the map and set its location
 function createMap() {
     const mapInstance = L.map("map", {
+        zoomControl: false, 
         doubleTapDragZoom: "center",
         doubleTapDragZoomOptions: {
             reverse: true
@@ -40,34 +41,10 @@ function createMap() {
     return mapInstance;
 }
 
-// ------------------ Function to add refresh button to the map ------------------
-function addRefreshButtonToMap() {
-    // Refresh buses 
-    const refreshButton = L.control({ position: "topright" });
-
-    refreshButton.onAdd = function () {
-        const buttonDiv = L.DomUtil.create("div", "map-button-reset");
-        buttonDiv.innerHTML = "<button id='reset-button'><i class='fa-solid fa-arrows-rotate'></i></button>";
-
-        // Event listener for the button
-        buttonDiv.addEventListener("click", async () => {
-            updateBusesAndStops();
-
-            // Update timestamp if viewing specific route
-            if (!viewAllBuses) {
-                updateRefreshTime();
-            }
-        });
-        return buttonDiv;
-    };
-    // Add to map
-    refreshButton.addTo(map);
-}
-
 // ------------------ Function to add home button to the map ------------------
 function addHomeButtonToMap() {
     // Home button 
-    const homeButton = L.control({ position: "topleft" });
+    const homeButton = L.control({ position: "topright" });
 
     homeButton.onAdd = function () {
         const buttonDiv = L.DomUtil.create("div", "map-button");
@@ -102,6 +79,30 @@ function addHomeButtonToMap() {
 
     // Add to map
     homeButton.addTo(map);
+}
+
+// ------------------ Function to add refresh button to the map ------------------
+function addRefreshButtonToMap() {
+    // Refresh buses 
+    const refreshButton = L.control({ position: "topright" });
+
+    refreshButton.onAdd = function () {
+        const buttonDiv = L.DomUtil.create("div", "map-button-reset");
+        buttonDiv.innerHTML = "<button id='reset-button'><i class='fa-solid fa-arrows-rotate'></i></button>";
+
+        // Event listener for the button
+        buttonDiv.addEventListener("click", async () => {
+            updateBusesAndStops();
+
+            // Update timestamp if viewing specific route
+            if (!viewAllBuses) {
+                updateRefreshTime();
+            }
+        });
+        return buttonDiv;
+    };
+    // Add to map
+    refreshButton.addTo(map);
 }
 
 // ------------------ Function to add location button to the map ------------------

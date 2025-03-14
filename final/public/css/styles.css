@@ -221,7 +221,7 @@ footer {
     justify-content: center;
 }
 
-.map-button button:hover {
+.map-button button:hover, .map-button-reset button:hover {
     background-color: #F4F4F4;
 }
 
