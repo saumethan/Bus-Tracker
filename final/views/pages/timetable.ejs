@@ -7,11 +7,7 @@
 
 <body>
     <header>
-        <% if (isMobile) { %>
-            <%- include('../partials/headerMobile') %>
-        <% } else { %>
-            <%- include('../partials/headerDesktop') %>
-        <% } %>
+        <%- include("../partials/header") %>
     </header>
     <!-- Forms for selecting bus route -->
     <main class="p-4">
