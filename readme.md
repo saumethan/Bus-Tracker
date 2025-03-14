@@ -13,7 +13,7 @@ An easy to use bus tracker website for buses in the UK. Tailored specifically to
 
 ## Live Preview
 
-View our live site here: https://bustracker.duckdns.org
+View our live site here: https://bus-tracker.co.uk
 
 ## Site Instructions
 
