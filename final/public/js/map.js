@@ -76,18 +76,10 @@ function addHomeButtonToMap() {
         // Event listener for the button
         buttonDiv.addEventListener("click", async () => {
             // Reset to show all buses when the button is clicked
-            try {
-                const locationFound = await showUserLocation();
-                if (!locationFound) {
-                    console.log("Proceeding without user location");
-                    setDefaultUserLocation();
-                    showNotification("Location not Found", "warning");
-                }
-            } catch (error) {
-                console.error("Failed to get user location:", error);
-                setDefaultUserLocation();
-                showNotification("Location not Found", "warning");
-            }
+            await getuserLocation();
+            drawUserLocation();
+            map.setView([userLat, userLng], map.getZoom());
+            saveLocationToCookie();
             
             // Set flag to indicate all buses are shown
             setViewAllBuses(true);
@@ -123,14 +115,10 @@ function addLocationButtonToMap() {
 
         // Event listener for the button
         buttonDiv.addEventListener("click", async () => {
-            try {
-                const locationFound = await showUserLocation();
-                if (!locationFound) {
-                    showNotification("Location not Found", "warning")
-                }
-            } catch (error) {
-                showNotification("Location not Found", "warning")
-            }
+            await getuserLocation();
+            drawUserLocation();
+            map.setView([userLat, userLng], map.getZoom());
+            saveLocationToCookie();
         });
         return buttonDiv;
     };
@@ -185,68 +173,158 @@ function getCenterCoordinates() {
     }
 }
 
-
 // ------------------ Function to set default user location ------------------
-function setDefaultUserLocation() {
-    userLat = 57.14912368784818;
-    userLng = -2.0980214518088967;
+function setDefaultUserLocation() { 
+    // First try to load from cookie
+    if (!loadLocationFromCookie()) {
+        // Fall back to hardcoded default if cookie doesn't exist
+        userLat = 57.14912368784818;
+        userLng = -2.0980214518088967;
+    }
 }
 
-// ------------------ Function to show the users location ------------------
-async function showUserLocation() {
+// ------------------ Function to get the users location ------------------
+function getuserLocation() {
     return new Promise((resolve, reject) => {
-        // Variable to track if the geolocation request has completed
-        let geolocationComplete = false;
-        
-        // Set a timeout of 10 seconds
-        const timeoutId = setTimeout(() => {
-            if (!geolocationComplete) {
-                console.log("Geolocation request timed out after 10 seconds");
-                resolve(false); // Resolve with false to indicate timeout
-            }
-        }, 10000); // 10 seconds
+        // Set default location first
+        setDefaultUserLocation();
         
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 position => {
-                    // Clear the timeout since we got a successful response
-                    clearTimeout(timeoutId);
-                    geolocationComplete = true;
-                    
                     userLat = position.coords.latitude;
                     userLng = position.coords.longitude;
-                    const userIcon = L.divIcon({
-                        className: "user-location-marker",
-                        iconSize: [18, 18],
-                    });
-                    
-                    // Remove the existing marker if it exists
-                    if (userLocation) {
-                        map.removeLayer(userLocation);
-                    }
-                    
-                    // Add the new marker with the custom icon
-                    userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
-                    
-                    // Center map on user's location
-                    map.setView([userLat, userLng], 13);
-                    
-                    resolve(true); // Resolve with true to indicate success
+                    resolve({ lat: userLat, lng: userLng });
                 },
                 error => {
-                    // Clear the timeout since we got an error response
-                    clearTimeout(timeoutId);
-                    geolocationComplete = true;
-                    
                     console.error("Geolocation error:", error);
-                    reject(error);
+                    resolve({ lat: userLat, lng: userLng });
                 },
                 { maximumAge: 60000, timeout: 10000, enableHighAccuracy: true }
             );
         } else {
-            // Clear the timeout 
-            clearTimeout(timeoutId);
-            reject(new Error("Geolocation not supported"));
+            // If geolocation not supported, resolve with default
+            resolve({ lat: userLat, lng: userLng });
+        }
+    });
+}
+
+// ------------------ Function to draw the users location ------------------
+async function drawUserLocation() {
+    // Draw icon
+    const userIcon = L.divIcon({
+        className: "user-location-marker",
+        iconSize: [18, 18],
+    });
+    
+    // Remove the existing marker if it exists
+    if (userLocation) {
+        map.removeLayer(userLocation);
+    }
+    
+    // Add the new marker with the custom icon
+    userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
+}
+
+// ------------------ Functions to set the cookie ------------------
+function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = name + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
+}
+
+// ------------------ Functions to get the cookie ------------------
+function getCookie(name) {
+    const nameEQ = name + '=';
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+// ------------------ Function to save user's location to cookie ------------------
+function saveLocationToCookie() {
+    if (userLat && userLng) {
+        // Store lat and lng as string with 6 decimal places precision
+        const locationString = `${userLat.toFixed(6)},${userLng.toFixed(6)}`;
+        setCookie('lastUserLocation', locationString, 30); // Store for 30 days
+    }
+}
+
+// ------------------ Function to load user's location from cookie ------------------
+function loadLocationFromCookie() {
+    const savedLocation = getCookie('lastUserLocation');
+    if (savedLocation) {
+        const [lat, lng] = savedLocation.split(',').map(coord => parseFloat(coord));
+        if (!isNaN(lat) && !isNaN(lng)) {
+            userLat = lat;
+            userLng = lng;
+            return true;
+        }
+    }
+    return false;
+}
+
+// ------------------ Function to handle user location tracking ------------------
+async function initUserLocationTracking() {
+    // First try to load location from cookie
+    setDefaultUserLocation();
+    
+    // Draw with saved/default location immediately
+    drawUserLocation();
+    
+    // Try to load map view from cookie and center the map
+    map.setView([userLat, userLng], map.getZoom());
+    
+    // Then try to get actual location and update
+    try {
+        await getuserLocation();
+        drawUserLocation();
+        
+        map.setView([userLat, userLng], map.getZoom());
+        
+        // Save the new location to cookie
+        saveLocationToCookie();
+    } catch (error) {
+        console.error("Error getting user location:", error);
+    }
+    
+    // Set up interval to refresh location every 30 seconds
+    setInterval(async () => {
+        await getuserLocation();
+        drawUserLocation();
+        saveLocationToCookie();
+    }, 30000);
+    
+    // Set up listener for device movement (if supported)
+    if (navigator.geolocation && 'watchPosition' in navigator.geolocation) {
+        navigator.geolocation.watchPosition(
+            position => {
+                userLat = position.coords.latitude;
+                userLng = position.coords.longitude;
+                drawUserLocation();
+                saveLocationToCookie();
+            },
+            error => {
+                console.error("Watch position error:", error);
+            },
+            { enableHighAccuracy: true, maximumAge: 30000 }
+        );
+    }
+    
+    // Save location when map is moved or zoomed
+    map.on("moveend", function() {
+        if (!ignoreNextMoveEnd) {
+            saveLocationToCookie();
+        }
+    });
+    
+    map.on("zoomend", function() {
+        if (!ignoreNextZoomEnd) {
+            saveLocationToCookie();
         }
     });
 }
@@ -273,7 +351,6 @@ function setViewAllBuses(value, nocCode, selectedRoute) {
 function getViewAllBuses() {
     return viewAllBuses;
 }
-
 
 // ------------------ Function to update buses based on current state ------------------
 async function updateBuses() {
@@ -419,16 +496,14 @@ document.addEventListener("DOMContentLoaded", async function() {
     addHomeButtonToMap(map);
     addLocationButtonToMap(map);
 
-    try {
-        const locationFound = await showUserLocation();
-        if (!locationFound) {
-            showNotification("Location not Found", "warning");
-            setDefaultUserLocation();
-        }
-    } catch (error) {
-        showNotification("Location not Found", "warning");
-        setDefaultUserLocation();
-    }
+    // Initialise user location tracking
+    initUserLocationTracking();
+
+    await getuserLocation();
+    drawUserLocation();
+    map.setView([userLat, userLng], map.getZoom());
+
+    resetInactivityTimeout();
 
     resetInactivityTimeout();
 
