@@ -22,9 +22,23 @@
                 <div id="bus-data" class="overflow-auto"></div>
             </aside>
         </div>
+
+        <!-- Cookie Alert -->
+        <div class="alert text-center cookiealert" role="alert">
+            <b>Do you like cookies?</b> 🍪 We use cookies to ensure you get the best experience on our website.
+
+            <button type="button" class="btn btn-primary btn-sm acceptcookies">
+                I Agree
+            </button>
+            <button type="button" class="btn btn-danger btn-sm rejectcookies">
+                Reject
+            </button>
+        </div>
+        
     </main>
     <footer class="mt-auto">
         <%- include("../partials/footer") %>
     </footer>
+    <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
 </body>
 </html>

@@ -15,6 +15,7 @@ let map;
 let inactivityTimeout;
 let userLocation = null;
 let userLocationFlag = false;
+let cookies;
 let userLat;
 let userLng;
 let viewAllBuses = true;
@@ -176,9 +177,12 @@ function getCenterCoordinates() {
 }
 
 // ------------------ Function to set default user location ------------------
-function setDefaultUserLocation() { 
-    // First try to load from cookie
-    if (!loadLocationFromCookie()) {
+function setDefaultUserLocation() {
+    const cookieStatus = localStorage.getItem("cookieAlertStatus");
+    if (cookieStatus === "rejected") {
+        userLat = 57.14912368784818;
+        userLng = -2.0980214518088967;
+    } else if (!loadLocationFromCookie()) {
         // Fall back to hardcoded default if cookie doesn't exist
         userLat = 57.14912368784818;
         userLng = -2.0980214518088967;
@@ -456,6 +460,7 @@ async function handlePopState(event) {
     }
 }
 
+// ------------------ Function to search for bus route ------------------
 function searchRoute(event) {
     event.preventDefault(); 
 
@@ -476,6 +481,118 @@ function searchRoute(event) {
     findBus(route, lat, lng, map);
 }
 
+// ------------------ Function for cookie alert ------------------
+function cookieBar() {
+    let alertBox = document.querySelector(".cookiealert");
+    let acceptBtn = document.querySelector(".acceptcookies");
+    let rejectBtn = document.querySelector(".rejectcookies");
+
+    // Check if cookies were already accepted or rejected
+    const cookieStatus = localStorage.getItem("cookieAlertStatus");
+    
+    if (cookieStatus === "accepted") {
+        alertBox.style.display = "none"; 
+    } else if (cookieStatus === "rejected") {
+        alertBox.style.display = "none"; 
+    } 
+
+    // Accept button functionality
+    acceptBtn.addEventListener("click", function() {
+        localStorage.setItem("cookieAlertStatus", "accepted");
+        alertBox.style.display = "none"; // Hide the alert
+        enableCookieStorage(); // Enable cookie storage after acceptance
+        
+        // Save current location immediately after cookie acceptance
+        if (userLat && userLng) {
+            saveLocationToCookie();
+        } else {
+            // If location not yet obtained, get it and save
+            getuserLocation().then(() => {
+                saveLocationToCookie();
+            });
+        }
+    });
+
+    // Reject button functionality
+    rejectBtn.addEventListener("click", function() {
+        localStorage.setItem("cookieAlertStatus", "rejected"); // Store rejection
+        alertBox.style.display = "none"; // Hide the alert
+        // Keep cookie storage disabled
+    });
+}
+
+// ------------------ Function to initialize cookies for location ------------------
+function initializeLocationCookies() {
+    const cookieStatus = localStorage.getItem("cookieAlertStatus");
+    
+    if (cookieStatus === "accepted") {
+        // Enable cookie storage immediately if already accepted
+        enableCookieStorage();
+        
+        // Load location from cookie if available
+        if (loadLocationFromCookie()) {
+            console.log("Location loaded from cookie:", userLat, userLng);
+        } else {
+            // Get current location and save to cookie
+            getuserLocation().then(() => {
+                saveLocationToCookie();
+                console.log("New location saved to cookie:", userLat, userLng);
+            });
+        }
+    } else if (cookieStatus === "rejected") {
+        // Ensure cookie storage remains disabled
+        disableCookieStorage();
+        
+        // Set default location without storing in cookies
+        userLat = 57.14912368784818;
+        userLng = -2.0980214518088967;
+        console.log("Using default location due to rejected cookies");
+    } else {
+        // No decision yet, disable cookies until decision made
+        disableCookieStorage();
+        
+        // Use default location temporarily
+        userLat = 57.14912368784818;
+        userLng = -2.0980214518088967;
+        console.log("Using default location until cookie preference set");
+    }
+}
+
+// ------------------ Function to disable cookie storage ------------------
+function disableCookieStorage() {
+    // Store original cookie functions
+    window.originalSetCookie = setCookie;
+    window.originalSaveLocationToCookie = saveLocationToCookie;
+    
+    // Override with empty functions
+    window.setCookie = function() { 
+        console.log("Cookie storage disabled: waiting for user consent");
+        return false;
+    };
+    
+    window.saveLocationToCookie = function() {
+        console.log("Location cookie storage disabled: waiting for user consent");
+        return false;
+    };
+}
+
+// ------------------ Function to re-enable cookie storage ------------------
+function enableCookieStorage() {
+    // Restore original functions if they exist
+    if (window.originalSetCookie) {
+        window.setCookie = window.originalSetCookie;
+    }
+    
+    if (window.originalSaveLocationToCookie) {
+        window.saveLocationToCookie = window.originalSaveLocationToCookie;
+        
+        // Save current location immediately after enabling
+        if (userLat && userLng) {
+            saveLocationToCookie();
+        }
+    }
+}
+
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", function() {
     // Creates map
@@ -488,8 +605,11 @@ document.addEventListener("DOMContentLoaded", function() {
     addHomeButtonToMap(map);
     addLocationButtonToMap(map);
 
-    // Set default location from cookie first
-    setDefaultUserLocation();
+    // Initialize cookie bar and handle cookie preferences
+    cookieBar();
+    
+    // Initialize location cookies based on user preference
+    initializeLocationCookies();
     
     // Draw initial location immediately
     drawUserLocation();
