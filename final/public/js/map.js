@@ -35,7 +35,7 @@ function createMap() {
             reverse: true
         }
     });
-    mapInstance.setView([57.1497, -2.0943], 15); // Aberdeen
+    mapInstance.setView([57.1497, -2.0943], 12); // Aberdeen
     addTileLayer(mapInstance); 
     return mapInstance;
 }
@@ -55,7 +55,7 @@ function addHomeButtonToMap() {
             await getUserLocation();
             const { lat, lng } = getUserCoordinates();
             drawUserLocation(map);
-            map.setView([lat, lng], 15);
+            map.setView([lat, lng], 12);
             
             // Set flag to indicate all buses are shown
             setViewAllBuses(true);
@@ -118,7 +118,7 @@ function addLocationButtonToMap() {
             await getUserLocation();
             const { lat, lng } = getUserCoordinates();
             drawUserLocation(map);
-            map.setView([lat, lng], 15);
+            map.setView([lat, lng], 12);
             map.userHasPanned = false;
         });
         return buttonDiv;
