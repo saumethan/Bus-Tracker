@@ -14,6 +14,7 @@ import { showNotification } from "./helper.js";
 let map;  
 let inactivityTimeout;
 let userLocation = null;
+let userLocationFlag = false;
 let userLat;
 let userLng;
 let viewAllBuses = true;
@@ -36,7 +37,7 @@ function createMap() {
             reverse: true
         }
     });
-    mapInstance.setView([57.1497, -2.0943], 13); // Aberdeen
+    mapInstance.setView([57.1497, -2.0943], 15); // Aberdeen
     addTileLayer(mapInstance); 
     return mapInstance;
 }
@@ -55,7 +56,7 @@ function addHomeButtonToMap() {
             // Reset to show all buses when the button is clicked
             await getuserLocation();
             drawUserLocation();
-            map.setView([userLat, userLng], map.getZoom());
+            map.setView([userLat, userLng], 15);
             saveLocationToCookie();
             
             // Set flag to indicate all buses are shown
@@ -118,7 +119,7 @@ function addLocationButtonToMap() {
         buttonDiv.addEventListener("click", async () => {
             await getuserLocation();
             drawUserLocation();
-            map.setView([userLat, userLng], map.getZoom());
+            map.setView([userLat, userLng], 15);
             saveLocationToCookie();
         });
         return buttonDiv;
@@ -195,6 +196,7 @@ function getuserLocation() {
                 position => {
                     userLat = position.coords.latitude;
                     userLng = position.coords.longitude;
+                    userLocationFlag = true;
                     resolve({ lat: userLat, lng: userLng });
                 },
                 error => {
@@ -212,19 +214,21 @@ function getuserLocation() {
 
 // ------------------ Function to draw the users location ------------------
 async function drawUserLocation() {
-    // Draw icon
-    const userIcon = L.divIcon({
-        className: "user-location-marker",
-        iconSize: [18, 18],
-    });
-    
-    // Remove the existing marker if it exists
-    if (userLocation) {
-        map.removeLayer(userLocation);
+    if(userLocationFlag) {
+        // Draw icon
+        const userIcon = L.divIcon({
+            className: "user-location-marker",
+            iconSize: [18, 18],
+        });
+        
+        // Remove the existing marker if it exists
+        if (userLocation) {
+            map.removeLayer(userLocation);
+        }
+        
+        // Add the new marker with the custom icon
+        userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
     }
-    
-    // Add the new marker with the custom icon
-    userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
 }
 
 // ------------------ Functions to set the cookie ------------------
@@ -270,7 +274,7 @@ function loadLocationFromCookie() {
 }
 
 // ------------------ Function to handle user location tracking ------------------
-async function initUserLocationTracking() {
+function initUserLocationTracking() {
     // First try to load location from cookie
     setDefaultUserLocation();
     
@@ -280,24 +284,24 @@ async function initUserLocationTracking() {
     // Try to load map view from cookie and center the map
     map.setView([userLat, userLng], map.getZoom());
     
-    // Then try to get actual location and update
-    try {
-        await getuserLocation();
+    // Then try to get actual location and update WITHOUT blocking
+    getuserLocation().then(location => {
         drawUserLocation();
-        
         map.setView([userLat, userLng], map.getZoom());
-        
         // Save the new location to cookie
         saveLocationToCookie();
-    } catch (error) {
+    }).catch(error => {
         console.error("Error getting user location:", error);
-    }
+    });
     
     // Set up interval to refresh location every 30 seconds
-    setInterval(async () => {
-        await getuserLocation();
-        drawUserLocation();
-        saveLocationToCookie();
+    setInterval(() => {
+        getuserLocation().then(() => {
+            drawUserLocation();
+            saveLocationToCookie();
+        }).catch(error => {
+            console.error("Error refreshing user location:", error);
+        });
     }, 30000);
     
     // Set up listener for device movement (if supported)
@@ -315,19 +319,6 @@ async function initUserLocationTracking() {
             { enableHighAccuracy: true, maximumAge: 30000 }
         );
     }
-    
-    // Save location when map is moved or zoomed
-    map.on("moveend", function() {
-        if (!ignoreNextMoveEnd) {
-            saveLocationToCookie();
-        }
-    });
-    
-    map.on("zoomend", function() {
-        if (!ignoreNextZoomEnd) {
-            saveLocationToCookie();
-        }
-    });
 }
 
 // ------------------ Function to reset inactivity timeout ------------------
@@ -486,28 +477,29 @@ function searchRoute(event) {
 }
 
 // Calls the initializeMap function when the HTML has loaded
-document.addEventListener("DOMContentLoaded", async function() {
+document.addEventListener("DOMContentLoaded", function() {
     // Creates map
     map = createMap();
     map.stopCircleRadius = 50;
-    map.currentZoom = 13;
+    map.currentZoom = 14;
 
     // Adds buttons
     addRefreshButtonToMap(map);
     addHomeButtonToMap(map);
     addLocationButtonToMap(map);
 
-    // Initialise user location tracking
-    initUserLocationTracking();
-
-    await getuserLocation();
+    // Set default location from cookie first
+    setDefaultUserLocation();
+    
+    // Draw initial location immediately
     drawUserLocation();
-    map.setView([userLat, userLng], map.getZoom());
+    
+    // Set initial map view with cookie/default location
+    map.setView([userLat, userLng], 15);
 
+    // Start the rest of the initialisation process
     resetInactivityTimeout();
-
-    resetInactivityTimeout();
-
+    
     // Initial update of buses and stops
     updateBusesAndStops();
 
@@ -529,7 +521,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     const routeNumber = getUrlParameter("bus");
     if (routeNumber) {
         console.log(`Bus route detected in URL: ${routeNumber}`);
-        await findBus(routeNumber.toUpperCase(), userLat, userLng, map);
+        findBus(routeNumber.toUpperCase(), userLat, userLng, map);
     }
 
     // Handle map movement events
@@ -552,6 +544,17 @@ document.addEventListener("DOMContentLoaded", async function() {
     });
 
     document.getElementById("searchForm").addEventListener("submit", searchRoute);
+    
+    // Asynchronously get the actual user location
+    getuserLocation().then(location => {
+        drawUserLocation();
+        // Save the new location to cookie
+        saveLocationToCookie();
+    }).catch(error => {
+        console.error("Error getting user location:", error);
+    });
+    
+    initUserLocationTracking();
 });
 
 // ------------------ Function for easteregg ------------------
