@@ -13,10 +13,18 @@
 	position: absolute;
 	left: 0;
 	top: 0;
-	}
+}
+
 .leaflet-container {
 	overflow: hidden;
-	}
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 .leaflet-tile,
 .leaflet-marker-icon,
 .leaflet-marker-shadow {
