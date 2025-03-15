@@ -9,15 +9,12 @@ import { getAllBusGPS, getSpecificBusGPS, findBus, drawBus, getNocCode, getRoute
 import { fetchStopsInViewport, drawStops } from "./stops.js";
 import { removeRoute } from "./busRoute.js";
 import { showNotification } from "./helper.js";
+import { initializeCookieStorage, setupCookieBar } from "./cookies.js";
+import { getUserLocation, drawUserLocation, initUserLocationTracking, getUserCoordinates, saveLocationToCookie } from "./userlocation.js";
 
 // Variables
 let map;  
 let inactivityTimeout;
-let userLocation = null;
-let userLocationFlag = false;
-let cookies;
-let userLat;
-let userLng;
 let viewAllBuses = true;
 let noc = null;
 let route = null;
@@ -55,10 +52,10 @@ function addHomeButtonToMap() {
         // Event listener for the button
         buttonDiv.addEventListener("click", async () => {
             // Reset to show all buses when the button is clicked
-            await getuserLocation();
-            drawUserLocation();
-            map.setView([userLat, userLng], 15);
-            saveLocationToCookie();
+            await getUserLocation();
+            const { lat, lng } = getUserCoordinates();
+            drawUserLocation(map);
+            map.setView([lat, lng], 15);
             
             // Set flag to indicate all buses are shown
             setViewAllBuses(true);
@@ -118,10 +115,11 @@ function addLocationButtonToMap() {
 
         // Event listener for the button
         buttonDiv.addEventListener("click", async () => {
-            await getuserLocation();
-            drawUserLocation();
-            map.setView([userLat, userLng], 15);
-            saveLocationToCookie();
+            await getUserLocation();
+            const { lat, lng } = getUserCoordinates();
+            drawUserLocation(map);
+            map.setView([lat, lng], 15);
+            map.userHasPanned = false;
         });
         return buttonDiv;
     };
@@ -129,7 +127,6 @@ function addLocationButtonToMap() {
     // Add to map
     locationButton.addTo(map);
 }
-
 // ------------------ Function to layer to style the map ------------------
 function addTileLayer(mapInstance) {
     L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
@@ -163,165 +160,17 @@ function getViewportBounds() {
 
 // ------------------ Function to get the map coordinates ------------------
 function getCenterCoordinates() {
-    const center = map.getCenter(); // Returns a LatLng object in Leaflet
+    console.log("here")
+    const center = map.getCenter(); 
     if (center) {
-        const lat = center.lat;  // Access lat directly
-        const lng = center.lng;  // Access lng directly
+        const lat = center.lat;  
+        const lng = center.lng;  
         console.log('Latitude:', lat);
         console.log('Longitude:', lng);
         const centerCoords = { lat, lng };
         return centerCoords;
     } else {
         console.error('Map center is undefined');
-    }
-}
-
-// ------------------ Function to set default user location ------------------
-function setDefaultUserLocation() {
-    const cookieStatus = localStorage.getItem("cookieAlertStatus");
-    if (cookieStatus === "rejected") {
-        userLat = 57.14912368784818;
-        userLng = -2.0980214518088967;
-    } else if (!loadLocationFromCookie()) {
-        // Fall back to hardcoded default if cookie doesn't exist
-        userLat = 57.14912368784818;
-        userLng = -2.0980214518088967;
-    }
-}
-
-// ------------------ Function to get the users location ------------------
-function getuserLocation() {
-    return new Promise((resolve, reject) => {
-        // Set default location first
-        setDefaultUserLocation();
-        
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                position => {
-                    userLat = position.coords.latitude;
-                    userLng = position.coords.longitude;
-                    userLocationFlag = true;
-                    resolve({ lat: userLat, lng: userLng });
-                },
-                error => {
-                    console.error("Geolocation error:", error);
-                    resolve({ lat: userLat, lng: userLng });
-                },
-                { maximumAge: 60000, timeout: 10000, enableHighAccuracy: true }
-            );
-        } else {
-            // If geolocation not supported, resolve with default
-            resolve({ lat: userLat, lng: userLng });
-        }
-    });
-}
-
-// ------------------ Function to draw the users location ------------------
-async function drawUserLocation() {
-    if(userLocationFlag) {
-        // Draw icon
-        const userIcon = L.divIcon({
-            className: "user-location-marker",
-            iconSize: [18, 18],
-        });
-        
-        // Remove the existing marker if it exists
-        if (userLocation) {
-            map.removeLayer(userLocation);
-        }
-        
-        // Add the new marker with the custom icon
-        userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
-    }
-}
-
-// ------------------ Functions to set the cookie ------------------
-function setCookie(name, value, days) {
-    const expires = new Date();
-    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
-    document.cookie = name + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
-}
-
-// ------------------ Functions to get the cookie ------------------
-function getCookie(name) {
-    const nameEQ = name + '=';
-    const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
-}
-
-// ------------------ Function to save user's location to cookie ------------------
-function saveLocationToCookie() {
-    if (userLat && userLng) {
-        // Store lat and lng as string with 6 decimal places precision
-        const locationString = `${userLat.toFixed(6)},${userLng.toFixed(6)}`;
-        setCookie('lastUserLocation', locationString, 30); // Store for 30 days
-    }
-}
-
-// ------------------ Function to load user's location from cookie ------------------
-function loadLocationFromCookie() {
-    const savedLocation = getCookie('lastUserLocation');
-    if (savedLocation) {
-        const [lat, lng] = savedLocation.split(',').map(coord => parseFloat(coord));
-        if (!isNaN(lat) && !isNaN(lng)) {
-            userLat = lat;
-            userLng = lng;
-            return true;
-        }
-    }
-    return false;
-}
-
-// ------------------ Function to handle user location tracking ------------------
-function initUserLocationTracking() {
-    // First try to load location from cookie
-    setDefaultUserLocation();
-    
-    // Draw with saved/default location immediately
-    drawUserLocation();
-    
-    // Try to load map view from cookie and center the map
-    map.setView([userLat, userLng], map.getZoom());
-    
-    // Then try to get actual location and update WITHOUT blocking
-    getuserLocation().then(location => {
-        drawUserLocation();
-        map.setView([userLat, userLng], map.getZoom());
-        // Save the new location to cookie
-        saveLocationToCookie();
-    }).catch(error => {
-        console.error("Error getting user location:", error);
-    });
-    
-    // Set up interval to refresh location every 30 seconds
-    setInterval(() => {
-        getuserLocation().then(() => {
-            drawUserLocation();
-            saveLocationToCookie();
-        }).catch(error => {
-            console.error("Error refreshing user location:", error);
-        });
-    }, 30000);
-    
-    // Set up listener for device movement (if supported)
-    if (navigator.geolocation && 'watchPosition' in navigator.geolocation) {
-        navigator.geolocation.watchPosition(
-            position => {
-                userLat = position.coords.latitude;
-                userLng = position.coords.longitude;
-                drawUserLocation();
-                saveLocationToCookie();
-            },
-            error => {
-                console.error("Watch position error:", error);
-            },
-            { enableHighAccuracy: true, maximumAge: 30000 }
-        );
     }
 }
 
@@ -365,6 +214,7 @@ async function updateBuses() {
         }
 
         const { minX, minY, maxX, maxY } = getViewportBounds();
+        console.log(minX, minY, maxX, maxY)
 
         if (viewAllBuses) {
             // Show all buses in viewport
@@ -453,7 +303,8 @@ async function handlePopState(event) {
         // Only proceed if zoom level is appropriate
         if (map.currentZoom >= MIN_BUS_ZOOM) {
             // If there is a bus parameter, show that specific bus
-            findBus(busRoute.toUpperCase(), userLat, userLng);
+            const { lat, lng } = getUserCoordinates();
+            findBus(busRoute.toUpperCase(), lat, lng);
         } else {
             showNotification("Please zoom in to view buses", "info");
         }
@@ -476,121 +327,7 @@ function searchRoute(event) {
 
     searchInput.value = "";
     const { lat, lng } = getCenterCoordinates();
-    console.log(lat)
-    console.log(lng)
     findBus(route, lat, lng, map);
-}
-
-// ------------------ Function for cookie alert ------------------
-function cookieBar() {
-    let alertBox = document.querySelector(".cookiealert");
-    let acceptBtn = document.querySelector(".acceptcookies");
-    let rejectBtn = document.querySelector(".rejectcookies");
-
-    // Check if cookies were already accepted or rejected
-    const cookieStatus = localStorage.getItem("cookieAlertStatus");
-    
-    if (cookieStatus === "accepted") {
-        alertBox.style.display = "none"; 
-    } else if (cookieStatus === "rejected") {
-        alertBox.style.display = "none"; 
-    } 
-
-    // Accept button functionality
-    acceptBtn.addEventListener("click", function() {
-        localStorage.setItem("cookieAlertStatus", "accepted");
-        alertBox.style.display = "none"; // Hide the alert
-        enableCookieStorage(); // Enable cookie storage after acceptance
-        
-        // Save current location immediately after cookie acceptance
-        if (userLat && userLng) {
-            saveLocationToCookie();
-        } else {
-            // If location not yet obtained, get it and save
-            getuserLocation().then(() => {
-                saveLocationToCookie();
-            });
-        }
-    });
-
-    // Reject button functionality
-    rejectBtn.addEventListener("click", function() {
-        localStorage.setItem("cookieAlertStatus", "rejected"); // Store rejection
-        alertBox.style.display = "none"; // Hide the alert
-        // Keep cookie storage disabled
-    });
-}
-
-// ------------------ Function to initialize cookies for location ------------------
-function initializeLocationCookies() {
-    const cookieStatus = localStorage.getItem("cookieAlertStatus");
-    
-    if (cookieStatus === "accepted") {
-        // Enable cookie storage immediately if already accepted
-        enableCookieStorage();
-        
-        // Load location from cookie if available
-        if (loadLocationFromCookie()) {
-            console.log("Location loaded from cookie:", userLat, userLng);
-        } else {
-            // Get current location and save to cookie
-            getuserLocation().then(() => {
-                saveLocationToCookie();
-                console.log("New location saved to cookie:", userLat, userLng);
-            });
-        }
-    } else if (cookieStatus === "rejected") {
-        // Ensure cookie storage remains disabled
-        disableCookieStorage();
-        
-        // Set default location without storing in cookies
-        userLat = 57.14912368784818;
-        userLng = -2.0980214518088967;
-        console.log("Using default location due to rejected cookies");
-    } else {
-        // No decision yet, disable cookies until decision made
-        disableCookieStorage();
-        
-        // Use default location temporarily
-        userLat = 57.14912368784818;
-        userLng = -2.0980214518088967;
-        console.log("Using default location until cookie preference set");
-    }
-}
-
-// ------------------ Function to disable cookie storage ------------------
-function disableCookieStorage() {
-    // Store original cookie functions
-    window.originalSetCookie = setCookie;
-    window.originalSaveLocationToCookie = saveLocationToCookie;
-    
-    // Override with empty functions
-    window.setCookie = function() { 
-        console.log("Cookie storage disabled: waiting for user consent");
-        return false;
-    };
-    
-    window.saveLocationToCookie = function() {
-        console.log("Location cookie storage disabled: waiting for user consent");
-        return false;
-    };
-}
-
-// ------------------ Function to re-enable cookie storage ------------------
-function enableCookieStorage() {
-    // Restore original functions if they exist
-    if (window.originalSetCookie) {
-        window.setCookie = window.originalSetCookie;
-    }
-    
-    if (window.originalSaveLocationToCookie) {
-        window.saveLocationToCookie = window.originalSaveLocationToCookie;
-        
-        // Save current location immediately after enabling
-        if (userLat && userLng) {
-            saveLocationToCookie();
-        }
-    }
 }
 
 // Calls the initializeMap function when the HTML has loaded
@@ -605,22 +342,15 @@ document.addEventListener("DOMContentLoaded", function() {
     addHomeButtonToMap(map);
     addLocationButtonToMap(map);
 
-    // Initialize cookie bar and handle cookie preferences
-    cookieBar();
+    // Initialize cookie handling
+    initializeCookieStorage();
+    setupCookieBar();
     
-    // Initialize location cookies based on user preference
-    initializeLocationCookies();
+    // Initialize user location tracking
+    initUserLocationTracking(map);
     
-    // Draw initial location immediately
-    drawUserLocation();
-    
-    // Set initial map view with cookie/default location
-    map.setView([userLat, userLng], 15);
-
-    // Start the rest of the initialisation process
+    // Rest of initialization...
     resetInactivityTimeout();
-    
-    // Initial update of buses and stops
     updateBusesAndStops();
 
     // Resize the buses as the user zooms in
@@ -641,7 +371,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const routeNumber = getUrlParameter("bus");
     if (routeNumber) {
         console.log(`Bus route detected in URL: ${routeNumber}`);
-        findBus(routeNumber.toUpperCase(), userLat, userLng, map);
+        const { lat, lng } = getUserCoordinates();
+        findBus(routeNumber.toUpperCase(), lat, lng, map);
     }
 
     // Handle map movement events
@@ -666,7 +397,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("searchForm").addEventListener("submit", searchRoute);
     
     // Asynchronously get the actual user location
-    getuserLocation().then(location => {
+    getUserLocation().then(location => {
         drawUserLocation();
         // Save the new location to cookie
         saveLocationToCookie();

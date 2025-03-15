@@ -20,12 +20,12 @@ async function getSpecificBusGPS(nocCode, route) {
         return;
     }
 
+    const { minX, minY, maxX, maxY } = getViewportBounds();
+
     try {
         // Call our server endpoint 
         const response = await $.get(`/api/buses/${nocCode}/${route}`);
-
-        const { minX, minY, maxX, maxY } = getViewportBounds();
-
+        
         // Check if response is empty or invalid
         if (!response || (Array.isArray(response) && response.length === 0)) {
             console.log("Empty response from specific bus API");
