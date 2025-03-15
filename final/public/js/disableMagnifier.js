@@ -11,5 +11,6 @@ function ignore(e) {
 }
 
 // Main
+document.body.addEventListener("touchstart", ignore, { passive: false });
 document.body.addEventListener("touchcancel", ignore, { passive: false });
 document.body.addEventListener("touchend", ignore, { passive: false });
