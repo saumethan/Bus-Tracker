@@ -147,8 +147,8 @@ async function drawBus(busData, map) {
 
         const toolTipContent = ` 
             <div>
-                <strong>Route: ${coord.route || 'Unknown'}</strong><br>
-                Destination: ${coord.destination || 'Unknown'}<br>
+                <strong>Route: ${coord.route || "Unknown"}</strong><br>
+                Destination: ${coord.destination || "Unknown"}<br>
             </div>
         `;
 
@@ -222,7 +222,7 @@ async function showSpecificBusRoute(serviceId, busId, busNumber, map) {
                 const routeLine = drawBusRoute(routeCoords, routeNumber, destination, map);
                 
                 // Use the adjustMapViewToRoute function which now sets flags to prevent redundant API calls
-                if (typeof adjustMapViewToRoute === 'function') {
+                if (typeof adjustMapViewToRoute === "function") {
                     adjustMapViewToRoute(routeLine);
                 }
             } else {

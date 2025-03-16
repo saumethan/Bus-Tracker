@@ -26,16 +26,16 @@ function saveLocationToCookie() {
     if (userLat && userLng) {
         // Store lat and lng as string
         const locationString = `${userLat.toFixed(6)},${userLng.toFixed(6)}`;
-        return setCookie('lastUserLocation', locationString, 30); // 30 days
+        return setCookie("lastUserLocation", locationString, 30); // 30 days
     }
     return false;
 }
 
 // ------------------ Function to load user's location from cookie ------------------
 function loadLocationFromCookie() {
-    const savedLocation = getCookie('lastUserLocation');
+    const savedLocation = getCookie("lastUserLocation");
     if (savedLocation) {
-        const [lat, lng] = savedLocation.split(',').map(coord => parseFloat(coord));
+        const [lat, lng] = savedLocation.split(",").map(coord => parseFloat(coord));
         if (!isNaN(lat) && !isNaN(lng)) {
             userLat = lat;
             userLng = lng;
@@ -146,7 +146,7 @@ function initUserLocationTracking(map) {
     }, 30000);
     
     // Listener for device movement 
-    if (navigator.geolocation && 'watchPosition' in navigator.geolocation) {
+    if (navigator.geolocation && "watchPosition" in navigator.geolocation) {
         navigator.geolocation.watchPosition(
             position => {
                 userLat = position.coords.latitude;

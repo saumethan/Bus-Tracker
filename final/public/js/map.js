@@ -165,12 +165,10 @@ function getCenterCoordinates() {
     if (center) {
         const lat = center.lat;  
         const lng = center.lng;  
-        console.log('Latitude:', lat);
-        console.log('Longitude:', lng);
         const centerCoords = { lat, lng };
         return centerCoords;
     } else {
-        console.error('Map center is undefined');
+        console.error("Map center is undefined");
     }
 }
 
