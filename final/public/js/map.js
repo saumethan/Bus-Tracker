@@ -332,7 +332,7 @@ function searchRoute(event) {
 document.addEventListener("DOMContentLoaded", function() {
     // Creates map
     map = createMap();
-    map.stopCircleRadius = 50;
+    map.stopCircleRadius = 20;
     map.currentZoom = 15;
 
     // Adds buttons
