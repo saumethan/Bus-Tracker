@@ -361,10 +361,6 @@ button.btn-link.number:hover {
 
 /* =-=-=-= RESPONSIVE PHONES =-=-=-= */
 @media (max-width: 652px) {
-    body {
-        overflow: hidden;
-    }
-
     main {
         padding: 0;
     }
@@ -400,6 +396,9 @@ button.btn-link.number:hover {
     /* Index Page CSS */
     .index-page {
         
+        body {
+            overflow: hidden;
+        }
         
         #map {
             height: 75vh;
