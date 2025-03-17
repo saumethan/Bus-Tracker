@@ -144,7 +144,7 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
 
                 // add to html
                 htmlContent += `
-                <div class="bus-time-record">
+                <div class="bus-time-record" data-service-number="${bus.serviceNumber}">
                     <h2>
                         <button type="button" class="btn-link number">${bus.serviceNumber}</button>
                         <span class="destination">to ${destination}</span>
@@ -157,12 +157,10 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
         // Append the generated HTML to the DOM
         $("#bus-data").html(htmlContent);
 
-        document.querySelectorAll('button.number').forEach((element) => {
-            element.addEventListener('click', () => {
-                const serviceNumber = element.textContent.trim().split(' ')[0];
-                //const destination = element.querySelector('.destination').textContent.trim().substring(3);
-
-                console.log(latitude, longitude)
+        document.querySelectorAll(".bus-time-record").forEach((element) => {
+            element.addEventListener("click", () => {
+                const serviceNumber = element.dataset.serviceNumber;
+                console.log(latitude, longitude);
                 findBus(serviceNumber, latitude, longitude, map);
             });
         });
