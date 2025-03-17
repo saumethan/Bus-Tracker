@@ -122,6 +122,9 @@ nav #title {
 
 /* =-=-=-= MAP =-=-=-= */
 
+.leaflet-control-attribution {
+    font-size: 8px !important;
+}
 
 #login-section {
     width: 40vw;
@@ -133,6 +136,7 @@ nav #title {
     margin: auto;
     padding-top: 3vh;
 }
+
 #map {
     height: 60vh;
     background-color: lightgray;
