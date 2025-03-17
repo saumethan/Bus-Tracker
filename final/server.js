@@ -10,7 +10,7 @@ const bodyParser = require("body-parser");
 // Set up static file serving
 app.use(express.static("public"));
 app.use(session({ secret : "example" }));
-app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.urlencoded({ extended: true }));
 
 // Import API routes 
 const busRoutes = require("./routes/busRoutesApi");
