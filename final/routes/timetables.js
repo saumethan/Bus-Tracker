@@ -14,3 +14,5 @@ const cheerio = require("cheerio");
 router.get("/", function(req, res) {
     res.render("pages/timetable");
 });
+
+module.exports = router;
