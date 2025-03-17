@@ -3,7 +3,6 @@
 const express = require("express");
 const router = express.Router();
 const bodyParser = require("body-parser");
-const session = require("express-session");
 
 // MongoDB connection setup
 const MongoClient = require("mongodb-legacy").MongoClient;
@@ -23,14 +22,6 @@ async function connectDB() {
     }
 }
 connectDB();
-
-router.use(session({secret : "example"}))
-router.use(express.static("public"))
-
-router.use(bodyParser.urlencoded({
-    extended: true
-}))
-
 
 // SERVER ENDPOINT: login page
 router.get("/", function(req, res) {

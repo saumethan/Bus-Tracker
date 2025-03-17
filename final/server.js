@@ -4,9 +4,12 @@
 const express = require("express");
 const app = express();
 const axios = require("axios");
+const session = require("express-session");
 
 // Set up static file serving
 app.use(express.static("public"));
+app.use(session({ secret : "example" }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Import API routes 
 const busRoutes = require("./routes/busRoutesApi");
