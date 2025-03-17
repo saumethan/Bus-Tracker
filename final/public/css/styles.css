@@ -348,6 +348,16 @@ button.btn-link.number:hover {
     border-left: 4px solid #5bc0de;
 }
 
+/* =-=-=-= REFRESH BUTTON =-=-=-= */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinning {
+    animation: spin 1s linear;
+    display: inline-block;
+}
 
 /* =-=-=-= RESPONSIVE PHONES =-=-=-= */
 @media (max-width: 652px) {

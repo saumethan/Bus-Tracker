@@ -91,12 +91,21 @@ function addRefreshButtonToMap() {
 
         // Event listener for the button
         buttonDiv.addEventListener("click", async () => {
-            updateBusesAndStops();
+            
+            // Add spinning animation
+            const icon = buttonDiv.querySelector('i');
+            icon.classList.add('spinning');
+            
+            await updateBusesAndStops();
 
-            // Update timestamp if viewing specific route
             if (!viewAllBuses) {
                 updateRefreshTime();
             }
+
+            // Remove spinning class 
+            setTimeout(() => {
+                icon.classList.remove('spinning');
+            }, 1000);
         });
         return buttonDiv;
     };
