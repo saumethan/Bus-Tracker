@@ -2,7 +2,6 @@
 
 const express = require("express");
 const router = express.Router();
-const bodyParser = require("body-parser");
 
 // MongoDB connection setup
 const MongoClient = require("mongodb-legacy").MongoClient;

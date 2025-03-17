@@ -5,6 +5,7 @@ const express = require("express");
 const app = express();
 const axios = require("axios");
 const session = require("express-session");
+const bodyParser = require("body-parser");
 
 // Set up static file serving
 app.use(express.static("public"));
