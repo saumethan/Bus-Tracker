@@ -306,6 +306,8 @@ async function handlePopState(event) {
         removeRoute(map);
         $("#bus-data").html("");
         updateBusesAndStops();
+        const { lat, lng } = getUserCoordinates();
+        map.setView([lat, lng], 15);
     } else {
         // Only proceed if zoom level is appropriate
         if (map.currentZoom >= MIN_BUS_ZOOM) {
