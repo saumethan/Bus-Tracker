@@ -26,6 +26,7 @@ router.get("/", async (req, res) => {
                 if (Math.abs(latitude) > 90 || Math.abs(longitude) > 180) return;
                 
                 busData.push({
+                    journeyId: bus.journey_id || null,
                     longitude: longitude,
                     latitude: latitude,
                     heading: bus.heading,
@@ -90,6 +91,7 @@ router.get("/find/:route", async (req, res) => {
         const filteredBuses = response.data
             .filter(bus => bus.service?.line_name === route && bus.coordinates)
             .map(bus => ({
+                journeyId: bus.journey_id || null,
                 longitude: bus.coordinates[0],
                 latitude: bus.coordinates[1],
                 heading: bus.heading,
@@ -150,80 +152,101 @@ router.get("/:noc/:route", async (req, res) => {
 
 // SERVER ENDPOINT: Get bus route data
 router.get("/routes", async (req, res) => {
-    let { serviceId, tripId } = req.query;
+    let { serviceId, tripId, journeyId } = req.query;
     
     try {
-        // If tripId is not provided, try to fetch it from serviceId
+        // If only serviceId is provided, fetch the tripId first from URL 1
         if (!tripId && serviceId) {
             try {
                 const url1 = `https://bustimes.org/vehicles.json?service=${serviceId}`;
                 const response1 = await axios.get(url1);
                 
-                // Check if we got valid data with a trip_id
+                // If we got valid data with a trip_id, assign it to tripId
                 if (response1.data && response1.data.length > 0 && response1.data[0].trip_id) {
                     tripId = response1.data[0].trip_id;
                 } else {
-                    // No trip ID found - respond with nothing as requested
-                    return res.status(200).json({});
+                    // If no tripId found, fallback to journeyId (URL 3)
+                    return await fetchJourneyData(journeyId, res);
                 }
             } catch (error) {
-                console.error("Error fetching trip ID:", error.message);
-                return res.status(200).json({}); // Respond with nothing on error
+                console.error("Error fetching trip ID from serviceId:", error.message);
+                return await fetchJourneyData(journeyId, res); // Fallback to journey data if URL 1 fails
             }
         }
 
-        // If we still don't have a tripId, respond with nothing
-        if (!tripId) {
-            return res.status(200).json({});
-        }
+        // If we have both tripId and serviceId, proceed with URL 2
+        if (tripId) {
+            try {
+                const url2 = `https://bustimes.org/api/trips/${tripId}/?format=json`;
+                const response2 = await axios.get(url2);
 
-        // We have a tripId, now fetch route details
-        const url2 = `https://bustimes.org/api/trips/${tripId}/?format=json`;
-        const response2 = await axios.get(url2);
-        
-        let routeCoords = [];
-        let routeNumber = response2.data.service?.line_name || "Unknown Route";
-        let destination = "";
-        
-        // Check if we have times data
-        if (!response2.data.times || response2.data.times.length === 0) {
-            return res.status(200).json({}); // Respond with nothing if no route data
-        }
-        
-        // Extract route coordinates and destination
-        response2.data.times.forEach((stop, index) => {
-            // Process track coordinates
-            if (stop.track && Array.isArray(stop.track)) {
-                stop.track.forEach(coord => {
-                    if (Array.isArray(coord) && coord.length === 2) {
-                        routeCoords.push([coord[1], coord[0]]); // Reverse order to [lat, lon]
+                if (response2.data && response2.data.times && response2.data.times.length > 0) {
+                    const routeCoords = [];
+                    let routeNumber = response2.data.service?.line_name || "Unknown Route";
+                    let destination = "";
+
+                    response2.data.times.forEach((stop, index) => {
+                        if (stop.track && Array.isArray(stop.track)) {
+                            stop.track.forEach(coord => {
+                                if (Array.isArray(coord) && coord.length === 2) {
+                                    routeCoords.push([coord[1], coord[0]]);
+                                }
+                            });
+                        }
+
+                        // Add stop location to coordinates
+                        if (stop.stop?.location && Array.isArray(stop.stop.location) && stop.stop.location.length === 2) {
+                            routeCoords.push([stop.stop.location[1], stop.stop.location[0]]);
+                        }
+
+                        // Set last stop as the destination
+                        if (index === response2.data.times.length - 1) {
+                            destination = stop.stop?.name || "Unknown Destination";
+                        }
+                    });
+
+                    if (routeCoords.length > 0) {
+                        return res.json({ routeCoords, routeNumber, destination });
                     }
-                });
+                }
+            } catch (error) {
+                console.error("Error fetching trip data from URL 2:", error.message);
             }
-            
-            // Add stop location to coordinates
-            if (stop.stop?.location && Array.isArray(stop.stop.location) && stop.stop.location.length === 2) {
-                routeCoords.push([stop.stop.location[1], stop.stop.location[0]]);
-            }
-            
-            // Set last stop as the destination
-            if (index === response2.data.times.length - 1) {
-                destination = stop.stop?.name || "Unknown Destination";
-            }
-        });
-        
-        // Check if we have valid coordinates
-        if (routeCoords.length === 0) {
-            return res.status(200).json({}); // Respond with nothing if no valid coordinates
         }
-        
-        // Return the route data
-        return res.json({ routeCoords, routeNumber, destination });
-        
+
+        // If URL 2 fails or tripId is undefined, attempt to fetch journey data (URL 3)
+        return await fetchJourneyData(journeyId, res);
+
     } catch (error) {
-        console.error("Error fetching bus route:", error.message);
-        return res.status(200).json({}); // Respond with nothing on any error
+        console.error("Error in route handler:", error.message);
+        return res.status(200).json({}); 
     }
 });
+
+async function fetchJourneyData(journeyId, res) {
+    try {
+        if (journeyId) {
+            const url3 = `https://bustimes.org/journeys/${journeyId}.json`;
+            const response3 = await axios.get(url3);
+
+            if (response3.data && response3.data.locations) {
+                const routeNumber = response3.data.route_name;
+                const destination = response3.data.destination;
+
+                const routeCoords = response3.data.locations.map(location => {
+                    const [latitude, longitude] = location.coordinates;
+                    return [longitude, latitude]; // Flip the coordinates
+                });
+
+                return res.json({ routeCoords, routeNumber, destination });
+            }
+        }
+    } catch (error) {
+        console.error("Error fetching journey data:", error.message);
+    }
+
+    // If no data from journey, return empty response
+    return res.status(200).json({});
+}
 
 module.exports = router;
