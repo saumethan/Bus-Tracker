@@ -7,6 +7,8 @@
 
 
 import { findBus } from "./busGps.js";
+import { setViewAllBuses, updateBusesAndStops } from "./map.js";
+import { removeRoute } from "./busRoute.js";
 
 // Constants
 const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
@@ -175,6 +177,12 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
     }
 }
 
+function updateURLWithStop(stopId) {
+    // Update URL without refreshing page
+    const newUrl = window.location.origin + window.location.pathname + `?stop=${stopId}`;
+    window.history.pushState({ path: newUrl }, "", newUrl);
+}
+
 /**
  * Draws the stops on the map.
  * Expects stopsData from `fetchStopsInViewport()` to be passed, as well as the map object,
@@ -230,6 +238,15 @@ async function drawStops(stopsData, map) {
             });
             circle.setStyle({ fillColor: "#ff9100", color: "#ff9100" });
             circle.openTooltip();
+
+            updateURLWithStop(stop.bustimes_id)
+
+            map.setView([stop.latitude, stop.longitude], 15);
+            
+            setViewAllBuses(true);
+            
+            removeRoute(map);
+            updateBusesAndStops();
 
             loadStopTimes(stop.bustimes_id, stop.latitude, stop.longitude, map);
         });

@@ -384,6 +384,12 @@ document.addEventListener("DOMContentLoaded", function() {
         findBus(routeNumber.toUpperCase(), lat, lng, map);
     }
 
+    // FINISH THIS TO SHOW THE STOP 
+    const stopId = getUrlParameter("stop");
+    if (stopId) {
+        console.log(`Bus stop detected in URL: ${stopId}`);
+    }
+
     // Handle map movement events
     map.on("moveend", function() {
         if (ignoreNextMoveEnd) {
