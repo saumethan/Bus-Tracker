@@ -146,13 +146,16 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
 
                 console.log(bus)
                 console.log(bus.operator.operatorCode)
+                // TODO: pass this to the bus data div
+                console.log(bus.destination)
+                console.log(bus.serviceNumber)
 
                 // add to html
                 htmlContent += `
                     <div class="bus-time-record" data-service-number="${bus.serviceNumber}" data-operator-code="${bus.operator.operatorCode}">
                         <h2>
                             <button type="button" class="btn-link number">${bus.serviceNumber}</button>
-                            <span class="destination">to ${destination}</span>
+                            <span class="destination">to ${bus.destination}</span>
                         </h2>
                         <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
                     </div>
