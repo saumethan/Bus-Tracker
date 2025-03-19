@@ -152,9 +152,49 @@ router.get("/:noc/:route", async (req, res) => {
 
 // SERVER ENDPOINT: Get bus route data
 router.get("/routes", async (req, res) => {
-    let { serviceId, tripId, journeyId } = req.query;
+    let { serviceId, tripId, journeyId, noc, route } = req.query;
     
     try {
+
+        if (noc === "TRDU" || (noc === "FSCE" && route === 22)) {
+            try {
+                const url = `https://www.xploredundee.com/_ajax/lines/map/TRDU/${route}`;
+                const response = await axios.get(url);
+        
+                const routeData = findLongestRoute(response, route);
+
+                if (routeData) {
+                    return res.json(routeData);  
+                } else {
+                    return res.status(404).json({ error: "No route data found." }); 
+                }
+        
+            } catch (error) {
+                console.error("Error:", error.message);
+                return await fetchJourneyData(journeyId, res); // Fallback to journey data if URL 1 fails
+            }
+        }
+        
+
+        if (noc === "MBLB" || noc === "MCGL" || noc === "FSCE") {
+            try {
+                const url = `https://www.mcgillsscotlandeast.co.uk/_ajax/lines/map/MBLB/${route}`;
+                const response = await axios.get(url);
+        
+                const routeData = findLongestRoute(response, route);
+
+                if (routeData) {
+                    return res.json(routeData);  
+                } else {
+                    return res.status(404).json({ error: "No route data found." }); 
+                }
+        
+            } catch (error) {
+                console.error("Error:", error.message);
+                return await fetchJourneyData(journeyId, res); // Fallback to journey data if URL 1 fails
+            }
+        }
+        
         // If only serviceId is provided, fetch the tripId first from URL 1
         if (!tripId && serviceId) {
             try {
@@ -248,5 +288,37 @@ async function fetchJourneyData(journeyId, res) {
     // If no data from journey, return empty response
     return res.status(200).json({});
 }
+function findLongestRoute(response, route) {
+    if (response.data) {
+        const features = response.data.features;
+        let featureWithMostCoords = null;
+        let maxCoordsLength = 0;
+
+        // Loop through each feature
+        features.forEach(feature => {
+            const coords = feature.geometry.coordinates;
+            const coordsLength = coords.length;
+
+            // Swap coordinates 
+            const correctedCoords = coords.map(coord => [coord[1], coord[0]]);
+
+            if (coordsLength > maxCoordsLength) {
+                maxCoordsLength = coordsLength;
+                featureWithMostCoords = { ...feature, geometry: { ...feature.geometry, coordinates: correctedCoords } };
+            }
+        });
+
+        // Feature with most coordinates
+        if (featureWithMostCoords) {
+            const routeCoords = featureWithMostCoords.geometry.coordinates;
+            const destination = "";  
+            return { routeCoords, route, destination };
+        } else {
+            return null;  
+        }
+    }
+    return null;  
+}
+
 
 module.exports = router;
