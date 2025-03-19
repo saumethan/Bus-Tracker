@@ -53,7 +53,7 @@ router.get("/", async (req, res) => {
 router.get("/find/:route", async (req, res) => {
     try {
         const { route } = req.params;
-        const { lat, lon, radius = 50 } = req.query;
+        const { lat, lon, radius = 50, minX, minY, maxX, maxY } = req.query;
 
         if (!lat || !lon) {
             return res.status(400).json({ error: "Missing lat/lon parameters" });
@@ -72,17 +72,18 @@ router.get("/find/:route", async (req, res) => {
         const LATITUDE_DIFFERENCE = 0.0025;
         const LONGITUDE_DIFFERENCE = 0.0035;
         
-        let yMax = latitude + (LATITUDE_DIFFERENCE * radiusValue);
-        let yMin = latitude - (LATITUDE_DIFFERENCE * radiusValue);
-        let xMax = longitude + (LONGITUDE_DIFFERENCE * radiusValue);
-        let xMin = longitude - (LONGITUDE_DIFFERENCE * radiusValue);
+        if (!minX && !minY && !maxX && !maxY) {
+            let yMax = latitude + (LATITUDE_DIFFERENCE * radiusValue);
+            let yMin = latitude - (LATITUDE_DIFFERENCE * radiusValue);
+            let xMax = longitude + (LONGITUDE_DIFFERENCE * radiusValue);
+            let xMin = longitude - (LONGITUDE_DIFFERENCE * radiusValue);
 
-        // Validate bounds
-        yMax = Math.min(yMax, 90);
-        yMin = Math.max(yMin, -90);
-        xMax = Math.min(xMax, 180);
-        xMin = Math.max(xMin, -180);
-        
+            // Validate bounds
+            yMax = Math.min(yMax, 90);
+            yMin = Math.max(yMin, -90);
+            xMax = Math.min(xMax, 180);
+            xMin = Math.max(xMin, -180);
+        }
 
         const url = `https://bustimes.org/vehicles.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
         // Get all buses in the area
