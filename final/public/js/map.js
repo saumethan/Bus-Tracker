@@ -51,11 +51,6 @@ function addHomeButtonToMap() {
 
         // Event listener for the button
         buttonDiv.addEventListener("click", async () => {
-            // Reset to show all buses when the button is clicked
-            await getUserLocation();
-            const { lat, lng } = getUserCoordinates();
-            drawUserLocation(map);
-            map.setView([lat, lng], 15);
             
             // Set flag to indicate all buses are shown
             setViewAllBuses(true);
