@@ -72,7 +72,7 @@ router.get("/find/:route", async (req, res) => {
         const LATITUDE_DIFFERENCE = 0.0025;
         const LONGITUDE_DIFFERENCE = 0.0035;
         
-        if (!minX && !minY && !maxX && !maxY) {
+        // if (!minX && !minY && !maxX && !maxY) {
             let yMax = latitude + (LATITUDE_DIFFERENCE * radiusValue);
             let yMin = latitude - (LATITUDE_DIFFERENCE * radiusValue);
             let xMax = longitude + (LONGITUDE_DIFFERENCE * radiusValue);
@@ -83,7 +83,7 @@ router.get("/find/:route", async (req, res) => {
             yMin = Math.max(yMin, -90);
             xMax = Math.min(xMax, 180);
             xMin = Math.max(xMin, -180);
-        }
+        
 
         const url = `https://bustimes.org/vehicles.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
         // Get all buses in the area
