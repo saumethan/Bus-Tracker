@@ -24,15 +24,15 @@ async function getSpecificBusGPS(nocCode, route) {
 
     try {
         // Call our server endpoint 
-        const response = await $.get(`/api/buses/${nocCode}/${route}`);
+        const response = await $.get(`/api/buses/find/${route}?lat=${minX}&lon=${minY}&radius=50`);
         
         // Check if response is empty or invalid
-        if (!response || (Array.isArray(response) && response.length === 0)) {
-            console.log("Empty response from specific bus API");
-            const allBuses = await getAllBusGPS(maxY, maxX, minY, minX) || [];
-            let filteredBuses = getFilteredBuses(allBuses, route);
-            return filteredBuses;
-        }
+        // if (!response || (Array.isArray(response) && response.length === 0)) {
+        //     console.log("Empty response from specific bus API");
+        //     const allBuses = await getAllBusGPS(maxY, maxX, minY, minX) || [];
+        //     let filteredBuses = getFilteredBuses(allBuses, route);
+        //     return filteredBuses;
+        // }
         
         return response;
     } catch (error) {
@@ -163,13 +163,14 @@ async function drawBus(busData, map) {
             // Update URL to reflect the selected bus route
             updateURLWithRoute(coord.route);
 
+            console.log(coord.noc)
             console.log(coord.serviceId)
             console.log(coord.tripId)
             console.log(coord.route)
 
             // Only try to show specific route if we have serviceId and tripId
             // if (coord.serviceId && coord.tripId) {
-                await showSpecificBusRoute(coord.serviceId, coord.tripId, coord.journeyId, coord.route, map);
+                await showSpecificBusRoute(coord.serviceId, coord.tripId, coord.journeyId, coord.route, map, coord.noc, coord.route);
             // } else {
                 // const newUrl = window.location.origin + window.location.pathname;
                 // window.history.pushState({ path: newUrl }, "", newUrl);
@@ -203,7 +204,7 @@ function updateURLWithRoute(route) {
 }
 
 // ------------------ Function to update map with specific bus route ------------------
-async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map) { 
+async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map, noc, route) { 
     if (!map.busMarkers) {
         map.busMarkers = [];
     } else {
@@ -217,7 +218,7 @@ async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map)
     // Fetch and draw route
     if(serviceId || journeyId) {
         try {
-            const { routeCoords, routeNumber, destination } = await getBusRoute(serviceId, busId, journeyId);
+            const { routeCoords, routeNumber, destination } = await getBusRoute(serviceId, busId, journeyId, noc, route);
             console.log(routeCoords, routeNumber, destination)
             if (routeCoords && routeCoords.length > 0) {
                 const routeLine = drawBusRoute(routeCoords, routeNumber, destination, map);
