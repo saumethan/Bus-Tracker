@@ -144,16 +144,19 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                     timeString += ` (Exp: ${realTimeDeparture})`
                 }
 
+                console.log(bus)
+                console.log(bus.operator.operatorCode)
+
                 // add to html
                 htmlContent += `
-                <div class="bus-time-record" data-service-number="${bus.serviceNumber}">
-                    <h2>
-                        <button type="button" class="btn-link number">${bus.serviceNumber}</button>
-                        <span class="destination">to ${destination}</span>
-                    </h2>
-                    <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
-                </div>
-            `;
+                    <div class="bus-time-record" data-service-number="${bus.serviceNumber}" data-operator-code="${bus.operator.operatorCode}">
+                        <h2>
+                            <button type="button" class="btn-link number">${bus.serviceNumber}</button>
+                            <span class="destination">to ${destination}</span>
+                        </h2>
+                        <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
+                    </div>
+                `;
         }
 
         // Append the generated HTML to the DOM
@@ -162,8 +165,9 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
         document.querySelectorAll(".bus-time-record").forEach((element) => {
             element.addEventListener("click", () => {
                 const serviceNumber = element.dataset.serviceNumber;
+                const noc = element.dataset.operatorCode;
                 console.log(latitude, longitude);
-                findBus(serviceNumber, latitude, longitude, map);
+                findBus(serviceNumber, latitude, longitude, map, noc);
             });
         });
     } else {
