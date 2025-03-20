@@ -1,10 +1,8 @@
 /**
- * 
  * @author Owen Meade @owenrgu
  * @author Ethan Saum @saumethan272
  * @description A module handling stop information, including fetching from relevant APIs and drawing stops on a map
  */
-
 
 import { findBus } from "./busGps.js";
 import { setViewAllBuses, updateBusesAndStops } from "./map.js";
