@@ -53,37 +53,34 @@ router.get("/", async (req, res) => {
 router.get("/find/:route", async (req, res) => {
     try {
         const { route } = req.params;
-        const { lat, lon, radius = 50, minX, minY, maxX, maxY } = req.query;
+        const { lat, lng, minX, minY, maxX, maxY } = req.query;
+        const radius = 50;
 
-        if (!lat || !lon) {
-            return res.status(400).json({ error: "Missing lat/lon parameters" });
+        if (!(lat && lng) || !(minX && minY && maxX && maxY)) {
+            return res.status(400).json({ error: "Missing parameters" });
         }
 
-        // Convert to numbers
-        const latitude = parseFloat(lat);
-        const longitude = parseFloat(lon);
-        const radiusValue = parseFloat(radius);
-
-        if (isNaN(latitude) || isNaN(longitude) || isNaN(radiusValue)) {
-            return res.status(400).json({ error: "Invalid lat/lon values" });
-        }
-
-        // Calculate bounds
-        const LATITUDE_DIFFERENCE = 0.0025;
-        const LONGITUDE_DIFFERENCE = 0.0035;
-        
-        // if (!minX && !minY && !maxX && !maxY) {
+        if (lat && lng) {
+            // Convert to numbers
+            const latitude = parseFloat(lat);
+            const longitude = parseFloat(lng);
+            const radiusValue = parseFloat(radius);
+    
+            // Calculate bounds
+            const LATITUDE_DIFFERENCE = 0.0025;
+            const LONGITUDE_DIFFERENCE = 0.0035;
+            
             let yMax = latitude + (LATITUDE_DIFFERENCE * radiusValue);
             let yMin = latitude - (LATITUDE_DIFFERENCE * radiusValue);
             let xMax = longitude + (LONGITUDE_DIFFERENCE * radiusValue);
             let xMin = longitude - (LONGITUDE_DIFFERENCE * radiusValue);
-
+    
             // Validate bounds
             yMax = Math.min(yMax, 90);
             yMin = Math.max(yMin, -90);
             xMax = Math.min(xMax, 180);
             xMin = Math.max(xMin, -180);
-        
+        }
 
         const url = `https://bustimes.org/vehicles.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
         // Get all buses in the area
@@ -289,6 +286,7 @@ async function fetchJourneyData(journeyId, res) {
     // If no data from journey, return empty response
     return res.status(200).json({});
 }
+
 function findLongestRoute(response, route) {
     if (response.data) {
         const features = response.data.features;
