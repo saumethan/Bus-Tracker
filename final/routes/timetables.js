@@ -4,7 +4,7 @@ const router = express.Router();
 const cheerio = require("cheerio");
 const axios = require("axios");
 
-scrapeTimetable("3353","2025-03-21")
+
 
 async function scrapeTimetable(service, date) {
     try {
@@ -60,7 +60,7 @@ router.get("/timetable", async (req, res) => {
         return res.status(400).json({ error: "Service ID is required" });
     }
 
-    const result = await scrapeTimetable(service, date);
+    const result =  scrapeTimetable("3353","2025-03-21");
     console.log(result);
     res.json(result);
 });
