@@ -5,10 +5,9 @@
  * @description A module handling stop information, including fetching from relevant APIs and drawing stops on a map
  */
 
-
-import { findBus } from "./busGps.js";
 import { setViewAllBuses, updateBusesAndStops } from "./map.js";
 import { removeRoute } from "./busRoute.js";
+import { getSpecificBusGPS, drawBus } from "./busGps.js";
 
 // Constants
 const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
@@ -166,11 +165,12 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
         $("#bus-data").html(htmlContent);
 
         document.querySelectorAll(".bus-time-record").forEach((element) => {
-            element.addEventListener("click", () => {
+            element.addEventListener("click", async () => {
                 const serviceNumber = element.dataset.serviceNumber;
                 const noc = element.dataset.operatorCode;
                 console.log(latitude, longitude);
-                findBus(serviceNumber, latitude, longitude, map, noc);
+                const busData = await getSpecificBusGPS(serviceNumber, latitude, longitude);
+                drawBus(busData, map);
             });
         });
     } else {
