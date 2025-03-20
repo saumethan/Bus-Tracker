@@ -13,6 +13,7 @@ const url = "mongodb://127.0.0.1:27017";
 const client = new MongoClient(url);
 const dbName = "User_Profiles";
 let db;
+const loggedin = false
 
 // Connect to database
 async function connectDB() {
@@ -36,7 +37,7 @@ router.get("/", function(req, res) {
 router.post('/createUser', async function(req, res) {
     try {
         // Check if user is already logged in
-        //if (!req.session.loggedin) {
+        //if (req.session.loggedin = true) {
          //  res.redirect('/login');
          //  return;
         //}
@@ -61,7 +62,7 @@ router.post('/createUser', async function(req, res) {
 });
 
 //-=-=-=-=-=-=-=-=-==-=-=-=-=Login Pathways -=-=-=-=-=-=-=-=-=-=-===-=-=-==-=-=-=-=-=-=-=-=-=-=-\\
-    router.post('/login/userlogin', function(req,res){
+    router.post('/login', function(req,res){
         var userName = req.body.uname;
         var userPass = req.body.upass;
 
@@ -76,11 +77,13 @@ router.post('/createUser', async function(req, res) {
 
         if(!result){
             res.redirect('/login')
+            console.log("No Result")
             return
         }
 
         if(result.login.password == pword){
             res.session.loggedin = true;
+            console.log("Logged in : " + loggedin)
             res.session.thisuser = unmae;
             res.redirect('/')
         }else{
