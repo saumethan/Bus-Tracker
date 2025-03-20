@@ -7,41 +7,49 @@
 // Modules
 import { setViewAllBuses, getViewAllBuses, getViewportBounds, updateBusesAndStops } from "./map.js";
 import { getBusRoute, drawBusRoute, removeRoute } from "./busRoute.js";
-import { showNotification } from "./helper.js"; // Import notification function
+import { showNotification } from "./helper.js";
+import { getUserCoordinates } from "./userlocation.js";
 
 let routeNumber;
 let nocCode;
 
 // ------------------ Function to get the bus data for a specific bus route ------------------ 
-async function getSpecificBusGPS(nocCode, route) {
-    if (!nocCode) {
-        console.log("no noc code");
-        showNotification("Error 1 fetching bus noc code", "error");
-        return;
-    }
-
-    const { minX, minY, maxX, maxY } = getViewportBounds();
-
+async function getSpecificBusGPS(route, useBounds, lat, lng) {
     try {
-        // Call our server endpoint 
-        const response = await $.get(`/api/buses/find/${route}?lat=${minX}&lon=${minY}&radius=50`);
+        let response = "";
+
+        if (useBounds) {
+            const { minX, minY, maxX, maxY } = getViewportBounds();
+            response = await $.get(`/api/buses/find/${route}?minX=${minX}&minY=${minY}&maxX=${maxX}&maxY=${maxY}`);
+        } else if (!(lat && lng)) {
+            const { lat, lng } = getUserCoordinates();
+            response = await $.get(`/api/buses/find/${route}?lat=${lat}&lon=${lng}`);
+        } else {
+            response = await $.get(`/api/buses/find/${route}?lat=${lat}&lon=${lng}`);
+        }
+
+        const busData = response || [];
         
-        // Check if response is empty or invalid
-        // if (!response || (Array.isArray(response) && response.length === 0)) {
-        //     console.log("Empty response from specific bus API");
-        //     const allBuses = await getAllBusGPS(maxY, maxX, minY, minX) || [];
-        //     let filteredBuses = getFilteredBuses(allBuses, route);
-        //     return filteredBuses;
+        // if (busData.length === 0) {
+        //     console.log("No buses found for this service.");
+        //     showNotification("No live buses found for this route", "info")
+        //     // Remove all URL parameters
+        //     // Update URL without refreshing page
+        //     const newUrl = window.location.origin + window.location.pathname;
+        //     window.history.pushState({ path: newUrl }, "", newUrl);
+
+        //     setViewAllBuses(true);
+        //     removeRoute(map);
+        //     updateBusesAndStops();
+        //     return;
         // }
+
+        console.log(busData)
         
-        return response;
+        return busData;
     } catch (error) {
         console.error("Error fetching specific bus data:", error);
         showNotification("Error 2 fetching specific bus data", "warning");
-        
-        const allBuses = await getAllBusGPS(maxY, maxX, minY, minX) || [];
-        let filteredBuses = getFilteredBuses(allBuses, route);
-        return filteredBuses;
     }
 }
 
@@ -53,59 +61,8 @@ async function getAllBusGPS(yMax, xMax, yMin, xMin) {
         return response || [];
     } catch (error) {
         console.error("Error fetching bus data:", error);
-        showNotification("Error  3fetching bus data", "error");
+        showNotification("Error 3fetching bus data", "error");
         return [];
-    }
-}
-
-async function findBus(serviceNumber, lat, lon, map, noc) {
-    console.log("Bus Service Number:", serviceNumber);
-    console.log("Latitude:", lat);
-    console.log("Longitude:", lon);
-
-    try {
-        // Call the new API endpoint
-        const response = await $.get(`/api/buses/find/${serviceNumber}?lat=${lat}&lon=${lon}&radius=50`);
-        const busData = response || [];
-
-        console.log("Fetched Bus Data:", busData);
-
-        if (busData.length === 0) {
-            console.log("No buses found for this service.");
-            showNotification("No live buses found for this route", "info")
-            // Remove all URL parameters
-            // Update URL without refreshing page
-            const newUrl = window.location.origin + window.location.pathname;
-            window.history.pushState({ path: newUrl }, "", newUrl);
-
-            setViewAllBuses(true);
-            removeRoute(map);
-            updateBusesAndStops();
-            return;
-        }
-
-        let filteredBuses = busData.filter(bus => bus.route === serviceNumber);
-
-        console.log("Filtered Buses:", filteredBuses);
-        console.log("NOC:", filteredBuses[0]?.noc);
-
-        if (filteredBuses[0]?.noc) {
-            setViewAllBuses(false, filteredBuses[0].noc, serviceNumber);
-
-            drawBus(filteredBuses, map);
-
-            if (filteredBuses[0].serviceId) {
-                await showSpecificBusRoute(filteredBuses[0].serviceId, filteredBuses[0].tripId, filteredBuses[0].journeyId, serviceNumber, map, noc);
-            } else {
-                // const newUrl = window.location.origin + window.location.pathname;
-                // window.history.pushState({ path: newUrl }, "", newUrl);
-                showNotification("Route information not available", "warning");
-            }
-        } else {
-            showNotification("No bus operator found for this service", "warning");
-        }
-    } catch (error) {
-        console.error("Error finding bus:", error);
     }
 }
 
@@ -131,7 +88,7 @@ async function drawBus(busData, map) {
     }
 
     // Draw each bus marker
-    busData.forEach(async coord => { 
+    busData.forEach( coord => { 
         // Make sure we have valid coordinates
         if (!coord.latitude || !coord.longitude) {
             return;
@@ -215,28 +172,24 @@ async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map,
 
     console.log(serviceId)
 
-    // Fetch and draw route
-    if(serviceId || journeyId) {
-        try {
-            const { routeCoords, routeNumber, destination } = await getBusRoute(serviceId, busId, journeyId, noc, busNumber);
-            console.log(routeCoords, routeNumber, destination)
-            if (routeCoords && routeCoords.length > 0) {
-                const routeLine = drawBusRoute(routeCoords, routeNumber, destination, map);
-                
-                // Use the adjustMapViewToRoute function which now sets flags to prevent redundant API calls
-                if (typeof adjustMapViewToRoute === "function") {
-                    adjustMapViewToRoute(routeLine);
-                }
-            } else {
-                console.log("No route found");
-                showNotification("No route available", "warning");
+    try {
+        const { routeCoords, routeNumber, destination } = await getBusRoute(serviceId, busId, journeyId, noc, busNumber);
+        console.log(routeNumber)
+        console.log(routeCoords, routeNumber, destination)
+        if (routeCoords && routeCoords.length > 0) {
+            const routeLine = drawBusRoute(routeCoords, routeNumber, destination, map);
+            
+            // Use the adjustMapViewToRoute function which now sets flags to prevent redundant API calls
+            if (typeof adjustMapViewToRoute === "function") {
+                adjustMapViewToRoute(routeLine);
             }
-        } catch (error) {
-            console.error("Error fetching bus route:", error);
-            showNotification("Error 4fetching bus route", "error");
+        } else {
+            console.log("No route found");
+            showNotification("No route available", "warning");
         }
-    } else {
-        showNotification("No route available", "Warning");
+    } catch (error) {
+        console.error("Error fetching bus route:", error);
+        showNotification("Error 4fetching bus route", "error");
     }
 
     // Get the viewport bounds for potential fallback
@@ -245,16 +198,11 @@ async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map,
     // Fetch and draw buses with matching NOC and route
     try {
         console.log("1.1")
-        if (nocCode && routeNumber) {
+        if (routeNumber) {
             console.log("1.2")
-            const specificBusData = await getSpecificBusGPS(nocCode, routeNumber);
-            if (specificBusData && specificBusData.length > 0) {
-                console.log("1.3")
-                drawBus(specificBusData, map);
-            } else {
-                console.log("1.4")
-                throw new Error("No specific bus data found");
-            }
+            const busData = await getSpecificBusGPS(routeNumber, true);
+            console.log(busData)
+            drawBus(busData, map);
         } else {
             console.log("1.5")
             throw new Error("Missing nocCode or routeNumber");
@@ -266,30 +214,15 @@ async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map,
         // Fallback to showing all buses in viewport
         try {
             console.log("1.7")
-            const allBuses = await getAllBusGPS(maxY, maxX, minY, minX) || [];
-            let filteredBuses = getFilteredBuses(allBuses, busNumber);
-            drawBus(filteredBuses, map);
+            console.log(ruoteNumber)
+            const busData = await getSpecificBusGPS(routeNumber, true);
+            drawBus(busData, map);
         } catch (fallbackError) {
             console.log("1.8")
             console.error("Error in fallback bus display:", fallbackError);
             showNotification("Could not display buses at this time", "error");
         }
     }
-}
-
-function getFilteredBuses(allBuses, busNumber) {
-    if (!allBuses || !Array.isArray(allBuses)) return [];
-
-    let filteredBuses = [];
-
-    // Loop through bus data and filter buses based on route and destination
-    allBuses.forEach(bus => {
-        // Match bus route with serviceNumber and destination
-        if (bus.route === busNumber ) {
-            filteredBuses.push(bus);
-        }
-    });
-    return filteredBuses;
 }
 
 function getNocCode() {
@@ -302,4 +235,4 @@ function getRouteNumber() {
 
 
 // Export functions
-export { getAllBusGPS, getSpecificBusGPS, drawBus, getRouteNumber, getNocCode, findBus, getFilteredBuses };
+export { getAllBusGPS, getSpecificBusGPS, drawBus, getRouteNumber, getNocCode, showSpecificBusRoute };
