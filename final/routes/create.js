@@ -63,7 +63,7 @@ router.post('/createUser', async function(req, res) {
 //-=-=-=-=-=-=-=-=-==-=-=-=-=Login Pathways -=-=-=-=-=-=-=-=-=-=-===-=-=-==-=-=-=-=-=-=-=-=-=-=-\\
     router.post('/login/userlogin', function(req,res){
         var userName = req.body.uname;
-        var userPass = req.bod.upass;
+        var userPass = req.body.upass;
 
         console.log(userName)
         console.log(userPass)
