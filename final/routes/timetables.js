@@ -4,21 +4,19 @@ const router = express.Router();
 const cheerio = require("cheerio");
 const axios = require("axios");
 
-
-
 async function scrapeTimetable(service, date) {
     try {
         const url = `https://bustimes.org/services/${service}/timetable${date ? `?date=${date}` : ""}`;
-        
+
         // Fetch data using axios
         const response = await axios.get(url);
-        if (!response.ok) throw new Error(`Failed to fetch timetable (status: ${response.status})`);
 
-        const html = await response.text();
+        // Get the HTML content
+        const html = response.data;
         const $ = cheerio.load(html);
-        
+
         let timetable = [];
-        
+
         $("table").each((i, table) => {
             const routeName = $("h1").text().trim() || `Route ${i + 1}`;
             const timeHeadings = [];
@@ -52,18 +50,26 @@ async function scrapeTimetable(service, date) {
     }
 }
 
-// API Route
+// Route for rendering the timetable page
 router.get("/", async (req, res) => {
+    res.render("pages/timetable");
+});
+
+// API Route to fetch timetable data
+router.get("/getTimetables", async (req, res) => {
     const { service, date } = req.query;
 
     if (!service) {
         return res.status(400).json({ error: "Service ID is required" });
     }
 
-    const result =  scrapeTimetable("3353","2025-03-21");
-    console.log(result);
-    res.json(result);
+    try {
+        const result = await scrapeTimetable(service, date);
+        console.log(result);
+        res.json(result);
+    } catch (error) {
+        res.status(500).json({ error: "Internal Server Error", message: error.message });
+    }
 });
-
 
 module.exports = router;
