@@ -24,10 +24,15 @@ const createRoute = require("./routes/create");
 app.set("view engine", "ejs");
 
 // SERVER ENDPOINT: index page 
-app.get("/", function(req, res) {
-    // Pass query parameters to the view
-    const busRoute = req.query.bus || null;
+app.get("/", async function(req, res) {
     res.render("pages/index");
+    try {
+        // Start websocket for firstbus live bus locations
+        await axios.get(`http://localhost:8080/api/buses/startWebsocket`);
+        console.log("WebSocket started and running in the background.");
+    } catch (error) {
+        console.error("Error starting WebSocket:", error);
+    }
 });
 
 // SERVER ENDPOINT: settings page
