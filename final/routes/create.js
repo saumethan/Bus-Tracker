@@ -32,14 +32,14 @@ router.get("/", function(req, res) {
 });
 
 
-// Create User Account
+// -=-=-=-=-=-=-=-=-=Create User Account-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 router.post('/createUser', async function(req, res) {
     try {
         // Check if user is already logged in
-        //if (!req.session.loggedin) {
-        //    res.redirect('/login');
-        //   return;
-        //}
+        if (!req.session.loggedin) {
+           res.redirect('/login');
+           return;
+        }
 
         // Store user data from the form
         const datatostore = {
@@ -60,5 +60,36 @@ router.post('/createUser', async function(req, res) {
     }
 });
 
+//-=-=-=-=-=-=-=-=-==-=-=-=-=Login Pathways -=-=-=-=-=-=-=-=-=-=-===-=-=-==-=-=-=-=-=-=-=-=-=-=-\\
+    router.post('/login/userlogin', function(req,res){
+        var userName = req.body.uname;
+        var userPass = req.bod.upass;
+
+        db.collection('users').findOne({
+            "login.username": uname
+        },function(err, result){
+            if(err) throw err;
+        })
+
+        if(!result){
+            res.redirect('/login')
+            return
+        }
+
+        if(result.login.password == pword){
+            res.session.loggedin = true;
+            res.session.thisuser = unmae;
+            res.redirect('/')
+        }else{
+            res.redirect('/login')
+        }
+    })
+
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-===-=-Change Username =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=Delete Account-=-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\\
+
+//-=-=-=-=-=-==-=-=-=-=-=-=-=-=-logout button controls -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 
 module.exports = router;
