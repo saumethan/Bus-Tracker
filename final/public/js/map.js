@@ -9,13 +9,12 @@ import { getAllBusGPS, getSpecificBusGPS, findBus, drawBus, getNocCode, getRoute
 import { fetchStopsInViewport, drawStops } from "./stops.js";
 import { removeRoute } from "./busRoute.js";
 import { showNotification } from "./helper.js";
+import { initializeCookieStorage, setupCookieBar } from "./cookies.js";
+import { getUserLocation, drawUserLocation, initUserLocationTracking, getUserCoordinates, saveLocationToCookie } from "./userlocation.js";
 
 // Variables
 let map;  
 let inactivityTimeout;
-let userLocation = null;
-let userLat;
-let userLng;
 let viewAllBuses = true;
 let noc = null;
 let route = null;
@@ -30,44 +29,21 @@ const MIN_STOP_ZOOM = 15;
 // Initialize the map and set its location
 function createMap() {
     const mapInstance = L.map("map", {
+        zoomControl: false, 
         doubleTapDragZoom: "center",
         doubleTapDragZoomOptions: {
             reverse: true
         }
     });
-    mapInstance.setView([57.1497, -2.0943], 13); // Aberdeen
+    mapInstance.setView([57.1497, -2.0943], 15); // Aberdeen
     addTileLayer(mapInstance); 
     return mapInstance;
-}
-
-// ------------------ Function to add refresh button to the map ------------------
-function addRefreshButtonToMap() {
-    // Refresh buses 
-    const refreshButton = L.control({ position: "topright" });
-
-    refreshButton.onAdd = function () {
-        const buttonDiv = L.DomUtil.create("div", "map-button-reset");
-        buttonDiv.innerHTML = "<button id='reset-button'><i class='fa-solid fa-arrows-rotate'></i></button>";
-
-        // Event listener for the button
-        buttonDiv.addEventListener("click", async () => {
-            updateBusesAndStops();
-
-            // Update timestamp if viewing specific route
-            if (!viewAllBuses) {
-                updateRefreshTime();
-            }
-        });
-        return buttonDiv;
-    };
-    // Add to map
-    refreshButton.addTo(map);
 }
 
 // ------------------ Function to add home button to the map ------------------
 function addHomeButtonToMap() {
     // Home button 
-    const homeButton = L.control({ position: "topleft" });
+    const homeButton = L.control({ position: "topright" });
 
     homeButton.onAdd = function () {
         const buttonDiv = L.DomUtil.create("div", "map-button");
@@ -75,19 +51,6 @@ function addHomeButtonToMap() {
 
         // Event listener for the button
         buttonDiv.addEventListener("click", async () => {
-            // Reset to show all buses when the button is clicked
-            try {
-                const locationFound = await showUserLocation();
-                if (!locationFound) {
-                    console.log("Proceeding without user location");
-                    setDefaultUserLocation();
-                    showNotification("Location not Found", "warning");
-                }
-            } catch (error) {
-                console.error("Failed to get user location:", error);
-                setDefaultUserLocation();
-                showNotification("Location not Found", "warning");
-            }
             
             // Set flag to indicate all buses are shown
             setViewAllBuses(true);
@@ -112,6 +75,39 @@ function addHomeButtonToMap() {
     homeButton.addTo(map);
 }
 
+// ------------------ Function to add refresh button to the map ------------------
+function addRefreshButtonToMap() {
+    // Refresh buses 
+    const refreshButton = L.control({ position: "topright" });
+
+    refreshButton.onAdd = function () {
+        const buttonDiv = L.DomUtil.create("div", "map-button-reset");
+        buttonDiv.innerHTML = "<button id='reset-button'><i class='fa-solid fa-arrows-rotate'></i></button>";
+
+        // Event listener for the button
+        buttonDiv.addEventListener("click", async () => {
+            
+            // Add spinning animation
+            const icon = buttonDiv.querySelector('i');
+            icon.classList.add('spinning');
+            
+            await updateBusesAndStops();
+
+            if (!viewAllBuses) {
+                updateRefreshTime();
+            }
+
+            // Remove spinning class 
+            setTimeout(() => {
+                icon.classList.remove('spinning');
+            }, 1000);
+        });
+        return buttonDiv;
+    };
+    // Add to map
+    refreshButton.addTo(map);
+}
+
 // ------------------ Function to add location button to the map ------------------
 function addLocationButtonToMap() {
     // Location button 
@@ -123,14 +119,11 @@ function addLocationButtonToMap() {
 
         // Event listener for the button
         buttonDiv.addEventListener("click", async () => {
-            try {
-                const locationFound = await showUserLocation();
-                if (!locationFound) {
-                    showNotification("Location not Found", "warning")
-                }
-            } catch (error) {
-                showNotification("Location not Found", "warning")
-            }
+            await getUserLocation();
+            const { lat, lng } = getUserCoordinates();
+            drawUserLocation(map);
+            map.setView([lat, lng], 15);
+            map.userHasPanned = false;
         });
         return buttonDiv;
     };
@@ -138,7 +131,6 @@ function addLocationButtonToMap() {
     // Add to map
     locationButton.addTo(map);
 }
-
 // ------------------ Function to layer to style the map ------------------
 function addTileLayer(mapInstance) {
     L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
@@ -172,83 +164,16 @@ function getViewportBounds() {
 
 // ------------------ Function to get the map coordinates ------------------
 function getCenterCoordinates() {
-    const center = map.getCenter(); // Returns a LatLng object in Leaflet
+    console.log("here")
+    const center = map.getCenter(); 
     if (center) {
-        const lat = center.lat;  // Access lat directly
-        const lng = center.lng;  // Access lng directly
-        console.log('Latitude:', lat);
-        console.log('Longitude:', lng);
+        const lat = center.lat;  
+        const lng = center.lng;  
         const centerCoords = { lat, lng };
         return centerCoords;
     } else {
-        console.error('Map center is undefined');
+        console.error("Map center is undefined");
     }
-}
-
-
-// ------------------ Function to set default user location ------------------
-function setDefaultUserLocation() {
-    userLat = 57.14912368784818;
-    userLng = -2.0980214518088967;
-}
-
-// ------------------ Function to show the users location ------------------
-async function showUserLocation() {
-    return new Promise((resolve, reject) => {
-        // Variable to track if the geolocation request has completed
-        let geolocationComplete = false;
-        
-        // Set a timeout of 10 seconds
-        const timeoutId = setTimeout(() => {
-            if (!geolocationComplete) {
-                console.log("Geolocation request timed out after 10 seconds");
-                resolve(false); // Resolve with false to indicate timeout
-            }
-        }, 10000); // 10 seconds
-        
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                position => {
-                    // Clear the timeout since we got a successful response
-                    clearTimeout(timeoutId);
-                    geolocationComplete = true;
-                    
-                    userLat = position.coords.latitude;
-                    userLng = position.coords.longitude;
-                    const userIcon = L.divIcon({
-                        className: "user-location-marker",
-                        iconSize: [18, 18],
-                    });
-                    
-                    // Remove the existing marker if it exists
-                    if (userLocation) {
-                        map.removeLayer(userLocation);
-                    }
-                    
-                    // Add the new marker with the custom icon
-                    userLocation = L.marker([userLat, userLng], { icon: userIcon }).addTo(map);
-                    
-                    // Center map on user's location
-                    map.setView([userLat, userLng], 13);
-                    
-                    resolve(true); // Resolve with true to indicate success
-                },
-                error => {
-                    // Clear the timeout since we got an error response
-                    clearTimeout(timeoutId);
-                    geolocationComplete = true;
-                    
-                    console.error("Geolocation error:", error);
-                    reject(error);
-                },
-                { maximumAge: 60000, timeout: 10000, enableHighAccuracy: true }
-            );
-        } else {
-            // Clear the timeout 
-            clearTimeout(timeoutId);
-            reject(new Error("Geolocation not supported"));
-        }
-    });
 }
 
 // ------------------ Function to reset inactivity timeout ------------------
@@ -274,7 +199,6 @@ function getViewAllBuses() {
     return viewAllBuses;
 }
 
-
 // ------------------ Function to update buses based on current state ------------------
 async function updateBuses() {
     // Prevent multiple simultaneous updates
@@ -292,6 +216,7 @@ async function updateBuses() {
         }
 
         const { minX, minY, maxX, maxY } = getViewportBounds();
+        console.log(minX, minY, maxX, maxY)
 
         if (viewAllBuses) {
             // Show all buses in viewport
@@ -376,17 +301,21 @@ async function handlePopState(event) {
         removeRoute(map);
         $("#bus-data").html("");
         updateBusesAndStops();
+        const { lat, lng } = getUserCoordinates();
+        map.setView([lat, lng], 15);
     } else {
         // Only proceed if zoom level is appropriate
         if (map.currentZoom >= MIN_BUS_ZOOM) {
             // If there is a bus parameter, show that specific bus
-            findBus(busRoute.toUpperCase(), userLat, userLng);
+            const { lat, lng } = getUserCoordinates();
+            findBus(busRoute.toUpperCase(), lat, lng);
         } else {
             showNotification("Please zoom in to view buses", "info");
         }
     }
 }
 
+// ------------------ Function to search for bus route ------------------
 function searchRoute(event) {
     event.preventDefault(); 
 
@@ -402,37 +331,30 @@ function searchRoute(event) {
 
     searchInput.value = "";
     const { lat, lng } = getCenterCoordinates();
-    console.log(lat)
-    console.log(lng)
     findBus(route, lat, lng, map);
 }
 
 // Calls the initializeMap function when the HTML has loaded
-document.addEventListener("DOMContentLoaded", async function() {
+document.addEventListener("DOMContentLoaded", function() {
     // Creates map
     map = createMap();
-    map.stopCircleRadius = 50;
-    map.currentZoom = 13;
+    map.stopCircleRadius = 20;
+    map.currentZoom = 15;
 
     // Adds buttons
     addRefreshButtonToMap(map);
     addHomeButtonToMap(map);
     addLocationButtonToMap(map);
 
-    try {
-        const locationFound = await showUserLocation();
-        if (!locationFound) {
-            showNotification("Location not Found", "warning");
-            setDefaultUserLocation();
-        }
-    } catch (error) {
-        showNotification("Location not Found", "warning");
-        setDefaultUserLocation();
-    }
-
+    // Initialize cookie handling
+    initializeCookieStorage();
+    setupCookieBar();
+    
+    // Initialize user location tracking
+    initUserLocationTracking(map);
+    
+    // Rest of initialization...
     resetInactivityTimeout();
-
-    // Initial update of buses and stops
     updateBusesAndStops();
 
     // Resize the buses as the user zooms in
@@ -453,7 +375,14 @@ document.addEventListener("DOMContentLoaded", async function() {
     const routeNumber = getUrlParameter("bus");
     if (routeNumber) {
         console.log(`Bus route detected in URL: ${routeNumber}`);
-        await findBus(routeNumber.toUpperCase(), userLat, userLng, map);
+        const { lat, lng } = getUserCoordinates();
+        findBus(routeNumber.toUpperCase(), lat, lng, map);
+    }
+
+    // FINISH THIS TO SHOW THE STOP 
+    const stopId = getUrlParameter("stop");
+    if (stopId) {
+        console.log(`Bus stop detected in URL: ${stopId}`);
     }
 
     // Handle map movement events
@@ -476,6 +405,17 @@ document.addEventListener("DOMContentLoaded", async function() {
     });
 
     document.getElementById("searchForm").addEventListener("submit", searchRoute);
+    
+    // Asynchronously get the actual user location
+    getUserLocation().then(location => {
+        drawUserLocation();
+        // Save the new location to cookie
+        saveLocationToCookie();
+    }).catch(error => {
+        console.error("Error getting user location:", error);
+    });
+    
+    initUserLocationTracking();
 });
 
 // ------------------ Function for easteregg ------------------
@@ -517,4 +457,4 @@ function easterEgg() {
 }
 
 // Export
-export { setViewAllBuses, getViewAllBuses, getViewportBounds, adjustMapViewToRoute };
+export { setViewAllBuses, getViewAllBuses, getViewportBounds, adjustMapViewToRoute, updateBusesAndStops };

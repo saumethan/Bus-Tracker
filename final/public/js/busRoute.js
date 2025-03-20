@@ -14,10 +14,10 @@ let busData;
 
 // ------------------ Function to get the bus route ------------------
 
-async function getBusRoute(serviceId, tripId) {
+async function getBusRoute(serviceId, tripId, journeyId, noc, route) {
     try {
         // Call our server endpoint 
-        const response = await $.get(`/api/buses/routes/?serviceId=${serviceId}&tripId=${tripId}`);
+        const response = await $.get(`/api/buses/routes/?serviceId=${serviceId}&tripId=${tripId}&journeyId=${journeyId}&noc=${noc}&route=${route}`);
         return response;
     } catch (error) {
         console.error("Error fetching bus route data:", error);

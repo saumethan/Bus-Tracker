@@ -7,6 +7,8 @@
 
 
 import { findBus } from "./busGps.js";
+import { setViewAllBuses, updateBusesAndStops } from "./map.js";
+import { removeRoute } from "./busRoute.js";
 
 // Constants
 const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
@@ -142,28 +144,33 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                     timeString += ` (Exp: ${realTimeDeparture})`
                 }
 
+                console.log(bus)
+                console.log(bus.operator.operatorCode)
+                // TODO: pass this to the bus data div
+                console.log(bus.destination)
+                console.log(bus.serviceNumber)
+
                 // add to html
                 htmlContent += `
-                <div class="bus-time-record">
-                    <h2>
-                        <button type="button" class="btn-link number">${bus.serviceNumber}</button>
-                        <span class="destination">to ${destination}</span>
-                    </h2>
-                    <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
-                </div>
-            `;
+                    <div class="bus-time-record" data-service-number="${bus.serviceNumber}" data-operator-code="${bus.operator.operatorCode}">
+                        <h2>
+                            <button type="button" class="btn-link number">${bus.serviceNumber}</button>
+                            <span class="destination">to ${bus.destination}</span>
+                        </h2>
+                        <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
+                    </div>
+                `;
         }
 
         // Append the generated HTML to the DOM
         $("#bus-data").html(htmlContent);
 
-        document.querySelectorAll('button.number').forEach((element) => {
-            element.addEventListener('click', () => {
-                const serviceNumber = element.textContent.trim().split(' ')[0];
-                //const destination = element.querySelector('.destination').textContent.trim().substring(3);
-
-                console.log(latitude, longitude)
-                findBus(serviceNumber, latitude, longitude, map);
+        document.querySelectorAll(".bus-time-record").forEach((element) => {
+            element.addEventListener("click", () => {
+                const serviceNumber = element.dataset.serviceNumber;
+                const noc = element.dataset.operatorCode;
+                console.log(latitude, longitude);
+                findBus(serviceNumber, latitude, longitude, map, noc);
             });
         });
     } else {
@@ -175,6 +182,12 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
         // handle error
         $("#bus-data").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
     }
+}
+
+function updateURLWithStop(stopId) {
+    // Update URL without refreshing page
+    const newUrl = window.location.origin + window.location.pathname + `?stop=${stopId}`;
+    window.history.pushState({ path: newUrl }, "", newUrl);
 }
 
 /**
@@ -232,6 +245,15 @@ async function drawStops(stopsData, map) {
             });
             circle.setStyle({ fillColor: "#ff9100", color: "#ff9100" });
             circle.openTooltip();
+
+            updateURLWithStop(stop.bustimes_id)
+
+            map.setView([stop.latitude, stop.longitude], 15);
+            
+            setViewAllBuses(true);
+            
+            removeRoute(map);
+            updateBusesAndStops();
 
             loadStopTimes(stop.bustimes_id, stop.latitude, stop.longitude, map);
         });

@@ -8,10 +8,17 @@
 }
 
 /* =-=-=-= MAIN =-=-=-= */
+
+/* Index Page CSS */
+.index-page {
+    overflow: hidden;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
 }
+
 main {
     min-height: 90vh;
 }
@@ -115,6 +122,9 @@ nav #title {
 
 /* =-=-=-= MAP =-=-=-= */
 
+.leaflet-control-attribution {
+    font-size: 8px !important;
+}
 
 #login-section {
     width: 40vw;
@@ -126,6 +136,7 @@ nav #title {
     margin: auto;
     padding-top: 3vh;
 }
+
 #map {
     height: 60vh;
     background-color: lightgray;
@@ -137,17 +148,26 @@ aside {
     max-height: 40vh;
     overflow-y: auto;
 }
+
 .bus-time-record {
-    padding: 10px;
+    padding: 10px !important;
     border-bottom: 1px solid #ddd;
+    cursor: pointer;
 }
+
+.bus-time-record:hover {
+    background-color: #e9ecef;
+}
+
 .search-container button {
     background: #ddd;
     border: none;
 }
+
 .search-container button:hover {
     background: #ccc;
 }
+
 footer {
     background-color: white;
     text-align: center;
@@ -221,7 +241,7 @@ footer {
     justify-content: center;
 }
 
-.map-button button:hover {
+.map-button button:hover, .map-button-reset button:hover {
     background-color: #F4F4F4;
 }
 
@@ -355,12 +375,19 @@ button.btn-link.number:hover {
     margin-bottom: 2rem;
 }
 
+/* =-=-=-= REFRESH BUTTON =-=-=-= */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinning {
+    animation: spin 1s linear;
+    display: inline-block;
+}
+
 /* =-=-=-= RESPONSIVE PHONES =-=-=-= */
 @media (max-width: 652px) {
-    body {
-        overflow: hidden;
-    }
-
     main {
         padding: 0;
     }
@@ -396,6 +423,9 @@ button.btn-link.number:hover {
     /* Index Page CSS */
     .index-page {
         
+        body {
+            overflow: hidden;
+        }
         
         #map {
             height: 75vh;
