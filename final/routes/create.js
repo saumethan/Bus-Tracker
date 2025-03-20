@@ -36,10 +36,10 @@ router.get("/", function(req, res) {
 router.post('/createUser', async function(req, res) {
     try {
         // Check if user is already logged in
-        if (!req.session.loggedin) {
-           res.redirect('/login');
-           return;
-        }
+        //if (!req.session.loggedin) {
+         //  res.redirect('/login');
+         //  return;
+        //}
 
         // Store user data from the form
         const datatostore = {
