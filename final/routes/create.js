@@ -65,6 +65,9 @@ router.post('/createUser', async function(req, res) {
         var userName = req.body.uname;
         var userPass = req.bod.upass;
 
+        console.log(userName)
+        console.log(userPass)
+
         db.collection('users').findOne({
             "login.username": uname
         },function(err, result){
@@ -82,6 +85,8 @@ router.post('/createUser', async function(req, res) {
             res.redirect('/')
         }else{
             res.redirect('/login')
+            console.error("Error Logging in:", error);
+            res.status(500).send("Failed to create Login");
         }
     })
 
