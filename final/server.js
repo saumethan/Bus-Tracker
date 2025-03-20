@@ -39,7 +39,7 @@ app.use("/api/buses", busRoutes);
 app.use("/api/stops", stopRoutes);
 app.use("/api/busimages", imagesRoute);
 app.use("/login", loginRoutes);
-app.use("/timetable", timetables);
+app.use("/timetable", timetableRoutes);
 
 // 404 page
 app.use(function(req, res, next) {

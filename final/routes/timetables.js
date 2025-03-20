@@ -53,7 +53,7 @@ async function scrapeTimetable(service, date) {
 }
 
 // API Route
-router.get("/timetable", async (req, res) => {
+router.get("/", async (req, res) => {
     const { service, date } = req.query;
 
     if (!service) {
