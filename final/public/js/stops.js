@@ -206,12 +206,11 @@ async function drawStops(stopsData, map) {
     map.stopMarkers = [];
     stopsData.forEach(stop => {
         // create marker
-        const circle = L.circle([stop.latitude, stop.longitude], {
-            color: "red", 
-            fillColor: "red", 
-            fillOpacity: 0.5,
-            radius: map.stopCircleRadius
-        }).addTo(map);
+        const icon = L.icon({
+            iconUrl: `https://i.ibb.co/WNWc6gGK/busStop.png`, 
+            iconSize: [50, 50], 
+        });
+        const circle = L.marker([stop.latitude, stop.longitude], {icon: icon}).addTo(map);
 
         // get services for this stop as a string
         let stopServicesString = "";
@@ -232,16 +231,16 @@ async function drawStops(stopsData, map) {
                 Services: ${stopServicesString}<br>
             </div>
         `;
-        circle.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
+        circle.bindTooltip(toolTipContent, { permanent: false, direction: "top", offset: [0, -20] });
 
         // makes the tooltip permanent when clicked on
         circle.on("click", (event) => {
             // stop tooltip
             map.stopMarkers.forEach(marker => {
                 marker.closeTooltip();
-                marker.setStyle({ fillColor: "red", color: "red" });
+                marker.setIcon(L.icon({ iconUrl: "https://i.ibb.co/WNWc6gGK/busStop.png", iconSize: [50, 50] }));
             });
-            circle.setStyle({ fillColor: "#ff9100", color: "#ff9100" });
+            circle.setIcon(L.icon({ iconUrl: "https://i.ibb.co/5XCC3MPt/clicked-Bus-Stop.png", iconSize: [50, 50] }));
             circle.openTooltip();
 
             updateURLWithStop(stop.bustimes_id)
