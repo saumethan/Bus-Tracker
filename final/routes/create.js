@@ -29,7 +29,7 @@ router.get("/", function(req, res) {
 
 
 //Create User Account
-    app.post('/createUser', function(req,res){
+    router.post('/createUser', function(req,res){
         //Checks that a user isnt already logged in instead of creating a new account
         if(!req.session.loggedin){res.redirect('/login');return}
 
