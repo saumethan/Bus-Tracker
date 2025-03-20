@@ -1,0 +1,88 @@
+/**
+ * @author Owen Meade @owenrgu
+ * @description Allows mobile users to resize the bus-data panel
+ */
+
+$(document).ready(function() {
+    // only apply this code to mobile devices
+    if ($(window).width() <= 652) {
+        // variables for tracking resize
+        let startY, startHeight;
+
+        // add event listeners to the top part of the aside panel
+        $("aside.col-md-3").mousedown(function(e) { 
+            if (e.clientY - $("aside.col-md-3").offset().top < 20) { // only trigger the code if the user is clicking at the top edge
+                startResize(e.clientY);
+                $(document).mousemove(resizeMove);
+                $(document).mouseup(resizeEnd);
+            }
+        });
+
+        $("aside.col-md-3").on("touchstart", function(e) {
+            if (e.originalEvent.touches[0].clientY - $("aside.col-md-3").offset().top < 20) { // only trigger the code if the user is touching at the top edge
+                startResize(e.originalEvent.touches[0].clientY);
+                $(document).on("touchmove", resizeTouchMove); // using .on as can't find a jquery method for .touchmove
+                $(document).on("touchend", resizeEnd); // using .on as can't find a jquery method for .touchend
+                //e.preventDefault();
+            }
+        });
+
+        // functions to resize the bus-data panel
+        function updateMapHeight() {
+            // update map height when panel height changes
+            const asideHeight = $("aside.col-md-3").height();
+            $("#map").height(`calc(100vh - 80px - ${asideHeight}px)`);
+        }
+
+        function startResize(y) {
+            startY = y;
+            startHeight = $("aside.col-md-3").height();
+            $("aside.col-md-3").css("transition", "none");
+            $("#map").css("transition", "none");
+        }
+
+        function resizeMove(e) {
+            const currentY = e.clientY;
+            const deltaY = startY - currentY;
+            let newHeight = Math.max(120, Math.min(startHeight + deltaY, $(window).height() * 0.8));
+            $("aside.col-md-3").height(newHeight);
+            updateMapHeight();
+            //e.preventDefault();
+        }
+
+        function resizeTouchMove(e) {
+            const currentY = e.originalEvent.touches[0].clientY;
+            const deltaY = startY - currentY;
+            let newHeight = Math.max(120, Math.min(startHeight + deltaY, $(window).height() * 0.8));
+            $("aside.col-md-3").height(newHeight);
+            updateMapHeight();
+            //e.preventDefault();
+        }
+
+        function resizeEnd() {
+            // remove event handlers https://api.jquery.com/off/
+            $(document).off("mousemove", resizeMove);
+            $(document).off("touchmove", resizeTouchMove);
+            $(document).off("mouseup", resizeEnd);
+            $(document).off("touchend", resizeEnd);
+
+            // re-enable transitions
+            $("aside.col-md-3").css("transition", "height 0.2s ease");
+            $("#map").css("transition", "height 0.2s ease");
+        }
+
+        // initialize map
+        updateMapHeight();
+
+        // update on window resize
+        $(window).on("resize", function() {
+            if ($(window).width() <= 652) {
+                updateMapHeight();
+            } else {
+                // reset heights if switching to desktop
+                $("#map").css("height", "");
+                $("aside.col-md-3").css("height", "");
+            }
+        });
+    }
+});
