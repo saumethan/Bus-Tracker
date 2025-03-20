@@ -3,6 +3,10 @@
 const express = require("express");
 const router = express.Router();
 
+
+router.use(express.urlencoded({ extended: true }));  // Parses form data
+router.use(express.json());  // Parses JSON data
+
 // MongoDB connection setup
 const MongoClient = require("mongodb-legacy").MongoClient;
 const url = "mongodb://127.0.0.1:27017";
