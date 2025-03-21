@@ -5,16 +5,20 @@
  */
 
 
-// function to generate the link to the page
-async function ScrapeTimetable() {
-    var date = $("#date").val();
-    var route = $("#route").val();
+
+
+document.getElementById("scrape").addEventListener("click", async function() {
+
+    let date = $("#date").val();
+    
+    let route = $("#route").val();
 
     try {
-        // Call our server endpoint 
-        const response = await $.get(`/timetables/getTimetables?service=${route}&date=${date}`);
+        const url = `/timetable/getTimetables?service=${route}&date=${date}`
+        console.log(url)
+        const response = await $.get(url);
         return response;
     } catch (error) {
         console.error("Error fetching bus timetable data:", error);
     }
-}
+});
