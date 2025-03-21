@@ -170,7 +170,7 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                 const serviceNumber = element.dataset.serviceNumber;
                 const noc = element.dataset.operatorCode;
                 console.log(latitude, longitude);
-                const busData = await getSpecificBusGPS(serviceNumber, false);
+                const busData = await getSpecificBusGPS(serviceNumber, false, latitude, longitude);
                     if (busData.length === 0) {
                         console.log("No buses found for this service.");
                         showNotification("No live buses found for this route", "info")
@@ -189,7 +189,9 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
 
                     drawBus(busData, map);
 
-                    if (busData[0].serviceId) {
+                    if (busData[0].serviceId || noc && serviceNumber) {
+                        console.log(serviceNumber)
+                        console.log(noc)
                         await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, serviceNumber, map, noc);
                     } else {
                         // const newUrl = window.location.origin + window.location.pathname;
