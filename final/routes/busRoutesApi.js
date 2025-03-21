@@ -77,11 +77,11 @@ router.get("/", async (req, res) => {
                 });
             });
         }
-        const mergedBusData = [...busData, ...northAberdeenBusData, ...southAberdeenBusData, ...westGlasgowBusData, ...southEastGlasgowBusData, ...northEastGlasgowBusData];
+        const mergedBusData = [...busData, ...getBusesInBounds(northAberdeenBusData, minX, minY, maxX, maxY), ...getBusesInBounds(southAberdeenBusData, minX, minY, maxX, maxY), ...getBusesInBounds(westGlasgowBusData, minX, minY, maxX, maxY), ...getBusesInBounds(southEastGlasgowBusData, minX, minY, maxX, maxY), ...getBusesInBounds(northEastGlasgowBusData, minX, minY, maxX, maxY)];
         return res.json(mergedBusData);
     } catch (error) {
         if(error.response && error.response.status === 404){
-            const mergedBusData = [...northAberdeenBusData, ...southAberdeenBusData, ...westGlasgowBusData, ...southEastGlasgowBusData, ...northEastGlasgowBusData];
+            const mergedBusData = [...getBusesInBounds(northAberdeenBusData, minX, minY, maxX, maxY), ...getBusesInBounds(southAberdeenBusData, minX, minY, maxX, maxY), ...getBusesInBounds(westGlasgowBusData, minX, minY, maxX, maxY), ...getBusesInBounds(southEastGlasgowBusData, minX, minY, maxX, maxY), ...getBusesInBounds(northEastGlasgowBusData, minX, minY, maxX, maxY)];
             return res.json(mergedBusData);
         }
         console.error("Error fetching bus data:", error);
@@ -633,6 +633,20 @@ function addRoute(line_name, operator, coordinates) {
     } else {
         console.log(`Route for ${line_name} (${operator}) already exists. Skipping update.`);
     }
+}
+
+// Function to return buses in the bounds
+function getBusesInBounds(busData, minX, minY, maxX, maxY) {
+    let filteredBuses = [];
+
+    busData.forEach(bus => {
+        if (bus.longitude >= minX && bus.longitude <= maxX && 
+            bus.latitude >= minY && bus.latitude <= maxY) {
+            filteredBuses.push(bus);
+        }
+    });
+
+return filteredBuses;
 }
 
 module.exports = router;
