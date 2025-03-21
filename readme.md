@@ -7,7 +7,7 @@ An easy to use bus tracker website for buses in the UK. Tailored specifically to
 ## Contributors
 
 - Owen Meade (2310873) [@owenrgu](https://github.com/owenrgu)
-- Ethan Saum (2304185) [@saumethan272](https://github.com/saumethan272)
+- Ethan Saum (2304185) [@saumethan](https://github.com/saumethan)
 - Joshua Newton (2308183) [@JoshuaNewton-rgu](https://github.com/JoshuaNewton-rgu)
 - Xavier Flockton (2328017) [@XavierFlockton](https://github.com/XavierFlockton)
 
