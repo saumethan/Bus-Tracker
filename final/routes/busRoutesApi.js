@@ -23,10 +23,20 @@ const coordinates = {
     northEastGlasgow: { yMax: 56.05204516215275, xMax: -3.818773575817602, yMin: 55.86265643719699, xMin: -4.289794507412324 }
 };
 
+let monitoringActive = false;
+
 // SERVER ENDPOINT: Starts the First Bus websocket
 router.get("/startWebsocket", async (req, res) => {
-    await getFirstBusLocation();
-    res.json({ message: "WebSocket started" });
+    if (!monitoringActive) {
+        monitoringActive = true;
+        requestFirstBusLocations().catch(error => {
+            console.error("Monitoring stopped due to error:", error);
+            monitoringActive = false;
+        });
+        res.json({ message: "WebSocket monitoring started" });
+    } else {
+        res.json({ message: "WebSocket monitoring already running" });
+    }
 });
 
 // SERVER ENDPOINT: Get all buses in viewport
@@ -375,6 +385,18 @@ function findLongestRoute(response, route) {
         }
     }
     return null;  
+}
+
+async function requestFirstBusLocations() {
+    // Run continuously
+    while (true) {
+        console.log("Starting new monitoring cycle...");
+        
+        await getFirstBusLocation();
+        
+        console.log("Cycle complete.");
+        await new Promise(resolve => setTimeout(resolve, 30000)); // 30 second delay
+    }
 }
 
 async function getFirstBusLocation() {
