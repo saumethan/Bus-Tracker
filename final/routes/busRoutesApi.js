@@ -4,13 +4,9 @@ const express = require("express");
 const axios = require("axios");
 const router = express.Router();
 const WebSocket = require("ws");
+const fs = require("fs");
 
-// Socket for each area
-let northAberdeenSocket = null;
-let southAberdeenSocket = null;
-let westGlasgowSocket = null;
-let southEastGlasgowSocket = null;
-let northEastGlasgowSocket = null;
+const ROUTES_FILE = "routes.json";
 
 // Bus data for each area
 let northAberdeenBusData = [];
@@ -24,9 +20,8 @@ const coordinates = {
     southAberdeen: { yMax: 57.14781685973591, xMax: -2.0527877170343345, yMin: 57.075778570610254, xMin: -2.3342530891815727 },
     westGlasgow: { yMax: 56.044513549415285, xMax: -4.289896864619664, yMin: 55.68620558451926, xMin: -4.746236719602905 },
     southEastGlasgow: { yMax: 55.86261496560846, xMax: -3.675846161883726, yMin: 55.67619459865884, xMin: -4.289682229198604 },
-    NorthEastGlasgow: { yMax: 56.05204516215275, xMax: -3.818773575817602, yMin: 55.86265643719699, xMin: -4.289794507412324 }
+    northEastGlasgow: { yMax: 56.05204516215275, xMax: -3.818773575817602, yMin: 55.86265643719699, xMin: -4.289794507412324 }
 };
-
 
 // SERVER ENDPOINT: Starts the First Bus websocket
 router.get("/startWebsocket", async (req, res) => {
@@ -293,6 +288,28 @@ router.get("/routes", async (req, res) => {
             }
         }
 
+        try {
+            const ROUTES_FILE = loadRoutes();
+            const routeKey = `${route}_${noc}`.replace(/[^a-zA-Z0-9_]/g, '');
+        
+            console.log("Loaded Routes File:", ROUTES_FILE);
+            console.log("Route Key:", routeKey);
+            console.log("Available Route Keys:", Object.keys(ROUTES_FILE));
+        
+            if (ROUTES_FILE[routeKey]) {
+                console.log(`Returning local route data for ${routeKey}`);
+                return res.json({ 
+                    routeCoords: ROUTES_FILE[routeKey], 
+                    routeNumber: route, 
+                    destination: "Unknown Destination" 
+                });
+            } else {
+                console.log(`Route ${routeKey} not found in local file.`);
+            }
+        } catch (error) {
+            console.log("Something went wrong", error);
+        }
+
         // If URL 2 fails or tripId is undefined, attempt to fetch journey data (URL 3)
         return await fetchJourneyData(journeyId, res);
 
@@ -361,50 +378,50 @@ function findLongestRoute(response, route) {
 }
 
 async function getFirstBusLocation() {
-    // Initialise sockets if not connected
-    if (!northAberdeenSocket || northAberdeenSocket.readyState !== WebSocket.OPEN ||
-        !southAberdeenSocket || southAberdeenSocket.readyState !== WebSocket.OPEN ||
-        !westGlasgowSocket || westGlasgowSocket.readyState !== WebSocket.OPEN ||
-        !southEastGlasgowSocket || southEastGlasgowSocket.readyState !== WebSocket.OPEN ||
-        !northEastGlasgowSocket || northEastGlasgowSocket.readyState !== WebSocket.OPEN) {
-        
+    // Define the areas
+    const areas = ["northAberdeen", "southAberdeen", "westGlasgow", "southEastGlasgow", "northEastGlasgow"];
+    
+    try {
+        // Gets socket token
         const token = await getSocketToken();
-        if (token) {
-            try {
-                await Promise.all([
-                    startSocket("northAberdeen", token),
-                    startSocket("southAberdeen", token),
-                    startSocket("westGlasgow", token),
-                    startSocket("southEastGlasgow", token),
-                    startSocket("northEastGlasgow", token)
-                ]);
-                console.log("All sockets initialized successfully");
-            } catch (error) {
-                console.error("Error initializing sockets:", error);
-                return false;   
-            }
-        } else {
+        if (!token) {
             console.error("Failed to get socket token");
             return null;
         }
-    }
-
-    try {
-        // Send messages to configure each socket        }
-        await Promise.all([
-            sendSocketMessage("northAberdeen", coordinates.northAberdeen),
-            sendSocketMessage("southAberdeen", coordinates.southAberdeen),
-            sendSocketMessage("westGlasgow", coordinates.westGlasgow),
-            sendSocketMessage("southEastGlasgow", coordinates.southEastGlasgow),
-            sendSocketMessage("northEastGlasgow", coordinates.northEastGlasgow)
-        ]);
+        
+        // Processes each area
+        for (const area of areas) {
+            console.log(`Processing ${area}...`);
+            
+            try {
+                // Starts socket for this area
+                const socket = await startSocket(area, token);
+                
+                // Sends configuration message
+                await sendSocketMessage(area, coordinates[area], socket);
+                
+                // Closes the socket 
+                if (socket && socket.readyState === WebSocket.OPEN) {
+                    socket.close();
+                    console.log(`Closed socket for ${area}`);
+                }
+            } catch (error) {
+                console.error(`Error processing ${area}:`, error);
+            }
+        }
+        
+        // const totalBuses = northAberdeenBusData.length + southAberdeenBusData.length + westGlasgowBusData.length + southEastGlasgowBusData.length + northEastGlasgowBusData.length;
+        // console.log(`Total buses across all areas: ${totalBuses}`);
+        // console.log(`na: ${northAberdeenBusData.length}, sa: ${southAberdeenBusData.length}, ` + `wg: ${westGlasgowBusData.length}, seg: ${southEastGlasgowBusData.length}, ` + `neg: ${northEastGlasgowBusData.length}`);
+        
         return true;
     } catch (error) {
-        console.error("Error getting bus locations:", error);
+        console.error("Error in getFirstBusLocation:", error);
         return null;
     }
 }
 
+// Function to get the token for the First Bus socket
 async function getSocketToken() {
     const url = "https://dev.mobileapi.firstbus.co.uk/api/v1/bus/service/socketInfo";
     try {
@@ -427,82 +444,40 @@ async function getSocketToken() {
     }
 }
 
+// Function to start the webnsocket
 function startSocket(area, token) {
     return new Promise((resolve, reject) => {
-        // Get the right socket reference
-        let socketRef;
-        if (area === "northAberdeen") {
-            // Close existing socket if open
-            if (northAberdeenSocket && northAberdeenSocket.readyState === WebSocket.OPEN) {
-                northAberdeenSocket.close();
-            }
-            // Create new socket connection
-            northAberdeenSocket = new WebSocket("wss://streaming.bus.first.transportapi.com/", {
-                headers: { Authorization: "Bearer " + token }
-            });
-            socketRef = northAberdeenSocket;
-        } else if (area === "southAberdeen") {
-            // Close existing socket if open
-            if (southAberdeenSocket && southAberdeenSocket.readyState === WebSocket.OPEN) {
-                southAberdeenSocket.close();
-            }
-            // Create new socket connection
-            southAberdeenSocket = new WebSocket("wss://streaming.bus.first.transportapi.com/", {
-                headers: { Authorization: "Bearer " + token }
-            });
-            socketRef = southAberdeenSocket;
-        } else if (area === "westGlasgow") {
-            // Close existing socket if open
-            if (westGlasgowSocket && westGlasgowSocket.readyState === WebSocket.OPEN) {
-                westGlasgowSocket.close();
-            }
-            // Create new socket connection
-            westGlasgowSocket = new WebSocket("wss://streaming.bus.first.transportapi.com/", {
-                headers: { Authorization: "Bearer " + token }
-            });
-            socketRef = westGlasgowSocket;
-        } else if (area === "southEastGlasgow") {
-            // Close existing socket if open
-            if (southEastGlasgowSocket && southEastGlasgowSocket.readyState === WebSocket.OPEN) {
-                southEastGlasgowSocket.close();
-            }
-            // Create new socket connection
-            southEastGlasgowSocket = new WebSocket("wss://streaming.bus.first.transportapi.com/", {
-                headers: { Authorization: "Bearer " + token }
-            });
-            socketRef = southEastGlasgowSocket;
-        } else {
-            // Close existing socket if open
-            if (northEastGlasgowSocket && northEastGlasgowSocket.readyState === WebSocket.OPEN) {
-                northEastGlasgowSocket.close();
-            }
-            // Create new socket connection
-            northEastGlasgowSocket = new WebSocket("wss://streaming.bus.first.transportapi.com/", {
-                headers: { Authorization: "Bearer " + token }
-            });
-            socketRef = northEastGlasgowSocket;
-        }
-
-        socketRef.on("open", () => {
+        console.log(`Starting socket for ${area}...`);
+        
+        // Creates a new socket connection
+        const socket = new WebSocket("wss://streaming.bus.first.transportapi.com/", {
+            headers: { Authorization: "Bearer " + token }
+        });
+        
+        // Seta up socket event handler
+        socket.on("open", () => {
             console.log(`Connected to First Bus Web Socket for ${area}`);
-            resolve();
+            resolve(socket);
         });
 
-        socketRef.on("message", (data) => {
-            console.log(`RAW MESSAGE FROM ${area}:`, data.toString().substring(0, 200) + "...");
+        socket.on("message", (data) => {
             try {
                 const message = JSON.parse(data.toString());
                 if (message && message.params && message.params.resource && message.params.resource.member) {
-                    const buses = message.params.resource.member.map(bus => ({
-                        journeyId: null,
-                        longitude: bus.status.location.coordinates[0],
-                        latitude: bus.status.location.coordinates[1],
-                        heading: bus.status.bearing,
-                        route: bus.line_name,
-                        destination: null,
-                        noc: bus.operator || null
-                    }));
+                    const buses = [];
+                    message.params.resource.member.forEach(bus => {
+                        buses.push({
+                            journeyId: null,
+                            longitude: bus.status.location.coordinates[0],
+                            latitude: bus.status.location.coordinates[1],
+                            heading: bus.status.bearing,
+                            route: bus.line_name,
+                            destination: null,
+                            noc: bus.operator || null
+                        });
+                    });
 
+                    // Update the bus data arrays
                     if (area === "northAberdeen") {
                         northAberdeenBusData = buses;
                         console.log(`Updated North Aberdeen bus data: ${buses.length} buses`);
@@ -515,94 +490,36 @@ function startSocket(area, token) {
                     } else if (area === "southEastGlasgow") {
                         southEastGlasgowBusData = buses;
                         console.log(`Updated South East Glasgow bus data: ${buses.length} buses`);
-                    } else if (area === "NorthEastGlasgow") {
+                    } else if (area === "northEastGlasgow") {
                         northEastGlasgowBusData = buses;
                         console.log(`Updated North East Glasgow bus data: ${buses.length} buses`);
-                    } else {
-                        console.warn(`Unknown area: ${area}`);
-                        return;
                     }
-
-                    const totalBuses = northAberdeenBusData.length + southAberdeenBusData.length + westGlasgowBusData.length + southEastGlasgowBusData.length + northEastGlasgowBusData.length;
-                    console.log(`Total buses across all areas: ${totalBuses} na: ${northAberdeenBusData.length}, sa: ${southAberdeenBusData.length}, wg: ${westGlasgowBusData.length}, seg: ${southEastGlasgowBusData.length}, neg: ${northEastGlasgowBusData.length}`);
                 }
             } catch (error) {
                 console.error(`Error processing ${area} socket message:`, error);
             }
         });
 
-        socketRef.on("error", (err) => {
+        socket.on("error", (err) => {
             console.error(`Failed to connect to ${area} First Bus Web Socket:`, err);
             reject(err);
         });
         
-        socketRef.on("close", () => {
+        socket.on("close", () => {
             console.log(`${area} socket connection closed`);
-            if (area === "northAberdeen") {
-                northAberdeenSocket = null;
-            } else if (area === "southAberdeen") {
-                southAberdeenSocket = null;
-            } else if (area === "westGlasgow") {
-                westGlasgowSocket = null;
-            } else if (area === "southEastGlasgow") {
-                southEastGlasgowSocket = null;
-            } else if (area === "NorthEastGlasgow") {
-                northEastGlasgowSocket = null;
-            } else {
-                console.warn(`Unknown area: ${area}`);
-            }
         });
         
-        // Add timeout 
+        // Timeout 
         setTimeout(() => {
-            if (socketRef.readyState !== WebSocket.OPEN) {
+            if (socket.readyState !== WebSocket.OPEN) {
                 reject(new Error(`${area} socket connection timeout`));
             }
         }, 10000);
     });
 }
-
-async function sendSocketMessage(area, coords) {
-    let socketRef;
-    if (area === "northAberdeen") {
-        socketRef = northAberdeenSocket;
-    } else if (area === "southAberdeen") {
-        socketRef = southAberdeenSocket;
-    } else if (area === "westGlasgow") {
-        socketRef = westGlasgowSocket;
-    } else if (area === "southEastGlasgow") {
-        socketRef = southEastGlasgowSocket;
-    } else if (area === "NorthEastGlasgow") {
-        socketRef = northEastGlasgowSocket;
-    } else {
-        console.warn(`Unknown area: ${area}`);
-        socketRef = null;
-    }
-
-    // Ensure socket is ready
-    if (!socketRef || socketRef.readyState !== WebSocket.OPEN) {
-        console.log(`${area} socket not ready, attempting to reconnect`);
-        const token = await getSocketToken();
-        if (token) {
-            await startSocket(area, token);
-            // Update socket reference after reconnection
-            if (area === "northAberdeen") {
-                socketRef = northAberdeenSocket;
-            } else if (area === "southAberdeen") {
-                socketRef = southAberdeenSocket;
-            } else if (area === "westGlasgow") {
-                socketRef = westGlasgowSocket;
-            } else if (area === "southEastGlasgow") {
-                socketRef = southEastGlasgowSocket;
-            } else if (area === "NorthEastGlasgow") {
-                socketRef = northEastGlasgowSocket;
-            } else {
-                console.warn(`Unknown area: ${area}`);
-                socketRef = null;
-            }
-        } else {
-            throw new Error(`Could not get socket token for ${area}`);
-        }
+async function sendSocketMessage(area, coords, socket) {
+    if (!socket || socket.readyState !== WebSocket.OPEN) {
+        throw new Error(`Socket for ${area} is not open`);
     }
 
     const { yMax, xMax, yMin, xMin } = coords;
@@ -619,35 +536,81 @@ async function sendSocketMessage(area, coords) {
     });
 
     return new Promise((resolve, reject) => {
-        socketRef.send(message);
-        console.log(`Sent configuration message to ${area} socket`);
+        console.log(`Sending configuration message to ${area} socket`);
+        socket.send(message);
         
-        const timeout = setTimeout(() => reject(new Error(`${area} response timeout`)), 5000);
+        // Timeout 
+        const timeout = setTimeout(() => {
+            console.log(`${area} data collection timeout - moving to next area`);
+            resolve({"status": "timeout"});
+        }, 5000);
         
         const messageHandler = (data) => {
             try {
                 const response = JSON.parse(data.toString());
                 
-                if (response.result && Object.keys(response.result).length === 0) {
-                    console.log(`Received empty acknowledgment from ${area}, waiting for data...`);
-                    return; 
+                // Checks if we've received bus data
+                if (response.params && response.params.resource && response.params.resource.member) {
+                    clearTimeout(timeout);
+                    socket.removeListener("message", messageHandler);
+                    console.log(`Received data for ${area} with ${response.params.resource.member.length} buses`);
+                    resolve(response);
                 }
                 
-                clearTimeout(timeout);
-                socketRef.removeListener("message", messageHandler);
-                resolve(response);
+                // Checks for an acknowledgment
+                if (response.result && Object.keys(response.result).length === 0) {
+                    console.log(`Received empty acknowledgment from ${area}, waiting for data...`);
+                }
             } catch (error) {
                 console.error(`Error parsing ${area} socket message:`, error);
             }
         };
         
-        socketRef.on("message", messageHandler);
+        socket.on("message", messageHandler);
         
+        // Sets a time limit for how long to collect 
         setTimeout(() => {
-            socketRef.removeListener("message", messageHandler);
-            resolve({"jsonrpc": "2.0", "result": `timeout waiting for ${area} data`});
+            socket.removeListener("message", messageHandler);
+            clearTimeout(timeout);
+            resolve({"status": "completed", "area": area});
         }, 5000);
     });
+}
+
+// Loads the file that stores the first bus route data
+function loadRoutes() {
+    try {
+        if (fs.existsSync(ROUTES_FILE)) {
+            return JSON.parse(fs.readFileSync(ROUTES_FILE, "utf8"));
+        }
+    } catch (error) {
+        console.error("Error loading routes file:", error);
+    }
+    return {};
+}
+
+
+function saveRoutes(routes) {
+    try {
+        fs.writeFileSync(ROUTES_FILE, JSON.stringify(routes, null, 2), "utf8");
+    } catch (error) {
+        console.error("Error saving routes file:", error);
+    }
+}
+
+function addRoute(line_name, operator, coordinates) {
+    let routes = loadRoutes();
+
+    const routeKey = `${line_name}_${operator}`;
+
+    // Only adds the route if it doesn't exist
+    if (!routes[routeKey]) {
+        routes[routeKey] = coordinates;
+        saveRoutes(routes);
+        console.log(`Route for ${line_name} (${operator}) added successfully.`);
+    } else {
+        console.log(`Route for ${line_name} (${operator}) already exists. Skipping update.`);
+    }
 }
 
 module.exports = router;
