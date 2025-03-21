@@ -132,19 +132,33 @@ router.get("/find/:route", async (req, res) => {
         // Get all buses in the area
         const response = await axios.get(url);
         // Filter for the requested service
-        const filteredBuses = response.data
-            .filter(bus => bus.service?.line_name === route && bus.coordinates)
-            .map(bus => ({
-                journeyId: bus.journey_id || null,
-                longitude: bus.coordinates[0],
-                latitude: bus.coordinates[1],
-                heading: bus.heading,
-                route: bus.service.line_name,
-                destination: bus.destination,
-                tripId: bus.trip_id,
-                serviceId: bus.service_id,
-                noc: bus.vehicle?.url?.split("/")[2].split("-")[0].toUpperCase() || null
-            }));
+        let filteredBuses = [];
+        response.data.forEach(bus => {
+            if (bus.service?.line_name === route && bus.coordinates) {
+                const busData = {
+                    journeyId: bus.journey_id || null,
+                    longitude: bus.coordinates[0],
+                    latitude: bus.coordinates[1],
+                    heading: bus.heading,
+                    route: bus.service.line_name,
+                    destination: bus.destination,
+                    tripId: bus.trip_id,
+                    serviceId: bus.service_id,
+                    noc: bus.vehicle?.url?.split("/")[2].split("-")[0].toUpperCase() || null
+                };
+                filteredBuses.push(busData);
+            }
+        });
+
+        if (filteredBuses.length === 0) {
+            const busData = [...getBusesInBounds(northAberdeenBusData, xMin, yMin, xMax, yMax), ...getBusesInBounds(southAberdeenBusData, xMin, yMin, xMax, yMax), ...getBusesInBounds(westGlasgowBusData, xMin, yMin, xMax, yMax), ...getBusesInBounds(southEastGlasgowBusData, xMin, yMin, xMax, yMax), ...getBusesInBounds(northEastGlasgowBusData, xMin, yMin, xMax, yMax)];
+        
+            busData.forEach(bus => {
+                if (route === bus.route) {
+                    filteredBuses.push(bus);
+                }
+            });
+        }
 
         res.json(filteredBuses);
     } catch (error) {
