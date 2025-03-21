@@ -6,7 +6,8 @@ const axios = require("axios");
 
 async function scrapeTimetable(service, date) {
     try {
-        const url = `https://bustimes.org/services/${service}/timetable${date ? `?date=${date}` : ""}`;
+        const url = `https://bustimes.org/services/${service}/timetable?date=${date}`;
+        console.log(url);
 
         // Fetch data using axios
         const response = await axios.get(url);
@@ -14,39 +15,29 @@ async function scrapeTimetable(service, date) {
         // Get the HTML content
         const html = response.data;
         const $ = cheerio.load(html);
-
+        console.log(html)
         let timetable = [];
 
         $("table").each((i, table) => {
-            const routeName = $("h1").text().trim() || `Route ${i + 1}`;
-            const timeHeadings = [];
-            const journeys = [];
-
-            $(table).find("thead tr th").each((_, th) => {
-                timeHeadings.push($(th).text().trim());
-            });
+            let route = $("h1").text().trim() || `Route ${i + 1}`;
+            let headers = $(table).find("thead th").map((_, th) => $(th).text().trim()).get();
+            let journeys = [];
 
             $(table).find("tbody tr").each((_, tr) => {
-                const stop = $(tr).find("th:first-child, td:first-child").text().trim();
-                const times = [];
+                let stop = $(tr).find("th a").text().trim() || $(tr).find("th").text().trim();
+                let times = $(tr).find("td").map((_, td) => $(td).text().trim()).get().filter(Boolean);
 
-                $(tr).find("td").each((_, td) => {
-                    times.push($(td).text().trim());
-                });
-
-                if (stop || times.some(t => t)) {
-                    journeys.push({ stop, times });
-                }
+                if (stop || times.length) journeys.push({ stop, times });
             });
 
-            if (journeys.length > 0) {
-                timetable.push({ route: routeName, timeHeadings, journeys });
-            }
+            if (journeys.length) timetable.push({ route, headers, journeys });
         });
 
-        return { service, date: date || "today", timetable };
+        return { service, date, timetable };
+
     } catch (error) {
-        return { error: "Failed to scrape timetable", message: error.message };
+        console.error("Scraping error:", error.message);
+        return { error: "Failed to fetch timetable", message: error.message };
     }
 }
 
@@ -58,6 +49,7 @@ router.get("/", async (req, res) => {
 // API Route to fetch timetable data
 router.get("/getTimetables", async (req, res) => {
     const { service, date } = req.query;
+    console.log("route hit")
 
     if (!service) {
         return res.status(400).json({ error: "Service ID is required" });

@@ -17,7 +17,7 @@ const busRoutes = require("./routes/busRoutesApi");
 const stopRoutes = require("./routes/stopRoutesApi");
 const imagesRoute = require("./routes/busImagesApi");
 const loginRoutes = require("./routes/login");
-const timetableRoutes = require("./routes/timetables");
+const timetableRoutes = require("./routes/timetableScraper");
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
