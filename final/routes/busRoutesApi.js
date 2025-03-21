@@ -535,6 +535,21 @@ function startSocket(area, token) {
                         northEastGlasgowBusData = buses;
                         console.log(`Updated North East Glasgow bus data: ${buses.length} buses`);
                     }
+
+                    // put stops into stop data JSON
+                    // try {
+                    //     if (message.method === "update" && message.params?.resource?.member) {
+                    //         message.params.resource.member.forEach(bus => {
+                    //             const lineName = bus.line_name;
+                    //             const operator = bus.operator;
+                    //             const coordinates = bus.stops.map(stop => [stop.latitude, stop.longitude]);
+                
+                    //             addRoute(lineName, operator, coordinates);
+                    //         });
+                    //     }
+                    // } catch (error) {
+                    //     console.error("Error processing message:", error);
+                    // }
                 }
             } catch (error) {
                 console.error(`Error processing ${area} socket message:`, error);
