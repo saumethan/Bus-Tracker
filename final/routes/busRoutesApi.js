@@ -3,14 +3,28 @@
 const express = require("express");
 const axios = require("axios");
 const router = express.Router();
+const WebSocket = require("ws");
+
+let socket = null;
+let firstBusData = [];
+
+// SERVER ENDPOINT: Starts the First Bus websocket
+router.get("/startWebsocket", async (req, res) => {
+    await getFirstBusLocation();
+    res.json({ message: "WebSocket started" });
+});
 
 // SERVER ENDPOINT: Get all buses in viewport
 router.get("/", async (req, res) => {
-    try {
-        const { yMax, xMax, yMin, xMin } = req.query;
 
+    const minX = req.query.xMin 
+    const minY = req.query.yMin
+    const maxX = req.query.xMax 
+    const maxY = req.query.yMax 
+
+    try {
         // API URL
-        const url = `https://bustimes.org/vehicles.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
+        const url = `https://bustimes.org/vehicles.json?ymax=${maxY}&xmax=${maxX}&ymin=${minY}&xmin=${minX}`;
 
         // Fetch data using axios
         const response = await axios.get(url);
@@ -38,8 +52,8 @@ router.get("/", async (req, res) => {
                 });
             });
         }
-        
-        return res.json(busData);
+        const mergedBusData = [...busData, ...firstBusData];
+        return res.json(mergedBusData);
     } catch (error) {
         if(error.response && error.response.status === 404){
             return res.json([]);
@@ -53,37 +67,40 @@ router.get("/", async (req, res) => {
 router.get("/find/:route", async (req, res) => {
     try {
         const { route } = req.params;
-        const { lat, lon, radius = 50, minX, minY, maxX, maxY } = req.query;
+        const lat = req.query.lat || null;
+        const lng = req.query.lon || null;
+        let yMax = req.query.maxY || null; 
+        let xMax = req.query.maxX || null; 
+        let yMin = req.query.minY || null; 
+        let xMin = req.query.minX || null; 
+        const radius = 50;
 
-        if (!lat || !lon) {
-            return res.status(400).json({ error: "Missing lat/lon parameters" });
-        }
 
-        // Convert to numbers
-        const latitude = parseFloat(lat);
-        const longitude = parseFloat(lon);
-        const radiusValue = parseFloat(radius);
+        // Calculate bounds based on the radius
+        if (lat && lng) {
+            const latitude = parseFloat(lat);
+            const longitude = parseFloat(lng);
+            const radiusValue = parseFloat(radius);
 
-        if (isNaN(latitude) || isNaN(longitude) || isNaN(radiusValue)) {
-            return res.status(400).json({ error: "Invalid lat/lon values" });
-        }
-
-        // Calculate bounds
-        const LATITUDE_DIFFERENCE = 0.0025;
-        const LONGITUDE_DIFFERENCE = 0.0035;
-        
-        // if (!minX && !minY && !maxX && !maxY) {
-            let yMax = latitude + (LATITUDE_DIFFERENCE * radiusValue);
-            let yMin = latitude - (LATITUDE_DIFFERENCE * radiusValue);
-            let xMax = longitude + (LONGITUDE_DIFFERENCE * radiusValue);
-            let xMin = longitude - (LONGITUDE_DIFFERENCE * radiusValue);
+            const LATITUDE_DIFFERENCE = 0.0025;
+            const LONGITUDE_DIFFERENCE = 0.0035;
+            
+            let calculatedYMax = latitude + (LATITUDE_DIFFERENCE * radiusValue);
+            let calculatedYMin = latitude - (LATITUDE_DIFFERENCE * radiusValue);
+            let calculatedXMax = longitude + (LONGITUDE_DIFFERENCE * radiusValue);
+            let calculatedXMin = longitude - (LONGITUDE_DIFFERENCE * radiusValue);
 
             // Validate bounds
-            yMax = Math.min(yMax, 90);
-            yMin = Math.max(yMin, -90);
-            xMax = Math.min(xMax, 180);
-            xMin = Math.max(xMin, -180);
-        
+            calculatedYMax = Math.min(calculatedYMax, 90);
+            calculatedYMin = Math.max(calculatedYMin, -90);
+            calculatedXMax = Math.min(calculatedXMax, 180);
+            calculatedXMin = Math.max(calculatedXMin, -180);
+
+            yMax = calculatedYMax;
+            yMin = calculatedYMin;
+            xMax = calculatedXMax;
+            xMin = calculatedXMin;
+        }
 
         const url = `https://bustimes.org/vehicles.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
         // Get all buses in the area
@@ -289,6 +306,7 @@ async function fetchJourneyData(journeyId, res) {
     // If no data from journey, return empty response
     return res.status(200).json({});
 }
+
 function findLongestRoute(response, route) {
     if (response.data) {
         const features = response.data.features;
@@ -321,5 +339,169 @@ function findLongestRoute(response, route) {
     return null;  
 }
 
+async function getFirstBusLocation() {
+    // Clear existing data
+    firstBusData = [];
+
+    // Initialize socket if not connected
+    if (!socket || socket.readyState !== WebSocket.OPEN) {
+        const token = await getSocketToken();
+        if (token) {
+            await startSocket(token);
+        } else {
+            console.error("Failed to get socket token");
+            return null;
+        }
+    }
+
+    try {
+        // Send message to get bus locations
+        await sendSocketMessage(58.086589, 0.988770, 55.235288, -9.475708);
+    } catch (error) {
+        console.error("Error getting bus locations:", error);
+        return null;
+    }
+}
+
+async function getSocketToken() {
+    const url = "https://dev.mobileapi.firstbus.co.uk/api/v1/bus/service/socketInfo";
+    try {
+        const response = await axios.get(url, {
+            headers: {
+                "x-app-key": "b05fbe23a091533ea3efbc28321f96a1cf3448c1",
+                "accept": "text/plain"
+            }
+        });
+        
+        let token = null;
+        if (response.status === 200 && response.data && response.data.data) {
+            token = response.data.data["access-token"];
+        }
+
+        return token;
+    } catch (error) {
+        console.error("Error getting socket token:", error);
+        return null;
+    }
+}
+
+function startSocket(token) {
+    return new Promise((resolve, reject) => {
+        // Close existing socket if open
+        if (socket && socket.readyState === WebSocket.OPEN) {
+            socket.close();
+        }
+        
+        // Create new socket connection
+        socket = new WebSocket("wss://streaming.bus.first.transportapi.com/", {
+            headers: { Authorization: "Bearer " + token }
+        });
+
+        socket.on("open", () => {
+            console.log("Connected to First Bus Web Socket");
+            resolve();
+        });
+
+        socket.on("message", (data) => {
+            console.log("HITTTT")
+            try {
+                const message = JSON.parse(data.toString());
+                if (message && message.params && message.params.resource && message.params.resource.member) {
+                    // Clear existing data
+                    firstBusData = [];
+                    
+                    // Update with new data
+                    message.params.resource.member.forEach(bus => {
+                        firstBusData.push({
+                            journeyId: null,
+                            longitude: bus.status.location.coordinates[0],
+                            latitude: bus.status.location.coordinates[1],
+                            heading: bus.status.bearing,
+                            route: bus.line_name,
+                            destination: null,
+                            noc: bus.operator || null
+                        });
+                    });
+                    
+                    console.log(`Updated bus data: ${firstBusData.length} buses`);
+                }
+            } catch (error) {
+                console.error("Error processing socket message:", error);
+            }
+        });
+
+        socket.on("error", (err) => {
+            console.error("Failed to connect to First Bus Web Socket:", err);
+            reject(err);
+        });
+        
+        socket.on("close", () => {
+            console.log("Socket connection closed");
+            socket = null;
+        });
+        
+        // Add timeout 
+        setTimeout(() => {
+            if (socket.readyState !== WebSocket.OPEN) {
+                reject(new Error("Socket connection timeout"));
+            }
+        }, 10000);
+    });
+}
+
+async function sendSocketMessage(yMax, xMax, yMin, xMin) {
+    // Ensure socket is ready
+    if (!socket || socket.readyState !== WebSocket.OPEN) {
+        console.log("Socket not ready, attempting to reconnect");
+        const token = await getSocketToken();
+        if (token) {
+            await startSocket(token);
+        } else {
+            throw new Error("Could not get socket token");
+        }
+    }
+
+    const message = JSON.stringify({
+        "jsonrpc": "2.0",
+        "id": "4b9444d9-ffcb-4f22-b36d-14deff240a65",
+        "method": "configuration",
+        "params": {
+            "min_lon": parseFloat(parseFloat(xMin).toFixed(4)),
+            "max_lon": parseFloat(parseFloat(xMax).toFixed(4)),
+            "min_lat": parseFloat(parseFloat(yMin).toFixed(4)),
+            "max_lat": parseFloat(parseFloat(yMax).toFixed(4))
+        }
+    });
+
+    return new Promise((resolve, reject) => {
+        socket.send(message);
+        
+        const timeout = setTimeout(() => reject(new Error("Response timeout")), 10000);
+        
+        const messageHandler = (data) => {
+            try {
+                const response = JSON.parse(data.toString());
+                
+                if (response.result && Object.keys(response.result).length === 0) {
+                    console.log("Received empty acknowledgment, waiting for data...");
+                    return; 
+                }
+                
+                clearTimeout(timeout);
+                socket.removeListener("message", messageHandler);
+                resolve(response);
+            } catch (error) {
+                console.error("Error parsing socket message:", error);
+            }
+        };
+        
+        socket.on("message", messageHandler);
+        
+        setTimeout(() => {
+            socket.removeListener("message", messageHandler);
+            resolve({"jsonrpc": "2.0", "result": "timeout waiting for data"});
+        }, 5000);
+    });
+}
 
 module.exports = router;

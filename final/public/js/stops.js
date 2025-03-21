@@ -4,9 +4,10 @@
  * @description A module handling stop information, including fetching from relevant APIs and drawing stops on a map
  */
 
-import { findBus } from "./busGps.js";
+
 import { setViewAllBuses, updateBusesAndStops } from "./map.js";
 import { removeRoute } from "./busRoute.js";
+import { getSpecificBusGPS, drawBus, showSpecificBusRoute } from "./busGps.js";
 
 // Constants
 const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
@@ -164,11 +165,36 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
         $("#bus-data").html(htmlContent);
 
         document.querySelectorAll(".bus-time-record").forEach((element) => {
-            element.addEventListener("click", () => {
+            element.addEventListener("click", async () => {
                 const serviceNumber = element.dataset.serviceNumber;
                 const noc = element.dataset.operatorCode;
                 console.log(latitude, longitude);
-                findBus(serviceNumber, latitude, longitude, map, noc);
+                const busData = await getSpecificBusGPS(serviceNumber, false);
+                    if (busData.length === 0) {
+                        console.log("No buses found for this service.");
+                        showNotification("No live buses found for this route", "info")
+                        // Remove all URL parameters
+                        // Update URL without refreshing page
+                        const newUrl = window.location.origin + window.location.pathname;
+                        window.history.pushState({ path: newUrl }, "", newUrl);
+
+                        setViewAllBuses(true);
+                        removeRoute(map);
+                        updateBusesAndStops();
+                        return;
+                    }
+
+                    setViewAllBuses(false, busData[0].noc, serviceNumber);
+
+                    drawBus(busData, map);
+
+                    if (busData[0].serviceId) {
+                        await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, serviceNumber, map, noc);
+                    } else {
+                        // const newUrl = window.location.origin + window.location.pathname;
+                        // window.history.pushState({ path: newUrl }, "", newUrl);
+                        showNotification("Route information not available", "warning");
+                    }
             });
         });
     } else {
@@ -206,12 +232,11 @@ async function drawStops(stopsData, map) {
     map.stopMarkers = [];
     stopsData.forEach(stop => {
         // create marker
-        const circle = L.circle([stop.latitude, stop.longitude], {
-            color: "red", 
-            fillColor: "red", 
-            fillOpacity: 0.5,
-            radius: map.stopCircleRadius
-        }).addTo(map);
+        const icon = L.icon({
+            iconUrl: `https://i.ibb.co/WNWc6gGK/busStop.png`, 
+            iconSize: [50, 50], 
+        });
+        const circle = L.marker([stop.latitude, stop.longitude], {icon: icon}).addTo(map);
 
         // get services for this stop as a string
         let stopServicesString = "";
@@ -232,16 +257,16 @@ async function drawStops(stopsData, map) {
                 Services: ${stopServicesString}<br>
             </div>
         `;
-        circle.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
+        circle.bindTooltip(toolTipContent, { permanent: false, direction: "top", offset: [0, -20] });
 
         // makes the tooltip permanent when clicked on
         circle.on("click", (event) => {
             // stop tooltip
             map.stopMarkers.forEach(marker => {
                 marker.closeTooltip();
-                marker.setStyle({ fillColor: "red", color: "red" });
+                marker.setIcon(L.icon({ iconUrl: "https://i.ibb.co/WNWc6gGK/busStop.png", iconSize: [50, 50] }));
             });
-            circle.setStyle({ fillColor: "#ff9100", color: "#ff9100" });
+            circle.setIcon(L.icon({ iconUrl: "https://i.ibb.co/5XCC3MPt/clicked-Bus-Stop.png", iconSize: [50, 50] }));
             circle.openTooltip();
 
             updateURLWithStop(stop.bustimes_id)
@@ -259,7 +284,6 @@ async function drawStops(stopsData, map) {
         map.stopMarkers.push(circle);
     });
 }
-
 
 // Export functions
 export { fetchStopsInViewport, fetchStopId, loadStopTimes, drawStops };

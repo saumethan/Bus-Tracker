@@ -9,8 +9,6 @@ import { adjustMapViewToRoute } from "./map.js";
 
 let route; 
 let busRouteNotFound = false;
-let busData;
-
 
 // ------------------ Function to get the bus route ------------------
 
@@ -75,4 +73,3 @@ function removeRoute(map) {
 }
 
 export { getBusRoute, drawBusRoute, removeRoute };
-
