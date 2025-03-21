@@ -23,12 +23,14 @@ const createRoute = require("./routes/create");
 // set the view engine to ejs
 app.set("view engine", "ejs");
 
+const port = 8080
+const BASE_URL = process.env.BASE_URL || `http://localhost:${port}`;
+
 // SERVER ENDPOINT: index page 
 app.get("/", async function(req, res) {
     res.render("pages/index");
     try {
-        // Start websocket for firstbus live bus locations
-        await axios.get(`http://localhost:8080/api/buses/startWebsocket`);
+        await axios.get(`${BASE_URL}/api/buses/startWebsocket`);
         console.log("WebSocket started and running in the background.");
     } catch (error) {
         console.error("Error starting WebSocket:", error);
@@ -61,5 +63,5 @@ app.use(function(req, res, next) {
 });
 
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
-app.listen(8080);
-console.log("8080 is the magic port");
+app.listen(port);
+console.log("8080 is the magic ", port);
