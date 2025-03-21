@@ -300,7 +300,7 @@ router.get("/routes", async (req, res) => {
 
         try {
             const ROUTES_FILE = loadRoutes();
-            const routeKey = `${route}_${noc}`.replace(/[^a-zA-Z0-9_]/g, '');
+            const routeKey = `${route}_${noc}`.replace(/[^a-zA-Z0-9_]/g, "");
         
             console.log("Loaded Routes File:", ROUTES_FILE);
             console.log("Route Key:", routeKey);
