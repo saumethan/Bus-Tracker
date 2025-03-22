@@ -144,11 +144,11 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                     timeString += ` (Exp: ${realTimeDeparture})`
                 }
 
-                console.log(bus)
-                console.log(bus.operator.operatorCode)
+                //console.log(bus)
+                //console.log(bus.operator.operatorCode)
                 // TODO: pass this to the bus data div
-                console.log(bus.destination)
-                console.log(bus.serviceNumber)
+                //console.log(bus.destination)
+                //console.log(bus.serviceNumber)
 
                 // add to html
                 htmlContent += `
@@ -169,10 +169,10 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
             element.addEventListener("click", async () => {
                 const serviceNumber = element.dataset.serviceNumber;
                 const noc = element.dataset.operatorCode;
-                console.log(latitude, longitude);
+                //console.log(latitude, longitude);
                 const busData = await getSpecificBusGPS(serviceNumber, false, latitude, longitude);
                     if (busData.length === 0) {
-                        console.log("No buses found for this service.");
+                        //console.log("No buses found for this service.");
                         showNotification("No live buses found for this route", "info")
                         // Remove all URL parameters
                         // Update URL without refreshing page
@@ -193,8 +193,8 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                     window.history.pushState({ path: newUrl }, "", newUrl);
 
                     if (busData[0].serviceId || noc && serviceNumber) {
-                        console.log(serviceNumber)
-                        console.log(noc)
+                        //console.log(serviceNumber)
+                        //console.log(noc)
                         await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, serviceNumber, map, noc);
                     } else {
                         // const newUrl = window.location.origin + window.location.pathname;
@@ -208,7 +208,7 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
             $("#bus-data").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
         }
     } catch (err) {
-        console.log(err);
+        //console.log(err);
         // handle error
         $("#bus-data").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
     }

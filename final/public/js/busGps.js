@@ -31,7 +31,7 @@ async function getSpecificBusGPS(route, useBounds, lat, lng) {
         const busData = response || [];
         
         // if (busData.length === 0) {
-        //     console.log("No buses found for this service.");
+        //     //console.log("No buses found for this service.");
         //     showNotification("No live buses found for this route", "info")
         //     // Remove all URL parameters
         //     // Update URL without refreshing page
@@ -44,7 +44,7 @@ async function getSpecificBusGPS(route, useBounds, lat, lng) {
         //     return;
         // }
 
-        console.log(busData)
+        //console.log(busData)
         
         return busData;
     } catch (error) {
@@ -80,10 +80,10 @@ async function drawBus(busData, map) {
         map.busMarkers = [];
     }
 
-    console.log(busData)
+    //console.log(busData)
     // Check if busData is valid
     if (!busData || busData.length === 0) {
-        console.log("No bus data available to display");
+        //console.log("No bus data available to display");
         return;
     }
 
@@ -120,10 +120,10 @@ async function drawBus(busData, map) {
             // Update URL to reflect the selected bus route
             updateURLWithRoute(coord.route);
 
-            console.log(coord.noc)
-            console.log(coord.serviceId)
-            console.log(coord.tripId)
-            console.log(coord.route)
+            //console.log(coord.noc)
+            //console.log(coord.serviceId)
+            //console.log(coord.tripId)
+            //console.log(coord.route)
 
             // Only try to show specific route if we have serviceId and tripId
             // if (coord.serviceId && coord.tripId) {
@@ -185,7 +185,7 @@ async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map,
                 adjustMapViewToRoute(routeLine);
             }
         } else {
-            console.log("No route found");
+            //console.log("No route found");
             showNotification("No route available", "warning");
         }
     } catch (error) {
@@ -198,14 +198,14 @@ async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map,
             const busData = await getSpecificBusGPS(routeNumber, true);
             drawBus(busData, map);
         } catch (error) {
-            console.log(error);
+            //console.log(error);
         }
     } else if (busNumber) {
         try {
             const busData = await getSpecificBusGPS(busNumber, true);
             drawBus(busData, map);
         } catch (error) {
-            console.log(error);
+            //console.log(error);
         }
     } else {
         showNotification("Could not display buses at this time", "error");

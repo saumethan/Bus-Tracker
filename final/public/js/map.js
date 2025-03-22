@@ -164,7 +164,7 @@ function getViewportBounds() {
 
 // ------------------ Function to get the map coordinates ------------------
 function getCenterCoordinates() {
-    console.log("here")
+    //console.log("here")
     const center = map.getCenter(); 
     if (center) {
         const lat = center.lat;  
@@ -216,7 +216,7 @@ async function updateBuses() {
         }
 
         const { minX, minY, maxX, maxY } = getViewportBounds();
-        console.log(minX, minY, maxX, maxY)
+        //console.log(minX, minY, maxX, maxY)
 
         if (viewAllBuses) {
             // Show all buses in viewport
@@ -229,7 +229,7 @@ async function updateBuses() {
                 drawBus(busData, map);
             } catch (error) {
                 // Fallback to filtering all buses
-                console.log("Falling back to filtered buses kuhgihokgfihufaAHKJFL:", error);
+                //console.log("Falling back to filtered buses kuhgihokgfihufaAHKJFL:", error);
                 // const allBuses = await getAllBusGPS(maxY, maxX, minY, minX);
                 // const filteredBuses = getFilteredBuses(allBuses, route);
                 // drawBus(filteredBuses, map);
@@ -241,7 +241,7 @@ async function updateBuses() {
                 drawBus(busData, map);
             } catch (error) {
                 // Fallback to filtering all buses
-                console.log("Falling back to filtered buses:", error);
+                //console.log("Falling back to filtered buses:", error);
                 const allBuses = await getAllBusGPS(maxY, maxX, minY, minX);
                 const filteredBuses = getFilteredBuses(allBuses, getRouteNumber());
                 drawBus(filteredBuses, map);
@@ -333,7 +333,7 @@ async function searchRoute(event) {
     const busData = await getSpecificBusGPS(route, false);
     
     if (busData.length === 0) {
-        console.log("No buses found for this service.");
+        //console.log("No buses found for this service.");
         showNotification("No live buses found for this route", "info")
         // Remove all URL parameters
         // Update URL without refreshing page
@@ -400,21 +400,21 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     const routeNumber = getUrlParameter("bus");
     if (routeNumber) {
-        console.log(`Bus route detected in URL: ${routeNumber}`);
+        //console.log(`Bus route detected in URL: ${routeNumber}`);
         const { lat, lng } = getUserCoordinates();
-        console.log(lat, lng)
+        //console.log(lat, lng)
         setViewAllBuses(false);
-        console.log(routeNumber)
+        //console.log(routeNumber)
         const busData = await getSpecificBusGPS(routeNumber, false, lat, lng);
         drawBus(busData, map);
-        console.log(busData)
+        //console.log(busData)
         await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, routeNumber, map, busData[0].noc);
     }
 
     // FINISH THIS TO SHOW THE STOP 
     const stopId = getUrlParameter("stop");
     if (stopId) {
-        console.log(`Bus stop detected in URL: ${stopId}`);
+        //console.log(`Bus stop detected in URL: ${stopId}`);
     }
 
     // Handle map movement events
