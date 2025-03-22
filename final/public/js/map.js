@@ -401,8 +401,14 @@ document.addEventListener("DOMContentLoaded", async function() {
     const routeNumber = getUrlParameter("bus");
     if (routeNumber) {
         console.log(`Bus route detected in URL: ${routeNumber}`);
-        busData = await getSpecificBusGPS(route, false);
+        const { lat, lng } = getUserCoordinates();
+        console.log(lat, lng)
+        setViewAllBuses(false);
+        console.log(routeNumber)
+        const busData = await getSpecificBusGPS(routeNumber, false, lat, lng);
         drawBus(busData, map);
+        console.log(busData)
+        await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, routeNumber, map, busData[0].noc);
     }
 
     // FINISH THIS TO SHOW THE STOP 
