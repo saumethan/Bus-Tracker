@@ -162,6 +162,9 @@ function updateURLWithRoute(route) {
 
 // ------------------ Function to update map with specific bus route ------------------
 async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map, noc) { 
+
+    let routeNumber;
+
     if (!map.busMarkers) {
         map.busMarkers = [];
     } else {
@@ -170,16 +173,14 @@ async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map,
         map.busMarkers = [];
     }
 
-    console.log(serviceId)
-
     try {
-        const { routeCoords, routeNumber, destination } = await getBusRoute(serviceId, busId, journeyId, noc, busNumber);
-        console.log(routeNumber)
-        console.log(routeCoords, routeNumber, destination)
+        const response = await getBusRoute(serviceId, busId, journeyId, noc, busNumber);
+        const { routeCoords, destination } = response;
+        routeNumber = response.routeNumber;
+
         if (routeCoords && routeCoords.length > 0) {
             const routeLine = drawBusRoute(routeCoords, routeNumber, destination, map);
             
-            // Use the adjustMapViewToRoute function which now sets flags to prevent redundant API calls
             if (typeof adjustMapViewToRoute === "function") {
                 adjustMapViewToRoute(routeLine);
             }
@@ -192,36 +193,22 @@ async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map,
         showNotification("Error 4fetching bus route", "error");
     }
 
-    // Get the viewport bounds for potential fallback
-    const { minX, minY, maxX, maxY } = getViewportBounds();
-
-    // Fetch and draw buses with matching NOC and route
-    try {
-        console.log("1.1")
-        if (routeNumber) {
-            console.log("1.2")
-            const busData = await getSpecificBusGPS(routeNumber, true);
-            console.log(busData)
-            drawBus(busData, map);
-        } else {
-            console.log("1.5")
-            throw new Error("Missing nocCode or routeNumber");
-        }
-    } catch (error) {
-        
-        console.log("1.6")
-        console.log("Falling back to all buses in viewport:", error);
-        // Fallback to showing all buses in viewport
+    if (routeNumber) {
         try {
-            console.log("1.7")
-            console.log(ruoteNumber)
             const busData = await getSpecificBusGPS(routeNumber, true);
             drawBus(busData, map);
-        } catch (fallbackError) {
-            console.log("1.8")
-            console.error("Error in fallback bus display:", fallbackError);
-            showNotification("Could not display buses at this time", "error");
+        } catch (error) {
+            console.log(error);
         }
+    } else if (busNumber) {
+        try {
+            const busData = await getSpecificBusGPS(busNumber, true);
+            drawBus(busData, map);
+        } catch (error) {
+            console.log(error);
+        }
+    } else {
+        showNotification("Could not display buses at this time", "error");
     }
 }
 
