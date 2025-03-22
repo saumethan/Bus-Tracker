@@ -507,13 +507,26 @@ function startSocket(area, token) {
                 if (message && message.params && message.params.resource && message.params.resource.member) {
                     const buses = [];
                     message.params.resource.member.forEach(bus => {
+                        const stops = bus.stops || [];
+                        let destination;
+                        if (stops.length > 0) {
+                            const lastStop = stops[stops.length - 1];
+                            if (lastStop.name) {
+                                destination = lastStop.name;
+                            }  else {
+                                destination = "Unknown";
+                            }
+                        } else {
+                            destination = "Unknown";
+                        }
+
                         buses.push({
                             journeyId: null,
                             longitude: bus.status.location.coordinates[0],
                             latitude: bus.status.location.coordinates[1],
                             heading: bus.status.bearing,
                             route: bus.line_name,
-                            destination: null,
+                            destination: destination,
                             noc: bus.operator || null
                         });
                     });
