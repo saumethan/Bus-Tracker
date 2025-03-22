@@ -189,6 +189,9 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
 
                     drawBus(busData, map);
 
+                    const newUrl = window.location.origin + window.location.pathname + `?bus=${serviceNumber}`;
+                    window.history.pushState({ path: newUrl }, "", newUrl);
+
                     if (busData[0].serviceId || noc && serviceNumber) {
                         console.log(serviceNumber)
                         console.log(noc)
