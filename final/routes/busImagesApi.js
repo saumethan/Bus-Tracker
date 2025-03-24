@@ -71,9 +71,10 @@ router.get("/get", async (req, res) => {
         ctx.textAlign = "center";
         ctx.fillText(busName, canvas.width / 2, 115);
 
-        // send image as response
+        // create image buffer and send the buffer instead of piping stream
+        const buffer = canvas.toBuffer("image/png");
         res.setHeader("Content-Type", "image/png");
-        canvas.createPNGStream().pipe(res);
+        res.send(buffer);
     } catch (error) {
         console.error("Error generating bus image:", error);
         res.status(500).json({ error: "Failed to generate bus image" });

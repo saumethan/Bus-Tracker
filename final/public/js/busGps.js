@@ -10,6 +10,8 @@ import { getBusRoute, drawBusRoute, removeRoute } from "./busRoute.js";
 import { showNotification } from "./helper.js";
 import { getUserCoordinates } from "./userlocation.js";
 
+// Variables
+const busImageCache = {};
 let routeNumber;
 let nocCode;
 
@@ -88,27 +90,42 @@ async function drawBus(busData, map) {
     }
 
     // Draw each bus marker
-    busData.forEach( coord => { 
+    for (let i = 0; i < busData.length; i++) {
+        const coord = busData[i];
+
         // Make sure we have valid coordinates
         if (!coord.latitude || !coord.longitude) {
-            return;
+            continue;
         }
-        
-        // create icon by fetching API endpoint that returns image
+
+        // Find the icon for this bus
+        let busIcon = busImageCache[`${coord.noc}-${coord.route}`];
+        if (!busIcon) {
+            // fetch image from our endpoint
+            const imageBuffer = await fetch(`/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}&bearing=${coord.heading}`);
+            
+            // turn the buffer into a blob, then into a readable URL
+            const blob = await imageBuffer.blob();
+            busIcon = URL.createObjectURL(blob);
+
+            // cache the fetched image
+            busImageCache[`${coord.noc}-${coord.route}`] = busIcon;
+        }
+
+        // Create marker with the bus icon on it
         const icon = L.icon({
-            iconUrl: `/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}&bearing=${coord.heading}`, 
+            iconUrl: busIcon, 
             iconSize: [40, 60], 
         });
-
         const circle = L.marker([coord.latitude, coord.longitude], {icon: icon}).addTo(map);
 
+        // Create tooltip for marker
         const toolTipContent = ` 
             <div>
                 <strong>Route: ${coord.route || "Unknown"}</strong><br>
                 Destination: ${coord.destination || "Unknown"}<br>
             </div>
         `;
-
         circle.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
 
         // Add click event listener to the bus marker
@@ -120,19 +137,8 @@ async function drawBus(busData, map) {
             // Update URL to reflect the selected bus route
             updateURLWithRoute(coord.route);
 
-            //console.log(coord.noc)
-            //console.log(coord.serviceId)
-            //console.log(coord.tripId)
-            //console.log(coord.route)
-
             // Only try to show specific route if we have serviceId and tripId
-            // if (coord.serviceId && coord.tripId) {
-                await showSpecificBusRoute(coord.serviceId, coord.tripId, coord.journeyId, coord.route, map, coord.noc);
-            // } else {
-                // const newUrl = window.location.origin + window.location.pathname;
-                // window.history.pushState({ path: newUrl }, "", newUrl);
-                // showNotification("Route information not available", "warning");
-            
+            await showSpecificBusRoute(coord.serviceId, coord.tripId, coord.journeyId, coord.route, map, coord.noc);
 
             // Reset tooltips on all markers
             map.busMarkers.forEach(marker => {
@@ -142,7 +148,7 @@ async function drawBus(busData, map) {
             });
         });
         map.busMarkers.push(circle);
-    });
+    }
 
     // Close tooltips when clicking elsewhere on the map
     map.on("click", () => {
@@ -162,7 +168,6 @@ function updateURLWithRoute(route) {
 
 // ------------------ Function to update map with specific bus route ------------------
 async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map, noc) { 
-
     let routeNumber;
 
     if (!map.busMarkers) {
@@ -220,6 +225,16 @@ function getRouteNumber() {
     return routeNumber;
 }
 
+// Clear bus cache every 20 seconds to free up memory
+setInterval(() => {
+    // release object URLs to avoid memory leaks
+    Object.values(busImageCache).forEach(url => {
+        URL.revokeObjectURL(url);
+    });
+    
+    // clear the cache object
+    Object.keys(busImageCache).forEach(key => delete busImageCache[key]);
+}, 60000);
 
 // Export functions
 export { getAllBusGPS, getSpecificBusGPS, drawBus, getRouteNumber, getNocCode, showSpecificBusRoute };
