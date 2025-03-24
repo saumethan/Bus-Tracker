@@ -126,6 +126,9 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                     // real time is after scheduled time so bus is delayed
                     busStatus = "DELAYED";
                     statusColor = "orange";
+                } else if (realTimeDeparture < scheduledDeparture) {
+                    // real time is before the schedule time so bus is early
+                    busStatus = "EARLY";
                 } else if (!bus.realTimeDeparture) {
                     // bus does not have a real time departure, so we cannot reliably predict that it is on time
                     busStatus = "SCHEDULED";

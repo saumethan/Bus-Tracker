@@ -149,16 +149,6 @@ aside {
     overflow-y: scroll;
 }
 
-.bus-time-record {
-    padding: 10px !important;
-    border-bottom: 1px solid #ddd;
-    cursor: pointer;
-}
-
-.bus-time-record.active:hover {
-    background-color: #e9ecef;
-}
-
 .search-container button {
     background: #ddd;
     border: none;
@@ -287,17 +277,39 @@ footer p {
     width: 100%;
     justify-content: space-between;
     display: flex;
-    flex-wrap: wrap;
-    padding: 0;
+    flex-wrap: nowrap;
     margin: 0;
+    align-items: center;
+    padding: 10px !important;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
 }
 
-.bus-time-record .times {
-    text-align: right;
+.bus-time-record.active:hover {
+    background-color: #e9ecef;
+}
+
+.bus-time-record h2 {
+    flex: 1;
+    margin-right: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .bus-time-record .destination {
     font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.bus-time-record .times {
+    text-align: right;
+    flex-shrink: 0;
 }
 
 button.btn-link.number {
