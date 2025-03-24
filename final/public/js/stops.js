@@ -195,7 +195,7 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                     if (busData[0].serviceId || noc && serviceNumber) {
                         //console.log(serviceNumber)
                         //console.log(noc)
-                        await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, serviceNumber, map, noc);
+                        await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, serviceNumber, map, noc, busData[0].direction);
                     } else {
                         // const newUrl = window.location.origin + window.location.pathname;
                         // window.history.pushState({ path: newUrl }, "", newUrl);
