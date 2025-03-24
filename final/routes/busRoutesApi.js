@@ -227,42 +227,29 @@ router.get("/routes", async (req, res) => {
     
     try {
 
-        if (noc === "TRDU" || (noc === "FSCE" && route === 22)) {
-            try {
-                const url = `https://www.xploredundee.com/_ajax/lines/map/TRDU/${route}`;
-                const response = await axios.get(url);
-        
-                const routeData = findLongestRoute(response, route);
-
-                if (routeData) {
-                    return res.json(routeData);  
-                } else {
-                    return res.status(404).json({ error: "No route data found." }); 
-                }
-        
-            } catch (error) {
-                console.error("Error:", error.message);
-                return await fetchJourneyData(journeyId, res); // Fallback to journey data if URL 1 fails
-            }
+        let url;
+    
+        if (noc === "TRDU" || (noc === "FSCE" && [22, 32, 33, 18].includes(route))) {
+            url = `https://www.xploredundee.com/_ajax/lines/map/TRDU/${route}`;
+        } else if (noc === "MBLB" || noc === "FSCE") {
+            url = `https://www.mcgillsscotlandeast.co.uk/_ajax/lines/map/MBLB/${route}`;
+        } else if (noc === "MCGL") {
+            url = `https://www.mcgillsbuses.co.uk/_ajax/lines/map/McG/${route}`;
         }
         
-
-        if (noc === "MBLB" || noc === "MCGL" || noc === "FSCE") {
+        if (url) {
             try {
-                const url = `https://www.mcgillsscotlandeast.co.uk/_ajax/lines/map/MBLB/${route}`;
+                console.log("Fetching URL:", url);
                 const response = await axios.get(url);
-        
                 const routeData = findLongestRoute(response, route);
-
+                
                 if (routeData) {
-                    return res.json(routeData);  
+                    return res.json(routeData);
                 } else {
-                    return res.status(404).json({ error: "No route data found." }); 
+                    return res.status(404).json([]);
                 }
-        
             } catch (error) {
-                console.error("Error:", error.message);
-                return await fetchJourneyData(journeyId, res); // Fallback to journey data if URL 1 fails
+                console.error("Error fetching data:", error.message);
             }
         }
         
