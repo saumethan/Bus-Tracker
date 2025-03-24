@@ -325,7 +325,7 @@ router.get("/routes", async (req, res) => {
                 return res.json({ 
                     routeCoords: ROUTES_FILE[routeKey], 
                     routeNumber: routeNumber, 
-                    destination: "Unknown Destination" 
+                    destination: null 
                 });
             } else {
                 console.log(`Route ${routeKey} not found in local file.`);
@@ -392,7 +392,7 @@ function findLongestRoute(response, routeNumber) {
         // Feature with most coordinates
         if (featureWithMostCoords) {
             const routeCoords = featureWithMostCoords.geometry.coordinates;
-            const destination = "";  
+            const destination = null;  
             return { routeCoords, routeNumber, destination };
         } else {
             return null;  

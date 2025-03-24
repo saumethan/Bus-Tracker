@@ -352,7 +352,7 @@ async function searchRoute(event) {
     drawBus(busData, map);
 
     if (busData[0].serviceId) {
-        await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, route, map, noc, busData[0].direction);
+        await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, route, map, noc, busData[0].direction, busData[0].destination);
     } else {
         // const newUrl = window.location.origin + window.location.pathname;
         // window.history.pushState({ path: newUrl }, "", newUrl);
@@ -408,7 +408,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         const busData = await getSpecificBusGPS(routeNumber, false, lat, lng);
         drawBus(busData, map);
         //console.log(busData)
-        await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, routeNumber, map, busData[0].noc, busData[0].direction);
+        await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, routeNumber, map, busData[0].noc, busData[0].direction, busData[0].destination);
     }
 
     // FINISH THIS TO SHOW THE STOP 

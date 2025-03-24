@@ -138,7 +138,7 @@ async function drawBus(busData, map) {
             updateURLWithRoute(coord.route);
 
             // Only try to show specific route if we have serviceId and tripId
-            await showSpecificBusRoute(coord.serviceId, coord.tripId, coord.journeyId, coord.route, map, coord.noc, coord.direction);
+            await showSpecificBusRoute(coord.serviceId, coord.tripId, coord.journeyId, coord.route, map, coord.noc, coord.direction, coord.destination);
 
             // Reset tooltips on all markers
             map.busMarkers.forEach(marker => {
@@ -167,7 +167,7 @@ function updateURLWithRoute(route) {
 }
 
 // ------------------ Function to update map with specific bus route ------------------
-async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map, noc, direction) { 
+async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map, noc, direction, busDestination) { 
     let routeNumber;
 
     if (!map.busMarkers) {
@@ -183,8 +183,10 @@ async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map,
         const { routeCoords, destination } = response;
         routeNumber = response.routeNumber;
 
+        const finalDestination = destination || busDestination
+
         if (routeCoords && routeCoords.length > 0) {
-            const routeLine = drawBusRoute(routeCoords, routeNumber, destination, map);
+            const routeLine = drawBusRoute(routeCoords, routeNumber, finalDestination, map);
             
             if (typeof adjustMapViewToRoute === "function") {
                 adjustMapViewToRoute(routeLine);
