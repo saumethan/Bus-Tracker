@@ -43,7 +43,7 @@ async function scrapeTimetable(service, date) {
 
 // Route for rendering the timetable page
 router.get("/", async (req, res) => {
-    res.render("pages/timetable");
+    res.render("pages/timetable", { page: "timetable" });
 });
 
 // API Route to fetch timetable data

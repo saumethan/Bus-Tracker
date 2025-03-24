@@ -17,13 +17,13 @@
             <div class="collapse navbar-collapse rounded-4 rounded-top-0" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 p-4">  
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Map</a>
+                        <a class="nav-link <%= page === 'map' ? 'active' : '' %>" href="/">Map</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/timetable">Timetables</a>
+                        <a class="nav-link <%= page === 'timetable' ? 'active' : '' %>" href="/timetable">Timetables</a>
                     </li>
                     <li onclick="alert('This feature is coming soon! Edited')" class="nav-item">
-                        <a class="nav-link" href="#">Plan Trip</a>
+                        <a class="nav-link <%= page === 'plantrip' ? 'active' : '' %>" href="#">Plan Trip</a>
                     </li>
     
                     <!-- login dropdown -->
