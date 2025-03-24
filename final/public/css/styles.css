@@ -429,6 +429,11 @@ button.btn-link.number:hover {
         height: 0;
     }
 
+    /* =-=-=-= Notification popups =-=-=-= */
+    #notification-container {
+        visibility: hidden;
+    }
+
     /* RESIZABLE BUS DATA PANEL */
     .row {
         display: flex;
