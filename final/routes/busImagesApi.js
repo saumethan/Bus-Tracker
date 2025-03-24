@@ -9,7 +9,7 @@ router.get("/get", async (req, res) => {
     // make sure a bus name is passed
     // NOC can be null because the API sometimes returns that
     const noc = req.query.noc || "";
-    const busName = req.query.routeName;
+    const busName = req.query.routeName || "N/A";
     const bearing = req.query.bearing ? parseFloat(req.query.bearing) : 0;
 
     if (!busName) {
@@ -40,6 +40,22 @@ router.get("/get", async (req, res) => {
             // ember
             logoUrl = "https://i.ibb.co/d08My2kN/ember.png";
             indicatorImage = "https://i.ibb.co/RpBX5Cb1/indicator-ember.png";
+        } else if (noc.toLowerCase() === "trdu") {
+            // xplore dundee
+            logoUrl = "https://i.ibb.co/S7f4f7pZ/xplore-dundee.png";
+            indicatorImage = "https://i.ibb.co/jPBpFBXJ/indicator.png"
+        } else if (noc.toLowerCase() === "mcgl" || noc.toLowerCase() === "brbu") {
+            // mcgills
+            logoUrl = "https://i.ibb.co/93VrBSmL/mcgills.png";
+            indicatorImage = "https://i.ibb.co/jPBpFBXJ/indicator.png"
+        } else if (noc.toLowerCase() === "loth" || noc.toLowerCase() === "etor" || noc.toLowerCase() === "ecbu" || noc.toLowerCase() === "nelb") {
+            // lothian buses
+            logoUrl = "https://i.ibb.co/JjTBHpQS/lothian-buses.png";
+            indicatorImage = "https://i.ibb.co/jPBpFBXJ/indicator.png"
+        } else if (noc.toLowerCase() === "mblb") {
+            // midland bluebird
+            logoUrl = "https://i.ibb.co/hR80Hmzh/midlands-bluebird.png";
+            indicatorImage = "https://i.ibb.co/jPBpFBXJ/indicator.png"
         } else {
             // generic logo
             logoUrl = "https://i.ibb.co/Q31hvPSL/bus.png";
