@@ -69,6 +69,7 @@ router.get("/", async (req, res) => {
                     longitude: longitude,
                     latitude: latitude,
                     heading: bus.heading,
+                    direction: null,
                     route: bus.service?.line_name,
                     destination: bus.destination,
                     tripId: bus.trip_id,
@@ -142,6 +143,7 @@ router.get("/find/:route", async (req, res) => {
                         longitude: bus.coordinates[0],
                         latitude: bus.coordinates[1],
                         heading: bus.heading,
+                        direction: null,
                         route: bus.service.line_name,
                         destination: bus.destination,
                         tripId: bus.trip_id,
@@ -197,6 +199,7 @@ router.get("/:noc/:route", async (req, res) => {
                     longitude: longitude,
                     latitude: latitude,
                     heading: bus.heading,
+                    direction: null,
                     route: bus.service.line_name,
                     destination: bus.destination,
                     tripId: bus.trip_id,
@@ -215,7 +218,12 @@ router.get("/:noc/:route", async (req, res) => {
 
 // SERVER ENDPOINT: Get bus route data
 router.get("/routes", async (req, res) => {
-    let { serviceId, tripId, journeyId, noc, route } = req.query;
+    const serviceId = req.query.serviceId;  
+    const tripId = req.query.tripId;  
+    const journeyId = req.query.journeyId;  
+    const noc = req.query.noc;  
+    const route = req.query.route;  
+    const direction = req.query.direction; 
     
     try {
 
@@ -319,7 +327,7 @@ router.get("/routes", async (req, res) => {
 
         try {
             const ROUTES_FILE = loadRoutes();
-            const routeKey = `${route}_${noc}`.replace(/[^a-zA-Z0-9_]/g, "");
+            const routeKey = `${route}_${noc}_${direction}`.replace(/[^a-zA-Z0-9_]/g, "");
         
             console.log("Loaded Routes File:", ROUTES_FILE);
             console.log("Route Key:", routeKey);
@@ -525,6 +533,7 @@ function startSocket(area, token) {
                             longitude: bus.status.location.coordinates[0],
                             latitude: bus.status.location.coordinates[1],
                             heading: bus.status.bearing,
+                            direction: bus.dir,
                             route: bus.line_name,
                             destination: destination,
                             noc: bus.operator || null
@@ -550,19 +559,20 @@ function startSocket(area, token) {
                     }
 
                     // put stops into stop data JSON
-                    // try {
-                    //     if (message.method === "update" && message.params?.resource?.member) {
-                    //         message.params.resource.member.forEach(bus => {
-                    //             const lineName = bus.line_name;
-                    //             const operator = bus.operator;
-                    //             const coordinates = bus.stops.map(stop => [stop.latitude, stop.longitude]);
+                    try {
+                        if (message.method === "update" && message.params?.resource?.member) {
+                            message.params.resource.member.forEach(bus => {
+                                const lineName = bus.line_name;
+                                const operator = bus.operator;
+                                const direction = bus.dir;
+                                const coordinates = bus.stops.map(stop => [stop.latitude, stop.longitude]);
                 
-                    //             addRoute(lineName, operator, coordinates);
-                    //         });
-                    //     }
-                    // } catch (error) {
-                    //     console.error("Error processing message:", error);
-                    // }
+                                addRoute(lineName, operator, direction, coordinates);
+                            });
+                        }
+                    } catch (error) {
+                        console.error("Error processing message:", error);
+                    }
                 }
             } catch (error) {
                 console.error(`Error processing ${area} socket message:`, error);
@@ -667,18 +677,16 @@ function saveRoutes(routes) {
     }
 }
 
-function addRoute(line_name, operator, coordinates) {
+function addRoute(line_name, operator, direction, coordinates) {
     let routes = loadRoutes();
 
-    const routeKey = `${line_name}_${operator}`;
+    const routeKey = `${line_name}_${operator}_${direction}`;
 
     // Only adds the route if it doesn't exist
     if (!routes[routeKey]) {
         routes[routeKey] = coordinates;
         saveRoutes(routes);
         console.log(`Route for ${line_name} (${operator}) added successfully.`);
-    } else {
-        console.log(`Route for ${line_name} (${operator}) already exists. Skipping update.`);
     }
 }
 
