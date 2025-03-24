@@ -42,20 +42,20 @@ router.get("/get", async (req, res) => {
             indicatorImage = "https://i.ibb.co/RpBX5Cb1/indicator-ember.png";
         } else if (noc.toLowerCase() === "trdu") {
             // xplore dundee
-            logoUrl = "https://i.ibb.co/S7f4f7pZ/xplore-dundee.png";
-            indicatorImage = "https://i.ibb.co/jPBpFBXJ/indicator.png"
+            logoUrl = "https://i.ibb.co/qM3Y85N7/xplore-dundee.png";
+            indicatorImage = "https://i.ibb.co/6cTJzntb/indicator-xplore.png"
         } else if (noc.toLowerCase() === "mcgl" || noc.toLowerCase() === "brbu") {
             // mcgills
-            logoUrl = "https://i.ibb.co/93VrBSmL/mcgills.png";
-            indicatorImage = "https://i.ibb.co/jPBpFBXJ/indicator.png"
+            logoUrl = "https://i.ibb.co/Nnbnq6cm/mcgills.png";
+            indicatorImage = "https://i.ibb.co/qFgFZnPX/indicator-mcgills.png"
         } else if (noc.toLowerCase() === "loth" || noc.toLowerCase() === "etor" || noc.toLowerCase() === "ecbu" || noc.toLowerCase() === "nelb") {
             // lothian buses
             logoUrl = "https://i.ibb.co/JjTBHpQS/lothian-buses.png";
-            indicatorImage = "https://i.ibb.co/jPBpFBXJ/indicator.png"
+            indicatorImage = "https://i.ibb.co/fdjh6x1G/indicator-lothian.png"
         } else if (noc.toLowerCase() === "mblb") {
             // midland bluebird
-            logoUrl = "https://i.ibb.co/hR80Hmzh/midlands-bluebird.png";
-            indicatorImage = "https://i.ibb.co/jPBpFBXJ/indicator.png"
+            logoUrl = "https://i.ibb.co/dwSP07WK/midlands-bluebird.png";
+            indicatorImage = "https://i.ibb.co/k2y0MbQw/indicator-bluebird.png"
         } else {
             // generic logo
             logoUrl = "https://i.ibb.co/Q31hvPSL/bus.png";
