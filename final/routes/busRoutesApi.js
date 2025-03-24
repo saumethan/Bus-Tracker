@@ -226,8 +226,7 @@ router.get("/routes", async (req, res) => {
     const direction = req.query.direction; 
     
     try {
-
-        let url;
+        let url
     
         if (noc === "TRDU" || (noc === "FSCE" && [22, 32, 33, 18].includes(routeNumber))) {
             url = `https://www.xploredundee.com/_ajax/lines/map/TRDU/${routeNumber}`;
@@ -251,6 +250,39 @@ router.get("/routes", async (req, res) => {
             } catch (error) {
                 console.error("Error fetching data:", error.message);
             }
+        }
+
+        if (noc === "LOTH") {
+            url = `https://lothianapi.co.uk/routePatterns?route_name=${routeNumber}`
+        }
+
+        if (url) {
+            try {
+                console.log("Fetching URL:", url);
+                const response = await axios.get(url);
+                const routeCoords = [];
+                let firstSetProcessed = false; 
+
+                if (response.data.patterns) {
+                    for (const pattern of response.data.patterns) {
+                        if (pattern.stops && Array.isArray(pattern.stops)) {
+                            if (!firstSetProcessed) {
+                                pattern.stops.forEach((stop, index) => {
+                                    if (stop.coordinate) {
+                                        routeCoords.push([stop.coordinate.latitude, stop.coordinate.longitude]); 
+                                    }
+                                });
+                                firstSetProcessed = true; 
+                            }
+                        }
+                    }
+                }
+                return res.json({ routeCoords, routeNumber, destination: null });
+            } catch (error) {
+                console.error("Error fetching data:", error.message);
+                res.status(500).json({ error: "Failed to fetch route data" });
+            }
+            
         }
         
         // If only serviceId is provided, fetch the tripId first from URL 1
@@ -299,7 +331,7 @@ router.get("/routes", async (req, res) => {
 
                         // Set last stop as the destination
                         if (index === response2.data.times.length - 1) {
-                            destination = stop.stop?.name || "Unknown Destination";
+                            destination = stop.stop?.name || null;
                         }
                     });
 
