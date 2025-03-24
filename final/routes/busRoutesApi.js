@@ -316,12 +316,7 @@ router.get("/routes", async (req, res) => {
             const ROUTES_FILE = loadRoutes();
             const routeKey = `${routeNumber}_${noc}_${direction}`.replace(/[^a-zA-Z0-9_]/g, "");
         
-            console.log("Loaded Routes File:", ROUTES_FILE);
-            console.log("Route Key:", routeKey);
-            console.log("Available Route Keys:", Object.keys(ROUTES_FILE));
-        
             if (ROUTES_FILE[routeKey]) {
-                console.log(`Returning local route data for ${routeKey}`);
                 return res.json({ 
                     routeCoords: ROUTES_FILE[routeKey], 
                     routeNumber: routeNumber, 
