@@ -222,26 +222,26 @@ router.get("/routes", async (req, res) => {
     const tripId = req.query.tripId;  
     const journeyId = req.query.journeyId;  
     const noc = req.query.noc;  
-    const route = req.query.route;  
+    const routeNumber = req.query.route;  
     const direction = req.query.direction; 
     
     try {
 
         let url;
     
-        if (noc === "TRDU" || (noc === "FSCE" && [22, 32, 33, 18].includes(route))) {
-            url = `https://www.xploredundee.com/_ajax/lines/map/TRDU/${route}`;
+        if (noc === "TRDU" || (noc === "FSCE" && [22, 32, 33, 18].includes(routeNumber))) {
+            url = `https://www.xploredundee.com/_ajax/lines/map/TRDU/${routeNumber}`;
         } else if (noc === "MBLB" || noc === "FSCE") {
-            url = `https://www.mcgillsscotlandeast.co.uk/_ajax/lines/map/MBLB/${route}`;
+            url = `https://www.mcgillsscotlandeast.co.uk/_ajax/lines/map/MBLB/${routeNumber}`;
         } else if (noc === "MCGL") {
-            url = `https://www.mcgillsbuses.co.uk/_ajax/lines/map/McG/${route}`;
+            url = `https://www.mcgillsbuses.co.uk/_ajax/lines/map/McG/${routeNumber}`;
         }
         
         if (url) {
             try {
                 console.log("Fetching URL:", url);
                 const response = await axios.get(url);
-                const routeData = findLongestRoute(response, route);
+                const routeData = findLongestRoute(response, routeNumber);
                 
                 if (routeData) {
                     return res.json(routeData);
@@ -314,7 +314,7 @@ router.get("/routes", async (req, res) => {
 
         try {
             const ROUTES_FILE = loadRoutes();
-            const routeKey = `${route}_${noc}_${direction}`.replace(/[^a-zA-Z0-9_]/g, "");
+            const routeKey = `${routeNumber}_${noc}_${direction}`.replace(/[^a-zA-Z0-9_]/g, "");
         
             console.log("Loaded Routes File:", ROUTES_FILE);
             console.log("Route Key:", routeKey);
@@ -324,7 +324,7 @@ router.get("/routes", async (req, res) => {
                 console.log(`Returning local route data for ${routeKey}`);
                 return res.json({ 
                     routeCoords: ROUTES_FILE[routeKey], 
-                    routeNumber: route, 
+                    routeNumber: routeNumber, 
                     destination: "Unknown Destination" 
                 });
             } else {
@@ -369,7 +369,7 @@ async function fetchJourneyData(journeyId, res) {
     return res.status(200).json({});
 }
 
-function findLongestRoute(response, route) {
+function findLongestRoute(response, routeNumber) {
     if (response.data) {
         const features = response.data.features;
         let featureWithMostCoords = null;
@@ -393,7 +393,7 @@ function findLongestRoute(response, route) {
         if (featureWithMostCoords) {
             const routeCoords = featureWithMostCoords.geometry.coordinates;
             const destination = "";  
-            return { routeCoords, route, destination };
+            return { routeCoords, routeNumber, destination };
         } else {
             return null;  
         }
