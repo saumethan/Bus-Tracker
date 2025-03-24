@@ -24,7 +24,7 @@ connectDB();
 
 // SERVER ENDPOINT: login page
 router.get("/", function(req, res) {
-    res.render("pages/login");
+    res.render("pages/login", { page: "login" });
 });
 
 //User creating account 
