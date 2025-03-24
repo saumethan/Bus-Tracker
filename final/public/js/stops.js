@@ -152,7 +152,7 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
 
                 // add to html
                 htmlContent += `
-                    <div class="bus-time-record" data-service-number="${bus.serviceNumber}" data-operator-code="${bus.operator.operatorCode}">
+                    <div class="bus-time-record active" data-service-number="${bus.serviceNumber}" data-operator-code="${bus.operator.operatorCode}">
                         <h2>
                             <button type="button" class="btn-link number">${bus.serviceNumber}</button>
                             <span class="destination">to ${bus.destination}</span>
