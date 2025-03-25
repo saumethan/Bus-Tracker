@@ -13,7 +13,7 @@ const url = "mongodb://127.0.0.1:27017";
 const client = new MongoClient(url);
 const dbName = "User_Profiles";
 let db;
-const loggedin = false
+
 
 // Connect to database
 async function connectDB() {
@@ -62,7 +62,7 @@ router.post('/createUser', async function(req, res) {
 });
 
 //-=-=-=-=-=-=-=-=-==-=-=-=-=Login Pathways -=-=-=-=-=-=-=-=-=-=-===-=-=-==-=-=-=-=-=-=-=-=-=-=-\\
-    router.post('/login', function(req,res){
+    router.post('/login/userlogin', async function(req,res){
         var userName = req.body.uname;
         var userPass = req.body.upass;
 
@@ -76,22 +76,47 @@ router.post('/createUser', async function(req, res) {
         })
 
         if(!result){
-            res.redirect('/login')
             console.log("No Result")
+            res.redirect('/login')
             return
         }
 
         if(result.login.password == pword){
             res.session.loggedin = true;
-            console.log("Logged in : " + loggedin)
+            console.log("Logged in : " + req.session.loggedin)
             res.session.thisuser = unmae;
             res.redirect('/')
         }else{
             res.redirect('/login')
-            console.error("Error Logging in:", error);
+            console.log("Error Logging in:", error);
             res.status(500).send("Failed to create Login");
         }
     })
+
+
+    try {
+        const result = await db.collection('users').findOne({
+            "login.username": userName
+        });
+
+        if (!result) {
+            console.log("No Result");
+            return res.redirect('/login');
+        }
+
+        if (result.login.password === userPass) {
+            req.session.loggedin = true;
+            req.session.thisuser = userName;
+            console.log("Logged in: " + req.session.loggedin);
+            res.redirect('/');
+        } else {
+            console.log("Error Logging in: Invalid password");
+            res.redirect('/login');
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).send("Failed to log in");
+    }
 
 
 //-=-=-=-=-=-=-=-=-=-=-=-=-===-=-Change Username =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
