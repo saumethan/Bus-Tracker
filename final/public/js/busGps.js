@@ -16,21 +16,40 @@ let routeNumber;
 let nocCode;
 
 // ------------------ Function to get the bus data for a specific bus route ------------------ 
-async function getSpecificBusGPS(route, useBounds, lat, lng) {
+async function getSpecificBusGPS(route, useBounds, isSearch, lat, lng) {
     try {
-        let response = "";
+        let response = [];
 
         if (useBounds) {
-            const { minX, minY, maxX, maxY } = getViewportBounds();
-            response = await $.get(`/api/buses/find/${route}?minX=${minX}&minY=${minY}&maxX=${maxX}&maxY=${maxY}`);
-        } else if (!(lat && lng)) {
-            const { lat, lng } = getUserCoordinates();
-            response = await $.get(`/api/buses/find/${route}?lat=${lat}&lon=${lng}`);
+            let { minX, minY, maxX, maxY } = getViewportBounds();
+            let radius = Math.abs(maxX - minX);
+
+            while (isSearch && radius < 50) {
+                response = await $.get(`/api/buses/find/${route}?minX=${minX}&minY=${minY}&maxX=${maxX}&maxY=${maxY}`);
+                
+                if (response.length > 0) break; // Stop if results are found
+                
+                // Expand search area
+                minX -= .5;
+                minY -= .5;
+                maxX += .5;
+                maxY += .5;
+                radius = Math.abs(maxX - minX);
+
+                if (radius >= 70) break; // Limit expansion to a radius of 70
+            }
+
+            if (response.length === 0) { 
+                response = await $.get(`/api/buses/find/${route}?minX=${minX}&minY=${minY}&maxX=${maxX}&maxY=${maxY}`);
+            }
         } else {
+            if (!(lat && lng)) {
+                ({ lat, lng } = getUserCoordinates());
+            }
             response = await $.get(`/api/buses/find/${route}?lat=${lat}&lon=${lng}`);
         }
 
-        const busData = response || [];
+        return response || [];
         
         // if (busData.length === 0) {
         //     //console.log("No buses found for this service.");

@@ -330,7 +330,7 @@ async function searchRoute(event) {
 
     searchInput.value = "";
 
-    const busData = await getSpecificBusGPS(route, true);
+    const busData = await getSpecificBusGPS(route, true, true);
     
     if (busData.length === 0) {
         //console.log("No buses found for this service.");
@@ -405,7 +405,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         //console.log(lat, lng)
         setViewAllBuses(false);
         //console.log(routeNumber)
-        const busData = await getSpecificBusGPS(routeNumber, false, lat, lng);
+        const busData = await getSpecificBusGPS(routeNumber, false, false, lat, lng);
         drawBus(busData, map);
         //console.log(busData)
         await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, routeNumber, map, busData[0].noc, busData[0].direction, busData[0].destination);

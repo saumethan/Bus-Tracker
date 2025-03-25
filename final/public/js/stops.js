@@ -173,7 +173,7 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                 const serviceNumber = element.dataset.serviceNumber;
                 const noc = element.dataset.operatorCode;
                 //console.log(latitude, longitude);
-                const busData = await getSpecificBusGPS(serviceNumber, false, latitude, longitude);
+                const busData = await getSpecificBusGPS(serviceNumber, false, false, latitude, longitude);
                     if (busData.length === 0) {
                         //console.log("No buses found for this service.");
                         showNotification("No live buses found for this route", "info")
