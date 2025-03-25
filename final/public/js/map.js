@@ -330,7 +330,7 @@ async function searchRoute(event) {
 
     searchInput.value = "";
 
-    const busData = await getSpecificBusGPS(route, false);
+    const busData = await getSpecificBusGPS(route, true);
     
     if (busData.length === 0) {
         //console.log("No buses found for this service.");
