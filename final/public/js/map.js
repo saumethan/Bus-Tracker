@@ -351,7 +351,7 @@ async function searchRoute(event) {
 
     drawBus(busData, map);
 
-    if (busData[0].serviceId) {
+    if (busData[0]) {
         await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, route, map, noc, busData[0].direction, busData[0].destination);
     } else {
         // const newUrl = window.location.origin + window.location.pathname;
