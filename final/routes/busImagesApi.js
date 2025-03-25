@@ -9,7 +9,7 @@ router.get("/get", async (req, res) => {
     // make sure a bus name is passed
     // NOC can be null because the API sometimes returns that
     const noc = req.query.noc || "";
-    const busName = req.query.routeName;
+    const busName = req.query.routeName || "N/A";
     const bearing = req.query.bearing ? parseFloat(req.query.bearing) : 0;
 
     if (!busName) {
@@ -40,6 +40,22 @@ router.get("/get", async (req, res) => {
             // ember
             logoUrl = "https://i.ibb.co/d08My2kN/ember.png";
             indicatorImage = "https://i.ibb.co/RpBX5Cb1/indicator-ember.png";
+        } else if (noc.toLowerCase() === "trdu") {
+            // xplore dundee
+            logoUrl = "https://i.ibb.co/qM3Y85N7/xplore-dundee.png";
+            indicatorImage = "https://i.ibb.co/6cTJzntb/indicator-xplore.png"
+        } else if (noc.toLowerCase() === "mcgl" || noc.toLowerCase() === "brbu") {
+            // mcgills
+            logoUrl = "https://i.ibb.co/Nnbnq6cm/mcgills.png";
+            indicatorImage = "https://i.ibb.co/qFgFZnPX/indicator-mcgills.png"
+        } else if (noc.toLowerCase() === "loth" || noc.toLowerCase() === "etor" || noc.toLowerCase() === "ecbu" || noc.toLowerCase() === "nelb") {
+            // lothian buses
+            logoUrl = "https://i.ibb.co/JjTBHpQS/lothian-buses.png";
+            indicatorImage = "https://i.ibb.co/fdjh6x1G/indicator-lothian.png"
+        } else if (noc.toLowerCase() === "mblb") {
+            // midland bluebird
+            logoUrl = "https://i.ibb.co/dwSP07WK/midlands-bluebird.png";
+            indicatorImage = "https://i.ibb.co/k2y0MbQw/indicator-bluebird.png"
         } else {
             // generic logo
             logoUrl = "https://i.ibb.co/Q31hvPSL/bus.png";
@@ -71,9 +87,10 @@ router.get("/get", async (req, res) => {
         ctx.textAlign = "center";
         ctx.fillText(busName, canvas.width / 2, 115);
 
-        // send image as response
+        // create image buffer and send the buffer instead of piping stream
+        const buffer = canvas.toBuffer("image/png");
         res.setHeader("Content-Type", "image/png");
-        canvas.createPNGStream().pipe(res);
+        res.send(buffer);
     } catch (error) {
         console.error("Error generating bus image:", error);
         res.status(500).json({ error: "Failed to generate bus image" });

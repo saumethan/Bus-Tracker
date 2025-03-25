@@ -19,7 +19,7 @@ let userLocationMarker = null;
 // ------------------ Function to save user's location to cookie ------------------
 function saveLocationToCookie() {
     if (!areCookiesEnabled()) {
-        console.log("Location cookie storage disabled: waiting for user consent");
+        //console.log("Location cookie storage disabled: waiting for user consent");
         return false;
     }
     

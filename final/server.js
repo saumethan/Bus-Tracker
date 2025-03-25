@@ -17,22 +17,29 @@ const busRoutes = require("./routes/busRoutesApi");
 const stopRoutes = require("./routes/stopRoutesApi");
 const imagesRoute = require("./routes/busImagesApi");
 const loginRoutes = require("./routes/login");
-const timetableRoutes = require("./routes/timetables");
+const timetableRoutes = require("./routes/timetableScraper");
 const createRoute = require("./routes/create");
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
 
+const port = 8080
+const BASE_URL = process.env.BASE_URL || `http://localhost:${port}`;
+
 // SERVER ENDPOINT: index page 
-app.get("/", function(req, res) {
-    // Pass query parameters to the view
-    const busRoute = req.query.bus || null;
-    res.render("pages/index");
+app.get("/", async function(req, res) {
+    res.render("pages/index", { page: "map" });
+    try {
+        await axios.get(`${BASE_URL}/api/buses/startWebsocket`);
+        console.log("WebSocket started and running in the background.");
+    } catch (error) {
+        console.error("Error starting WebSocket:", error);
+    }
 });
 
 // SERVER ENDPOINT: settings page
 app.get("/settings", function(req, res) {
-    res.render("pages/settings");
+    res.render("pages/settings", { page: "settings" });
 });
 
 // Use the API routes (from apiRoutes.js)
@@ -56,5 +63,5 @@ app.use(function(req, res, next) {
 });
 
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
-app.listen(8080);
-console.log("8080 is the magic port");
+app.listen(port);
+console.log("8080 is the magic ", port);

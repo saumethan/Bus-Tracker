@@ -4,10 +4,11 @@
  * @description A module handling stop information, including fetching from relevant APIs and drawing stops on a map
  */
 
-import { findBus } from "./busGps.js";
+
 import { setViewAllBuses, updateBusesAndStops } from "./map.js";
 import { removeRoute } from "./busRoute.js";
-import { getSpecificBusGPS, drawBus } from "./busGps.js";
+import { getSpecificBusGPS, drawBus, showSpecificBusRoute } from "./busGps.js";
+import { showNotification } from "./helper.js";
 
 // Constants
 const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
@@ -125,6 +126,9 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                     // real time is after scheduled time so bus is delayed
                     busStatus = "DELAYED";
                     statusColor = "orange";
+                } else if (realTimeDeparture < scheduledDeparture) {
+                    // real time is before the schedule time so bus is early
+                    busStatus = "EARLY";
                 } else if (!bus.realTimeDeparture) {
                     // bus does not have a real time departure, so we cannot reliably predict that it is on time
                     busStatus = "SCHEDULED";
@@ -143,15 +147,15 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                     timeString += ` (Exp: ${realTimeDeparture})`
                 }
 
-                console.log(bus)
-                console.log(bus.operator.operatorCode)
+                //console.log(bus)
+                //console.log(bus.operator.operatorCode)
                 // TODO: pass this to the bus data div
-                console.log(bus.destination)
-                console.log(bus.serviceNumber)
+                //console.log(bus.destination)
+                //console.log(bus.serviceNumber)
 
                 // add to html
                 htmlContent += `
-                    <div class="bus-time-record" data-service-number="${bus.serviceNumber}" data-operator-code="${bus.operator.operatorCode}">
+                    <div class="bus-time-record active" data-service-number="${bus.serviceNumber}" data-operator-code="${bus.operator.operatorCode}">
                         <h2>
                             <button type="button" class="btn-link number">${bus.serviceNumber}</button>
                             <span class="destination">to ${bus.destination}</span>
@@ -168,9 +172,38 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
             element.addEventListener("click", async () => {
                 const serviceNumber = element.dataset.serviceNumber;
                 const noc = element.dataset.operatorCode;
-                console.log(latitude, longitude);
-                const busData = await getSpecificBusGPS(serviceNumber, latitude, longitude);
-                drawBus(busData, map);
+                //console.log(latitude, longitude);
+                const busData = await getSpecificBusGPS(serviceNumber, false, false, latitude, longitude);
+                    if (busData.length === 0) {
+                        //console.log("No buses found for this service.");
+                        showNotification("No live buses found for this route", "info")
+                        // Remove all URL parameters
+                        // Update URL without refreshing page
+                        const newUrl = window.location.origin + window.location.pathname;
+                        window.history.pushState({ path: newUrl }, "", newUrl);
+
+                        setViewAllBuses(true);
+                        removeRoute(map);
+                        updateBusesAndStops();
+                        return;
+                    }
+
+                    setViewAllBuses(false, busData[0].noc, serviceNumber);
+
+                    drawBus(busData, map);
+
+                    const newUrl = window.location.origin + window.location.pathname + `?bus=${serviceNumber}`;
+                    window.history.pushState({ path: newUrl }, "", newUrl);
+
+                    if (busData[0].serviceId || noc && serviceNumber) {
+                        //console.log(serviceNumber)
+                        //console.log(noc)
+                        await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, serviceNumber, map, noc, busData[0].direction, busData[0].destination);
+                    } else {
+                        // const newUrl = window.location.origin + window.location.pathname;
+                        // window.history.pushState({ path: newUrl }, "", newUrl);
+                        showNotification("Route information not available", "warning");
+                    }
             });
         });
     } else {
@@ -178,7 +211,7 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
             $("#bus-data").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
         }
     } catch (err) {
-        console.log(err);
+        //console.log(err);
         // handle error
         $("#bus-data").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
     }
@@ -260,7 +293,6 @@ async function drawStops(stopsData, map) {
         map.stopMarkers.push(circle);
     });
 }
-
 
 // Export functions
 export { fetchStopsInViewport, fetchStopId, loadStopTimes, drawStops };

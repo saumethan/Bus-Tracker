@@ -10,7 +10,7 @@ let cookieStorageEnabled = false;
 // ------------------ Functions to set a cookie ------------------
 function setCookie(name, value, days) {
     if (!cookieStorageEnabled) {
-        console.log("Cookie storage disabled");
+        //console.log("Cookie storage disabled");
         return false;
     }
     
@@ -23,7 +23,7 @@ function setCookie(name, value, days) {
 // ------------------ Functions to get a cookie ------------------
 function getCookie(name) {
     if (!cookieStorageEnabled && localStorage.getItem("cookieAlertStatus") !== "accepted") {
-        console.log("Cookies not accepted");
+        //console.log("Cookies not accepted");
         return null;
     }
     
@@ -40,13 +40,13 @@ function getCookie(name) {
 // ------------------ Function to disable cookie storage ------------------
 function disableCookieStorage() {
     cookieStorageEnabled = false;
-    console.log("Cookie storage disabled");
+    //console.log("Cookie storage disabled");
 }
 
 // ------------------ Function to enable cookie storage ------------------
 function enableCookieStorage() {
     cookieStorageEnabled = true;
-    console.log("Cookie storage enabled");
+    //console.log("Cookie storage enabled");
 }
 
 // ------------------ Function to check if cookies are enabled ------------------
