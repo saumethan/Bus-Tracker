@@ -94,29 +94,29 @@ router.post('/createUser', async function(req, res) {
     })
 
 
-    try {
-        const result = await db.collection('users').findOne({
-            "login.username": userName
-        });
+    // try {
+    //     const result = await db.collection('users').findOne({
+    //         "login.username": userName
+    //     });
 
-        if (!result) {
-            console.log("No Result");
-            return res.redirect('/login');
-        }
+    //     if (!result) {
+    //         console.log("No Result");
+    //         return res.redirect('/login');
+    //     }
 
-        if (result.login.password === userPass) {
-            req.session.loggedin = true;
-            req.session.thisuser = userName;
-            console.log("Logged in: " + req.session.loggedin);
-            res.redirect('/');
-        } else {
-            console.log("Error Logging in: Invalid password");
-            res.redirect('/login');
-        }
-    } catch (error) {
-        console.error("Error:", error);
-        res.status(500).send("Failed to log in");
-    }
+    //     if (result.login.password === userPass) {
+    //         req.session.loggedin = true;
+    //         req.session.thisuser = userName;
+    //         console.log("Logged in: " + req.session.loggedin);
+    //         res.redirect('/');
+    //     } else {
+    //         console.log("Error Logging in: Invalid password");
+    //         res.redirect('/login');
+    //     }
+    // } catch (error) {
+    //     console.error("Error:", error);
+    //     res.status(500).send("Failed to log in");
+    // }
 
 
 //-=-=-=-=-=-=-=-=-=-=-=-=-===-=-Change Username =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
