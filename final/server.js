@@ -17,7 +17,6 @@ const busRoutes = require("./routes/busRoutesApi");
 const stopRoutes = require("./routes/stopRoutesApi");
 const imagesRoute = require("./routes/busImagesApi");
 const loginRoutes = require("./routes/login");
-const timetableRoutes = require("./routes/timetableScraper");
 const createRoute = require("./routes/create");
 
 // set the view engine to ejs
@@ -47,7 +46,6 @@ app.use("/api/buses", busRoutes);
 app.use("/api/stops", stopRoutes);
 app.use("/api/busimages", imagesRoute);
 app.use("/login", loginRoutes);
-app.use("/timetable", timetableRoutes);
 app.use("/create", createRoute)
 
 // 404 page
