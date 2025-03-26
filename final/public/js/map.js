@@ -405,7 +405,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         //console.log(lat, lng)
         setViewAllBuses(false);
         //console.log(routeNumber)
-        const busData = await getSpecificBusGPS(routeNumber, false, false, lat, lng);
+        const busData = await getSpecificBusGPS(routeNumber, true, true);
         drawBus(busData, map);
         //console.log(busData)
         await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, routeNumber, map, busData[0].noc, busData[0].direction, busData[0].destination);
