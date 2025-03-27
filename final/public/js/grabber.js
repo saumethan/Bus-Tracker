@@ -3,6 +3,37 @@
  * @description Allows mobile users to resize the bus-data panel
  */
 
+// Variables
+let panelOpen = false;
+
+// Functions
+function updateMapHeight() {
+    if ($(window).width() <= 652) {
+        // update map height when panel height changes
+        const asideHeight = $("aside.col-md-3").height();
+        $("#map").height(`calc(100vh - 80px - ${asideHeight}px)`);
+    }
+}
+
+function popupPanel() {
+    if ($(window).width() <= 652) {
+        if (panelOpen) return;
+        panelOpen = true;
+        $("aside.col-md-3").height("300px");
+        updateMapHeight();
+    }
+}
+
+function closePanel(force) {
+    if ($(window).width() <= 652) {
+        if (!panelOpen && !force) return;
+        panelOpen = false;
+        $("aside.col-md-3").height("45px");
+        updateMapHeight();
+    }
+}
+
+// Main
 $(document).ready(function() {
     // only apply this code to mobile devices
     if ($(window).width() <= 652) {
@@ -28,12 +59,6 @@ $(document).ready(function() {
         });
 
         // functions to resize the bus-data panel
-        function updateMapHeight() {
-            // update map height when panel height changes
-            const asideHeight = $("aside.col-md-3").height();
-            $("#map").height(`calc(100vh - 80px - ${asideHeight}px)`);
-        }
-
         function startResize(y) {
             startY = y;
             startHeight = $("aside.col-md-3").height();
@@ -46,6 +71,7 @@ $(document).ready(function() {
             const deltaY = startY - currentY;
             let newHeight = Math.max(45, Math.min(startHeight + deltaY, $(window).height() * 0.95));
             $("aside.col-md-3").height(newHeight);
+            panelOpen = (newHeight !== 45); // if newHeight is 45, panel is closed, otherwise it is open
             updateMapHeight();
             //e.preventDefault();
         }
@@ -55,6 +81,7 @@ $(document).ready(function() {
             const deltaY = startY - currentY;
             let newHeight = Math.max(45, Math.min(startHeight + deltaY, $(window).height() * 0.95));
             $("aside.col-md-3").height(newHeight);
+            panelOpen = (newHeight !== 45); // if newHeight is 45, panel is closed, otherwise it is open
             updateMapHeight();
             //e.preventDefault();
         }
@@ -72,8 +99,7 @@ $(document).ready(function() {
         }
 
         // initialize map
-        $("aside.col-md-3").height("45px");
-        updateMapHeight();
+        closePanel(true);
 
         // update on window resize
         $(window).on("resize", function() {
@@ -87,3 +113,5 @@ $(document).ready(function() {
         });
     }
 });
+
+export { updateMapHeight, popupPanel, closePanel };

@@ -300,7 +300,12 @@ router.get("/routes", async (req, res) => {
                 }
             } catch (error) {
                 console.error("Error fetching trip ID from serviceId:", error.message);
-                return await fetchJourneyData(journeyId, res); // Fallback to journey data if URL 1 fails
+                try {
+                    // If URL 2 fails or tripId is undefined, attempt to fetch journey data (URL 3)
+                    return await fetchJourneyData(journeyId, res);
+                } catch (error) {
+                    console.log(error);
+                } // Fallback to journey data if URL 1 fails
             }
         }
 
@@ -361,8 +366,13 @@ router.get("/routes", async (req, res) => {
             console.log("Something went wrong", error);
         }
 
-        // If URL 2 fails or tripId is undefined, attempt to fetch journey data (URL 3)
-        return await fetchJourneyData(journeyId, res);
+        try {
+            // If URL 2 fails or tripId is undefined, attempt to fetch journey data (URL 3)
+            return await fetchJourneyData(journeyId, res);
+        } catch (error) {
+            console.log(error);
+        }
+        
 
     } catch (error) {
         console.error("Error in route handler:", error.message);

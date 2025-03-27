@@ -6,11 +6,12 @@
 
 // Modules
 import { getAllBusGPS, getSpecificBusGPS, drawBus, getNocCode, getRouteNumber, showSpecificBusRoute } from "./busGps.js";
-import { fetchStopsInViewport, drawStops } from "./stops.js";
+import { fetchStopsInViewport, drawStops, loadStopTimes, fetchSpecificStopLocation } from "./stops.js";
 import { removeRoute } from "./busRoute.js";
 import { showNotification } from "./helper.js";
 import { initializeCookieStorage, setupCookieBar } from "./cookies.js";
 import { getUserLocation, drawUserLocation, initUserLocationTracking, getUserCoordinates, saveLocationToCookie } from "./userlocation.js";
+import { closePanel } from "./grabber.js";
 import { getRouteData } from "./planJourney.js";
 
 // Variables
@@ -62,6 +63,7 @@ function addHomeButtonToMap() {
             
             // Clear bus data container
             $("#bus-data").html("");
+            closePanel();
 
             // Remove all URL parameters
             // Update URL without refreshing page
@@ -184,7 +186,16 @@ function resetInactivityTimeout() {
     
     // Set a new timeout only if zoom level is appropriate
     if (map.currentZoom >= MIN_BUS_ZOOM) {
-        inactivityTimeout = setTimeout(updateBusesAndStops, 10000);
+        function reload() {
+            updateBusesAndStops();
+            const stopId = getUrlParameter("stop");
+            console.log("STOP ID:", stopId);
+            if (stopId) {
+                const { lat, lon } = getUserCoordinates()
+                loadStopTimes(stopId, lat, lon, map);
+            }
+        }
+        inactivityTimeout = setTimeout(reload, 10000);
     }
 }
 
@@ -403,7 +414,6 @@ document.addEventListener("DOMContentLoaded", async function() {
     const routeNumber = getUrlParameter("bus");
     if (routeNumber) {
         //console.log(`Bus route detected in URL: ${routeNumber}`);
-        const { lat, lng } = getUserCoordinates();
         //console.log(lat, lng)
         setViewAllBuses(false);
         //console.log(routeNumber)
@@ -416,10 +426,18 @@ document.addEventListener("DOMContentLoaded", async function() {
     // FINISH THIS TO SHOW THE STOP 
     const stopId = getUrlParameter("stop");
     if (stopId) {
-        //console.log(`Bus stop detected in URL: ${stopId}`);
+        console.log(`Bus stop detected in URL: ${stopId}`);
+        const { lat, lng } = getUserCoordinates()
+        const busStop = await fetchSpecificStopLocation(stopId, lat, lng);
+        map.setView([busStop[0].latitude, busStop[0].longitude], 15);
+        loadStopTimes(stopId, busStop[0].latitude, busStop[0].longitude, map);
     }
 
     // Handle map movement events
+    map.on("movestart", function() {
+        closePanel();
+    });
+
     map.on("moveend", function() {
         if (ignoreNextMoveEnd) {
             ignoreNextMoveEnd = false;
