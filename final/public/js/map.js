@@ -6,7 +6,7 @@
 
 // Modules
 import { getAllBusGPS, getSpecificBusGPS, drawBus, getNocCode, getRouteNumber, showSpecificBusRoute } from "./busGps.js";
-import { fetchStopsInViewport, drawStops } from "./stops.js";
+import { fetchStopsInViewport, drawStops, loadStopTimes } from "./stops.js";
 import { removeRoute } from "./busRoute.js";
 import { showNotification } from "./helper.js";
 import { initializeCookieStorage, setupCookieBar } from "./cookies.js";
@@ -185,7 +185,16 @@ function resetInactivityTimeout() {
     
     // Set a new timeout only if zoom level is appropriate
     if (map.currentZoom >= MIN_BUS_ZOOM) {
-        inactivityTimeout = setTimeout(updateBusesAndStops, 10000);
+        function reload() {
+            updateBusesAndStops();
+            const stopId = getUrlParameter("stop");
+            console.log("STOP ID:", stopId);
+            if (stopId) {
+                const { lat, lon } = getUserCoordinates()
+                loadStopTimes(stopId, lat, lon, map);
+            }
+        }
+        inactivityTimeout = setTimeout(reload, 10000);
     }
 }
 
