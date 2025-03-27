@@ -205,6 +205,8 @@ function setViewAllBuses(value, nocCode, selectedRoute) {
     viewAllBuses = value;
     noc = nocCode || null;
     route = selectedRoute || null;
+
+    document.dispatchEvent(new CustomEvent("viewAllBusesChanged", { detail: { viewAllBuses } }));
 }
 
 // ------------------ Function to get view all buses flag ------------------

@@ -12,6 +12,7 @@ import { getUserCoordinates } from "./userlocation.js";
 
 // Variables
 const busImageCache = {};
+let busIconRequestController = null;
 let routeNumber;
 let nocCode;
 
@@ -130,15 +131,34 @@ async function drawBus(busData, map) {
         });
 
         if (!busIcon) {
-            // fetch image from our endpoint
-            const imageBuffer = await fetch(`/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}&bearing=${coord.heading}`);
-            
-            // turn the buffer into a blob, then into a readable URL
-            const blob = await imageBuffer.blob();
-            busIcon = URL.createObjectURL(blob);
+            //https://developer.mozilla.org/en-US/docs/Web/API/AbortController
+            // Cancels previous image request 
+            if (busIconRequestController) {
+                busIconRequestController.abort();
+            }
 
-            // cache the fetched image
-            busImageCache[`${coord.noc}-${coord.route}-${coord.heading}`] = busIcon;
+            // Creates new AbortController for the request
+            busIconRequestController = new AbortController();
+            const { signal } = busIconRequestController;
+
+            try {
+                // fetch image from our endpoint
+                const imageResponse = await fetch(`/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}&bearing=${coord.heading}`, { signal });
+
+                // turn the buffer into a blob, then into a readable URL
+                const blob = await imageResponse.blob();
+                busIcon = URL.createObjectURL(blob);
+
+                // cache the fetched image
+                busImageCache[`${coord.noc}-${coord.route}-${coord.heading}`] = busIcon;
+            } catch (error) {
+                if (error.name === "AbortError") {
+                    console.log("Bus icon request aborted.");
+                    return; 
+                }
+                console.error("Error fetching bus icon:", error);
+                continue;
+            }
         }
 
         // Create marker with the bus icon on it
@@ -266,6 +286,16 @@ setInterval(() => {
     // clear the cache object
     Object.keys(busImageCache).forEach(key => delete busImageCache[key]);
 }, 60000);
+
+//https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events
+// Listen for viewAllBusesChanged event
+document.addEventListener("viewAllBusesChanged", (event) => {
+    if (!event.detail.viewAllBuses && busIconRequestController) {
+        busIconRequestController.abort();
+        busIconRequestController = null;
+        console.log("Canceled pending bus icon requests.");
+    }
+});
 
 // Export functions
 export { getAllBusGPS, getSpecificBusGPS, drawBus, getRouteNumber, getNocCode, showSpecificBusRoute };
