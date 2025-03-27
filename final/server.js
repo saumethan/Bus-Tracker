@@ -23,7 +23,7 @@ const planJourney = require("./routes/routingApi")
 // set the view engine to ejs
 app.set("view engine", "ejs");
 
-const port = 8081
+const port = 8080;
 const BASE_URL = process.env.BASE_URL || `http://localhost:${port}`;
 
 // SERVER ENDPOINT: index page 
