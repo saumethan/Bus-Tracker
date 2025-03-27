@@ -11,6 +11,7 @@ import { removeRoute } from "./busRoute.js";
 import { showNotification } from "./helper.js";
 import { initializeCookieStorage, setupCookieBar } from "./cookies.js";
 import { getUserLocation, drawUserLocation, initUserLocationTracking, getUserCoordinates, saveLocationToCookie } from "./userlocation.js";
+import { getRouteData } from "./planJourney.js";
 
 // Variables
 let map;  
@@ -382,6 +383,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     // Rest of initialization...
     resetInactivityTimeout();
     updateBusesAndStops();
+    
 
     // Resize the buses as the user zooms in
     map.on("zoom" , function (e) {
@@ -448,6 +450,9 @@ document.addEventListener("DOMContentLoaded", async function() {
     });
     
     initUserLocationTracking();
+    const{lat,lng} = getUserCoordinates();
+    const routeData = await getRouteData(-2.117698011514234,57.13902722016421,lng,lat);
+    drawRoute(routeData,map);
 });
 
 // ------------------ Function for easteregg ------------------
@@ -486,6 +491,43 @@ function easterEgg() {
             }, i * 100);
         }
     });
+}
+
+function drawRoute(routeCoords, map) {
+    console.log(routeCoords)
+    const coordinates = [];
+    if (!Array.isArray(routeCoords.coordinates)) {
+        console.error("Invalid routeCoords format:", routeCoords);
+        return;
+    }
+    routeCoords.coordinates.forEach((point) => {
+        console.log(point.latitude, point.longitude);
+        coordinates.push([point.latitude, point.longitude]);
+    });
+    
+
+    if (!map) {
+        console.error("Map is not initialized!");
+        return;
+    }
+
+    removeRoute(map);
+
+
+    if (coordinates.length === 0) {
+        console.error("Invalid route coordinates:", coordinates);
+        return;
+    }
+
+    route = L.polyline(coordinates, {
+        color: "#3498db",
+        weight: 4,
+        opacity: 0.8,
+    }).addTo(map);
+
+    adjustMapViewToRoute(route, map);
+
+    return route;
 }
 
 // Export
