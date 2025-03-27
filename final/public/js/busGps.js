@@ -136,7 +136,16 @@ async function drawBus(busData, map) {
         }
 
         // Find the icon for this bus
-        let busIcon = busImageCache[`${coord.noc}-${coord.route}`];
+        let busIcon
+        Object.keys(busImageCache).forEach(key => {
+            if (key.includes(`${coord.noc}-${coord.route}`)) {
+                const thisHeading = parseInt(key.split("-")[2]);
+                if (Math.abs(thisHeading-coord.heading) <= 20 || Math.abs(thisHeading-coord.heading) >= 340) {
+                    busIcon = busImageCache[key];
+                }
+            }
+        });
+
         if (!busIcon) {
             // fetch image from our endpoint
             const imageBuffer = await fetch(`/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}&bearing=${coord.heading}`);
@@ -146,7 +155,7 @@ async function drawBus(busData, map) {
             busIcon = URL.createObjectURL(blob);
 
             // cache the fetched image
-            busImageCache[`${coord.noc}-${coord.route}`] = busIcon;
+            busImageCache[`${coord.noc}-${coord.route}-${coord.heading}`] = busIcon;
         }
 
         // Create marker with the bus icon on it

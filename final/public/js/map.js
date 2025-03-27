@@ -11,6 +11,7 @@ import { removeRoute } from "./busRoute.js";
 import { showNotification } from "./helper.js";
 import { initializeCookieStorage, setupCookieBar } from "./cookies.js";
 import { getUserLocation, drawUserLocation, initUserLocationTracking, getUserCoordinates, saveLocationToCookie } from "./userlocation.js";
+import { closePanel } from "./grabber.js";
 
 // Variables
 let map;  
@@ -61,6 +62,7 @@ function addHomeButtonToMap() {
             
             // Clear bus data container
             $("#bus-data").html("");
+            closePanel();
 
             // Remove all URL parameters
             // Update URL without refreshing page
@@ -421,6 +423,10 @@ document.addEventListener("DOMContentLoaded", async function() {
     }
 
     // Handle map movement events
+    map.on("movestart", function() {
+        closePanel();
+    });
+
     map.on("moveend", function() {
         if (ignoreNextMoveEnd) {
             ignoreNextMoveEnd = false;
