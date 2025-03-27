@@ -4,7 +4,7 @@
  * @description A module handling stop information, including fetching from relevant APIs and drawing stops on a map
  */
 
-import { setViewAllBuses, updateBusesAndStops, addrouteButtonToMap } from "./map.js";
+import { setViewAllBuses, updateBusesAndStops } from "./map.js";
 import { removeRoute } from "./busRoute.js";
 import { getSpecificBusGPS, drawBus, showSpecificBusRoute } from "./busGps.js";
 import { showNotification } from "./helper.js";

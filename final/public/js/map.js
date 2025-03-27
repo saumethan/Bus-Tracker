@@ -511,4 +511,4 @@ function easterEgg() {
 }
 
 // Export
-export { setViewAllBuses, getViewAllBuses, getViewportBounds, adjustMapViewToRoute, updateBusesAndStops, addrouteButtonToMap};
+export { setViewAllBuses, getViewAllBuses, getViewportBounds, adjustMapViewToRoute, updateBusesAndStops};
