@@ -122,7 +122,11 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                 // get departure times
                 let scheduledDeparture = new Date(bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
                 let realTimeDeparture = new Date(bus.realTimeDeparture || bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-                
+
+                if (bus.scheduledDeparture === null) { // sometimes scheduled departure could be null, in which case we'll just show the expected time
+                    scheduledDeparture = realTimeDeparture;
+                }
+
                 // fixes glitch with the API output where some buses appear twice
                 if (!bus.operator || !bus.operator.operatorName) continue;
                 if (bus.operator.operatorName.includes("Stagecoach")) {
