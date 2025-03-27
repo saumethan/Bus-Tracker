@@ -134,27 +134,7 @@ function addLocationButtonToMap() {
     // Add to map
     locationButton.addTo(map);
 }
-// ------------------ Function to add route button to the map ------------------
-function addrouteButtonToMap(map,stopLng,stopLat) {
-    // Location button 
-    const routeButton = L.control({ position: "topright" });
 
-    routeButton.onAdd = function () {
-        const buttonDiv = L.DomUtil.create("div", "map-button");
-        buttonDiv.innerHTML = "<button id='location-button'><i class='bi bi-person-walking'></i></i></button>";
-
-        // Event listener for the button
-        buttonDiv.addEventListener("click", async () => {
-            const{lat,lng} = getUserCoordinates();
-            const routeData = await getRouteData(stopLng,stopLat,lng,lat);
-            drawRoute(routeData,map);
-        });
-        return buttonDiv;
-    };
-
-    // Add to map
-    routeButton.addTo(map);
-}
 // ------------------ Function to layer to style the map ------------------
 function addTileLayer(mapInstance) {
     L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
@@ -528,43 +508,6 @@ function easterEgg() {
             }, i * 100);
         }
     });
-}
-
-function drawRoute(routeCoords, map) {
-    console.log(routeCoords)
-    const coordinates = [];
-    if (!Array.isArray(routeCoords.coordinates)) {
-        console.error("Invalid routeCoords format:", routeCoords);
-        return;
-    }
-    routeCoords.coordinates.forEach((point) => {
-        console.log(point.latitude, point.longitude);
-        coordinates.push([point.latitude, point.longitude]);
-    });
-    
-
-    if (!map) {
-        console.error("Map is not initialized!");
-        return;
-    }
-
-    removeRoute(map);
-
-
-    if (coordinates.length === 0) {
-        console.error("Invalid route coordinates:", coordinates);
-        return;
-    }
-
-    route = L.polyline(coordinates, {
-        color: "#3498db",
-        weight: 4,
-        opacity: 0.8,
-    }).addTo(map);
-
-    adjustMapViewToRoute(route, map);
-
-    return route;
 }
 
 // Export
