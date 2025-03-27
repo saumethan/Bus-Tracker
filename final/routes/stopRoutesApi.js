@@ -118,7 +118,6 @@ router.get("/times", async (req, res) => {
     }
 
     try {
-        
         const response = await axios.post(
             liveTimesUrl,
             {
