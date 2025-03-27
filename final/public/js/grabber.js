@@ -44,7 +44,7 @@ $(document).ready(function() {
         function resizeMove(e) {
             const currentY = e.clientY;
             const deltaY = startY - currentY;
-            let newHeight = Math.max(120, Math.min(startHeight + deltaY, $(window).height() * 0.8));
+            let newHeight = Math.max(45, Math.min(startHeight + deltaY, $(window).height() * 0.95));
             $("aside.col-md-3").height(newHeight);
             updateMapHeight();
             //e.preventDefault();
@@ -53,7 +53,7 @@ $(document).ready(function() {
         function resizeTouchMove(e) {
             const currentY = e.originalEvent.touches[0].clientY;
             const deltaY = startY - currentY;
-            let newHeight = Math.max(120, Math.min(startHeight + deltaY, $(window).height() * 0.8));
+            let newHeight = Math.max(45, Math.min(startHeight + deltaY, $(window).height() * 0.95));
             $("aside.col-md-3").height(newHeight);
             updateMapHeight();
             //e.preventDefault();
@@ -72,6 +72,7 @@ $(document).ready(function() {
         }
 
         // initialize map
+        $("aside.col-md-3").height("45px");
         updateMapHeight();
 
         // update on window resize
