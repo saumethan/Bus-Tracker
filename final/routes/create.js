@@ -54,7 +54,11 @@ router.post('/createUser', async function(req, res) {
         // Insert the new user into the database
         const result = await db.collection('users').insertOne(datatostore);
         console.log("Saved to database:", result.insertedId);
-        
+        res.session.loggedin = true;
+        req.session.thisuser = userName
+
+        console.log("Logged new user into their account ")
+
         res.redirect('/');
 
     } catch (error) {
