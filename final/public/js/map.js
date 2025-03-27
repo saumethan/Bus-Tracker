@@ -196,7 +196,7 @@ function resetInactivityTimeout() {
                 loadStopTimes(stopId, lat, lon, map);
             }
         }
-        inactivityTimeout = setTimeout(reload, 10000);
+        inactivityTimeout = setTimeout(reload, 30000);
     }
 }
 
