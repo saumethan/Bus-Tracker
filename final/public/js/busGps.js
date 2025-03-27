@@ -22,6 +22,7 @@ async function getSpecificBusGPS(route, useBounds, isSearch, lat, lng) {
 
         if (useBounds) {
             let { minX, minY, maxX, maxY } = getViewportBounds();
+            console.log(minX, minY, maxX, maxY)
             let radius = Math.abs(maxX - minX);
 
             while (isSearch && radius < 50) {
@@ -47,23 +48,6 @@ async function getSpecificBusGPS(route, useBounds, isSearch, lat, lng) {
                 ({ lat, lng } = getUserCoordinates());
             }
 
-            let radius = Math.abs(maxX - minX);
-
-            while (isSearch && radius < 50) {
-                response = await $.get(`/api/buses/find/${route}?lat=${lat}&lon=${lng}`);
-                
-                if (response.length > 0) break; // Stop if results are found
-                
-                // Expand search area
-                minX -= .5;
-                minY -= .5;
-                maxX += .5;
-                maxY += .5;
-                radius = Math.abs(maxX - minX);
-
-                if (radius >= 70) break; // Limit expansion to a radius of 70
-            }
-
             response = await $.get(`/api/buses/find/${route}?lat=${lat}&lon=${lng}`);
         }
 
@@ -85,7 +69,6 @@ async function getSpecificBusGPS(route, useBounds, isSearch, lat, lng) {
 
         //console.log(busData)
         
-        return busData;
     } catch (error) {
         console.error("Error fetching specific bus data:", error);
         showNotification("Error 2 fetching specific bus data", "warning");
