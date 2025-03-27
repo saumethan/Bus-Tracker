@@ -302,7 +302,7 @@ async function drawStops(stopsData, map) {
 
             map.setView([stop.latitude, stop.longitude], 15);
 
-            addrouteButtonToMap(map,stop.lat);
+            addrouteButtonToMap(map,stop.latitude, stop.longitude);
             
             setViewAllBuses(true);
             
