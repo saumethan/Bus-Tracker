@@ -134,6 +134,27 @@ function addLocationButtonToMap() {
     // Add to map
     locationButton.addTo(map);
 }
+// ------------------ Function to add route button to the map ------------------
+function addrouteButtonToMap(map,stopLng,stopLat) {
+    // Location button 
+    const routeButton = L.control({ position: "topright" });
+
+    routeButton.onAdd = function () {
+        const buttonDiv = L.DomUtil.create("div", "map-button");
+        buttonDiv.innerHTML = "<button id='location-button'><i class='bi bi-person-walking'></i></i></button>";
+
+        // Event listener for the button
+        buttonDiv.addEventListener("click", async () => {
+            const{lat,lng} = getUserCoordinates();
+            const routeData = await getRouteData(stopLng,stopLat,lng,lat);
+            drawRoute(routeData,map);
+        });
+        return buttonDiv;
+    };
+
+    // Add to map
+    routeButton.addTo(map);
+}
 // ------------------ Function to layer to style the map ------------------
 function addTileLayer(mapInstance) {
     L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
@@ -468,9 +489,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     });
     
     initUserLocationTracking();
-    const{lat,lng} = getUserCoordinates();
-    const routeData = await getRouteData(-2.117698011514234,57.13902722016421,lng,lat);
-    drawRoute(routeData,map);
+    
 });
 
 // ------------------ Function for easteregg ------------------
@@ -549,4 +568,4 @@ function drawRoute(routeCoords, map) {
 }
 
 // Export
-export { setViewAllBuses, getViewAllBuses, getViewportBounds, adjustMapViewToRoute, updateBusesAndStops };
+export { setViewAllBuses, getViewAllBuses, getViewportBounds, adjustMapViewToRoute, updateBusesAndStops, addrouteButtonToMap};
