@@ -29,8 +29,10 @@ connectDB();
 
 // SERVER ENDPOINT: create page
 router.get("/", function(req, res) {
-    res.render("pages/create");
+    res.render("pages/create",{page:"create"});
 });
+
+
 
 
 // -=-=-=-=-=-=-=-=-=Create User Account-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
