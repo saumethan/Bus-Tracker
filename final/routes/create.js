@@ -69,54 +69,36 @@ router.post('/createUser', async function(req, res) {
         console.log(userName)
         console.log(userPass)
 
-        db.collection('users').findOne({
-            "login.username": uname
-        },function(err, result){
-            if(err) throw err;
-        })
 
-        if(!result){
-            console.log("No Result")
-            res.redirect('/login')
-            return
-        }
-
-        if(result.login.password == pword){
-            res.session.loggedin = true;
-            console.log("Logged in : " + req.session.loggedin)
-            res.session.thisuser = unmae;
-            res.redirect('/')
-        }else{
-            res.redirect('/login')
-            console.log("Error Logging in:", error);
-            res.status(500).send("Failed to create Login");
+        //Gets the users name from the form when submitted then trys to find it in the database
+        try{
+            var result = await db.collection('users').findOne({
+                "login.username": userName
+            })
+        //If the users username is incorect and dosent match the database then this will return a message saying that a user with this name has not been found
+            if(!result){
+                console.log("No User Found")
+                return res.status(401).send("No User with that name found")
+                return
+            }
+        //Checks the entered password with the users name to check that they match correctly
+            if(result.login.password=== userPass){
+                res.session.loggedin = true;
+                req.session.thisuser = userName
+                console.log("Logged in : " +req.session.loggedin)
+                res.redirect('/')
+            }else{
+                console.log("Incorrect Password")
+                res.status(401).send("Incorrect Password please try again")
+            }
+        }catch(error){
+            console.error("Login Error", error)
+            res.status(500).send("Failed to log in at this time")
         }
     })
 
 
-    try {
-        const result = await db.collection('users').findOne({
-            "login.username": userName
-        });
-
-        if (!result) {
-            console.log("No Result");
-            return res.redirect('/login');
-        }
-
-        if (result.login.password === userPass) {
-            req.session.loggedin = true;
-            req.session.thisuser = userName;
-            console.log("Logged in: " + req.session.loggedin);
-            res.redirect('/');
-        } else {
-            console.log("Error Logging in: Invalid password");
-            res.redirect('/login');
-        }
-    } catch (error) {
-        console.error("Error:", error);
-        res.status(500).send("Failed to log in");
-    }
+        
 
 
 //-=-=-=-=-=-=-=-=-=-=-=-=-===-=-Change Username =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
