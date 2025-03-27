@@ -6,7 +6,7 @@
 
 // Modules
 import { getAllBusGPS, getSpecificBusGPS, drawBus, getNocCode, getRouteNumber, showSpecificBusRoute } from "./busGps.js";
-import { fetchStopsInViewport, drawStops, loadStopTimes } from "./stops.js";
+import { fetchStopsInViewport, drawStops, loadStopTimes, fetchSpecificStopLocation } from "./stops.js";
 import { removeRoute } from "./busRoute.js";
 import { showNotification } from "./helper.js";
 import { initializeCookieStorage, setupCookieBar } from "./cookies.js";
@@ -412,7 +412,6 @@ document.addEventListener("DOMContentLoaded", async function() {
     const routeNumber = getUrlParameter("bus");
     if (routeNumber) {
         //console.log(`Bus route detected in URL: ${routeNumber}`);
-        const { lat, lng } = getUserCoordinates();
         //console.log(lat, lng)
         setViewAllBuses(false);
         //console.log(routeNumber)
@@ -425,7 +424,11 @@ document.addEventListener("DOMContentLoaded", async function() {
     // FINISH THIS TO SHOW THE STOP 
     const stopId = getUrlParameter("stop");
     if (stopId) {
-        //console.log(`Bus stop detected in URL: ${stopId}`);
+        console.log(`Bus stop detected in URL: ${stopId}`);
+        const { lat, lng } = getUserCoordinates()
+        const busStop = await fetchSpecificStopLocation(stopId, lat, lng);
+        map.setView([busStop[0].latitude, busStop[0].longitude], 15);
+        loadStopTimes(stopId, busStop[0].latitude, busStop[0].longitude, map);
     }
 
     // Handle map movement events

@@ -36,6 +36,21 @@ async function fetchStopsInViewport(yMax, xMax, yMin, xMin) {
     }
 }
 
+async function fetchSpecificStopLocation(stopId, lat, lng) {
+    // get nearby stops
+    const response = await $.ajax({
+        type: "GET",
+        url: `/api/stops/find?stopId=${stopId}&lat=${lat}&lng=${lng}`,
+        dataType: "json",
+    });
+
+    if (response) {
+        return response;
+    } else {
+        return []; // return an empty array if there was no respones
+    }
+}
+
 /**
  * Fetches a given stop ID from the Transit App API.
  * This API can be slow and has limited uses so a cache is implemented too.
@@ -298,4 +313,4 @@ async function drawStops(stopsData, map) {
 }
 
 // Export functions
-export { fetchStopsInViewport, fetchStopId, loadStopTimes, drawStops };
+export { fetchStopsInViewport, fetchStopId, loadStopTimes, fetchSpecificStopLocation, drawStops };
