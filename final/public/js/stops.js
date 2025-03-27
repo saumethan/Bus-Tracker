@@ -4,11 +4,11 @@
  * @description A module handling stop information, including fetching from relevant APIs and drawing stops on a map
  */
 
-
 import { setViewAllBuses, updateBusesAndStops } from "./map.js";
 import { removeRoute } from "./busRoute.js";
 import { getSpecificBusGPS, drawBus, showSpecificBusRoute } from "./busGps.js";
 import { showNotification } from "./helper.js";
+import { popupPanel } from "./grabber.js";
 
 // Constants
 const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
@@ -26,6 +26,21 @@ async function fetchStopsInViewport(yMax, xMax, yMin, xMin) {
     const response = await $.ajax({
         type: "GET",
         url: `/api/stops?yMax=${yMax}&xMax=${xMax}&yMin=${yMin}&xMin=${xMin}`,
+        dataType: "json",
+    });
+
+    if (response) {
+        return response;
+    } else {
+        return []; // return an empty array if there was no respones
+    }
+}
+
+async function fetchSpecificStopLocation(stopId, lat, lng) {
+    // get nearby stops
+    const response = await $.ajax({
+        type: "GET",
+        url: `/api/stops/find?stopId=${stopId}&lat=${lat}&lng=${lng}`,
         dataType: "json",
     });
 
@@ -107,7 +122,11 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                 // get departure times
                 let scheduledDeparture = new Date(bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
                 let realTimeDeparture = new Date(bus.realTimeDeparture || bus.scheduledDeparture).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-                
+
+                if (bus.scheduledDeparture === null) { // sometimes scheduled departure could be null, in which case we'll just show the expected time
+                    scheduledDeparture = realTimeDeparture;
+                }
+
                 // fixes glitch with the API output where some buses appear twice
                 if (!bus.operator || !bus.operator.operatorName) continue;
                 if (bus.operator.operatorName.includes("Stagecoach")) {
@@ -242,8 +261,9 @@ async function drawStops(stopsData, map) {
     stopsData.forEach(stop => {
         // create marker
         const icon = L.icon({
-            iconUrl: `https://i.ibb.co/WNWc6gGK/busStop.png`, 
-            iconSize: [50, 50], 
+            iconUrl: `https://i.ibb.co/PsGndFNQ/busStop.png`, 
+            iconSize: [16, 25],
+            iconAnchor: [8, 13]
         });
         const circle = L.marker([stop.latitude, stop.longitude], {icon: icon}).addTo(map);
 
@@ -266,16 +286,16 @@ async function drawStops(stopsData, map) {
                 Services: ${stopServicesString}<br>
             </div>
         `;
-        circle.bindTooltip(toolTipContent, { permanent: false, direction: "top", offset: [0, -20] });
+        circle.bindTooltip(toolTipContent, { permanent: false, direction: "top", offset: [0, -12] });
 
         // makes the tooltip permanent when clicked on
         circle.on("click", (event) => {
             // stop tooltip
             map.stopMarkers.forEach(marker => {
                 marker.closeTooltip();
-                marker.setIcon(L.icon({ iconUrl: "https://i.ibb.co/WNWc6gGK/busStop.png", iconSize: [50, 50] }));
+                marker.setIcon(L.icon({ iconUrl: "https://i.ibb.co/PsGndFNQ/busStop.png", iconSize: [16, 25] }));
             });
-            circle.setIcon(L.icon({ iconUrl: "https://i.ibb.co/5XCC3MPt/clicked-Bus-Stop.png", iconSize: [50, 50] }));
+            circle.setIcon(L.icon({ iconUrl: "https://i.ibb.co/kshndTY7/clicked-Bus-Stop.png", iconSize: [16, 25] }));
             circle.openTooltip();
 
             updateURLWithStop(stop.bustimes_id)
@@ -288,6 +308,8 @@ async function drawStops(stopsData, map) {
             updateBusesAndStops();
 
             loadStopTimes(stop.bustimes_id, stop.latitude, stop.longitude, map);
+            
+            popupPanel();
         });
 
         map.stopMarkers.push(circle);
@@ -295,4 +317,4 @@ async function drawStops(stopsData, map) {
 }
 
 // Export functions
-export { fetchStopsInViewport, fetchStopId, loadStopTimes, drawStops };
+export { fetchStopsInViewport, fetchStopId, loadStopTimes, fetchSpecificStopLocation, drawStops };

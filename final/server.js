@@ -17,13 +17,13 @@ const busRoutes = require("./routes/busRoutesApi");
 const stopRoutes = require("./routes/stopRoutesApi");
 const imagesRoute = require("./routes/busImagesApi");
 const loginRoutes = require("./routes/login");
-const timetableRoutes = require("./routes/timetableScraper");
 const createRoute = require("./routes/create");
+const planJourney = require("./routes/routingApi")
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
 
-const port = 8080
+const port = 8080;
 const BASE_URL = process.env.BASE_URL || `http://localhost:${port}`;
 
 // SERVER ENDPOINT: index page 
@@ -47,8 +47,8 @@ app.use("/api/buses", busRoutes);
 app.use("/api/stops", stopRoutes);
 app.use("/api/busimages", imagesRoute);
 app.use("/login", loginRoutes);
-app.use("/timetable", timetableRoutes);
 app.use("/create", createRoute)
+app.use("/api/planroute", planJourney);
 
 // 404 page
 app.use(function(req, res, next) {

@@ -6,11 +6,13 @@
 
 // Modules
 import { getAllBusGPS, getSpecificBusGPS, drawBus, getNocCode, getRouteNumber, showSpecificBusRoute } from "./busGps.js";
-import { fetchStopsInViewport, drawStops } from "./stops.js";
+import { fetchStopsInViewport, drawStops, loadStopTimes, fetchSpecificStopLocation } from "./stops.js";
 import { removeRoute } from "./busRoute.js";
 import { showNotification } from "./helper.js";
 import { initializeCookieStorage, setupCookieBar } from "./cookies.js";
 import { getUserLocation, drawUserLocation, initUserLocationTracking, getUserCoordinates, saveLocationToCookie } from "./userlocation.js";
+import { closePanel } from "./grabber.js";
+import { getRouteData } from "./planJourney.js";
 
 // Variables
 let map;  
@@ -61,6 +63,7 @@ function addHomeButtonToMap() {
             
             // Clear bus data container
             $("#bus-data").html("");
+            closePanel();
 
             // Remove all URL parameters
             // Update URL without refreshing page
@@ -183,7 +186,16 @@ function resetInactivityTimeout() {
     
     // Set a new timeout only if zoom level is appropriate
     if (map.currentZoom >= MIN_BUS_ZOOM) {
-        inactivityTimeout = setTimeout(updateBusesAndStops, 10000);
+        function reload() {
+            updateBusesAndStops();
+            const stopId = getUrlParameter("stop");
+            console.log("STOP ID:", stopId);
+            if (stopId) {
+                const { lat, lon } = getUserCoordinates()
+                loadStopTimes(stopId, lat, lon, map);
+            }
+        }
+        inactivityTimeout = setTimeout(reload, 10000);
     }
 }
 
@@ -382,6 +394,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     // Rest of initialization...
     resetInactivityTimeout();
     updateBusesAndStops();
+    
 
     // Resize the buses as the user zooms in
     map.on("zoom" , function (e) {
@@ -401,11 +414,10 @@ document.addEventListener("DOMContentLoaded", async function() {
     const routeNumber = getUrlParameter("bus");
     if (routeNumber) {
         //console.log(`Bus route detected in URL: ${routeNumber}`);
-        const { lat, lng } = getUserCoordinates();
         //console.log(lat, lng)
         setViewAllBuses(false);
         //console.log(routeNumber)
-        const busData = await getSpecificBusGPS(routeNumber, false, false, lat, lng);
+        const busData = await getSpecificBusGPS(routeNumber, true, true);
         drawBus(busData, map);
         //console.log(busData)
         await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, routeNumber, map, busData[0].noc, busData[0].direction, busData[0].destination);
@@ -414,10 +426,18 @@ document.addEventListener("DOMContentLoaded", async function() {
     // FINISH THIS TO SHOW THE STOP 
     const stopId = getUrlParameter("stop");
     if (stopId) {
-        //console.log(`Bus stop detected in URL: ${stopId}`);
+        console.log(`Bus stop detected in URL: ${stopId}`);
+        const { lat, lng } = getUserCoordinates()
+        const busStop = await fetchSpecificStopLocation(stopId, lat, lng);
+        map.setView([busStop[0].latitude, busStop[0].longitude], 15);
+        loadStopTimes(stopId, busStop[0].latitude, busStop[0].longitude, map);
     }
 
     // Handle map movement events
+    map.on("movestart", function() {
+        closePanel();
+    });
+
     map.on("moveend", function() {
         if (ignoreNextMoveEnd) {
             ignoreNextMoveEnd = false;
@@ -448,6 +468,9 @@ document.addEventListener("DOMContentLoaded", async function() {
     });
     
     initUserLocationTracking();
+    const{lat,lng} = getUserCoordinates();
+    const routeData = await getRouteData(-2.117698011514234,57.13902722016421,lng,lat);
+    drawRoute(routeData,map);
 });
 
 // ------------------ Function for easteregg ------------------
@@ -486,6 +509,43 @@ function easterEgg() {
             }, i * 100);
         }
     });
+}
+
+function drawRoute(routeCoords, map) {
+    console.log(routeCoords)
+    const coordinates = [];
+    if (!Array.isArray(routeCoords.coordinates)) {
+        console.error("Invalid routeCoords format:", routeCoords);
+        return;
+    }
+    routeCoords.coordinates.forEach((point) => {
+        console.log(point.latitude, point.longitude);
+        coordinates.push([point.latitude, point.longitude]);
+    });
+    
+
+    if (!map) {
+        console.error("Map is not initialized!");
+        return;
+    }
+
+    removeRoute(map);
+
+
+    if (coordinates.length === 0) {
+        console.error("Invalid route coordinates:", coordinates);
+        return;
+    }
+
+    route = L.polyline(coordinates, {
+        color: "#3498db",
+        weight: 4,
+        opacity: 0.8,
+    }).addTo(map);
+
+    adjustMapViewToRoute(route, map);
+
+    return route;
 }
 
 // Export

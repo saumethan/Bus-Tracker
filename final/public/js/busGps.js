@@ -46,6 +46,24 @@ async function getSpecificBusGPS(route, useBounds, isSearch, lat, lng) {
             if (!(lat && lng)) {
                 ({ lat, lng } = getUserCoordinates());
             }
+
+            let radius = Math.abs(maxX - minX);
+
+            while (isSearch && radius < 50) {
+                response = await $.get(`/api/buses/find/${route}?lat=${lat}&lon=${lng}`);
+                
+                if (response.length > 0) break; // Stop if results are found
+                
+                // Expand search area
+                minX -= .5;
+                minY -= .5;
+                maxX += .5;
+                maxY += .5;
+                radius = Math.abs(maxX - minX);
+
+                if (radius >= 70) break; // Limit expansion to a radius of 70
+            }
+
             response = await $.get(`/api/buses/find/${route}?lat=${lat}&lon=${lng}`);
         }
 
@@ -118,7 +136,16 @@ async function drawBus(busData, map) {
         }
 
         // Find the icon for this bus
-        let busIcon = busImageCache[`${coord.noc}-${coord.route}`];
+        let busIcon
+        Object.keys(busImageCache).forEach(key => {
+            if (key.includes(`${coord.noc}-${coord.route}`)) {
+                const thisHeading = parseInt(key.split("-")[2]);
+                if (Math.abs(thisHeading-coord.heading) <= 20 || Math.abs(thisHeading-coord.heading) >= 340) {
+                    busIcon = busImageCache[key];
+                }
+            }
+        });
+
         if (!busIcon) {
             // fetch image from our endpoint
             const imageBuffer = await fetch(`/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}&bearing=${coord.heading}`);
@@ -128,7 +155,7 @@ async function drawBus(busData, map) {
             busIcon = URL.createObjectURL(blob);
 
             // cache the fetched image
-            busImageCache[`${coord.noc}-${coord.route}`] = busIcon;
+            busImageCache[`${coord.noc}-${coord.route}-${coord.heading}`] = busIcon;
         }
 
         // Create marker with the bus icon on it
