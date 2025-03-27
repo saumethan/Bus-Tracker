@@ -4,11 +4,11 @@
  * @description A module handling stop information, including fetching from relevant APIs and drawing stops on a map
  */
 
-
 import { setViewAllBuses, updateBusesAndStops } from "./map.js";
 import { removeRoute } from "./busRoute.js";
 import { getSpecificBusGPS, drawBus, showSpecificBusRoute } from "./busGps.js";
 import { showNotification } from "./helper.js";
+import { popupPanel } from "./grabber.js";
 
 // Constants
 const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
@@ -289,6 +289,8 @@ async function drawStops(stopsData, map) {
             updateBusesAndStops();
 
             loadStopTimes(stop.bustimes_id, stop.latitude, stop.longitude, map);
+            
+            popupPanel();
         });
 
         map.stopMarkers.push(circle);
