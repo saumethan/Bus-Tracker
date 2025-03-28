@@ -465,7 +465,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         }
 
         const newBounds = getViewportBounds();
-        if (map.currentZoom <= 15 && hasMovedBeyondBounds(newBounds)) {
+        if (map.currentZoom <= 12 && hasMovedBeyondBounds(newBounds)) {
             lastRequestedBounds = newBounds;
             const zoom = map.currentZoom
             document.dispatchEvent(new CustomEvent("zoomedOut", { detail: { zoom } }));

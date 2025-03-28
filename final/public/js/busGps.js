@@ -293,15 +293,16 @@ document.addEventListener("viewAllBusesChanged", (event) => {
     if (!event.detail.viewAllBuses && busIconRequestController) {
         busIconRequestController.abort();
         busIconRequestController = null;
-        console.log("Canceled pending bus icon requests.");
+        console.log("1 Canceled pending bus icon requests.");
     }
 });
 
 document.addEventListener("zoomedOut", (event) => {
-    if (!event.detail.zoom < 12) {
+    console.log(event.detail.zoom)
+    if (!event.detail.zoom <= 12 && busIconRequestController) {
         busIconRequestController.abort();
         busIconRequestController = null;
-        console.log("Canceled pending bus icon requests.");
+        console.log("2 Canceled pending bus icon requests.");
     }
 });
 
