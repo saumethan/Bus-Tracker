@@ -188,7 +188,7 @@ function resetInactivityTimeout() {
                 const { lat, lon } = getUserCoordinates();
                 loadStopTimes(stopId, lat, lon, map);
             }
-        }, 30000);
+        }, 15000);
     }
 }
 
