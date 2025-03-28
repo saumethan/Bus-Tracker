@@ -297,5 +297,13 @@ document.addEventListener("viewAllBusesChanged", (event) => {
     }
 });
 
+document.addEventListener("zoomedOut", (event) => {
+    if (!event.detail.zoom < 12) {
+        busIconRequestController.abort();
+        busIconRequestController = null;
+        console.log("Canceled pending bus icon requests.");
+    }
+});
+
 // Export functions
 export { getAllBusGPS, getSpecificBusGPS, drawBus, getRouteNumber, getNocCode, showSpecificBusRoute };
