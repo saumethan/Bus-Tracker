@@ -20,9 +20,11 @@ let inactivityTimeout;
 let viewAllBuses = true;
 let noc = null;
 let route = null;
+let plannedRoute = null;
 let busUpdateInProgress = false;
 let ignoreNextMoveEnd = false;
 let ignoreNextZoomEnd = false;
+let currentRouteButton = null;
 
 // Constants for zoom levels
 const MIN_BUS_ZOOM = 12;
@@ -59,6 +61,8 @@ function addHomeButtonToMap() {
             
             // Update the UI
             removeRoute(map);
+            removePlannedRoute(map);
+            currentRouteButton.remove();
             updateBusesAndStops();
             
             // Clear bus data container
@@ -136,24 +140,33 @@ function addLocationButtonToMap() {
 }
 // ------------------ Function to add route button to the map ------------------
 function addrouteButtonToMap(map,stopLng,stopLat) {
-    // Location button 
+
+    if(currentRouteButton){
+        currentRouteButton.remove();
+    }
+
+    // route button 
     const routeButton = L.control({ position: "topright" });
 
     routeButton.onAdd = function () {
         const buttonDiv = L.DomUtil.create("div", "map-button");
-        buttonDiv.innerHTML = "<button id='location-button'><i class='bi bi-person-walking'></i></i></button>";
+        buttonDiv.innerHTML = "<button id='location-button'><i class='fa-solid fa-person-walking'></i></i></button>";
 
         // Event listener for the button
         buttonDiv.addEventListener("click", async () => {
+            removePlannedRoute(map);
             const{lat,lng} = getUserCoordinates();
-            const routeData = await getRouteData(stopLng,stopLat,lng,lat);
-            drawRoute(routeData,map);
+            const routeData = await getRouteData(stopLat,stopLng,lng,lat);
+            const distance = (routeData.totalDistance/1609.344).toFixed(2);
+            const duration = Math.round(routeData.totalDuration / 60);
+            drawRoute(routeData,distance,duration,map);
         });
         return buttonDiv;
     };
 
     // Add to map
     routeButton.addTo(map);
+    currentRouteButton = routeButton;
 }
 // ------------------ Function to layer to style the map ------------------
 function addTileLayer(mapInstance) {
@@ -382,6 +395,7 @@ async function searchRoute(event) {
 
     setViewAllBuses(false, busData[0].noc, route);
 
+    removePlannedRoute(map);
     drawBus(busData, map);
 
     if (busData[0]) {
@@ -530,8 +544,15 @@ function easterEgg() {
     });
 }
 
-function drawRoute(routeCoords, map) {
-    console.log(routeCoords)
+function removePlannedRoute(map) {
+    if (plannedRoute) {
+        map.removeLayer(plannedRoute);  
+        plannedRoute = null;  
+        currentRouteButton.remove();
+    }
+}
+
+function drawRoute(routeCoords,distance,duration,map) {
     const coordinates = [];
     if (!Array.isArray(routeCoords.coordinates)) {
         console.error("Invalid routeCoords format:", routeCoords);
@@ -548,24 +569,43 @@ function drawRoute(routeCoords, map) {
         return;
     }
 
-    removeRoute(map);
-
-
+  
     if (coordinates.length === 0) {
         console.error("Invalid route coordinates:", coordinates);
         return;
     }
 
-    route = L.polyline(coordinates, {
+    removePlannedRoute(map);
+
+    plannedRoute = L.polyline(coordinates, {
         color: "#3498db",
         weight: 4,
         opacity: 0.8,
     }).addTo(map);
 
-    adjustMapViewToRoute(route, map);
+    const toolTipContent = `
+            <div>
+                 <p>Walk Time:</strong> ${duration} mins <br>
+                 Distance:</strong> ${distance} miles </p>
+            </div>
+        `;
+        plannedRoute.bindTooltip(toolTipContent, { permanent: false, direction: "top", offset: [0, -12] });
 
-    return route;
+        // makes the tooltip permanent when clicked on
+        plannedRoute.on("hover", (event) => {
+            // stop tooltip
+            map.stopMarkers.forEach(marker => {
+                marker.closeTooltip();
+                
+            });
+            plannedRoute.openTooltip();
+        
+        });
+
+    adjustMapViewToRoute(plannedRoute, map);
+
+    return plannedRoute;
 }
 
 // Export
-export { setViewAllBuses, getViewAllBuses, getViewportBounds, adjustMapViewToRoute, updateBusesAndStops, addrouteButtonToMap};
+export { setViewAllBuses, getViewAllBuses, getViewportBounds, adjustMapViewToRoute, updateBusesAndStops, addrouteButtonToMap,  removePlannedRoute};
