@@ -18,7 +18,7 @@ const stopRoutes = require("./routes/stopRoutesApi");
 const imagesRoute = require("./routes/busImagesApi");
 const loginRoutes = require("./routes/login");
 const createRoute = require("./routes/create");
-const planJourney = require("./routes/routingApi")
+const planRoute = require("./routes/routingApi")
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
@@ -48,7 +48,7 @@ app.use("/api/stops", stopRoutes);
 app.use("/api/busimages", imagesRoute);
 app.use("/login", loginRoutes);
 app.use("/create", createRoute)
-app.use("/api/planroute", planJourney);
+app.use("/api/planroute", planRoute);
 
 // 404 page
 app.use(function(req, res, next) {
