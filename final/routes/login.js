@@ -8,6 +8,9 @@ const client = new MongoClient(url);
 const dbName = "User_Profiles";
 let db;
 
+router.use(express.urlencoded({ extended: true }));  // Parses form data
+router.use(express.json());  // Parses JSON data
+
 // SERVER ENDPOINT: login page
 router.get("/", function(req, res) {
     res.render("pages/login",{page:"login"});
