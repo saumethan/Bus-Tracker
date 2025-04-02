@@ -18,7 +18,7 @@ const stopRoutes = require("./routes/stopRoutesApi");
 const imagesRoute = require("./routes/busImagesApi");
 const loginRoutes = require("./routes/login");
 const createRoute = require("./routes/create");
-const planJourney = require("./routes/routingApi.js")
+const planJourney = require("./routes/routingApi")
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
