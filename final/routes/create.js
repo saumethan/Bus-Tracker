@@ -67,7 +67,7 @@ router.post('/createUser', async function(req, res) {
 });
 
 //-=-=-=-=-=-=-=-=-==-=-=-=-=Login Pathways -=-=-=-=-=-=-=-=-=-=-===-=-=-==-=-=-=-=-=-=-=-=-=-=-\\
-router.post('/login/userlogin', async function(req,res){
+/*router.post('/login/userlogin', async function(req,res){
     var userName = req.body.uname;
     var userPass = req.body.upass;
 
@@ -98,7 +98,7 @@ router.post('/login/userlogin', async function(req,res){
         console.error("Login Error", error)
         res.status(500).send("Failed to log in at this time")
     }
-})
+})*/
 
 
 
