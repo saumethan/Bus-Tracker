@@ -39,7 +39,7 @@ router.get("/", function(req, res) {
 router.post('/createUser', async function(req, res) {
     try {
         // Check if user is already logged in
-        //if (req.session.loggedin = true) {
+        //if (req.session.loggedin === true) {
          //  res.redirect('/login');
          //  return;
         //}
@@ -71,10 +71,6 @@ router.post('/createUser', async function(req, res) {
 router.post('/login/userlogin', async function(req,res){
     var userName = req.body.uname;
     var userPass = req.body.upass;
-
-    console.log(userName)
-    console.log(userPass)
-
 
     //Gets the users name from the form when submitted then trys to find it in the database
     try{
