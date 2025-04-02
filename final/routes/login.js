@@ -8,6 +8,12 @@ const client = new MongoClient(url);
 const dbName = "User_Profiles";
 let db;
 
+// SERVER ENDPOINT: login page
+router.get("/", function(req, res) {
+    res.render("pages/login",{page:"login"});
+});
+
+
 async function connectDB() {
     try {
         await client.connect();
