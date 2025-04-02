@@ -23,6 +23,8 @@ let route = null;
 let busUpdateInProgress = false;
 let ignoreNextMoveEnd = false;
 let ignoreNextZoomEnd = false;
+let lastRequestedBounds = null;
+let lastZoomLevel = 15;
 
 // Constants for zoom levels
 const MIN_BUS_ZOOM = 12;
@@ -134,6 +136,7 @@ function addLocationButtonToMap() {
     // Add to map
     locationButton.addTo(map);
 }
+
 // ------------------ Function to layer to style the map ------------------
 function addTileLayer(mapInstance) {
     L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
@@ -151,18 +154,10 @@ function adjustMapViewToRoute(route) {
 
 // ------------------ Function to get the map viewport bounds ------------------
 function getViewportBounds() {
-    // Gets the current bounds of the map
     const bounds = map.getBounds();
     const southwest = bounds.getSouthWest();
-    const northeast = bounds.getNorthEast(); 
-
-    // Extracts coordinates
-    const minX = southwest.lng;
-    const minY = southwest.lat;
-    const maxX = northeast.lng;
-    const maxY = northeast.lat;
-    
-    return { minX, minY, maxX, maxY };
+    const northeast = bounds.getNorthEast();
+    return { minX: southwest.lng, minY: southwest.lat, maxX: northeast.lng, maxY: northeast.lat };
 }
 
 // ------------------ Function to get the map coordinates ------------------
@@ -186,24 +181,36 @@ function resetInactivityTimeout() {
     
     // Set a new timeout only if zoom level is appropriate
     if (map.currentZoom >= MIN_BUS_ZOOM) {
-        function reload() {
+        inactivityTimeout = setTimeout(() => {
             updateBusesAndStops();
             const stopId = getUrlParameter("stop");
-            console.log("STOP ID:", stopId);
             if (stopId) {
-                const { lat, lon } = getUserCoordinates()
+                const { lat, lon } = getUserCoordinates();
                 loadStopTimes(stopId, lat, lon, map);
             }
-        }
-        inactivityTimeout = setTimeout(reload, 10000);
+        }, 15000);
     }
 }
+
+// ------------------ Function to check if the viewport has moved beyond the last bounds ------------------
+function hasMovedBeyondBounds(newBounds) {
+    if (!lastRequestedBounds) return true;
+    return (
+        newBounds.minX < lastRequestedBounds.minX ||
+        newBounds.maxX > lastRequestedBounds.maxX ||
+        newBounds.minY < lastRequestedBounds.minY ||
+        newBounds.maxY > lastRequestedBounds.maxY
+    );
+}
+
 
 // ------------------ Function to set view all buses flag ------------------
 function setViewAllBuses(value, nocCode, selectedRoute) {
     viewAllBuses = value;
     noc = nocCode || null;
     route = selectedRoute || null;
+
+    document.dispatchEvent(new CustomEvent("viewAllBusesChanged", { detail: { viewAllBuses } }));
 }
 
 // ------------------ Function to get view all buses flag ------------------
@@ -438,22 +445,36 @@ document.addEventListener("DOMContentLoaded", async function() {
         closePanel();
     });
 
-    map.on("moveend", function() {
+    map.on("moveend", function () {
         if (ignoreNextMoveEnd) {
             ignoreNextMoveEnd = false;
             return;
         }
-        resetInactivityTimeout();
-        updateBusesAndStops();
+        const newBounds = getViewportBounds();
+        if (hasMovedBeyondBounds(newBounds)) {
+            lastRequestedBounds = newBounds;
+            updateBusesAndStops();
+            resetInactivityTimeout();
+        }
     });
     
-    map.on("zoomend", function() {
+    map.on("zoomend", function () {
         if (ignoreNextZoomEnd) {
             ignoreNextZoomEnd = false;
             return;
         }
-        resetInactivityTimeout();
-        updateBusesAndStops();
+
+        const newBounds = getViewportBounds();
+        if (map.currentZoom <= 12 && hasMovedBeyondBounds(newBounds)) {
+            lastRequestedBounds = newBounds;
+            const zoom = map.currentZoom
+            document.dispatchEvent(new CustomEvent("zoomedOut", { detail: { zoom } }));
+            updateBusesAndStops();
+            resetInactivityTimeout();
+        } else {
+            updateBusesAndStops();
+        } 
+        lastZoomLevel = map.currentZoom;
     });
 
     document.getElementById("searchForm").addEventListener("submit", searchRoute);
@@ -468,9 +489,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     });
     
     initUserLocationTracking();
-    const{lat,lng} = getUserCoordinates();
-    const routeData = await getRouteData(-2.117698011514234,57.13902722016421,lng,lat);
-    drawRoute(routeData,map);
+    
 });
 
 // ------------------ Function for easteregg ------------------
@@ -511,42 +530,5 @@ function easterEgg() {
     });
 }
 
-function drawRoute(routeCoords, map) {
-    console.log(routeCoords)
-    const coordinates = [];
-    if (!Array.isArray(routeCoords.coordinates)) {
-        console.error("Invalid routeCoords format:", routeCoords);
-        return;
-    }
-    routeCoords.coordinates.forEach((point) => {
-        console.log(point.latitude, point.longitude);
-        coordinates.push([point.latitude, point.longitude]);
-    });
-    
-
-    if (!map) {
-        console.error("Map is not initialized!");
-        return;
-    }
-
-    removeRoute(map);
-
-
-    if (coordinates.length === 0) {
-        console.error("Invalid route coordinates:", coordinates);
-        return;
-    }
-
-    route = L.polyline(coordinates, {
-        color: "#3498db",
-        weight: 4,
-        opacity: 0.8,
-    }).addTo(map);
-
-    adjustMapViewToRoute(route, map);
-
-    return route;
-}
-
 // Export
-export { setViewAllBuses, getViewAllBuses, getViewportBounds, adjustMapViewToRoute, updateBusesAndStops };
+export { setViewAllBuses, getViewAllBuses, getViewportBounds, adjustMapViewToRoute, updateBusesAndStops};

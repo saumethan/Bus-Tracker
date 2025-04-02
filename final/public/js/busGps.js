@@ -12,6 +12,7 @@ import { getUserCoordinates } from "./userlocation.js";
 
 // Variables
 const busImageCache = {};
+let busIconRequestController = null;
 let routeNumber;
 let nocCode;
 
@@ -22,6 +23,7 @@ async function getSpecificBusGPS(route, useBounds, isSearch, lat, lng) {
 
         if (useBounds) {
             let { minX, minY, maxX, maxY } = getViewportBounds();
+            console.log(minX, minY, maxX, maxY)
             let radius = Math.abs(maxX - minX);
 
             while (isSearch && radius < 50) {
@@ -47,23 +49,6 @@ async function getSpecificBusGPS(route, useBounds, isSearch, lat, lng) {
                 ({ lat, lng } = getUserCoordinates());
             }
 
-            let radius = Math.abs(maxX - minX);
-
-            while (isSearch && radius < 50) {
-                response = await $.get(`/api/buses/find/${route}?lat=${lat}&lon=${lng}`);
-                
-                if (response.length > 0) break; // Stop if results are found
-                
-                // Expand search area
-                minX -= .5;
-                minY -= .5;
-                maxX += .5;
-                maxY += .5;
-                radius = Math.abs(maxX - minX);
-
-                if (radius >= 70) break; // Limit expansion to a radius of 70
-            }
-
             response = await $.get(`/api/buses/find/${route}?lat=${lat}&lon=${lng}`);
         }
 
@@ -85,7 +70,6 @@ async function getSpecificBusGPS(route, useBounds, isSearch, lat, lng) {
 
         //console.log(busData)
         
-        return busData;
     } catch (error) {
         console.error("Error fetching specific bus data:", error);
         showNotification("Error 2 fetching specific bus data", "warning");
@@ -147,15 +131,34 @@ async function drawBus(busData, map) {
         });
 
         if (!busIcon) {
-            // fetch image from our endpoint
-            const imageBuffer = await fetch(`/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}&bearing=${coord.heading}`);
-            
-            // turn the buffer into a blob, then into a readable URL
-            const blob = await imageBuffer.blob();
-            busIcon = URL.createObjectURL(blob);
+            //https://developer.mozilla.org/en-US/docs/Web/API/AbortController
+            // Cancels previous image request 
+            if (busIconRequestController) {
+                busIconRequestController.abort();
+            }
 
-            // cache the fetched image
-            busImageCache[`${coord.noc}-${coord.route}-${coord.heading}`] = busIcon;
+            // Creates new AbortController for the request
+            busIconRequestController = new AbortController();
+            const { signal } = busIconRequestController;
+
+            try {
+                // fetch image from our endpoint
+                const imageResponse = await fetch(`/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}&bearing=${coord.heading}`, { signal });
+
+                // turn the buffer into a blob, then into a readable URL
+                const blob = await imageResponse.blob();
+                busIcon = URL.createObjectURL(blob);
+
+                // cache the fetched image
+                busImageCache[`${coord.noc}-${coord.route}-${coord.heading}`] = busIcon;
+            } catch (error) {
+                if (error.name === "AbortError") {
+                    console.log("Bus icon request aborted.");
+                    return; 
+                }
+                console.error("Error fetching bus icon:", error);
+                continue;
+            }
         }
 
         // Create marker with the bus icon on it
@@ -283,6 +286,25 @@ setInterval(() => {
     // clear the cache object
     Object.keys(busImageCache).forEach(key => delete busImageCache[key]);
 }, 60000);
+
+//https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events
+// Listen for viewAllBusesChanged event
+document.addEventListener("viewAllBusesChanged", (event) => {
+    if (!event.detail.viewAllBuses && busIconRequestController) {
+        busIconRequestController.abort();
+        busIconRequestController = null;
+        console.log("1 Canceled pending bus icon requests.");
+    }
+});
+
+document.addEventListener("zoomedOut", (event) => {
+    console.log(event.detail.zoom)
+    if (!event.detail.zoom <= 12 && busIconRequestController) {
+        busIconRequestController.abort();
+        busIconRequestController = null;
+        console.log("2 Canceled pending bus icon requests.");
+    }
+});
 
 // Export functions
 export { getAllBusGPS, getSpecificBusGPS, drawBus, getRouteNumber, getNocCode, showSpecificBusRoute };
