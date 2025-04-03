@@ -128,7 +128,10 @@ nav #title {
 
 #login-section {
     width: 40vw;
-    height: 35vh;
+    
+    min-height: 35vh;
+    max-height: fit-content;
+
     background-color: #fff;
     border-radius: 20px;
     margin: auto;
