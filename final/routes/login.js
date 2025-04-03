@@ -21,9 +21,9 @@ async function connectDB() {
     try {
         await client.connect();
         db = client.db(dbName);
-        console.log("Connected to the database");
+        console.log("login page Connected to the database");
     } catch (error) {
-        console.error("Database connection failed", error);
+        console.error("login page Database connection failed", error);
     }
 }
 connectDB();

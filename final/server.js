@@ -19,6 +19,7 @@ const imagesRoute = require("./routes/busImagesApi");
 const loginRoutes = require("./routes/login");
 const createRoute = require("./routes/create");
 const planJourney = require("./routes/routingApi")
+const settings = require("./routes/settings");
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
@@ -38,9 +39,9 @@ app.get("/", async function(req, res) {
 });
 
 // SERVER ENDPOINT: settings page
-app.get("/settings", function(req, res) {
-    res.render("pages/settings", { page: "settings" });
-});
+//app.get("/settings", function(req, res) {
+//    res.render("pages/settings", { page: "settings" });
+//});
 
 // Use the API routes (from apiRoutes.js)
 app.use("/api/buses", busRoutes);
@@ -49,6 +50,7 @@ app.use("/api/busimages", imagesRoute);
 app.use("/login", loginRoutes);
 app.use("/create", createRoute)
 app.use("/api/planroute", planJourney);
+app.use("/settings", settings);
 
 // 404 page
 app.use(function(req, res, next) {
