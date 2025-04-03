@@ -168,6 +168,15 @@ footer {
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.login-register{
+    background-image: url('/final/public/images/Map.png'); 
+    background-size: cover;  
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+
 #login-container {
     padding-top: 20vh;
 }
