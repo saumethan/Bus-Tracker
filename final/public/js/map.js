@@ -6,7 +6,7 @@
 
 // Modules
 import { getAllBusGPS, getSpecificBusGPS, drawBus, getNocCode, getRouteNumber, showSpecificBusRoute } from "./busGps.js";
-import { fetchStopsInViewport, drawStops, loadStopTimes, fetchSpecificStopLocation } from "./stops.js";
+import { fetchStopsInViewport, drawStops, loadStopTimes, fetchSpecificStopLocation, setupAlertButtons } from "./stops.js";
 import { removeRoute } from "./busRoute.js";
 import { showNotification } from "./helper.js";
 import { initializeCookieStorage, setupCookieBar } from "./cookies.js";
@@ -159,6 +159,7 @@ function addrouteButtonToMap(map,stopLng,stopLat) {
             const routeData = await getRouteData(stopLat,stopLng,lng,lat);
             const distance = (routeData.totalDistance/1609.344).toFixed(2);
             const duration = Math.round(routeData.totalDuration / 60);
+            setupAlertButtons(duration);
             drawRoute(routeData,distance,duration,map);
         });
         return buttonDiv;

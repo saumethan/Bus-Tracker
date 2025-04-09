@@ -4,11 +4,12 @@
  * @description A module handling stop information, including fetching from relevant APIs and drawing stops on a map
  */
 
-import { setViewAllBuses, updateBusesAndStops, addrouteButtonToMap, removePlannedRoute } from "./map.js";
+import { setViewAllBuses, updateBusesAndStops, addrouteButtonToMap, removePlannedRoute} from "./map.js";
 import { removeRoute } from "./busRoute.js";
 import { getSpecificBusGPS, drawBus, showSpecificBusRoute } from "./busGps.js";
 import { showNotification } from "./helper.js";
 import { popupPanel } from "./grabber.js";
+
 
 // Constants
 const TRANSIT_API_KEY = "5b47ee0c0046d256e34d4448e229970472dc74e24ab240188c51e12192e2cd74";
@@ -16,6 +17,8 @@ const BUS_PROXY = `https://europe-west2-legendoj1-portfolio.cloudfunctions.net/b
 
 // Variables
 let transitStopIds = {};
+let currentStopx;
+let currentStopy;
 
 // Functions
 /**
@@ -180,12 +183,16 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                             <span class="destination">to ${bus.destination}</span>
                         </h2>
                         <p class="times">${timeString}<br><span style="color:${statusColor};">${busStatus}</span></p>
+                        <button id='alert-btn' data-departure-time="${bus.realTimeDeparture || bus.scheduledDeparture}" ><i class='fa-solid fa-bell'></i></i></button>
                     </div>
+                    
                 `;
         }
 
         // Append the generated HTML to the DOM
         $("#bus-data").html(htmlContent);
+
+        
 
         document.querySelectorAll(".bus-time-record").forEach((element) => {
             element.addEventListener("click", async () => {
@@ -235,6 +242,62 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
         $("#bus-data").html("<h4>Could not fetch departures data for this stop. This may be because no buses currently serve the stop.</h4>");
     }
 }
+
+function setupAlertButtons(walkDuration) {
+
+    console.log("here")
+
+    document.querySelectorAll("#alert-btn").forEach(button => {
+        button.addEventListener("click", () => {
+            
+            console.log(walkDuration)
+
+
+            
+            let busDepartureTime = button.getAttribute("data-departure-time");
+
+            if (!busDepartureTime) {
+                alert("No departure time available.");
+                return;
+            }
+
+            if (!walkDuration) {
+                alert("No walking route planned!");
+                return;
+            }
+
+            let departureDate = new Date(busDepartureTime);
+            const walkTimeMinutes = Math.round(walkDuration);
+
+            const newDepartureTime = button.getAttribute("data-departure-time");
+
+            if (newDepartureTime !== busDepartureTime) {
+                busDepartureTime = newDepartureTime;
+                departureDate = new Date(busDepartureTime);
+            }
+
+            const leaveTime = new Date(departureDate.getTime() - walkTimeMinutes*60000);
+            console.log("Updated leave time:", leaveTime.toLocaleTimeString());
+
+            const timeUntilLeave = leaveTime.getTime() - Date.now();
+
+            if (timeUntilLeave > 0) {
+                alert("you should leave at " + leaveTime.toLocaleTimeString() )
+                console.log(`You should leave at ${leaveTime.toLocaleTimeString()}`);
+                setTimeout(() => {
+                    alert("Time to leave now to catch your bus!");
+                    clearInterval(intervalId);
+                }, timeUntilLeave);
+            } else {
+                alert("You should have left already! Hurry up!");
+                clearInterval(intervalId);
+            }
+            // Keep checking every 5 seconds for updated departure times
+            const intervalId = setInterval(calculateLeaveTime, 5000);
+        });
+    });
+
+};
 
 function updateURLWithStop(stopId) {
     // Update URL without refreshing page
@@ -321,4 +384,4 @@ async function drawStops(stopsData, map) {
 }
 
 // Export functions
-export { fetchStopsInViewport, fetchStopId, loadStopTimes, fetchSpecificStopLocation, drawStops };
+export { fetchStopsInViewport, fetchStopId, loadStopTimes, fetchSpecificStopLocation, drawStops, setupAlertButtons};
