@@ -191,6 +191,7 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
             element.addEventListener("click", async () => {
                 const serviceNumber = element.dataset.serviceNumber;
                 const noc = element.dataset.operatorCode;
+                removePlannedRoute(map);
                 //console.log(latitude, longitude);
                 const busData = await getSpecificBusGPS(serviceNumber, false, false, latitude, longitude);
                     if (busData.length === 0) {

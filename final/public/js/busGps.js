@@ -5,7 +5,7 @@
  */
 
 // Modules
-import { setViewAllBuses, getViewAllBuses, getViewportBounds, updateBusesAndStops } from "./map.js";
+import { setViewAllBuses, getViewAllBuses, getViewportBounds, updateBusesAndStops,removePlannedRoute } from "./map.js";
 import { getBusRoute, drawBusRoute, removeRoute } from "./busRoute.js";
 import { showNotification } from "./helper.js";
 import { getUserCoordinates } from "./userlocation.js";
@@ -185,6 +185,9 @@ async function drawBus(busData, map) {
             
             // Update URL to reflect the selected bus route
             updateURLWithRoute(coord.route);
+
+            // Remove any walking planned routes
+            removePlannedRoute(map);
 
             // Only try to show specific route if we have serviceId and tripId
             await showSpecificBusRoute(coord.serviceId, coord.tripId, coord.journeyId, coord.route, map, coord.noc, coord.direction, coord.destination);
