@@ -148,13 +148,8 @@ router.post('/deleteaccount', async function(req, res) {
             router.post('/logout');
             res.redirect('/');
             }else{
-                //console.log("User did not type delete, account not deleted");
-                //res.redirect('/settings');
-                return res.render("pages/settings", {
-                    page: "settings",
-                    loggedIn: req.session.loggedin === true,
-                    error: "IUser did not type delete, account not deleted",
-                });
+                console.log("User did not type delete, account not deleted");
+                res.redirect('/settings');
             }
     }else{
             console.log("Not logged in, cannot delete account");
