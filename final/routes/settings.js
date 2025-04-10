@@ -82,12 +82,13 @@ router.post('/changepassword', async function(req, res) {
     const oldpassword = req.body.oldpassword;
     const newpassword = req.body.newpassword;
     const confirmpassword = req.body.confirmpassword;
-    const username = req.session.thisuser;
+    
     
     
     try{
         
         if(req.session.loggedin === true){
+            const username = req.session.thisuser;
             const currentpassword = user.login.password;
             console.log("Current password:", currentpassword);
             console.log("Old password:", oldpassword);
