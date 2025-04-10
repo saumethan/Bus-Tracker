@@ -19,9 +19,11 @@
                     <li class="nav-item">
                         <a class="nav-link <%= page === 'map' ? 'active' : '' %>" href="/">Map</a>
                     </li>
+                    <% if (loggedIn) { %>
                     <li class="nav-item">
-                        <a id="settingshider" class="nav-link <%= page === 'settings' ? 'active' : '' %>"style="display: none;" href="/settings">Settings</a>
+                        <a class="nav-link <%= page === 'settings' ? 'active' : '' %>" href="/settings">Settings</a>
                     </li>
+                    <% } %>
     
                     <!-- login dropdown -->
                     <li class="nav-item dropdown">
@@ -37,16 +39,3 @@
         </div>
     </nav>
 </header>
-
-
-<script>
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const isLoggedIn = <%= loggedIn? 'true' : 'false' %>;
-        if (isLoggedIn === true || isLoggedIn === "true"){
-            document.getElementById("settingshider").style.display = "block";
-        }else{
-            document.getElementById("settingshider").style.display = "none";
-        }
-    });
-</script>
