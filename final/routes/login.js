@@ -55,7 +55,7 @@ router.post('/userlogin', async function(req, res) {
         } else {
             //console.log("Incorrect Password");
             //res.status(401).send("Incorrect Password, please try again");
-            console.error("Password Error", error);
+            //console.error("Password Error", error);
             return res.render("pages/login", {
                 page: "login",
                 loggedIn: false,
