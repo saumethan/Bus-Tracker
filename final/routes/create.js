@@ -40,8 +40,10 @@ router.post('/createUser', async function(req, res) {
     try {
         //Check if user is already logged in
         if (req.session.loggedin === true) {
+        console.log("cannot create as Logged in:", req.session.loggedin);
         res.redirect('/login');
         return;
+        
         }
 
         // Store user data from the form
