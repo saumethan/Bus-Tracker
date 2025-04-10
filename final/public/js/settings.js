@@ -1,3 +1,7 @@
+/**
+ * @author Ethan Saum @saumethan272
+*/
+
 $(document).ready(function () {
 
     // Toggle visibility of form sections
@@ -31,8 +35,6 @@ $(document).ready(function () {
     });
 
 });
-
-
 
 async function saveMapZoomSetting(zoom) {
     try {
