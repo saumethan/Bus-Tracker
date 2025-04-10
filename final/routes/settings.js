@@ -28,10 +28,32 @@ async function connectDB() {
 connectDB();
 
 // SERVER ENDPOINT: create page
-router.get("/", function(req, res) {
-    res.render("pages/settings",{page:"settings"});
-});
+router.get("/", async function(req, res) {
+    let userData = null;
+    try {
+        if (req.session.loggedin === true) {
+            console.log("Logged in:", req.session.loggedin);
 
+            userData = await db.collection('users').findOne({
+                "login.username": req.session.thisuser
+            });
+
+            if (userData) {
+                console.log("User found:", userData.login.username);
+            }
+        } else {
+            console.log("Not logged in");
+        }
+    } catch (error) {
+        console.error("Error fetching user:", error);
+    }
+
+    res.render("pages/settings", {
+        page: "settings",
+        user: userData,
+        loggedIn: req.session.loggedin === true
+    });
+});
 
 //Check if user is logged in 
 

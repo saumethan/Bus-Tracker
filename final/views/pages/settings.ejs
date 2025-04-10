@@ -124,10 +124,18 @@
                                 <div class="form-group">
                                     <!--Show the details of the account currently logged in including name and email-->
                                     <h3>Current Details</h1>
-                                        <p>Name:</p>
-                                        <p>Email:</p>
-                                    
-                                
+                                        <p>Name: 
+                                            <%= loggedIn && user 
+                                                ? `${user.name.title} ${user.name.first}` 
+                                                : "Not logged in" 
+                                            %>
+                                        </p>
+                                        <p>Email: 
+                                            <%= loggedIn && user 
+                                                ? user.login.username 
+                                                : "Not logged in" 
+                                            %>
+                                        </p>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Log Out Now</button>
                             </form>
