@@ -441,7 +441,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     }
 
     // Handle map movement events
-    map.on("movestart", function() {
+    map.on("dragstart", function() {
         closePanel();
     });
 
