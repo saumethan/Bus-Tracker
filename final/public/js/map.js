@@ -39,7 +39,7 @@ async function createMap() {
         zoomControl: false,
         doubleTapDragZoom: "center",
         doubleTapDragZoomOptions: { reverse: true }
-    }).setView(center, map.currentZoom);
+    }).setView(center, mapInstance.currentZoom);
 
     try {
         const response = await fetch("login/userSettings");
