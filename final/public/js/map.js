@@ -41,6 +41,7 @@ async function createMap() {
             const data = await response.json();
             if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
                 initialZoom = data.zoomLevel;
+                map.currentZoom = initialZoom
                 console.log("User zoom level loaded:", initialZoom);
             }
         } else {
