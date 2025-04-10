@@ -114,22 +114,42 @@ router.post('/changepassword', async function(req, res) {
                 res.redirect('/');
             //Check if passwords match
             }else if(oldpassword !== currentpassword){
-                console.log("Old password does not match current password");
-                res.redirect('/settings');
+                //console.log("Old password does not match current password");
+                //res.redirect('/settings');
+                return res.render("pages/settings", {
+                    page: "settings",
+                    error: "Old password does not match current password"
+                });
             }else if(confirmpassword !== newpassword){
-                console.log("Passwords do not match!!");
-                res.redirect('/settings');
+                //console.log("Passwords do not match!!");
+                //res.redirect('/settings');
+                return res.render("pages/settings", {
+                    page: "settings",
+                    error: "Passwords do not match"
+                });
             }else{
-                console.log("UNEXPECTED ERROR");
-                res.redirect('/settings');
+                //console.log("UNEXPECTED ERROR");
+                //res.redirect('/settings');
+                return res.render("pages/settings", {
+                    page: "settings",
+                    error: "unexpected error, please try again"
+                });
             }
     }else{
-            console.log("Not logged in, cannot change password");
-            res.redirect('/settings');
+            //console.log("Not logged in, cannot change password");
+            //res.redirect('/settings');
+            return res.render("pages/settings", {
+                page: "settings",
+                error: "Not Logged in cannot change password"
+            });
     }
 }catch (error) {
-        console.error("Error during change of password:", error);
-        res.redirect('/settings');
+        //console.error("Error during change of password:", error);
+        //res.redirect('/settings');
+        return res.render("pages/settings", {
+            page: "settings",
+            error: "Error during password change, please try again"
+        });
     }
 });
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=Delete Account-=-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\\
