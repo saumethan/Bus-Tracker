@@ -105,6 +105,7 @@ router.post('/deleteaccount', async function(req, res) {
             const result = await db.collection('users').deleteOne({"login.username": username});
             console.log("Deleted user:", username);
             router.post('/logout');
+            res.redirect('/');
             }else{
                 console.log("User did not type delete, account not deleted");
                 res.redirect('/settings');
