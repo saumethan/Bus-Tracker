@@ -31,23 +31,25 @@ connectDB();
 router.get("/", async function(req, res) {
     let userData = null;
     try {
+        //First we check if a user is logged in 
         if (req.session.loggedin === true) {
             console.log("Logged in:", req.session.loggedin);
-
+        //we then find the user that they are logged in as
             userData = await db.collection('users').findOne({
                 "login.username": req.session.thisuser
             });
-
+        //prints the username of the user who is logged else it will print not logged in 
             if (userData) {
                 console.log("User found:", userData.login.username);
             }
         } else {
             console.log("Not logged in");
         }
+        //error hissy fit
     } catch (error) {
         console.error("Error fetching user:", error);
     }
-
+    //renders the page settings and also passes the user data to the page of settings so that it can put the details in log out button area or say not logged in
     res.render("pages/settings", {
         page: "settings",
         user: userData,
