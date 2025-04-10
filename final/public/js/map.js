@@ -578,7 +578,7 @@ function drawRoute(routeCoords,distance,duration,map) {
     removePlannedRoute(map);
 
     plannedRoute = L.polyline(coordinates, {
-        color: "#3498db",
+        color: "#0000A0",
         weight: 4,
         opacity: 0.8,
     }).addTo(map);
