@@ -56,12 +56,17 @@ router.post('/createUser', async function(req, res) {
         // Insert the new user into the database
         const result = await db.collection('users').insertOne(datatostore);
         console.log("Saved to database:", result.insertedId);
-
-
-        console.log("Logged new user into their account ")
-
-        res.redirect('/');
-
+        let test = true
+        //when a new user is created it will automatically log them into the account 
+        if (test === true) {
+            req.session.loggedin = true;
+            req.session.thisuser = userName;
+            console.log("Logged in:", req.session.loggedin);
+            console.log("Logged new user into their account ")
+            res.redirect('/');
+        }else{
+            res.redirect('/login');
+        }
     } catch (error) {
         console.error("Error saving to database:", error);
         res.status(500).send("Failed to create account");
