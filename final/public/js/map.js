@@ -24,24 +24,40 @@ let plannedRoute = null;
 let busUpdateInProgress = false;
 let ignoreNextMoveEnd = false;
 let ignoreNextZoomEnd = false;
-let currentRouteButton = null;
 let lastRequestedBounds = null;
 let lastZoomLevel = 15;
+let initialZoom
 
 // Constants for zoom levels
 const MIN_BUS_ZOOM = 12;
 const MIN_STOP_ZOOM = 15;
 
 // Initialize the map and set its location
-function createMap() {
+async function createMap() {
+    const center = [57.1497, -2.0943]; // Aberdeen
+    initialZoom = 15; // Default zoom
+
     const mapInstance = L.map("map", {
-        zoomControl: false, 
+        zoomControl: false,
         doubleTapDragZoom: "center",
-        doubleTapDragZoomOptions: {
-            reverse: true
-        }
+        doubleTapDragZoomOptions: { reverse: true }
     });
-    mapInstance.setView([57.1497, -2.0943], 15); // Aberdeen
+
+    try {
+        const response = await fetch("login/userSettings");
+        if (response.ok) {
+            const data = await response.json();
+            if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
+                initialZoom = data.zoomLevel;
+                console.log("User zoom level loaded:", initialZoom);
+            }
+        }
+    } catch (err) {
+        mapInstance.zoomLevel = 15
+        console.error("Error fetching zoom level:", err);
+    }
+    
+    mapInstance.setView(center, initialZoom);
     addTileLayer(mapInstance); 
     return mapInstance;
 }
@@ -63,8 +79,6 @@ function addHomeButtonToMap() {
             
             // Update the UI
             removeRoute(map);
-            removePlannedRoute(map);
-            currentRouteButton.remove();
             updateBusesAndStops();
             
             // Clear bus data container
@@ -139,37 +153,6 @@ function addLocationButtonToMap() {
 
     // Add to map
     locationButton.addTo(map);
-}
-
-// ------------------ Function to add route button to the map ------------------
-function addrouteButtonToMap(map,stopLng,stopLat) {
-
-    if(currentRouteButton){
-        currentRouteButton.remove();
-    }
-
-    // route button 
-    const routeButton = L.control({ position: "topright" });
-
-    routeButton.onAdd = function () {
-        const buttonDiv = L.DomUtil.create("div", "map-button");
-        buttonDiv.innerHTML = "<button id='location-button'><i class='fa-solid fa-person-walking'></i></i></button>";
-
-        // Event listener for the button
-        buttonDiv.addEventListener("click", async () => {
-            removePlannedRoute(map);
-            const{lat,lng} = getUserCoordinates();
-            const routeData = await getRouteData(stopLat,stopLng,lng,lat);
-            const distance = (routeData.totalDistance/1609.344).toFixed(2);
-            const duration = Math.round(routeData.totalDuration / 60);
-            drawRoute(routeData,distance,duration,map);
-        });
-        return buttonDiv;
-    };
-
-    // Add to map
-    routeButton.addTo(map);
-    currentRouteButton = routeButton;
 }
 
 // ------------------ Function to layer to style the map ------------------
@@ -311,13 +294,14 @@ async function updateBuses() {
 
 // ------------------ Function to update stops based on current state ------------------
 async function updateStops() {
+    console.log(map.currentZoom)
     // Check zoom level first
-    if (map.currentZoom < MIN_STOP_ZOOM) {
-        // Clear stops if zoom level is too low
+    if (map.currentZoom < 15) {
+        // Don't draw stops if zoom level is too low (below 15)
         drawStops(null, map);
         return;
     }
-    
+
     const { minX, minY, maxX, maxY } = getViewportBounds();
     
     try {
@@ -326,7 +310,7 @@ async function updateStops() {
     } catch (error) {
         console.error("Error updating stops:", error);
         showNotification("Error updating stops", "error");
-        drawStops(null, map);
+        drawStops(null, map);  // Clear stops if there's an error
     }
 }
 
@@ -403,7 +387,6 @@ async function searchRoute(event) {
 
     setViewAllBuses(false, busData[0].noc, route);
 
-    removePlannedRoute(map);
     drawBus(busData, map);
 
     if (busData[0]) {
@@ -418,9 +401,9 @@ async function searchRoute(event) {
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", async function() {
     // Creates map
-    map = createMap();
+    map = await createMap();
     map.stopCircleRadius = 20;
-    map.currentZoom = 15;
+    map.currentZoom = initialZoom;
 
     // Adds buttons
     addRefreshButtonToMap(map);
@@ -477,7 +460,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     }
 
     // Handle map movement events
-    map.on("dragstart", function() {
+    map.on("movestart", function() {
         closePanel();
     });
 
@@ -527,7 +510,6 @@ document.addEventListener("DOMContentLoaded", async function() {
     initUserLocationTracking();
     
 });
-
 // ------------------ Function for easteregg ------------------
 function easterEgg() {
     $("#easterEggButton").click(function () {
