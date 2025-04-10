@@ -155,6 +155,10 @@
                                 <div class="form-group">
                                     <label for="confirmDelete">Type "DELETE" to confirm</label>
                                     <input type="text" id="confirmDelete" class="form-control" placeholder="DELETE" name="deletetext" />
+                                    <%if(typeof error !== "undefined"){ %>
+                                        <div class="error-message"><%= error %></div>
+                                    <% } %>
+
                                 </div>
                                 <button type="submit" class="btn btn-danger">Delete Account</button>
                             </form>
