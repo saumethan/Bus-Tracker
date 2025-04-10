@@ -48,8 +48,12 @@ router.post('/userlogin', async function(req, res) {
             console.log("Logged in:", req.session.loggedin);
             res.redirect('/');
         } else {
-            console.log("Incorrect Password");
-            res.status(401).send("Incorrect Password, please try again");
+            console.error("Password Error", error);
+            res.render("pages/login", {
+                page: "login",
+                loggedIn: false,
+                error: "Incorrect password, please try again"
+            });
         }
     } catch (error) {
         console.error("Login Error", error);
@@ -82,8 +86,12 @@ router.post('/userSettings', async function(req, res) {
             res.status(404).send("User not found.");
         }
     } catch (error) {
-        console.error("Failed to update zoom level:", error);
-        res.status(500).send("Server error while updating zoom level.");
+        console.error("Login Error", error);
+        res.render("pages/login", {
+            page: "login",
+            loggedIn: false,
+            error: "Something went wrong. Please try again later."
+        });
     }
 });
 
