@@ -36,7 +36,7 @@ async function createMap() {
     const center = [57.1497, -2.0943]; // Aberdeen
 
     try {
-        const response = await fetch("/userSettings");
+        const response = await fetch("login/userSettings");
         if (response.ok) {
             const data = await response.json();
             if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
