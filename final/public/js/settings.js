@@ -14,6 +14,7 @@ $(document).ready(function () {
         const zoomLevel = $("#mapZoomRange").val();
         console.log("Saving Zoom Level:", zoomLevel);
         saveMapZoomSetting(zoomLevel);
+        $section.slideUp();
     });
 
     // Handle location form submission
