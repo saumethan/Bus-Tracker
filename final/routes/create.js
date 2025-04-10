@@ -60,7 +60,7 @@ router.post('/createUser', async function(req, res) {
         //when a new user is created it will automatically log them into the account 
         if (test === true) {
             req.session.loggedin = true;
-            req.session.thisuser = userName;
+            req.session.thisuser = username = req.body.email;
             console.log("Logged in:", req.session.loggedin);
             console.log("Logged new user into their account ")
             res.redirect('/');
