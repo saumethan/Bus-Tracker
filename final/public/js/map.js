@@ -51,6 +51,7 @@ async function createMap() {
             }
         }
     } catch (err) {
+        mapInstance.zoomLevel = 15
         console.error("Error fetching zoom level:", err);
     }
     
@@ -291,6 +292,7 @@ async function updateBuses() {
 
 // ------------------ Function to update stops based on current state ------------------
 async function updateStops() {
+    console.log(map.currentZoom)
     // Check zoom level first
     if (map.currentZoom < 15) {
         // Don't draw stops if zoom level is too low (below 15)
@@ -399,7 +401,6 @@ document.addEventListener("DOMContentLoaded", async function() {
     // Creates map
     map = await createMap();
     map.stopCircleRadius = 20;
-    map.currentZoom = 15;
 
     // Adds buttons
     addRefreshButtonToMap(map);
