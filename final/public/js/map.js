@@ -25,21 +25,38 @@ let ignoreNextMoveEnd = false;
 let ignoreNextZoomEnd = false;
 let lastRequestedBounds = null;
 let lastZoomLevel = 15;
+let initialZoom
 
 // Constants for zoom levels
 const MIN_BUS_ZOOM = 12;
 const MIN_STOP_ZOOM = 15;
 
 // Initialize the map and set its location
-function createMap() {
+async function createMap() {
+    const center = [57.1497, -2.0943]; // Aberdeen
+    initialZoom = 15; // Default zoom
+
     const mapInstance = L.map("map", {
-        zoomControl: false, 
+        zoomControl: false,
         doubleTapDragZoom: "center",
-        doubleTapDragZoomOptions: {
-            reverse: true
-        }
+        doubleTapDragZoomOptions: { reverse: true }
     });
-    mapInstance.setView([57.1497, -2.0943], 15); // Aberdeen
+
+    try {
+        const response = await fetch("login/userSettings");
+        if (response.ok) {
+            const data = await response.json();
+            if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
+                initialZoom = data.zoomLevel;
+                console.log("User zoom level loaded:", initialZoom);
+            }
+        }
+    } catch (err) {
+        mapInstance.zoomLevel = 15
+        console.error("Error fetching zoom level:", err);
+    }
+    
+    mapInstance.setView(center, initialZoom);
     addTileLayer(mapInstance); 
     return mapInstance;
 }
@@ -385,22 +402,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     // Creates map
     map = await createMap();
     map.stopCircleRadius = 20;
-
-    try {
-        const response = await fetch("login/userSettings");
-        if (response.ok) {
-            const data = await response.json();
-            if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
-                map.zoomLevel = data.zoomLevel;
-                console.log("User zoom level loaded:", map.zoomLevel);
-                const { lat, lng } = getUserCoordinates();
-                map.setView([lat, lng], map.currentZoom);
-            }
-        }
-    } catch (err) {
-        map.zoomLevel = 15
-        console.error("Error fetching zoom level:", err);
-    }
+    map.currentZoom = initialZoom;
 
     // Adds buttons
     addRefreshButtonToMap(map);
