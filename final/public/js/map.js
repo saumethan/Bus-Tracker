@@ -1,6 +1,7 @@
 /**
  * @author Ethan Saum @saumethan272
  * @author Owen Meade @owenrgu
+ * @author Xavier Flockton @XavierFlockton
  * @description All functionality relating to the bus map, including plotting of stops + GPS tracking of buses.
  */
 

@@ -5,7 +5,7 @@
  */
 
 // Modules
-import { setViewAllBuses, getViewAllBuses, getViewportBounds, updateBusesAndStops } from "./map.js";
+import { setViewAllBuses, getViewAllBuses, getViewportBounds, updateBusesAndStops,removePlannedRoute } from "./map.js";
 import { getBusRoute, drawBusRoute, removeRoute } from "./busRoute.js";
 import { showNotification } from "./helper.js";
 import { getUserCoordinates } from "./userlocation.js";
