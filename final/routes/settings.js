@@ -152,7 +152,7 @@ router.post('/deleteaccount', async function(req, res) {
                 //res.redirect('/settings');
                 return res.render("pages/settings", {
                     page: "settings",
-                    loggedIn: false,
+                    loggedIn: true,
                     error: "Incorrect password, please try again"
                 });
             }
