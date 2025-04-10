@@ -607,7 +607,7 @@ function drawRoute(routeCoords,distance,duration,map) {
         
         });
 
-    adjustMapViewToRoute(plannedRoute, map);
+    // adjustMapViewToRoute(plannedRoute, map);
 
     return plannedRoute;
 }
