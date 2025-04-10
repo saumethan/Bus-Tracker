@@ -32,7 +32,7 @@
                             <i class="fa-solid fa-user"></i> 
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">  
-                            <li><a class="dropdown-item" href="/settings">Settings</a></li>
+                            <li><a id="settingshider" class="dropdown-item" href="/settings" style="display: none;">Settings</a></li>
                             <!--<li><a class="dropdown-item" href="favorites.html">Favorites</a></li>-->
                             <!-- <li><button class="dropdown-item" id="easterEggButton">Buses</button></li> -->
                             <li><hr class="dropdown-divider"></li>
@@ -44,3 +44,16 @@
         </div>
     </nav>
 </header>
+
+
+<script>
+      
+    document.addEventListener("DOMContentLoaded", function () {
+        const isLoggedIn = <%= loggedIn %>;
+        if(loggedIn === true){
+            document.getElementById("settingshider").style.display = "block";
+        }else{
+            document.getElementById("settingshider").style.display = "none";
+        }
+    });
+</script>

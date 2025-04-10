@@ -30,7 +30,7 @@ const BASE_URL = process.env.BASE_URL || `http://localhost:${port}`;
 
 // SERVER ENDPOINT: index page 
 app.get("/", async function(req, res) {
-    res.render("pages/index", { page: "map" });
+    res.render("pages/index", { page: "map", loggedIn: req.session.loggedin });
     try {
         await axios.get(`${BASE_URL}/api/buses/startWebsocket`);
         console.log("WebSocket started and running in the background.");

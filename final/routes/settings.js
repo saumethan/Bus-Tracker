@@ -122,3 +122,15 @@ router.post('/deleteaccount', async function(req, res) {
 
 
 module.exports = router;
+
+
+
+//Josh TO DO LIST 
+/*
+change password 
+make it so users cant access settings if not logged in 
+add a method to sign out via the login/sign out bit
+sign out / login change 
+
+
+*/
