@@ -152,6 +152,7 @@ router.post('/deleteaccount', async function(req, res) {
                 //res.redirect('/settings');
                 return res.render("pages/settings", {
                     page: "settings",
+                    loggedIn: req.session.loggedin === true,
                     error: "IUser did not type delete, account not deleted",
                 });
             }
