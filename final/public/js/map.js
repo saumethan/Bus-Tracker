@@ -32,35 +32,32 @@ const MIN_STOP_ZOOM = 15;
 
 // Initialize the map and set its location
 async function createMap() {
-    let initialZoom = 15; // Default zoom
     const center = [57.1497, -2.0943]; // Aberdeen
+    let initialZoom = 15; // Default zoom
 
     const mapInstance = L.map("map", {
         zoomControl: false,
         doubleTapDragZoom: "center",
         doubleTapDragZoomOptions: { reverse: true }
-    })
+    });
 
     try {
         const response = await fetch("login/userSettings");
         if (response.ok) {
             const data = await response.json();
             if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
-                mapInstance.currentZoom = data.zoomLevel;
-                console.log("User zoom level loaded:", mapInstance.currentZoom);
+                initialZoom = data.zoomLevel;
+                console.log("User zoom level loaded:", initialZoom);
             }
-        } else {
-            console.log("User not logged in or zoom level not available.");
         }
     } catch (err) {
         console.error("Error fetching zoom level:", err);
     }
-
+    
+    mapInstance.setView(center, initialZoom);
     addTileLayer(mapInstance); 
-    mapInstance.setView(center, mapInstance.currentZoom);
     return mapInstance;
 }
-
 
 // ------------------ Function to add home button to the map ------------------
 function addHomeButtonToMap() {
