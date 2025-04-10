@@ -39,7 +39,7 @@ async function createMap() {
         zoomControl: false,
         doubleTapDragZoom: "center",
         doubleTapDragZoomOptions: { reverse: true }
-    }).setView(center, mapInstance.currentZoom);
+    })
 
     try {
         const response = await fetch("login/userSettings");
@@ -56,6 +56,7 @@ async function createMap() {
         console.error("Error fetching zoom level:", err);
     }
 
+    mapInstance.setView(center, mapInstance.currentZoom);
     addTileLayer(mapInstance); 
     return mapInstance;
 }
