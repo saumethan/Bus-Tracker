@@ -19,6 +19,9 @@
 
                     <input type="email" placeholder="Email" name="email" required><br>
                     <input type="password" placeholder="Password" name="password" required><br>
+                    <%if(typeof error !== "undefined"){ %>
+                        <div class="error-message"><%= error %></div>
+                    <% } %>
                     <button id="login-button" type="submit">Create</button>
                 </form>
             </div>
