@@ -29,7 +29,7 @@ connectDB();
 
 // SERVER ENDPOINT: create page
 router.get("/", function(req, res) {
-    res.render("pages/create",{page:"create"});
+    res.render("pages/create",{page:"create", loggedIn: req.session.loggedin===true});
 });
 
 
@@ -50,8 +50,7 @@ router.post('/createUser', async function(req, res) {
         const datatostore = {
             "name": { "title": req.body.title, "first": req.body.first },
             "login": { "username": req.body.email, "password": req.body.password },
-            "registered": new Date(),
-            "zoomLevel": 15
+            "registered": new Date()
         };
 
         // Insert the new user into the database
