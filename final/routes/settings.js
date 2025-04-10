@@ -32,6 +32,11 @@ router.get("/", function(req, res) {
     res.render("pages/settings",{page:"settings"});
 });
 
+
+//Check if user is logged in 
+
+
+
 //-=-=-=-=-=-=-=-=-=-=-=-=-===-=-Change Password =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=Delete Account-=-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\\
