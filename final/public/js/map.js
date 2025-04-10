@@ -31,18 +31,35 @@ const MIN_BUS_ZOOM = 12;
 const MIN_STOP_ZOOM = 15;
 
 // Initialize the map and set its location
-function createMap() {
-    const mapInstance = L.map("map", {
-        zoomControl: false, 
-        doubleTapDragZoom: "center",
-        doubleTapDragZoomOptions: {
-            reverse: true
+async function createMap() {
+    let initialZoom = 15; // Default zoom
+    const center = [57.1497, -2.0943]; // Aberdeen
+
+    try {
+        const response = await fetch("/userSettings");
+        if (response.ok) {
+            const data = await response.json();
+            if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
+                initialZoom = data.zoomLevel;
+                console.log("User zoom level loaded:", initialZoom);
+            }
+        } else {
+            console.log("User not logged in or zoom level not available.");
         }
-    });
-    mapInstance.setView([57.1497, -2.0943], 15); // Aberdeen
+    } catch (err) {
+        console.error("Error fetching zoom level:", err);
+    }
+
+    const mapInstance = L.map("map", {
+        zoomControl: false,
+        doubleTapDragZoom: "center",
+        doubleTapDragZoomOptions: { reverse: true }
+    }).setView(center, initialZoom);
+
     addTileLayer(mapInstance); 
     return mapInstance;
 }
+
 
 // ------------------ Function to add home button to the map ------------------
 function addHomeButtonToMap() {
@@ -382,7 +399,7 @@ async function searchRoute(event) {
 // Calls the initializeMap function when the HTML has loaded
 document.addEventListener("DOMContentLoaded", async function() {
     // Creates map
-    map = createMap();
+    map = await createMap();
     map.stopCircleRadius = 20;
     map.currentZoom = 15;
 

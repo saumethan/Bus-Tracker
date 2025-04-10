@@ -48,7 +48,8 @@ router.post('/createUser', async function(req, res) {
         const datatostore = {
             "name": { "title": req.body.title, "first": req.body.first },
             "login": { "username": req.body.email, "password": req.body.password },
-            "registered": new Date()
+            "registered": new Date(),
+            "zoomLevel": 15
         };
 
         // Insert the new user into the database
