@@ -89,6 +89,15 @@ router.post('/changepassword', async function(req, res) {
         
         if(req.session.loggedin === true){
             const username = req.session.thisuser;
+
+            //find the user in the database
+            const user = await db.collection('users').findOne({
+                "login.username": username
+            });
+            if(!user){
+                console.log("User not found:", username);
+                return res.redirect('/settings');
+            }
             const currentpassword = user.login.password;
             console.log("Current password:", currentpassword);
             console.log("Old password:", oldpassword);
@@ -99,24 +108,28 @@ router.post('/changepassword', async function(req, res) {
                 const result = await db.collection('users').updateOne(
                     { "login.username": username },
                     { $set: { "login.password": newpassword } },
-                    console.log("Password updated for user:", username)
                     
                 );
+                console.log("Password updated for user:", username)
+                res.redirect('/');
             //Check if passwords match
             }else if(oldpassword !== currentpassword){
                 console.log("Old password does not match current password");
+                res.redirect('/settings');
             }else if(confirmpassword !== newpassword){
                 console.log("Passwords do not match!!");
+                res.redirect('/settings');
             }else{
-                console.log("ERROR");
+                console.log("UNEXPECTED ERROR");
+                res.redirect('/settings');
             }
-            res.redirect('/');
     }else{
             console.log("Not logged in, cannot change password");
             res.redirect('/settings');
     }
 }catch (error) {
         console.error("Error during change of password:", error);
+        res.redirect('/settings');
     }
 });
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=Delete Account-=-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\\
