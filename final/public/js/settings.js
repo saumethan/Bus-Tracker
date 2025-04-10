@@ -36,7 +36,7 @@ async function saveMapZoomSetting(zoom) {
     try {
         const response = await $.ajax({
             type: "POST",
-            url: "/userSettings",
+            url: "/api/login/userSettings",
             contentType: "application/json",
             data: JSON.stringify({ newZoom: zoom }),
         });
