@@ -58,7 +58,9 @@ router.post('/createUser', async function(req, res) {
         const result = await db.collection('users').insertOne(datatostore);
         console.log("Saved to database:", result.insertedId);
         let test = true
+        
         //when a new user is created it will automatically log them into the account 
+        
         if (test === true) {
             req.session.loggedin = true;
             req.session.thisuser = username = req.body.email;
