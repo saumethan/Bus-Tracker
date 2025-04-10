@@ -39,7 +39,7 @@
                                             <span>Zoom Out</span>
                                             <span>Zoom In</span>
                                         </label>
-                                        <input type="range" class="form-range" min="5" max="17" id="mapZoomRange" value="15">
+                                        <input type="range" class="form-range" min="5" max="17" id="mapZoomRange" value="10">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Save</button>
                                 </form>
@@ -155,10 +155,6 @@
                                 <div class="form-group">
                                     <label for="confirmDelete">Type "DELETE" to confirm</label>
                                     <input type="text" id="confirmDelete" class="form-control" placeholder="DELETE" name="deletetext" />
-                                    <%if(error){ %>
-                                        <div class="error-message"><p><%= error %></p></div>
-                                    <% } %>
-
                                 </div>
                                 <button type="submit" class="btn btn-danger">Delete Account</button>
                             </form>

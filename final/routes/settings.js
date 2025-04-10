@@ -53,8 +53,7 @@ router.get("/", async function(req, res) {
     res.render("pages/settings", {
         page: "settings",
         user: userData,
-        loggedIn: req.session.loggedin === true,
-        error: ""
+        loggedIn: req.session.loggedin === true
     });
 });
 
@@ -115,42 +114,22 @@ router.post('/changepassword', async function(req, res) {
                 res.redirect('/');
             //Check if passwords match
             }else if(oldpassword !== currentpassword){
-                //console.log("Old password does not match current password");
-                //res.redirect('/settings');
-                return res.render("pages/settings", {
-                    page: "settings",
-                    error: "Old password does not match current password"
-                });
+                console.log("Old password does not match current password");
+                res.redirect('/settings');
             }else if(confirmpassword !== newpassword){
-                //console.log("Passwords do not match!!");
-                //res.redirect('/settings');
-                return res.render("pages/settings", {
-                    page: "settings",
-                    error: "Passwords do not match"
-                });
+                console.log("Passwords do not match!!");
+                res.redirect('/settings');
             }else{
-                //console.log("UNEXPECTED ERROR");
-                //res.redirect('/settings');
-                return res.render("pages/settings", {
-                    page: "settings",
-                    error: "unexpected error, please try again"
-                });
+                console.log("UNEXPECTED ERROR");
+                res.redirect('/settings');
             }
     }else{
-            //console.log("Not logged in, cannot change password");
-            //res.redirect('/settings');
-            return res.render("pages/settings", {
-                page: "settings",
-                error: "Not Logged in cannot change password"
-            });
+            console.log("Not logged in, cannot change password");
+            res.redirect('/settings');
     }
 }catch (error) {
-        //console.error("Error during change of password:", error);
-        //res.redirect('/settings');
-        return res.render("pages/settings", {
-            page: "settings",
-            error: "Error during password change, please try again"
-        });
+        console.error("Error during change of password:", error);
+        res.redirect('/settings');
     }
 });
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=Delete Account-=-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\\
@@ -169,12 +148,8 @@ router.post('/deleteaccount', async function(req, res) {
             router.post('/logout');
             res.redirect('/');
             }else{
-                //console.log("User did not type delete, account not deleted");
-                //res.redirect('/settings');
-                return res.render("pages/settings", {
-                    page: "settings",
-                    error: "Incorrect password, please try again"
-                });
+                console.log("User did not type delete, account not deleted");
+                res.redirect('/settings');
             }
     }else{
             console.log("Not logged in, cannot delete account");
