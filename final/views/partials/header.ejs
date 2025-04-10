@@ -49,7 +49,7 @@
 <script>
       
     document.addEventListener("DOMContentLoaded", function () {
-        const isLoggedIn = <%= loggedIn? 'true': 'false'%>;
+        const isLoggedIn = <%= loggedIn? 'true' : 'false' %>;
         if (isLoggedIn === true || isLoggedIn === "true"){
             document.getElementById("settingshider").style.display = "block";
         }else{

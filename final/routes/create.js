@@ -29,7 +29,7 @@ connectDB();
 
 // SERVER ENDPOINT: create page
 router.get("/", function(req, res) {
-    res.render("pages/create",{page:"create"});
+    res.render("pages/create",{page:"create", loggedIn: req.session.loggedin===true});
 });
 
 
