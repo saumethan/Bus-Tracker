@@ -65,6 +65,7 @@ router.post('/logout', async function(req, res) {
             console.log("Logged out:", req.session.loggedin);
             req.session.loggedin = false;
             req.session.thisuser = null;
+            res.redirect('/');
     }
 }catch (error) {
         console.error("Error during logout:", error);
