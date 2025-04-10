@@ -16,6 +16,10 @@
                 <form action="/login/userlogin" method="POST">
                     <input type="email" placeholder="Email" name="uname" required><br>
                     <input type="password" placeholder="Password" name="upass" required><br>
+                    <%if(typeof error !== "undefined"){ %>
+                        <div class="error-message"><%= error %></div>
+                    <% } %>
+
                     <a href="#"><button id="login-button" type="submit">Submit</button></a>
                     <p>Dont Have An Account Create One <a href="/create">Here</a></p>
                 </form>
