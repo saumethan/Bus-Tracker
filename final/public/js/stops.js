@@ -302,8 +302,6 @@ async function drawStops(stopsData, map) {
             updateURLWithStop(stop.bustimes_id)
 
             map.setView([stop.latitude, stop.longitude], 15);
-
-           
             
             setViewAllBuses(true);
             

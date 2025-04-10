@@ -120,29 +120,66 @@
                 <p>Here you can manage your account details</p>
                                 
                 <div class="list-group mb-5 shadow">
-                
-                    <!-- Change Username -->
+                    
+
+
+                    
+                    <!-- Log Out -->
                     <div class="list-group-item">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <strong class="mb-0">Change Username</strong>
-                                <p class="text-muted mb-0">Update your display name.</p>
+                                <strong class="mb-0">Log Out</strong>
+                                <p class="text-muted mb-0">Log out of your account</p>
                             </div>
-                            <button class="btn btn-light" onclick="toggleSection('usernameForm')">
+                            <button class="btn btn-light" onclick="toggleSection('logoutForm')">
                                 <i class="fas fa-chevron-down"></i>
                             </button>
                         </div>
-                        <div id="usernameForm" class="mt-3" style="display: none;">
+                        <div id="logoutForm" class="mt-3" style="display: none;">
+                            <form method= "POST" action="settings/logout">
+                                <div class="form-group">
+                                    <!--Show the details of the account currently logged in including name and email-->
+                                    <h3>Current Details</h1>
+                                        <p>Name: 
+                                            <%= loggedIn && user 
+                                                ? `${user.name.title} ${user.name.first}` 
+                                                : "Not logged in" 
+                                            %>
+                                        </p>
+                                        <p>Email: 
+                                            <%= loggedIn && user 
+                                                ? user.login.username 
+                                                : "Not logged in" 
+                                            %>
+                                        </p>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Log Out Now</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Change Password -->
+                    <div class="list-group-item">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong class="mb-0">Change Password</strong>
+                                <p class="text-muted mb-0">Update your Password.</p>
+                            </div>
+                            <button class="btn btn-light" onclick="toggleSection('passwordForm')">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div id="passwordForm" class="mt-3" style="display: none;">
                             <form>
                                 <div class="form-group">
-                                    <label for="newUsername">New Username</label>
-                                    <input type="text" id="newUsername" class="form-control" placeholder="Enter new username" />
+                                    <label for="newpassword">New Password</label>
+                                    <input type="text" id="newpassword" class="form-control" placeholder="Enter new password" />
                                 </div>
                                 <button type="submit" class="btn btn-primary">Save</button>
                             </form>
                         </div>
                     </div>
-                                
+
                     <!-- Delete Account -->
                     <div class="list-group-item">
                         <div class="d-flex justify-content-between align-items-center">

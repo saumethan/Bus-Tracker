@@ -1,53 +1,60 @@
-// login.js 
-
 const express = require("express");
 const router = express.Router();
 
-// MongoDB connection setup
+// MongoDB connection
 const MongoClient = require("mongodb-legacy").MongoClient;
 const url = "mongodb://127.0.0.1:27017";
 const client = new MongoClient(url);
 const dbName = "User_Profiles";
 let db;
 
-// Connect to database
+router.use(express.urlencoded({ extended: true }));  // Parses form data
+router.use(express.json());  // Parses JSON data
+
+// SERVER ENDPOINT: login page
+router.get("/", function(req, res) {
+    res.render("pages/login",{page:"login"});
+});
+
+
 async function connectDB() {
     try {
         await client.connect();
         db = client.db(dbName);
-        console.log("Connected to the database");
+        console.log("login page Connected to the database");
     } catch (error) {
-        console.error("Database connection failed", error);
+        console.error("login page Database connection failed", error);
     }
 }
 connectDB();
 
-// SERVER ENDPOINT: login page
-router.get("/", function(req, res) {
-    res.render("pages/login", { page: "login" });
-});
+router.post('/userlogin', async function(req, res) {
+    var userName = req.body.uname;
+    var userPass = req.body.upass;
 
-//User creating account 
-router.post("/login", function(req,res){
-    console.log("Username : "+ req.body.userEmail)
-    console.log("Password : "+ req.body.userPass)
+    try {
+        var result = await db.collection('users').findOne({
+            "login.username": userName
+        });
 
-    if(!db){
-        console.error("Database not connected")
-        return res.status(500).send("Database connection error")
+        if (!result) {
+            console.log("No User Found");
+            return res.status(401).send("No User with that name found");
+        }
+
+        if (result.login.password === userPass) {
+            req.session.loggedin = true;
+            req.session.thisuser = userName;
+            console.log("Logged in:", req.session.loggedin);
+            res.redirect('/');
+        } else {
+            console.log("Incorrect Password");
+            res.status(401).send("Incorrect Password, please try again");
+        }
+    } catch (error) {
+        console.error("Login Error", error);
+        res.status(500).send("Failed to log in at this time");
     }
-
-    db.collection("users").insertOne({
-        email: req.body.userEmail,
-        password: req.body.userPass
-    });
-
-    dbName.collection(User_Profiles).insertOne(req.body, function(err, results){
-        if(err) throw err;
-        console.log("Saved to database")
-        res.redirect("/")
-    })
-
-})
+});
 
 module.exports = router;
