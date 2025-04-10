@@ -29,8 +29,13 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user"></i> 
                         </a>
+
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> 
                             <li><a class="dropdown-item" href="/login">Login</a></li>
+
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> 
+                            <li><a class="dropdown-item" href="/login">Login/Sign Out</a></li>
+
                         </ul>
                     </li>
                 </ul>
@@ -38,3 +43,16 @@
         </div>
     </nav>
 </header>
+
+
+<script>
+      
+    document.addEventListener("DOMContentLoaded", function () {
+        const isLoggedIn = <%= loggedIn? 'true' : 'false' %>;
+        if (isLoggedIn === true || isLoggedIn === "true"){
+            document.getElementById("settingshider").style.display = "block";
+        }else{
+            document.getElementById("settingshider").style.display = "none";
+        }
+    });
+</script>

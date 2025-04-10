@@ -13,9 +13,8 @@ router.get("/", async (req, res) => {
 
     try {
         const url = `https://api.openrouteservice.org/v2/directions/foot-walking?api_key=5b3ce3597851110001cf6248a3172034c2b14968b43d2cd700121e72&start=${startY},${startX}&end=${endY},${endX}`;
-        console.log(url)
         const response = await axios.get(url);
-        console.log(response)
+
         if (response && response.data) {
             const geoJson = response.data;
             

@@ -238,7 +238,6 @@ router.get("/routes", async (req, res) => {
         
         if (url) {
             try {
-                console.log("Fetching URL:", url);
                 const response = await axios.get(url);
                 const routeData = findLongestRoute(response, routeNumber);
                 
@@ -258,7 +257,6 @@ router.get("/routes", async (req, res) => {
 
         if (url) {
             try {
-                console.log("Fetching URL:", url);
                 const response = await axios.get(url);
                 const routeCoords = [];
                 let firstSetProcessed = false; 
@@ -440,12 +438,8 @@ function findLongestRoute(response, routeNumber) {
 
 async function requestFirstBusLocations() {
     // Run continuously
-    while (true) {
-        console.log("Starting new monitoring cycle...");
-        
+    while (true) {       
         await getFirstBusLocation();
-        
-        console.log("Cycle complete.");
         await new Promise(resolve => setTimeout(resolve, 30000)); // 30 second delay
     }
 }
@@ -463,9 +457,7 @@ async function getFirstBusLocation() {
         }
         
         // Processes each area
-        for (const area of areas) {
-            console.log(`Processing ${area}...`);
-            
+        for (const area of areas) {           
             try {
                 // Starts socket for this area
                 const socket = await startSocket(area, token);
@@ -476,7 +468,6 @@ async function getFirstBusLocation() {
                 // Closes the socket 
                 if (socket && socket.readyState === WebSocket.OPEN) {
                     socket.close();
-                    console.log(`Closed socket for ${area}`);
                 }
             } catch (error) {
                 console.error(`Error processing ${area}:`, error);
@@ -519,9 +510,7 @@ async function getSocketToken() {
 
 // Function to start the webnsocket
 function startSocket(area, token) {
-    return new Promise((resolve, reject) => {
-        console.log(`Starting socket for ${area}...`);
-        
+    return new Promise((resolve, reject) => {       
         // Creates a new socket connection
         const socket = new WebSocket("wss://streaming.bus.first.transportapi.com/", {
             headers: { Authorization: "Bearer " + token }
@@ -529,7 +518,6 @@ function startSocket(area, token) {
         
         // Seta up socket event handler
         socket.on("open", () => {
-            console.log(`Connected to First Bus Web Socket for ${area}`);
             resolve(socket);
         });
 
@@ -567,19 +555,14 @@ function startSocket(area, token) {
                     // Update the bus data arrays
                     if (area === "northAberdeen") {
                         northAberdeenBusData = buses;
-                        console.log(`Updated North Aberdeen bus data: ${buses.length} buses`);
                     } else if (area === "southAberdeen") {
                         southAberdeenBusData = buses;
-                        console.log(`Updated South Aberdeen bus data: ${buses.length} buses`);
                     } else if (area === "westGlasgow") {
                         westGlasgowBusData = buses;
-                        console.log(`Updated West Glasgow bus data: ${buses.length} buses`);
                     } else if (area === "southEastGlasgow") {
                         southEastGlasgowBusData = buses;
-                        console.log(`Updated South East Glasgow bus data: ${buses.length} buses`);
                     } else if (area === "northEastGlasgow") {
                         northEastGlasgowBusData = buses;
-                        console.log(`Updated North East Glasgow bus data: ${buses.length} buses`);
                     }
 
                     // put stops into stop data JSON
@@ -608,9 +591,9 @@ function startSocket(area, token) {
             reject(err);
         });
         
-        socket.on("close", () => {
-            console.log(`${area} socket connection closed`);
-        });
+        // socket.on("close", () => {
+        //     console.log(`${area} socket connection closed`);
+        // });
         
         // Timeout 
         setTimeout(() => {
@@ -639,12 +622,10 @@ async function sendSocketMessage(area, coords, socket) {
     });
 
     return new Promise((resolve, reject) => {
-        console.log(`Sending configuration message to ${area} socket`);
         socket.send(message);
         
         // Timeout 
         const timeout = setTimeout(() => {
-            console.log(`${area} data collection timeout - moving to next area`);
             resolve({"status": "timeout"});
         }, 5000);
         
@@ -656,13 +637,8 @@ async function sendSocketMessage(area, coords, socket) {
                 if (response.params && response.params.resource && response.params.resource.member) {
                     clearTimeout(timeout);
                     socket.removeListener("message", messageHandler);
-                    console.log(`Received data for ${area} with ${response.params.resource.member.length} buses`);
+                    //console.log(`Received data for ${area} with ${response.params.resource.member.length} buses`);
                     resolve(response);
-                }
-                
-                // Checks for an acknowledgment
-                if (response.result && Object.keys(response.result).length === 0) {
-                    console.log(`Received empty acknowledgment from ${area}, waiting for data...`);
                 }
             } catch (error) {
                 console.error(`Error parsing ${area} socket message:`, error);
