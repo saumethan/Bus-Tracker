@@ -45,7 +45,7 @@ router.post('/createUser', async function(req, res) {
         return;
         
         }
-
+        
         // Store user data from the form
         const datatostore = {
             "name": { "title": req.body.title, "first": req.body.first },

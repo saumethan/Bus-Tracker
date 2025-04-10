@@ -78,18 +78,44 @@ router.post('/logout', async function(req, res) {
 
 //-=-=-=-=-=-=-=-=-=-=-=-=-===-=-Change Password =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 router.post('/changepassword', async function(req, res) {
+    //Gets the 3 password from the form 
+    const oldpassword = req.body.oldpassword;
+    const newpassword = req.body.newpassword;
+    const confirmpassword = req.body.confirmpassword;
+    const username = req.session.thisuser;
+    
+    
     try{
+        
         if(req.session.loggedin === true){
-            console.log("Logged out:", req.session.loggedin);
-            req.session.loggedin = false;
-            req.session.thisuser = null;
+            const currentpassword = user.login.password;
+            console.log("Current password:", currentpassword);
+            console.log("Old password:", oldpassword);
+
+
+            if(oldpassword === currentpassword && newpassword===confirmpassword ){
+                //update the password of the user
+                const result = await db.collection('users').updateOne(
+                    { "login.username": username },
+                    { $set: { "login.password": newpassword } },
+                    console.log("Password updated for user:", username)
+                    
+                );
+            //Check if passwords match
+            }else if(oldpassword !== currentpassword){
+                console.log("Old password does not match current password");
+            }else if(confirmpassword !== newpassword){
+                console.log("Passwords do not match!!");
+            }else{
+                console.log("ERROR");
+            }
             res.redirect('/');
     }else{
-            console.log("Not logged in, cannot log out");
+            console.log("Not logged in, cannot change password");
             res.redirect('/settings');
     }
 }catch (error) {
-        console.error("Error during logout:", error);
+        console.error("Error during change of password:", error);
     }
 });
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=Delete Account-=-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\\
