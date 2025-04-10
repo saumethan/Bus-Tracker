@@ -31,31 +31,15 @@ const MIN_BUS_ZOOM = 12;
 const MIN_STOP_ZOOM = 15;
 
 // Initialize the map and set its location
-async function createMap() {
-    const center = [57.1497, -2.0943]; // Aberdeen
-    let initialZoom = 15; // Default zoom
-
+function createMap() {
     const mapInstance = L.map("map", {
-        zoomControl: false,
+        zoomControl: false, 
         doubleTapDragZoom: "center",
-        doubleTapDragZoomOptions: { reverse: true }
-    });
-
-    try {
-        const response = await fetch("login/userSettings");
-        if (response.ok) {
-            const data = await response.json();
-            if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
-                initialZoom = data.zoomLevel;
-                console.log("User zoom level loaded:", initialZoom);
-            }
+        doubleTapDragZoomOptions: {
+            reverse: true
         }
-    } catch (err) {
-        mapInstance.zoomLevel = 15
-        console.error("Error fetching zoom level:", err);
-    }
-    
-    mapInstance.setView(center, initialZoom);
+    });
+    mapInstance.setView([57.1497, -2.0943], 15); // Aberdeen
     addTileLayer(mapInstance); 
     return mapInstance;
 }
@@ -401,6 +385,21 @@ document.addEventListener("DOMContentLoaded", async function() {
     // Creates map
     map = await createMap();
     map.stopCircleRadius = 20;
+
+    try {
+        const response = await fetch("login/userSettings");
+        if (response.ok) {
+            const data = await response.json();
+            if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
+                map.zoomLevel = data.zoomLevel;
+                console.log("User zoom level loaded:", map.zoomLevel);
+            }
+        }
+    } catch (err) {
+        map.zoomLevel = 15
+        console.error("Error fetching zoom level:", err);
+    }
+    map.setView(center, map.currentZoom);
 
     // Adds buttons
     addRefreshButtonToMap(map);
