@@ -393,13 +393,14 @@ document.addEventListener("DOMContentLoaded", async function() {
             if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
                 map.zoomLevel = data.zoomLevel;
                 console.log("User zoom level loaded:", map.zoomLevel);
+                const { lat, lng } = getUserCoordinates();
+                map.setView([lat, lng], map.currentZoom);
             }
         }
     } catch (err) {
         map.zoomLevel = 15
         console.error("Error fetching zoom level:", err);
     }
-    map.setView(center, map.currentZoom);
 
     // Adds buttons
     addRefreshButtonToMap(map);
