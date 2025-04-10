@@ -13,7 +13,7 @@ router.use(express.json());  // Parses JSON data
 
 // SERVER ENDPOINT: login page
 router.get("/", function(req, res) {
-    res.render("pages/login",{page:"login"});
+    res.render("pages/login",{page:"login", loggedIn: req.session.loggedin });
 });
 
 
