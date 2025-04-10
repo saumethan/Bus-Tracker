@@ -39,10 +39,7 @@ app.get("/", async function(req, res) {
     }
 });
 
-// SERVER ENDPOINT: settings page
-//app.get("/settings", function(req, res) {
-//    res.render("pages/settings", { page: "settings" });
-//});
+
 
 // Use the API routes (from apiRoutes.js)
 app.use("/api/buses", busRoutes);
