@@ -66,6 +66,9 @@ router.post('/logout', async function(req, res) {
             req.session.loggedin = false;
             req.session.thisuser = null;
             res.redirect('/');
+    }else{
+            console.log("Not logged in, cannot log out");
+            res.redirect('/settings');
     }
 }catch (error) {
         console.error("Error during logout:", error);
