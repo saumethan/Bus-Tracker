@@ -53,7 +53,8 @@ router.get("/", async function(req, res) {
     res.render("pages/settings", {
         page: "settings",
         user: userData,
-        loggedIn: req.session.loggedin === true
+        loggedIn: req.session.loggedin === true,
+        error: ""
     });
 });
 
