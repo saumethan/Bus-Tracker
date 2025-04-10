@@ -89,6 +89,49 @@ async function getAllBusGPS(yMax, xMax, yMin, xMin) {
     }
 }
 
+// ------------------ Function to create a bus marker on on the map ------------------
+function createMarker(map, coord, iconUrl) {
+    // create marker with leaflet
+    const icon = L.icon({
+        iconUrl: iconUrl, 
+        iconSize: [40, 60], 
+    });
+    const circle = L.marker([ coord.latitude, coord.longitude ], { icon: icon }).addTo(map);
+
+    // create tooltip for marker
+    const toolTipContent = `
+        <div>
+            <strong>Route: ${coord.route || "Unknown"}</strong><br>
+            Destination: ${coord.destination || "Unknown"}<br>
+        </div>
+    `;
+    circle.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
+
+    // add click event listener to the bus marker
+    circle.on("click", async (event) => {
+        nocCode = coord.noc;
+        routeNumber = coord.route;
+        setViewAllBuses(false);
+        
+        // update URL to reflect the selected bus route
+        updateURLWithRoute(coord.route);
+
+        // only try to show specific route if we have serviceId and tripId
+        await showSpecificBusRoute(coord.serviceId, coord.tripId, coord.journeyId, coord.route, map, coord.noc, coord.direction, coord.destination);
+
+        // reset tooltips on all markers
+        map.busMarkers.forEach(marker => {
+            marker.closeTooltip(); 
+            marker.unbindTooltip();
+            marker.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
+        });
+    });
+
+    map.busMarkers.push(circle);
+
+    return circle;
+}
+
 // ------------------ Function to draw the buses ------------------
 async function drawBus(busData, map) {
     // Initialise busMarkers if it doesn't exist
@@ -103,21 +146,14 @@ async function drawBus(busData, map) {
         map.busMarkers = [];
     }
 
-    //console.log(busData)
     // Check if busData is valid
-    if (!busData || busData.length === 0) {
-        //console.log("No bus data available to display");
-        return;
-    }
+    if (!busData || busData.length === 0) return;
 
     // Draw each bus marker
     for (let i = 0; i < busData.length; i++) {
-        const coord = busData[i];
-
         // Make sure we have valid coordinates
-        if (!coord.latitude || !coord.longitude) {
-            continue;
-        }
+        const coord = busData[i];
+        if (!coord.latitude || !coord.longitude) continue;
 
         // Find the icon for this bus
         let busIcon
@@ -130,78 +166,23 @@ async function drawBus(busData, map) {
             }
         });
 
-        if (!busIcon) {
-            //https://developer.mozilla.org/en-US/docs/Web/API/AbortController
-            // Cancels previous image request 
-            if (busIconRequestController) {
-                busIconRequestController.abort();
-            }
-
-            // Creates new AbortController for the request
-            busIconRequestController = new AbortController();
-            const { signal } = busIconRequestController;
-
-            try {
-                // fetch image from our endpoint
-                const imageResponse = await fetch(`/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}&bearing=${coord.heading}`, { signal });
-
-                // turn the buffer into a blob, then into a readable URL
-                const blob = await imageResponse.blob();
-                busIcon = URL.createObjectURL(blob);
-
-                // cache the fetched image
-                busImageCache[`${coord.noc}-${coord.route}-${coord.heading}`] = busIcon;
-            } catch (error) {
-                if (error.name === "AbortError") {
-                    console.log("Bus icon request aborted.");
-                    return; 
-                }
-                console.error("Error fetching bus icon:", error);
-                continue;
-            }
+        if (busIcon) {
+            createMarker(map, coord, busIcon);
+        } else {
+            // try to fetch bus icon
+            fetch(`/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}&bearing=${coord.heading}`)
+                .then(response => response.blob())
+                .then(blob => {
+                    const iconUrl = URL.createObjectURL(blob);
+                    busImageCache[`${coord.noc}-${coord.route}-${coord.heading}`] = iconUrl;
+                    createMarker(map, coord, iconUrl);
+                })
+                .catch(error => {
+                    console.error(`Error fetching icon for bus ${coord.noc}-${coord.route}:`, error);
+                });
         }
-
-        // Create marker with the bus icon on it
-        const icon = L.icon({
-            iconUrl: busIcon, 
-            iconSize: [40, 60], 
-        });
-        const circle = L.marker([coord.latitude, coord.longitude], {icon: icon}).addTo(map);
-
-        // Create tooltip for marker
-        const toolTipContent = ` 
-            <div>
-                <strong>Route: ${coord.route || "Unknown"}</strong><br>
-                Destination: ${coord.destination || "Unknown"}<br>
-            </div>
-        `;
-        circle.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
-
-        // Add click event listener to the bus marker
-        circle.on("click", async (event) => {
-            nocCode = coord.noc;
-            routeNumber = coord.route;
-            setViewAllBuses(false);
-            
-            // Update URL to reflect the selected bus route
-            updateURLWithRoute(coord.route);
-
-            // Remove any walking planned routes
-            removePlannedRoute(map);
-
-            // Only try to show specific route if we have serviceId and tripId
-            await showSpecificBusRoute(coord.serviceId, coord.tripId, coord.journeyId, coord.route, map, coord.noc, coord.direction, coord.destination);
-
-            // Reset tooltips on all markers
-            map.busMarkers.forEach(marker => {
-                marker.closeTooltip(); 
-                marker.unbindTooltip();
-                marker.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
-            });
-        });
-        map.busMarkers.push(circle);
     }
-
+    
     // Close tooltips when clicking elsewhere on the map
     map.on("click", () => {
         map.busMarkers.forEach(marker => {

@@ -66,6 +66,9 @@ router.post('/logout', async function(req, res) {
             req.session.loggedin = false;
             req.session.thisuser = null;
             res.redirect('/');
+    }else{
+            console.log("Not logged in, cannot log out");
+            res.redirect('/settings');
     }
 }catch (error) {
         console.error("Error during logout:", error);
@@ -74,9 +77,59 @@ router.post('/logout', async function(req, res) {
 
 
 //-=-=-=-=-=-=-=-=-=-=-=-=-===-=-Change Password =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
-
+router.post('/changepassword', async function(req, res) {
+    try{
+        if(req.session.loggedin === true){
+            console.log("Logged out:", req.session.loggedin);
+            req.session.loggedin = false;
+            req.session.thisuser = null;
+            res.redirect('/');
+    }else{
+            console.log("Not logged in, cannot log out");
+            res.redirect('/settings');
+    }
+}catch (error) {
+        console.error("Error during logout:", error);
+    }
+});
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=Delete Account-=-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\\
-
+router.post('/deleteaccount', async function(req, res) {
+    const deleteaccount = req.body.deletetext;
+    
+    try{
+        if(req.session.loggedin === true){
+            //we need to delete the user from the database
+            const username = req.session.thisuser;
+            //Only if the user has typed delete will it then delete the account from the database
+            if(deleteaccount === "delete"){    
+            const result = await db.collection('users').deleteOne({"login.username": username});
+            console.log("Deleted user:", username);
+            req.session.loggedin = false;
+            router.post('/logout');
+            res.redirect('/');
+            }else{
+                console.log("User did not type delete, account not deleted");
+                res.redirect('/settings');
+            }
+    }else{
+            console.log("Not logged in, cannot delete account");
+            res.redirect('/settings');
+    }
+}catch (error) {
+        console.error("Error during account deletion:", error);
+    }
+});
 
 
 module.exports = router;
+
+
+
+//Josh TO DO LIST 
+/*
+change password 
+add a method to sign out via the login/sign out bit
+sign out / login change 
+
+
+*/
