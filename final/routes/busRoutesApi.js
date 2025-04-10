@@ -637,7 +637,7 @@ async function sendSocketMessage(area, coords, socket) {
                 if (response.params && response.params.resource && response.params.resource.member) {
                     clearTimeout(timeout);
                     socket.removeListener("message", messageHandler);
-                    console.log(`Received data for ${area} with ${response.params.resource.member.length} buses`);
+                    //console.log(`Received data for ${area} with ${response.params.resource.member.length} buses`);
                     resolve(response);
                 }
             } catch (error) {
