@@ -104,6 +104,7 @@ router.post('/deleteaccount', async function(req, res) {
             if(deleteaccount === "delete"){    
             const result = await db.collection('users').deleteOne({"login.username": username});
             console.log("Deleted user:", username);
+            req.session.loggedin = false;
             router.post('/logout');
             res.redirect('/');
             }else{
