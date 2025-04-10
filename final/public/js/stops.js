@@ -4,7 +4,7 @@
  * @description A module handling stop information, including fetching from relevant APIs and drawing stops on a map
  */
 
-import { setViewAllBuses, updateBusesAndStops } from "./map.js";
+import { setViewAllBuses, updateBusesAndStops, addrouteButtonToMap, removePlannedRoute} from "./map.js";
 import { removeRoute } from "./busRoute.js";
 import { getSpecificBusGPS, drawBus, showSpecificBusRoute } from "./busGps.js";
 import { showNotification } from "./helper.js";
@@ -236,6 +236,7 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
     }
 }
 
+
 function updateURLWithStop(stopId) {
     // Update URL without refreshing page
     const newUrl = window.location.origin + window.location.pathname + `?stop=${stopId}`;
@@ -305,11 +306,13 @@ async function drawStops(stopsData, map) {
             setViewAllBuses(true);
             
             removeRoute(map);
+            removePlannedRoute(map);
             updateBusesAndStops();
 
             loadStopTimes(stop.bustimes_id, stop.latitude, stop.longitude, map);
             
             popupPanel();
+            addrouteButtonToMap(map,stop.latitude, stop.longitude);
         });
 
         map.stopMarkers.push(circle);
@@ -317,4 +320,4 @@ async function drawStops(stopsData, map) {
 }
 
 // Export functions
-export { fetchStopsInViewport, fetchStopId, loadStopTimes, fetchSpecificStopLocation, drawStops };
+export { fetchStopsInViewport, fetchStopId, loadStopTimes, fetchSpecificStopLocation, drawStops};

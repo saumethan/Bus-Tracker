@@ -95,6 +95,22 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="list-group-item">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <strong class="mb-0">Distance Units</strong>
+                                        <p class="text-muted mb-0">Please select prefered units of Distance</p>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="col-auto">
+                                            <select id="distanceUnits" class="form-select">
+                                                <option value="km">Kilometers</option>
+                                                <option value="miles">Miles</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -120,14 +136,22 @@
                             </button>
                         </div>
                         <div id="logoutForm" class="mt-3" style="display: none;">
-                            <form method= "POST" action="/logout">
+                            <form method= "POST" action="settings/logout">
                                 <div class="form-group">
                                     <!--Show the details of the account currently logged in including name and email-->
                                     <h3>Current Details</h1>
-                                        <p>Name:</p>
-                                        <p>Email:</p>
-                                    
-                                
+                                        <p>Name: 
+                                            <%= loggedIn && user 
+                                                ? `${user.name.title} ${user.name.first}` 
+                                                : "Not logged in" 
+                                            %>
+                                        </p>
+                                        <p>Email: 
+                                            <%= loggedIn && user 
+                                                ? user.login.username 
+                                                : "Not logged in" 
+                                            %>
+                                        </p>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Log Out Now</button>
                             </form>
@@ -146,7 +170,7 @@
                             </button>
                         </div>
                         <div id="passwordForm" class="mt-3" style="display: none;">
-                            <form>
+                            <form method = "POST" action="settings/changepassword">
                                 <div class="form-group">
                                     <label for="newpassword">New Password</label>
                                     <input type="text" id="newpassword" class="form-control" placeholder="Enter new password" />
@@ -168,10 +192,10 @@
                             </button>
                         </div>
                         <div id="deleteAccountForm" class="mt-3" style="display: none;">
-                            <form>
+                            <form method = "POST" action="settings/deleteaccount">
                                 <div class="form-group">
                                     <label for="confirmDelete">Type "DELETE" to confirm</label>
-                                    <input type="text" id="confirmDelete" class="form-control" placeholder="DELETE" />
+                                    <input type="text" id="confirmDelete" class="form-control" placeholder="DELETE" name="deletetext" />
                                 </div>
                                 <button type="submit" class="btn btn-danger">Delete Account</button>
                             </form>

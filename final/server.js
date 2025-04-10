@@ -18,6 +18,7 @@ const stopRoutes = require("./routes/stopRoutesApi");
 const imagesRoute = require("./routes/busImagesApi");
 const loginRoutes = require("./routes/login");
 const createRoute = require("./routes/create");
+const planRoute = require("./routes/routingApi")
 const planJourney = require("./routes/routingApi")
 const settings = require("./routes/settings");
 
@@ -49,6 +50,7 @@ app.use("/api/stops", stopRoutes);
 app.use("/api/busimages", imagesRoute);
 app.use("/login", loginRoutes);
 app.use("/create", createRoute)
+app.use("/api/planroute", planRoute);
 app.use("/api/planroute", planJourney);
 app.use("/settings", settings);
 
