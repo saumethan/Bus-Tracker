@@ -292,12 +292,12 @@ async function updateBuses() {
 // ------------------ Function to update stops based on current state ------------------
 async function updateStops() {
     // Check zoom level first
-    if (map.currentZoom < MIN_STOP_ZOOM) {
-        // Clear stops if zoom level is too low
+    if (map.currentZoom < 15) {
+        // Don't draw stops if zoom level is too low (below 15)
         drawStops(null, map);
         return;
     }
-    
+
     const { minX, minY, maxX, maxY } = getViewportBounds();
     
     try {
@@ -306,7 +306,7 @@ async function updateStops() {
     } catch (error) {
         console.error("Error updating stops:", error);
         showNotification("Error updating stops", "error");
-        drawStops(null, map);
+        drawStops(null, map);  // Clear stops if there's an error
     }
 }
 
