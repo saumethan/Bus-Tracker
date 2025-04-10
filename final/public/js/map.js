@@ -56,8 +56,8 @@ async function createMap() {
         console.error("Error fetching zoom level:", err);
     }
 
-    mapInstance.setView(center, mapInstance.currentZoom);
     addTileLayer(mapInstance); 
+    mapInstance.setView(center, mapInstance.currentZoom);
     return mapInstance;
 }
 
