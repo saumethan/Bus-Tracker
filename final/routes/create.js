@@ -71,16 +71,15 @@ router.post('/createUser', async function(req, res) {
             res.redirect('/login');
         }
     } catch (error) {
-        console.error("Error saving to database:", error);
-        res.status(500).send("Failed to create account");
+        //console.error("Error saving to database:", error);
+        //res.status(500).send("Failed to create account");
+        return res.render("pages/create", {
+            page: "create",
+            loggedIn: false,
+            error: "Failed to create account"
+        });
     }
 });
 
-
-//-=-=-=-=-=-=-=-=-=-=-=-=-===-=-Change Username =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
-
-//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=Delete Account-=-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\\
-
-//-=-=-=-=-=-==-=-=-=-=-=-=-=-=-logout button controls -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 
 module.exports = router;
