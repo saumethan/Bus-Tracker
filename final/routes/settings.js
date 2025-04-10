@@ -60,7 +60,15 @@ router.get("/", async function(req, res) {
 
 //-=-=-=-=-=-==-=-=-=-=-=-=-=-=-logout button controls -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 router.post('/logout', async function(req, res) {
-    req.session.loggedin = false;
+    try{
+        if(req.session.loggedin === true){
+            console.log("Logged out:", req.session.loggedin);
+            req.session.loggedin = false;
+            req.session.thisuser = null;
+    }
+}catch (error) {
+        console.error("Error during logout:", error);
+    }
 });
 
 
