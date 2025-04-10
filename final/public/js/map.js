@@ -35,13 +35,19 @@ async function createMap() {
     let initialZoom = 15; // Default zoom
     const center = [57.1497, -2.0943]; // Aberdeen
 
+    const mapInstance = L.map("map", {
+        zoomControl: false,
+        doubleTapDragZoom: "center",
+        doubleTapDragZoomOptions: { reverse: true }
+    }).setView(center, map.currentZoom);
+
     try {
         const response = await fetch("login/userSettings");
         if (response.ok) {
             const data = await response.json();
             if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
-                map.currentZoom = data.zoomLevel;
-                console.log("User zoom level loaded:", map.currentZoom);
+                mapInstance.currentZoom = data.zoomLevel;
+                console.log("User zoom level loaded:", mapInstance.currentZoom);
             }
         } else {
             console.log("User not logged in or zoom level not available.");
@@ -49,12 +55,6 @@ async function createMap() {
     } catch (err) {
         console.error("Error fetching zoom level:", err);
     }
-
-    const mapInstance = L.map("map", {
-        zoomControl: false,
-        doubleTapDragZoom: "center",
-        doubleTapDragZoomOptions: { reverse: true }
-    }).setView(center, map.currentZoom);
 
     addTileLayer(mapInstance); 
     return mapInstance;
