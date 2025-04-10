@@ -156,6 +156,37 @@ function addLocationButtonToMap() {
     locationButton.addTo(map);
 }
 
+// ------------------ Function to add route button to the map ------------------
+function addrouteButtonToMap(map,stopLng,stopLat) {
+
+    if(currentRouteButton){
+        currentRouteButton.remove();
+    }
+
+    // route button 
+    const routeButton = L.control({ position: "topright" });
+
+    routeButton.onAdd = function () {
+        const buttonDiv = L.DomUtil.create("div", "map-button");
+        buttonDiv.innerHTML = "<button id='location-button'><i class='fa-solid fa-person-walking'></i></i></button>";
+
+        // Event listener for the button
+        buttonDiv.addEventListener("click", async () => {
+            removePlannedRoute(map);
+            const{lat,lng} = getUserCoordinates();
+            const routeData = await getRouteData(stopLat,stopLng,lng,lat);
+            const distance = (routeData.totalDistance/1609.344).toFixed(2);
+            const duration = Math.round(routeData.totalDuration / 60);
+            drawRoute(routeData,distance,duration,map);
+        });
+        return buttonDiv;
+    };
+
+    // Add to map
+    routeButton.addTo(map);
+    currentRouteButton = routeButton;
+}
+
 // ------------------ Function to layer to style the map ------------------
 function addTileLayer(mapInstance) {
     L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
@@ -613,4 +644,4 @@ function drawRoute(routeCoords,distance,duration,map) {
 }
 
 // Export
-export { setViewAllBuses, getViewAllBuses, getViewportBounds, adjustMapViewToRoute, updateBusesAndStops, addrouteButtonToMap,  removePlannedRoute};
+export { setViewAllBuses, getViewAllBuses, getViewportBounds, adjustMapViewToRoute, updateBusesAndStops, addrouteButtonToMap, removePlannedRoute};
