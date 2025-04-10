@@ -40,9 +40,8 @@ async function createMap() {
         if (response.ok) {
             const data = await response.json();
             if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
-                initialZoom = data.zoomLevel;
-                map.currentZoom = initialZoom
-                console.log("User zoom level loaded:", initialZoom);
+                map.currentZoom = data.zoomLevel;
+                console.log("User zoom level loaded:", map.currentZoom);
             }
         } else {
             console.log("User not logged in or zoom level not available.");
@@ -55,7 +54,7 @@ async function createMap() {
         zoomControl: false,
         doubleTapDragZoom: "center",
         doubleTapDragZoomOptions: { reverse: true }
-    }).setView(center, initialZoom);
+    }).setView(center, map.currentZoom);
 
     addTileLayer(mapInstance); 
     return mapInstance;
