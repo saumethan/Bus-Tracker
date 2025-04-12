@@ -19,11 +19,12 @@
                     <li class="nav-item">
                         <a class="nav-link <%= page === 'map' ? 'active' : '' %>" href="/">Map</a>
                     </li>
+
                     <% if (loggedIn) { %>
-                    <li class="nav-item">
-                        <a class="nav-link <%= page === 'settings' ? 'active' : '' %>" href="/settings">Settings</a>
-                    </li>
-                    
+                        <li class="nav-item">
+                            <a class="nav-link <%= page === 'settings' ? 'active' : '' %>" href="/settings">Settings</a>
+                        </li>
+                    <% } %>
     
                     <!-- login dropdown -->
                     <li class="nav-item dropdown">
