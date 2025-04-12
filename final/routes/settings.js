@@ -30,6 +30,13 @@ connectDB();
 // SERVER ENDPOINT: create page
 router.get("/", async function(req, res) {
     let userData = null;
+
+    // Check if the user is logged in
+    if (req.session.loggedin !== true) {
+        // User is not logged in, return 404 page
+        return res.status(404).render("pages/404"); // Or redirect to login page
+    }
+
     try {
         //First we check if a user is logged in 
         if (req.session.loggedin === true) {
