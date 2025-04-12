@@ -34,6 +34,12 @@ $(document).ready(function () {
         $("#zoomValue").text($(this).val());
     });
 
+    (async function setInitialZoomLevel() {
+        const zoomLevel = await getUserZoom();
+        if (zoomLevel !== undefined && !isNaN(zoomLevel)) {
+            $("#mapZoomRange").val(zoomLevel);
+        }
+    })();
 });
 
 async function saveMapZoomSetting(zoom) {
@@ -55,4 +61,18 @@ async function saveMapZoomSetting(zoom) {
 
 function saveDefaultLocation(location) {
     console.log("Location setting sent to server:", location);
+}
+
+async function getUserZoom() {
+    try {
+        const response = await fetch("login/userSettings");
+        if (response.ok) {
+            const data = await response.json();
+            if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
+                return data.zoomLevel;
+            }
+        }
+    } catch (err) {
+        return 15;
+    }
 }

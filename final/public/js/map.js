@@ -326,7 +326,6 @@ async function updateBuses() {
 
 // ------------------ Function to update stops based on current state ------------------
 async function updateStops() {
-    console.log(map.currentZoom)
     // Check zoom level first
     if (map.currentZoom < 15) {
         // Don't draw stops if zoom level is too low (below 15)
