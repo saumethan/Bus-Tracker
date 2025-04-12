@@ -75,6 +75,11 @@ router.post('/logout', async function(req, res) {
     }
 });
 
+router.get('/logout', (req, res) => {
+    req.session.loggedin = false;
+    req.session.thisuser = null;
+    res.redirect('/');
+});
 
 //-=-=-=-=-=-=-=-=-=-=-=-=-===-=-Change Password =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 router.post('/changepassword', async function(req, res) {
