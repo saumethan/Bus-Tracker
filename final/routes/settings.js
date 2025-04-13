@@ -179,8 +179,6 @@ module.exports = router;
 
 //Josh TO DO LIST 
 /*
-add a method to sign out via the login/sign out bit
-sign out / login change 
 How messages are show e.g "passwords do not match"
 
 
