@@ -44,7 +44,7 @@ async function createMap() {
     });
 
     try {
-        const response = await fetch("login/userSettings");
+        const response = await fetch("settings/userSettings");
         if (response.ok) {
             const data = await response.json();
             if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
