@@ -1,6 +1,6 @@
 /**
  * @author Owen Meade @owenrgu
- * @author Ethan Saum @saumethan272
+ * @author Ethan Saum @saumethan
  * @description A module handling stop information, including fetching from relevant APIs and drawing stops on a map
  */
 

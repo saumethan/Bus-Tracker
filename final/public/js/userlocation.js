@@ -1,5 +1,5 @@
 /**
- * @author Ethan Saum @saumethan272
+ * @author Ethan Saum @saumethan
  * @author Owen Meade @owenrgu
  * @description All functionality the users location.
  */

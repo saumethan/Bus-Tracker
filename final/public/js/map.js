@@ -1,5 +1,5 @@
 /**
- * @author Ethan Saum @saumethan272
+ * @author Ethan Saum @saumethan
  * @author Owen Meade @owenrgu
  * @author Xavier Flockton @XavierFlockton
  * @description All functionality relating to the bus map, including plotting of stops + GPS tracking of buses.
@@ -112,8 +112,8 @@ function addRefreshButtonToMap() {
         buttonDiv.addEventListener("click", async () => {
             
             // Add spinning animation
-            const icon = buttonDiv.querySelector('i');
-            icon.classList.add('spinning');
+            const icon = buttonDiv.querySelector("i");
+            icon.classList.add("spinning");
             
             await updateBusesAndStops();
 
@@ -123,7 +123,7 @@ function addRefreshButtonToMap() {
 
             // Remove spinning class 
             setTimeout(() => {
-                icon.classList.remove('spinning');
+                icon.classList.remove("spinning");
             }, 1000);
         });
         return buttonDiv;
@@ -604,7 +604,7 @@ function drawRoute(routeCoords,distance,duration,map) {
         return;
     }
 
-  
+
     if (coordinates.length === 0) {
         console.error("Invalid route coordinates:", coordinates);
         return;
@@ -620,8 +620,8 @@ function drawRoute(routeCoords,distance,duration,map) {
 
     const toolTipContent = `
             <div>
-                 <p>Walk Time:</strong> ${duration} mins <br>
-                 Distance:</strong> ${distance} miles </p>
+                <p>Walk Time:</strong> ${duration} mins <br>
+                Distance:</strong> ${distance} miles </p>
             </div>
         `;
         plannedRoute.bindTooltip(toolTipContent, { permanent: false, direction: "top", offset: [0, -12] });

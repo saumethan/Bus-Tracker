@@ -32,16 +32,13 @@ router.get("/", function(req, res) {
     res.render("pages/create",{page:"create", loggedIn: req.session.loggedin===true});
 });
 
-
-
-
 // -=-=-=-=-=-=-=-=-=Create User Account-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
-router.post('/createUser', async function(req, res) {
+router.post("/createUser", async function(req, res) {
     try {
         //Check if user is already logged in
         if (req.session.loggedin === true) {
         console.log("cannot create as Logged in:", req.session.loggedin);
-        res.redirect('/login');
+        res.redirect("/login");
         return;
         
         }
@@ -55,7 +52,7 @@ router.post('/createUser', async function(req, res) {
         };
 
         // Insert the new user into the database
-        const result = await db.collection('users').insertOne(datatostore);
+        const result = await db.collection("users").insertOne(datatostore);
         console.log("Saved to database:", result.insertedId);
         let test = true
         
@@ -66,9 +63,9 @@ router.post('/createUser', async function(req, res) {
             req.session.thisuser = username = req.body.email;
             console.log("Logged in:", req.session.loggedin);
             console.log("Logged new user into their account ")
-            res.redirect('/');
+            res.redirect("/");
         }else{
-            res.redirect('/login');
+            res.redirect("/login");
         }
     } catch (error) {
         //console.error("Error saving to database:", error);
@@ -80,6 +77,5 @@ router.post('/createUser', async function(req, res) {
         });
     }
 });
-
 
 module.exports = router;

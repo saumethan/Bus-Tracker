@@ -1,3 +1,9 @@
+/**
+ * @author Owen Meade @owenrgu
+ * @author Ethan Saum @saumethan
+ * @description All functionality relating to bus stops.
+ */
+
 // Libraries
 const express = require("express");
 const axios = require("axios");
@@ -73,9 +79,6 @@ router.get("/find", async (req, res) => {
             xMax = calculatedXMax;
             xMin = calculatedXMin;
         }
-
-        
-        const stopsData = [];
 
         try {
             const url = `https://bustimes.org/stops.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;

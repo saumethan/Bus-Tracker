@@ -1,5 +1,5 @@
 /**
- * @author Ethan Saum @saumethan272
+ * @author Ethan Saum @saumethan
 */
 
 $(document).ready(function () {
@@ -46,7 +46,7 @@ async function saveMapZoomSetting(zoom) {
     try {
         const response = await $.ajax({
             type: "POST",
-            url: "/login/userSettings",
+            url: "/settings/userSettings",
             contentType: "application/json",
             data: JSON.stringify({ newZoom: zoom }),
         });
@@ -65,7 +65,7 @@ function saveDefaultLocation(location) {
 
 async function getUserZoom() {
     try {
-        const response = await fetch("login/userSettings");
+        const response = await fetch("settings/userSettings");
         if (response.ok) {
             const data = await response.json();
             if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {

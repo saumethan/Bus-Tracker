@@ -1,5 +1,7 @@
-// server.js
-// load the things we need
+/**
+ * @author Ethan Saum @saumethan
+ * @description server.js
+ */
 
 const express = require("express");
 const app = express();
@@ -38,8 +40,6 @@ app.get("/", async function(req, res) {
         console.error("Error starting WebSocket:", error);
     }
 });
-
-
 
 // Use the API routes (from apiRoutes.js)
 app.use("/api/buses", busRoutes);

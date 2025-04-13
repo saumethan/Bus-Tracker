@@ -1,4 +1,9 @@
-// busRoutesApi.js
+/**
+ * @author Ethan Saum @saumethan272
+ * @author Owen Meade @owenrgu
+ * @author Xavier Flockton @XavierFlockton
+ * @description All functionality relating to getting live location and route coordinates for buses.
+ */
 
 const express = require("express");
 const axios = require("axios");
@@ -228,6 +233,7 @@ router.get("/routes", async (req, res) => {
     try {
         let url
     
+        // McGill's bus routes
         if (noc === "TRDU" || (noc === "FSCE" && [22, 32, 33, 18].includes(routeNumber))) {
             url = `https://www.xploredundee.com/_ajax/lines/map/TRDU/${routeNumber}`;
         } else if (noc === "MBLB" || noc === "FSCE") {
@@ -251,6 +257,7 @@ router.get("/routes", async (req, res) => {
             }
         }
 
+        // Lothian Buses
         if (noc === "LOTH") {
             url = `https://lothianapi.co.uk/routePatterns?route_name=${routeNumber}`
         }
@@ -400,7 +407,6 @@ async function fetchJourneyData(journeyId, res) {
         console.error("Error fetching journey data:", error.message);
     }
 
-    // If no data from journey, return empty response
     return res.status(200).json({});
 }
 
@@ -410,12 +416,12 @@ function findLongestRoute(response, routeNumber) {
         let featureWithMostCoords = null;
         let maxCoordsLength = 0;
 
-        // Loop through each feature
+        // Loops through each feature
         features.forEach(feature => {
             const coords = feature.geometry.coordinates;
             const coordsLength = coords.length;
 
-            // Swap coordinates 
+            // Swaps coordinates 
             const correctedCoords = coords.map(coord => [coord[1], coord[0]]);
 
             if (coordsLength > maxCoordsLength) {
@@ -437,7 +443,7 @@ function findLongestRoute(response, routeNumber) {
 }
 
 async function requestFirstBusLocations() {
-    // Run continuously
+    // Runs continuously
     while (true) {       
         await getFirstBusLocation();
         await new Promise(resolve => setTimeout(resolve, 30000)); // 30 second delay
@@ -473,10 +479,6 @@ async function getFirstBusLocation() {
                 console.error(`Error processing ${area}:`, error);
             }
         }
-        
-        // const totalBuses = northAberdeenBusData.length + southAberdeenBusData.length + westGlasgowBusData.length + southEastGlasgowBusData.length + northEastGlasgowBusData.length;
-        // console.log(`Total buses across all areas: ${totalBuses}`);
-        // console.log(`na: ${northAberdeenBusData.length}, sa: ${southAberdeenBusData.length}, ` + `wg: ${westGlasgowBusData.length}, seg: ${southEastGlasgowBusData.length}, ` + `neg: ${northEastGlasgowBusData.length}`);
         
         return true;
     } catch (error) {
@@ -565,7 +567,7 @@ function startSocket(area, token) {
                         northEastGlasgowBusData = buses;
                     }
 
-                    // put stops into stop data JSON
+                    // put stops into stop data JSON (not currently used as all the routes have been added) 
                     // try {
                     //     if (message.method === "update" && message.params?.resource?.member) {
                     //         message.params.resource.member.forEach(bus => {
@@ -668,7 +670,6 @@ function loadRoutes() {
     return {};
 }
 
-
 function saveRoutes(routes) {
     try {
         fs.writeFileSync(ROUTES_FILE, JSON.stringify(routes, null, 2), "utf8");
@@ -677,9 +678,9 @@ function saveRoutes(routes) {
     }
 }
 
+// Function to add bus routes to local file (not currently used as all the routes have been added) 
 function addRoute(line_name, operator, direction, coordinates) {
     let routes = loadRoutes();
-
     const routeKey = `${line_name}_${operator}_${direction}`;
 
     // Only adds the route if it doesn't exist
@@ -701,7 +702,7 @@ function getBusesInBounds(busData, minX, minY, maxX, maxY) {
         }
     });
 
-return filteredBuses;
+    return filteredBuses;
 }
 
 module.exports = router;

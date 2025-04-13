@@ -28,12 +28,12 @@ async function connectDB() {
 }
 connectDB();
 
-router.post('/userlogin', async function(req, res) {
+router.post("/userlogin", async function(req, res) {
     var userName = req.body.uname;
     var userPass = req.body.upass;
 
     try {
-        var result = await db.collection('users').findOne({
+        var result = await db.collection("users").findOne({
             "login.username": userName
         });
 
@@ -51,7 +51,7 @@ router.post('/userlogin', async function(req, res) {
             req.session.loggedin = true;
             req.session.thisuser = userName;
             console.log("Logged in:", req.session.loggedin);
-            res.redirect('/');
+            res.redirect("/");
         } else {
             //console.log("Incorrect Password");
             //res.status(401).send("Incorrect Password, please try again");
@@ -70,61 +70,6 @@ router.post('/userlogin', async function(req, res) {
             loggedIn: false,
             error: "Failed to log in at this time"
         });
-    }
-});
-//Ethans settings for zoom level
-router.post('/userSettings', async function(req, res) {
-    if (!req.session || !req.session.loggedin) {
-        return res.status(401).send("Unauthorized: Please log in first.");
-    }
-
-    const newZoom = parseInt(req.body.newZoom, 10);
-    const username = req.session.thisuser;
-
-    if (isNaN(newZoom) || newZoom < 1 || newZoom > 30) {
-        return res.status(400).send("Invalid zoom level.");
-    }
-
-    try {
-        const result = await db.collection('users').updateOne(
-            { "login.username": username },
-            { $set: { zoomLevel: newZoom } }
-        );
-
-        if (result.modifiedCount === 1) {
-            console.log(`Zoom level updated to ${newZoom} for ${username}`);
-            res.status(200).send("Zoom level updated.");
-        } else {
-            res.status(404).send("User not found.");
-        }
-    } catch (error) {
-        console.error("Login Error", error);
-        res.render("pages/login", {
-            page: "login",
-            loggedIn: false,
-            error: "Something went wrong. Please try again later."
-        });
-    }
-});
-
-router.get('/userSettings', async function(req, res) {
-    if (!req.session || !req.session.loggedin) {
-        return res.status(401).json({ error: "Not logged in" });
-    }
-
-    const username = req.session.thisuser;
-
-    try {
-        const user = await db.collection('users').findOne({ "login.username": username });
-
-        if (user && user.zoomLevel !== undefined) {
-            res.status(200).json({ zoomLevel: user.zoomLevel });
-        } else {
-            res.status(404).json({ error: "Zoom level not found" });
-        }
-    } catch (error) {
-        console.error("Error retrieving zoom level:", error);
-        res.status(500).json({ error: "Server error" });
     }
 });
 

@@ -1,12 +1,12 @@
 /**
- * @author Ethan Saum @saumethan272
+ * @author Ethan Saum @saumethan
  * @author Owen Meade @owenrgu
  * @description All functionality relating to the bus GPS tracking on the map
  */
 
 // Modules
-import { setViewAllBuses, getViewAllBuses, getViewportBounds, updateBusesAndStops,removePlannedRoute } from "./map.js";
-import { getBusRoute, drawBusRoute, removeRoute } from "./busRoute.js";
+import { setViewAllBuses, getViewportBounds } from "./map.js";
+import { getBusRoute, drawBusRoute } from "./busRoute.js";
 import { showNotification } from "./helper.js";
 import { getUserCoordinates } from "./userlocation.js";
 

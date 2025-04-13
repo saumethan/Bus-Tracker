@@ -1,8 +1,7 @@
 /**
- * @author Ethan Saum @saumethan272
+ * @author Ethan Saum @saumethan
  * @description All functionality relating to user cookies.
  */
-
 
 // Variables
 let cookieStorageEnabled = false;

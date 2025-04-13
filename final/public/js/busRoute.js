@@ -1,5 +1,5 @@
 /**
- * @author Ethan Saum @saumethan272
+ * @author Ethan Saum @saumethan
  * @author Owen Meade @owenrgu
  * @description All functionality relating to the bus route on the map
  */
@@ -45,10 +45,6 @@ function drawBusRoute(routeCoords, routeNumber, destination, map) {
     }).addTo(map);
 
     adjustMapViewToRoute(route, map);
-
-    // Update the refresh time
-    const now = new Date();
-    const formattedTime = now.toLocaleTimeString(); 
 
     var htmlContent="";
     htmlContent += `
