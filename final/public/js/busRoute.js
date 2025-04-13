@@ -4,7 +4,6 @@
  * @description All functionality relating to the bus route on the map
  */
 
-import { showNotification } from "./helper.js"; // Import notification function
 import { adjustMapViewToRoute } from "./map.js";
 
 let route; 
@@ -19,7 +18,6 @@ async function getBusRoute(serviceId, tripId, journeyId, noc, route, direction) 
         return response;
     } catch (error) {
         console.error("Error fetching bus route data:", error);
-        showNotification("Error fetching bus route data", "error");
     }
 }
 

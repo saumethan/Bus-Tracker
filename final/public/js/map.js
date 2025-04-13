@@ -9,7 +9,6 @@
 import { getAllBusGPS, getSpecificBusGPS, drawBus, getNocCode, getRouteNumber, showSpecificBusRoute } from "./busGps.js";
 import { fetchStopsInViewport, drawStops, loadStopTimes, fetchSpecificStopLocation } from "./stops.js";
 import { removeRoute } from "./busRoute.js";
-import { showNotification } from "./helper.js";
 import { initializeCookieStorage, setupCookieBar } from "./cookies.js";
 import { getUserLocation, drawUserLocation, initUserLocationTracking, getUserCoordinates, saveLocationToCookie } from "./userlocation.js";
 import { closePanel } from "./grabber.js";
@@ -279,7 +278,6 @@ async function updateBuses() {
         if (viewAllBuses && map.currentZoom < MIN_BUS_ZOOM) {
             // Clear buses if zoom level is too low and we're viewing all buses
             drawBus(null, map);
-            showNotification("Zoom in to view buses", "info");
             busUpdateInProgress = false;
             return;
         }
@@ -318,7 +316,6 @@ async function updateBuses() {
         }
     } catch (error) {
         console.error("Error updating buses:", error);
-        showNotification("Error updating buses", "error");
     } finally {
         busUpdateInProgress = false;
     }
@@ -340,7 +337,6 @@ async function updateStops() {
         drawStops(stopsInViewport, map);
     } catch (error) {
         console.error("Error updating stops:", error);
-        showNotification("Error updating stops", "error");
         drawStops(null, map);  // Clear stops if there's an error
     }
 }
@@ -377,8 +373,6 @@ async function handlePopState(event) {
         if (map.currentZoom >= MIN_BUS_ZOOM) {
             busData = await getSpecificBusGPS(route, false);
             drawBus(busData, map);
-        } else {
-            showNotification("Please zoom in to view buses", "info");
         }
     }
 }
@@ -403,7 +397,6 @@ async function searchRoute(event) {
     
     if (busData.length === 0) {
         //console.log("No buses found for this service.");
-        showNotification("No live buses found for this route", "info")
         // Remove all URL parameters
         // Update URL without refreshing page
         const newUrl = window.location.origin + window.location.pathname;
@@ -422,10 +415,6 @@ async function searchRoute(event) {
 
     if (busData[0]) {
         await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, route, map, noc, busData[0].direction, busData[0].destination);
-    } else {
-        // const newUrl = window.location.origin + window.location.pathname;
-        // window.history.pushState({ path: newUrl }, "", newUrl);
-        showNotification("Route information not available", "warning");
     }
 }
 

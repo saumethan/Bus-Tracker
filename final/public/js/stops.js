@@ -7,7 +7,6 @@
 import { setViewAllBuses, updateBusesAndStops, addrouteButtonToMap, removePlannedRoute} from "./map.js";
 import { removeRoute } from "./busRoute.js";
 import { getSpecificBusGPS, drawBus, showSpecificBusRoute } from "./busGps.js";
-import { showNotification } from "./helper.js";
 import { popupPanel } from "./grabber.js";
 
 // Constants
@@ -196,7 +195,6 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                 const busData = await getSpecificBusGPS(serviceNumber, false, false, latitude, longitude);
                     if (busData.length === 0) {
                         //console.log("No buses found for this service.");
-                        showNotification("No live buses found for this route", "info")
                         // Remove all URL parameters
                         // Update URL without refreshing page
                         const newUrl = window.location.origin + window.location.pathname;
@@ -222,7 +220,6 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                     } else {
                         // const newUrl = window.location.origin + window.location.pathname;
                         // window.history.pushState({ path: newUrl }, "", newUrl);
-                        showNotification("Route information not available", "warning");
                     }
             });
         });

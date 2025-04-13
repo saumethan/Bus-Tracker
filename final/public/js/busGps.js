@@ -7,7 +7,6 @@
 // Modules
 import { setViewAllBuses, getViewportBounds } from "./map.js";
 import { getBusRoute, drawBusRoute } from "./busRoute.js";
-import { showNotification } from "./helper.js";
 import { getUserCoordinates } from "./userlocation.js";
 
 // Variables
@@ -72,7 +71,6 @@ async function getSpecificBusGPS(route, useBounds, isSearch, lat, lng) {
         
     } catch (error) {
         console.error("Error fetching specific bus data:", error);
-        showNotification("Error 2 fetching specific bus data", "warning");
     }
 }
 
@@ -84,7 +82,6 @@ async function getAllBusGPS(yMax, xMax, yMin, xMin) {
         return response || [];
     } catch (error) {
         console.error("Error fetching bus data:", error);
-        showNotification("Error 3fetching bus data", "error");
         return [];
     }
 }
@@ -224,13 +221,9 @@ async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map,
             if (typeof adjustMapViewToRoute === "function") {
                 adjustMapViewToRoute(routeLine);
             }
-        } else {
-            //console.log("No route found");
-            showNotification("No route available", "warning");
-        }
+        } 
     } catch (error) {
         console.error("Error fetching bus route:", error);
-        showNotification("Error 4fetching bus route", "error");
     }
 
     if (routeNumber) {
@@ -247,8 +240,6 @@ async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map,
         } catch (error) {
             //console.log(error);
         }
-    } else {
-        showNotification("Could not display buses at this time", "error");
     }
 }
 
