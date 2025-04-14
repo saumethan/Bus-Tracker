@@ -27,6 +27,7 @@ let ignoreNextZoomEnd = false;
 let lastRequestedBounds = null;
 let lastZoomLevel = 15;
 let initialZoom
+let currentRouteButton = null;
 
 // Constants for zoom levels
 const MIN_BUS_ZOOM = 12;
