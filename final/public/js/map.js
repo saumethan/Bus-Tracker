@@ -80,6 +80,7 @@ function addHomeButtonToMap() {
             
             // Update the UI
             removeRoute(map);
+            removePlannedRoute(map);
             updateBusesAndStops();
             
             // Clear bus data container
@@ -614,20 +615,10 @@ function drawRoute(routeCoords,distance,duration,map) {
                 Distance:</strong> ${distance} miles </p>
             </div>
         `;
-        plannedRoute.bindTooltip(toolTipContent, { permanent: false, direction: "top", offset: [0, -12] });
+        plannedRoute.bindTooltip(toolTipContent, { permanent: true, direction: "top", offset: [0, -12] });
 
-        // makes the tooltip permanent when clicked on
-        plannedRoute.on("hover", (event) => {
-            // stop tooltip
-            map.stopMarkers.forEach(marker => {
-                marker.closeTooltip();
-                
-            });
-            plannedRoute.openTooltip();
-        
-        });
 
-    // adjustMapViewToRoute(plannedRoute, map);
+     adjustMapViewToRoute(plannedRoute, map);
 
     return plannedRoute;
 }

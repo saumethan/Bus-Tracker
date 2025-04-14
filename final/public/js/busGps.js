@@ -5,7 +5,7 @@
  */
 
 // Modules
-import { setViewAllBuses, getViewportBounds } from "./map.js";
+import { setViewAllBuses, getViewportBounds,removePlannedRoute} from "./map.js";
 import { getBusRoute, drawBusRoute } from "./busRoute.js";
 import { getUserCoordinates } from "./userlocation.js";
 
@@ -108,6 +108,9 @@ function createMarker(map, coord, iconUrl) {
     circle.on("click", async (event) => {
         nocCode = coord.noc;
         routeNumber = coord.route;
+        removePlannedRoute(map);
+        
+        
         setViewAllBuses(false);
         
         // update URL to reflect the selected bus route
