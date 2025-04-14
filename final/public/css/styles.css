@@ -20,7 +20,7 @@ body {
 }
 
 main {
-    min-height: 90vh;
+    min-height: 85vh;
 }
 
 aside {
@@ -169,11 +169,12 @@ footer {
 }
 
 .login-register{
-    background-image: url('./images/Map.png'); 
+    background-image: url("../images/Busmap.png");
+    background-color: #f0f0f0; 
     background-size: cover;  
     background-position: center; 
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 80vh;
 }
 
 
