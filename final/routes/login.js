@@ -1,3 +1,8 @@
+/**
+ * @author Joshua Newton
+ * @description Login.js
+ */
+
 const express = require("express");
 const router = express.Router();
 
