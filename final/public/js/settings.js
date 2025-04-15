@@ -124,7 +124,7 @@ async function saveMapZoomSetting(zoom) {
 //Fetch user's saved zoom level from server
 async function getUserZoom() {
     try {
-        const response = await fetch("/settings/userSettings");
+        const response = await $.get("/settings/userSettings");
         if (response.ok) {
             const data = await response.json();
             if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
