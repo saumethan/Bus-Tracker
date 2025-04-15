@@ -49,26 +49,17 @@ router.post("/userlogin", async function(req, res) {
         }
 
         if (result.login.password === userPass) {
+            req.session.loggedin = true;
+            req.session.thisuser = userName;
+            console.log("Logged in:", req.session.loggedin);
+            res.redirect("/");
+        } else {
             req.session.loginError = "Incorrect password, please try again";
             return res.redirect("/login");
-        } else {
-            //console.log("Incorrect Password");
-            //res.status(401).send("Incorrect Password, please try again");
-            //console.error("Password Error", error);
-            return res.render("pages/login", {
-                page: "login",
-                loggedIn: false,
-                error: "Incorrect password, please try again"
-            });
         }
     } catch (error) {
-        //console.error("Login Error", error);
-        //res.status(500).send("Failed to log in at this time");
-        return res.render("pages/login", {
-            page: "login",
-            loggedIn: false,
-            error: "Failed to log in at this time"
-        });
+        req.session.loginError = "Failed to log in at this time";
+        return res.redirect("/login");
     }
 });
 
