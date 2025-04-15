@@ -46,6 +46,30 @@ router.get("/", function(req, res) {
 // -=-=-=-=-=-=-=-=-=Create User Account-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 router.post("/createUser", async function(req, res) {
     try {
+        const email = req.body.email.trim();
+
+        // email rule - letters, numbers, hyphens, apostrophes, must include at least one dot
+        // const validEmail = /^[a-zA-Z0-9\-'.]*\.[a-zA-Z0-9\-'.]+$/;
+        // if (!validEmail.test(email)) {
+        //     console.log("Invalid email format attempt:", email);
+        //     return res.render("pages/create", {
+        //         page: "create",
+        //         loggedIn: false,
+        //         error: "Email can only use letters, numbers, - and '"
+        //     });
+        // }
+
+        // Check if the user already exists
+        const existingUser = await db.collection("users").findOne({ "login.username": email });
+
+        if (existingUser) {
+            return res.render("pages/create", {
+                page: "create",
+                loggedIn: false,
+                error: "An account with this email already exists."
+            });
+        }
+
         // Store user data from the form
         const datatostore = {
             "name": { "title": req.body.title, "first": req.body.first },
