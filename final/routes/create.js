@@ -37,7 +37,7 @@ router.get("/", function(req, res) {
     //Check if user is already logged in
     if (req.session.loggedin === true) {
         console.log("cannot create as Logged in:", req.session.loggedin);
-        res.redirect("/login");
+        res.redirect("/");
         return;
     }
     res.render("pages/create",{page:"create", loggedIn: req.session.loggedin===true});
