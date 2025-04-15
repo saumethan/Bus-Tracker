@@ -192,7 +192,7 @@ async function drawBusFast(busData, map) {
     });
 }
 
-async function drawBus(busData, map) {
+async function drawBusSlow(busData, map) {
     // Initialise busMarkers if it doesn't exist
     if (!map.busMarkers) {
         map.busMarkers = [];
@@ -304,6 +304,15 @@ async function drawBus(busData, map) {
             marker.unbindTooltip();
         });
     });
+}
+
+async function drawBus(busData, map) {
+    const host = window.location.hostname;
+    if (!host.includes("codio.io")) { // when not on codio, use the fast draw buses function
+        return drawBusFast(busData, map);
+    } else {
+        return drawBusSlow(busData, map);
+    }
 }
 
 // ------------------ Function to update URL without reloading the page ------------------
