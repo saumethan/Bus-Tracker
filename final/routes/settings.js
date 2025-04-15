@@ -37,8 +37,8 @@ router.get("/", async function(req, res) {
 
     // Check if the user is logged in
     if (req.session.loggedin !== true) {
-        // User is not logged in, return 404 page
-        return res.status(404).render("pages/404"); // Or redirect to login page
+        // User is not logged in, redirect to login page
+        return res.status(200).redirect("/login");
     }
 
     try {
