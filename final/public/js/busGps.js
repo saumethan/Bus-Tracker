@@ -22,7 +22,6 @@ async function getSpecificBusGPS(route, useBounds, isSearch, lat, lng) {
 
         if (useBounds) {
             let { minX, minY, maxX, maxY } = getViewportBounds();
-            console.log(minX, minY, maxX, maxY)
             let radius = Math.abs(maxX - minX);
 
             while (isSearch && radius < 50) {
@@ -52,23 +51,6 @@ async function getSpecificBusGPS(route, useBounds, isSearch, lat, lng) {
         }
 
         return response || [];
-        
-        // if (busData.length === 0) {
-        //     //console.log("No buses found for this service.");
-        //     showNotification("No live buses found for this route", "info")
-        //     // Remove all URL parameters
-        //     // Update URL without refreshing page
-        //     const newUrl = window.location.origin + window.location.pathname;
-        //     window.history.pushState({ path: newUrl }, "", newUrl);
-
-        //     setViewAllBuses(true);
-        //     removeRoute(map);
-        //     updateBusesAndStops();
-        //     return;
-        // }
-
-        //console.log(busData)
-        
     } catch (error) {
         console.error("Error fetching specific bus data:", error);
     }
