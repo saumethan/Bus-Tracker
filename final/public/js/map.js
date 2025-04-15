@@ -42,16 +42,15 @@ async function createMap() {
     });
 
     try {
-        const response = await $.get("settings/userSettings");
-        if (response.ok) {
-            const data = await response.json();
-            if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
-                initialZoom = data.zoomLevel;
-                console.log("User zoom level loaded:", initialZoom);
-            }
+        const data = await $.get("settings/userSettings");
+    
+        if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
+            initialZoom = data.zoomLevel;
+            console.log("User zoom level loaded:", initialZoom);
         }
     } catch (err) {
-        mapInstance.zoomLevel = 15
+        mapInstance.zoomLevel = 15;
+        console.error("Failed to load user settings:", err);
     }
     
     mapInstance.setView(center, initialZoom);

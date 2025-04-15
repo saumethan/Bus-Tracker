@@ -124,12 +124,10 @@ async function saveMapZoomSetting(zoom) {
 //Fetch user's saved zoom level from server
 async function getUserZoom() {
     try {
-        const response = await $.get("/settings/userSettings");
-        if (response.ok) {
-            const data = await response.json();
-            if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
-                return data.zoomLevel;
-            }
+        const data = await $.get("/settings/userSettings");
+    
+        if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
+            return data.zoomLevel;
         }
     } catch (err) {
         console.warn("Failed to fetch user zoom. Using default (15).");
