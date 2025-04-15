@@ -196,7 +196,7 @@ router.post("/userSettings", async function(req, res) {
     }
 
     try {
-        await db.collection("users").updateOne(
+        result = await db.collection("users").updateOne(
             { "login.username": username },
             { $set: { zoomLevel: newZoom } }
         );
