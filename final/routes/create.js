@@ -38,7 +38,9 @@ router.get("/", function(req, res) {
     if (req.session.loggedin === true) {
         return res.redirect("/");
     }
-    res.render("pages/create", { page:"create", loggedIn: req.session.loggedin === true });
+    const error = req.session.createError;
+    delete req.session.createError;
+    res.render("pages/create", { page:"create", loggedIn: req.session.loggedin === true, error: error });
 });
 
 // -=-=-=-=-=-=-=-=-=Create User Account-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
@@ -53,11 +55,8 @@ router.post("/createUser", async function(req, res) {
         const existingUser = await db.collection("users").findOne({ "login.username": email });
 
         if (existingUser) {
-            return res.render("pages/create", {
-                page: "create",
-                loggedIn: false,
-                error: "An account with this email already exists."
-            });
+            req.session.createError = "An account with this email already exists.";
+            return res.redirect("/login");
         }
 
         // Store user data from the form
@@ -83,11 +82,8 @@ router.post("/createUser", async function(req, res) {
             res.redirect("/login");
         }
     } catch (error) {
-        return res.render("pages/create", {
-            page: "create",
-            loggedIn: false,
-            error: "Failed to create account"
-        });
+        req.session.createError = "Failed to create account";
+        return res.redirect("/login");
     }
 });
 
