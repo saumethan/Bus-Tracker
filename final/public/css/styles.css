@@ -126,6 +126,24 @@ nav #title {
     font-size: 8px !important;
 }
 
+.login-page{
+    overflow: hidden;
+}
+
+#login-section {
+    width: 40vw;
+    
+    min-height: 35vh;
+    max-height: fit-content;
+    padding-bottom: 1.5vh;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: auto;
+    box-shadow: 0px 4px 4px 0px rgba(37, 36, 36, 0.8);
+    margin: auto;
+    padding-top: 3vh;
+}
+
 #map {
     height: 100vh;
     background-color: lightgray;
@@ -154,7 +172,64 @@ footer {
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.login-register{
+    background-image: url("../images/Busmap.png");
+    background-color: #f0f0f0; 
+    background-size: cover;  
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 100%;
+}
 
+
+#login-container {
+    padding-top: 20vh;
+}
+
+#login-section h1 {
+    text-align: center;
+}
+
+#login-section form {
+    margin: auto;
+    width: 70%;
+}
+
+#login-section input {
+    padding-left: 10px;
+    width: 100%;
+    height: 5vh;
+    margin-top: 2vh;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+#login-button {
+    transition-duration: 0.4s;
+    width: 100%;
+    height: 5vh;
+    margin-top: 2vh;
+    border-radius: 5px;
+    border-width: 0px;
+    color: black;
+    background-color: rgb(216, 216, 216) ;
+}
+
+#login-section p{
+    padding-top: 5px;
+}
+
+
+#login-button:hover {
+    background-color: rgb(73, 73, 73);
+    color: white;
+}
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 15px;
+}
 
 .map-button, .map-button-reset {
     background: #C9C6C2;
@@ -351,6 +426,8 @@ button.btn-link.number:hover {
     display: inline-block;
 }
 
+
+
 /* =-=-=-= RESPONSIVE PHONES =-=-=-= */
 @media (max-width: 652px) {
     /* MAIN HTML ELEMENTS */
@@ -463,74 +540,11 @@ button.btn-link.number:hover {
     }
 
     /* LOGIN PAGE CSS */
-    /* .login-page {
-        overflow: hidden;
-    } */
-
     #login-section {
-        width: 30vw;
-        min-height: 35vh;
-        max-height: fit-content;
-        padding-bottom: 1.5vh;
-        background-color: #fff;
-        border-radius: 20px;
-        margin: auto;
-        box-shadow: 0px 4px 4px 0px rgba(37, 36, 36, 0.8);
-        margin: auto;
-        padding-top: 3vh;
+        width: 80vw;
+        height: 35vh;
     }
 
-    .login-register{
-        background-image: url("../images/Busmap.png");
-        background-color: #f0f0f0; 
-        background-size: cover;  
-        background-position: center; 
-        background-repeat: no-repeat;
-        height: 100%;
-    }
-    
-    
-    #login-container {
-        padding-top: 20vh;
-    }
-    
-    #login-section h1 {
-        text-align: center;
-    }
-    
-    #login-section form {
-        margin: auto;
-        width: 70%;
-    }
-    
-    #login-section input {
-        padding-left: 10px;
-        width: 100%;
-        height: 5vh;
-        margin-top: 2vh;
-        border-radius: 5px;
-        border-width: 1px;
-    }
-    
-    #login-section p{
-        padding-top: 5px;
-    }
-        
-    #login-button {
-        transition-duration: 0.4s;
-        width: 100%;
-        height: 5vh;
-        margin-top: 2vh;
-        border-radius: 5px;
-        border-width: 0px;
-        color: black;
-        background-color: rgb(216, 216, 216) ;
-    }
-    
-    #login-button:hover {
-        background-color: rgb(73, 73, 73);
-        color: white;
-    }
     /* INDEX PAGE CSS */
     .index-page {
         body {
@@ -646,11 +660,4 @@ button.btn-link.number:hover {
     #bus-data {
         max-height: 90vh;
     }
-}
-
-.error-message {
-    color: red;
-    font-weight: bold;
-    margin-top: 15px;
-    font-size: 15px;
 }
