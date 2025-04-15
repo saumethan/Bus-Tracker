@@ -21,45 +21,29 @@ https://github.com/user-attachments/assets/4d03246b-e016-4f0a-8103-c58f62209a84
 
 ## Site Instructions
 
-When you first load the page, allow it to access your location so it can plot you on the map. 
+When you first load the page, allow it to access your location so it can plot you on the map. You should then accept the Cookies popup so your last known location can be saved. This allows the website to load at your last location while it’s getting your new location. 
 
 ![alt text](tutorial-1.png)
 
-The bus images on the map are live locations of buses. You can hover over them to see the bus route name and destination and click on them to see the route they're following (and all the other buses following that route). To get out of a route, click the Home button on the left of the map.
+The bus images on the map are the live locations of buses. The icon shows the operator logo, route number and the direction the bus is facing. You can hover over each bus to see more information such as the destination. If you click on a bus, the route will be shown, along with all the other buses following that route. To stop viewing a route, click the Home button on the right of the map or click the webpage back button.
+
+Another way of viewing a route is with the search bar in the right panel. This searches for the closest bus route to your current location, with the same route number. Try searching for the 1A over Aberdeen!
 
 ![alt text](tutorial-2.png)
 
-The locations of the buses will update:
-- Every 30 seconds
-- When you click the Refresh button on the right of the map
-- When you zoom or move the map
+The live locations of the buses will update:
+•	Every 15 seconds
+•	When you click the Refresh button on the right of the map
+•	When you zoom or move the map to a new location where buses were not already loaded
 
-Zoom further into the map to see red dots which are locations of bus stops in your current map area. Hover over these red dots to see the stop name and routes that serve the stop and click on them to see a list of live times for the buses serving this stop. The panel on the left will also show you whether a bus is delayed or cancelled. To get out of a current stop, click the Home button on the left of the map.
+Zoom further into the map to see red dots which are locations of bus stops in your current map area. Hover over these red dots to see the stop name and routes that serve the stop and click on them to see a list of live times for the buses serving that stop. The panel on the left will also show you whether a bus is early, scheduled, delayed or cancelled. If you click on a bus in the bus stop data panel, the route and buses on that route will be shown on the map. To get out of a current stop and clear the panel, click the Home button on the right of the map or click the browser back button.
 
 ![alt text](tutorial-3.png)
 
-The timetables page (accessed in the navigation bar) allows you to select an operator (currently only First Bus is supported but Stagecoach will be supported next semester) and enter other information to generate a PDF timetable of your bus. Try the 1 to RGU!
+If you want to see how long it will take to walk a specific bus stop from your current location, first click on the stop, then click the walk icon on the top right of the map. This will draw the specific route to the stop, as well as show the distance and time taken to walk this route.
 
-## Future Enhancements
+If you want to change settings, be sure to create and login to your account. Once logged in, the settings page will show in the nav bar under your user icon. In settings, you can change the default map zoom, logout, change password or delete your account. You can also sign out of your account using the button in the nav bar. 
 
-We have identified several future enhancements we can make to the site to make it better:
-
-- Auto updating user location
-- Show bus route names onto markers
-- Add a search bar to search for specific bus routes on the map
-- Allow the bus data panel to be resized on mobile
-
-## Known Bugs
-
-These bugs are known and being worked on:
-
-- When you double click on a bus route, the route disappears and you have to click Home to get out of the route.
+The site has a different look on mobile and has additional functionality such as a resizable bus data panel. Check it out on a mobile device for the best results, but if testing with Chrome Dev Tools, make sure to refresh the page after switching to the phone emulator.
 
 Report bugs in the Issues section of this repository or to our emails.
-
-## Easter Eggs
-
-Explore some "extra features" in our website 😜
-- Click on your user profile ---> buses (only shows on the Map page)
-- Click the footer text to access our secret page
-
