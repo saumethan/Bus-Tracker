@@ -75,8 +75,6 @@ function addHomeButtonToMap() {
             
             // Update the UI
             removeRoute(map);
-            removePlannedRoute(map);
-            currentRouteButton.remove();
             updateBusesAndStops();
             
             // Clear bus data container
@@ -87,6 +85,9 @@ function addHomeButtonToMap() {
             // Update URL without refreshing page
             const newUrl = window.location.origin + window.location.pathname;
             window.history.pushState({ path: newUrl }, "", newUrl);
+
+            removePlannedRoute(map);
+            currentRouteButton.remove();
         });
 
         return buttonDiv;
