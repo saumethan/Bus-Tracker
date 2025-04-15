@@ -37,6 +37,14 @@ $(document).ready(function () {
         }
     })();
 
+    getUnitsSettings();
+
+    $("#distanceUnits").on("change", function() {
+        const selectedUnit = $(this).val();
+        saveUnitsSettings(selectedUnit);
+    })
+
+
 
     //ACCOUNT MANAGER FORMS
 
@@ -136,3 +144,45 @@ async function getUserZoom() {
 
     return 15;
 }
+
+//Fetch user's saved units from server
+async function getUnitsSettings() {
+    try {
+        const data = await $.get("/settings/userUnitsSettings");
+        if (data.isKM !== undefined) {
+            const unit = data.isKM ? "km" : "miles";
+            $("#distanceUnits").val(unit);
+            $("#UnitsForm").show(); 
+            }
+    } catch (err) {
+        console.warn("Failed to fetch user units. Using default miles.");
+        $("#UnitsForm").show();
+    }
+
+    return false;
+}
+
+//Send user's saved units from server
+async function saveUnitsSettings(selectedUnit){
+
+let isKM
+
+    if (selectedUnit == "miles"){
+        isKM = false;
+    }else{
+        isKM = true;
+    }
+
+    try {
+        const response = await $.ajax({
+            type: "POST",
+            url: "/settings/userUnitsSettings",
+            contentType: "application/json",
+            data: JSON.stringify({ isKM: isKM }),
+        });
+
+    } catch (error) {
+        console.error("Failed to save units setting:", error);
+    }
+}
+
