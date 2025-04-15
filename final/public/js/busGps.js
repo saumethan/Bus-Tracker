@@ -133,7 +133,7 @@ function createMarker(map, coord, iconUrl) {
 }
 
 // ------------------ Function to draw the buses ------------------
-async function drawBus(busData, map) {
+async function drawBusFast(busData, map) {
     // Initialise busMarkers if it doesn't exist
     if (!map.busMarkers) {
         map.busMarkers = [];
@@ -183,6 +183,120 @@ async function drawBus(busData, map) {
         }
     }
     
+    // Close tooltips when clicking elsewhere on the map
+    map.on("click", () => {
+        map.busMarkers.forEach(marker => {
+            marker.closeTooltip();
+            marker.unbindTooltip();
+        });
+    });
+}
+
+async function drawBus(busData, map) {
+    // Initialise busMarkers if it doesn't exist
+    if (!map.busMarkers) {
+        map.busMarkers = [];
+    } else {
+        // Remove existing bus markers
+        map.busMarkers.forEach(marker => {
+            map.removeLayer(marker);
+        });
+        // Clear the array
+        map.busMarkers = [];
+    }
+
+    // Check if busData is valid
+    if (!busData || busData.length === 0) return;
+
+    // Draw each bus marker
+    for (let i = 0; i < busData.length; i++) {
+        const coord = busData[i];
+
+        // Make sure we have valid coordinates
+        if (!coord.latitude || !coord.longitude) {
+            continue;
+        }
+
+        // Find the icon for this bus
+        let busIcon
+        Object.keys(busImageCache).forEach(key => {
+            if (key.includes(`${coord.noc}-${coord.route}`)) {
+                const thisHeading = parseInt(key.split("-")[2]);
+                if (Math.abs(thisHeading-coord.heading) <= 20 || Math.abs(thisHeading-coord.heading) >= 340) {
+                    busIcon = busImageCache[key];
+                }
+            }
+        });
+
+        if (!busIcon) {
+            //https://developer.mozilla.org/en-US/docs/Web/API/AbortController
+            // Cancels previous image request 
+            if (busIconRequestController) {
+                busIconRequestController.abort();
+            }
+
+            // Creates new AbortController for the request
+            busIconRequestController = new AbortController();
+            const { signal } = busIconRequestController;
+
+            try {
+                // fetch image from our endpoint
+                const imageResponse = await fetch(`/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}&bearing=${coord.heading}`, { signal });
+
+                // turn the buffer into a blob, then into a readable URL
+                const blob = await imageResponse.blob();
+                busIcon = URL.createObjectURL(blob);
+
+                // cache the fetched image
+                busImageCache[`${coord.noc}-${coord.route}-${coord.heading}`] = busIcon;
+            } catch (error) {
+                if (error.name === "AbortError") {
+                    console.log("Bus icon request aborted.");
+                    return; 
+                }
+                console.error("Error fetching bus icon:", error);
+                continue;
+            }
+        }
+
+        // Create marker with the bus icon on it
+        const icon = L.icon({
+            iconUrl: busIcon, 
+            iconSize: [40, 60], 
+        });
+        const circle = L.marker([coord.latitude, coord.longitude], {icon: icon}).addTo(map);
+
+        // Create tooltip for marker
+        const toolTipContent = ` 
+            <div>
+                <strong>Route: ${coord.route || "Unknown"}</strong><br>
+                Destination: ${coord.destination || "Unknown"}<br>
+            </div>
+        `;
+        circle.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
+
+        // Add click event listener to the bus marker
+        circle.on("click", async (event) => {
+            nocCode = coord.noc;
+            routeNumber = coord.route;
+            setViewAllBuses(false);
+            
+            // Update URL to reflect the selected bus route
+            updateURLWithRoute(coord.route);
+
+            // Only try to show specific route if we have serviceId and tripId
+            await showSpecificBusRoute(coord.serviceId, coord.tripId, coord.journeyId, coord.route, map, coord.noc, coord.direction, coord.destination);
+
+            // Reset tooltips on all markers
+            map.busMarkers.forEach(marker => {
+                marker.closeTooltip(); 
+                marker.unbindTooltip();
+                marker.bindTooltip(toolTipContent, { permanent: false, direction: "top" });
+            });
+        });
+        map.busMarkers.push(circle);
+    }
+
     // Close tooltips when clicking elsewhere on the map
     map.on("click", () => {
         map.busMarkers.forEach(marker => {
