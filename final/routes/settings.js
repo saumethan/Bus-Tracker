@@ -250,7 +250,7 @@ router.post("/userUnitsSettings", async function(req, res) {
 
     
     try {
-        await db.collection("users").updateOne(
+        const result = await db.collection("users").updateOne(
             { "login.username": username },
             { $set: { isKM: isKM } }
         );
