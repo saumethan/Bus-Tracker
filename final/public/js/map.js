@@ -573,7 +573,7 @@ async function drawRoute(routeCoords,distance,duration,map) {
     const toolTipContent = `
             <div>
                 <p>Walk Time:</strong> ${duration} mins <br>
-                Distance:</strong> ${distance} ${units} </p>
+                Distance:</strong> ${distance.toFixed(2)} ${units} </p>
             </div>
         `;
         plannedRoute.bindTooltip(toolTipContent, { permanent: true, direction: "top", offset: [0, -12] });
