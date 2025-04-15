@@ -15,6 +15,10 @@ An easy to use bus tracker website for buses in the UK. Tailored specifically to
 
 View our live site here: https://bus-tracker.co.uk
 
+Watch the demo video below for a tutorial of how to use the site, a brief overview of some hidden functionalities, and an explanation of the technical challenges we had to solve whilst developing the site.
+
+https://github.com/user-attachments/assets/4d03246b-e016-4f0a-8103-c58f62209a84
+
 ## Site Instructions
 
 When you first load the page, allow it to access your location so it can plot you on the map. 
