@@ -128,6 +128,20 @@ async function saveMapZoomSetting(zoom) {
     }
 }
 
+async function getUserZoom() {
+    try {
+        const data = await $.get("/settings/userSettings");
+    
+        if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
+            return data.zoomLevel;
+        }
+    } catch (err) {
+        console.warn("Failed to fetch user zoom. Using default (15).");
+    }
+
+    return 15;
+}
+
 //Fetch user's saved units from server
 async function getUnitsSettings() {
     try {

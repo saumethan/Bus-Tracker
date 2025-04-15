@@ -43,16 +43,15 @@ async function createMap() {
     });
 
     try {
-        const response = await fetch("settings/userSettings");
-        if (response.ok) {
-            const data = await response.json();
-            if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
-                initialZoom = data.zoomLevel;
-                console.log("User zoom level loaded:", initialZoom);
-            }
+        const data = await $.get("settings/userSettings");
+    
+        if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
+            initialZoom = data.zoomLevel;
+            console.log("User zoom level loaded:", initialZoom);
         }
     } catch (err) {
-        mapInstance.zoomLevel = 15
+        mapInstance.zoomLevel = 15;
+        console.error("Failed to load user settings:", err);
     }
     
     mapInstance.setView(center, initialZoom);
@@ -77,8 +76,6 @@ function addHomeButtonToMap() {
             
             // Update the UI
             removeRoute(map);
-            removePlannedRoute(map);
-            currentRouteButton.remove();
             updateBusesAndStops();
             
             // Clear bus data container
@@ -89,6 +86,9 @@ function addHomeButtonToMap() {
             // Update URL without refreshing page
             const newUrl = window.location.origin + window.location.pathname;
             window.history.pushState({ path: newUrl }, "", newUrl);
+
+            removePlannedRoute(map);
+            currentRouteButton.remove();
         });
 
         return buttonDiv;
@@ -477,7 +477,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     }
 
     // Handle map movement events
-    map.on("movestart", function() {
+    map.on("dragstart", function() {
         closePanel();
     });
 

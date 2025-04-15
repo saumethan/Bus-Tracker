@@ -34,75 +34,57 @@ connectDB();
 
 // SERVER ENDPOINT: create page
 router.get("/", function(req, res) {
-    //Check if user is already logged in
+    // Check if user is already logged in
     if (req.session.loggedin === true) {
-        console.log("cannot create as Logged in:", req.session.loggedin);
-        res.redirect("/");
-        return;
+        return res.redirect("/");
     }
-    res.render("pages/create",{page:"create", loggedIn: req.session.loggedin===true});
+    const error = req.session.createError;
+    delete req.session.createError;
+    res.render("pages/create", { page:"create", loggedIn: req.session.loggedin === true, error: error });
 });
 
 // -=-=-=-=-=-=-=-=-=Create User Account-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 router.post("/createUser", async function(req, res) {
+    if (req.session.loggedin === true) {
+        return res.redirect("/login");
+    }
+
     try {
-        const email = req.body.email.trim();
-
-        // email rule - letters, numbers, hyphens, apostrophes, must include at least one dot
-        // const validEmail = /^[a-zA-Z0-9\-'.]*\.[a-zA-Z0-9\-'.]+$/;
-        // if (!validEmail.test(email)) {
-        //     console.log("Invalid email format attempt:", email);
-        //     return res.render("pages/create", {
-        //         page: "create",
-        //         loggedIn: false,
-        //         error: "Email can only use letters, numbers, - and '"
-        //     });
-        // }
-
         // Check if the user already exists
+        const email = req.body.email.trim();
         const existingUser = await db.collection("users").findOne({ "login.username": email });
 
         if (existingUser) {
-            return res.render("pages/create", {
-                page: "create",
-                loggedIn: false,
-                error: "An account with this email already exists."
-            });
+            req.session.createError = "An account with this email already exists.";
+            return res.redirect("/create");
         }
 
         // Store user data from the form
-        const datatostore = {
-            "name": { "title": req.body.title, "first": req.body.first },
+        const dataToStore = {
+            "name": { "first": req.body.first, "last": req.body.last || "" },
             "login": { "username": req.body.email, "password": req.body.password },
             "registered": new Date(),
             "zoomLevel": 15,
             "isKM": false
         };
 
-        // Insert the new user into the database
-        const result = await db.collection("users").insertOne(datatostore);
-        console.log("Saved to database:", result.insertedId);
-        let test = true
-        
-        //when a new user is created it will automatically log them into the account 
-        
-        if (test === true) {
+        try {
+            // Insert the new user into the database
+            const result = await db.collection("users").insertOne(dataToStore);
+            console.log("Saved new user to database:", result.insertedId);
+
+            // When a new user is created it will automatically log them into the account 
             req.session.loggedin = true;
-            req.session.thisuser = username = req.body.email;
-            console.log("Logged in:", req.session.loggedin);
-            console.log("Logged new user into their account ")
+            req.session.thisuser = req.body.email;
+            console.log("Logged new user into their account");
+
             res.redirect("/");
-        }else{
+        } catch (err) {
             res.redirect("/login");
         }
     } catch (error) {
-        //console.error("Error saving to database:", error);
-        //res.status(500).send("Failed to create account");
-        return res.render("pages/create", {
-            page: "create",
-            loggedIn: false,
-            error: "Failed to create account"
-        });
+        req.session.createError = "Failed to create account";
+        return res.redirect("/create");
     }
 });
 

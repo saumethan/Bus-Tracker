@@ -18,9 +18,10 @@ router.use(express.json());  // Parses JSON data
 
 // SERVER ENDPOINT: login page
 router.get("/", function(req, res) {
-    res.render("pages/login",{page:"login", loggedIn: req.session.loggedin===true });
+    const error = req.session.loginError;
+    delete req.session.loginError;
+    res.render("pages/login", { page: "login", loggedIn: req.session.loggedin, error: error });
 });
-
 
 async function connectDB() {
     try {
@@ -43,13 +44,8 @@ router.post("/userlogin", async function(req, res) {
         });
 
         if (!result) {
-            //console.log("No User Found");
-            //return res.status(401).send("No User with that name found");
-            return res.render("pages/login", {
-                page: "login",
-                loggedIn: false,
-                error: "No user found with that name"
-            });
+            req.session.loginError = "No user found with that name";
+            return res.redirect("/login");
         }
 
         if (result.login.password === userPass) {
@@ -58,23 +54,12 @@ router.post("/userlogin", async function(req, res) {
             console.log("Logged in:", req.session.loggedin);
             res.redirect("/");
         } else {
-            //console.log("Incorrect Password");
-            //res.status(401).send("Incorrect Password, please try again");
-            //console.error("Password Error", error);
-            return res.render("pages/login", {
-                page: "login",
-                loggedIn: false,
-                error: "Incorrect password, please try again"
-            });
+            req.session.loginError = "Incorrect password, please try again";
+            return res.redirect("/login");
         }
     } catch (error) {
-        //console.error("Login Error", error);
-        //res.status(500).send("Failed to log in at this time");
-        return res.render("pages/login", {
-            page: "login",
-            loggedIn: false,
-            error: "Failed to log in at this time"
-        });
+        req.session.loginError = "Failed to log in at this time";
+        return res.redirect("/login");
     }
 });
 
