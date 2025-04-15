@@ -17,8 +17,8 @@ router.use(express.urlencoded({ extended: true }));  // Parses form data
 router.use(express.json());  // Parses JSON data
 
 // SERVER ENDPOINT: login page
-router.get("/login", function(req, res) {
-    res.render("pages/login", { page: "login", loggedIn: req.session.loggedin });
+router.get("/", function(req, res) {
+    res.render("pages/login",{page:"login", loggedIn: req.session.loggedin });
 });
 
 async function connectDB() {
@@ -32,8 +32,7 @@ async function connectDB() {
 }
 connectDB();
 
-// Handle the form submission (POST request to /login)
-router.post("/login", async function(req, res) {
+router.post("/userlogin", async function(req, res) {
     var userName = req.body.uname;
     var userPass = req.body.upass;
 
@@ -43,6 +42,8 @@ router.post("/login", async function(req, res) {
         });
 
         if (!result) {
+            //console.log("No User Found");
+            //return res.status(401).send("No User with that name found");
             return res.render("pages/login", {
                 page: "login",
                 loggedIn: false,
@@ -54,8 +55,11 @@ router.post("/login", async function(req, res) {
             req.session.loggedin = true;
             req.session.thisuser = userName;
             console.log("Logged in:", req.session.loggedin);
-            res.redirect("/");  // Redirect to home page after login
+            res.redirect("/");
         } else {
+            //console.log("Incorrect Password");
+            //res.status(401).send("Incorrect Password, please try again");
+            //console.error("Password Error", error);
             return res.render("pages/login", {
                 page: "login",
                 loggedIn: false,
@@ -63,6 +67,8 @@ router.post("/login", async function(req, res) {
             });
         }
     } catch (error) {
+        //console.error("Login Error", error);
+        //res.status(500).send("Failed to log in at this time");
         return res.render("pages/login", {
             page: "login",
             loggedIn: false,

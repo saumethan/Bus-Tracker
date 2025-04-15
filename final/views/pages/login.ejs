@@ -13,17 +13,14 @@
         <div id="login-container">
             <div id="login-section">
                 <h1>Login</h1>
-                <!-- Update form action to /login -->
-                <form action="/login" method="POST">
+                <form action="/login/userlogin" method="POST">
                     <input type="email" placeholder="Email" name="uname" required><br>
                     <input type="password" placeholder="Password" name="upass" required><br>
-
-                    <% if (typeof error !== "undefined") { %>
+                    <%if(typeof error !== "undefined"){ %>
                         <div class="error-message"><%= error %></div>
                     <% } %>
 
-                    <!-- Removed the anchor tag wrapping the button -->
-                    <button id="login-button" type="submit">Submit</button>
+                    <a href="#"><button id="login-button" type="submit">Submit</button></a>
                     <p><a href="/create">Don't have an account? Create one!</a></p>
                 </form>
             </div>
