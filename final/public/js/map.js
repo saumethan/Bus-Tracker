@@ -22,10 +22,7 @@ let noc = null;
 let route = null;
 let plannedRoute = null;
 let busUpdateInProgress = false;
-let ignoreNextMoveEnd = false;
-let ignoreNextZoomEnd = false;
 let lastRequestedBounds = null;
-let lastZoomLevel = 15;
 let initialZoom
 let currentRouteButton = null;
 
@@ -254,7 +251,6 @@ function hasMovedBeyondBounds(newBounds) {
     );
 }
 
-
 // ------------------ Function to set view all buses flag ------------------
 function setViewAllBuses(value, nocCode, selectedRoute) {
     viewAllBuses = value;
@@ -326,7 +322,7 @@ async function updateBuses() {
 // ------------------ Function to update stops based on current state ------------------
 async function updateStops() {
     // Check zoom level first
-    if (map.currentZoom < 15) {
+    if (map.currentZoom < MIN_STOP_ZOOM) {
         // Don't draw stops if zoom level is too low (below 15)
         drawStops(null, map);
         return;
@@ -485,35 +481,13 @@ document.addEventListener("DOMContentLoaded", async function() {
     });
 
     map.on("moveend", function () {
-        if (ignoreNextMoveEnd) {
-            ignoreNextMoveEnd = false;
-            return;
-        }
-        const newBounds = getViewportBounds();
-        if (hasMovedBeyondBounds(newBounds)) {
-            lastRequestedBounds = newBounds;
-            updateBusesAndStops();
-            resetInactivityTimeout();
-        }
+        updateBusesAndStops();
+        resetInactivityTimeout();
     });
     
     map.on("zoomend", function () {
-        if (ignoreNextZoomEnd) {
-            ignoreNextZoomEnd = false;
-            return;
-        }
-
-        const newBounds = getViewportBounds();
-        if (map.currentZoom <= 12 && hasMovedBeyondBounds(newBounds)) {
-            lastRequestedBounds = newBounds;
-            const zoom = map.currentZoom
-            document.dispatchEvent(new CustomEvent("zoomedOut", { detail: { zoom } }));
-            updateBusesAndStops();
-            resetInactivityTimeout();
-        } else {
-            updateBusesAndStops();
-        } 
-        lastZoomLevel = map.currentZoom;
+        updateBusesAndStops();
+        resetInactivityTimeout();
     });
 
     document.getElementById("searchForm").addEventListener("submit", searchRoute);
