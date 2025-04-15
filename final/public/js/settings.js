@@ -135,7 +135,7 @@ async function getUserZoom() {
         const data = await $.get("/settings/userSettings");
     
         if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
-            console.log(data)
+            console.log("123", data)
             return data.zoomLevel;
         }
     } catch (err) {
