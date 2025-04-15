@@ -34,20 +34,18 @@ connectDB();
 
 // SERVER ENDPOINT: create page
 router.get("/", function(req, res) {
+    //Check if user is already logged in
+    if (req.session.loggedin === true) {
+        console.log("cannot create as Logged in:", req.session.loggedin);
+        res.redirect("/");
+        return;
+    }
     res.render("pages/create",{page:"create", loggedIn: req.session.loggedin===true});
 });
 
 // -=-=-=-=-=-=-=-=-=Create User Account-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 router.post("/createUser", async function(req, res) {
     try {
-        //Check if user is already logged in
-        if (req.session.loggedin === true) {
-        console.log("cannot create as Logged in:", req.session.loggedin);
-        res.redirect("/login");
-        return;
-        
-        }
-        
         // Store user data from the form
         const datatostore = {
             "name": { "title": req.body.title, "first": req.body.first },
