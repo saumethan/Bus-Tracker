@@ -75,7 +75,8 @@ router.post("/createUser", async function(req, res) {
             "name": { "title": req.body.title, "first": req.body.first },
             "login": { "username": req.body.email, "password": req.body.password },
             "registered": new Date(),
-            "zoomLevel": 15
+            "zoomLevel": 15,
+            "isKM": false
         };
 
         // Insert the new user into the database

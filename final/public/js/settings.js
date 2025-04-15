@@ -29,6 +29,13 @@ $(document).ready(function () {
         $("#mapZoomForm").slideUp(); // Collapse section after save
     });
 
+    getUnitsSettings();
+
+    $("#distanceUnits").on("change", function() {
+        const selectedUnit = $(this).val();
+        saveUnitsSettings(selectedUnit);
+    })
+
     // Load initial zoom setting on page load
     (async function setInitialZoomLevel() {
         const zoomLevel = await getUserZoom();
@@ -121,19 +128,43 @@ async function saveMapZoomSetting(zoom) {
     }
 }
 
-//Fetch user's saved zoom level from server
-async function getUserZoom() {
+//Fetch user's saved units from server
+async function getUnitsSettings() {
     try {
-        const response = await fetch("/settings/userSettings");
-        if (response.ok) {
-            const data = await response.json();
-            if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
-                return data.zoomLevel;
+        const data = await $.get("/settings/userUnitsSettings");
+        if (data.isKM !== undefined) {
+            const unit = data.isKM ? "km" : "miles";
+            $("#distanceUnits").val(unit);
+            $("#UnitsForm").show(); 
             }
-        }
     } catch (err) {
-        console.warn("Failed to fetch user zoom. Using default (15).");
+        console.warn("Failed to fetch user units. Using default miles.");
+        $("#UnitsForm").show();
     }
 
-    return 15;
+    return false;
+}
+
+//Send user's saved units from server
+async function saveUnitsSettings(selectedUnit){
+
+let isKM
+
+    if (selectedUnit == "miles"){
+        isKM = false;
+    }else{
+        isKM = true;
+    }
+
+    try {
+        const response = await $.ajax({
+            type: "POST",
+            url: "/settings/userUnitsSettings",
+            contentType: "application/json",
+            data: JSON.stringify({ isKM: isKM }),
+        });
+
+    } catch (error) {
+        console.error("Failed to save units setting:", error);
+    }
 }

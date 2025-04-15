@@ -24,6 +24,7 @@ let plannedRoute = null;
 let busUpdateInProgress = false;
 let lastRequestedBounds = null;
 let initialZoom
+let isKM = false;
 let currentRouteButton = null;
 
 // Constants for zoom levels
@@ -517,7 +518,22 @@ function removePlannedRoute(map) {
     }
 }
 
-function drawRoute(routeCoords,distance,duration,map) {
+async function drawRoute(routeCoords,distance,duration,map) {
+
+    try {
+        const response = await $.get("settings/userUnitsSettings");
+        if (data.isKM !== undefined) {
+            isKM = data.isKM;
+            console.log("User units loaded:", isKM);
+        }
+    } catch (err) {
+        isKM = false;
+    }
+
+    if (isKM){
+        distance *= 1.60934
+    }
+
     const coordinates = [];
     if (!Array.isArray(routeCoords.coordinates)) {
         console.error("Invalid routeCoords format:", routeCoords);

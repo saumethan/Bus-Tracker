@@ -230,6 +230,61 @@ router.get("/userSettings", async function(req, res) {
     }
 });
 
+// ------------------ Route to set user units settings ------------------
+
+router.post("/userUnitsSettings", async function(req, res) {
+    if (!req.session || !req.session.loggedin) {
+        return res.status(401).send("Unauthorized: Please log in first.");
+    }
+
+    const isKM = req.body.isKM;
+    const username = req.session.thisuser;
+
+    
+    try {
+        await db.collection("users").updateOne(
+            { "login.username": username },
+            { $set: { isKM: isKM } }
+        );
+
+        if (result.modifiedCount === 1) {
+            console.log(`Zoom level updated to ${isKM} for ${username}`);
+            res.status(200).send("units updated.");
+        } else {
+            res.status(404).send("User not found.");
+        }
+    } catch (error) {
+        console.error("Login Error", error);
+        res.render("pages/login", {
+            page: "login",
+            loggedIn: false
+        });
+    }
+});
+
+// ------------------ Route to get user units settings ------------------
+router.get("/userUnitsSettings", async function(req, res) {
+    if (!req.session || !req.session.loggedin) {
+        return res.status(401).json({ error: "Not logged in" });
+    }
+
+    const username = req.session.thisuser;
+
+    try {
+        const user = await db.collection("users").findOne({ "login.username": username });
+
+        if (user && user.isKM !== undefined) {
+            res.status(200).json({ isKM: user.isKM });
+        } else {
+            res.status(404).json({ error: "Units not found" });
+        }
+    } catch (error) {
+        console.error("Error retrieving Units:", error);
+        res.status(500).json({ error: "Server error" });
+    }
+});
+
+
 module.exports = router;
 
 
