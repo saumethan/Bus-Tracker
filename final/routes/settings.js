@@ -87,10 +87,18 @@ router.post("/logout", async function(req, res) {
 });
 
 router.get("/logout", (req, res) => {
-    req.session.loggedin = false;
-    req.session.thisuser = null;
-    res.redirect("/");
+    // Destroy the session on the server
+    // https://stackoverflow.com/questions/22349645/how-to-delete-express-session-cookie
+    req.session.destroy((err) => {
+        if (err) {
+            console.error("Error destroying session:", err);
+            return res.redirect("/"); 
+        }
+        res.clearCookie("connect.sid", { path: "/" }); 
+        res.redirect("/"); 
+    });
 });
+
 
 //-=-=-=-=-=-=-=-=-=-=-=-=-===-=-Change Password =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 router.post("/changepassword", async function(req, res) {

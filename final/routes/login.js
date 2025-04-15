@@ -18,7 +18,7 @@ router.use(express.json());  // Parses JSON data
 
 // SERVER ENDPOINT: login page
 router.get("/", function(req, res) {
-    res.render("pages/login",{page:"login", loggedIn: req.session.loggedin===true });
+    res.render("pages/login",{page:"login", loggedIn: req.session.loggedin });
 });
 
 async function connectDB() {
