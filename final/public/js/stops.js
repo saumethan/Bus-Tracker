@@ -4,7 +4,7 @@
  * @description A module handling stop information, including fetching from relevant APIs and drawing stops on a map
  */
 
-import { setViewAllBuses, updateBusesAndStops, addrouteButtonToMap, removePlannedRoute} from "./map.js";
+import { setViewAllBuses, updateBusesAndStops, addrouteButtonToMap, removePlannedRoute, removeRouteButton} from "./map.js";
 import { removeRoute } from "./busRoute.js";
 import { getSpecificBusGPS, drawBus, showSpecificBusRoute } from "./busGps.js";
 import { popupPanel } from "./grabber.js";
@@ -191,6 +191,7 @@ async function loadStopTimes(stopId, latitude, longitude, map) {
                 const serviceNumber = element.dataset.serviceNumber;
                 const noc = element.dataset.operatorCode;
                 removePlannedRoute(map);
+                removeRouteButton();
                 //console.log(latitude, longitude);
                 const busData = await getSpecificBusGPS(serviceNumber, false, false, latitude, longitude);
                     if (busData.length === 0) {

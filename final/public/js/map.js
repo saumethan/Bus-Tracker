@@ -77,6 +77,7 @@ function addHomeButtonToMap() {
             // Update the UI
             removeRoute(map);
             removePlannedRoute(map);
+            currentRouteButton.remove();
             updateBusesAndStops();
             
             // Clear bus data container
@@ -504,6 +505,10 @@ document.addEventListener("DOMContentLoaded", async function() {
     
 });
 
+function removeRouteButton(){
+    currentRouteButton.remove();
+}
+
 function removePlannedRoute(map) {
     if (plannedRoute) {
         map.removeLayer(plannedRoute);  
@@ -557,4 +562,4 @@ function drawRoute(routeCoords,distance,duration,map) {
 }
 
 // Export
-export { setViewAllBuses, getViewAllBuses, getViewportBounds, adjustMapViewToRoute, updateBusesAndStops, addrouteButtonToMap, removePlannedRoute};
+export { setViewAllBuses, getViewAllBuses, getViewportBounds, adjustMapViewToRoute, updateBusesAndStops, addrouteButtonToMap, removePlannedRoute,removeRouteButton};
