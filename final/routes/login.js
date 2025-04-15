@@ -18,7 +18,9 @@ router.use(express.json());  // Parses JSON data
 
 // SERVER ENDPOINT: login page
 router.get("/", function(req, res) {
-    res.render("pages/login",{page:"login", loggedIn: req.session.loggedin });
+    const error = req.session.loginError;
+    delete req.session.loginError;
+    res.render("pages/login", { page: "login", loggedIn: req.session.loggedin, error: error });
 });
 
 async function connectDB() {
@@ -42,20 +44,13 @@ router.post("/userlogin", async function(req, res) {
         });
 
         if (!result) {
-            //console.log("No User Found");
-            //return res.status(401).send("No User with that name found");
-            return res.render("pages/login", {
-                page: "login",
-                loggedIn: false,
-                error: "No user found with that name"
-            });
+            req.session.loginError = "No user found with that name";
+            return res.redirect("/login");
         }
 
         if (result.login.password === userPass) {
-            req.session.loggedin = true;
-            req.session.thisuser = userName;
-            console.log("Logged in:", req.session.loggedin);
-            res.redirect("/");
+            req.session.loginError = "Incorrect password, please try again";
+            return res.redirect("/login");
         } else {
             //console.log("Incorrect Password");
             //res.status(401).send("Incorrect Password, please try again");
