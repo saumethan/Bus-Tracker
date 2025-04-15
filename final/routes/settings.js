@@ -1,6 +1,7 @@
 /**
  * @author Ethan Saum @saumethan
- * @author Joshua Newton
+ * @author Joshua Newton 
+ * @author Xavier Flockton @XavierFlockton
  * @description settings.js
  */
 

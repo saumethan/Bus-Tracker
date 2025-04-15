@@ -1,5 +1,6 @@
 /**
  * @author Ethan Saum @saumethan
+ * @author Xavier Flockton @XavierFlockton
  */
 
 // jQuery document ready
