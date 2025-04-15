@@ -34,7 +34,6 @@ connectDB();
 
 // SERVER ENDPOINT: create page
 router.get("/", function(req, res) {
-    res.render("pages/create", { page:"create", loggedIn: req.session.loggedin === true });
     // Check if user is already logged in
     if (req.session.loggedin === true) {
         return res.redirect("/");
