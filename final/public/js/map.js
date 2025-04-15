@@ -459,19 +459,16 @@ document.addEventListener("DOMContentLoaded", async function() {
     // Add event listener for browser back/forward buttons
     window.addEventListener("popstate", handlePopState);
 
+    // Gets the route number from the URL 
     const routeNumber = getUrlParameter("bus");
     if (routeNumber) {
-        //console.log(`Bus route detected in URL: ${routeNumber}`);
-        //console.log(lat, lng)
         setViewAllBuses(false);
-        //console.log(routeNumber)
         const busData = await getSpecificBusGPS(routeNumber, true, true);
         drawBus(busData, map);
-        //console.log(busData)
         await showSpecificBusRoute(busData[0].serviceId, busData[0].tripId, busData[0].journeyId, routeNumber, map, busData[0].noc, busData[0].direction, busData[0].destination);
     }
 
-    // FINISH THIS TO SHOW THE STOP 
+    // Gets the stop id from the URL 
     const stopId = getUrlParameter("stop");
     if (stopId) {
         console.log(`Bus stop detected in URL: ${stopId}`);
@@ -479,6 +476,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         const busStop = await fetchSpecificStopLocation(stopId, lat, lng);
         map.setView([busStop[0].latitude, busStop[0].longitude], 15);
         loadStopTimes(stopId, busStop[0].latitude, busStop[0].longitude, map);
+        updateBusesAndStops();
     }
 
     // Handle map movement events
@@ -532,43 +530,6 @@ document.addEventListener("DOMContentLoaded", async function() {
     initUserLocationTracking();
     
 });
-// ------------------ Function for easteregg ------------------
-function easterEgg() {
-    $("#easterEggButton").click(function () {
-        const container = $("#easterEggContainer");
-        // Clear the container using jQuery
-        container.empty(); 
-
-        // Number of images
-        const imageCount = 110;
-
-        for (let i = 0; i < imageCount; i++) {
-            setTimeout(() => {
-                const img = $("<img>");  
-                img.attr("src", "images/BusTracker.png");  
-
-                // Random size, position, and rotation
-                const randomSize = Math.random() * 80 + 100;
-                const randomX = Math.random() * 100;
-                const randomY = Math.random() * 100;
-                const randomRotation = Math.random() * 360;
-
-                // Set styles 
-                img.css({
-                    width: `${randomSize}px`,
-                    height: `${randomSize}px`,
-                    position: "absolute",
-                    left: `${randomX}vw`,
-                    top: `${randomY}vh`,
-                    transform: `rotate(${randomRotation}deg)`
-                });
-
-                // Add to the container 
-                container.append(img);
-            }, i * 100);
-        }
-    });
-}
 
 function removePlannedRoute(map) {
     if (plannedRoute) {
@@ -617,8 +578,7 @@ function drawRoute(routeCoords,distance,duration,map) {
         `;
         plannedRoute.bindTooltip(toolTipContent, { permanent: true, direction: "top", offset: [0, -12] });
 
-
-     adjustMapViewToRoute(plannedRoute, map);
+    adjustMapViewToRoute(plannedRoute, map);
 
     return plannedRoute;
 }
