@@ -3,7 +3,7 @@
  */
 
 // jQuery document ready
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", async function() {
 
     //Toggle visibility of any section via data-toggle-section
     $("[data-toggle-section]").on("click", function () {
