@@ -3,7 +3,7 @@
  */
 
 // jQuery document ready
-$(async function () {
+$(document).ready(function () {
 
     //Toggle visibility of any section via data-toggle-section
     $("[data-toggle-section]").on("click", function () {
@@ -132,16 +132,17 @@ async function saveMapZoomSetting(zoom) {
 
 async function getUserZoom() {
     try {
-        const data = await $.get("/settings/userSettings");
-    
-        if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
-            console.log("123", data)
-            return data.zoomLevel;
+        const response = await fetch("/settings/userSettings");
+        if (response.ok) {
+            const data = await response.json();
+            if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
+                return data.zoomLevel;
+            }
         }
     } catch (err) {
         console.warn("Failed to fetch user zoom. Using default (15).");
     }
-
+ 
     return 15;
 }
 
