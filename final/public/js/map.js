@@ -520,18 +520,24 @@ function removePlannedRoute(map) {
 
 async function drawRoute(routeCoords,distance,duration,map) {
 
+    let units;
+
     try {
-        const response = await $.get("settings/userUnitsSettings");
+        const data = await $.get("settings/userUnitsSettings");
         if (data.isKM !== undefined) {
             isKM = data.isKM;
             console.log("User units loaded:", isKM);
         }
     } catch (err) {
         isKM = false;
+
     }
 
     if (isKM){
-        distance *= 1.60934
+        distance *= 1.60934;
+        units = "KM";
+    }else{
+        units = "Miles";
     }
 
     const coordinates = [];
@@ -567,7 +573,7 @@ async function drawRoute(routeCoords,distance,duration,map) {
     const toolTipContent = `
             <div>
                 <p>Walk Time:</strong> ${duration} mins <br>
-                Distance:</strong> ${distance} miles </p>
+                Distance:</strong> ${distance} ${units} </p>
             </div>
         `;
         plannedRoute.bindTooltip(toolTipContent, { permanent: true, direction: "top", offset: [0, -12] });

@@ -256,7 +256,7 @@ router.post("/userUnitsSettings", async function(req, res) {
         );
 
         if (result.modifiedCount === 1) {
-            console.log(`Zoom level updated to ${isKM} for ${username}`);
+            console.log(`units updated to ${isKM} for ${username}`);
             res.status(200).send("units updated.");
         } else {
             res.status(404).send("User not found.");
