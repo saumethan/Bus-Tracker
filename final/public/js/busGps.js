@@ -140,11 +140,15 @@ async function drawBusFast(busData, map) {
         // Find the icon for this bus
         let busIcon
         Object.keys(busImageCache).forEach(key => {
-            if (key.includes(`${coord.noc}-${coord.route}`)) {
-                const thisHeading = parseInt(key.split("-")[2]);
-                if (Math.abs(thisHeading-coord.heading) <= 20 || Math.abs(thisHeading-coord.heading) >= 340) {
-                    busIcon = busImageCache[key];
-                }
+            const [noc, route, headingStr] = key.split("-");
+            const thisHeading = parseInt(headingStr);
+        
+            if (
+                noc === coord.noc &&
+                route === coord.route &&
+                (Math.abs(thisHeading - coord.heading) <= 20 || Math.abs(thisHeading - coord.heading) >= 340)
+            ) {
+                busIcon = busImageCache[key];
             }
         });
 
@@ -202,11 +206,15 @@ async function drawBusSlow(busData, map) {
         // Find the icon for this bus
         let busIcon
         Object.keys(busImageCache).forEach(key => {
-            if (key.includes(`${coord.noc}-${coord.route}`)) {
-                const thisHeading = parseInt(key.split("-")[2]);
-                if (Math.abs(thisHeading-coord.heading) <= 20 || Math.abs(thisHeading-coord.heading) >= 340) {
-                    busIcon = busImageCache[key];
-                }
+            const [noc, route, headingStr] = key.split("-");
+            const thisHeading = parseInt(headingStr);
+        
+            if (
+                noc === coord.noc &&
+                route === coord.route &&
+                (Math.abs(thisHeading - coord.heading) <= 20 || Math.abs(thisHeading - coord.heading) >= 340)
+            ) {
+                busIcon = busImageCache[key];
             }
         });
 
