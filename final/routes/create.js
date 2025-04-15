@@ -34,21 +34,22 @@ connectDB();
 
 // SERVER ENDPOINT: create page
 router.get("/", function(req, res) {
-    //Check if user is already logged in
+    // Check if user is already logged in
     if (req.session.loggedin === true) {
-        console.log("cannot create as Logged in:", req.session.loggedin);
-        res.redirect("/");
-        return;
+        return res.redirect("/");
     }
-    res.render("pages/create",{page:"create", loggedIn: req.session.loggedin===true});
+    res.render("pages/create", { page:"create", loggedIn: req.session.loggedin === true });
 });
 
 // -=-=-=-=-=-=-=-=-=Create User Account-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 router.post("/createUser", async function(req, res) {
+    if (req.session.loggedin === true) {
+        return res.redirect("/login");
+    }
+
     try {
-        const email = req.body.email.trim();
-        
         // Check if the user already exists
+        const email = req.body.email.trim();
         const existingUser = await db.collection("users").findOne({ "login.username": email });
 
         if (existingUser) {
@@ -60,32 +61,28 @@ router.post("/createUser", async function(req, res) {
         }
 
         // Store user data from the form
-        const datatostore = {
-            "name": { "title": req.body.title, "first": req.body.first },
+        const dataToStore = {
+            "name": { "first": req.body.first, "last": req.body.last || "" },
             "login": { "username": req.body.email, "password": req.body.password },
             "registered": new Date(),
             "zoomLevel": 15
         };
 
-        // Insert the new user into the database
-        const result = await db.collection("users").insertOne(datatostore);
-        console.log("Saved to database:", result.insertedId);
-        let test = true
-        
-        //when a new user is created it will automatically log them into the account 
-        
-        if (test === true) {
+        try {
+            // Insert the new user into the database
+            const result = await db.collection("users").insertOne(dataToStore);
+            console.log("Saved new user to database:", result.insertedId);
+
+            // When a new user is created it will automatically log them into the account 
             req.session.loggedin = true;
-            req.session.thisuser = username = req.body.email;
-            console.log("Logged in:", req.session.loggedin);
-            console.log("Logged new user into their account ")
+            req.session.thisuser = req.body.email;
+            console.log("Logged new user into their account");
+
             res.redirect("/");
-        }else{
+        } catch (err) {
             res.redirect("/login");
         }
     } catch (error) {
-        //console.error("Error saving to database:", error);
-        //res.status(500).send("Failed to create account");
         return res.render("pages/create", {
             page: "create",
             loggedIn: false,
