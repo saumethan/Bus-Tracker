@@ -52,7 +52,6 @@ async function createMap() {
         }
     } catch (err) {
         mapInstance.zoomLevel = 15
-        console.error("Error fetching zoom level:", err);
     }
     
     mapInstance.setView(center, initialZoom);
