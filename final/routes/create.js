@@ -56,7 +56,7 @@ router.post("/createUser", async function(req, res) {
 
         if (existingUser) {
             req.session.createError = "An account with this email already exists.";
-            return res.redirect("/login");
+            return res.redirect("/create");
         }
 
         // Store user data from the form
@@ -83,7 +83,7 @@ router.post("/createUser", async function(req, res) {
         }
     } catch (error) {
         req.session.createError = "Failed to create account";
-        return res.redirect("/login");
+        return res.redirect("/create");
     }
 });
 
