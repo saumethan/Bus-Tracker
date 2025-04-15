@@ -29,7 +29,7 @@ $(async function () {
         $("#mapZoomForm").slideUp(); // Collapse section after save
     });
 
-    getUnitsSettings();
+    
 
     $("#distanceUnits").on("change", function() {
         const selectedUnit = $(this).val();
@@ -108,6 +108,8 @@ $(async function () {
                 alert("Failed to delete account.");
             });
     });
+
+    getUnitsSettings();
 });
 
 
@@ -133,6 +135,7 @@ async function getUserZoom() {
         const data = await $.get("/settings/userSettings");
     
         if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
+            console.log(data)
             return data.zoomLevel;
         }
     } catch (err) {
