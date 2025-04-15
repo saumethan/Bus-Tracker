@@ -32,9 +32,9 @@ Another way of viewing a route is with the search bar in the right panel. This s
 ![alt text](tutorial-2.png)
 
 The live locations of the buses will update:
-•	Every 15 seconds
-•	When you click the Refresh button on the right of the map
-•	When you zoom or move the map to a new location where buses were not already loaded
+- Every 15 seconds
+- When you click the Refresh button on the right of the map
+- When you zoom or move the map to a new location where buses were not already loaded
 
 Zoom further into the map to see red dots which are locations of bus stops in your current map area. Hover over these red dots to see the stop name and routes that serve the stop and click on them to see a list of live times for the buses serving that stop. The panel on the left will also show you whether a bus is early, scheduled, delayed or cancelled. If you click on a bus in the bus stop data panel, the route and buses on that route will be shown on the map. To get out of a current stop and clear the panel, click the Home button on the right of the map or click the browser back button.
 
