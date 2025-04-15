@@ -84,7 +84,7 @@ nav #title {
 
 /* =-=-=-= MAIN STRUCTURE =-=-=-= */
 main {
-    min-height: 85vh;
+    min-height: 100vh;
 }
 
 .index-page {
@@ -387,8 +387,6 @@ footer p {
     animation: spin 1s linear;
     display: inline-block;
 }
-
-
 
 /* =-=-=-= RESPONSIVE PHONES =-=-=-= */
 @media (max-width: 652px) {
