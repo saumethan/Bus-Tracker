@@ -35,16 +35,32 @@ connectDB();
 // SERVER ENDPOINT: create page
 router.get("/", function(req, res) {
     res.render("pages/create", { page:"create", loggedIn: req.session.loggedin === true });
+    // Check if user is already logged in
+    if (req.session.loggedin === true) {
+        return res.redirect("/");
+    }
+    res.render("pages/create", { page:"create", loggedIn: req.session.loggedin === true });
 });
 
 // -=-=-=-=-=-=-=-=-=Create User Account-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
 router.post("/createUser", async function(req, res) {
-    // Check if user is already logged in
     if (req.session.loggedin === true) {
         return res.redirect("/login");
     }
 
     try {
+        // Check if the user already exists
+        const email = req.body.email.trim();
+        const existingUser = await db.collection("users").findOne({ "login.username": email });
+
+        if (existingUser) {
+            return res.render("pages/create", {
+                page: "create",
+                loggedIn: false,
+                error: "An account with this email already exists."
+            });
+        }
+
         // Store user data from the form
         const dataToStore = {
             "name": { "first": req.body.first, "last": req.body.last || "" },

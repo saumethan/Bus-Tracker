@@ -18,9 +18,13 @@ router.use(express.json());  // Parses JSON data
 
 // SERVER ENDPOINT: login page
 router.get("/", function(req, res) {
+    if (req.session.loggedin === true) {
+        console.log("cannot create as Logged in:", req.session.loggedin);
+        res.redirect("/");
+        return;
+    }
     res.render("pages/login",{page:"login", loggedIn: req.session.loggedin===true });
 });
-
 
 async function connectDB() {
     try {
