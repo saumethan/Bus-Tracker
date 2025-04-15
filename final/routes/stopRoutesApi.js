@@ -46,7 +46,6 @@ router.get("/", async (req, res) => {
 
 // SERVER ENDPOINT: Search and get specific bus GPS data 
 router.get("/find", async (req, res) => {
-    console.log("hit")
     try {
         const stopId = req.query.stopId;
         const lat = req.query.lat || null;
@@ -82,7 +81,6 @@ router.get("/find", async (req, res) => {
 
         try {
             const url = `https://bustimes.org/stops.json?ymax=${yMax}&xmax=${xMax}&ymin=${yMin}&xmin=${xMin}`;
-            console.log(url)
             const response = await axios.get(url);
     
             if (response && response.data) {
