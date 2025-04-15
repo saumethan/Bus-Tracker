@@ -521,7 +521,7 @@ function removePlannedRoute(map) {
 async function drawRoute(routeCoords,distance,duration,map) {
 
     try {
-        const response = await $.get("settings/userUnitsSettings");
+        const data = await $.get("settings/userUnitsSettings");
         if (data.isKM !== undefined) {
             isKM = data.isKM;
             console.log("User units loaded:", isKM);
