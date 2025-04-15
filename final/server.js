@@ -59,17 +59,16 @@ app.use(function(req, res, next) {
         return res.status(404).json({ error: "API endpoint not found" });
     }
 
+    // Choose a random 404 image
     const images = [
-        "/images/errorimg/img1.gif",
-        "/images/errorimg/img2.jpg",
-        "/images/errorimg/img3.jpg"
+        "https://i.ibb.co/Xfvg9nZ0/img1.gif",
+        "https://i.ibb.co/GQw14xbV/img2.jpg",
+        "https://i.ibb.co/CptDwVqn/img3.jpg",
     ];
-
     const randomImagePicker = images[Math.floor(Math.random() * images.length)];
-    console.log("Random image selected:", randomImagePicker);
 
     // Render 404 page for other routes
-    res.status(404).render("pages/404", {image: randomImagePicker});
+    res.status(404).render("pages/404", { image: randomImagePicker });
 });
 
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\
