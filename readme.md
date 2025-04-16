@@ -46,4 +46,6 @@ If you want to change settings, be sure to create and login to your account. Onc
 
 The site has a different look on mobile and has additional functionality such as a resizable bus data panel. Check it out on a mobile device for the best results, but if testing with Chrome Dev Tools, make sure to refresh the page after switching to the phone emulator.
 
+![alt text](tutorial-4.png) ![alt text](tutorial-5.png) 
+
 Report bugs in the Issues section of this repository or to our emails.
