@@ -42,7 +42,11 @@ Zoom further into the map to see red dots which are locations of bus stops in yo
 
 If you want to see how long it will take to walk a specific bus stop from your current location, first click on the stop, then click the walk icon on the top right of the map. This will draw the specific route to the stop, as well as show the distance and time taken to walk this route.
 
+![alt text](tutorial-7.png)
+
 If you want to change settings, be sure to create and login to your account. Once logged in, the settings page will show in the nav bar under your user icon. In settings, you can change the default map zoom, logout, change password or delete your account. You can also sign out of your account using the button in the nav bar. 
+
+![alt text](tutorial-6.png)
 
 The site has a different look on mobile and has additional functionality such as a resizable bus data panel. Check it out on a mobile device for the best results, but if testing with Chrome Dev Tools, make sure to refresh the page after switching to the phone emulator.
 
