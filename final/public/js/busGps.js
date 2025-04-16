@@ -131,14 +131,25 @@ async function drawBusFast(busData, map) {
     // Check if busData is valid
     if (!busData || busData.length === 0) return;
 
+      // Cancel any existing icon requests
+    if (busIconRequestController) {
+        busIconRequestController.abort();
+    }
+    
+    // Create new AbortController for all requests in this cycle
+    busIconRequestController = new AbortController();
+    const { signal } = busIconRequestController;
+    
+    // Create an array to hold all fetch promises
+    const iconFetchPromises = [];
+
     // Draw each bus marker
     for (let i = 0; i < busData.length; i++) {
-        // Make sure we have valid coordinates
         const coord = busData[i];
         if (!coord.latitude || !coord.longitude) continue;
 
-        // Find the icon for this bus
-        let busIcon
+        // Find the icon for this bus in cache
+        let busIcon;
         Object.keys(busImageCache).forEach(key => {
             const [noc, route, headingStr] = key.split("-");
             const thisHeading = parseInt(headingStr);
@@ -155,17 +166,24 @@ async function drawBusFast(busData, map) {
         if (busIcon) {
             createMarker(map, coord, busIcon);
         } else {
-            // try to fetch bus icon
-            fetch(`/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}&bearing=${coord.heading}`)
-                .then(response => response.blob())
-                .then(blob => {
+            // Create a promise for fetching this bus icon
+            const fetchPromise = (async () => {
+                try {
+                    // Fetch image from our endpoint with shared abort signal
+                    const response = await fetch(`/api/busimages/get?noc=${coord.noc}&routeName=${coord.route}&bearing=${coord.heading}`, { signal });
+                    const blob = await response.blob();
                     const iconUrl = URL.createObjectURL(blob);
                     busImageCache[`${coord.noc}-${coord.route}-${coord.heading}`] = iconUrl;
                     createMarker(map, coord, iconUrl);
-                })
-                .catch(error => {
+                } catch (error) {
+                    if (error.name === "AbortError") {
+                        return;
+                    }
                     console.error(`Error fetching icon for bus ${coord.noc}-${coord.route}:`, error);
-                });
+                }
+            })();
+            
+            iconFetchPromises.push(fetchPromise);
         }
     }
     
