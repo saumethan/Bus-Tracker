@@ -406,8 +406,7 @@ document.addEventListener("viewAllBusesChanged", (event) => {
 });
 
 document.addEventListener("zoomedOut", (event) => {
-    console.log(event.detail.zoom)
-    if (!event.detail.zoom <= 12 && busIconRequestController) {
+    if (event.detail.zoom < 12 && busIconRequestController) {
         busIconRequestController.abort();
         busIconRequestController = null;
     }

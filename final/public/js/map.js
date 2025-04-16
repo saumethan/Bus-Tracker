@@ -478,6 +478,8 @@ document.addEventListener("DOMContentLoaded", async function() {
     map.on("zoomend", function () {
         updateBusesAndStops();
         resetInactivityTimeout();
+
+        document.dispatchEvent(new CustomEvent("zoomedOut", { detail: { zoom: map.currentZoom } }));
     });
 
     document.getElementById("searchForm").addEventListener("submit", searchRoute);
