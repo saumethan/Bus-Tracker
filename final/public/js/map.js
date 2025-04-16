@@ -88,7 +88,9 @@ function addHomeButtonToMap() {
             window.history.pushState({ path: newUrl }, "", newUrl);
 
             removePlannedRoute(map);
-            currentRouteButton.remove();
+            if (currentRouteButton) {
+                currentRouteButton.remove();
+            }
         });
 
         return buttonDiv;
