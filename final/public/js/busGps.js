@@ -241,7 +241,7 @@ async function drawBusSlow(busData, map) {
                 busImageCache[`${coord.noc}-${coord.route}-${coord.heading}`] = busIcon;
             } catch (error) {
                 if (error.name === "AbortError") {
-                    console.log("Bus icon request aborted.");
+                    console.error("Bus icon request aborted.");
                     return; 
                 }
                 console.error("Error fetching bus icon:", error);
@@ -347,14 +347,14 @@ async function showSpecificBusRoute(serviceId, busId, journeyId, busNumber, map,
             const busData = await getSpecificBusGPS(routeNumber, true);
             drawBus(busData, map);
         } catch (error) {
-            //console.log(error);
+            console.error(error);
         }
     } else if (busNumber) {
         try {
             const busData = await getSpecificBusGPS(busNumber, true);
             drawBus(busData, map);
         } catch (error) {
-            //console.log(error);
+            console.error(error);
         }
     }
 }
@@ -384,7 +384,6 @@ document.addEventListener("viewAllBusesChanged", (event) => {
     if (!event.detail.viewAllBuses && busIconRequestController) {
         busIconRequestController.abort();
         busIconRequestController = null;
-        console.log("1 Canceled pending bus icon requests.");
     }
 });
 
@@ -393,7 +392,6 @@ document.addEventListener("zoomedOut", (event) => {
     if (!event.detail.zoom <= 12 && busIconRequestController) {
         busIconRequestController.abort();
         busIconRequestController = null;
-        console.log("2 Canceled pending bus icon requests.");
     }
 });
 
