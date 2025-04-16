@@ -19,7 +19,6 @@ const client = new MongoClient(url);
 const dbName = "User_Profiles";
 let db;
 
-
 // Connect to database
 async function connectDB() {
     try {
@@ -34,13 +33,19 @@ connectDB();
 
 // SERVER ENDPOINT: create page
 router.get("/", function(req, res) {
+    
+    // Detects if device is mobile or desktop
+    const userAgent = req.get("User-Agent") || "";
+    const isMobile = /mobile/i.test(userAgent);
+
+
     // Check if user is already logged in
     if (req.session.loggedin === true) {
         return res.redirect("/");
     }
     const error = req.session.createError;
     delete req.session.createError;
-    res.render("pages/create", { page:"create", loggedIn: req.session.loggedin === true, error: error });
+    res.render("pages/create", { page:"create", loggedIn: req.session.loggedin === true, error: error, isMobile: isMobile });
 });
 
 // -=-=-=-=-=-=-=-=-=Create User Account-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\\

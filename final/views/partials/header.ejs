@@ -25,20 +25,32 @@
                             <a class="nav-link <%= page === 'settings' ? 'active' : '' %>" href="/settings">Settings</a>
                         </li>
                     <% } %>
-    
-                    <!-- login dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-user"></i> 
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> 
-                            <% if (!loggedIn) { %>
-                                <li><a class="dropdown-item" href="/login">Login</a></li>
-                            <% } else { %>
-                                <li><a class="dropdown-item" href="/settings/logout">Sign Out</a></li>
-                            <% } %>
-                        </ul>
-                    </li>
+
+                    <% if (!isMobile) { %>
+                        <!-- login dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-user"></i> 
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> 
+                                <% if (!loggedIn) { %>
+                                    <li><a class="dropdown-item" href="/login">Login</a></li>
+                                <% } else { %>
+                                    <li><a class="dropdown-item" href="/settings/logout">Sign Out</a></li>
+                                <% } %>
+                            </ul>
+                        </li>
+                    <% } else { %>
+                        <% if (!loggedIn) { %>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'login' ? 'active' : '' %>" href="/login">Login</a>
+                            </li>
+                        <% } else { %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/settings/logout">Sign Out</a>
+                            </li>
+                        <% } %>
+                    <% } %>                    
                 </ul>
             </div>
         </div>

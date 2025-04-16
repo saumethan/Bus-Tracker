@@ -61,11 +61,16 @@ router.get("/", async function(req, res) {
     } catch (error) {
         console.error("Error fetching user:", error);
     }
+    // Detects if device is mobile or desktop
+    const userAgent = req.get("User-Agent") || "";
+    const isMobile = /mobile/i.test(userAgent);
+    
     //renders the page settings and also passes the user data to the page of settings so that it can put the details in log out button area or say not logged in
     res.render("pages/settings", {
         page: "settings",
         user: userData,
-        loggedIn: req.session.loggedin === true
+        loggedIn: req.session.loggedin === true,
+        isMobile: isMobile
     });
 });
 

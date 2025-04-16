@@ -24,10 +24,14 @@ router.get("/", function(req, res) {
         return res.status(200).redirect("/");
     }
 
+    // Detects if device is mobile or desktop
+    const userAgent = req.get("User-Agent") || "";
+    const isMobile = /mobile/i.test(userAgent);
+
     // Render the login page
     const error = req.session.loginError;
     delete req.session.loginError;
-    res.render("pages/login", { page: "login", loggedIn: req.session.loggedin, error: error });
+    res.render("pages/login", { page: "login", loggedIn: req.session.loggedin, error: error, isMobile: isMobile });
 });
 
 async function connectDB() {
