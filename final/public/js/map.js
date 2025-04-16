@@ -47,7 +47,6 @@ async function createMap() {
     
         if (data.zoomLevel !== undefined && !isNaN(data.zoomLevel)) {
             initialZoom = data.zoomLevel;
-            console.log("User zoom level loaded:", initialZoom);
         }
     } catch (err) {
         mapInstance.zoomLevel = 15;
@@ -213,7 +212,6 @@ function getViewportBounds() {
 
 // ------------------ Function to get the map coordinates ------------------
 function getCenterCoordinates() {
-    //console.log("here")
     const center = map.getCenter(); 
     if (center) {
         const lat = center.lat;  
@@ -284,7 +282,6 @@ async function updateBuses() {
         }
 
         const { minX, minY, maxX, maxY } = getViewportBounds();
-        //console.log(minX, minY, maxX, maxY)
 
         if (viewAllBuses) {
             // Show all buses in viewport
@@ -296,11 +293,7 @@ async function updateBuses() {
                 const busData = await getSpecificBusGPS(route, true);
                 drawBus(busData, map);
             } catch (error) {
-                // Fallback to filtering all buses
-                //console.log("Falling back to filtered buses kuhgihokgfihufaAHKJFL:", error);
-                // const allBuses = await getAllBusGPS(maxY, maxX, minY, minX);
-                // const filteredBuses = getFilteredBuses(allBuses, route);
-                // drawBus(filteredBuses, map);
+                console.error(error);
             }
         } else if (getNocCode() && getRouteNumber()) {
             // Use stored noc and route from busGps.js
@@ -308,11 +301,7 @@ async function updateBuses() {
                 const busData = await getSpecificBusGPS(getRouteNumber(), true);
                 drawBus(busData, map);
             } catch (error) {
-                // Fallback to filtering all buses
-                //console.log("Falling back to filtered buses:", error);
-                const allBuses = await getAllBusGPS(maxY, maxX, minY, minX);
-                const filteredBuses = getFilteredBuses(allBuses, getRouteNumber());
-                drawBus(filteredBuses, map);
+                console.error("Falling back to filtered buses:", error);
             }
         }
     } catch (error) {
@@ -397,7 +386,6 @@ async function searchRoute(event) {
     const busData = await getSpecificBusGPS(route, true, true);
     
     if (busData.length === 0) {
-        //console.log("No buses found for this service.");
         // Remove all URL parameters
         // Update URL without refreshing page
         const newUrl = window.location.origin + window.location.pathname;
@@ -470,7 +458,6 @@ document.addEventListener("DOMContentLoaded", async function() {
     // Gets the stop id from the URL 
     const stopId = getUrlParameter("stop");
     if (stopId) {
-        console.log(`Bus stop detected in URL: ${stopId}`);
         const { lat, lng } = getUserCoordinates()
         const busStop = await fetchSpecificStopLocation(stopId, lat, lng);
         map.setView([busStop[0].latitude, busStop[0].longitude], 15);
@@ -528,7 +515,6 @@ async function drawRoute(routeCoords,distance,duration,map) {
         const data = await $.get("settings/userUnitsSettings");
         if (data.isKM !== undefined) {
             isKM = data.isKM;
-            console.log("User units loaded:", isKM);
         }
     } catch (err) {
         isKM = false;
