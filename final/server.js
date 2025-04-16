@@ -22,7 +22,7 @@ const loginRoutes = require("./routes/login");
 const createRoute = require("./routes/create");
 const planRoute = require("./routes/routingApi")
 const planJourney = require("./routes/routingApi")
-const settings = require("./routes/settings");
+const settings = require("./routes/settingsRoute");
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
