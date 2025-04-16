@@ -103,27 +103,32 @@ aside {
 
 .login-register {
     background-image: url("../images/Busmap.png");
-    background-color: #f0f0f0; 
-    background-size: cover;  
-    background-position: center; 
+    background-color: #f0f0f0;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    box-sizing: border-box;
 }
 
 #login-container {
-    padding-top: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #login-section {
     width: 30vw;
-    min-height: 35vh;
-    max-height: fit-content;
-    padding-bottom: 1.5vh;
     background-color: #fff;
     border-radius: 20px;
-    margin: auto;
-    box-shadow: 0px 4px 4px 0px rgba(37, 36, 36, 0.8);
-    padding-top: 3vh;
+    padding: 3vh 2vw 2vh;
+    box-shadow: 0px 4px 4px rgba(37, 36, 36, 0.8);
+    max-width: 500px;
 }
 
 #login-section h1 {
@@ -141,7 +146,7 @@ aside {
     height: 5vh;
     margin-top: 2vh;
     border-radius: 5px;
-    border-width: 1px;
+    border: 1px solid #ccc;
 }
 
 #login-button {
@@ -150,7 +155,7 @@ aside {
     height: 5vh;
     margin-top: 2vh;
     border-radius: 5px;
-    border-width: 0px;
+    border: none;
     color: black;
     background-color: rgb(216, 216, 216);
 }
@@ -161,7 +166,8 @@ aside {
 }
 
 #login-section p {
-    padding-top: 5px;
+    padding-top: 10px;
+    text-align: center;
 }
 
 .error-message {
@@ -169,6 +175,7 @@ aside {
     font-weight: bold;
     margin-top: 15px;
     font-size: 15px;
+    text-align: center;
 }
 
 /* =-=-=-= MAP & CONTROLS =-=-=-= */
@@ -496,10 +503,21 @@ footer p {
     }
 
     /* LOGIN PAGE CSS */
+
     #login-section {
-        width: 80vw;
-        height: 35vh;
+        width: 90vw;
+        max-width: none;
+        padding: 4vh 5vw;
     }
+
+    #login-section form {
+        width: 100%;
+    }
+
+    #login-button {
+        font-size: 16px;
+    }
+
 
     /* INDEX PAGE CSS */
     .index-page {
@@ -599,11 +617,6 @@ footer p {
             visibility: hidden;
             display: none;
             height: 0;
-        }
-        
-        #login-section {
-            width: 80vw;
-            height: 35vh;
         }
     }
 }

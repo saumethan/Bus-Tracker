@@ -1,11 +1,9 @@
-<!-- views/pages/create.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <%- include("../partials/head") %>
 </head>
-
-<body>
+<body class="login-page">
     <header>
         <%- include("../partials/header") %>
     </header>
@@ -16,13 +14,15 @@
                 <form action="/create/createUser" method="POST">
                     <input type="text" placeholder="First Name" name="first" required><br>
                     <input type="text" placeholder="Last Name" name="last" required><br>
-
                     <input type="email" placeholder="Email" name="email" required><br>
                     <input type="password" placeholder="Password" name="password" required><br>
-                    <%if(typeof error !== "undefined"){ %>
+
+                    <% if (typeof error !== "undefined") { %>
                         <div class="error-message"><%= error %></div>
                     <% } %>
+
                     <button id="login-button" type="submit">Create</button>
+                    <p><a href="/login">Already have an account? Log in!</a></p>
                 </form>
             </div>
         </div>
@@ -30,6 +30,5 @@
     <footer>
         <%- include("../partials/footer") %>
     </footer>
-
 </body>
 </html>
