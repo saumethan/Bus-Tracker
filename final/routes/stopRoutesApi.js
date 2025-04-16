@@ -127,6 +127,7 @@ router.get("/times", async (req, res) => {
                 departureTime: new Date().toISOString(),
                 stopIds: [ stopId ],
                 stopType: "BUS_STOP",
+                stopName: "Kincorth, at Provost Watt Drive on Great Southern Road",
                 requestTime: new Date().toISOString(),
                 departureOrArrival: "DEPARTURE",
                 refresh: false,
