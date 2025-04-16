@@ -1,6 +1,7 @@
 /**
  * @author Ethan Saum @saumethan
- * @author Joshua Newton
+ * @author Joshua Newton 
+ * @author Xavier Flockton @XavierFlockton
  * @description settings.js
  */
 
@@ -37,8 +38,8 @@ router.get("/", async function(req, res) {
 
     // Check if the user is logged in
     if (req.session.loggedin !== true) {
-        // User is not logged in, return 404 page
-        return res.status(404).render("pages/404"); // Or redirect to login page
+        // User is not logged in, redirect to login page
+        return res.status(200).redirect("/login");
     }
 
     try {
@@ -196,7 +197,7 @@ router.post("/userSettings", async function(req, res) {
     }
 
     try {
-        await db.collection("users").updateOne(
+        result = await db.collection("users").updateOne(
             { "login.username": username },
             { $set: { zoomLevel: newZoom } }
         );
@@ -250,13 +251,13 @@ router.post("/userUnitsSettings", async function(req, res) {
 
     
     try {
-        await db.collection("users").updateOne(
+        const result = await db.collection("users").updateOne(
             { "login.username": username },
             { $set: { isKM: isKM } }
         );
 
         if (result.modifiedCount === 1) {
-            console.log(`Zoom level updated to ${isKM} for ${username}`);
+            console.log(`units updated to ${isKM} for ${username}`);
             res.status(200).send("units updated.");
         } else {
             res.status(404).send("User not found.");

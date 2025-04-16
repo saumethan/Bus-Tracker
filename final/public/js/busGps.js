@@ -22,7 +22,6 @@ async function getSpecificBusGPS(route, useBounds, isSearch, lat, lng) {
 
         if (useBounds) {
             let { minX, minY, maxX, maxY } = getViewportBounds();
-            console.log(minX, minY, maxX, maxY)
             let radius = Math.abs(maxX - minX);
 
             while (isSearch && radius < 50) {
@@ -52,23 +51,6 @@ async function getSpecificBusGPS(route, useBounds, isSearch, lat, lng) {
         }
 
         return response || [];
-        
-        // if (busData.length === 0) {
-        //     //console.log("No buses found for this service.");
-        //     showNotification("No live buses found for this route", "info")
-        //     // Remove all URL parameters
-        //     // Update URL without refreshing page
-        //     const newUrl = window.location.origin + window.location.pathname;
-        //     window.history.pushState({ path: newUrl }, "", newUrl);
-
-        //     setViewAllBuses(true);
-        //     removeRoute(map);
-        //     updateBusesAndStops();
-        //     return;
-        // }
-
-        //console.log(busData)
-        
     } catch (error) {
         console.error("Error fetching specific bus data:", error);
     }
@@ -158,11 +140,15 @@ async function drawBusFast(busData, map) {
         // Find the icon for this bus
         let busIcon
         Object.keys(busImageCache).forEach(key => {
-            if (key.includes(`${coord.noc}-${coord.route}`)) {
-                const thisHeading = parseInt(key.split("-")[2]);
-                if (Math.abs(thisHeading-coord.heading) <= 20 || Math.abs(thisHeading-coord.heading) >= 340) {
-                    busIcon = busImageCache[key];
-                }
+            const [noc, route, headingStr] = key.split("-");
+            const thisHeading = parseInt(headingStr);
+        
+            if (
+                noc === coord.noc &&
+                route === coord.route &&
+                (Math.abs(thisHeading - coord.heading) <= 20 || Math.abs(thisHeading - coord.heading) >= 340)
+            ) {
+                busIcon = busImageCache[key];
             }
         });
 
@@ -220,11 +206,15 @@ async function drawBusSlow(busData, map) {
         // Find the icon for this bus
         let busIcon
         Object.keys(busImageCache).forEach(key => {
-            if (key.includes(`${coord.noc}-${coord.route}`)) {
-                const thisHeading = parseInt(key.split("-")[2]);
-                if (Math.abs(thisHeading-coord.heading) <= 20 || Math.abs(thisHeading-coord.heading) >= 340) {
-                    busIcon = busImageCache[key];
-                }
+            const [noc, route, headingStr] = key.split("-");
+            const thisHeading = parseInt(headingStr);
+        
+            if (
+                noc === coord.noc &&
+                route === coord.route &&
+                (Math.abs(thisHeading - coord.heading) <= 20 || Math.abs(thisHeading - coord.heading) >= 340)
+            ) {
+                busIcon = busImageCache[key];
             }
         });
 

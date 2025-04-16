@@ -1,5 +1,6 @@
 /**
  * @author Ethan Saum @saumethan
+ * @author Xavier Flockton @XavierFlockton
  */
 
 // jQuery document ready
@@ -29,13 +30,6 @@ $(document).ready(function () {
         $("#mapZoomForm").slideUp(); // Collapse section after save
     });
 
-    getUnitsSettings();
-
-    $("#distanceUnits").on("change", function() {
-        const selectedUnit = $(this).val();
-        saveUnitsSettings(selectedUnit);
-    })
-
     // Load initial zoom setting on page load
     (async function setInitialZoomLevel() {
         const zoomLevel = await getUserZoom();
@@ -43,6 +37,14 @@ $(document).ready(function () {
             $("#mapZoomRange").val(zoomLevel);
         }
     })();
+
+    getUnitsSettings();
+
+    $("#distanceUnits").on("change", function() {
+        const selectedUnit = $(this).val();
+        saveUnitsSettings(selectedUnit);
+    })
+
 
 
     //ACCOUNT MANAGER FORMS
@@ -121,6 +123,7 @@ async function saveMapZoomSetting(zoom) {
             data: JSON.stringify({ newZoom: zoom }),
         });
 
+
         console.log("Zoom setting sent to server:", zoom);
         console.log("Server response:", response);
     } catch (error) {
@@ -128,6 +131,7 @@ async function saveMapZoomSetting(zoom) {
     }
 }
 
+//Fetch user's saved zoom level from server
 async function getUserZoom() {
     try {
         const data = await $.get("/settings/userSettings");
@@ -182,3 +186,4 @@ let isKM
         console.error("Failed to save units setting:", error);
     }
 }
+

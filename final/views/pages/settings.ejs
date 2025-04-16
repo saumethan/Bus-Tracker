@@ -10,52 +10,56 @@
         <%- include("../partials/header") %>
     </header>
 
-    <main>
-        <div class="container pt-4">
+    <main class="pt-0 pt-sm-5 px-3">
+        <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+                <div class="col-12 col-lg-10 col-xl-8">
 
                     <!-- Map Settings -->
-                    <strong class="mb-0">Map Settings</strong>
-                    <p>Here you can manage your default map settings</p>
+                    <div class="mb-5">
+                        <strong class="mb-1 d-block fs-4">Map Settings</strong>
+                        <p class="text-muted">Here you can manage your default map settings</p>
 
-                    <div class="list-group mb-5 shadow">
-                        <!-- Map Zoom -->
-                        <div class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <strong class="mb-0">Change Map Zoom</strong>
-                                    <p class="text-muted mb-0">Select your default map zoom.</p>
-                                </div>
-                                <button class="btn btn-light" data-toggle-section="mapZoomForm">
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                            </div>
-                            <div id="mapZoomForm" class="mt-3" style="display: none;">
-                                <form id="zoomSettingsForm">
-                                    <div class="form-group mb-3">
-                                        <label for="mapZoomRange" class="d-flex justify-content-between">
-                                            <span>Zoom Out</span>
-                                            <span>Zoom In</span>
-                                        </label>
-                                        <input type="range" class="form-range" min="5" max="17" id="mapZoomRange">
+                        <div class="list-group shadow">
+                            <!-- Map Zoom -->
+                            <div class="list-group-item py-4 px-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong class="mb-1 d-block">Change Map Zoom</strong>
+                                        <p class="text-muted mb-0">Select your default map zoom</p>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Save</button>
-                                </form>
-                            </div>                            
-                        </div>
-                        <div class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <strong class="mb-0">Distance Units</strong>
-                                    <p class="text-muted mb-0">Please select prefered units of Distance</p>
+                                    <button class="btn btn-light" data-toggle-section="mapZoomForm">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
                                 </div>
-                                <div id="UnitsForm" class="mt-3" style="display: none;">
-                                    <div class="form-group mb-3">
-                                        <select id="distanceUnits" class="form-select">
-                                            <option value="km">Kilometers</option>
-                                            <option value="miles">Miles</option>
-                                        </select>
+                                <div id="mapZoomForm" class="mt-3" style="display: none;">
+                                    <form id="zoomSettingsForm">
+                                        <div class="form-group mb-3">
+                                            <label for="mapZoomRange" class="d-flex justify-content-between">
+                                                <span>Zoom Out</span>
+                                                <span>Zoom In</span>
+                                            </label>
+                                            <input type="range" class="form-range" min="5" max="17" id="mapZoomRange">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Distance Units -->
+                            <div class="list-group-item py-4 px-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong class="mb-1 d-block">Distance Units</strong>
+                                        <p class="text-muted mb-0">Please select preferred units of distance</p>
+                                    </div>
+                                    <div id="UnitsForm" class="mt-3" style="display: none;">
+                                        <div class="form-group mb-0">
+                                            <select id="distanceUnits" class="form-select">
+                                                <option value="km">Kilometers</option>
+                                                <option value="miles">Miles</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -63,105 +67,104 @@
                     </div>
 
                     <!-- Account Manager -->
-                    <hr class="my-4" />
-                    <strong class="mb-0">Account Manager</strong>
-                    <p>Here you can manage your account details</p>
+                    <hr class="my-5" />
+                    <div class="mb-5">
+                        <strong class="mb-1 d-block fs-4">Account Manager</strong>
+                        <p class="text-muted">Here you can manage your account details</p>
 
-                    <div class="list-group mb-5 shadow">
-                        
-                        <!-- Log Out -->
-                        <div class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <strong class="mb-0">Log Out</strong>
-                                    <p class="text-muted mb-0">Log out of your account</p>
-                                </div>
-                                <button class="btn btn-light" data-toggle-section="logoutForm">
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                            </div>
-                            <div id="logoutForm" class="mt-3" style="display: none;">
-                                <form method="POST" action="/settings/logout">
-                                    <div class="form-group">
-                                        <h3>Current Details</h3>
-                                        <p>Name: 
-                                            <%= loggedIn && user 
-                                                ? `${user.name.first} ${user.name.last}` 
-                                                : "Not logged in" 
-                                            %>
-                                        </p>
-                                        <p>Email: 
-                                            <%= loggedIn && user 
-                                                ? user.login.username 
-                                                : "Not logged in" 
-                                            %>
-                                        </p>
+                        <div class="list-group shadow">
+                            <!-- Log Out -->
+                            <div class="list-group-item py-4 px-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong class="mb-1 d-block">Log Out</strong>
+                                        <p class="text-muted mb-0">Log out of your account</p>
                                     </div>
-                                    <button type="submit" class="btn btn-primary mt-2">Log Out Now</button>
-                                </form>
+                                    <button class="btn btn-light" data-toggle-section="logoutForm">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                                <div id="logoutForm" class="mt-3" style="display: none;">
+                                    <form method="POST" action="/settings/logout">
+                                        <div class="form-group">
+                                            <p class="mb-1"><b>Name:</b>
+                                                <%= loggedIn && user 
+                                                    ? `${user.name.first} ${user.name.last}` 
+                                                    : "Not logged in" 
+                                                %>
+                                            </p>
+                                            <p><b>Email:</b>
+                                                <%= loggedIn && user 
+                                                    ? user.login.username 
+                                                    : "Not logged in" 
+                                                %>
+                                            </p>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary mt-3">Log Out Now</button>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Change Password -->
-                        <div class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <strong class="mb-0">Change Password</strong>
-                                    <p class="text-muted mb-0">Update your Password.</p>
-                                </div>
-                                <button class="btn btn-light" data-toggle-section="passwordForm">
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                            </div>
-                            <div id="passwordForm" class="mt-3" style="display: none;">
-                                <form method="POST" action="/settings/changepassword">
-                                    <div class="form-group">
-                                        <label for="oldpass">Enter Old Password</label>
-                                        <input type="password" id="oldpass" class="form-control mt-2" placeholder="Enter your old password" name="oldpassword" />
-                                        
-                                        <label class="mt-2" for="newpassword">New Password</label>
-                                        <input type="password" id="newpassword" class="form-control mt-2" placeholder="Enter new password" name="newpassword" />
-                                        
-                                        <label class="mt-2" for="confirmpass">Confirm New Password</label>
-                                        <input type="password" id="confirmpass" class="form-control mt-2" placeholder="Confirm new password" name="confirmpassword"/>
+                            <!-- Change Password -->
+                            <div class="list-group-item py-4 px-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong class="mb-1 d-block">Change Password</strong>
+                                        <p class="text-muted mb-0">Update your password</p>
                                     </div>
-                                    <button type="submit" class="btn btn-primary mt-2">Save</button>
-                                </form>
-                            </div>
-                        </div>
+                                    <button class="btn btn-light" data-toggle-section="passwordForm">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                                <div id="passwordForm" class="mt-3" style="display: none;">
+                                    <form method="POST" action="/settings/changepassword">
+                                        <div class="form-group">
+                                            <label for="oldpass" class="mt-2">Old Password</label>
+                                            <input type="password" id="oldpass" class="form-control" placeholder="Enter your old password" name="oldpassword" />
 
-                        <!-- Delete Account -->
-                        <div class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <strong class="mb-0 text-danger">Delete Account</strong>
-                                    <p class="text-muted mb-0">Permanently remove your account.</p>
+                                            <label for="newpassword" class="mt-3">New Password</label>
+                                            <input type="password" id="newpassword" class="form-control" placeholder="Enter new password" name="newpassword" />
+
+                                            <label for="confirmpass" class="mt-3">Confirm New Password</label>
+                                            <input type="password" id="confirmpass" class="form-control" placeholder="Confirm new password" name="confirmpassword"/>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary mt-3">Save</button>
+                                    </form>
                                 </div>
-                                <button class="btn btn-light" data-toggle-section="deleteAccountForm">
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
                             </div>
-                            <div id="deleteAccountForm" class="mt-3" style="display: none;">
-                                <form method="POST" action="/settings/deleteaccount">
-                                    <div class="form-group">
-                                        <label for="confirmDelete">Type "delete" to confirm</label>
-                                        <input type="text" id="confirmDelete" class="form-control mt-2" placeholder="delete" name="deletetext" />
+
+                            <!-- Delete Account -->
+                            <div class="list-group-item py-4 px-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong class="mb-1 d-block text-danger">Delete Account</strong>
+                                        <p class="text-muted mb-0">Permanently remove your account</p>
                                     </div>
-                                    <button type="submit" class="btn btn-danger mt-2">Delete Account</button>
-                                </form>
+                                    <button class="btn btn-light" data-toggle-section="deleteAccountForm">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                                <div id="deleteAccountForm" class="mt-3" style="display: none;">
+                                    <form method="POST" action="/settings/deleteaccount">
+                                        <div class="form-group">
+                                            <label for="confirmDelete" class="mt-2">Type "delete" to confirm</label>
+                                            <input type="text" id="confirmDelete" class="form-control" placeholder="delete" name="deletetext" />
+                                        </div>
+                                        <button type="submit" class="btn btn-danger mt-3">Delete Account</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- FontAwesome for icons -->
+                    <!-- FontAwesome -->
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-
                 </div>
             </div>
         </div>        
     </main>
 
-    <footer>
+    <footer class="mt-5">
         <%- include("../partials/footer") %>
     </footer>
 </body>

@@ -18,6 +18,13 @@ router.use(express.json());  // Parses JSON data
 
 // SERVER ENDPOINT: login page
 router.get("/", function(req, res) {
+    // Check if the user is logged in
+    if (req.session.loggedin === true) {
+        // User is not logged in, redirect to index page
+        return res.status(200).redirect("/");
+    }
+
+    // Render the login page
     const error = req.session.loginError;
     delete req.session.loginError;
     res.render("pages/login", { page: "login", loggedIn: req.session.loggedin, error: error });

@@ -1,10 +1,8 @@
-<!-- views/pages/login.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <%- include("../partials/head") %>
 </head>
-
 <body class="login-page">
     <header>
         <%- include("../partials/header") %>
@@ -16,15 +14,19 @@
                 <form action="/login/userlogin" method="POST">
                     <input type="email" placeholder="Email" name="uname" required><br>
                     <input type="password" placeholder="Password" name="upass" required><br>
-                    <%if(typeof error !== "undefined"){ %>
+
+                    <% if (typeof error !== "undefined") { %>
                         <div class="error-message"><%= error %></div>
                     <% } %>
 
-                    <a href="#"><button id="login-button" type="submit">Submit</button></a>
+                    <button id="login-button" type="submit">Submit</button>
                     <p><a href="/create">Don't have an account? Create one!</a></p>
                 </form>
             </div>
         </div>
     </main>
+    <footer>
+        <%- include("../partials/footer") %>
+    </footer>
 </body>
 </html>
