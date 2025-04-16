@@ -548,7 +548,6 @@ async function drawRoute(routeCoords,distance,duration,map) {
         return;
     }
     routeCoords.coordinates.forEach((point) => {
-        console.log(point.latitude, point.longitude);
         coordinates.push([point.latitude, point.longitude]);
     });
     
