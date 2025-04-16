@@ -555,6 +555,7 @@ footer p {
             background-color: transparent !important;
             box-shadow: none !important;
             padding: 0;
+            height: 0;
         }
         
         .navbar .container-fluid {
@@ -580,7 +581,7 @@ footer p {
             align-items: center;
             justify-content: center;
             pointer-events: auto;
-            z-index: 9999; 
+            z-index: 9998; 
         }
         
         .navbar-toggler-icon {
@@ -601,7 +602,7 @@ footer p {
         .navbar-collapse {
             background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 9998 !important;
+            z-index: 9997 !important;
         }
         
         nav img {
@@ -611,6 +612,7 @@ footer p {
 
         .leaflet-top .map-button-reset {
             margin-top: 55px !important; 
+            z-index: 9999 !important;
         }
         
         footer {
